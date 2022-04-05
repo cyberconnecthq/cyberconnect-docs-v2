@@ -6,15 +6,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  title: "Developer Center | CyberConnect",
+  tagline: "Building the composable social graph protocol for Web3",
+  url: "https://docs.cyberconnect.me",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "CyberConnect",
+  projectName: "cyberconnec-docs-v2",
 
   presets: [
     [
@@ -23,14 +23,12 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/cyberconnecthq/cyberconnect-docs-v2',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/cyberconnecthq/cyberconnect-docs-v2',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -43,9 +41,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'CyberConnect Developer Center',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'CyberConnect Logo',
           src: 'img/logo.svg',
         },
         items: [
