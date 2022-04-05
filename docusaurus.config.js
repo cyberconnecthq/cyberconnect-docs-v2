@@ -9,12 +9,12 @@ const config = {
   title: "CyberConnect Developer Center",
   tagline: "Building the composable social graph protocol for Web3",
   url: "https://cyberconnecthq.github.io",
-  baseUrl: "/",
+  baseUrl: "/cyberconnect-docs-v2/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "cyberconnecthq",
-  projectName: "cyberconnec-docs-v2",
+  projectName: "cyberconnect-docs-v2",
 
   presets: [
     [
