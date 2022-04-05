@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Developer Center | CyberConnect",
+  title: "CyberConnect Developer Center",
   tagline: "Building the composable social graph protocol for Web3",
   url: "https://docs.cyberconnect.me",
   baseUrl: "/",
@@ -41,7 +41,8 @@ const config = {
         title: 'CyberConnect Developer Center',
         logo: {
           alt: 'CyberConnect Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo-black.svg',
+          srcDark: 'img/logo-white.svg',
         },
         items: [],
       },
