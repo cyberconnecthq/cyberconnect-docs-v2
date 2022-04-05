@@ -1,0 +1,30 @@
+.contentCard svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 400px;
+    height: auto;
+}
+
+.contentCardContent {
+    width: 100%;
+    flex: 1;
+    margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 998px) {
+    .contentCard {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      max-width: 100%;
+    }
+
+    .contentCard svg {
+        max-width: 340px;
+    }
+
+    .contentCardContent {
+        margin-bottom: 0px;
+        margin-right: 40px;
+    }
+}
