@@ -4,27 +4,31 @@
  * work well for content-centric websites.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;500&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --color-primary-black: #171717;
+  --color-primary-white: #ffffff;
+  --ifm-color-primary: var(--color-primary-black);
+  --ifm-color-primary-dark: var(--color-primary-black);
+  --ifm-color-primary-darker: var(--color-primary-black);
+  --ifm-color-primary-darkest: var(--color-primary-black);
+  --ifm-color-primary-light: var(--color-primary-black);
+  --ifm-color-primary-lighter: var(--color-primary-black);
+  --ifm-color-primary-lightest: var(--color-primary-black);
   --ifm-code-font-size: 95%;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: var(--color-primary-white);
+  --ifm-color-primary-dark: var(--color-primary-white);
+  --ifm-color-primary-darker: var(--color-primary-white);
+  --ifm-color-primary-darkest: var(--color-primary-white);
+  --ifm-color-primary-light: var(--color-primary-white);
+  --ifm-color-primary-lighter: var(--color-primary-white);
+  --ifm-color-primary-lightest: var(--color-primary-white);
 }
 
 .docusaurus-highlight-code-line {
@@ -36,4 +40,66 @@
 
 [data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* CSS OVERWRITE */
+*, *::before, *::after {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+}
+
+main {
+  min-height: calc(100vh - 60px);
+}
+
+/* NAVBAR */
+.navbar__logo img {
+  transform: scale(0.70);
+}
+
+.navbar-sidebar__back {
+  display: none;
+}
+
+[data-theme='light'] .navbar {
+  background-color: var(--color-primary-white);
+}
+
+[data-theme='dark'] .navbar {
+  background-color: #000000;
+}
+
+.navbar__title {
+  font-size: 1.4em;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+}
+
+[data-theme='light'] .navbar__title {
+  color: #000000;
+}
+
+[data-theme='dark'] .navbar__title {
+  color: var(--color-primary-white);
+}
+
+/* SIDEBAR */
+[data-theme='light'] aside {
+  background-color: rgba(245,247,249,0.5);
+  border-right-color: rgba(211,220,228,0.2);
+}
+
+.menu__link--active {
+  font-weight: 400;
+}
+
+/* FOOTER */
+.footer {
+  display: none;
 }
