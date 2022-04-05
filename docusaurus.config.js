@@ -8,12 +8,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: "CyberConnect Developer Center",
   tagline: "Building the composable social graph protocol for Web3",
-  url: "https://docs.cyberconnect.me",
+  url: "https://cyberconnecthq.github.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "CyberConnect",
+  organizationName: "cyberconnecthq",
   projectName: "cyberconnec-docs-v2",
 
   presets: [
