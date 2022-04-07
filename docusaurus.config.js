@@ -41,8 +41,7 @@ const config = {
         title: 'CyberConnect Dev Center',
         logo: {
           alt: 'CyberConnect Logo',
-          src: 'img/logo-black.svg',
-          srcDark: 'img/logo-white.svg',
+          src: 'img/logo-white.svg',
         },
         items: [],
       },
