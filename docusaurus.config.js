@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "CyberConnect Developer Center",
+  title: "CyberConnect Dev Center",
   tagline: "Building the composable social graph protocol for Web3",
   url: "https://cyberconnecthq.github.io",
   baseUrl: "/cyberconnect-docs-v2/",
@@ -38,7 +38,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'CyberConnect Developer Center',
+        title: 'CyberConnect Dev Center',
         logo: {
           alt: 'CyberConnect Logo',
           src: 'img/logo-black.svg',
@@ -47,13 +47,17 @@ const config = {
         items: [],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
         links: [],
         copyright: `Copyright © ${new Date().getFullYear()} CyberConnect.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
       },
     }),
 };
