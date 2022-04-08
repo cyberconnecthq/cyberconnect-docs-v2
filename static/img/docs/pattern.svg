@@ -1,0 +1,10 @@
+<svg height="80px" width="80px">
+  <defs>
+    <pattern id="doodad" width="20" height="20" viewBox="0 0 40 40" patternUnits="userSpaceOnUse" patternTransform="rotate(135)">
+      <rect width="100%" height="100%" fill="rgba(44, 44, 44,1)"/>
+      <path d="M-10 30h60v4h-60zM-10-10h60v4h-60" fill="rgba(0, 0, 0,1)"/>
+      <path d="M-10 10h60v2h-60zM-10-30h60v2h-60z" fill="rgba(0, 0, 0,1)"/>
+    </pattern>
+  </defs>
+  <rect fill="url(#doodad)" height="200%" width="200%"/>
+</svg>
