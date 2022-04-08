@@ -56,6 +56,14 @@ main {
   min-height: calc(100vh - 60px);
 }
 
+.markdown a {
+  text-decoration: underline;
+}
+
+.markdown a:hover {
+  font-weight: 500;
+}
+
 /* NAVBAR */
 .navbar__logo img {
   transform: scale(0.70);
