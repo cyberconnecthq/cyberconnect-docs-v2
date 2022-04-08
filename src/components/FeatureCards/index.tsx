@@ -22,8 +22,8 @@ const FeatureList: FeatureItem[] = [
     description: 'Verify accounts from various social platforms.'
   },
   {
-    title: 'GraphQL API',
-    path: '/graphql-api/overview',
+    title: 'CyberConnect API',
+    path: '/cyberconnect-api/overview',
     description: 'Everything you need to query connection data from the protocol.'
   },
 ];
