@@ -1,0 +1,62 @@
+.showcaseCard {
+  background-color: var(--color-lightgray);
+  border: 1px solid var(--color-lightgray);
+  border-radius: 8px;
+  width: 100%;
+  min-height: 304px;
+  color: var(--color-white);
+  user-select: none;
+  position: relative;
+}
+
+.showcaseCardImg {
+  border-radius: 8px 8px 0px 0px;
+  height: 132px;
+  overflow: hidden;
+}
+
+.showcaseCardImg img {
+  width: 100%;
+  height: auto;
+}
+
+.showcaseCardDetails {
+  position: relative;
+}
+
+.showcaseCardSvg,
+.showcaseCardSvg svg {
+  width: 100%;
+  height: 40px;
+}
+
+.showcaseCardTitle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 40px;
+  padding: 0px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+.showcaseCardDescription {
+  color: var(--color-black);
+  height: 142px;
+  padding: 20px;
+}
+
+.showcaseCard a svg {
+  width: 16px;
+}
+
+.showcaseCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  grid-gap: 24px;
+  justify-items: center;
+  max-width: 100%;
+}
