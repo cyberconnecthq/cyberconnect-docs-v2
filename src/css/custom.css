@@ -8,9 +8,12 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --box-shadow:
+    0 2px 8px rgb(84 70 35 / 15%),
+    0 1px 3px rgb(84 70 35 / 15%);
   --color-black: #2C2C2C;
   --color-white: #ffffff;
-  --color-lightgray: #F7F9F9;
+  --color-lightgray: rgba(246, 248, 247, 1);
   --font-family-primary: 'Outfit', sans-serif;
   --ifm-color-primary: var(--color-black);
   --ifm-color-primary-dark: var(--color-black);
@@ -19,6 +22,8 @@
   --ifm-color-primary-light: var(--color-black);
   --ifm-color-primary-lighter: var(--color-black);
   --ifm-color-primary-lightest: var(--color-black);
+  --ifm-hover-overlay: rgba(246, 248, 247, 1);
+  --ifm-color-emphasis-300: rgb(161 161 161 / 40%);
   --ifm-code-font-size: 95%;
 }
 
@@ -41,23 +46,28 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.5rem;
 }
 
 h2 {
   background-color: var(--color-lightgray);
   border-radius: 8px;
   color: var(--color-black);
-  font-size: 1.5em;
-  padding: 10px;
+  font-size: 1.8rem;
+  padding: 10px 20px;
 }
 
 main {
   min-height: calc(100vh - 60px);
 }
 
+p {
+  font-size: 1.1rem;
+}
+
 .markdown a {
   text-decoration: underline;
+  font-weight: 500;
 }
 
 .markdown a:hover {
@@ -92,11 +102,60 @@ main {
 /* SIDEBAR */
 aside {
   background-color: var(--color-lightgray);
-  border-right-color: rgba(211,220,228,0.1);
 }
 
 .menu__link--active {
   font-weight: 400;
+}
+
+/* CARDS */
+.card {
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+  color: var(--color-black);
+  user-select: none;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-1%);
+}
+
+.cardTitle {
+  background-color: rgba(246, 248, 247, 0.5);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding: 0px 20px;
+}
+
+.cardTitleLink {
+  border-radius: 4px;
+  color: #a1a1a1;
+  background: #fcfcfc;
+  box-shadow: 
+    0px 1px 2px rgb(15 15 15 / 10%),
+    inset 0 0 0 1px rgb(161 161 161 / 40%);
+  height: 30px;
+  line-height: 30px;
+  padding: 0px 8px;
+}
+
+.cardDescription {
+  color: var(--color-black);
+  padding: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  grid-gap: 24px;
+  justify-items: center;
+  max-width: 100%;
 }
 
 /* FOOTER */

@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
-import PatternSvg from '../../../static/img/docs/pattern.svg';
 import LinkSvg from '../../../static/img/docs/link.svg';
 
 type FeatureItem = {
@@ -30,28 +29,23 @@ const FeatureList: FeatureItem[] = [
 
 function FeatureCard({title, path, description}: FeatureItem) {
   return (
-    <div className={styles.featureCard}>
-      <div className={styles.featureCardHead}>
-        <div className={styles.featureCardSvg}>
-          <PatternSvg />
-        </div>
-        <div className={styles.featureCardTitle}>
-          <div>{`${title}`}</div>
-          <Link
-            className={styles.featureCardLink}
-            to={path}>
-            <LinkSvg />
-          </Link>
-        </div>
+    <div className={`card ${styles.featureCard}`}>
+      <div className={`cardTitle ${styles.featureCardTitle}`}>
+        <div>{`${title}`}</div>
+        <Link
+          className='cardTitleLink'
+          to={path}>
+          <LinkSvg />
+        </Link>
       </div>
-      <div className={styles.featureCardDescription}>{description}</div>
+      <div className='cardDescription'>{description}</div>
     </div>
   );
 }
 
 export default function FeatureCards(): JSX.Element {
   return (
-    <div className={styles.featureCards}>
+    <div className='cards'>
       {FeatureList.map((props, idx) => (
         <FeatureCard key={idx} {...props} />
       ))}

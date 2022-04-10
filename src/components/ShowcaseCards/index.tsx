@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
-import PatternSvg from '../../../static/img/docs/pattern.svg';
 import LinkSvg from '../../../static/img/docs/link.svg';
 
 type ShowcaseItem = {
@@ -64,31 +63,28 @@ const ShowcaseList: ShowcaseItem[] = [
 
 function ShowcaseCard({title, srcPath, description, url}: ShowcaseItem) {
   return (
-    <div className={styles.showcaseCard}>
+    <div className={`card ${styles.showcaseCard}`}>
         <div className={styles.showcaseCardImg}>
           <img src={srcPath}></img>
         </div>
-        <div className={styles.showcaseCardDetails}>
-          <div className={styles.showcaseCardSvg}>
-            <PatternSvg />
-          </div>
-          <div className={styles.showcaseCardTitle}>
+        <div>
+          <div className={`cardTitle ${styles.showcaseCardTitle}`}>
             <div>{`${title}`}</div>
             <Link
-              className={styles.cardItemLink}
+              className='cardTitleLink'
               to={url}>
                 <LinkSvg />
             </Link>
           </div>
         </div>
-        <div className={styles.showcaseCardDescription}>{description}</div>
+        <div className='cardDescription'>{description}</div>
     </div>
   );
 }
 
 export default function ShowcaseCards(): JSX.Element {
   return (
-    <div className={styles.showcaseCards}>
+    <div className='cards'>
       {ShowcaseList.map((props, idx) => (
         <ShowcaseCard key={idx} {...props} />
       ))}
