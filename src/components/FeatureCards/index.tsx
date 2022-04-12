@@ -21,9 +21,19 @@ const FeatureList: FeatureItem[] = [
     description: 'Verify accounts from various social platforms.'
   },
   {
+    title: 'NFT Ownership',
+    path: '/get-started/read-nft-ownership',
+    description: 'Verify NFT ownership on the Ethereum blockchain.'
+  },
+  {
     title: 'CyberConnect API',
     path: '/cyberconnect-api/overview',
     description: 'Everything you need to query connection data from the protocol.'
+  },
+  {
+    title: 'Recommendation Engine',
+    path: '/get-started/read-recommendations',
+    description: 'Accelerate bootstrapping by recommending connections based on the social graph.'
   },
 ];
 
