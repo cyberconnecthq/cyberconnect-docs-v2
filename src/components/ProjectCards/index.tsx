@@ -82,7 +82,7 @@ function ProjectCard({title, urls}: ProjectItem) {
   return (
     <div className={`card ${styles.projectCard}`}>
       <div className={`cardTitle ${styles.projectCardTitle}`}>
-        <div>{`${title}`}</div>
+        <div>{title}</div>
       </div>
       {urls.map((elem, idx) => (
         <div key={idx}>

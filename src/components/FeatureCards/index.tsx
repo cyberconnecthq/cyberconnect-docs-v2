@@ -41,7 +41,7 @@ function FeatureCard({title, path, description}: FeatureItem) {
   return (
     <div className={`card ${styles.featureCard}`}>
       <div className={`cardTitle ${styles.featureCardTitle}`}>
-        <div>{`${title}`}</div>
+        <div>{title}</div>
         <Link
           className='cardTitleLink'
           to={path}>

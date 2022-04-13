@@ -69,7 +69,7 @@ function ShowcaseCard({title, srcPath, description, url}: ShowcaseItem) {
         </div>
         <div>
           <div className={`cardTitle ${styles.showcaseCardTitle}`}>
-            <div>{`${title}`}</div>
+            <div>{title}</div>
             <Link
               className='cardTitleLink'
               to={url}>
