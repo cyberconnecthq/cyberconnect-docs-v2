@@ -178,6 +178,7 @@ aside {
 /* LIVE CODE EDITOR */
 .connectButton,
 .followButton,
+.tweetButton,
 .verifyButton {
   border-radius: 50px;
   font-size: 1.2rem;
@@ -191,16 +192,15 @@ aside {
   color: var(--color-black);
 }
 
+.verifyButton,
 .followButton {
   border: 1px solid var(--color-black);
   background-color: var(--color-black);
   color: var(--color-white);
 }
 
-.verifyButton {
+.tweetButton {
   border: 1px solid #1F9BF0;
   background-color: #1F9BF0;
   color: var(--color-white);
 }
-
-

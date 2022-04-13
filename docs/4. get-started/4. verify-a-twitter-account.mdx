@@ -8,8 +8,10 @@ sidebar_position: 4
 
 In this section we'll go throw verifying a Twitter handle..
 
+First we need to sign and send a Tweet
+
 ```jsx live
-function VerifyButton() { 
+function TweetButton() { 
     const handleOnClick = async () => {
         // Get the MetaMask wallet address
         const accounts = await window.ethereum.request({
@@ -24,10 +26,27 @@ function VerifyButton() {
 
         // Open new window so that the user can post on Twitter
         window.open(`https://twitter.com/intent/tweet?text=${message}`, "_blank");
+    }
+    
+    return (
+        <button
+            className="tweetButton"
+            onClick={handleOnClick}
+        >Tweet message</button>
+    );
+}
+```
 
-        // Confirm the message was posted
-        alert(`Posted the message on Twitter: ${message}`);
-        
+Then we verify the account
+
+```jsx live
+function VerifyButton() { 
+    const handleOnClick = async () => {  
+        // Get the MetaMask wallet address
+        const accounts = await window.ethereum.request({
+            method: "eth_requestAccounts"
+        });
+
         // Prompt to enter the Twitter handle
         const handle = prompt("Enter your Twitter handle:");
 
