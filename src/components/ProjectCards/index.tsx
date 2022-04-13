@@ -20,11 +20,11 @@ const ProjectList: ProjectItem[] = [
     urls: [
       {
         icon: <AiFillGithub />,
-        url: "https://github.com/cyberconnecthq/js-cyberconnect"
+        url: "https://github.com/cyberconnecthq/js-cyberconnect/"
       },
       {
         icon: <DiNpm />,
-        url: "https://www.npmjs.com/package/@cyberlab/cyberconnect"
+        url: "https://www.npmjs.com/package/@cyberlab/cyberconnect/"
       },
     ]
   },
@@ -33,11 +33,11 @@ const ProjectList: ProjectItem[] = [
     urls: [
       {
         icon: <AiFillGithub />,
-        url: "https://github.com/cyberconnecthq/social-verifier"
+        url: "https://github.com/cyberconnecthq/social-verifier/"
       },
       {
         icon: <DiNpm />,
-        url: "https://www.npmjs.com/package/@cyberlab/social-verifier"
+        url: "https://www.npmjs.com/package/@cyberlab/social-verifier/"
       },
     ]
   },
@@ -46,7 +46,7 @@ const ProjectList: ProjectItem[] = [
     urls: [
       {
         icon: <AiFillGithub />,
-        url: "https://github.com/cyberconnecthq/connect-list"
+        url: "https://github.com/cyberconnecthq/connect-list/"
       },
     ]
   },
@@ -55,7 +55,7 @@ const ProjectList: ProjectItem[] = [
     urls: [
       {
         icon: <AiFillGithub />,
-        url: "https://github.com/cyberconnecthq/cyberconnect-starter"
+        url: "https://github.com/cyberconnecthq/cyberconnect-starter/"
       },
       {
         icon: <CgWebsite />,
@@ -68,7 +68,7 @@ const ProjectList: ProjectItem[] = [
     urls: [
       {
         icon: <AiFillGithub />,
-        url: "https://github.com/cyberconnecthq/CyberGraph"
+        url: "https://github.com/cyberconnecthq/CyberGraph/"
       },
       {
         icon: <CgWebsite />,

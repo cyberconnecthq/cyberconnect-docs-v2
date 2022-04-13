@@ -12,27 +12,27 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'CyberConnect SDK',
-    path: '/cyberconnect-sdk/connect-with-sdk',
+    path: '/cyberconnect-sdk/connect-with-sdk/',
     description: 'Everything you need to write connection data into the open social graph.'
   },
   {
     title: 'Social Verifier',
-    path: '/cyberconnect-sdk/cyberconnect-social-verifier',
+    path: '/cyberconnect-sdk/cyberconnect-social-verifier/',
     description: 'Verify accounts from various social platforms.'
   },
   {
     title: 'NFT Ownership',
-    path: '/get-started/read-nft-ownership',
+    path: '/get-started/read-nft-ownership/',
     description: 'Verify NFT ownership on the Ethereum blockchain.'
   },
   {
     title: 'CyberConnect API',
-    path: '/cyberconnect-api/overview',
+    path: '/cyberconnect-api/overview/',
     description: 'Everything you need to query connection data from the protocol.'
   },
   {
     title: 'Recommendation Engine',
-    path: '/get-started/read-recommendations',
+    path: '/get-started/read-recommendations/',
     description: 'Accelerate bootstrapping by recommending connections based on the social graph.'
   },
 ];
