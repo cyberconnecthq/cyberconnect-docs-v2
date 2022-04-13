@@ -1,0 +1,20 @@
+.usecaseCard {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.usecaseCardIcon svg {
+  width: auto;
+  height: 50px;
+}
+
+.usecaseCardTitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.usecaseCards {
+  grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+}
