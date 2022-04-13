@@ -36,6 +36,7 @@
 
 /* CSS OVERWRITE */
 *, *::before, *::after {
+  color: var(--color-black);
   font-family: var(--font-family-primary);
   font-weight: 300;
 }
@@ -46,14 +47,14 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
 }
 
 h2 {
   background-color: var(--color-lightgray);
   border-radius: 8px;
   color: var(--color-black);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   padding: 10px 20px;
 }
 
@@ -61,8 +62,12 @@ main {
   min-height: calc(100vh - 60px);
 }
 
-p {
+p, article li {
   font-size: 1.1rem;
+}
+
+strong {
+  font-weight: 500;
 }
 
 .markdown a {
@@ -116,10 +121,6 @@ aside {
   color: var(--color-black);
   user-select: none;
   position: relative;
-}
-
-.card:hover {
-  transform: translateY(-1%);
 }
 
 .cardTitle {
