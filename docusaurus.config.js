@@ -59,6 +59,7 @@ const config = {
         disableSwitch: true,
       },
     }),
+  themes: ['@docusaurus/theme-live-codeblock'],
 };
 
 module.exports = config;
