@@ -13,7 +13,7 @@
     0 1px 3px rgb(84 70 35 / 15%);
   --color-black: #2C2C2C;
   --color-white: #ffffff;
-  --color-lightgray: rgba(246, 248, 247, 1);
+  --color-lightgray: rgba(246, 248, 250, 1);
   --font-family-primary: 'Outfit', sans-serif;
   --ifm-color-primary: var(--color-black);
   --ifm-color-primary-dark: var(--color-black);
@@ -22,7 +22,7 @@
   --ifm-color-primary-light: var(--color-black);
   --ifm-color-primary-lighter: var(--color-black);
   --ifm-color-primary-lightest: var(--color-black);
-  --ifm-hover-overlay: rgba(246, 248, 247, 1);
+  --ifm-hover-overlay: rgba(246, 248, 250, 1);
   --ifm-color-emphasis-300: rgb(161 161 161 / 40%);
   --ifm-code-font-size: 95%;
 }
@@ -39,6 +39,12 @@
   color: var(--color-black);
   font-family: var(--font-family-primary);
   font-weight: 300;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
 
 h1, h2 {
@@ -124,7 +130,7 @@ aside {
 }
 
 .cardTitle {
-  background-color: rgba(246, 248, 247, 0.5);
+  background-color: rgba(246, 248, 250, 0.5);
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
   display: flex;
   align-items: center;
@@ -162,4 +168,32 @@ aside {
 /* FOOTER */
 .footer {
   display: none;
+}
+
+/* LIVE CODE EDITOR */
+.connectButton,
+.followButton,
+.verifyButton {
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 10px 20px;
+}
+
+.connectButton {
+  border: 1px solid var(--color-black);
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.followButton {
+  border: 1px solid var(--color-black);
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.verifyButton {
+  border: 1px solid #1F9BF0;
+  background-color: #1F9BF0;
+  color: var(--color-white);
 }
