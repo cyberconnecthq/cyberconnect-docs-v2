@@ -74,6 +74,13 @@ Now let's write the logic for the button..
 
 ```jsx live
 function FollowButton() {
+  const cyberConnect = new CyberConnect({
+    namespace: 'CyberConnect',
+    env: Env.PRODUCTION,
+    chain: Blockchain.ETH,
+    provider: window.ethereum,
+  });
+
   const handleOnClick = async () => {
     // Prompt to enter the address
     const address = prompt("Enter the ens/address to follow:");

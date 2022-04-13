@@ -8,29 +8,13 @@ import {
   twitterVerify
 } from "@cyberlab/social-verifier";
 
-declare global {
-  interface Window {
-    ethereum: Provider;
-  }
-}
-
-interface Provider {
-  isMetaMask: boolean;
-  request: (request: { method: string, params?: Array<any> }) => Promise<any>
-}
-
-const cyberConnect = new CyberConnect({
-  namespace: 'CyberConnect',
-  env: Env.PRODUCTION,
-  chain: Blockchain.ETH,
-  provider: window.ethereum,
-});
-
 // Add react-live imports you need here
 const ReactLiveScope: object = {
   React,
   ...React,
-  cyberConnect,
+  CyberConnect,
+  Env,
+  Blockchain,
   twitterVerify,
   twitterAuthorize
 };

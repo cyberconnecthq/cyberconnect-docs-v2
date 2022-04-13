@@ -33,7 +33,7 @@ const config = {
       }),
     ],
   ],
-
+  themes: ['@docusaurus/theme-live-codeblock'],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -59,7 +59,6 @@ const config = {
         disableSwitch: true,
       },
     }),
-  themes: ['@docusaurus/theme-live-codeblock'],
 };
 
 module.exports = config;
