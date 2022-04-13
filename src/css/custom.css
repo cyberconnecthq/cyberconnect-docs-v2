@@ -76,6 +76,11 @@ strong {
   font-weight: 500;
 }
 
+::selection {
+  color: var(--color-white);
+  background: rgb(161 161 161 / 10%);
+}
+
 .markdown a {
   text-decoration: underline;
   font-weight: 500;
@@ -197,3 +202,5 @@ aside {
   background-color: #1F9BF0;
   color: var(--color-white);
 }
+
+
