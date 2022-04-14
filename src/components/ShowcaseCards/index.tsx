@@ -32,7 +32,7 @@ const ShowcaseList: ShowcaseItem[] = [
   {
     title: 'Etherloop',
     srcPath: require('@site/static/img/docs/get-inspired/etherloop.jpg').default,
-    description: 'Etherloop is a web application enabling users to build social connections and track their own tokens, balances, transactions, NFTs, and POAPs.',
+    description: 'Etherloop is a web app enabling users to build social connections and track tokens, balances, transactions, NFTs, and POAPs.',
     url: 'https://etherloop.moonlabs.xyz/'
   },
   {
