@@ -25,6 +25,9 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/cyberconnecthq/cyberconnect-docs-v2',
           routeBasePath: '/',
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+          ],
         },
         blog: false,
         theme: {
