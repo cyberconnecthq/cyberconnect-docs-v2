@@ -1,0 +1,32 @@
+---
+id: read-nft-ownership
+title: Read NFT Ownership
+slug: /get-started/read-nft-ownership/
+sidebar_label: Read NFT Ownership
+sidebar_position: 8
+---
+
+Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/endpoints/).
+
+```jsx title="/src/queries/GetNFTOwnership.js"
+import { gql, useQuery } from "@apollo/client";
+import { DEMO_CONTRACT, DEMO_TOKEN_ID } from "../helpers/constants";
+
+export const GET_NFT_OWNERSHIP = gql`
+    query($contract: String!, $tokenId: String){
+        nftOwners(contract: $contract, tokenId: $tokenId){
+            tokenId
+            owner
+        }
+    }
+`;
+
+export default function GetNFTOwnwrship() {
+    return useQuery(GET_NFT_OWNERSHIP, {
+        variables: {
+                contract: DEMO_CONTRACT,
+                tokenId: DEMO_TOKEN_ID
+            },
+        }).data;
+}
+```
