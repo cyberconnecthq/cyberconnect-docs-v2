@@ -1,0 +1,37 @@
+---
+id: read-recommendations
+title: Read Recommendations
+slug: /get-started/read-recommendations/
+sidebar_label: Read Recommendations
+sidebar_position: 7
+---
+
+Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/endpoints/).
+
+```jsx title="/src/queries/GetRecommendations.js"
+import { gql, useQuery } from "@apollo/client";
+import { DEMO_ADDRESS } from "../helpers/constants";
+
+export const GET_RECOMMENDATIONS = gql`
+    query($address: String!) {
+        recommendations(address: $address) {
+            result
+            data {
+                list {
+                    address
+                    domain
+                    recommendationReason
+                }
+            }
+        }
+    }
+`;
+
+export default function GetRecommendations() {
+    return useQuery(GET_RECOMMENDATIONS, {
+        variables: {
+                address: DEMO_ADDRESS,
+            },
+        }).data;
+}
+```
