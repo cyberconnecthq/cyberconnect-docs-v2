@@ -1,0 +1,44 @@
+---
+id: read-connections
+title: Read Connections
+slug: /get-started/read-connections/
+sidebar_label: Read Connections
+sidebar_position: 6
+---
+
+Now we read the connections
+
+Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/endpoints/).
+
+```jsx title="/src/queries/GetConnections.js"
+import { gql, useQuery } from "@apollo/client";
+import { DEMO_ADDRESS } from "../helpers/constants";
+
+const GET_CONNECTIONS = gql`
+    query($address: String!) {
+        identity(address: $address, network: ETH) {
+            followings{
+                list {
+                    address
+                    domain
+                }
+            }
+            followers{
+                list {
+                    address
+                    domain
+                }
+            }
+        }
+    }
+`;
+
+export default function GetConnections() {
+    return useQuery(GET_CONNECTIONS, {
+        variables: {
+                address: DEMO_ADDRESS,
+                first: 5,
+            },
+        }).data;
+}
+```
