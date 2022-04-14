@@ -90,6 +90,14 @@ strong {
   font-weight: 500;
 }
 
+.theme-code-block {
+  border-radius: 6px;
+}
+
+.tabs__item[aria-selected="true"] {
+  font-weight: 500;
+}
+
 /* NAVBAR */
 .navbar__logo img {
   transform: scale(0.70);
@@ -181,7 +189,7 @@ aside {
 .tweetButton,
 .verifyButton {
   border-radius: 50px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 300;
   padding: 10px 20px;
 }

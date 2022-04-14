@@ -16,7 +16,7 @@ const ReactLiveScope: object = {
   Env,
   Blockchain,
   twitterVerify,
-  twitterAuthorize
+  twitterAuthorize,
 };
 
 export default ReactLiveScope;
