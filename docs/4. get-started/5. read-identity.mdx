@@ -1,0 +1,74 @@
+---
+id: read-identity
+title: Read Identity
+slug: /get-started/read-identity/
+sidebar_label: Read Identity
+sidebar_position: 5
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+    defaultValue='query'
+    values={[
+        {label: 'Query', value: 'query'},
+        {label: 'Response', value: 'response'},
+    ]}>
+<TabItem value="query">
+
+```jsx
+    query QueryForENS{
+        identity(address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c", network: ETH) {
+            domain
+        }
+    }
+```
+
+</TabItem>
+<TabItem value="response">
+
+```jsx
+    {
+        "data": {
+            "identity": {
+            "domain": "cyberlab.eth"
+            }
+        }
+    }
+```
+
+</TabItem>
+</Tabs>
+
+
+### Write the first query
+Write the query
+
+Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/endpoints/).
+
+```jsx title="/src/queries/GetIdentity.js"
+import { gql, useQuery } from "@apollo/client";
+import { DEMO_ADDRESS } from "../helpers/constants";
+
+export const GET_IDENTITY = gql`
+    query($address: String!) {
+        identity(address: $address) {
+            domain
+            social {
+                twitter
+            }
+            followerCount
+            followingCount
+        }
+    }
+`;
+
+export default function GetIdentity() {
+    return useQuery(GET_IDENTITY, {
+        variables: {
+                address: DEMO_ADDRESS,
+            },
+        }).data;
+}
+```
