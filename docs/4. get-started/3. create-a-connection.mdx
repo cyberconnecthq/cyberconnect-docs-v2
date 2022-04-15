@@ -15,6 +15,12 @@ Connecting to the application is a simple process that can be accomplished with 
 
 1. Write a simple `isMetaMaskInstalled` check function to verify that the user has the MetaMask wallet installed:
 
+:::info
+
+You'll have to declare both `Window` and `Provider` interfaces in order to be able to read the `window.ethereum` provider and pass it as an argument.
+
+:::
+
 ```jsx title="/src/components/ConnectButton.tsx"
 // highlight-start
 declare global {
@@ -162,13 +168,7 @@ function ConnectButton() {
 export default ConnectButton;
 ```
 
-That's it! Our `ConnectButton` component is now completed! You can check out the result for yourself in the sandbox below:
-
-<iframe src="https://codesandbox.io/embed/get-started-fvecwy?fontsize=14&hidenavigation=1&theme=dark"
-  title="get-started"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+That's it! Your `ConnectButton` component is now completed and your user can now connect to your app using the MetaMask wallet!
 
 ## Create a follow button
 
@@ -192,17 +192,6 @@ import CyberConnect, {
 
 ```jsx title="/src/components/FollowButton.tsx"
 import CyberConnect, { Env, Blockchain } from "@cyberlab/cyberconnect";
-
-declare global {
-  interface Window {
-    ethereum: Provider;
-  }
-}
-
-interface Provider {
-  isMetaMask: boolean;
-  request: (request: { method: string; params?: Array<any> }) => Promise<any>;
-}
 
 // highlight-start
 const cyberConnect = new CyberConnect({
@@ -236,27 +225,10 @@ function FollowButton() {
 export default FollowButton;
 ```
 
-:::note
-
-You'll have to declare both `Window` and `Provider` interfaces in order to be able to read the `window.ethereum` provider and pass it as an argument.
-
-:::
-
 4. Using the same approach as the one with `ConnectButton`, now will write the logic for the connection (a.k.a. follow) inside the `handleOnClick` function and assign it to the `onClick` handler on the `button` element:
 
 ```jsx title="/src/components/FollowButton.tsx"
 import CyberConnect, { Env, Blockchain } from "@cyberlab/cyberconnect";
-
-declare global {
-  interface Window {
-    ethereum: Provider;
-  }
-}
-
-interface Provider {
-  isMetaMask: boolean;
-  request: (request: { method: string; params?: Array<any> }) => Promise<any>;
-}
 
 const cyberConnect = new CyberConnect({
   namespace: "CyberConnect",
@@ -292,10 +264,12 @@ function FollowButton() {
 export default FollowButton;
 ```
 
-That's a wrap! Your `FollowButton` is now complete and your users are able to connect with other addresses on the Ethereum network. You can play around with the code in the sandbox:
+That's a wrap! Your `FollowButton` is now complete and your users are able to connect with other addresses on the Ethereum network.
 
-<iframe src="https://codesandbox.io/embed/follow-button-kldd5u?fontsize=14&hidenavigation=1&theme=dark"
-  title="follow-button"
+You find the entire code and play around with it in the sandbox:
+
+<iframe src="https://codesandbox.io/embed/get-started-fvecwy?fontsize=14&hidenavigation=1&theme=dark"
+  title="get-started"
   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
@@ -303,4 +277,3 @@ That's a wrap! Your `FollowButton` is now complete and your users are able to co
 Congrats! You've officialy created your first connection using the CyberConnect SDK! 🎉
 
 You're now ready to move on to the next step and implement the Social Verifier in your application.
-
