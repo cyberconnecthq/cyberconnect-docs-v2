@@ -6,64 +6,89 @@ sidebar_label: Verify a Twitter Account
 sidebar_position: 4
 ---
 
-In this section we'll go throw verifying a Twitter handle..
+In this section we'll go throw verifying a Twitter account.
 
-First we need to sign and send a Tweet
+First, you need to make sure that the user connect to your application. This step is identical to [Connecting to the app](/get-started/create-a-connection/) described in the previous section.
 
-```jsx live
-function TweetButton() { 
-    const handleOnClick = async () => {
-        // Get the MetaMask wallet address
-        const accounts = await window.ethereum.request({
-            method: "eth_requestAccounts"
-        });
+Next up, you'll need to create the `TweetButton` that will allow the user to easily post on social media a message that will contain a signature `sig` that we'll later on verify.
 
-        // Generate the signature
-        const sig = await twitterAuthorize(window.ethereum, accounts[0]);
+1. Install the package and import it in your app:
+```bash npm2yarn
+npm install @cyberlab/social-verifier
+```
 
-        // The message that the user posts on Twitter
-        const message = `Verifying my Web3 identity on @cyberconnecthq: %23LetsCyberConnect %0A ${sig}`;
+```jsx title="/src/components/TweetButton.tsx"
+import { twitterAuthorize } from "@cyberlab/social-verifier";
+```
 
-        // Open new window so that the user can post on Twitter
-        window.open(`https://twitter.com/intent/tweet?text=${message}`, "_blank");
-    }
-    
-    return (
-        <button
-            className="tweetButton"
-            onClick={handleOnClick}
-        >Tweet message</button>
-    );
+2. Write the logic for the button in the `handleOnClick` function:
+```jsx title="/src/components/TweetButton.tsx"
+const handleOnClick = async () => {
+  // Get the MetaMask wallet address
+  const accounts = await window.ethereum.request({
+      method: "eth_requestAccounts"
+  });
+
+  // Generate the signature
+  const sig = await twitterAuthorize(window.ethereum, accounts[0]);
+
+  // The message that the user posts on Twitter
+  const message = `Verifying my Web3 identity on @cyberconnecthq: %23LetsCyberConnect %0A ${sig}`;
+
+  // Open new window so that the user can post on Twitter
+  window.open(`https://twitter.com/intent/tweet?text=${message}`, "_blank");
 }
 ```
 
-Then we verify the account
-
-```jsx live
-function VerifyButton() { 
-    const handleOnClick = async () => {  
-        // Get the MetaMask wallet address
-        const accounts = await window.ethereum.request({
-            method: "eth_requestAccounts"
-        });
-
-        // Prompt to enter the Twitter handle
-        const handle = prompt("Enter your Twitter handle:");
-
-        // Verify the Twitter account
-        try {
-            await twitterVerify(accounts[0], handle);
-            alert(`Success: you've verified ${handle}!`);
-        } catch (error) {
-            alert(`Error: ${error.message}`);
-        }
-    }
-    
-    return (
-        <button
-            className="verifyButton"
-            onClick={handleOnClick}
-        >Verify Twitter</button>
-    );
-}
+3. Assign it to the `onClick` handler on the `button` element:
+```jsx title="/src/components/TweetButton.tsx"
+  <button className="tweetButton" onClick={handleOnClick}>
+    Tweet message
+  </button>
 ```
+
+Well done! Now the user can quickly post on Twitter. Now all you need to do is to create `VerifyButton` component so that the verification is complete.
+
+1. Import the `twitterVerify` method at the top:
+
+```jsx title="/src/components/VerifyButton.tsx"
+import { twitterVerify } from "@cyberlab/social-verifier";
+```
+
+2. Same as you did for the previous button, write the login inside the `handleOnClick` function:
+
+```jsx title="/src/components/VerifyButton.tsx"
+const handleOnClick = async () => {
+  // Get the MetaMask wallet address
+  const accounts = await window.ethereum.request({
+    method: "eth_requestAccounts"
+  });
+
+  // Prompt to enter the Twitter handle
+  const handle = prompt("Enter your Twitter handle:");
+
+  // Verify the Twitter account
+  try {
+    await twitterVerify(accounts[0], handle);
+    alert(`Success: you've verified ${handle}!`);
+  } catch (error) {
+    alert(`Error: ${error.message}`);
+  }
+};
+```
+
+3. Now finish up the component by assigning it to the `button` element:
+
+```jsx title="/src/components/VerifyButton.tsx"
+  <button className="verifyButton" onClick={handleOnClick}>
+    Verify Twitter
+  </button>
+```
+
+Good job! Now you've completed all the steps for implementing the Social Verifier in your application. You can play around with the code in the sandbox below:
+
+<iframe src="https://codesandbox.io/embed/verify-a-twitter-account-d4ddmt?fontsize=14&hidenavigation=1&theme=dark"
+    title="verify-a-twitter-account"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
