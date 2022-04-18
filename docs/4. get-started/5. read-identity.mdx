@@ -6,69 +6,38 @@ sidebar_label: Read Identity
 sidebar_position: 5
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+In this section you'll learn how to write a query in order to read the identity.
 
-<Tabs
-    defaultValue='query'
-    values={[
-        {label: 'Query', value: 'query'},
-        {label: 'Response', value: 'response'},
-    ]}>
-<TabItem value="query">
-
-```jsx
-    query QueryForENS{
-        identity(address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c", network: ETH) {
-            domain
-        }
-    }
+### Install the necessary dependencies
+```bash npm2yarn
+npm install graphql graphql-request
 ```
 
-</TabItem>
-<TabItem value="response">
-
-```jsx
-    {
-        "data": {
-            "identity": {
-            "domain": "cyberlab.eth"
-            }
-        }
-    }
+### Initialize the GraphQL Client
+```jsx title="/src/queries/GetIdentity.tsx"
+const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 ```
 
-</TabItem>
-</Tabs>
+### Write the query
 
+```jsx title="/src/queries/GetIdentity.tsx"
+export const GET_IDENTITY = gql`
+  query($address: String!) {
+    identity(address: $address) {
+      domain
+      followerCount
+      followingCount
+    }
+  }
+`;
+```
 
-### Write the first query
-Write the query
+You can see the full code in the playground where you can change the variables or write a new query:
+
+<iframe src="https://codesandbox.io/embed/read-identity-2zjn9k?fontsize=14&hidenavigation=1&theme=dark"
+    title="read-identity"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
-
-```jsx title="/src/queries/GetIdentity.js"
-import { gql, useQuery } from "@apollo/client";
-import { DEMO_ADDRESS } from "../helpers/constants";
-
-export const GET_IDENTITY = gql`
-    query($address: String!) {
-        identity(address: $address) {
-            domain
-            social {
-                twitter
-            }
-            followerCount
-            followingCount
-        }
-    }
-`;
-
-export default function GetIdentity() {
-    return useQuery(GET_IDENTITY, {
-        variables: {
-                address: DEMO_ADDRESS,
-            },
-        }).data;
-}
-```
