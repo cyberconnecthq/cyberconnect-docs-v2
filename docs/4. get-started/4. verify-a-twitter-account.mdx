@@ -36,7 +36,7 @@ const handleOnClick = async () => {
   const message = `Verifying my Web3 identity on @cyberconnecthq: %23LetsCyberConnect %0A ${sig}`;
 
   // Open new window so that the user can post on Twitter
-  window.open(`https://twitter.com/intent/tweet?text=${message}`, "_blank");
+  window.open(`https://twitter.com/compose/tweet?text=${message}`, "_blank");
 }
 ```
 
@@ -72,7 +72,7 @@ const handleOnClick = async () => {
     await twitterVerify(accounts[0], handle);
     alert(`Success: you've verified ${handle}!`);
   } catch (error) {
-    alert(`Error: ${error.message}`);
+    console.error(error.message);
   }
 };
 ```
