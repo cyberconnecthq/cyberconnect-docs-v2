@@ -6,39 +6,47 @@ sidebar_label: Read Connections
 sidebar_position: 6
 ---
 
-Now we read the connections
+In this section you'll learn how to write a query in order to read the connections.
+
+### Install the necessary dependencies
+```bash npm2yarn
+npm install graphql graphql-request
+```
+
+### Initialize the GraphQL Client
+```jsx title="/src/queries/GetConnections.tsx"
+const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
+```
+
+### Write the query
+
+```jsx title="/src/queries/GetConnections.tsx"
+const GET_CONNECTIONS = gql`
+  query($address: String!, $first: Int) {
+    identity(address: $address) {
+      followings(first: $first) {
+        list {
+          address
+          domain
+        }
+      }
+      followers(first: $first) {
+        list {
+          address
+          domain
+        }
+      }
+    }
+  }
+`;
+```
+
+You can see the full code in the playground where you can change the variables or write a new query:
+
+<iframe src="https://codesandbox.io/embed/read-connections-fk75zg?fontsize=14&hidenavigation=1&theme=dark"
+    title="read-connections"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
-
-```jsx title="/src/queries/GetConnections.js"
-import { gql, useQuery } from "@apollo/client";
-import { DEMO_ADDRESS } from "../helpers/constants";
-
-const GET_CONNECTIONS = gql`
-    query($address: String!) {
-        identity(address: $address, network: ETH) {
-            followings{
-                list {
-                    address
-                    domain
-                }
-            }
-            followers{
-                list {
-                    address
-                    domain
-                }
-            }
-        }
-    }
-`;
-
-export default function GetConnections() {
-    return useQuery(GET_CONNECTIONS, {
-        variables: {
-                address: DEMO_ADDRESS,
-                first: 5,
-            },
-        }).data;
-}
-```
