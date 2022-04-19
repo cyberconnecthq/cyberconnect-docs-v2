@@ -1,0 +1,21 @@
+.connectCard {
+  width: 100%;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.connectCardIcon svg {
+  width: auto;
+  height: 34px;
+}
+
+.connectCardTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.connectCards {
+  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+  margin-bottom: 20px;
+}
