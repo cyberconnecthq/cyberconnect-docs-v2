@@ -4,7 +4,7 @@
  * work well for content-centric websites.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
 
 /* You can override the default Infima variables here. */
 :root {
@@ -15,7 +15,7 @@
   --color-white: #ffffff;
   --color-lightgray: rgba(246, 248, 250, 1);
   --color-powderblue: #C7E2F0;
-  --font-family-primary: 'Outfit', sans-serif;
+  --font-family-primary: 'Nunito Sans', sans-serif;
   --ifm-color-primary: var(--color-black);
   --ifm-color-primary-dark: var(--color-black);
   --ifm-color-primary-darker: var(--color-black);
@@ -51,7 +51,7 @@ button {
 code {
   background-color: var(--color-lightgray);
   border: 1px solid var(--ifm-color-emphasis-300);
-  font-size: 1rem;
+  font-size: 0.9rem;
   background: #fcfcfc;
   padding: 4px 8px;
 }
@@ -82,7 +82,7 @@ p, article li {
 }
 
 strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 ::selection {
@@ -106,11 +106,11 @@ table tbody tr:nth-child(2n) {
 
 .markdown a {
   text-decoration: underline;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .markdown a:hover {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .theme-code-block {
@@ -118,7 +118,7 @@ table tbody tr:nth-child(2n) {
 }
 
 .tabs__item[aria-selected="true"] {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* NAVBAR */
@@ -142,7 +142,7 @@ table tbody tr:nth-child(2n) {
 .navbar__title {
   color: var(--color-white);
   font-size: 1.4em;
-  font-weight: 500;
+  font-weight: 600;
   font-family: var(--font-family-primary);
 }
 
@@ -151,12 +151,9 @@ aside {
   background-color: var(--color-lightgray);
 }
 
-.menu__link--active {
-  font-weight: 400;
-}
-
+.menu__link--active,
 .table-of-contents__link--active {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* CARDS */
