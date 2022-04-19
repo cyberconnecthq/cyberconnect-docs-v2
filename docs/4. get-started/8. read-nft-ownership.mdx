@@ -22,15 +22,15 @@ const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 
 ```jsx title="/src/queries/GetNFTOwnership.tsx"
 export const GET_NFT_OWNERSHIP = gql`
-  query($contract: String!, $tokenId: String) {
-    nftOwners(contract: $contract, tokenId: $tokenId) {
-      tokenId
-      owner
-      twitter {
-        handle
-      }
+    query($contract: String!, $tokenId: String) {
+        nftOwners(contract: $contract, tokenId: $tokenId) {
+            tokenId
+            owner
+            twitter {
+                handle
+            }
+        }
     }
-  }
 `;
 ```
 

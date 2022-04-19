@@ -22,22 +22,22 @@ const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 
 ```jsx title="/src/queries/GetConnections.tsx"
 const GET_CONNECTIONS = gql`
-  query($address: String!, $first: Int) {
-    identity(address: $address) {
-      followings(first: $first) {
-        list {
-          address
-          domain
+    query($address: String!, $first: Int) {
+        identity(address: $address) {
+            followings(first: $first) {
+                list {
+                    address
+                    domain
+                }
+            }
+            followers(first: $first) {
+                list {
+                    address
+                    domain
+                }
+            }
         }
-      }
-      followers(first: $first) {
-        list {
-          address
-          domain
-        }
-      }
     }
-  }
 `;
 ```
 

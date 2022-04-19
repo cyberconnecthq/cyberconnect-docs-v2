@@ -22,18 +22,18 @@ const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 
 ```jsx title="/src/queries/GetRecommendations.tsx"
 export const GET_RECOMMENDATIONS = gql`
-  query($address: String!) {
-    recommendations(address: $address) {
-      result
-      data {
-        list {
-          address
-          domain
-          recommendationReason
+    query($address: String!) {
+        recommendations(address: $address) {
+            result
+            data {
+                list {
+                    address
+                    domain
+                    recommendationReason
+                }
+            }
         }
-      }
     }
-  }
 `;
 ```
 

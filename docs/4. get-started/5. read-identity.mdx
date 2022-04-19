@@ -22,13 +22,13 @@ const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 
 ```jsx title="/src/queries/GetIdentity.tsx"
 export const GET_IDENTITY = gql`
-  query($address: String!) {
-    identity(address: $address) {
-      domain
-      followerCount
-      followingCount
+    query($address: String!) {
+        identity(address: $address) {
+            domain
+            followerCount
+            followingCount
+        }
     }
-  }
 `;
 ```
 
