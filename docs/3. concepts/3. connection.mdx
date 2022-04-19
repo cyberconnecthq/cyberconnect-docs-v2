@@ -1,0 +1,19 @@
+---
+id: connection
+title: Connection
+slug: /concepts/connection/
+sidebar_label: Connection
+sidebar_position: 3
+---
+
+The CyberConnect Protocol allows users to form social connections that are recorded and verified on blockchain networks. The protocol supports different types of connections for different purposes:
+
+import ConnectCards from "@site/src/components/ConnectCards";
+
+<ConnectCards />
+
+Developers can incorporate various connection modules to diversify the user experience by using the [CyberConnect SDK](/cyberconnect-sdk/connect-with-sdk/).
+
+## How does it work?
+
+Let's take "follow" as an example. A user clicking the "follow" button in an application invokes the "connect" function in the CyberConnect JavaScript library. If this is their first connection in the current session, they need to manually sign the message. The CyberConnect library then generates and stores a derived key to authorize writing connection data onto IPFS and Arweave storage.
