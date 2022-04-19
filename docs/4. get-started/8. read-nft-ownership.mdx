@@ -6,27 +6,40 @@ sidebar_label: Read NFT Ownership
 sidebar_position: 8
 ---
 
-Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
+In this section you'll learn how to write a query in order to read the NFT ownership.
 
-```jsx title="/src/queries/GetNFTOwnership.js"
-import { gql, useQuery } from "@apollo/client";
-import { DEMO_CONTRACT, DEMO_TOKEN_ID } from "../helpers/constants";
-
-export const GET_NFT_OWNERSHIP = gql`
-    query($contract: String!, $tokenId: String){
-        nftOwners(contract: $contract, tokenId: $tokenId){
-            tokenId
-            owner
-        }
-    }
-`;
-
-export default function GetNFTOwnwrship() {
-    return useQuery(GET_NFT_OWNERSHIP, {
-        variables: {
-                contract: DEMO_CONTRACT,
-                tokenId: DEMO_TOKEN_ID
-            },
-        }).data;
-}
+### Install the necessary dependencies
+```bash npm2yarn
+npm install graphql graphql-request
 ```
+
+### Initialize the GraphQL Client
+```jsx title="/src/queries/GetNFTOwnership.tsx"
+const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
+```
+
+### Write the query
+
+```jsx title="/src/queries/GetNFTOwnership.tsx"
+export const GET_NFT_OWNERSHIP = gql`
+  query($contract: String!, $tokenId: String) {
+    nftOwners(contract: $contract, tokenId: $tokenId) {
+      tokenId
+      owner
+      twitter {
+        handle
+      }
+    }
+  }
+`;
+```
+
+You can see the full code in the playground where you can change the variables or write a new query:
+
+<iframe src="https://codesandbox.io/embed/read-nft-ownership-ffmeov?fontsize=14&hidenavigation=1&theme=dark"
+    title="read-nft-ownership"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
