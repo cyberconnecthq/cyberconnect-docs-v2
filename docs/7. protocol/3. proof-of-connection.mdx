@@ -18,11 +18,11 @@ In this page, we use an example from [CyberConnect Solana Page](http://sol.cyber
 
 When a user is going to mutate a connection status (e.g. connect to someone), and there is no existing signing key or all signing keys existing have expired, the client-side application will initiate the Key Generation process.
 
-An ES256 key pair will be randomly generated from the client side. In order to identify the user, the signing key will be authorized through the MetaMask popup. In the example, the data of “SIGNINGKEY” is created in this step.
+An ES256 key pair will be randomly generated from the client side. In order to identify the user, the signing key will be authorized through the MetaMask popup. In the example, the data of "SIGNINGKEY" is created in this step.
 
 ![](../../static/img/docs/protocol/proof1.png)
 
-The public key of the signing key pair will be uploaded and stored in the CyberConnect Indexer with “SIGNINGKEYAUTH” info. This is for the indexer to examine that the message sender is the address user. The private key of the signing key pair will be safely stored in local LevelDB after encryption.
+The public key of the signing key pair will be uploaded and stored in the CyberConnect Indexer with "SIGNINGKEYAUTH" info. This is for the indexer to examine that the message sender is the address user. The private key of the signing key pair will be safely stored in local LevelDB after encryption.
 
 ## Proof Generation
 
