@@ -32,11 +32,11 @@ The mutation operation of the user can be parsed as a format of JSON, for exampl
 
 ```json
 {
-  "from": "0x8ddD03b89116ba89E28Ef703fe037fF77451e38E",
-  "to": "0x6eB98FC865C30Be5e8c10902CA84De06665573C0",
-  "operation": "follow",
-  "namespace": "CyberConnect",
-  "timestamp": "1642414321"
+    "from": "0x8ddD03b89116ba89E28Ef703fe037fF77451e38E",
+    "to": "0x6eB98FC865C30Be5e8c10902CA84De06665573C0",
+    "operation": "follow",
+    "namespace": "CyberConnect",
+    "timestamp": "1642414321"
 }
 ```
 
@@ -60,7 +60,7 @@ Any proof from CyberConnect Proof of Connection can be validated by any third pa
 
 ### Step 1 - Check SIGNINGKEYAUTH
 
-To validate a proof, first of all, you need to ensure the signing key has been authorized by the user’s wallet. You should validate if the signature in the proof matches the signature calculated on your end based on the user’s address and SigningKeyMessage.
+To validate a proof, first of all, you need to ensure the signing key has been authorized by the user's wallet. You should validate if the signature in the proof matches the signature calculated on your end based on the user's address and SigningKeyMessage.
 
 $$
 Input: calculatedSigningKeySig(userAddr, signingKeyMessage), signingKeySig
