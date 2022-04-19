@@ -155,6 +155,10 @@ aside {
   font-weight: 400;
 }
 
+.table-of-contents__link--active {
+  font-weight: 500;
+}
+
 /* CARDS */
 .card {
   background-color: var(--color-white);
