@@ -56,9 +56,9 @@ code {
   padding: 4px 8px;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: var(--font-family-primary);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 h1 {
