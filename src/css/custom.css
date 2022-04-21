@@ -57,20 +57,22 @@ code {
 }
 
 h1, h2, h3 {
+  color: var(--color-black);
   font-family: var(--font-family-primary);
   font-weight: 600;
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 }
 
 h2 {
-  background-color: var(--color-lightgray);
   border-radius: 8px;
-  color: var(--color-black);
-  font-size: 1.6rem;
+  color: #2C2C2C;
+  background: #fff;
+  box-shadow: 0px 1px 1px rgb(15 15 15 / 10%), inset 0 0 0 1px rgb(15 15 15 / 30%);
   padding: 10px 20px;
+  font-size: 1.6rem;
 }
 
 main {
