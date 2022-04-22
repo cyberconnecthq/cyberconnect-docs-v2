@@ -7,19 +7,22 @@ sidebar_position: 5
 description: In this section you'll learn how to write a query in order to read the identity.
 ---
 
-In this section you'll learn how to write a query in order to read the [identity](/concepts/identity/).
+:::tip
 
-### Install the necessary dependencies
-```bash npm2yarn
-npm install graphql graphql-request
-```
+[Install the GraphQL packages](/get-started/quick-setup/) before starting this section.
+
+:::
+
+In this section, we'll help you write a simple query to read a user's [identity](/concepts/identity/) in the social graph.
+
+1. Initialize the GraphQL client:
 
 ### Initialize the GraphQL Client
 ```jsx title="/src/queries/GetIdentity.tsx"
 const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 ```
 
-### Write the query
+2. Write a query to get the `domain`, `followerCount`, and `followingCount` of the user with address:
 
 ```jsx title="/src/queries/GetIdentity.tsx"
 export const GET_IDENTITY = gql`
@@ -33,7 +36,11 @@ export const GET_IDENTITY = gql`
 `;
 ```
 
-You can test or write your own query in our [Playground](/cyberconnect-api/playground/) or simply make changes in the sandbox below:
+Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
+
+## Sandbox
+
+You can write your own query in the [Playground](/cyberconnect-api/playground/) or experiment with our code in the sandbox below!
 
 <iframe src="https://codesandbox.io/embed/read-identity-2zjn9k?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split"
     title="read-identity"
@@ -41,4 +48,4 @@ You can test or write your own query in our [Playground](/cyberconnect-api/playg
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
+
