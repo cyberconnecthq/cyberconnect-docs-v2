@@ -130,6 +130,13 @@ table tbody tr:nth-child(2n) {
   font-weight: 600;
 }
 
+.tabs-container li {
+  height: 50px;
+  line-height: 36px;
+  padding: 6px 12px;
+  margin: 0;
+}
+
 /* NAVBAR */
 .navbar__logo img {
   transform: scale(0.70);

@@ -25,7 +25,7 @@
 }
 
 .cardDetails {
-  height: calc(100% - 238px);
+  height: calc(100% - 228px);
   padding: 20px;
 }
 
@@ -35,7 +35,7 @@
 
 .cardTags {
   display: flex;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .cardTag {

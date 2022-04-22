@@ -10,11 +10,12 @@
 }
 
 .usecaseCardTitle {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 600;
+  margin: 4px 0px;
   text-transform: uppercase;
 }
 
 .usecaseCards {
-  grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
