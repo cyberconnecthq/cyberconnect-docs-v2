@@ -49,9 +49,20 @@ There are 5 fields for each object in `list`:
 
 ## Example
 
-**query**
+This is an example of a query to fetch recommendations data that you can also test out in the [Playground](/cyberconnect-api/playground/):
 
-```graphql
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
 query QueryRecommendation {
     recommendations(
         address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c"
@@ -79,7 +90,8 @@ query QueryRecommendation {
 }
 ```
 
-**returned result**
+</TabItem>
+<TabItem value="json">
 
 ```json
 {
@@ -107,3 +119,6 @@ query QueryRecommendation {
     }
 }
 ```
+
+</TabItem>
+</Tabs>

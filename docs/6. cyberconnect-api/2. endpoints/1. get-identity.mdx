@@ -43,9 +43,20 @@ With correct input, you can retrieve a `UserIdentity` object with the following 
 
 ## Retrieve Single Field
 
-If you only need to query one address' ENS, you can run:
+If you only need to query one address' ENS, you can run the query below in the [Playground](/cyberconnect-api/playground/):
 
-```graphql
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
 query QueryForENS {
     identity(
         address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c"
@@ -56,7 +67,8 @@ query QueryForENS {
 }
 ```
 
-and you will get:
+</TabItem>
+<TabItem value="json">
 
 ```json
 {
@@ -68,6 +80,9 @@ and you will get:
 }
 ```
 
+</TabItem>
+</Tabs>
+
 You can also use `social`, `avatar`, or other fields to get different information about an account.
 
 ## Retrieve Follower, Following, Friend Lists
@@ -78,9 +93,17 @@ For detail, please check [Namespace](/resources/terminology/namespace/) and [Pag
 
 ### Followers Example
 
-We can use this snippet for address' follower list query:
+You can use this snippet for address' follower list query directly in the [Playground](/cyberconnect-api/playground/):
 
-```graphql
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
 query FullIdentityQuery {
     identity(
         address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c"
@@ -106,7 +129,8 @@ query FullIdentityQuery {
 }
 ```
 
-We can get a JSON result like this:
+</TabItem>
+<TabItem value="json">
 
 ```json
 {
@@ -135,17 +159,26 @@ We can get a JSON result like this:
 }
 ```
 
+</TabItem>
+</Tabs>
+
 ## Retrieve All Fields
 
 ### Full Example
 
 You can try Identity API in the [Playground](/cyberconnect-api/playground/) page. Open the page, make sure the URL is correct, copy and paste the following query into the input.
 
-**Example Query for Ethereum**
+We will take _cyberLab.eth_ as an example on the **Ethereum network**. To query the information of it, type:
 
-We take CyberLab.eth as an example. To query the information of it, type:
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
 
-```graphql
+```javascript
 query FullIdentityQuery {
     identity(
         address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c"
@@ -215,9 +248,8 @@ query FullIdentityQuery {
 }
 ```
 
-Run, and you are expected to see something like this:
-
-**Example returned result**
+</TabItem>
+<TabItem value="json">
 
 ```json
 {
@@ -320,3 +352,6 @@ Run, and you are expected to see something like this:
     }
 }
 ```
+
+</TabItem>
+</Tabs>

@@ -49,9 +49,20 @@ If `isFollowing` is true, `fromAddr` has followed `toAddr`.
 
 ### Fetch Proof Example
 
-To fetch proof data, simply run:
+This is an example of a query to fetch proof data that you can also test out in the [Playground](/cyberconnect-api/playground/):
 
-```graphql
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
 query ProofQuery {
     connections(
         fromAddr: "51je9UThqqhcZbVgY9kZgASthAVCafgqNGDaW3vpyXrr"
@@ -65,7 +76,8 @@ query ProofQuery {
 }
 ```
 
-The expected return would be:
+</TabItem>
+<TabItem value="json">
 
 ```json
 {
@@ -81,11 +93,22 @@ The expected return would be:
 }
 ```
 
+</TabItem>
+</Tabs>
+
 ### Fetch followStatus Example
 
-To fetch followStatus, run:
+This is an example of a query to fetch the followStatus that you can also test out in the [Playground](/cyberconnect-api/playground/):
 
-```graphql
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
 query FollowStatusQuery {
     connections(
         fromAddr: "51je9UThqqhcZbVgY9kZgASthAVCafgqNGDaW3vpyXrr"
@@ -102,7 +125,8 @@ query FollowStatusQuery {
 }
 ```
 
-The result should be:
+</TabItem>
+<TabItem value="json">
 
 ```json
 {
@@ -121,11 +145,22 @@ The result should be:
 }
 ```
 
+</TabItem>
+</Tabs>
+
 ### Full Example
 
-Try this query in the [Playground](/cyberconnect-api/playground/):
+This is a full example for the Connections query that you can also test out in the [Playground](/cyberconnect-api/playground/):
 
-```graphql
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
 query ConnectionsQuery {
     connections(
         fromAddr: "51je9UThqqhcZbVgY9kZgASthAVCafgqNGDaW3vpyXrr"
@@ -148,7 +183,8 @@ query ConnectionsQuery {
 }
 ```
 
-The expected result is:
+</TabItem>
+<TabItem value="json">
 
 ```json
 {
@@ -172,3 +208,6 @@ The expected result is:
     }
 }
 ```
+
+</TabItem>
+</Tabs>
