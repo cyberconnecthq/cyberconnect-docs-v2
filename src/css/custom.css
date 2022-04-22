@@ -14,7 +14,10 @@
   --color-black: #2C2C2C;
   --color-white: #ffffff;
   --color-lightgray: rgba(246, 248, 250, 1);
-  --color-powderblue: #C7E2F0;
+  --color-blue: #C7E2F0;
+  --color-pink: #F5CAE4;
+  --color-green: #E6F5CA;
+  --color-yellow: #FFF2AD;
   --font-family-primary: 'Nunito Sans', sans-serif;
   --ifm-color-primary: var(--color-black);
   --ifm-color-primary-dark: var(--color-black);
@@ -75,6 +78,10 @@ h2 {
   font-size: 1.6rem;
 }
 
+h4 {
+  font-size: 1.4rem;
+}
+
 main {
   min-height: calc(100vh - 60px);
 }
@@ -88,7 +95,7 @@ strong {
 }
 
 ::selection {
-  background: var(--color-powderblue);
+  background: var(--color-blue);
   color: var(--color-black);
 }
 
@@ -217,6 +224,7 @@ iframe {
   border: 0;
   border-radius: 6px;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 /* PLAYGROUND */

@@ -23,3 +23,51 @@
   font-size: 1.3rem;
   font-weight: 600;
 }
+
+.cardDetails {
+  height: calc(100% - 238px);
+  padding: 20px;
+}
+
+.cardText {
+  height: 100%;
+}
+
+.cardTags {
+  display: flex;
+  margin-top: 20px;
+}
+
+.cardTag {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-right: 6px;
+  padding: 0px 10px;
+}
+
+.cardTag div:first-child {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+}
+
+.cardTag[datatype="identity"] div:first-child {
+  background-color: var(--color-blue);
+}
+
+.cardTag[datatype="social"] div:first-child {
+  background-color: var(--color-pink);
+}
+
+.cardTag[datatype="NFT"] div:first-child {
+  background-color: var(--color-green);
+}
+
+.cardTag[datatype="tool"] div:first-child {
+  background-color: var(--color-yellow);
+}
