@@ -7,19 +7,21 @@ sidebar_position: 8
 description: In this section you'll learn how to write a query in order to read the NFT ownership.
 ---
 
-In this section you'll learn how to write a query in order to read the NFT ownership.
+:::tip
 
-### Install the necessary dependencies
-```bash npm2yarn
-npm install graphql graphql-request
-```
+[Install the GraphQL packages](/get-started/quick-setup/) before starting this section.
 
-### Initialize the GraphQL Client
-```jsx title="/src/queries/GetNFTOwnership.tsx"
+:::
+
+In this section, we'll help you write a simple query to read the ownership information of an NFT.
+
+1. Initialize the GraphQL client:
+
+```jsx title="/src/queries/GetConnections.tsx"
 const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 ```
 
-### Write the query
+2. Write a query to get the NFT's `tokenId`, its `owner`, and the owner's twitter `handle`:
 
 ```jsx title="/src/queries/GetNFTOwnership.tsx"
 export const GET_NFT_OWNERSHIP = gql`
@@ -35,12 +37,14 @@ export const GET_NFT_OWNERSHIP = gql`
 `;
 ```
 
-You can test or write your own query in our [Playground](/cyberconnect-api/playground/) or simply make changes in the sandbox below:
+Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
+
+## Sandbox
+
+You can write your own query in the [Playground](/cyberconnect-api/playground/) or experiment with our code in the sandbox below!
 
 <iframe src="https://codesandbox.io/embed/read-nft-ownership-ffmeov?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split"
     title="read-nft-ownership"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
-
-Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
