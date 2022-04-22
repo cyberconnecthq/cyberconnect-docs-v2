@@ -7,22 +7,29 @@ sidebar_position: 4
 description: In this section we'll go through verifying a Twitter account.
 ---
 
-In this section we'll go through verifying a Twitter account.
+:::tip
 
-First, you need to make sure that the user connect to your application. This step is identical to [Connecting to the app](/get-started/create-a-connection/) described in the previous section.
+[Install the CyberConnect Social Verifier](/get-started/quick-setup/) before starting this section.
 
-Next up, you'll need to create the `TweetButton` that will allow the user to easily post on social media a message that will contain a signature `sig` that we'll later on verify.
+:::
 
-1. Install the package and import it in your app:
-```bash npm2yarn
-npm install @cyberlab/social-verifier
-```
+In this section, we'll walk through how you can help users establish their credentials by verifying their social media accounts. We use **Twitter** as an example. 
+
+Before you start, make sure that the user's crypto wallet is connected to your application (follow instructions in [Connect with User Wallet](/get-started/create-a-connection/).
+
+
+## Create a Twitter Verification Button
+
+In this tutorial, we'll help you implement a simple `button` that user can click on and verify their Twitter account.
+
+1. Import the method `twitterAuthorize` into your application from the CyberConnect Social Verifier package.
 
 ```jsx title="/src/components/TweetButton.tsx"
 import { twitterAuthorize } from "@cyberlab/social-verifier";
 ```
 
-2. Write the logic for the button in the `handleOnClick` function:
+2. After clicking, the function `handleOnClick` in the component `VerifyButton` gets the user's wallet address, generates a signature and a message for user to post on their Twitter for verification, and opens up a new tab so that user can post the tweet:
+
 ```jsx title="/src/components/TweetButton.tsx"
 const handleOnClick = async () => {
     // Get the MetaMask wallet address
@@ -41,22 +48,25 @@ const handleOnClick = async () => {
 }
 ```
 
-3. Assign it to the `onClick` handler on the `button` element:
+3. Finish up our code by assigning the function `handleOnClick` to the handler `onClick` on the `button`:
+
 ```jsx title="/src/components/TweetButton.tsx"
 <button className="tweetButton" onClick={handleOnClick}>
     Tweet message
 </button>
 ```
 
-Well done! Now the user can quickly post on Twitter. Now all you need to do is to create `VerifyButton` component so that the verification is complete.
+## Verify the Twitter Account
 
-1. Import the `twitterVerify` method at the top:
+Next, we move on to complete the verification procedure.
+
+1. Import the method `twitterVerify` from the CyberConnect Social Verifier package:
 
 ```jsx title="/src/components/VerifyButton.tsx"
 import { twitterVerify } from "@cyberlab/social-verifier";
 ```
 
-2. Same as you did for the previous button, write the login inside the `handleOnClick` function:
+2. We'll help you implement another `button` that user can click on and complete the verification of their Twitter account. After clicking, the function `handleOnClick` in the component `VerifyButton` gets the user's wallet address, prompts user to enter their Twitter handle, and verifies their Twitter account:
 
 ```jsx title="/src/components/VerifyButton.tsx"
 const handleOnClick = async () => {
@@ -78,7 +88,7 @@ const handleOnClick = async () => {
 };
 ```
 
-3. Now finish up the component by assigning it to the `button` element:
+3. Finish up our code by assigning the function `handleOnClick` to the handler `onClick` on the `button`:
 
 ```jsx title="/src/components/VerifyButton.tsx"
 <button className="verifyButton" onClick={handleOnClick}>
@@ -86,7 +96,11 @@ const handleOnClick = async () => {
 </button>
 ```
 
-Good job! Now you've completed all the steps for implementing the Social Verifier in your application. You can play around with the code in the sandbox below:
+That's it! You've implemented a simple social verifier in your application. For more advanced features, learn more about the [CyberConnect Social Verifier](/cyberconnect-sdk/cyberconnect-social-verifier/).
+
+## Sandbox
+
+Check out the entire code from the tutorial and play around with it in the sandbox below!
 
 <iframe src="https://codesandbox.io/embed/verify-a-twitter-account-d4ddmt?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split"
     title="verify-a-twitter-account"
