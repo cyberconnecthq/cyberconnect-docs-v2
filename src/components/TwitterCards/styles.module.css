@@ -1,0 +1,14 @@
+.twitterCard {
+    width: 100%;
+}
+
+.twitterCard blockquote {
+    box-shadow: var(--box-shadow);
+    border-radius: 12px;
+    width: 100%;
+    padding: 20px;
+}
+
+.twitterCards {
+    grid-template-columns: repeat(auto-fit, minmax(388px, 1fr));
+}
