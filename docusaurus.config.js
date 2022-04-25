@@ -18,7 +18,12 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "cyberconnecthq",
   projectName: "cyberconnect-docs-v2",
-
+  scripts: [
+    {
+      src: "https://platform.twitter.com/widgets.js",
+      async: true,
+    },
+  ],
   presets: [
     [
       "classic",
