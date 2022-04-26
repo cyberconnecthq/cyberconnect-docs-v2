@@ -18,12 +18,7 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "cyberconnecthq",
   projectName: "cyberconnect-docs-v2",
-  scripts: [
-    {
-      src: "https://platform.twitter.com/widgets.js",
-      async: true,
-    },
-  ],
+
   presets: [
     [
       "classic",
@@ -99,6 +94,14 @@ const config = {
             content: "https://cyberconnect.me/assets/logo-black.svg",
           },
         ],
+      },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'U6TBC4Y6RX',
+        // Public API key: it is safe to commit it
+        apiKey: 'b9dbe26bb18f5da7a8823f718c0caa0e',
+        indexName: 'dev_docs-2',
+        searchPagePath: 'search',
       },
     }),
   stylesheets: [
