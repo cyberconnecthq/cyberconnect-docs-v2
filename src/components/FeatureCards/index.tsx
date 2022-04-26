@@ -12,12 +12,12 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'CyberConnect SDK',
-    path: '/cyberconnect-sdk/connect-with-sdk/',
+    path: '/cyberconnect-sdk/connect-with-js-sdk/',
     description: 'Everything you need to write connection data into the open social graph.'
   },
   {
     title: 'Social Verifier',
-    path: '/cyberconnect-sdk/cyberconnect-social-verifier/',
+    path: '/cyberconnect-sdk/connect-with-social-verifier/',
     description: 'Verify accounts from various social platforms.'
   },
   {
