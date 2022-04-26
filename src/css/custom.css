@@ -29,12 +29,6 @@
   --ifm-hover-overlay: rgba(246, 248, 250, 1);
   --ifm-color-emphasis-300: rgb(161 161 161 / 40%);
   --ifm-code-font-size: 95%;
-  /* --docsearch-highlight-color: #F5CAE4;
-  --docsearch-hit-color: red;
-  --docsearch-primary-color: green;
-  --docsearch-text-color: purple; */
-  /* --docsearch-primary-color: var(--ifm-color-primary);
-    --docsearch-text-color: var(--ifm-font-color-base); */
 }
 
 .docusaurus-highlight-code-line {
@@ -247,6 +241,10 @@ iframe[title="playground"] {
 }
 
 /* SEARCH */
+.navbar__items--right button.DocSearch-Button {
+  background-color: var(--color-lightgray);
+}
+
 .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-icon path,
 .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-Tree path,
 .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-action path {
