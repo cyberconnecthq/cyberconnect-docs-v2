@@ -26,7 +26,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/cyberconnecthq/cyberconnect-docs-v2",
+          editUrl: "https://github.com/cyberconnecthq/cyberconnect-docs-v2/edit/main",
           routeBasePath: "/",
           remarkPlugins: [
             [require("@docusaurus/remark-plugin-npm2yarn"), {sync: true}],
