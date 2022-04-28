@@ -37,16 +37,32 @@ const handleOnClick = async () => {
         method: "eth_requestAccounts"
     });
 
+    // Prompt to enter the Twitter handle
+    const handle = prompt("Enter your Twitter handle:");
+
+    // Check clause for handle
+    if (!handle) return;
+
+    // Update the state for handle
+    setHandle(handle);
+
     // Generate the signature
-    const sig = await twitterAuthorize(window.ethereum, accounts[0]);
+    const sig = await twitterAuthorize(window.ethereum, accounts[0], handle);
 
     // The message that the user posts on Twitter
     const message = `Verifying my Web3 identity on @cyberconnecthq: %23LetsCyberConnect %0A ${sig}`;
 
     // Open new window so that the user can post on Twitter
-    window.open(`https://twitter.com/compose/tweet?text=${message}`, "_blank");
-}
+    window.open(`https://twitter.com/intent/tweet?text=${message}`, "_blank");
+};
 ```
+
+:::caution
+
+In the Sandbox the new window popping up might get blocked by the Twitter API. If this is the case, copy the URL and paste it in a new tab.
+
+:::
+
 
 3. Finish up our code by assigning the function `handleOnClick` to the handler `onClick` on the `button`:
 
@@ -75,8 +91,8 @@ const handleOnClick = async () => {
         method: "eth_requestAccounts"
     });
 
-    // Prompt to enter the Twitter handle
-    const handle = prompt("Enter your Twitter handle:");
+    // Check clause for handle
+    if (!handle) return;
 
     // Verify the Twitter account
     try {
