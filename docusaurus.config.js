@@ -38,10 +38,6 @@ const config = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-        googleAnalytics: {
-          trackingID: 'G-2CT3F8LQNH',
-          anonymizeIP: true,
-        },
       }),
     ],
   ],
@@ -121,7 +117,7 @@ const config = {
     {
       src: "https://plausible.io/js/plausible.js",
       defer: true,
-      dataDomain: "cyberconnecthq.github.io/cyberconnect-docs-v2"
+      "data-domain": "cyberconnecthq.github.io/cyberconnect-docs-v2"
     }
   ]
 };
