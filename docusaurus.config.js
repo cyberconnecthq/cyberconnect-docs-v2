@@ -41,6 +41,9 @@ const config = {
       }),
     ],
   ],
+  plugins: [
+    "docusaurus-plugin-hotjar",
+  ],
   themeConfig:
     /** @type {import("@docusaurus/preset-classic").ThemeConfig} */
     ({
@@ -65,35 +68,37 @@ const config = {
         defaultMode: "light",
         disableSwitch: true,
       },
-      themeConfig: {
-        metadata: [
-          // Keywords
-          { name: "keywords", content: "cyberconnect, protocol, social graph, blockchain, web3" },
-          // OG
-          { name: "og:title", content: "CyberConnect Developer Center" },
-          {
-            name: "og:description",
-            content: "The comprehensive guide for CyberConnect protocol.",
-          },
-          { name: "og:type", content: "website" },
-          { name: "og:url", content: "https://docs.cyberconnect.me/" },
-          {
-            name: "og:image",
-            content: "https://cyberconnect.me/assets/logo-black.svg",
-          },
-          // Twitter
-          { name: "twitter:title", content: "CyberConnect Developer Center" },
-          {
-            name: "twitter:description",
-            content: "The comprehensive guide for CyberConnect protocol.",
-          },
-          { name: "twitter:card", content: "summary" },
-          { name: "twitter:site", content: "@CyberConnectHQ" },
-          {
-            name: "twitter:image",
-            content: "https://cyberconnect.me/assets/logo-black.svg",
-          },
-        ],
+      metadata: [
+        // Keywords
+        { name: "keywords", content: "cyberconnect, protocol, social graph, blockchain, web3" },
+        // OG
+        { name: "og:title", content: "CyberConnect Developer Center" },
+        {
+          name: "og:description",
+          content: "The comprehensive guide for CyberConnect protocol.",
+        },
+        { name: "og:type", content: "website" },
+        { name: "og:url", content: "https://docs.cyberconnect.me/" },
+        {
+          name: "og:image",
+          content: "https://cyberconnect.me/assets/logo-black.svg",
+        },
+        // Twitter
+        { name: "twitter:title", content: "CyberConnect Developer Center" },
+        {
+          name: "twitter:description",
+          content: "The comprehensive guide for CyberConnect protocol.",
+        },
+        { name: "twitter:card", content: "summary" },
+        { name: "twitter:site", content: "@CyberConnectHQ" },
+        {
+          name: "twitter:image",
+          content: "https://cyberconnect.me/assets/logo-black.svg",
+        },
+      ],
+      hotjar: {
+        // HotJar Site ID
+        applicationId: "2948142",
       },
       algolia: {
         // The application ID provided by Algolia
@@ -114,6 +119,7 @@ const config = {
     },
   ],
   scripts: [
+    // Plausible.io script
     {
       src: "https://plausible.io/js/plausible.js",
       defer: true,
