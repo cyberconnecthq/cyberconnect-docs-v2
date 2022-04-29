@@ -117,6 +117,13 @@ const config = {
       crossorigin: "anonymous",
     },
   ],
+  scripts: [
+    {
+      src: "https://plausible.io/js/plausible.js",
+      defer: true,
+      dataDomain: "cyberconnecthq.github.io/cyberconnect-docs-v2"
+    }
+  ]
 };
 
 module.exports = config;
