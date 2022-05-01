@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
-import LinkSvg from '../../../static/img/docs/link.svg';
+import LinkSvg from '@site/static/img/v1/link.svg';
 
 type FeatureItem = {
   title: string;
