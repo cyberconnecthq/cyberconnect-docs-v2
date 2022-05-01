@@ -1,8 +1,8 @@
 ---
-id: get-recommendation
-title: Get Recommendation
-slug: /cyberconnect-api/endpoints/get-recommendation/
-sidebar_label: Get Recommendation
+id: recommendations
+title: Recommendations
+slug: /cyberconnect-api/endpoints/recommendations/
+sidebar_label: Recommendations
 sidebar_position: 3
 description: We've built a recommendation index into our protocol for general follow suggestions. The index jumpstarts by aggregating connections from open data sources, including Ethereum blockchain, Foundation.app, Rarible, etc.
 ---
@@ -18,7 +18,7 @@ You can find the step by step instructions on how to set up GraphQL client in yo
 The definition of Recommendation query is:
 
 ```graphql
-recommendations (address String!, filter RecommFilter, network Network, first Int, after String) RecommendationResponse!
+recommendations (address: String!, filter: RecommFilter, network: Network, first: Int, after: String) RecommendationResponse!
 ```
 
 For input params:
@@ -51,8 +51,8 @@ There are 5 fields for each object in `list`:
 
 This is an example of a query to fetch recommendations data that you can also test out in the [Playground](/cyberconnect-api/playground/):
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 <Tabs
     defaultValue="javascript"
@@ -95,28 +95,28 @@ query QueryRecommendation {
 
 ```json
 {
-    "data": {
-        "recommendations": {
-            "result": "SUCCESS",
-            "data": {
-                    "pageInfo": {
-                    "startCursor": "0",
-                    "endCursor": "0",
-                    "hasNextPage": true,
-                    "hasPreviousPage": false
-                },
-                "list": [
-                    {
-                        "address": "0x808a2adbd0a3fc679e3f7cd18d4f579bfcaaec9c",
-                        "domain": "corgibum.eth",
-                        "avatar": "",
-                        "recommendationReason": "wearehiring.eth also followed them",
-                        "followerCount": 1
-                    }
-                ]
-            }
-        }
+  "data": {
+    "recommendations": {
+      "result": "SUCCESS",
+      "data": {
+        "pageInfo": {
+          "startCursor": "0",
+          "endCursor": "0",
+          "hasNextPage": true,
+          "hasPreviousPage": false
+        },
+        "list": [
+          {
+            "address": "0x808a2adbd0a3fc679e3f7cd18d4f579bfcaaec9c",
+            "domain": "corgibum.eth",
+            "avatar": "",
+            "recommendationReason": "wearehiring.eth also followed them",
+            "followerCount": 1
+          }
+        ]
+      }
     }
+  }
 }
 ```
 
