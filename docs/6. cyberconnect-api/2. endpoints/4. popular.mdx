@@ -1,0 +1,125 @@
+---
+id: popular
+title: Popular
+slug: /cyberconnect-api/endpoints/popular/
+sidebar_label: Popular
+sidebar_position: 4
+description: We've built a re index into our protocol for general follow suggestions.
+---
+
+The popular query returns a list of popular addresses in the entire social graph with their popular reason. It is a part of our [recommendation](/concepts/recommend/) system.
+
+## Definition
+
+The definition of Popular query is:
+
+```graphql
+popular (fromAddr: String, tags: TagsInput!, network: Network, first: Int, after: String) PopularPage!
+```
+
+For input params:
+
+| Field      | Type    | Description                                                                                   |
+| ---------- | ------- | --------------------------------------------------------------------------------------------- |
+| `fromAddr` | String  | The address that you want to get popular for                                                  |
+| `tags`     | Enum    | The tags of popular filter.                                                                   |
+| `network`  | Network | The blockchain network for the queried address. Default is `ETH`.                             |
+| `first`    | Int     | The number of entries this query should return, default is `20` and the maximum value is `50` |
+| `after`    | String  | After which index this query should begin, default the result starts from the beginning       |
+
+For `first` and `after` usage, please refer to [Pagination](/resources/terminology/pagination/) section.
+
+`pageInfo` is used to do pagination. Also, you can refer to [Pagination](/resources/terminology/pagination/) section for more details.
+
+There are 6 fields for each object in `list`:
+
+| Field                  | Type    | Description                                      |
+| ---------------------- | ------- | ------------------------------------------------ |
+| `address`              | String  | The string of popular address                    |
+| `domain`               | String  | The string of popular address' domain name       |
+| `avatar`               | String  | The URL string of popular address' avatar        |
+| `recommendationReason` | String  | The reason why we popular this address           |
+| `followerCount`        | Int     | The number of popular address' followers         |
+| `isFollowing`          | Boolean | If the fromAddr is following the popular address |
+
+## Example
+
+This is an example of a query to fetch popular data that you can also test out in the [Playground](/cyberconnect-api/playground/):
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
+query QueryPopular {
+    popular(
+        fromAddr: '0x7c04786f04c522ca664bb8b6804e0d182eec505f'
+        tags: {
+          list: [PLAZA]
+        }
+        network: ETH
+        first: 2
+    ) {
+        pageInfo {
+            startCursor
+            endCursor
+            hasNextPage
+            hasPreviousPage
+        }
+        list {
+            address
+            domain
+            avatar
+            recommendationReason
+            followerCount
+            isFollowing
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="json">
+
+```json
+{
+  "data": {
+    "popular": {
+      "pageInfo": {
+        "startCursor": "0",
+        "endCursor": "0",
+        "hasNextPage": true,
+        "hasPreviousPage": false
+      },
+      "list": [
+        {
+          "address": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
+          "domain": "cyberlab.eth",
+          "avatar": "https://images.cybertino.io/cyberconnect_logo",
+          "recommendationReason": "CyberConnectHQ",
+          "followerCount": 15434,
+          "isFollowing": true
+        },
+        {
+          "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+          "domain": "vitalik.eth",
+          "avatar": "https://lh3.googleusercontent.com/GSQxz8zAPM93ECC9DKknywfFp0JALYzSsixun1eaKDn56_Or1omalzZ9KgzmWi0uZBCSd5XJ7jMnOxsUCR7ZpHPgzjelSiB-TayaA8E=s128",
+          "recommendationReason": "Ethereum Founder Vitalik Buterin",
+          "followerCount": 12781,
+          "isFollowing": true
+        }
+      ]
+    }
+  }
+}
+```
+
+</TabItem>
+</Tabs>
