@@ -13,7 +13,7 @@ You can find the step by step instructions on how to set up GraphQL client in yo
 
 ## Structure
 
-The general pattern of Connection query is:
+The general pattern of `connection` query is:
 
 ```graphql
 connections(fromAddr: String!, toAddrList: [String!]!, network: Network) [Connection!]!
@@ -49,7 +49,7 @@ If `isFollowing` is true, `fromAddr` has followed `toAddr`.
 
 ### Fetch Proof Example
 
-This is an example of a query to fetch proof data that you can also test out in the [Playground](/cyberconnect-api/playground/):
+This is an example of a query to fetch `proof` data that you can also test out in the [Playground](/cyberconnect-api/playground/):
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
@@ -98,7 +98,7 @@ query ProofQuery {
 
 ### Fetch followStatus Example
 
-This is an example of a query to fetch the followStatus that you can also test out in the [Playground](/cyberconnect-api/playground/):
+This is an example of a query to fetch the `followStatus` that you can also test out in the [Playground](/cyberconnect-api/playground/):
 
 <Tabs
     defaultValue="javascript"
