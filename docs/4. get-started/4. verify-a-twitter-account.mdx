@@ -13,10 +13,9 @@ description: In this section we'll go through verifying a Twitter account.
 
 :::
 
-In this section, we'll walk through how you can help users establish their credentials by verifying their social media accounts. We use **Twitter** as an example. 
+In this section, we'll walk through how you can help users establish their credentials by verifying their social media accounts. We use **Twitter** as an example.
 
 Before you start, make sure that the user's crypto wallet is connected to your application (follow instructions in [Connect with User Wallet](/get-started/create-a-connection/).
-
 
 ## Create a Twitter Verification Button
 
@@ -32,28 +31,28 @@ import { twitterAuthorize } from "@cyberlab/social-verifier";
 
 ```jsx title="/src/components/TweetButton.tsx"
 const handleOnClick = async () => {
-    // Get the MetaMask wallet address
-    const accounts = await window.ethereum.request({
-        method: "eth_requestAccounts"
-    });
+  // Get the MetaMask wallet address
+  const accounts = await window.ethereum.request({
+    method: "eth_requestAccounts",
+  });
 
-    // Prompt to enter the Twitter handle
-    const handle = prompt("Enter your Twitter handle:");
+  // Prompt to enter the Twitter handle
+  const handle = prompt("Enter your Twitter handle:");
 
-    // Check clause for handle
-    if (!handle) return;
+  // Check clause for handle
+  if (!handle) return;
 
-    // Update the state for handle
-    setHandle(handle);
+  // Update the state for handle
+  setHandle(handle);
 
-    // Generate the signature
-    const sig = await twitterAuthorize(window.ethereum, accounts[0], handle);
+  // Generate the signature
+  const sig = await twitterAuthorize(window.ethereum, accounts[0], handle);
 
-    // The message that the user posts on Twitter
-    const message = `Verifying my Web3 identity on @cyberconnecthq: %23LetsCyberConnect %0A ${sig}`;
+  // The message that the user posts on Twitter
+  const message = `Verifying my Web3 identity on @cyberconnecthq: %23LetsCyberConnect %0A ${sig}`;
 
-    // Open new window so that the user can post on Twitter
-    window.open(`https://twitter.com/intent/tweet?text=${message}`, "_blank");
+  // Open new window so that the user can post on Twitter
+  window.open(`https://twitter.com/intent/tweet?text=${message}`, "_blank");
 };
 ```
 
@@ -63,12 +62,11 @@ In the Sandbox the new window popping up might get blocked by the Twitter API. I
 
 :::
 
-
 3. Finish up our code by assigning the function `handleOnClick` to the handler `onClick` on the `button`:
 
 ```jsx title="/src/components/TweetButton.tsx"
 <button className="tweetButton" onClick={handleOnClick}>
-    Tweet message
+  Tweet message
 </button>
 ```
 
@@ -86,21 +84,21 @@ import { twitterVerify } from "@cyberlab/social-verifier";
 
 ```jsx title="/src/components/VerifyButton.tsx"
 const handleOnClick = async () => {
-    // Get the MetaMask wallet address
-    const accounts = await window.ethereum.request({
-        method: "eth_requestAccounts"
-    });
+  // Get the MetaMask wallet address
+  const accounts = await window.ethereum.request({
+    method: "eth_requestAccounts",
+  });
 
-    // Check clause for handle
-    if (!handle) return;
+  // Check clause for handle
+  if (!handle) return;
 
-    // Verify the Twitter account
-    try {
-        await twitterVerify(accounts[0], handle);
-        alert(`Success: you've verified ${handle}!`);
-    } catch (error) {
-        console.error(error.message);
-    }
+  // Verify the Twitter account
+  try {
+    await twitterVerify(accounts[0], handle);
+    alert(`Success: you've verified ${handle}!`);
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 ```
 
@@ -108,7 +106,7 @@ const handleOnClick = async () => {
 
 ```jsx title="/src/components/VerifyButton.tsx"
 <button className="verifyButton" onClick={handleOnClick}>
-    Verify Twitter
+  Verify Twitter
 </button>
 ```
 
@@ -118,8 +116,9 @@ That's it! You've implemented a simple social verifier in your application. For 
 
 Check out the entire code from the tutorial and play around with it in the sandbox below!
 
-<iframe src="https://codesandbox.io/embed/verify-a-twitter-account-d4ddmt?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split"
-    title="verify-a-twitter-account"
-    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+<iframe
+  src="https://codesandbox.io/embed/verify-a-twitter-account-d4ddmt?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/App.tsx,/src/components/ConnectButton.tsx,/src/components/TweetButton.tsx,/src/components/VerifyButton.tsx"
+  title="verify-a-twitter-account"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>

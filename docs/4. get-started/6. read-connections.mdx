@@ -25,22 +25,22 @@ const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 
 ```jsx title="/src/queries/GetConnections.tsx"
 const GET_CONNECTIONS = gql`
-    query($address: String!, $first: Int) {
-        identity(address: $address) {
-            followings(first: $first) {
-                list {
-                    address
-                    domain
-                }
-            }
-            followers(first: $first) {
-                list {
-                    address
-                    domain
-                }
-            }
+  query($address: String!, $first: Int) {
+    identity(address: $address) {
+      followings(first: $first) {
+        list {
+          address
+          domain
         }
+      }
+      followers(first: $first) {
+        list {
+          address
+          domain
+        }
+      }
     }
+  }
 `;
 ```
 
@@ -50,8 +50,9 @@ Make sure to check out the full list of fields available in the [CyberConnect AP
 
 You can write your own query in the [Playground](/cyberconnect-api/playground/) or experiment with our code in the sandbox below!
 
-<iframe src="https://codesandbox.io/embed/read-connections-fk75zg?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split"
-    title="read-connections"
-    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+<iframe
+  src="https://codesandbox.io/embed/read-connections-fk75zg?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetConnections.tsx"
+  title="read-connections"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>

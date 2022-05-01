@@ -17,7 +17,7 @@ In this section, we'll help you write a simple query to get recommended [connect
 
 1. Initialize the GraphQL client:
 
-```jsx title="/src/queries/GetConnections.tsx"
+```jsx title="/src/queries/GetRecommendations.tsx"
 const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 ```
 
@@ -25,18 +25,18 @@ const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 
 ```jsx title="/src/queries/GetRecommendations.tsx"
 export const GET_RECOMMENDATIONS = gql`
-    query($address: String!) {
-        recommendations(address: $address) {
-            result
-            data {
-                list {
-                    address
-                    domain
-                    recommendationReason
-                }
-            }
+  query($address: String!) {
+    recommendations(address: $address) {
+      result
+      data {
+        list {
+          address
+          domain
+          recommendationReason
         }
+      }
     }
+  }
 `;
 ```
 
@@ -46,8 +46,9 @@ Make sure to check out the full list of fields available in the [CyberConnect AP
 
 You can write your own query in the [Playground](/cyberconnect-api/playground/) or experiment with our code in the sandbox below!
 
-<iframe src="https://codesandbox.io/embed/read-recommendations-08k9f6?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split"
-    title="read-recommendations"
-    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+<iframe
+  src="https://codesandbox.io/embed/read-recommendations-08k9f6?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetRecommendations.tsx"
+  title="read-recommendations"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
