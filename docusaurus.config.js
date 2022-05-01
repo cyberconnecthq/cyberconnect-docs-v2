@@ -41,9 +41,6 @@ const config = {
       }),
     ],
   ],
-  plugins: [
-    "docusaurus-plugin-hotjar",
-  ],
   themeConfig:
     /** @type {import("@docusaurus/preset-classic").ThemeConfig} */
     ({
@@ -96,10 +93,6 @@ const config = {
           content: "https://cyberconnect.me/assets/logo-black.svg",
         },
       ],
-      hotjar: {
-        // HotJar Site ID
-        applicationId: "2948142",
-      },
       algolia: {
         // The application ID provided by Algolia
         appId: 'U6TBC4Y6RX',
