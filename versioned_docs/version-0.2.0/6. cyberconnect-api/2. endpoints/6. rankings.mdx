@@ -1,0 +1,159 @@
+---
+id: rankings
+title: Rankings
+slug: /cyberconnect-api/endpoints/rankings/
+sidebar_label: Rankings
+sidebar_position: 6
+description: Rankings API is used for querying a ranked list of addresses on the blockchain network. You can retrieve a ranked list of users and their identities based on different connection types and different namespaces.
+---
+
+Rankings API is used for querying a ranked list of addresses on the blockchain network. You can retrieve a ranked list of users and their identities based on different connection types and different namespaces.
+
+## Definition
+
+The definition of `rankings` query is:
+
+```graphql
+rankings (network: Network, type: ConnectionType, namespace: String, first: Int, after: String) [UserIdentityPage]!
+```
+
+For input params:
+
+| Field       | Type           | Description                                                                                                           |
+| ----------- | -------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `network`   | Network        | The blockchain network for the queried address. Default is `ETH`.                                                     |
+| `type`      | ConnectionType | Input the connection type that serves as the basis of this ranking. You can use FOLLOW, LIKE, REPORT, WATCH, or VOTE. |
+| `namespace` | String         | Rankings in a certain namespace.                                                                                      |
+| `first`     | Int            | Input the number of entries this query should return. The default is 20 and the maximum value is 50.                  |
+| `after`     | String         | Input after which index this query should begin. The default is "-1".                                                 |
+
+For the usage of `namespace`, please refer to [Namespace](/resources/terminology/namespace) section for more instructions. For the usage of `first` and `after`, please refer to [Pagination](/resources/terminology/pagination) section. For the concept of connection types, please read [Connection](/concepts/connection) section.
+
+With correct inputs, you can retrieve a `UserIdentityPage` objects with the following fields:
+
+| Field      | Type           | Description                                                                                                                      |
+| ---------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `pageInfo` | PageInfo       | Output page information, including startCursor, endCursor, whether this page hasNextPage, and whether this page hasPreviousPage. |
+| `list`     | [UserIdentity] | Output a ranked list of user identities.                                                                                         |
+
+For the fields of a `UserIdentity` object, please refer to [Identity](/cyberconnect-api/endpoints/identity) section.
+
+## Example
+
+In the following example, we demonstrate how to query information about the top five Ethereum addresses with the most followers under the CyberConnect namespace. You can play around with Rankings API in the [Playground](/cyberconnect-api/playground) section.
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
+query TopFiveRankings{
+    rankings(network: ETH, type: FOLLOW, namespace: "CyberConnect", first: 5) {
+        pageInfo {
+            startCursor
+            endCursor
+            hasNextPage
+            hasPreviousPage
+        }
+        list {
+          address
+          domain
+          followerCount
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="json">
+
+```json
+{
+  "data": {
+    "featured": [
+      {
+        "address": "0x7323b13669028780c6450a620064e30654a5be2c",
+        "domain": "",
+        "avatar": "",
+        "recommendationReason": "Impossible Finance",
+        "followerCount": 251,
+        "isFollowing": true
+      },
+      {
+        "address": "0x4a9a2f31e2009045950df5aab36950609de93c78",
+        "domain": "jrag.eth",
+        "avatar": "",
+        "recommendationReason": "Sismo Team",
+        "followerCount": 251,
+        "isFollowing": true
+      },
+      {
+        "address": "0x7853eabb6cfa980ebfd27e3f77e69590ea53c0b7",
+        "domain": "bspeak.eth",
+        "avatar": "https://cdn-ak.f.st-hatena.com/images/fotolife/C/CoffeeTimes/20211214/20211214163720.png",
+        "recommendationReason": "Japanese Crypto Writer",
+        "followerCount": 1768,
+        "isFollowing": true
+      },
+      {
+        "address": "0xef8305e140ac520225daf050e2f71d5fbcc543e7",
+        "domain": "fabien.eth",
+        "avatar": "https://lh3.googleusercontent.com/R7iNrAYD7iNs1U7uo0mgZ_WPeGpZE2NFv6B7Byjw6lWDogpqRf7TGqsXUbKuujbuXdAeM6C6JAsWItUX6k9smfIZtFWnmFkH7v7j2u0=s128",
+        "recommendationReason": "Founder of Snapshot",
+        "followerCount": 3072,
+        "isFollowing": true
+      },
+      {
+        "address": "0x445c770bfc3cdcc4f06e7a33f899b94f0b4063b9",
+        "domain": "diorpapi.eth",
+        "avatar": "",
+        "recommendationReason": "Partner at Web4 Ventures",
+        "followerCount": 713,
+        "isFollowing": true
+      },
+      {
+        "address": "0x7eff7eee42dc0bd27081a78fe23cfe2a72697f2b",
+        "domain": "rolex1.eth",
+        "avatar": "https://lh3.googleusercontent.com/2V7MIgYtRZc9NTJrpX8vl_ggjZKee3lstpYdXZWAjHKj-BJO2i4VGyGvllIRa9E81I4bKBmOiJn0OHxoZbIWLpffrt9sap_EpmfCMA=s128",
+        "recommendationReason": "Chinese Crypto KOL",
+        "followerCount": 1691,
+        "isFollowing": true
+      },
+      {
+        "address": "0x9b6568d72a6f6269049fac3998d1fadf1e6263cc",
+        "domain": "carlosdp.eth",
+        "avatar": "https://lh3.googleusercontent.com/boqGBfe1BGXuD6Q8hcWpyfR_J_8ltFqzt9hUjHhwcFdeclPf6QCUkFrGlGTY6mI8Y9_Dwk6_jY5Fg8rsCO7JHZZIWTLVJ8h3iCKJabU=s128",
+        "recommendationReason": "Co-Founder of Metaphor",
+        "followerCount": 975,
+        "isFollowing": true
+      },
+      {
+        "address": "0xabc7eba2d69ebe231441bbebb3489eef3b6ae4e9",
+        "domain": "nikkor.eth",
+        "avatar": "https://lh3.googleusercontent.com/kb09QVdtfAsJ6vaEHfEzw4aaWvrZlAMnovyI6YDpIqAB_gqOVd6gm8S-_6pI2RgNOCB2-D0Ki3T1ilnjen7gpnfk9zWb5xkTT-U9PA=s128",
+        "recommendationReason": "Chinese Crypto KOL",
+        "followerCount": 352,
+        "isFollowing": false
+      },
+      {
+        "address": "0x03027d7312e7fb96447067ab5590de0ca1c4bf62",
+        "domain": "showmenft.eth",
+        "avatar": "https://lh3.googleusercontent.com/moxjkj_FdHZ0tY_Q6ylPKPEj_b8TxjgKgW6x6hzR_6eR2hZQQOvx4uzvgFKosNCTBUCzeloNCqLNGY8I0QZTHHkDAo6c1nJ0T1rj=s128",
+        "recommendationReason": "Show Me",
+        "followerCount": 1890,
+        "isFollowing": true
+      }
+    ]
+  }
+}
+```
+
+</TabItem>
+</Tabs>

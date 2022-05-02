@@ -1,0 +1,177 @@
+---
+id: nft-owners
+title: NFTOwners
+slug: /cyberconnect-api/endpoints/nftOwners/
+sidebar_label: nftOwners
+sidebar_position: 7
+description: NFT owners API is used for querying ownership information about an NFT. You can use this query to retrieve the owner's Twitter information by an NFT's tokenId, or a list of owners by an NFT contract address.
+---
+
+NFT owners API is used for querying ownership information about an NFT. You can use this query to retrieve the owner's Twitter information by an NFT's tokenId, or a list of owners by an NFT contract address.
+
+You can find the step-by-step instructions on how to set up the GraphQL client in your application and how to write a ”get NFT ownership” query in the [Read NFT's Ownership](/get-started/read-nft-ownership) section.
+
+## Definition
+
+The definition of `nftOwners` query is:
+
+```graphql
+nftOwners(contract: String!, tokenId: String) [NFTOwner!]
+```
+
+For input params:
+
+| Field      | Type   | Description                       |
+| ---------- | ------ | --------------------------------- |
+| `contract` | String | Input the NFT's contract address. |
+| `tokenId`  | String | Input the NFT's token ID.         |
+
+With correct inputs, you can retrieve a list of `NFTOwner` object with the following fields:
+
+| Field     | Type   | Description                                 |
+| --------- | ------ | ------------------------------------------- |
+| `tokenId` | String | Output the NFT's token ID.                  |
+| `owner`   | String | Output the NFT owner's address.             |
+| `twitter` | String | Output the NFT owner's Twitter information. |
+
+## Example
+
+### Owners of an NFT
+
+This is an example of a query to fetch the owners for a certain NFT contract. You can also test out in the [Playground](/cyberconnect-api/playground/):
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
+query QueryNFTOwners{
+  nftOwners(contract: "0x5180db8f5c931aae63c74266b211f580155ecac8") {
+    owner
+    tokenId
+    twitter {
+      handle
+      followerCount
+    }
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json">
+
+```json
+{
+  "data": {
+    "nftOwners": [
+      {
+        "owner": "0x050ac21c63ee3edddbe27bdaa7a87b0c9f5fd75b",
+        "tokenId": "1023",
+        "twitter": {
+          "handle": "devklink",
+          "followerCount": 90
+        }
+      },
+      {
+        "owner": "0x050ac21c63ee3edddbe27bdaa7a87b0c9f5fd75b",
+        "tokenId": "1024",
+        "twitter": {
+          "handle": "devklink",
+          "followerCount": 90
+        }
+      },
+      {
+        "owner": "0x8952872d383e0c3b5ef1136e0e4fdf6b67f811df",
+        "tokenId": "1034",
+        "twitter": {
+          "handle": "theyearof1573",
+          "followerCount": 331
+        }
+      },
+      {
+        "owner": "0xa37022f0ff9f15cf5482f96197d29e01d657619b",
+        "tokenId": "1054",
+        "twitter": {
+          "handle": "stephenmlin0110",
+          "followerCount": 0
+        }
+      },
+      {
+        "owner": "0x84822f4d6f5e50c760059d6ae1f7979f511e2350",
+        "tokenId": "1192",
+        "twitter": {
+          "handle": "WenYZ6",
+          "followerCount": 117
+        }
+      },
+      {
+        "owner": "0x88a66fd0c5d8cbac251f95381a032748341e7fc3",
+        "tokenId": "1208",
+        "twitter": {
+          "handle": "HammerYang_CN",
+          "followerCount": 358
+        }
+      },
+      ...
+    ]
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### The Owner of an NFT with the certain token id
+
+This is an example of a query to fetch the owner of an NFT with the certain token id. You can also test out in the [Playground](/cyberconnect-api/playground/):
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
+query QueryNFTOwners{
+  nftOwners(contract: "0x5180db8f5c931aae63c74266b211f580155ecac8", tokenId:"6596") {
+    owner
+    tokenId
+    twitter {
+      handle
+      followerCount
+    }
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json">
+
+```json
+{
+  "data": {
+    "nftOwners": [
+      {
+        "owner": "0x7c04786f04c522ca664bb8b6804e0d182eec505f",
+        "tokenId": "6596",
+        "twitter": {
+          "handle": "ryanli_me",
+          "followerCount": 728
+        }
+      }
+    ]
+  }
+}
+```
+
+</TabItem>
+</Tabs>
