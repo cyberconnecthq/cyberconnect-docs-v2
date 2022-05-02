@@ -92,7 +92,7 @@ const config = {
         // Keywords
         { name: "keywords", content: "cyberconnect, protocol, social graph, blockchain, web3" },
         // OG
-        { name: "og:title", content: "CyberConnect Developer Center" },
+        { name: "og:title", content: "Developer Center | CyberConnect" },
         {
           name: "og:description",
           content: "Building the composable social graph protocol for Web3.",
@@ -101,19 +101,19 @@ const config = {
         { name: "og:url", content: "https://docs.cyberconnect.me/" },
         {
           name: "og:image",
-          content: "https://cyberconnect.me/assets/logo-black.svg",
+          content: "https://cyberconnect.me/meta/meta.png",
         },
         // Twitter
-        { name: "twitter:title", content: "CyberConnect Developer Center" },
+        { name: "twitter:title", content: "Developer Center | CyberConnect" },
         {
           name: "twitter:description",
           content: "Building the composable social graph protocol for Web3.",
         },
-        { name: "twitter:card", content: "summary" },
+        { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:site", content: "@CyberConnectHQ" },
         {
           name: "twitter:image",
-          content: "https://cyberconnect.me/assets/logo-black.svg",
+          content: "https://cyberconnect.me/meta/meta.png",
         },
       ],
       algolia: {
