@@ -14,13 +14,13 @@ const katex = require("rehype-katex");
 const config = {
   title: "CyberConnect Dev Center",
   tagline: "Building the composable social graph protocol for Web3",
-  url: isDev ? "https://cyberconnecthq.github.io" : "https://docs.cyberconnect.me",
-  baseUrl: isDev ? "/cyberconnect-docs-v2/" : "/",
+  url: "https://docs.cyberconnect.me",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "cyberconnecthq",
-  projectName: isDev ? "cyberconnect-docs-v2" : "CyberConnect Dev Center",
+  projectName: "cyberconnect-docs-v2",
 
   presets: [
     [
