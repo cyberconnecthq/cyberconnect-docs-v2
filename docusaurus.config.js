@@ -13,7 +13,7 @@ const katex = require("rehype-katex");
 /** @type {import("@docusaurus/types").Config} */
 const config = {
   title: "CyberConnect Dev Center",
-  tagline: "Building the composable social graph protocol for Web3",
+  tagline: "Building the composable social graph protocol for Web3.",
   url: "https://docs.cyberconnect.me",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -95,7 +95,7 @@ const config = {
         { name: "og:title", content: "CyberConnect Developer Center" },
         {
           name: "og:description",
-          content: "The comprehensive guide for CyberConnect protocol.",
+          content: "Building the composable social graph protocol for Web3.",
         },
         { name: "og:type", content: "website" },
         { name: "og:url", content: "https://docs.cyberconnect.me/" },
@@ -107,7 +107,7 @@ const config = {
         { name: "twitter:title", content: "CyberConnect Developer Center" },
         {
           name: "twitter:description",
-          content: "The comprehensive guide for CyberConnect protocol.",
+          content: "Building the composable social graph protocol for Web3.",
         },
         { name: "twitter:card", content: "summary" },
         { name: "twitter:site", content: "@CyberConnectHQ" },
