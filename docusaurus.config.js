@@ -39,7 +39,7 @@ const config = {
             math
           ],
           rehypePlugins: [katex],
-          includeCurrentVersion: !isDev,
+          includeCurrentVersion: isDev,
           showLastUpdateTime: true,
         },
         blog: false,
