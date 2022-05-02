@@ -29,6 +29,7 @@
   --ifm-hover-overlay: rgba(246, 248, 250, 1);
   --ifm-color-emphasis-300: rgb(161 161 161 / 40%);
   --ifm-code-font-size: 95%;
+  --ifm-color-secondary: var(--color-lightgray);
 }
 
 .docusaurus-highlight-code-line {
@@ -160,6 +161,10 @@ table tbody tr:nth-child(2n) {
   font-size: 1.4em;
   font-weight: 600;
   font-family: var(--font-family-primary);
+}
+
+.navbar__item .navbar__link {
+  color: var(--color-white);
 }
 
 .header-github-link:hover {
