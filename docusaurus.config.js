@@ -139,7 +139,7 @@ const config = {
     {
       src: "https://plausible.io/js/plausible.js",
       defer: true,
-      "data-domain": "https://docs.cyberconnect.me/"
+      "data-domain": "docs.cyberconnect.me"
     }
   ]
 };
