@@ -1,5 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+require('dotenv').config();
+
+const isDev = process.env.NODE_ENV === "development" ? true : false;
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
@@ -11,13 +14,13 @@ const katex = require("rehype-katex");
 const config = {
   title: "CyberConnect Dev Center",
   tagline: "Building the composable social graph protocol for Web3",
-  url: "https://cyberconnecthq.github.io",
-  baseUrl: "/cyberconnect-docs-v2/",
+  url: isDev ? "https://cyberconnecthq.github.io" : "https://docs.cyberconnect.me",
+  baseUrl: isDev ? "/cyberconnect-docs-v2/" : "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "cyberconnecthq",
-  projectName: "cyberconnect-docs-v2",
+  projectName: isDev ? "cyberconnect-docs-v2" : "CyberConnect Dev Center",
 
   presets: [
     [
@@ -26,18 +29,27 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/cyberconnecthq/cyberconnect-docs-v2/edit/main",
+          editUrl: ({ docPath }) => {
+            const nextVersionDocsDirPath = "docs";
+            return `https://github.com/cyberconnecthq/cyberconnect-docs-v2/edit/main/${nextVersionDocsDirPath}/${docPath}`;
+          },
           routeBasePath: "/",
           remarkPlugins: [
             [require("@docusaurus/remark-plugin-npm2yarn"), {sync: true}],
             math
           ],
           rehypePlugins: [katex],
+          includeCurrentVersion: !isDev,
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+        gtag: {
+          trackingID: "G-9FMF2NF7NK",
+          anonymizeIP: true,
+        }
       }),
     ],
   ],
@@ -51,6 +63,10 @@ const config = {
           src: "img/logo-white.svg",
         },
         items: [
+          {
+            type: "docsVersionDropdown",
+            position: "right",
+          },
           {
             href: "https://github.com/cyberconnecthq/",
             position: "right",
@@ -102,10 +118,10 @@ const config = {
       ],
       algolia: {
         // The application ID provided by Algolia
-        appId: 'U6TBC4Y6RX',
+        appId: process.env.ALGOLIA_APP_ID,
         // Public API key: it is safe to commit it
-        apiKey: 'b9dbe26bb18f5da7a8823f718c0caa0e',
-        indexName: 'dev_docs-2',
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME,
         searchPagePath: 'search',
       },
     }),
@@ -123,7 +139,7 @@ const config = {
     {
       src: "https://plausible.io/js/plausible.js",
       defer: true,
-      "data-domain": "cyberconnecthq.github.io/cyberconnect-docs-v2"
+      "data-domain": "https://docs.cyberconnect.me/"
     }
   ]
 };
