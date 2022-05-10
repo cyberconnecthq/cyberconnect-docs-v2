@@ -13,7 +13,7 @@ In order to provide **data verifiability** and **higher security**, CyberConnect
 
 In this page, we use an example from [CyberConnect Solana Page](http://sol.cyberconnect.me) to describe the whole process in three parts: key generation, proof generation, and proof verification. The following picture is an example of a complete proof.
 
-![Proof](/img/v1/protocol/proof.png)
+![Proof](/img/v0.2.0/protocol/proof.png)
 
 ## Key Generation
 
@@ -21,7 +21,7 @@ When a user is going to mutate a connection status (e.g. connect to someone), an
 
 An ES256 key pair will be randomly generated from the client side. In order to identify the user, the signing key will be authorized through the MetaMask popup. In the example, the data of "SIGNINGKEY" is created in this step.
 
-![Proof 1](/img/v1/protocol/proof1.png)
+![Proof 1](/img/v0.2.0/protocol/proof1.png)
 
 The public key of the signing key pair will be uploaded and stored in the CyberConnect Indexer with "SIGNINGKEYAUTH" info. This is for the indexer to examine that the message sender is the address user. The private key of the signing key pair will be safely stored in local LevelDB after encryption.
 
@@ -49,7 +49,7 @@ $$
 
 Then, upload JSON blob, digest, and public key of signing key pair to the CyberConnect Indexer.
 
-![Proof 2](/img/v1/protocol/proof2.png)
+![Proof 2](/img/v0.2.0/protocol/proof2.png)
 
 After receiving the struct, the indexer validates the signing key, digest, timestamp, and operation that the user wants to execute.
 
