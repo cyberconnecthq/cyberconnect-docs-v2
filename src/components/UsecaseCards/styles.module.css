@@ -4,16 +4,24 @@
   text-align: center;
 }
 
-.usecaseCardIcon svg {
-  width: auto;
-  height: 50px;
+.usecaseCardIcon {
+  background-color: var(--secondary-green-15);
+  border-radius: 8px;
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
 }
 
-.usecaseCardTitle {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin: 4px 0px;
-  text-transform: uppercase;
+.usecaseCardIcon svg {
+  height: 44px;
+}
+
+.usecaseDescription {
+  color: var(--secondary-black-80);
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 6px;
 }
 
 .usecaseCards {

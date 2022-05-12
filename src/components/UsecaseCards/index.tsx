@@ -1,27 +1,19 @@
 import React from 'react';
 import styles from './styles.module.css';
-import {
-  CgProfile,
-  CgFeed
-} from 'react-icons/cg';
-import {
-  AiOutlineMessage,
-  AiOutlineNotification,
-  AiOutlineQuestionCircle,
-  AiOutlineHeart
-} from 'react-icons/ai';
-import { BsSearch } from 'react-icons/bs';
-import {
-  GiRank1,
-  GiParachute
-} from 'react-icons/gi';
-import { RiMoneyDollarCircleLine } from 'react-icons/ri';
-import {
-  BiGame,
-  BiNetworkChart
-} from 'react-icons/bi';
-import { HiOutlineChartBar } from 'react-icons/hi';
-import { MdOutlineHowToVote } from 'react-icons/md';
+import AccountCircleSvg from '@site/static/img/v0.3.0/icons/usecase/account_circle.svg';
+import AssistantSvg from '@site/static/img/v0.3.0/icons/usecase/assistant.svg';
+import SmsSvg from '@site/static/img/v0.3.0/icons/usecase/sms.svg';
+import NotificationsSvg from '@site/static/img/v0.3.0/icons/usecase/notifications.svg';
+import SearchSvg from '@site/static/img/v0.3.0/icons/usecase/search.svg';
+import BallotSvg from '@site/static/img/v0.3.0/icons/usecase/ballot.svg';
+import BeenhereSvg from '@site/static/img/v0.3.0/icons/usecase/beenhere.svg';
+import MonetizationOnSvg from '@site/static/img/v0.3.0/icons/usecase/monetization_on.svg';
+import FavoriteSvg from '@site/static/img/v0.3.0/icons/usecase/favorite.svg';
+import SportsEsportsSvg from '@site/static/img/v0.3.0/icons/usecase/sports_esports.svg';
+import IntersectSvg from '@site/static/img/v0.3.0/icons/usecase/intersect.svg';
+import HowToVoteSvg from '@site/static/img/v0.3.0/icons/usecase/how_to_vote.svg';
+import BarChartSvg from '@site/static/img/v0.3.0/icons/usecase/bar_chart.svg';
+import ScatterPlotSvg from '@site/static/img/v0.3.0/icons/usecase/scatter_plot.svg';
 
 type UsecaseItem = {
   icon: any;
@@ -31,72 +23,72 @@ type UsecaseItem = {
 
 const UsecaseList: UsecaseItem[] = [
   {
-    icon: <CgProfile />,
+    icon: <AccountCircleSvg />,
     title: 'Profile',
     description: 'Display your users\' decentralized identities.'
   },
   {
-    icon: <AiOutlineMessage />,
+    icon: <SmsSvg />,
     title: 'Messaging',
     description: 'Enable users to stay connected with friends.'
   },
   {
-    icon: <AiOutlineNotification />,
+    icon: <NotificationsSvg />,
     title: 'Notification',
     description: 'Keep followers updated.'
   },
   {
-    icon: <BsSearch />,
+    icon: <SearchSvg />,
     title: 'Search',
     description: 'Explore new connections.'
   },
   {
-    icon: <AiOutlineQuestionCircle />,
+    icon: <AssistantSvg />,
     title: 'Recommendation',
     description: 'Recommend connections to accelerate bootstrapping.'
   },
   {
-    icon: <CgFeed />,
+    icon: <BallotSvg />,
     title: 'Feeds',
     description: 'Enable users to post and share content.'
   },
   {
-    icon: <GiRank1 />,
+    icon: <BeenhereSvg />,
     title: 'Reputation',
     description: 'Create a scoring system based on social networks.'
   },
   {
-    icon: <RiMoneyDollarCircleLine />,
+    icon: <MonetizationOnSvg />,
     title: 'Monetization',
     description: 'Monetize your influence in Metaverse.'
   },
   {
-    icon: <AiOutlineHeart />,
+    icon: <FavoriteSvg            />,
     title: 'Fan community',
     description: 'Build your fandom.'
   },
   {
-    icon: <BiGame />,
+    icon: <SportsEsportsSvg />,
     title: 'Gamer matching',
     description: 'Play with friends and make friends when you play.'
   },
   {
-    icon: <GiParachute />,
+    icon: <IntersectSvg />,
     title: 'Airdrop',
     description: 'Design fair drop mechanics based on social networks.'
   },
   {
-    icon: <MdOutlineHowToVote />,
+    icon: <HowToVoteSvg />,
     title: 'DAO tooling',
     description: 'Tighten relationships between members for better coordination.'
   },
   {
-    icon: <HiOutlineChartBar />,
+    icon: <BarChartSvg />,
     title: 'Data analytics',
     description: 'Analyze connections to boost value creation.'
   },
   {
-    icon: <BiNetworkChart />,
+    icon: <ScatterPlotSvg />,
     title: 'Visualization',
     description: 'See and cultivate your social graph.'
   },
@@ -104,10 +96,10 @@ const UsecaseList: UsecaseItem[] = [
 
 function UsecaseCard({icon, title, description}: UsecaseItem) {
   return (
-    <div className={`card ${styles.usecaseCard}`}>
+    <div className={styles.usecaseCard}>
         <div className={styles.usecaseCardIcon}>{icon}</div>
-        <div className={styles.usecaseCardTitle}>{title}</div>
-        <div>{description}</div>
+        <h3>{title}</h3>
+        <div className={styles.usecaseDescription}>{description}</div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
-import LinkSvg from '@site/static/img/v0.2.0/link.svg';
+import LinkSvg from '@site/static/img/v0.3.0/link.svg';
 
 type ShowcaseItem = {
   title: string;
@@ -104,8 +104,11 @@ function ShowcaseCard({title, srcPath, description, url, tags}: ShowcaseItem) {
       <div className={styles.showcaseCardImg}>
         <img src={srcPath}></img>
       </div>
-      <div className={`cardTitle ${styles.showcaseCardTitle}`}>
-        <div>{title}</div>
+      <div className='cardTitle'>
+        <div>
+          <div></div>
+          <h3>{title}</h3>
+        </div>
         <Link
           className='cardTitleLink'
           to={url}>
@@ -122,8 +125,7 @@ function ShowcaseCard({title, srcPath, description, url, tags}: ShowcaseItem) {
                 datatype={elem}
                 className={styles.cardTag}
               >
-                <div></div>
-                <div>{elem}</div>
+                {elem}
               </div>
             ))
           }
@@ -135,7 +137,7 @@ function ShowcaseCard({title, srcPath, description, url, tags}: ShowcaseItem) {
 
 export default function ShowcaseCards(): JSX.Element {
   return (
-    <div className='cards'>
+    <div className={`cards ${styles.showcaseCards}`}>
       {ShowcaseList.map((props, idx) => (
         <ShowcaseCard key={idx} {...props} />
       ))}

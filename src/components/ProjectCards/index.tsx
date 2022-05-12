@@ -81,8 +81,11 @@ const ProjectList: ProjectItem[] = [
 function ProjectCard({title, urls}: ProjectItem) {
   return (
     <div className={`card ${styles.projectCard}`}>
-      <div className={`cardTitle ${styles.projectCardTitle}`}>
-        <div>{title}</div>
+      <div className='cardTitle'>
+        <div>
+          <div></div>
+          <h3>{title}</h3>
+        </div>
       </div>
       {urls.map((elem, idx) => (
         <div key={idx}>
@@ -98,7 +101,7 @@ function ProjectCard({title, urls}: ProjectItem) {
 
 export default function ProjectCards(): JSX.Element {
   return (
-    <div>
+    <div className={styles.projectCards}>
       {ProjectList.map((props, idx) => (
         <ProjectCard key={idx} {...props} />
       ))}
