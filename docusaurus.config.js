@@ -57,10 +57,10 @@ const config = {
     /** @type {import("@docusaurus/preset-classic").ThemeConfig} */
     ({
       navbar: {
-        title: "CyberConnect Dev Center",
+        title: "",
         logo: {
           alt: "CyberConnect Logo",
-          src: "img/logo-white.svg",
+          src: "img/logo-custom.svg",
         },
         items: [
           {
