@@ -53,6 +53,21 @@ const config = {
       }),
     ],
   ],
+  plugins: [
+    [
+      require.resolve("@edno/docusaurus2-graphql-doc-generator"),
+      {
+        schema: "https://api.cybertino.io/connect/",
+        rootPath: "./docs",
+        baseURL: "/cyberconnect-api/reference/",
+        linkRoot: "/",
+        homepage: "./docs/cyberconnect-api/reference/graphql.md",
+        loaders: {
+          UrlLoader: "@graphql-tools/url-loader",
+        },
+      },
+    ],
+  ],
   themeConfig:
     /** @type {import("@docusaurus/preset-classic").ThemeConfig} */
     ({
