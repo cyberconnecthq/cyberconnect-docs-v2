@@ -1,0 +1,373 @@
+---
+id: identity
+title: Identity
+slug: /cyberconnect-api/graphql-api/identity/
+sidebar_label: Identity
+sidebar_position: 1
+description: Identity API is used for querying information about an address on the blockchain network. You can retrieve an address's domain name, indexed following & followers list using the GraphQL query shown below.
+---
+
+Identity API is used for querying information about an address on the blockchain network. You can retrieve an address's domain name, indexed following & followers list using the GraphQL query shown below.
+
+You can find the step by step instructions on how to set up GraphQL client in your application and write a simple **Get Identity query** in the [Read Identity](/get-started/read-identity/) section.
+
+## Structure
+
+The definition of `identity` query is:
+
+```graphql
+identity(address: String!, network: Network) UserIdentity!
+```
+
+| Field     | Type    | Description                                                                                                      |
+| --------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
+| `address` | String  | the string of the address that you query for                                                                     |
+| `network` | Network | the blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network. |
+
+With correct input, you can retrieve a `UserIdentity` object with the following fields:
+
+| Field            | Type                | Description                                                                   |
+| ---------------- | ------------------- | ----------------------------------------------------------------------------- |
+| `address`        | String              | The address that you are querying                                             |
+| `domain`         | String              | Primary ENS domain or Solana domain of the address                            |
+| `avatar`         | String              | User's avatar URL                                                             |
+| `joinTime`       | String              | The time of user's first sent transaction on the given blockchain network     |
+| `twitter`        | Twitter             | Twitter info bound to the address                                             |
+| `github`         | Github              | Github info bound to the address                                              |
+| `followerCount`  | Int                 | How many followers the user has in the given network and namespace            |
+| `followingCount` | Int                 | How many followings the user has in the given network and namespace           |
+| `followings`     | BasicInfoConnection | List of user's followings                                                     |
+| `followers`      | BasicInfoConnection | List of user's followers                                                      |
+| `friends`        | BasicInfoConnection | List of user's friends (mutually followed)                                    |
+
+## Retrieve Single Field
+
+If you only need to query one address' ENS, you can run the query below in the [Playground](/cyberconnect-api/playground/):
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
+query QueryForENS {
+    identity(
+        address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c"
+        network: ETH
+    ) {
+        domain
+    }
+}
+```
+
+</TabItem>
+<TabItem value="json">
+
+```json
+{
+  "data": {
+    "identity": {
+      "domain": "cyberlab.eth"
+    }
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+You can also use `joinTime`, `avatar`, or other fields to get different information about an account.
+
+## Retrieve Follower, Following, Friend Lists
+
+Follower, Following, and Friend are endpoints that are implemented with pagination. In order to get the whole dataset of an address, you need to make requests page by page with the correct namespace and pagination input parameters.
+
+For detail, please check [Namespace](/resources/terminology/namespace/) and [Pagination](/resources/terminology/pagination/) page.
+
+### Followers Example
+
+You can use this snippet for address' follower list query directly in the [Playground](/cyberconnect-api/playground/):
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
+query FullIdentityQuery {
+    identity(
+        address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c"
+        network: ETH
+    ) {
+        followerCount(namespace: "CyberConnect")
+            followers(first: 1) {
+            pageInfo {
+            startCursor
+            endCursor
+            hasNextPage
+            hasPreviousPage
+        }
+            list {
+                address
+                domain
+                avatar
+                namespace
+                lastModifiedTime
+            }
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="json">
+
+```json
+{
+  "data": {
+    "identity": {
+      "followerCount": 13325,
+      "followers": {
+        "pageInfo": {
+          "startCursor": "0",
+          "endCursor": "0",
+          "hasNextPage": true,
+          "hasPreviousPage": false
+        },
+        "list": [
+          {
+            "address": "0x00000035e82c83792df6def4de690fc87908c076",
+            "domain": "",
+            "avatar": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2021-12-13T09:04:03Z"
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Retrieve All Fields
+
+### Full Example
+
+You can try Identity API in the [Playground](/cyberconnect-api/playground/) page. Open the page, make sure the URL is correct, copy and paste the following query into the input.
+
+We will take _cyberLab.eth_ as an example on the **Ethereum network**. To query the information of it, type:
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
+query FullIdentityQuery{
+  identity(address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c", network: ETH) {
+    address
+    domain
+    avatar
+    joinTime
+    twitter {
+      handle
+      avatar
+      verified
+      tweetId
+      source
+      followerCount
+    }
+    github {
+      username
+      gistId
+      userId
+    }
+    followerCount(namespace: "CyberConnect")
+    followingCount(namespace: "CyberConnect")
+    followings(namespace: "CyberConnect", first: 2, after: "-1") {
+      pageInfo {
+        startCursor
+        endCursor
+        hasNextPage
+        hasPreviousPage
+      } 
+      list {
+        address
+        domain
+        avatar
+        alias
+        namespace
+        lastModifiedTime
+        verifiable
+      } 
+    }
+    followers(namespace: "CyberConnect", first: 2, after: "-1") {
+      pageInfo {
+        startCursor
+        endCursor
+        hasNextPage
+        hasPreviousPage
+      } 
+      list {
+        address
+        domain
+        avatar
+        alias
+        namespace
+        lastModifiedTime
+        verifiable
+      } 
+    }
+    friends(namespace: "CyberConnect", first: 2, after: "-1") {
+      pageInfo {
+        startCursor
+        endCursor
+        hasNextPage
+        hasPreviousPage
+      } 
+      list {
+        address
+        domain
+        avatar
+        alias
+        namespace
+        lastModifiedTime
+        verifiable
+      } 
+    }
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json">
+
+```json
+{
+  "data": {
+    "identity": {
+      "address": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
+      "domain": "cyberlab.eth",
+      "avatar": "https://images.cybertino.io/cyberconnect_logo",
+      "joinTime": "2021-11-09T02:44:18Z",
+      "twitter": {
+        "handle": "cyberconnecthq",
+        "avatar": "",
+        "verified": true,
+        "tweetId": "1470883558751309828",
+        "source": "CyberConnect",
+        "followerCount": 51373
+      },
+      "github": {
+        "username": "",
+        "gistId": "",
+        "userId": 0
+      },
+      "followerCount": 20636,
+      "followingCount": 45,
+      "followings": {
+        "pageInfo": {
+          "startCursor": "0",
+          "endCursor": "1",
+          "hasNextPage": true,
+          "hasPreviousPage": false
+        },
+        "list": [
+          {
+            "address": "0x0aa5973f2614dccfbe53c8273da22502d7e4fbd5",
+            "domain": "1pay.eth",
+            "avatar": "https://lh3.googleusercontent.com/ErzzE3yOWC6hP4YJTxfSuonFJtXwJBXXmLQNYXx0AGf7u9EvX0hqMssnvZekKOlg8tBJs1zqTAdcn6JWI2D0zomPtNqzQOM4Mw9e=s128",
+            "alias": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2022-03-21T20:38:57Z",
+            "verifiable": true
+          },
+          {
+            "address": "0xb272a880ca5d104a0e0874d6f1a2b0719dbe82b5",
+            "domain": "stepn.eth",
+            "avatar": "https://lh3.googleusercontent.com/AfpwQ8AZojJCRO56c1ipYJkMZ4EnZkfaVf6tC3ena1uJfWUL7imXqaEwSsHaQzvfNWzqpI1C1Qrzs0Ol0Tmats_gTPxzSgOdTscfpA=s128",
+            "alias": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2022-03-21T20:38:46Z",
+            "verifiable": true
+          }
+        ]
+      },
+      "followers": {
+        "pageInfo": {
+          "startCursor": "0",
+          "endCursor": "1",
+          "hasNextPage": true,
+          "hasPreviousPage": false
+        },
+        "list": [
+          {
+            "address": "0x997eab8550ab8267826307e327bc19581561fdfc",
+            "domain": "",
+            "avatar": "",
+            "alias": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2022-05-15T19:12:59Z",
+            "verifiable": true
+          },
+          {
+            "address": "0x0ec559a170d26bd1ec027572773664dc85590a8d",
+            "domain": "",
+            "avatar": "",
+            "alias": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2022-05-15T19:11:23Z",
+            "verifiable": true
+          }
+        ]
+      },
+      "friends": {
+        "pageInfo": {
+          "startCursor": "0",
+          "endCursor": "1",
+          "hasNextPage": true,
+          "hasPreviousPage": false
+        },
+        "list": [
+          {
+            "address": "0x0aa5973f2614dccfbe53c8273da22502d7e4fbd5",
+            "domain": "1pay.eth",
+            "avatar": "https://lh3.googleusercontent.com/ErzzE3yOWC6hP4YJTxfSuonFJtXwJBXXmLQNYXx0AGf7u9EvX0hqMssnvZekKOlg8tBJs1zqTAdcn6JWI2D0zomPtNqzQOM4Mw9e=s128",
+            "alias": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2022-03-21T20:38:57Z",
+            "verifiable": true
+          },
+          {
+            "address": "0xc47aa859fa329496db6d498165da7e0b1fe13430",
+            "domain": "peiwen.eth",
+            "avatar": "https://lh3.googleusercontent.com/bHlXuQQWjvrD8SLOpf6dujm7lN5w6Hukx_to6yl88y4KL2W1FqcU1S1_oNBPWfcwNVGOqhD3zqEBJPQRJp6__oFlfLAxBZoQaknf=s128",
+            "alias": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2022-03-21T20:38:21Z",
+            "verifiable": true
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+</TabItem>
+</Tabs>
