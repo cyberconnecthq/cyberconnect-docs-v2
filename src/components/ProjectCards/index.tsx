@@ -29,7 +29,7 @@ const ProjectList: ProjectItem[] = [
     ]
   },
   {
-    title: 'Social Verifier',
+    title: 'CyberConnect Social Verifier',
     urls: [
       {
         icon: <AiFillGithub />,
@@ -51,7 +51,7 @@ const ProjectList: ProjectItem[] = [
     ]
   },
   {
-    title: 'CyberConnect API Starter Demo',
+    title: 'CyberConnect GraphQL API Starter Demo',
     urls: [
       {
         icon: <AiFillGithub />,
@@ -60,6 +60,19 @@ const ProjectList: ProjectItem[] = [
       {
         icon: <CgWebsite />,
         url: "https://cyberconnect-start.netlify.app/"
+      },
+    ]
+  },
+  {
+    title: 'CyberProfile REST API Starter Demo',
+    urls: [
+      {
+        icon: <AiFillGithub />,
+        url: "https://github.com/cyberconnecthq/cyberprofile"
+      },
+      {
+        icon: <CgWebsite />,
+        url: "https://cyber-graph.vercel.app/"
       },
     ]
   },
@@ -73,6 +86,15 @@ const ProjectList: ProjectItem[] = [
       {
         icon: <CgWebsite />,
         url: "https://cyber-graph.vercel.app/"
+      },
+    ]
+  },
+  {
+    title: 'Scaffold-ETH CyberConnect Starter Kit',
+    urls: [
+      {
+        icon: <AiFillGithub />,
+        url: "https://github.com/cyberconnecthq/scaffold-eth-cyberconnect-starter-kit"
       },
     ]
   },

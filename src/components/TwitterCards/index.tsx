@@ -23,15 +23,6 @@ const PartnersEventsList: TwitterItem[] = [
   }
 ];
 
-const CommunityUpdateList: TwitterItem[] = [
-  {
-    html: <blockquote className="twitter-tweet"><p lang="en" dir="ltr">What an amazing hackathon we had <a href="https://twitter.com/hashtag/GR13?src=hash&amp;ref_src=twsrc%5Etfw">#GR13</a><br></br><br></br>Shout out to all the builders who have helped us along the journey. We can&#39;t possibly thank you enough! We will definitely see you guys soon 💯<br></br><br></br>Demo Day Recording:<a href="https://t.co/U0u0QcZIe1">https://t.co/U0u0QcZIe1</a><br></br><br></br>CyberConnect <a href="https://twitter.com/hashtag/GR13?src=hash&amp;ref_src=twsrc%5Etfw">#GR13</a> Report:<a href="https://t.co/XLgsYizPI4">https://t.co/XLgsYizPI4</a></p>&mdash; CyberConnect (@CyberConnectHQ) <a href="https://twitter.com/CyberConnectHQ/status/1512575205759066112?ref_src=twsrc%5Etfw">April 8, 2022</a></blockquote>
-  },
-  {
-    html: <blockquote className="twitter-tweet"><p lang="en" dir="ltr">We&#39;ve partnered up with <a href="https://twitter.com/ETHGlobal?ref_src=twsrc%5Etfw">@ETHGlobal</a> to build the ultimate hackathon experience at <a href="https://twitter.com/hashtag/ETHAmsterdam?src=hash&amp;ref_src=twsrc%5Etfw">#ETHAmsterdam</a>! 🥳<br></br><br></br>Want to hack the future of Web3 and win $400k+ in prizes? Join us for <a href="https://twitter.com/hashtag/ETHAmsterdam?src=hash&amp;ref_src=twsrc%5Etfw">#ETHAmsterdam</a> April 22th - 24th. Register at: <a href="https://t.co/BR0JvlqSWd">https://t.co/BR0JvlqSWd</a> <br></br><br></br>Drop a 🙋‍♀️ if you&#39;re going! <a href="https://t.co/uyqqZnWAWa">pic.twitter.com/uyqqZnWAWa</a></p>&mdash; CyberConnect (@CyberConnectHQ) <a href="https://twitter.com/CyberConnectHQ/status/1511789984008843264?ref_src=twsrc%5Etfw">April 6, 2022</a></blockquote>
-  },
-];
-
 function TwitterCard({ html }: TwitterItem) {
   return (
     <div className={styles.twitterCard}>
@@ -54,16 +45,6 @@ export function PartnersEventsTwitterCards(): JSX.Element {
   return (
     <div className={`cards ${styles.twitterCards}`}>
       {PartnersEventsList.map((props, idx) => (
-        <TwitterCard key={idx} {...props} />
-      ))}
-    </div>
-  );
-}
-
-export function CommunityTwitterCards(): JSX.Element {
-  return (
-    <div className={`cards ${styles.twitterCards}`}>
-      {CommunityUpdateList.map((props, idx) => (
         <TwitterCard key={idx} {...props} />
       ))}
     </div>
