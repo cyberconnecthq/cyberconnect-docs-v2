@@ -4,15 +4,18 @@
   text-align: center;
 }
 
-.connectCardIcon svg {
-  width: auto;
-  height: 34px;
+.connectCardIcon {
+  background-color: var(--secondary-green-15);
+  border-radius: 8px;
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  margin-bottom: 14px;
 }
 
-.connectCardTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: uppercase;
+.connectCardIcon svg {
+  height: 44px;
 }
 
 .connectCards {

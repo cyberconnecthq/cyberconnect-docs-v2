@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './styles.module.css';
-import { FiFlag } from 'react-icons/fi';
-import { RiUserFollowLine } from 'react-icons/ri';
-import { BiLike, BiUpvote } from 'react-icons/bi';
-import { BsBookmark } from 'react-icons/bs';
+import ArrowUpwardSvg from '@site/static/img/v0.3.0/icons/connect/arrow_upward.svg';
+import BookmarkSvg from '@site/static/img/v0.3.0/icons/connect/bookmark.svg';
+import FlagSvg from '@site/static/img/v0.3.0/icons/connect/flag.svg';
+import HowToRegSvg from '@site/static/img/v0.3.0/icons/connect/how_to_reg.svg';
+import ThumbUpOffSvg from '@site/static/img/v0.3.0/icons/connect/thumb_up_off.svg';
 
 type ConnectItem = {
   icon: any;
@@ -12,32 +13,32 @@ type ConnectItem = {
 
 const ConnectList: ConnectItem[] = [
   {
-    icon: <RiUserFollowLine />,
+    icon: <HowToRegSvg />,
     title: 'Follow',
   },
   {
-    icon: <BiLike />,
+    icon: <ThumbUpOffSvg />,
     title: 'Like',
   },
   {
-    icon: <FiFlag />,
+    icon: <FlagSvg />,
     title: 'Report',
   },
   {
-    icon: <BsBookmark />,
+    icon: <BookmarkSvg />,
     title: 'Watch',
   },
   {
-    icon: <BiUpvote />,
+    icon: <ArrowUpwardSvg />,
     title: 'Vote',
   },
 ];
 
 function ConnectCard({icon, title}: ConnectItem) {
   return (
-    <div className={`card ${styles.connectCard}`}>
+    <div className={styles.connectCard}>
         <div className={styles.connectCardIcon}>{icon}</div>
-        <div className={styles.connectCardTitle}>{title}</div>
+        <h3>{title}</h3>
     </div>
   );
 }

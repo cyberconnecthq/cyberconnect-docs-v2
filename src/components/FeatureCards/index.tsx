@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
-import LinkSvg from '@site/static/img/v1/link.svg';
+import LinkSvg from '@site/static/img/v0.3.0/link.svg';
 
 type FeatureItem = {
   title: string;
@@ -40,8 +40,11 @@ const FeatureList: FeatureItem[] = [
 function FeatureCard({title, path, description}: FeatureItem) {
   return (
     <div className={`card ${styles.featureCard}`}>
-      <div className={`cardTitle ${styles.featureCardTitle}`}>
-        <div>{title}</div>
+      <div className='cardTitle'>
+        <div>
+          <div></div>
+          <h3>{title}</h3>
+        </div>
         <Link
           className='cardTitleLink'
           to={path}>
