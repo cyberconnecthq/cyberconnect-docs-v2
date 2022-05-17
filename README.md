@@ -1,9 +1,5 @@
 # CyberConnect Developer Center
 
-<p align="center">
-  <img width="260" height="180" src="https://cyberconnect.me/_next/image?url=%2Fassets%2Fgrains.svg&w=64&q=75">
-</p>
-
 ## Introduction
 **CyberConnect Developer Center** is a perfect space for developers to learn about the CyberConnect Protocol, get inspired, and start building meaningful social experiences for users.
 
