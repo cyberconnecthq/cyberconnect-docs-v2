@@ -5,10 +5,11 @@
 </p>
 
 ## Introduction
-
 **CyberConnect Developer Center** is a perfect space for developers to learn about the CyberConnect Protocol, get inspired, and start building meaningful social experiences for users.
 
-The purpose of the **CyberConnect Protocol** is to empower users to take full ownership over their social data while traversing the web3 world. By plugging into the decentralized social graph, developers are provided with a universal data layer to build the next generation of dApps.
+**CyberConnect** is a decentralized social graph protocol that helps dApps bootstrap network effects and build personalized social experiences.
+
+The **CyberConnect Protocol** is designed for developers to create, access, and easily build upon decentralized social graphs on Ethereum and Solana. By using dApps built upon the protocol, your users will be freed from centralized databases owned by network operators. Your users' data will become portable, self-sovereign, and blockchain-agnostic.
 <br></br>
 
 ## Setup
