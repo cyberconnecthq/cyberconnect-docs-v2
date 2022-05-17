@@ -65,6 +65,7 @@ const config = {
         loaders: {
           UrlLoader: "@graphql-tools/url-loader",
         },
+        diffMethod: false // The method to be used for identifying changes in the schema for triggering the documentation generation. Set it to false to prevent from automatic updates.
       },
     ],
   ],

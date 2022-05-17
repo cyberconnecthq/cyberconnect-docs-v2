@@ -42,15 +42,6 @@ const ProjectList: ProjectItem[] = [
     ]
   },
   {
-    title: 'CyberConnect Connect List',
-    urls: [
-      {
-        icon: <AiFillGithub />,
-        url: "https://github.com/cyberconnecthq/connect-list/"
-      },
-    ]
-  },
-  {
     title: 'CyberConnect GraphQL API Starter Demo',
     urls: [
       {

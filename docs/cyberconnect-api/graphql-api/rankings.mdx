@@ -19,13 +19,13 @@ rankings (network: Network, type: ConnectionType, namespace: String, first: Int,
 
 For input params:
 
-| Field       | Type           | Description                                                                                                           |
-| ----------- | -------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `network`   | Network        | The blockchain network for the queried address. Default is `ETH`.                                                     |
-| `type`      | ConnectionType | Input the connection type that serves as the basis of this ranking. You can use FOLLOW, LIKE, REPORT, WATCH, or VOTE. |
-| `namespace` | String         | Rankings in a certain namespace.                                                                                      |
-| `first`     | Int            | Input the number of entries this query should return. The default is 20 and the maximum value is 50.                  |
-| `after`     | String         | Input after which index this query should begin. The default is "-1".                                                 |
+| Field       | Type           | Description                                                                                                                     | Required/Optional                                                 |
+| ----------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| `network`   | Network        | The blockchain network for the queried address.                                                                                 | Optional. Default value is `ETH`.                                  |
+| `type`      | ConnectionType | Input the connection type that serves as the basis of this ranking. You can use `FOLLOW`, `LIKE`, `REPORT`, `WATCH`, or `VOTE`. | Optional. Default value is `FOLLOW`.                                       |
+| `namespace` | String         | Rankings in a certain namespace.                                                                                      | Optional. Default value is `CyberConnect`.                         |
+| `first`     | Int            | Input the number of entries this query should return.                                                                 | Optional. Default is `20` and the maximum value is `50`.           |
+| `after`     | String         | Input after which index this query should begin.                                                                      | Optional. Default value is `-1`.                                   |
 
 For the usage of `namespace`, please refer to [Namespace](/resources/terminology/namespace) section for more instructions. For the usage of `first` and `after`, please refer to [Pagination](/resources/terminology/pagination) section. For the concept of connection types, please read [Connection](/concepts/connection) section.
 
