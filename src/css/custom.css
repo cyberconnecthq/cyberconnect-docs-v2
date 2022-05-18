@@ -368,11 +368,11 @@ aside {
 }
 
 .pagination-nav__item:first-child::before {
-  content: "<-";
+  content: url(/img/v0.3.0/icons/active/arrow_back.svg);
 }
 
 .pagination-nav__item:last-child::after {
-  content: "->";
+  content: url(/img/v0.3.0/icons/active/arrow_forward.svg);
 }
 
 /* CARDS */
