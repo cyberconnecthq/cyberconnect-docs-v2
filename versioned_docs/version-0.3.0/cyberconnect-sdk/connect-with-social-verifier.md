@@ -15,7 +15,7 @@ Currently, CyberConnect Social Verifier only supports `Twitter` and `Github` acc
 
 :::
 
-You can visit [Github](https://github.com/cyberconnecthq/social-verifier) for codebase use or review, [Connect List](https://github.com/cyberconnecthq/connect-list) for direct use, [CyberConnect API](/cyberconnect-api/overview/) for Indexer Query or test out the CyberConnect Social Verifier in the sandbox from [Verify a Twitter Account](/get-started/verify-a-twitter-account/) section.
+You can visit [Github](https://github.com/cyberconnecthq/social-verifier) for codebase use or review, [CyberConnect API](/cyberconnect-api/overview/) for Indexer Query or test out the CyberConnect Social Verifier in the sandbox from [Verify a Twitter Account](/get-started/verify-a-twitter-account/) section.
 
 ## Installation
 
@@ -35,7 +35,7 @@ npm install @cyberlab/social-verifier
 
 1. Users use their Ethereum private key to sign a message with their Twitter handle to get a message which contains the generated signature.
 2. Users post a tweet with this message so others can view.
-3. Users send a verify request to our server with their wallet address. Our server will recover the signer address from the signature found in the tweet and write the verified inforamtion into [Connect List](https://github.com/cyberconnecthq/connect-list) if the signer address is the same as the address in the request.
+3. Users send a verify request to our server with their wallet address. Our server will recover the signer address from the signature found in the tweet and save the verified information if the signer address is the same as the address in the request.
 
 ### Signing Data
 
@@ -63,7 +63,7 @@ window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
 
 ### Verifying
 
-After posting the tweet, you can call `twitterVerify` to link your address with your twitter account. You can check the list of verified mappings in [Connect List](https://github.com/cyberconnecthq/connect-list) repo.
+After posting the tweet, you can call `twitterVerify` to link your address with your twitter account.
 
 ```jsx
 import { twitterVerify } from "@cyberlab/social-verifier";
@@ -85,7 +85,7 @@ try {
 
 1. Users use their Ethereum private key to sign a message with their Github username to get a message which contains the generated signature.
 2. Users create a Github gist with this message.
-3. Users send a verify request to our server with their wallet address and the gist id. Our server will recover the signer address from the signature found in the gist and write the verified inforamtion into [Connect List](https://github.com/cyberconnecthq/connect-list) if the signer address is the same as the address in the request.
+3. Users send a verify request to our server with their wallet address and the gist id. Our server will recover the signer address from the signature found in the gist and save the verified information if the signer address is the same as the address in the request.
 
 ### Signing Data
 
@@ -107,7 +107,7 @@ You need to create a gist in your Github. You can customize your gist text, but 
 
 ### Verifying
 
-After posting the gist, you can call `githubVerify` to link your address with your Github account. You can check the list of verified mappings in [Connect List](https://github.com/cyberconnecthq/connect-list) repo.
+After posting the gist, you can call `githubVerify` to link your address with your Github account.
 
 ```jsx
 import { githubVerify } from "@cyberlab/social-verifier";
