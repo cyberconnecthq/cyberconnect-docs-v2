@@ -53,14 +53,30 @@ const config = {
       }),
     ],
   ],
+  plugins: [
+    [
+      require.resolve("@edno/docusaurus2-graphql-doc-generator"),
+      {
+        schema: "https://api.cybertino.io/connect/",
+        rootPath: "./docs",
+        baseURL: "/cyberconnect-api/reference/",
+        linkRoot: "/",
+        homepage: "./docs/cyberconnect-api/reference/graphql.md",
+        loaders: {
+          UrlLoader: "@graphql-tools/url-loader",
+        },
+        diffMethod: false // The method to be used for identifying changes in the schema for triggering the documentation generation. Set it to false to prevent from automatic updates.
+      },
+    ],
+  ],
   themeConfig:
     /** @type {import("@docusaurus/preset-classic").ThemeConfig} */
     ({
       navbar: {
-        title: "CyberConnect Dev Center",
+        title: "",
         logo: {
           alt: "CyberConnect Logo",
-          src: "img/logo-white.svg",
+          src: "img/logo-custom.svg",
         },
         items: [
           {
@@ -78,7 +94,6 @@ const config = {
       footer: {
         style: "light",
         links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} CyberConnect.`,
       },
       prism: {
         theme: lightCodeTheme,

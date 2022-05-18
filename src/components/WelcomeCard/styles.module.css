@@ -1,0 +1,16 @@
+.welcomeCard {
+    background-color: var(--primary-green);
+    border-radius: 10px;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.welcomeCard h2,
+.welcomeCard a,
+.welcomeCard p {
+    color: var(--primary-white);
+}
+
+.welcomeCard p {
+    margin: 0;
+}

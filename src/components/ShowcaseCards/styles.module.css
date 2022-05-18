@@ -1,11 +1,10 @@
 .showcaseCard {
   width: 100%;
-  min-height: 304px;
 }
 
 .showcaseCardImg {
   border-radius: 8px 8px 0px 0px;
-  height: 132px;
+  height: 140px;
   overflow: hidden;
 }
 
@@ -14,60 +13,55 @@
   height: auto;
 }
 
-.showcaseCardTitle {
-  border-top: 1px solid var(--ifm-color-emphasis-300);
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
-}
-
-.showcaseCardTitle div {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
 .cardDetails {
-  height: calc(100% - 228px);
+  height: calc(100% - 140px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 20px;
 }
 
 .cardText {
-  height: 100%;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.375rem;
 }
 
 .cardTags {
   display: flex;
-  margin-top: 10px;
+  align-items: center;
 }
 
 .cardTag {
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  margin-right: 6px;
-  padding: 0px 10px;
+  border-radius: 40px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 10%;
+  margin-right: 10px;
+  padding: 4px 12px;
 }
 
-.cardTag div:first-child {
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  margin-right: 6px;
+.cardTag[datatype="identity"] {
+  background: #FFEBEC;
+  color: #E13238;
 }
 
-.cardTag[datatype="identity"] div:first-child {
-  background-color: var(--color-blue);
+.cardTag[datatype="social"] {
+  background: #EBF2FC;
+  color: #306CCE;
 }
 
-.cardTag[datatype="social"] div:first-child {
-  background-color: var(--color-pink);
+.cardTag[datatype="NFT"] {
+  background: #E6F6E6;
+  color: #009400;
 }
 
-.cardTag[datatype="NFT"] div:first-child {
-  background-color: var(--color-green);
+.cardTag[datatype="tool"] {
+  background: #FFF8E6;
+  color: #E6A700;
 }
 
-.cardTag[datatype="tool"] div:first-child {
-  background-color: var(--color-yellow);
+.showcaseCards {
+  grid-gap: 24px;
 }

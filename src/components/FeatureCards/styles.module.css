@@ -1,14 +1,4 @@
 .featureCard {
   width: 100%;
-  min-height: 152px;
-}
-
-.featureCardTitle {
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
-}
-
-.featureCardTitle div {
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.1;
+  min-height: 124px;
 }

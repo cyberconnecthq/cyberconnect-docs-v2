@@ -29,7 +29,7 @@ const ProjectList: ProjectItem[] = [
     ]
   },
   {
-    title: 'Social Verifier',
+    title: 'CyberConnect Social Verifier',
     urls: [
       {
         icon: <AiFillGithub />,
@@ -42,16 +42,7 @@ const ProjectList: ProjectItem[] = [
     ]
   },
   {
-    title: 'CyberConnect Connect List',
-    urls: [
-      {
-        icon: <AiFillGithub />,
-        url: "https://github.com/cyberconnecthq/connect-list/"
-      },
-    ]
-  },
-  {
-    title: 'CyberConnect API Starter Demo',
+    title: 'CyberConnect GraphQL API Starter Demo',
     urls: [
       {
         icon: <AiFillGithub />,
@@ -60,6 +51,19 @@ const ProjectList: ProjectItem[] = [
       {
         icon: <CgWebsite />,
         url: "https://cyberconnect-start.netlify.app/"
+      },
+    ]
+  },
+  {
+    title: 'CyberProfile REST API Starter Demo',
+    urls: [
+      {
+        icon: <AiFillGithub />,
+        url: "https://github.com/cyberconnecthq/cyberprofile"
+      },
+      {
+        icon: <CgWebsite />,
+        url: "https://cyber-graph.vercel.app/"
       },
     ]
   },
@@ -76,13 +80,25 @@ const ProjectList: ProjectItem[] = [
       },
     ]
   },
+  {
+    title: 'Scaffold-ETH CyberConnect Starter Kit',
+    urls: [
+      {
+        icon: <AiFillGithub />,
+        url: "https://github.com/cyberconnecthq/scaffold-eth-cyberconnect-starter-kit"
+      },
+    ]
+  },
 ];
 
 function ProjectCard({title, urls}: ProjectItem) {
   return (
     <div className={`card ${styles.projectCard}`}>
-      <div className={`cardTitle ${styles.projectCardTitle}`}>
-        <div>{title}</div>
+      <div className='cardTitle'>
+        <div>
+          <div></div>
+          <h3>{title}</h3>
+        </div>
       </div>
       {urls.map((elem, idx) => (
         <div key={idx}>
@@ -98,7 +114,7 @@ function ProjectCard({title, urls}: ProjectItem) {
 
 export default function ProjectCards(): JSX.Element {
   return (
-    <div>
+    <div className={styles.projectCards}>
       {ProjectList.map((props, idx) => (
         <ProjectCard key={idx} {...props} />
       ))}
