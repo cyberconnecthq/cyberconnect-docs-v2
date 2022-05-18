@@ -15,7 +15,7 @@ The CyberConnect Protocol’s mission is to democratize users’ social graphs a
 
 Since we first launched the CyberConnect Procotol, [70+ projects](/overview/build-with-cyberconnect/#idea-pool) have been integrated into our ecosystem. We have helped developers build a variety of social utilities including decentralized profiles, feeds, DAO tools, GameFi platforms, and NFT marketplaces. Our team also forms long-term partnerships with each and every project by providing technical, marketing, and community support.
 
-In May 2022, we announced the first CyberConnect Grant winner TeaParty, a Social-&-Earn (S&E) protocol in Web3, where everyone can participate, socialize and earn revenue together. Our team is more than excited to support TeaParty with its integration and growth initiatives! **To further this community effort, we’re officially allocating $500,000 to the CyberConnect Grants Pool and [seeking applications](https://9txmc3wk3bc.typeform.com/to/t5bsZ22Z) from Web3 developers addressing one or more of the following themes:**
+Last week, we announced the first CyberConnect Grant winner TeaParty, a Social-&-Earn (S&E) protocol in Web3, where everyone can participate, socialize and earn revenue together. Our team is more than excited to support TeaParty with its integration and growth initiatives! **To further this community effort, we’re officially allocating $500,000 to the CyberConnect Grants Pool and [seeking applications](https://9txmc3wk3bc.typeform.com/to/t5bsZ22Z) from Web3 developers addressing one or more of the following themes:**
 
 1. Social experience on Web3.
 2. Composable social modules for DApps.

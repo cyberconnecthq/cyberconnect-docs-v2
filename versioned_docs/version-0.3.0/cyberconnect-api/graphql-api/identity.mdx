@@ -19,10 +19,10 @@ The definition of `identity` query is:
 identity(address: String!, network: Network) UserIdentity!
 ```
 
-| Field     | Type    | Description                                                                                                      |
-| --------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
-| `address` | String  | the string of the address that you query for                                                                     |
-| `network` | Network | the blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network. |
+| Field     | Type    | Description                                      | Required/Optional                 |
+| --------- | ------- | ------------------------------------------------ | --------------------------------- |
+| `address` | String! | The string of the address that you query for     | Required                          |    
+| `network` | Network | The blockchain network for the querying address  | Optional. Default value is `ETH`. |
 
 With correct input, you can retrieve a `UserIdentity` object with the following fields:
 

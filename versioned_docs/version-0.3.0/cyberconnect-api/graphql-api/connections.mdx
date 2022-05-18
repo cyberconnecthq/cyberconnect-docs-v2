@@ -1,13 +1,13 @@
 ---
-id: connection
-title: Connection
-slug: /cyberconnect-api/graphql-api/connection/
-sidebar_label: Connection
+id: connections
+title: Connections
+slug: /cyberconnect-api/graphql-api/connections/
+sidebar_label: Connections
 sidebar_position: 2
-description: Connection API is used to query fields of connections between a given address and another address or a list of other addresses (5000 max).
+description: Connections API is used to query fields of connections between a given address and another address or a list of other addresses (5000 max).
 ---
 
-Connection API is used to query fields of [connections](/concepts/connection/) between a given address and another address or a list of other addresses (5000 max).
+Connections API is used to query fields of [connections](/concepts/connection/) between a given address and another address or a list of other addresses (5000 max).
 
 You can find the step by step instructions on how to set up GraphQL client in your application and write a simple **Get Connection query** in the [Read Connections](/get-started/read-connections/) section.
 
@@ -19,11 +19,11 @@ The general pattern of `connection` query is:
 connections(fromAddr: String!, toAddrList: [String!]!, network: Network) [Connection!]!
 ```
 
-| Field        | Type       | Description                                                                                                                      |
-| ------------ | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `fromAddr`   | String!    | The source address that you want to query connections about                                                                      |
-| `toAddrList` | [String!]! | A string list of addresses that you want to check if they have connections with `fromAddr`                                       |
-| `network`    | Network    | The blockchain network of the address you are querying about. Default is `ETH`. you can also use `SOLANA` for the Solana network |
+| Field        | Type       | Description                                                                                | Required/Optional                 |
+| ------------ | ---------- | ------------------------------------------------------------------------------------------ | --------------------------------- |
+| `fromAddr`   | String!    | The source address that you want to query connections about                                | Required                          |
+| `toAddrList` | [String!]! | A string list of addresses that you want to check if they have connections with `fromAddr` | Required                          |
+| `network`    | Network    | The blockchain network of the address you are querying about                               | Optional. Default value is `ETH`. |
 
 With correct inputs, you will get a list of `Connection` objects, consisting of the following fields:
 

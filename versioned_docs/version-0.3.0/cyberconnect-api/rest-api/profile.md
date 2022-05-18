@@ -11,7 +11,7 @@ Profile API is used for querying the ENS profile metadata of an Ethereum address
 
 ## Structure
 
-The general pattern of a ”profile” request is:
+The endpoint URL for requesting the profile:
 
 ```html
 https://cyberprofile.vercel.app/api/profile/{id}

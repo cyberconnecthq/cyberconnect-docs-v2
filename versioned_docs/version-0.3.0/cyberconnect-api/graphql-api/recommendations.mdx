@@ -23,13 +23,14 @@ recommendations (address: String!, filter: RecommFilter, network: Network, first
 
 For input params:
 
-| Field     | Type    | Description                                                                                                     |
-| --------- | ------- | --------------------------------------------------------------------------------------------------------------- |
-| `address` | String  | The address that you want to get recommendations for                                                            |
-| `filter`  | Enum    | Type of connection filter. Currently only support `SOCIAL`                                                      |
-| `network` | Network | The blockchain network for the queried address. Default is `ETH`. you can also use `SOLANA` for Solana network. |
-| `first`   | Int     | The number of entries this query should return, default is `20` and the maximum value is `50`                   |
-| `after`   | String  | After which index this query should begin, default the result starts from the beginning                         |
+| Field       | Type    | Description                                                                             | Required/Optional                                        |
+| ----------- | ------- | --------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| `address`   | String! | The address that you want to get recommendations for                                    | Required                                                 |
+| `filter`    | Enum    | Type of connection filter.                                                              | Optional. Currently supports `SOCIAL`.                   |
+| `network`   | Network | The blockchain network for the queried address.                                         | Optional. Default value is `ETH`.                        |
+| `namespace` | String  | The source of the connection.                                                           | Optional. Default value is `CyberConnect`.               |
+| `first`     | Int     | The number of entries this query should return                                          | Optional. Default is `20` and the maximum value is `50`. |
+| `after`     | String  | After which index this query should begin                                               | Optional. Default value is `-1`.                         |
 
 For `first` and `after` usage, please refer to [Pagination](/resources/terminology/pagination/) section.
 

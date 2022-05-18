@@ -11,13 +11,13 @@ Avatar API is used for querying the ENS avatar of an Ethereum address or ENS nam
 
 ## Structure
 
-The general pattern of an ”avatar” request is:
+The endpoint URL for requesting the avatar:
 
 ```html
 https://cyberprofile.vercel.app/api/avatar/{id}
 ```
 
-The general pattern of an “avatar” request of a specific image size is:
+The endpoint URL for requesting the avatar with a specific image size is:
 
 ```html
 https://cyberprofile.vercel.app/api/avatar/{id}?s={s}
