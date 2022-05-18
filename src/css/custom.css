@@ -216,6 +216,8 @@ table code {
 
 /* NAVBAR */
 .navbar {
+  border-bottom: 1px solid var(--secondary-black-10);
+  box-shadow: none;
   padding-right: 24px;
 }
 
@@ -366,11 +368,11 @@ aside {
 }
 
 .pagination-nav__item:first-child::before {
-  content: "<-";
+  content: url(/img/v0.3.0/icons/active/arrow_back.svg);
 }
 
 .pagination-nav__item:last-child::after {
-  content: "->";
+  content: url(/img/v0.3.0/icons/active/arrow_forward.svg);
 }
 
 /* CARDS */
@@ -378,6 +380,7 @@ aside {
   background-color: var(--primary-white);
   border: 1px solid var(--secondary-black-10);
   border-radius: 10px;
+  box-shadow: none;
   user-select: none;
   position: relative;
 }
@@ -430,7 +433,27 @@ aside {
 
 /* FOOTER */
 .footer {
-  display: none;
+  background-color: var(--primary-white);
+  border-top: 1px solid var(--secondary-black-10);
+  padding: 0;
+}
+
+.footerDesign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.footerDesign span {
+  color: #808080;
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  margin-right: 6px;
+  letter-spacing: 1px;
+  text-align: left;
 }
 
 /* FORMULAS */

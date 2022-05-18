@@ -94,7 +94,6 @@ const config = {
       footer: {
         style: "light",
         links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} CyberConnect.`,
       },
       prism: {
         theme: lightCodeTheme,
