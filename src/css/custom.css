@@ -351,29 +351,29 @@ aside {
   line-height: 22px;
 }
 
-.pagination-nav__item--next .pagination-nav__label::after,
-.pagination-nav__item:first-child .pagination-nav__label::before {
+.pagination-nav__link--next .pagination-nav__label::after,
+.pagination-nav__link--prev .pagination-nav__label::before {
   content: "";
 }
 
-.pagination-nav__item {
-  display: flex;
-  align-items: center;
+.pagination-nav__link--prev,
+.pagination-nav__link--next {
+  position: relative;
+  padding: 0 30px;
 }
 
-.pagination-nav__item:first-child::before,
-.pagination-nav__item:last-child::after {
-  color: var(--primary-green);
-  font-weight: 600;
-  font-size: 1.125rem;
-}
-
-.pagination-nav__item:first-child::before {
-  content: url(/img/v0.3.0/icons/active/arrow_back.svg);
-}
-
-.pagination-nav__item:last-child::after {
+.pagination-nav__link--next .pagination-nav__label::after{
   content: url(/img/v0.3.0/icons/active/arrow_forward.svg);
+  position: absolute;
+  top: 12px;
+  right: 0;
+}
+
+.pagination-nav__link--prev .pagination-nav__label::before {
+  content: url(/img/v0.3.0/icons/active/arrow_back.svg);
+  position: absolute;
+  top: 12px;
+  left: 0;
 }
 
 /* CARDS */
