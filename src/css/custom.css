@@ -313,9 +313,9 @@ aside {
   color: var(--secondary-black-50);
   font-size: 0.875rem;
   font-weight: 500;
-  line-height: 28px;
+  line-height: 1.75rem;
   letter-spacing: 0.7px;
-  height: 40px;
+  /* height: 40px; */
 }
 
 .menu__link--active {
@@ -341,7 +341,7 @@ aside {
 
 .pagination-nav__sublabel {
   font-weight: 600;
-  line-height: 17px;
+  line-height: 1.0625rem;
   letter-spacing: 0.1em;
 }
 
