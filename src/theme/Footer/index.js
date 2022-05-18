@@ -6,10 +6,10 @@ export default function FooterWrapper(props) {
   return (
     <>
       <Footer {...props} />
-      <div className='footerDesign'>
+      <a className='footerDesign' href='https://www.zypsy.com/' rel='noreferrer'>
         <span>Designed by</span>
         <ZypsyLogo />
-      </div>
+      </a>
     </>
   );
 }

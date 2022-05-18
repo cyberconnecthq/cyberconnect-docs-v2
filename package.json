@@ -16,11 +16,11 @@
     "release": "standard-version"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.18",
-    "@docusaurus/plugin-google-analytics": "^2.0.0-beta.18",
-    "@docusaurus/plugin-google-gtag": "^2.0.0-beta.18",
-    "@docusaurus/preset-classic": "2.0.0-beta.18",
-    "@docusaurus/remark-plugin-npm2yarn": "^2.0.0-beta.18",
+    "@docusaurus/core": "^2.0.0-beta.20",
+    "@docusaurus/plugin-google-analytics": "^2.0.0-beta.20",
+    "@docusaurus/plugin-google-gtag": "^2.0.0-beta.20",
+    "@docusaurus/preset-classic": "^2.0.0-beta.20",
+    "@docusaurus/remark-plugin-npm2yarn": "^2.0.0-beta.20",
     "@edno/docusaurus2-graphql-doc-generator": "^1.9.3",
     "@graphql-tools/url-loader": "^7.9.21",
     "@mdx-js/react": "^1.6.22",
@@ -43,7 +43,7 @@
     "remark-math": "3"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-beta.18",
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.20",
     "@tsconfig/docusaurus": "^1.0.5",
     "standard-version": "^9.3.2",
     "typescript": "^4.6.3"
