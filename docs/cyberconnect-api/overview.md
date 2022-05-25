@@ -27,8 +27,8 @@ You can access a variety of data about user profiles and avatars on Ethereum by 
 
 | Method | Description |
 | --- | --- |
-| `profile` | This method takes in an Ethereum address or ENS name as input and returns its profile metadata information. |
-| `avatar` | This method takes in an Ethereum address or ENS name as input and returns its avatar. |
+| [`profile`](/cyberconnect-api/rest-api/profile/) | This method takes in an Ethereum address or ENS name as input and returns its profile metadata information. |
+| [`avatar`](/cyberconnect-api/rest-api/avatar/) | This method takes in an Ethereum address or ENS name as input and returns its avatar. |
 
 ## How does it work?
 
