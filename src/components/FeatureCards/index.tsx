@@ -2,7 +2,10 @@ import React from 'react';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import LinkSvg from '@site/static/img/v0.4.0/link.svg';
+<<<<<<< HEAD
 import Translate from '@docusaurus/Translate';
+=======
+>>>>>>> 426f42e (fix: updated design with new icons)
 
 type FeatureItem = {
   title: string;
