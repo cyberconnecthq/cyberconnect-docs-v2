@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './styles.module.css';
-import { AiFillGithub } from 'react-icons/ai';
-import { DiNpm } from 'react-icons/di';
 import { CgWebsite } from 'react-icons/cg';
+import GithubSvg from '@site/static/img/v0.4.0/icons/project/github.svg';
+import NpmSvg from '@site/static/img/v0.4.0/icons/project/npm.svg';
 
 type UrlItem = {
   icon: any;
@@ -19,11 +19,11 @@ const ProjectList: ProjectItem[] = [
     title: 'CyberConnect SDK',
     urls: [
       {
-        icon: <AiFillGithub />,
+        icon: <GithubSvg />,
         url: "https://github.com/cyberconnecthq/js-cyberconnect/"
       },
       {
-        icon: <DiNpm />,
+        icon: <NpmSvg />,
         url: "https://www.npmjs.com/package/@cyberlab/cyberconnect/"
       },
     ]
@@ -32,11 +32,11 @@ const ProjectList: ProjectItem[] = [
     title: 'CyberConnect Social Verifier',
     urls: [
       {
-        icon: <AiFillGithub />,
+        icon: <GithubSvg />,
         url: "https://github.com/cyberconnecthq/social-verifier/"
       },
       {
-        icon: <DiNpm />,
+        icon: <NpmSvg />,
         url: "https://www.npmjs.com/package/@cyberlab/social-verifier/"
       },
     ]
@@ -45,7 +45,7 @@ const ProjectList: ProjectItem[] = [
     title: 'CyberConnect GraphQL API Starter Demo',
     urls: [
       {
-        icon: <AiFillGithub />,
+        icon: <GithubSvg />,
         url: "https://github.com/cyberconnecthq/cyberconnect-starter/"
       },
       {
@@ -58,7 +58,7 @@ const ProjectList: ProjectItem[] = [
     title: 'CyberProfile REST API Starter Demo',
     urls: [
       {
-        icon: <AiFillGithub />,
+        icon: <GithubSvg />,
         url: "https://github.com/cyberconnecthq/cyberprofile"
       },
       {
@@ -71,7 +71,7 @@ const ProjectList: ProjectItem[] = [
     title: 'CyberGraph Explorer Demo',
     urls: [
       {
-        icon: <AiFillGithub />,
+        icon: <GithubSvg />,
         url: "https://github.com/cyberconnecthq/CyberGraph/"
       },
       {
@@ -84,7 +84,7 @@ const ProjectList: ProjectItem[] = [
     title: 'Scaffold-ETH CyberConnect Starter Kit',
     urls: [
       {
-        icon: <AiFillGithub />,
+        icon: <GithubSvg />,
         url: "https://github.com/cyberconnecthq/scaffold-eth-cyberconnect-starter-kit"
       },
     ]

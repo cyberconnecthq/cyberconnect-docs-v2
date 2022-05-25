@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './styles.module.css';
-import ArrowUpwardSvg from '@site/static/img/v0.3.0/icons/connect/arrow_upward.svg';
-import BookmarkSvg from '@site/static/img/v0.3.0/icons/connect/bookmark.svg';
-import FlagSvg from '@site/static/img/v0.3.0/icons/connect/flag.svg';
-import HowToRegSvg from '@site/static/img/v0.3.0/icons/connect/how_to_reg.svg';
-import ThumbUpOffSvg from '@site/static/img/v0.3.0/icons/connect/thumb_up_off.svg';
+import ArrowUpwardSvg from '@site/static/img/v0.4.0/icons/connect/arrow_upward.svg';
+import BookmarkSvg from '@site/static/img/v0.4.0/icons/connect/bookmark.svg';
+import FlagSvg from '@site/static/img/v0.4.0/icons/connect/flag.svg';
+import HowToRegSvg from '@site/static/img/v0.4.0/icons/connect/how_to_reg.svg';
+import ThumbUpOffSvg from '@site/static/img/v0.4.0/icons/connect/thumb_up_off.svg';
 
 type ConnectItem = {
   icon: any;
