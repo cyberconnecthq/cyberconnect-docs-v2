@@ -9,10 +9,14 @@ description: The purpose of the CyberConnect Protocol is to empower users to tak
 
 ## Introduction
 
-The purpose of the CyberConnect Protocol is to empower users to take full ownership over their social data while traversing the web3 world. By plugging into the decentralized [social graph](/concepts/social-graph/), developers are provided with a universal data layer to build the next generation of dApps.
+CyberConnect is a decentralized [social graph](/concepts/social-graph/) protocol that helps dApps bootstrap network effects and build personalized social experiences. The decentralized protocol allows users to own their social connections while providing a composable social data layer for developers.
+
+CyberConnect describes a data standard, storage infrastructure, identity, and permissions management mechanism as the foundation of a seamless and secure digital social experience in Web3. CyberConnect also proposes the topology of a social data network of indexed data and recommendations that can be universally accessed and permissionlessly contribute to. Incentive mechanisms are designed to grow the protocol into a thriving self-sustaining economy with expanding utility.
 
 ## What's unique about the CyberConnect Protocol?
+
 The protocol is designed to address three major problems with existing social networks and graphs in the web2 world:
+
 <ul>
     <li><strong>Eliminate silos and redundancy.</strong><br></br>Web2 social graphs are "walled gardens" that retain users with high switching costs - users repeatedly build and declare connections whenever onboarding a new application. The CyberConnect Protocol gets rid of siloed and redundant social graphs by embracing flexibility and extensibility so that users can aggregate their identities and data across different blockchain networks.</li>
     <br></br>
@@ -22,7 +26,9 @@ The protocol is designed to address three major problems with existing social ne
 </ul>
 
 ## Why do developers build with CyberConnect?
+
 The protocol is designed with reliability, usability and interoperability in mind. Developers choose to build with us for several reasons:
+
 <ul><li><strong>Composable infrastructure.</strong><br></br>DApps can tap into CyberConnect with two lines of code and focus on building their own social layer without rebuilding the wheels.</li>
 <br></br>
 <li><strong>Consistent data standard.</strong><br></br>The protocol develops a data standard because data interoperability is the core property for user-centric Web3 applications. User’s social connection data need to be standardized for portability and composability.</li>
