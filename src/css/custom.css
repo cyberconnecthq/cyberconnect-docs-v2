@@ -557,6 +557,14 @@ iframe[title="playground"] {
   color: #4D3800;
 }
 
+.admonition svg {
+  display: none;
+}
+
+.admonition p {
+  padding-left: 6px;
+}
+
 /* CUSTOM EMOJIS */
 .menu__list-item--collapsed .menu__link--sublist::after,
 .menu__list-item--collapsed .menu__caret:before {
