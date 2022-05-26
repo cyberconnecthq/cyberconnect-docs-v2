@@ -14,7 +14,7 @@ Rankings API is used for querying a ranked list of addresses on the blockchain n
 The definition of `rankings` query is:
 
 ```graphql
-rankings (network: Network, type: ConnectionType, namespace: String, first: Int, after: String) [UserIdentityPage]!
+rankings (network: Network, type: ConnectionType, namespaces: String, first: Int, after: String) [UserIdentityPage]!
 ```
 
 For input params:
@@ -23,11 +23,11 @@ For input params:
 | ----------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
 | `network`   | Network        | The blockchain network for the queried address.                                                                                 | Optional. Default value is `ETH`.                                  |
 | `type`      | ConnectionType | Input the connection type that serves as the basis of this ranking. You can use `FOLLOW`, `LIKE`, `REPORT`, `WATCH`, or `VOTE`. | Optional. Default value is `FOLLOW`.                                       |
-| `namespace` | String         | Rankings in a certain namespace.                                                                                      | Optional. Default value is `CyberConnect`.                         |
+| `namespaces` | String         | Rankings in a certain namespace.                                                                                      | Optional. Default value is `CyberConnect`.                         |
 | `first`     | Int            | Input the number of entries this query should return.                                                                 | Optional. Default is `20` and the maximum value is `50`.           |
 | `after`     | String         | Input after which index this query should begin.                                                                      | Optional. Default value is `-1`.                                   |
 
-For the usage of `namespace`, please refer to [Namespace](/resources/terminology/namespace) section for more instructions. For the usage of `first` and `after`, please refer to [Pagination](/resources/terminology/pagination) section. For the concept of connection types, please read [Connection](/concepts/connection) section.
+For the usage of `namespaces`, please refer to [Namespace](/resources/terminology/namespace) section for more instructions. For the usage of `first` and `after`, please refer to [Pagination](/resources/terminology/pagination) section. For the concept of connection types, please read [Connection](/concepts/connection) section.
 
 With correct inputs, you can retrieve a `UserIdentityPage` objects with the following fields:
 
@@ -55,7 +55,7 @@ import TabItem from "@theme/TabItem";
 
 ```javascript
 query TopFiveRankings{
-    rankings(network: ETH, type: FOLLOW, namespace: "CyberConnect", first: 5) {
+    rankings(network: ETH, type: FOLLOW, namespaces: "CyberConnect", first: 5) {
         pageInfo {
             startCursor
             endCursor
