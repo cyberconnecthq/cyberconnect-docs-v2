@@ -16,7 +16,7 @@ type ProjectItem = {
 
 const ProjectList: ProjectItem[] = [
   {
-    title: 'CyberConnect SDK',
+    title: 'CyberConnect JS SDK',
     urls: [
       {
         icon: <GithubSvg />,
@@ -25,6 +25,15 @@ const ProjectList: ProjectItem[] = [
       {
         icon: <NpmSvg />,
         url: "https://www.npmjs.com/package/@cyberlab/cyberconnect/"
+      },
+    ]
+  },
+  {
+    title: 'CyberConnect iOS SDK',
+    urls: [
+      {
+        icon: <GithubSvg />,
+        url: "https://github.com/cyberconnecthq/cyberconnect-swift-lib"
       },
     ]
   },
@@ -38,6 +47,15 @@ const ProjectList: ProjectItem[] = [
       {
         icon: <NpmSvg />,
         url: "https://www.npmjs.com/package/@cyberlab/social-verifier/"
+      },
+    ]
+  },
+  {
+    title: 'CyberConnect iOS SDK Starter Demo',
+    urls: [
+      {
+        icon: <GithubSvg />,
+        url: "https://github.com/cyberconnecthq/cyberconnect-swift-example"
       },
     ]
   },

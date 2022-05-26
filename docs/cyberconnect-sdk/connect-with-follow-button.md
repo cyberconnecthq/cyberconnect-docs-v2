@@ -3,7 +3,7 @@ id: connect-with-follow-button
 title: Connect with Follow Button
 slug: /cyberconnect-sdk/connect-with-follow-button/
 sidebar_label: Connect with Follow Button
-sidebar_position: 3
+sidebar_position: 4
 description: Embedding a follow button on your website is a quick and easy way to enable following/unfollowing in the given namespace.
 ---
 
