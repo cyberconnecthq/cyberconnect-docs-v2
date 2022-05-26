@@ -25,10 +25,18 @@ You can access a variety of data about users, their identities, and their connec
 
 You can access a variety of data about user profiles and avatars on Ethereum by using the REST API.
 
-| Method                                           | Description                                                                                                 |
+<<<<<<< HEAD
+| Method | Description |
 | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
 | [`profile`](/cyberconnect-api/rest-api/profile/) | This method takes in an Ethereum address or ENS name as input and returns its profile metadata information. |
-| [`avatar`](/cyberconnect-api/rest-api/avatar/)   | This method takes in an Ethereum address or ENS name as input and returns its avatar.                       |
+| [`avatar`](/cyberconnect-api/rest-api/avatar/) | This method takes in an Ethereum address or ENS name as input and returns its avatar. |
+=======
+| Method | Description |
+| --- | --- |
+| [`profile`](/cyberconnect-api/rest-api/profile/) | This method takes in an Ethereum address or ENS name as input and returns its profile metadata information. |
+| [`avatar`](/cyberconnect-api/rest-api/avatar/) | This method takes in an Ethereum address or ENS name as input and returns its avatar. |
+
+> > > > > > > c35ed72 (docs: generated v0.4.0)
 
 ## How does it work?
 
