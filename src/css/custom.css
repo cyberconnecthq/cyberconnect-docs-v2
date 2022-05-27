@@ -606,8 +606,9 @@ ul.menu__list li .menu__link--sublist.menu__link--sublist-caret.menu__link--acti
   content: "";
   background-color: transparent;
   background-repeat: no-repeat;
-  width: 22px;
-  height: 23px;
+  width: 23px;
+  height: 1.4375rem;
+  line-height: 2.15rem;
 }
 
 .menu__link--sublist.menu__link--sublist-caret {
@@ -639,10 +640,10 @@ ul.menu__list li:nth-child(4) .menu__link--sublist.menu__link--sublist-caret.men
 }
 
 ul.menu__list li:nth-child(5) .menu__link--sublist.menu__link--sublist-caret::before {
-  background-image: url(/img/v0.4.0/icons/default/smart_toy.svg);
+  content: url(/img/v0.4.0/icons/default/smart_toy.svg);
 }
 ul.menu__list li:nth-child(5) .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
-  background-image: url(/img/v0.4.0/icons/active/smart_toy.svg);
+  content: url(/img/v0.4.0/icons/active/smart_toy.svg);
 }
 
 ul.menu__list li:nth-child(6) .menu__link--sublist.menu__link--sublist-caret:first-child::before {
@@ -660,10 +661,24 @@ ul.menu__list li:nth-child(7) .menu__link--sublist.menu__link--sublist-caret.men
 }
 
 ul.menu__list li:nth-child(8) .menu__link--sublist.menu__link--sublist-caret::before {
-  content: url(/img/v0.4.0/icons/default/auto_stories.svg);
+  content: url(/img/v0.4.0/icons/default/video_settings.svg);
 }
 ul.menu__list li:nth-child(8) .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
+  content: url(/img/v0.4.0/icons/active/video_settings.svg);
+}
+
+ul.menu__list li:nth-child(9) .menu__link--sublist.menu__link--sublist-caret::before {
+  content: url(/img/v0.4.0/icons/default/auto_stories.svg);
+}
+ul.menu__list li:nth-child(9) .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
   content: url(/img/v0.4.0/icons/active/auto_stories.svg);
+}
+
+ul.menu__list li:nth-child(10) .menu__link--sublist.menu__link--sublist-caret::before {
+  content: url(/img/v0.4.0/icons/default/published_with_changes.svg);
+}
+ul.menu__list li:nth-child(10) .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
+  content: url(/img/v0.4.0/icons/active/published_with_changes.svg);
 }
 
 .theme-doc-sidebar-item-category-level-1 a::before,
