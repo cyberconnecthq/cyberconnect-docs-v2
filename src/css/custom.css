@@ -529,6 +529,20 @@ iframe[title="playground"] {
   color: #003100;
 }
 
+.alert--secondary {
+  --ifm-alert-background-color: #F2F2F2;
+  --ifm-alert-border-color: #808080;
+  --ifm-alert-background-color-highlight: #F2F2F2;
+  --ifm-alert-foreground-color: #000000;
+}
+
+.alert--secondary h5,
+.alert--secondary p,
+.alert--secondary a,
+.alert--secondary strong {
+  color: #000000;
+}
+
 .alert--info {
   --ifm-alert-background-color: #EEF9FD;
   --ifm-alert-border-color: #4CB3D4;
