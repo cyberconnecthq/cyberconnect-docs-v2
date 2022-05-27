@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 - added footer with design credit ([6055d87](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/6055d87c6c9bc1fb9f0c5308b1afcde03969d5e9))
 - added reference section ([920ecbf](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/920ecbfd5afe40392fdec43816d79d6af0896a01))
-- change welcome text and intro text ([62dc222](https://github.com/cyberconnecthq/cyberconnct-docs-v2/commit/62dc222cc1fe8ea7452353378b82a1c0508ace05))
+- change welcome text and intro text ([62dc222](https://github.com/cyberconnecthq/cyerconnct-docs-v2/commit/62dc222cc1fe8ea7452353378b82a1c0508ace05))
 - created component for welcome card ([8ce1c46](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/8ce1c46361a3c9610c5445ce960d1bf7c5d59573))
 - created grants pool page ([ee438e4](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/ee438e4cb8f865a2d2d7dd4678cb9906eb51f247))
 - removed connect list ([b6b7c4f](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/b6b7c4fa65c12adc853bd2841bd74615811c17de))
