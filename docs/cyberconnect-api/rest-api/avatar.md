@@ -13,14 +13,14 @@ Avatar API is used for querying the ENS avatar of an Ethereum address or ENS nam
 
 The endpoint URL for requesting the avatar:
 
-```html
-https://cyberprofile.vercel.app/api/avatar/{id}
+```curl
+https://cyberprofile-v2.vercel.app/api/avatar/{id}
 ```
 
 The endpoint URL for requesting the avatar with a specific image size is:
 
-```html
-https://cyberprofile.vercel.app/api/avatar/{id}?s={s}
+```curl
+https://cyberprofile-v2.vercel.app/api/avatar/{id}?s={s}
 ```
 
 | Field | Type | Description |
@@ -32,10 +32,10 @@ With correct inputs, you can retrieve an image of the requested ENS avatar.
 
 ## Example
 
-Here is an example of querying ENS avatar. Feel free to test it out in [Next Swagger Doc Demo App](https://cyberprofile.vercel.app/)!
+Here is an example of querying ENS avatar. Feel free to test it out in [Next Swagger Doc Demo App](https://cyberprofile-v2.vercel.app/)!
 
-```html
-https://cyberprofile.vercel.app/api/avatar/pisofa.eth?s=400
+```curl
+https://cyberprofile-v2.vercel.app/api/avatar/pisofa.eth?s=400
 ```
 
 Find below the example return result:
