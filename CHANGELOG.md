@@ -4,7 +4,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [0.4.0](https://github.com/cyberconnecthq/cyberconnect-docs-v2/compare/v0.3.0...v0.4.0) (2022-05-31)
 
-
 ### Features
 
 * added contributors component to community page ([6d43398](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/6d433988d0056d276b0db90e4e2f9b07174e516b))
