@@ -45,6 +45,7 @@ The `ensAvatar` field consists of the following subfields:
 ## Example
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Here is an example of querying ENS profile information. Feel free to test it out in [Next Swagger Doc Demo App](https://cyberprofile-v2.vercel.app/)!
 
 ````curl
@@ -56,6 +57,13 @@ Here is an example of querying ENS profile information. Feel free to test it out
 https://cyberprofile.vercel.app/api/profile/pisofa.eth
 >>>>>>> c35ed72 (docs: generated v0.4.0)
 ````
+=======
+Here is an example of querying ENS profile information. Feel free to test it out in [Next Swagger Doc Demo App](https://cyberprofile-v2.vercel.app/)!
+
+```curl
+https://cyberprofile-v2.vercel.app/api/profile/pisofa.eth
+```
+>>>>>>> 66a08aa (docs: updated version 0.4.0)
 
 Find below the example return results:
 
