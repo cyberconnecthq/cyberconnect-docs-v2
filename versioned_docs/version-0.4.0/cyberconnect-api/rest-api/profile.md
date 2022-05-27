@@ -13,8 +13,8 @@ Profile API is used for querying the ENS profile metadata of an Ethereum address
 
 The endpoint URL for requesting the profile:
 
-```html
-https://cyberprofile.vercel.app/api/profile/{id}
+```curl
+https://cyberprofile-v2.vercel.app/api/profile/{id}
 ```
 
 | Field | Type | Description |
@@ -44,10 +44,10 @@ The `ensAvatar` field consists of the following subfields:
 
 ## Example
 
-Here is an example of querying ENS profile information. Feel free to test it out in [Next Swagger Doc Demo App](https://cyberprofile.vercel.app/)!
+Here is an example of querying ENS profile information. Feel free to test it out in [Next Swagger Doc Demo App](https://cyberprofile-v2.vercel.app/)!
 
-```html
-https://cyberprofile.vercel.app/api/profile/pisofa.eth
+```curl
+https://cyberprofile-v2.vercel.app/api/profile/pisofa.eth
 ```
 
 Find below the example return results:

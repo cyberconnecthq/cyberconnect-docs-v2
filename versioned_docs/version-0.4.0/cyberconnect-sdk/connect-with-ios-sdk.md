@@ -62,7 +62,7 @@ cyberConnectInstance.connect(toAddress: SOMEONESADDRESS, alias: ALIAS, network: 
 - `toAddress` - target address to be connected.
 - `alias` - (optional) alias for the target address.
 - `network` - (optional) enum type for network. Now we support Ethereum and Solana.
-- `connectionType` - (optional) type of connection. The default value is `Connection.FOLLOW`.
+- `connectionType` - (optional) type of connection. The default value is `Connection.FOLLOW`. See ConnectionType struct in code for more details.
 
 ### Disconnect
 
