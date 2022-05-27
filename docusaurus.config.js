@@ -1,6 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-require('dotenv').config();
+require("dotenv").config();
 
 const isDev = process.env.NODE_ENV === "development" ? true : false;
 
@@ -35,8 +35,8 @@ const config = {
           },
           routeBasePath: "/",
           remarkPlugins: [
-            [require("@docusaurus/remark-plugin-npm2yarn"), {sync: true}],
-            math
+            [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
+            math,
           ],
           rehypePlugins: [katex],
           includeCurrentVersion: isDev,
@@ -49,7 +49,7 @@ const config = {
         gtag: {
           trackingID: "G-9FMF2NF7NK",
           anonymizeIP: true,
-        }
+        },
       }),
     ],
   ],
@@ -65,21 +65,21 @@ const config = {
         loaders: {
           UrlLoader: "@graphql-tools/url-loader",
         },
-        diffMethod: false // The method to be used for identifying changes in the schema for triggering the documentation generation. Set it to false to prevent from automatic updates.
+        diffMethod: false, // The method to be used for identifying changes in the schema for triggering the documentation generation. Set it to false to prevent from automatic updates.
       },
     ],
   ],
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'zh'],
+    defaultLocale: "en",
+    locales: ["en", "zh"],
     localeConfigs: {
       en: {
-        htmlLang: 'en-GB',
-        label: 'English'
+        htmlLang: "en-GB",
+        label: "English",
       },
       zh: {
-        htmlLang: 'zh-CN',
-        label: 'Chinese'
+        htmlLang: "zh-CN",
+        label: "Chinese",
       },
     },
   },
@@ -101,11 +101,11 @@ const config = {
             href: "https://github.com/cyberconnecthq/",
             position: "right",
             className: "header-github-link",
-            'aria-label': "GitHub repository",
+            "aria-label": "GitHub repository",
           },
           {
-            type: 'localeDropdown',
-            position: 'right',
+            type: "localeDropdown",
+            position: "right",
           },
         ],
       },
@@ -123,7 +123,10 @@ const config = {
       },
       metadata: [
         // Keywords
-        { name: "keywords", content: "cyberconnect, protocol, social graph, blockchain, web3" },
+        {
+          name: "keywords",
+          content: "cyberconnect, protocol, social graph, blockchain, web3",
+        },
         // OG
         { name: "og:title", content: "Developer Center | CyberConnect" },
         {
@@ -132,7 +135,10 @@ const config = {
         },
         { name: "og:type", content: "website" },
         { name: "og:url", content: "https://docs.cyberconnect.me/" },
-        { name: "og:image", content: "https://docs.cyberconnect.me/img/ogimage.png" },
+        {
+          name: "og:image",
+          content: "https://docs.cyberconnect.me/img/ogimage.png",
+        },
         // Twitter
         { name: "twitter:title", content: "Developer Center | CyberConnect" },
         {
@@ -141,7 +147,10 @@ const config = {
         },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:site", content: "@CyberConnectHQ" },
-        { name: "twitter:image", content: "https://docs.cyberconnect.me/img/ogimage.png" },
+        {
+          name: "twitter:image",
+          content: "https://docs.cyberconnect.me/img/ogimage.png",
+        },
       ],
       algolia: {
         // The application ID provided by Algolia
@@ -149,7 +158,7 @@ const config = {
         // Public API key: it is safe to commit it
         apiKey: process.env.ALGOLIA_API_KEY,
         indexName: process.env.ALGOLIA_INDEX_NAME,
-        searchPagePath: 'search',
+        searchPagePath: "search",
       },
     }),
   stylesheets: [
@@ -166,9 +175,9 @@ const config = {
     {
       src: "https://plausible.io/js/plausible.js",
       defer: true,
-      "data-domain": "docs.cyberconnect.me"
-    }
-  ]
+      "data-domain": "docs.cyberconnect.me",
+    },
+  ],
 };
 
 module.exports = config;
