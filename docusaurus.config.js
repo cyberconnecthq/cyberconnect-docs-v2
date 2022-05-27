@@ -114,10 +114,7 @@ const config = {
         },
         { name: "og:type", content: "website" },
         { name: "og:url", content: "https://docs.cyberconnect.me/" },
-        {
-          name: "og:image",
-          content: "https://cyberconnect.me/meta/meta.png",
-        },
+        { name: "og:image", content: require.resolve("./static/img/ogimage.png") },
         // Twitter
         { name: "twitter:title", content: "Developer Center | CyberConnect" },
         {
@@ -126,10 +123,7 @@ const config = {
         },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:site", content: "@CyberConnectHQ" },
-        {
-          name: "twitter:image",
-          content: "https://cyberconnect.me/meta/meta.png",
-        },
+        { name: "twitter:image", content: require.resolve("./static/img/ogimage.png") },
       ],
       algolia: {
         // The application ID provided by Algolia
