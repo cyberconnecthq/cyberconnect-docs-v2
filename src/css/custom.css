@@ -675,23 +675,16 @@ ul.menu__list li:nth-child(7) .menu__link--sublist.menu__link--sublist-caret.men
 }
 
 ul.menu__list li:nth-child(8) .menu__link--sublist.menu__link--sublist-caret::before {
-  content: url(/img/v0.4.0/icons/default/video_settings.svg);
-}
-ul.menu__list li:nth-child(8) .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
-  content: url(/img/v0.4.0/icons/active/video_settings.svg);
-}
-
-ul.menu__list li:nth-child(9) .menu__link--sublist.menu__link--sublist-caret::before {
   content: url(/img/v0.4.0/icons/default/auto_stories.svg);
 }
-ul.menu__list li:nth-child(9) .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
+ul.menu__list li:nth-child(8) .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
   content: url(/img/v0.4.0/icons/active/auto_stories.svg);
 }
 
-ul.menu__list li:nth-child(10) .menu__link--sublist.menu__link--sublist-caret::before {
+ul.menu__list li:nth-child(9) .menu__link--sublist.menu__link--sublist-caret::before {
   content: url(/img/v0.4.0/icons/default/published_with_changes.svg);
 }
-ul.menu__list li:nth-child(10) .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
+ul.menu__list li:nth-child(9) .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
   content: url(/img/v0.4.0/icons/active/published_with_changes.svg);
 }
 
