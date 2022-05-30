@@ -1,39 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 
+const ENDPOINT = "https://github-contributors-fetcher.vercel.app/api/contributors";
+
 type ContributorItem = {
+  login: string;
   avatar_url: string;
-  html_url: string;
+  url: string;
 };
 
-// TODO: update hardcoded data
-const ContributorList: ContributorItem[] = [
-  {
-    avatar_url: 'https://avatars.githubusercontent.com/u/39951422?v=4',
-    html_url: 'https://github.com/snowdot'
-  },
-  {
-    avatar_url: 'https://avatars.githubusercontent.com/u/7857661?v=4',
-    html_url: 'https://github.com/HappySean2845'
-  },
-  {
-    avatar_url: 'https://avatars.githubusercontent.com/u/39951422?v=4',
-    html_url: 'https://github.com/snowdot'
-  }
-];
-
-function ContributorCard({avatar_url, html_url} : ContributorItem) {
+function ContributorCard({avatar_url, url} : ContributorItem) {
   return (
-    <a className={styles.contributorCard} href={html_url} target="_blank" rel="noreferrer">
-      <img src={avatar_url} alt="github user"></img>
-    </a>
+    <>
+      {
+        avatar_url && url &&
+        <a className={styles.contributorCard} href={url} target="_blank" rel="noreferrer">
+          <img src={avatar_url} alt="github user"></img>
+        </a>
+      }
+    </>
   );
 }
 
 export default function ContributorCards(): JSX.Element {
+  const [contributors, setContributors] = useState<ContributorItem[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch(ENDPOINT, {
+          method: 'GET',
+          headers: {
+            'Content-Type':'application/json'
+          },
+        });
+
+        const data = await res.json();
+        setContributors(data);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, []);
+
   return (
     <div className={styles.contributorCards}>
-      {ContributorList.map((props, idx) => (
+      {contributors.length > 0 && contributors.map((props, idx) => (
         <ContributorCard key={idx} {...props} />
       ))}
     </div>
