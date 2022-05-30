@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import styles from "./styles.module.css";
+import React, { useEffect, useState } from 'react';
+import styles from './styles.module.css';
 
-const ENDPOINT =
-  "https://github-contributors-fetcher.vercel.app/api/contributors";
+const ENDPOINT = "https://github-contributors-fetcher.vercel.app/api/contributors";
 
 type ContributorItem = {
   login: string;
