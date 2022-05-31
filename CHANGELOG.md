@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/cyberconnecthq/cyberconnect-docs-v2/compare/v0.3.0...v0.4.0) (2022-05-31)
+
+
+### Features
+
+* added contributors component to community page ([6d43398](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/6d433988d0056d276b0db90e4e2f9b07174e516b))
+* added fetch to get contributors ([63c2659](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/63c2659ff8ba93c3320f39656c5fc87f6f77378e))
+* added new icons to changelog and tutorial sections ([19feb12](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/19feb129146fa4b045ab570dd09ec0de39949f2c))
+* added text to connection page and css for note admonition ([f7dd118](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/f7dd118a3facd42bbb30522fc0f3fcd5cbb7317d))
+* added twitter and github examples to identity page ([42e6730](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/42e6730098675b71e379e721db800138884c1efc))
+* change welcome text and intro text ([c3c940d](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/c3c940d290e2a713f2102bbf7ab859d9edfd7ef3))
+* created changelog page for 0.4.0 ([e227326](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/e2273265267efc19972ead21103200ab5d316683))
+* created the connect with ios sdk page for the swift lib ([a8f8736](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/a8f8736561a31ed3e901f383747f950dc514fe92))
+* new changelog v0.3.0 page ([b107d08](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/b107d084f717c96ef5af8993dacaf875f1ea67d3))
+* new read a profile page to exemplify the use of profile api ([cb16449](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/cb16449667635999559fb0129043c8e7827a715b))
+
+
+### Bug Fixes
+
+* added contributors to changelog ([633ec51](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/633ec51ceb4ea8389d31dd516123709633cda10d))
+* added links in cyberconnect api overview page ([aaa965e](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/aaa965e9dd83c2b69b844ef5e40b5978bc0b6e05))
+* added new icons ([d7a66ef](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/d7a66ef9eb1073fca582ec771209a25a34a528a7))
+* changed community content ([7dfedee](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/7dfedee4b97a614c375998cdf6fa1744ea4a48e3))
+* changed text in connect with ios sdk ([9d1470d](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/9d1470d18ba73a723defa4b3a0e7f5043cd70100))
+* corrected cyberprofile link ([52ae204](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/52ae204fb57b3b6add3fe38b8635b67bf5596c6a))
+* corrected description for graphql api methods ([b118ae1](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/b118ae17a1373068ea6b35bf8ed31832f0884b06))
+* corrected path for og:image ([0f62e8e](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/0f62e8e29d5cf3c0208b8e484df991c097491f82))
+* fix path to og:image ([5affe65](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/5affe659ae3687df3205836219e2a007d1e1ec8f))
+* generated version ([6be7b31](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/6be7b319bc4c2c04bec17ee1884fbe773e072153))
+* modified footer ([7679ef5](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/7679ef59798991a9ee7658be92f96482e9eac657))
+* removed grants page ([6f8fb2c](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/6f8fb2c70803b0ca839853a1e3c9e9fa02d260e8))
+* removed icons from admonitions ([351a12a](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/351a12ae7a3090c72a5055580b23c2de3d6e3761))
+* replaced indexer images ([7d3284e](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/7d3284e9213b7b0f5b068341582208cfaff8058a))
+* replaced og:image ([db2957f](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/db2957fd3d7bb44cbfa561554a02d385fd847c32))
+* sidebar icons fix ([c3a9c94](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/c3a9c94e66091dc1e7b0c5b8dba743d299ad0b84))
+* updated absolute path for og:image ([3b548ac](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/3b548aca8ef7b2b3ac6fdbf77d2cd046d2aa093f))
+* updated cyberprofile link ([26a4c63](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/26a4c6354af26bcd3c7e56d39076424cbe5ea9f6))
+* updated design with new icons ([426f42e](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/426f42e51f4aea58936220a1658f678cb87c138c))
+
 ## [0.3.0](https://github.com/cyberconnecthq/cyberconnect-docs-v2/compare/v0.2.0...v0.3.0) (2022-05-18)
 
 ### Features
