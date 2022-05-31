@@ -40,7 +40,6 @@ All notable changes to this project will be documented in this file. See [standa
 * updated absolute path for og:image ([3b548ac](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/3b548aca8ef7b2b3ac6fdbf77d2cd046d2aa093f))
 * updated cyberprofile link ([26a4c63](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/26a4c6354af26bcd3c7e56d39076424cbe5ea9f6))
 * updated design with new icons ([426f42e](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/426f42e51f4aea58936220a1658f678cb87c138c))
-* xxx ([e4f4ba6](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/e4f4ba653c51ff8b5f0b303c200a19f24bc68bf2))
 
 ## [0.3.0](https://github.com/cyberconnecthq/cyberconnect-docs-v2/compare/v0.2.0...v0.3.0) (2022-05-18)
 
