@@ -9,15 +9,19 @@ type ContributorItem = {
   url: string;
 };
 
-function ContributorCard({avatar_url, url} : ContributorItem) {
+function ContributorCard({ avatar_url, url }: ContributorItem) {
   return (
     <>
-      {
-        avatar_url && url &&
-        <a className={styles.contributorCard} href={url} target="_blank" rel="noreferrer">
+      {avatar_url && url && (
+        <a
+          className={styles.contributorCard}
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={avatar_url} alt="github user"></img>
         </a>
-      }
+      )}
     </>
   );
 }
@@ -29,9 +33,9 @@ export default function ContributorCards(): JSX.Element {
     (async () => {
       try {
         const res = await fetch(ENDPOINT, {
-          method: 'GET',
+          method: "GET",
           headers: {
-            'Content-Type':'application/json'
+            "Content-Type": "application/json",
           },
         });
 
@@ -45,9 +49,10 @@ export default function ContributorCards(): JSX.Element {
 
   return (
     <div className={styles.contributorCards}>
-      {contributors.length > 0 && contributors.map((props, idx) => (
-        <ContributorCard key={idx} {...props} />
-      ))}
+      {contributors.length > 0 &&
+        contributors.map((props, idx) => (
+          <ContributorCard key={idx} {...props} />
+        ))}
     </div>
   );
 }
