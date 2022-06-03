@@ -69,6 +69,20 @@ const config = {
       },
     ],
   ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+        label: 'English'
+      },
+      zh: {
+        htmlLang: 'zh-CN',
+        label: 'Chinese'
+      },
+    },
+  },
   themeConfig:
     /** @type {import("@docusaurus/preset-classic").ThemeConfig} */
     ({
@@ -88,6 +102,10 @@ const config = {
             position: "right",
             className: "header-github-link",
             'aria-label': "GitHub repository",
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
           },
         ],
       },
