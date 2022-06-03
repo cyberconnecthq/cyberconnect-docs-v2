@@ -2,38 +2,39 @@ import React from 'react';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import LinkSvg from '@site/static/img/v0.4.0/link.svg';
+import Translate from '@docusaurus/Translate';
 
 type FeatureItem = {
   title: string;
   path: string;
-  description: string;
+  description: any;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'CyberConnect SDK',
     path: '/cyberconnect-sdk/connect-with-js-sdk/',
-    description: 'Everything you need to write connection data into the open social graph.'
+    description: <Translate description='feature item CyberConnect SDK'>Everything you need to write connection data into the open social graph.</Translate>
   },
   {
     title: 'Social Verifier',
     path: '/cyberconnect-sdk/connect-with-social-verifier/',
-    description: 'Verify accounts from various social platforms.'
+    description: <Translate description='feature item Social Verifier'>Verify accounts from various social platforms.</Translate>
   },
   {
     title: 'NFT Ownership',
     path: '/get-started/read-nft-ownership/',
-    description: 'Verify NFT ownership on the Ethereum blockchain.'
+    description: <Translate description='feature item NFT Ownership'>Verify NFT ownership on the Ethereum blockchain.</Translate>
   },
   {
     title: 'CyberConnect API',
     path: '/cyberconnect-api/overview/',
-    description: 'Everything you need to query connection data from the protocol.'
+    description: <Translate description='feature item CyberConnect API'>Everything you need to query connection data from the protocol.</Translate>
   },
   {
     title: 'Recommendation Engine',
     path: '/get-started/read-recommendations/',
-    description: 'Accelerate bootstrapping by recommending connections based on the social graph.'
+    description: <Translate description='feature item Recommendation Engine'>Accelerate bootstrapping by recommending connections based on the social graph.</Translate>
   },
 ];
 
