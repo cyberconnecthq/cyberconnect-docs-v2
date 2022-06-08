@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const os = require("os");
 const child_process = require("child_process");
 
 const version = process.argv[2];
@@ -45,7 +46,7 @@ const updateVersion = () => {
 
     // Update version using docusaurus
     const result = child_process
-      .execFileSync(`yarn`, ["run", "docusaurus", "docs:version", version])
+      .execFileSync(`${os.platform() === "win32" ? "yarn.cmd" : "yarn"}`, ["run", "docusaurus", "docs:version", version])
       .toString()
       .trim();
     console.log(result);
