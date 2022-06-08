@@ -19,26 +19,29 @@ The definition of `identity` query is:
 identity(address: String!, network: Network) UserIdentity!
 ```
 
-| Field     | Type    | Description                                      | Required/Optional                 |
-| --------- | ------- | ------------------------------------------------ | --------------------------------- |
-| `address` | String! | The string of the address that you query for     | Required                          |    
-| `network` | Network | The blockchain network for the querying address  | Optional. Default value is `ETH`. |
+| Field     | Type    | Description                                     | Required/Optional                 |
+| --------- | ------- | ----------------------------------------------- | --------------------------------- |
+| `address` | String! | The string of the address that you query for    | Required                          |
+| `network` | Network | The blockchain network for the querying address | Optional. Default value is `ETH`. |
 
 With correct input, you can retrieve a `UserIdentity` object with the following fields:
 
-| Field            | Type                | Description                                                                   |
-| ---------------- | ------------------- | ----------------------------------------------------------------------------- |
-| `address`        | String              | The address that you are querying                                             |
-| `domain`         | String              | Primary ENS domain or Solana domain of the address                            |
-| `avatar`         | String              | User's avatar URL                                                             |
-| `joinTime`       | String              | The time of user's first sent transaction on the given blockchain network     |
-| `twitter`        | Twitter             | Twitter info bound to the address                                             |
-| `github`         | Github              | Github info bound to the address                                              |
-| `followerCount`  | Int                 | How many followers the user has in the given network and namespace            |
-| `followingCount` | Int                 | How many followings the user has in the given network and namespace           |
-| `followings`     | BasicInfoConnection | List of user's followings                                                     |
-| `followers`      | BasicInfoConnection | List of user's followers                                                      |
-| `friends`        | BasicInfoConnection | List of user's friends (mutually followed)                                    |
+| Field                     | Type                | Description                                                                    |
+| ------------------------- | ------------------- | ------------------------------------------------------------------------------ |
+| `address`                 | String              | The address that you are querying                                              |
+| `domain`                  | String              | Primary ENS domain or Solana domain of the address                             |
+| `avatar`                  | String              | User's avatar URL                                                              |
+| `joinTime`                | String              | The time of user's first sent transaction on the given blockchain network      |
+| `twitter`                 | Twitter             | Twitter info bound to the address                                              |
+| `github`                  | Github              | Github info bound to the address                                               |
+| `followerCount`           | Int                 | How many followers the user has in the given network and namespace             |
+| `followingCount`          | Int                 | How many followings the user has in the given network and namespace            |
+| `followings`              | BasicInfoConnection | List of user's followings                                                      |
+| `followers`               | BasicInfoConnection | List of user's followers                                                       |
+| `friends`                 | BasicInfoConnection | List of user's friends (mutually followed)                                     |
+| `unreadNotificationCount` | Int                 | How many unread notifications the user has in the given network and namespaces |
+| `notifications`           | Notification        | List of user’s notifications                                                   |
+
 
 ## Retrieve Single Field
 
@@ -257,6 +260,142 @@ query GithubQuery{
 </TabItem>
 </Tabs>
 
+## Retrieve Notifications
+
+### UnreadNotificationCount Example
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
+query QueryForUnreadNotificationCount {
+    identity(address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c", network: ETH) {
+        unreadNotificationCount
+    }
+}
+```
+
+</TabItem>
+<TabItem value="json">
+
+```json
+{
+    "data": {
+        "identity": {
+            "unreadNotificationCount": 0
+        }
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Notifications Example
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
+{
+    identity(address: "0x9dd481d6c1656816bfd564151e29d57e041d2c8f", network: ETH) {
+        notifications {
+            pageInfo {
+                hasNextPage
+                hasPreviousPage
+                endCursor
+                startCursor
+            }
+            list {
+                id
+                toAddress
+                network
+                namespace
+                hasRead
+                type
+                timestamp
+                ... on NewConnectionNotification {
+                    fromAddress
+                    connectionType
+                }
+                ... on BiConnectReceivedNotification {
+                    fromAddress
+                }
+                ... on BiConnectAcceptedNotification {
+                    fromAddress
+                }
+            }
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="json">
+
+```json
+{
+    "data": {
+        "identity": {
+            "notifications": {
+                "pageInfo": {
+                    "hasNextPage": false,
+                    "hasPreviousPage": false,
+                    "endCursor": "2",
+                    "startCursor": "0"
+                },
+                "list": [
+                    {
+                        "id": "ee0b2aac-dbea-49cf-a9ab-c6a6d8348948",
+                        "toAddress": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+                        "network": "ETH",
+                        "namespace": "CyberConnect",
+                        "hasRead": false,
+                        "type": "BICONNECT_ACCEPTED",
+                        "timestamp": "1654660895300",
+                        "fromAddress": "0xc76fbe40144ac56822c651b6e02497d4a576f23d"
+                    },
+                    {
+                        "id": "7ef10fd9-dd36-484d-b1cc-e07509328414",
+                        "toAddress": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+                        "network": "ETH",
+                        "namespace": "CyberConnect",
+                        "hasRead": false,
+                        "type": "BICONNECT_RECEIVED",
+                        "timestamp": "1654660822743",
+                        "fromAddress": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f"
+                    },
+                    {
+                        "id": "ad666438-88b1-4077-bc92-c1e3913738d0",
+                        "toAddress": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+                        "network": "ETH",
+                        "namespace": "CyberConnect",
+                        "hasRead": false,
+                        "type": "NEW_CONNECTION",
+                        "timestamp": "1654569725895",
+                        "fromAddress": "0xb54b03cfca57624d360c2182d4e053b3fde14392",
+                        "connectionType": "FOLLOW"
+                    }
+                ]
+            }
+        }
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
 ## Retrieve All Fields
 
 ### Full Example
@@ -345,6 +484,34 @@ query FullIdentityQuery{
                 lastModifiedTime
                 verifiable
             } 
+        }
+        unreadNotificationCount (namespaces: ["CyberConnect"])
+        notifications (namespaces: ["CyberConnect"], first:2, after: "-1") {
+            pageInfo {
+                hasNextPage
+                hasPreviousPage
+                endCursor
+                startCursor
+            }
+            list {
+                id
+                toAddress
+                network
+                namespace
+                hasRead
+                type
+                timestamp
+                ... on NewConnectionNotification {
+                    fromAddress
+                    connectionType
+                }
+                ... on BiConnectReceivedNotification {
+                    fromAddress
+                }
+                ... on BiConnectAcceptedNotification {
+                    fromAddress
+                }
+            }
         }
     }
 }
@@ -457,6 +624,37 @@ query FullIdentityQuery{
                         "namespace": "CyberConnect",
                         "lastModifiedTime": "2022-03-21T20:38:21Z",
                         "verifiable": true
+                    }
+                ]
+            },
+            "unreadNotificationCount": 3,
+            "notifications": {
+                "pageInfo": {
+                    "hasNextPage": true,
+                    "hasPreviousPage": false,
+                    "endCursor": "1",
+                    "startCursor": "0"
+                },
+                "list": [
+                    {
+                        "id": "ee0b2aac-dbea-49cf-a9ab-c6a6d8348948",
+                        "toAddress": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
+                        "network": "ETH",
+                        "namespace": "CyberConnect",
+                        "hasRead": false,
+                        "type": "BICONNECT_ACCEPTED",
+                        "timestamp": "1654660895300",
+                        "fromAddress": "0xc76fbe40144ac56822c651b6e02497d4a576f23d"
+                    },
+                    {
+                        "id": "7ef10fd9-dd36-484d-b1cc-e07509328414",
+                        "toAddress": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
+                        "network": "ETH",
+                        "namespace": "CyberConnect",
+                        "hasRead": false,
+                        "type": "BICONNECT_RECEIVED",
+                        "timestamp": "1654660822743",
+                        "fromAddress": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f"
                     }
                 ]
             }
