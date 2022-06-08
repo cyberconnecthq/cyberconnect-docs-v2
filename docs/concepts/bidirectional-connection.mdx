@@ -1,0 +1,30 @@
+---
+id: bidirectional-connection
+title: Bidirectional Connection
+slug: /concepts/bidirectional-connection/
+sidebar_label: Bidirectional Connection
+sidebar_position: 4
+description: The CyberConnect Protocol allows users to form social connections that are recorded and verified on blockchain networks.
+---
+
+The CyberConnect Protocol allows users to form social connections that are recorded and verified on blockchain networks. The protocol supports different types of connections for different purposes:
+<ul>
+    <li>Init</li>
+    <li>Accept</li>
+    <li>Reject</li>
+    <li>Terminate</li>
+    <li>Block</li>
+    <li>Unblock</li>
+</ul>
+
+:::note
+
+**Init** means one user sending request to another user. **Accept** means one user accepts the request and establishes a bidirectional friendship with another user. **Reject** means one user reject the request sent by another user. **Terminate** means one user terminate the establish friendship with another user. **Block** means one user puts another user in the blacklist, it will terminate the friendship and reject the request as well. **Unblock** means one user recovers another user from the blacklist, then they can initiate their friendship just like nothing happened before.
+
+:::
+
+Developers can incorporate various connection modules to diversify the user experience by using the [CyberConnect JS SDK](/cyberconnect-sdk/connect-with-js-sdk/).
+
+## How does it work?
+
+Let’s take “init” as an example. A user clicking the “add“ button in an application invokes the “bidirectionalConnect” function in the CyberConnect JavaScript library. If this is their first bidirectional connection in the current session, they need to manually sign the message. The CyberConnect library then generates and stores a derived key to authorize writing directional connection data onto IPFS and Arweave storage.
