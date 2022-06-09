@@ -7,23 +7,45 @@ sidebar_position: 4
 description: The CyberConnect Protocol allows users to form social connections that are recorded and verified on blockchain networks.
 ---
 
-The CyberConnect Protocol allows users to form social connections that are recorded and verified on blockchain networks. The protocol supports different types of connections for different purposes:
+The CyberConnect Protocol allows users to establish bidirectional connections that are recorded and verified on blockchain networks. This bidirectional connection can be used to express “friends” relationship in some social contexts, but we are not limiting the use cases for it.
+
+There are four states for each address in a bidirectional connection: `EMPTY`、`PENDING`、`CONNECTD` and `BLACKLIST`.
+
+The protocol defines different types of bidirectional connections for different situations:
+
 <ul>
-    <li>Init</li>
-    <li>Accept</li>
-    <li>Reject</li>
-    <li>Terminate</li>
-    <li>Block</li>
-    <li>Unblock</li>
+  <li>
+    <strong>Init</strong>: Sends request to another wallet address.
+  </li>
+  <li>
+    <strong>Accept</strong>: Accepts the request from another wallet address and
+    establishes a bidirectional connection with it.
+  </li>
+  <li>
+    <strong>Reject</strong>: Rejects the request from another wallet address.
+  </li>
+  <li>
+    <strong>Terminate</strong>: Terminates the established bidirectional
+    connection with another wallet address。
+  </li>
+  <li>
+    <strong>Block</strong>: Blocks the request from another wallet address, also
+    will terminate the bidirectional connection if there is already one between
+    you and the address.
+  </li>
+  <li>
+    <strong>Unblock</strong>: Remove the wallet address from the blacklist, and
+    is able to receive the request from it.
+  </li>
 </ul>
 
 :::note
 
-**Init** means one user sending request to another user. **Accept** means one user accepts the request and establishes a bidirectional friendship with another user. **Reject** means one user reject the request sent by another user. **Terminate** means one user terminate the establish friendship with another user. **Block** means one user puts another user in the blacklist, it will terminate the friendship and reject the request as well. **Unblock** means one user recovers another user from the blacklist, then they can initiate their friendship just like nothing happened before.
+The bidirectional connection model has nothing to do with the “friends” in the current CyberConnect product. The CyberConnect product currently defines “friends” using mutual “follow” between two individuals, which are two unilateral connections under the hook.
 
 :::
 
-Developers can incorporate various connection modules to diversify the user experience by using the [CyberConnect JS SDK](/cyberconnect-sdk/connect-with-js-sdk/).
+Developers can incorporate various connection modules to diversify the user experience by using the [CyberConnect JS SDK](/cyberconnect-sdk/connect-with-js-sdk/) and [CyberConnect GraphQL API](/cyberconnect-api/graphql-api/bidirectional-connections/).
 
 ## How does it work?
 
