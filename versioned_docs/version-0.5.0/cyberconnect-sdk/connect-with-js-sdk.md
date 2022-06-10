@@ -102,7 +102,7 @@ cyberConnect.bidirectionalConnect(targetAddr, biConnectType);
 - `targetAddr` - The target wallet address to disconnect.
 - `biConnectionType` - The type of the bidirectional connection. See [BiConnection Type](#biconnection-type) for more details.
 
-Learn more about bidirectional Connection [here](/concept/bidirectional-connection/)
+Learn more about bidirectional Connection [here](/concepts/bidirectional-connection/)
 
 ### AckNotifications
 
@@ -112,7 +112,7 @@ cyberConnect.ackNotifications(notificationIds);
 
 - `notificationIds` - A list of notificationId .
 
-Learn more about notification [here](/concepst/notification/).
+Learn more about notification [here](/concepts/notification/).
 
 ### AckAllNotifications
 
@@ -120,7 +120,7 @@ Learn more about notification [here](/concepst/notification/).
 cyberConnect.ackAllNotifications();
 ```
 
-Learn more about notification [here](/concepst/notification/).
+Learn more about notification [here](/concepts/notification/).
 
 ### Connection Type
 
