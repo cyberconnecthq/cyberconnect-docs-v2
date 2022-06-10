@@ -8,6 +8,7 @@ description: By adopting a decentralized social graph, users aggregate their ide
 ---
 
 By adopting a decentralized [social graph](/concepts/social-graph/), users aggregate their identities across different platforms and applications. This allows developers to retrieve more comprehensive data related to a user's address, such as:
+
 <ul>
     <li>Their ENS or Solana domain.</li>
     <li>Their NFTs.</li>
@@ -17,6 +18,7 @@ By adopting a decentralized [social graph](/concepts/social-graph/), users aggre
     <li>Their followers.</li>
     <li>Their followings.</li>
     <li>Their mutually-followed friends.</li>
+    <li>Their notifications.</li>
 </ul>
 
 Developers can leverage those insights to build better social experiences by making a simple call to the [CyberConnect API](/cyberconnect-api/overview/).
