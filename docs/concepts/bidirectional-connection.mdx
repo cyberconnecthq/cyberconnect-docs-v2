@@ -9,7 +9,25 @@ description: The CyberConnect Protocol allows users to form social connections t
 
 The CyberConnect Protocol allows users to establish bidirectional connections that are recorded and verified on blockchain networks. This bidirectional connection can be used to express “friends” relationship in some social contexts, but we are not limiting the use cases for it.
 
-There are four states for each address in a bidirectional connection: `EMPTY`、`PENDING`、`CONNECTD` and `BLACKLIST`.
+There are four states for a bidirectional connection between two addresses: `EMPTY`、`PENDING`、`CONNECTD` and `BLACKLIST`.
+
+<ul>
+  <li>
+    <strong>EMPTY</strong>: Initial state between two wallet addresses.
+  </li>
+  <li>
+    <strong>PENDING</strong>: Includes sent and received bidirectional
+    connection requests.
+  </li>
+  <li>
+    <strong>CONNECTED</strong>: Two wallet addresses have established a
+    bidirectional connection after the request has been accepted.
+  </li>
+  <li>
+    <strong>BLACKLIST</strong>: Either of two wallet addresses blocks another or
+    two wallet addresses block each other.
+  </li>
+</ul>
 
 The protocol defines different types of bidirectional connections for different situations:
 
@@ -38,6 +56,10 @@ The protocol defines different types of bidirectional connections for different 
     is able to receive the request from it.
   </li>
 </ul>
+
+Our protocol defines a state machine to demonstrate relationships between those states and a variety of bidirectional connections:
+
+![Bidirectional Connection Workflow](/img/v0.5.0/bidirectional-connection-workflow.png)
 
 :::note
 
