@@ -82,7 +82,7 @@ cyberConnect.batchConnect(targetAddrs, connectionType);
 ```
 
 - `targetAddrs` - A list of wallet addresses to connect.
-- `connectionType` - (optional) The type of the connection. The default value is `Connection.FOLLOW`.
+- `connectionType` - (optional) The type of the connection. The default value is `Connection.FOLLOW`. See [Connection Type](#connection-type) for more details.
 
 ### SetAlias
 
@@ -92,6 +92,17 @@ cyberConnect.setAlias(targetAddr, alias);
 
 - `targetAddr` - The target wallet address to disconnect.
 - `alias` - The alias for the target address.
+
+### BidirectionalConnect
+
+```jsx
+cyberConnect.bidirectionalConnect(targetAddr, biConnectType);
+```
+
+- `targetAddr` - The target wallet address to disconnect.
+- `biConnectionType` - The type of the bidirectional connection. See [BiConnection Type](#biconnection-type) for more details.
+
+Learn more about bidirectional Connection [here](/concept/bidirectional-connection/)
 
 ### AckNotifications
 
@@ -128,6 +139,18 @@ The types we support: `FOLLOW`, `LIKE`, `REPORT`, `WATCH` and `VOTE`.
 Only one type connection can be created from one to another, which means you **can't create both** `FOLLOW` connection and `LIKE` connection from you to "Ryan".
 
 :::
+
+### BiConnection Type
+
+You can create different types of connections for different purposes (e.g. you can like a NFT by creating a `LIKE` connection from you to the NFT).
+
+```jsx
+import { BiConnectionType } from "@cyberlab/cyberconnect";
+
+cyberConnect.bidirectionalConnect(targetAddr, BiConnectionType.INIT);
+```
+
+The types we support: `INIT`, `ACCEPT`, `REJECT`, `TERMINATE`, `BLOCK` and `UNBLOCK`.
 
 ### Solana
 
