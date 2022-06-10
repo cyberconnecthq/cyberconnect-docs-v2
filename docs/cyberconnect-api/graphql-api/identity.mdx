@@ -19,26 +19,28 @@ The definition of `identity` query is:
 identity(address: String!, network: Network) UserIdentity!
 ```
 
-| Field     | Type    | Description                                      | Required/Optional                 |
-| --------- | ------- | ------------------------------------------------ | --------------------------------- |
-| `address` | String! | The string of the address that you query for     | Required                          |    
-| `network` | Network | The blockchain network for the querying address  | Optional. Default value is `ETH`. |
+| Field     | Type    | Description                                     | Required/Optional                 |
+| --------- | ------- | ----------------------------------------------- | --------------------------------- |
+| `address` | String! | The string of the address that you query for    | Required                          |
+| `network` | Network | The blockchain network for the querying address | Optional. Default value is `ETH`. |
 
 With correct input, you can retrieve a `UserIdentity` object with the following fields:
 
-| Field            | Type                | Description                                                                   |
-| ---------------- | ------------------- | ----------------------------------------------------------------------------- |
-| `address`        | String              | The address that you are querying                                             |
-| `domain`         | String              | Primary ENS domain or Solana domain of the address                            |
-| `avatar`         | String              | User's avatar URL                                                             |
-| `joinTime`       | String              | The time of user's first sent transaction on the given blockchain network     |
-| `twitter`        | Twitter             | Twitter info bound to the address                                             |
-| `github`         | Github              | Github info bound to the address                                              |
-| `followerCount`  | Int                 | How many followers the user has in the given network and namespace            |
-| `followingCount` | Int                 | How many followings the user has in the given network and namespace           |
-| `followings`     | BasicInfoConnection | List of user's followings                                                     |
-| `followers`      | BasicInfoConnection | List of user's followers                                                      |
-| `friends`        | BasicInfoConnection | List of user's friends (mutually followed)                                    |
+| Field                     | Type                | Description                                                                    |
+| ------------------------- | ------------------- | ------------------------------------------------------------------------------ |
+| `address`                 | String              | The address that you are querying                                              |
+| `domain`                  | String              | Primary ENS domain or Solana domain of the address                             |
+| `avatar`                  | String              | User's avatar URL                                                              |
+| `joinTime`                | String              | The time of user's first sent transaction on the given blockchain network      |
+| `twitter`                 | Twitter             | Twitter info bound to the address                                              |
+| `github`                  | Github              | Github info bound to the address                                               |
+| `followerCount`           | Int                 | How many followers the user has in the given network and namespace             |
+| `followingCount`          | Int                 | How many followings the user has in the given network and namespace            |
+| `followings`              | BasicInfoConnection | List of user's followings                                                      |
+| `followers`               | BasicInfoConnection | List of user's followers                                                       |
+| `friends`                 | BasicInfoConnection | List of user's friends (mutually followed)                                     |
+| `unreadNotificationCount` | Int                 | How many unread notifications the user has in the given network and namespaces |
+| `notifications`           | Notification        | List of user’s notifications                                                   |
 
 ## Retrieve Single Field
 
@@ -71,11 +73,11 @@ query QueryForENS {
 
 ```json
 {
-    "data": {
-        "identity": {
-            "domain": "cyberlab.eth"
-        }
+  "data": {
+    "identity": {
+      "domain": "cyberlab.eth"
     }
+  }
 }
 ```
 
@@ -133,28 +135,28 @@ query FullIdentityQuery {
 
 ```json
 {
-    "data": {
-        "identity": {
-            "followerCount": 13325,
-            "followers": {
-                    "pageInfo": {
-                    "startCursor": "0",
-                    "endCursor": "0",
-                    "hasNextPage": true,
-                    "hasPreviousPage": false
-                },
-                    "list": [
-                    {
-                        "address": "0x00000035e82c83792df6def4de690fc87908c076",
-                        "domain": "",
-                        "avatar": "",
-                        "namespace": "CyberConnect",
-                        "lastModifiedTime": "2021-12-13T09:04:03Z"
-                    }
-                ]
-            }
-        }
+  "data": {
+    "identity": {
+      "followerCount": 13325,
+      "followers": {
+        "pageInfo": {
+          "startCursor": "0",
+          "endCursor": "0",
+          "hasNextPage": true,
+          "hasPreviousPage": false
+        },
+        "list": [
+          {
+            "address": "0x00000035e82c83792df6def4de690fc87908c076",
+            "domain": "",
+            "avatar": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2021-12-13T09:04:03Z"
+          }
+        ]
+      }
     }
+  }
 }
 ```
 
@@ -195,18 +197,18 @@ query TwitterQuery{
 
 ```json
 {
-    "data": {
-        "identity": {
-            "twitter": {
-                "handle": "CyberConnectHQ",
-                "avatar": "",
-                "verified": true,
-                "tweetId": "1468099922415157251",
-                "source": "Sybil",
-                "followerCount": 58585
-            }
-        }
+  "data": {
+    "identity": {
+      "twitter": {
+        "handle": "CyberConnectHQ",
+        "avatar": "",
+        "verified": true,
+        "tweetId": "1468099922415157251",
+        "source": "Sybil",
+        "followerCount": 58585
+      }
     }
+  }
 }
 ```
 
@@ -242,15 +244,155 @@ query GithubQuery{
 
 ```json
 {
-    "data": {
-        "identity": {
-            "github": {
-                "username": "jiayi1992",
-                "gistId": "0120b41854e787acebad69022cb0cf3d",
-                "userId": 17503721
+  "data": {
+    "identity": {
+      "github": {
+        "username": "jiayi1992",
+        "gistId": "0120b41854e787acebad69022cb0cf3d",
+        "userId": 17503721
+      }
+    }
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Retrieve Notifications
+
+### UnreadNotificationCount Example
+
+You can use this snippet to query an address’s unread notification count in the [Playground](/cyberconnect-api/playground/):
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
+query QueryForUnreadNotificationCount {
+    identity(address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c", network: ETH) {
+        unreadNotificationCount
+    }
+}
+```
+
+</TabItem>
+<TabItem value="json">
+
+```json
+{
+  "data": {
+    "identity": {
+      "unreadNotificationCount": 0
+    }
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Notifications Example
+
+You can use this snippet to query an address’s notification list in the [Playground](/cyberconnect-api/playground/):
+
+<Tabs
+    defaultValue="javascript"
+    values={[
+        {label: 'Query', value: 'javascript'},
+        {label: 'Response', value: 'json'},
+    ]}>
+<TabItem value="javascript">
+
+```javascript
+{
+    identity(address: "0x9dd481d6c1656816bfd564151e29d57e041d2c8f", network: ETH) {
+        notifications {
+            pageInfo {
+                hasNextPage
+                hasPreviousPage
+                endCursor
+                startCursor
+            }
+            list {
+                id
+                toAddress
+                network
+                namespace
+                hasRead
+                type
+                timestamp
+                ... on NewConnectionNotification {
+                    fromAddress
+                    connectionType
+                }
+                ... on BiConnectReceivedNotification {
+                    fromAddress
+                }
+                ... on BiConnectAcceptedNotification {
+                    fromAddress
+                }
             }
         }
     }
+}
+```
+
+</TabItem>
+<TabItem value="json">
+
+```json
+{
+  "data": {
+    "identity": {
+      "notifications": {
+        "pageInfo": {
+          "hasNextPage": false,
+          "hasPreviousPage": false,
+          "endCursor": "2",
+          "startCursor": "0"
+        },
+        "list": [
+          {
+            "id": "ee0b2aac-dbea-49cf-a9ab-c6a6d8348948",
+            "toAddress": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+            "network": "ETH",
+            "namespace": "CyberConnect",
+            "hasRead": false,
+            "type": "BICONNECT_ACCEPTED",
+            "timestamp": "1654660895300",
+            "fromAddress": "0xc76fbe40144ac56822c651b6e02497d4a576f23d"
+          },
+          {
+            "id": "7ef10fd9-dd36-484d-b1cc-e07509328414",
+            "toAddress": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+            "network": "ETH",
+            "namespace": "CyberConnect",
+            "hasRead": false,
+            "type": "BICONNECT_RECEIVED",
+            "timestamp": "1654660822743",
+            "fromAddress": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f"
+          },
+          {
+            "id": "ad666438-88b1-4077-bc92-c1e3913738d0",
+            "toAddress": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+            "network": "ETH",
+            "namespace": "CyberConnect",
+            "hasRead": false,
+            "type": "NEW_CONNECTION",
+            "timestamp": "1654569725895",
+            "fromAddress": "0xb54b03cfca57624d360c2182d4e053b3fde14392",
+            "connectionType": "FOLLOW"
+          }
+        ]
+      }
+    }
+  }
 }
 ```
 
@@ -301,7 +443,7 @@ query FullIdentityQuery{
                 endCursor
                 hasNextPage
                 hasPreviousPage
-            } 
+            }
             list {
                 address
                 domain
@@ -310,7 +452,7 @@ query FullIdentityQuery{
                 namespace
                 lastModifiedTime
                 verifiable
-            } 
+            }
         }
         followers(namespace: "CyberConnect", first: 2, after: "-1") {
             pageInfo {
@@ -318,7 +460,7 @@ query FullIdentityQuery{
                 endCursor
                 hasNextPage
                 hasPreviousPage
-            } 
+            }
             list {
                 address
                 domain
@@ -327,7 +469,7 @@ query FullIdentityQuery{
                 namespace
                 lastModifiedTime
                 verifiable
-            } 
+            }
         }
         friends(namespace: "CyberConnect", first: 2, after: "-1") {
             pageInfo {
@@ -335,7 +477,7 @@ query FullIdentityQuery{
                 endCursor
                 hasNextPage
                 hasPreviousPage
-            } 
+            }
             list {
                 address
                 domain
@@ -344,7 +486,35 @@ query FullIdentityQuery{
                 namespace
                 lastModifiedTime
                 verifiable
-            } 
+            }
+        }
+        unreadNotificationCount (namespaces: ["CyberConnect"])
+        notifications (namespaces: ["CyberConnect"], first:2, after: "-1") {
+            pageInfo {
+                hasNextPage
+                hasPreviousPage
+                endCursor
+                startCursor
+            }
+            list {
+                id
+                toAddress
+                network
+                namespace
+                hasRead
+                type
+                timestamp
+                ... on NewConnectionNotification {
+                    fromAddress
+                    connectionType
+                }
+                ... on BiConnectReceivedNotification {
+                    fromAddress
+                }
+                ... on BiConnectAcceptedNotification {
+                    fromAddress
+                }
+            }
         }
     }
 }
@@ -355,113 +525,144 @@ query FullIdentityQuery{
 
 ```json
 {
-    "data": {
-        "identity": {
-            "address": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
-            "domain": "cyberlab.eth",
-            "avatar": "https://images.cybertino.io/cyberconnect_logo",
-            "joinTime": "2021-11-09T02:44:18Z",
-            "twitter": {
-                "handle": "cyberconnecthq",
-                "avatar": "",
-                "verified": true,
-                "tweetId": "1470883558751309828",
-                "source": "CyberConnect",
-                "followerCount": 51373
-            },
-            "github": {
-                "username": "",
-                "gistId": "",
-                "userId": 0
-            },
-            "followerCount": 20636,
-            "followingCount": 45,
-            "followings": {
-                "pageInfo": {
-                    "startCursor": "0",
-                    "endCursor": "1",
-                    "hasNextPage": true,
-                    "hasPreviousPage": false
-                },
-                "list": [
-                    {
-                        "address": "0x0aa5973f2614dccfbe53c8273da22502d7e4fbd5",
-                        "domain": "1pay.eth",
-                        "avatar": "https://lh3.googleusercontent.com/ErzzE3yOWC6hP4YJTxfSuonFJtXwJBXXmLQNYXx0AGf7u9EvX0hqMssnvZekKOlg8tBJs1zqTAdcn6JWI2D0zomPtNqzQOM4Mw9e=s128",
-                        "alias": "",
-                        "namespace": "CyberConnect",
-                        "lastModifiedTime": "2022-03-21T20:38:57Z",
-                        "verifiable": true
-                    },
-                    {
-                        "address": "0xb272a880ca5d104a0e0874d6f1a2b0719dbe82b5",
-                        "domain": "stepn.eth",
-                        "avatar": "https://lh3.googleusercontent.com/AfpwQ8AZojJCRO56c1ipYJkMZ4EnZkfaVf6tC3ena1uJfWUL7imXqaEwSsHaQzvfNWzqpI1C1Qrzs0Ol0Tmats_gTPxzSgOdTscfpA=s128",
-                        "alias": "",
-                        "namespace": "CyberConnect",
-                        "lastModifiedTime": "2022-03-21T20:38:46Z",
-                        "verifiable": true
-                    }
-                ]
-            },
-            "followers": {
-                "pageInfo": {
-                    "startCursor": "0",
-                    "endCursor": "1",
-                    "hasNextPage": true,
-                    "hasPreviousPage": false
-                },
-                "list": [
-                    {
-                        "address": "0x997eab8550ab8267826307e327bc19581561fdfc",
-                        "domain": "",
-                        "avatar": "",
-                        "alias": "",
-                        "namespace": "CyberConnect",
-                        "lastModifiedTime": "2022-05-15T19:12:59Z",
-                        "verifiable": true
-                    },
-                    {
-                        "address": "0x0ec559a170d26bd1ec027572773664dc85590a8d",
-                        "domain": "",
-                        "avatar": "",
-                        "alias": "",
-                        "namespace": "CyberConnect",
-                        "lastModifiedTime": "2022-05-15T19:11:23Z",
-                        "verifiable": true
-                    }
-                ]
-            },
-            "friends": {
-                "pageInfo": {
-                    "startCursor": "0",
-                    "endCursor": "1",
-                    "hasNextPage": true,
-                    "hasPreviousPage": false
-                },
-                "list": [
-                    {
-                        "address": "0x0aa5973f2614dccfbe53c8273da22502d7e4fbd5",
-                        "domain": "1pay.eth",
-                        "avatar": "https://lh3.googleusercontent.com/ErzzE3yOWC6hP4YJTxfSuonFJtXwJBXXmLQNYXx0AGf7u9EvX0hqMssnvZekKOlg8tBJs1zqTAdcn6JWI2D0zomPtNqzQOM4Mw9e=s128",
-                        "alias": "",
-                        "namespace": "CyberConnect",
-                        "lastModifiedTime": "2022-03-21T20:38:57Z",
-                        "verifiable": true
-                    },
-                    {
-                        "address": "0xc47aa859fa329496db6d498165da7e0b1fe13430",
-                        "domain": "peiwen.eth",
-                        "avatar": "https://lh3.googleusercontent.com/bHlXuQQWjvrD8SLOpf6dujm7lN5w6Hukx_to6yl88y4KL2W1FqcU1S1_oNBPWfcwNVGOqhD3zqEBJPQRJp6__oFlfLAxBZoQaknf=s128",
-                        "alias": "",
-                        "namespace": "CyberConnect",
-                        "lastModifiedTime": "2022-03-21T20:38:21Z",
-                        "verifiable": true
-                    }
-                ]
-            }
-        }
+  "data": {
+    "identity": {
+      "address": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
+      "domain": "cyberlab.eth",
+      "avatar": "https://images.cybertino.io/cyberconnect_logo",
+      "joinTime": "2021-11-09T02:44:18Z",
+      "twitter": {
+        "handle": "cyberconnecthq",
+        "avatar": "",
+        "verified": true,
+        "tweetId": "1470883558751309828",
+        "source": "CyberConnect",
+        "followerCount": 51373
+      },
+      "github": {
+        "username": "",
+        "gistId": "",
+        "userId": 0
+      },
+      "followerCount": 20636,
+      "followingCount": 45,
+      "followings": {
+        "pageInfo": {
+          "startCursor": "0",
+          "endCursor": "1",
+          "hasNextPage": true,
+          "hasPreviousPage": false
+        },
+        "list": [
+          {
+            "address": "0x0aa5973f2614dccfbe53c8273da22502d7e4fbd5",
+            "domain": "1pay.eth",
+            "avatar": "https://lh3.googleusercontent.com/ErzzE3yOWC6hP4YJTxfSuonFJtXwJBXXmLQNYXx0AGf7u9EvX0hqMssnvZekKOlg8tBJs1zqTAdcn6JWI2D0zomPtNqzQOM4Mw9e=s128",
+            "alias": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2022-03-21T20:38:57Z",
+            "verifiable": true
+          },
+          {
+            "address": "0xb272a880ca5d104a0e0874d6f1a2b0719dbe82b5",
+            "domain": "stepn.eth",
+            "avatar": "https://lh3.googleusercontent.com/AfpwQ8AZojJCRO56c1ipYJkMZ4EnZkfaVf6tC3ena1uJfWUL7imXqaEwSsHaQzvfNWzqpI1C1Qrzs0Ol0Tmats_gTPxzSgOdTscfpA=s128",
+            "alias": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2022-03-21T20:38:46Z",
+            "verifiable": true
+          }
+        ]
+      },
+      "followers": {
+        "pageInfo": {
+          "startCursor": "0",
+          "endCursor": "1",
+          "hasNextPage": true,
+          "hasPreviousPage": false
+        },
+        "list": [
+          {
+            "address": "0x997eab8550ab8267826307e327bc19581561fdfc",
+            "domain": "",
+            "avatar": "",
+            "alias": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2022-05-15T19:12:59Z",
+            "verifiable": true
+          },
+          {
+            "address": "0x0ec559a170d26bd1ec027572773664dc85590a8d",
+            "domain": "",
+            "avatar": "",
+            "alias": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2022-05-15T19:11:23Z",
+            "verifiable": true
+          }
+        ]
+      },
+      "friends": {
+        "pageInfo": {
+          "startCursor": "0",
+          "endCursor": "1",
+          "hasNextPage": true,
+          "hasPreviousPage": false
+        },
+        "list": [
+          {
+            "address": "0x0aa5973f2614dccfbe53c8273da22502d7e4fbd5",
+            "domain": "1pay.eth",
+            "avatar": "https://lh3.googleusercontent.com/ErzzE3yOWC6hP4YJTxfSuonFJtXwJBXXmLQNYXx0AGf7u9EvX0hqMssnvZekKOlg8tBJs1zqTAdcn6JWI2D0zomPtNqzQOM4Mw9e=s128",
+            "alias": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2022-03-21T20:38:57Z",
+            "verifiable": true
+          },
+          {
+            "address": "0xc47aa859fa329496db6d498165da7e0b1fe13430",
+            "domain": "peiwen.eth",
+            "avatar": "https://lh3.googleusercontent.com/bHlXuQQWjvrD8SLOpf6dujm7lN5w6Hukx_to6yl88y4KL2W1FqcU1S1_oNBPWfcwNVGOqhD3zqEBJPQRJp6__oFlfLAxBZoQaknf=s128",
+            "alias": "",
+            "namespace": "CyberConnect",
+            "lastModifiedTime": "2022-03-21T20:38:21Z",
+            "verifiable": true
+          }
+        ]
+      },
+      "unreadNotificationCount": 3,
+      "notifications": {
+        "pageInfo": {
+          "hasNextPage": true,
+          "hasPreviousPage": false,
+          "endCursor": "1",
+          "startCursor": "0"
+        },
+        "list": [
+          {
+            "id": "ee0b2aac-dbea-49cf-a9ab-c6a6d8348948",
+            "toAddress": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
+            "network": "ETH",
+            "namespace": "CyberConnect",
+            "hasRead": false,
+            "type": "BICONNECT_ACCEPTED",
+            "timestamp": "1654660895300",
+            "fromAddress": "0xc76fbe40144ac56822c651b6e02497d4a576f23d"
+          },
+          {
+            "id": "7ef10fd9-dd36-484d-b1cc-e07509328414",
+            "toAddress": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
+            "network": "ETH",
+            "namespace": "CyberConnect",
+            "hasRead": false,
+            "type": "BICONNECT_RECEIVED",
+            "timestamp": "1654660822743",
+            "fromAddress": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f"
+          }
+        ]
+      }
     }
+  }
 }
 ```
 
