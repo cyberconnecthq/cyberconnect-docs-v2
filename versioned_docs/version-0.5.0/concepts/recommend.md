@@ -3,7 +3,7 @@ id: recommend
 title: Recommend
 slug: /concepts/recommend/
 sidebar_label: Recommend
-sidebar_position: 4
+sidebar_position: 5
 description: An interoperable social graph opens up the possibility for developers to better leverage data insights and more accurately recommend potential connections to their users.
 ---
 
