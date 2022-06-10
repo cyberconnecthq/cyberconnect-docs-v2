@@ -7,7 +7,7 @@ sidebar_position: 2
 description: The CyberConnect SDK provides two primary functions, connect and disconnect, which in social graph are follow and unfollow.
 ---
 
-The CyberConnect SDK provides two primary functions, **connect** and **disconnect**, which in [social graphs](/concepts/social-graph/) are **follow** and **unfollow**. 
+The CyberConnect SDK provides two primary functions, **connect** and **disconnect**, which in [social graphs](/concepts/social-graph/) are **follow** and **unfollow**.
 
 The library encapsulates the complex authentication logic (authenticate to Ceramic Network) into easy-to-use functions.
 
@@ -43,11 +43,11 @@ After the user signs the first message, the library will generate a **derived s
 import CyberConnect, { Env, Blockchain } from "@cyberlab/cyberconnect";
 
 const cyberConnect = new CyberConnect({
-    namespace: "CyberConnect",
-    env: Env.Production,
-    chain: Blockchain.ETH,
-    provider: provider,
-    signingMessageEntity: "CyberConnect" || "YOUR_ENTITY_HERE",
+  namespace: "CyberConnect",
+  env: Env.Production,
+  chain: Blockchain.ETH,
+  provider: provider,
+  signingMessageEntity: "CyberConnect" || "YOUR_ENTITY_HERE",
 });
 ```
 
@@ -93,6 +93,24 @@ cyberConnect.setAlias(targetAddr, alias);
 - `targetAddr` - The target wallet address to disconnect.
 - `alias` - The alias for the target address.
 
+### AckNotifications
+
+```jsx
+cyberConnect.ackNotifications(notificationIds);
+```
+
+- `notificationIds` - A list of notificationId .
+
+Learn more about notification [here](/concepst/notification/).
+
+### AckAllNotifications
+
+```jsx
+cyberConnect.ackAllNotifications();
+```
+
+Learn more about notification [here](/concepst/notification/).
+
 ### Connection Type
 
 You can create different types of connections for different purposes (e.g. you can like a NFT by creating a `LIKE` connection from you to the NFT).
@@ -130,10 +148,10 @@ You need to pass `chainRef` when you connect to Solana. Now we have three option
 import CyberConnect, { Env, Blockchain, Solana } from "@cyberlab/cyberconnect";
 
 const cyberConnect = new CyberConnect({
-    namespace: "CyberConnect",
-    env: Env.Production,
-    chain: Blockchain.ETH,
-    provider: solanaProvider,
-    chainRef: Solana.SOLANA_MAINNET_CHAIN_REF,
+  namespace: "CyberConnect",
+  env: Env.Production,
+  chain: Blockchain.ETH,
+  provider: solanaProvider,
+  chainRef: Solana.SOLANA_MAINNET_CHAIN_REF,
 });
 ```
