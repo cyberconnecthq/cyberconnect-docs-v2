@@ -3,7 +3,6 @@ id: connection
 title: Connection
 ---
 
-
 No description
 
 ```graphql
@@ -18,61 +17,39 @@ type Connection {
   updatedAt: String!
   createdAt: String!
   proof: String!
+  latestEvent: ConnectionEvent
+  latestAnchorEvent: ConnectionEvent
 }
 ```
-
 
 ### Fields
 
 #### `fromAddr` ([`String`](/cyberconnect-api/reference/scalars/string))
 
-
-
-
 #### `toAddr` ([`String`](/cyberconnect-api/reference/scalars/string))
-
-
-
 
 #### `followStatus` ([`FollowStatus`](/cyberconnect-api/reference/objects/follow-status))
 
-
-
-
 #### `namespace` ([`String`](/cyberconnect-api/reference/scalars/string))
-
-
-
 
 #### `alias` ([`String`](/cyberconnect-api/reference/scalars/string))
 
 The alias set by the fromAddr for toAddr.
 
-
 #### `network` ([`Network`](/cyberconnect-api/reference/enums/network))
-
-
-
 
 #### `type` ([`ConnectionType`](/cyberconnect-api/reference/enums/connection-type))
 
 Connection type. Default is FOLLOW.
 
-
 #### `updatedAt` ([`String`](/cyberconnect-api/reference/scalars/string))
-
-
-
 
 #### `createdAt` ([`String`](/cyberconnect-api/reference/scalars/string))
 
-
-
-
 #### `proof` ([`String`](/cyberconnect-api/reference/scalars/string))
 
+proof is deprecated. Use latestEvent to retrieve it.
 
+#### `latestEvent` ([`ConnectionEvent`](/cyberconnect-api/reference/objects/connection-event))
 
-
-
-
+#### `latestAnchorEvent` ([`ConnectionEvent`](/cyberconnect-api/reference/objects/connection-event))

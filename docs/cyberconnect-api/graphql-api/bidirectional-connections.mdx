@@ -19,25 +19,27 @@ The general pattern of `Bidirectional Connection` query is:
 biConnections(fromAddr String!, toAddrList [String!]!, network Network) [BidirectionalConnection!]!
 ```
 
-| Field        | Type       | Description                                                                                | Required/Optional                 |
-| ------------ | ---------- | ------------------------------------------------------------------------------------------ | --------------------------------- |
+| Field        | Type       | Description                                                                                              | Required/Optional                 |
+| ------------ | ---------- | -------------------------------------------------------------------------------------------------------- | --------------------------------- |
 | `fromAddr`   | String!    | The source address that you want to query bidirectional connections about                                | Required                          |
 | `toAddrList` | [String!]! | A string list of addresses that you want to check if they have bidirectional connections with `fromAddr` | Required                          |
-| `network`    | Network    | The blockchain network of the address you are querying about                               | Optional. Default value is `ETH`. |
+| `network`    | Network    | The blockchain network of the address you are querying about                                             | Optional. Default value is `ETH`. |
 
 With correct inputs, you will get a list of `BidirectionalConnection` objects, consisting of the following fields:
 
-| Field           | Type         | Description                                                                                                                              |
-| --------------- | ------------ | -----------------------------------------------------------------------------------------------------------------------------------------|
-| `fromAddr `     | String       | The source address that you want to query bidirectional connections about                                                                |
-| `toAddr`        | String       | An address that is given in `toAddrList`                                                                                                 |
-| `state `        | BiConnState  | The bidirectional connection state between `fromAddr` and `toAddr`.                                                                      |
-| `direction`     | Direction    | The direction of bidirectional connection state.                                                                                         |
-| `namespace`     | String       | The namespace of this connection                                                                                                         |
-| `network`       | Network      | The network that is given as the querying parameter                                                                                      |
-| `createdAt`     | String       | The creation time of this connection                                                                                                     |
-| `updatedAt`     | String       | The latest update time of this connection                                                                                                |
-| `latestHash`    | String       | The proof hash of this connection. Please see [Proof of Connection](/protocol/proof-of-connection/) for detail design and implementation |
+| Field               | Type            | Description                                                                                                                                                     |
+| ------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fromAddr `         | String          | The source address that you want to query bidirectional connections about                                                                                       |
+| `toAddr`            | String          | An address that is given in `toAddrList`                                                                                                                        |
+| `state `            | BiConnState     | The bidirectional connection state between `fromAddr` and `toAddr`.                                                                                             |
+| `direction`         | Direction       | The direction of bidirectional connection state.                                                                                                                |
+| `namespace`         | String          | The namespace of this connection                                                                                                                                |
+| `network`           | Network         | The network that is given as the querying parameter                                                                                                             |
+| `createdAt`         | String          | The creation time of this connection                                                                                                                            |
+| `updatedAt`         | String          | The latest update time of this connection                                                                                                                       |
+| `latestHash`        | String          | The proof hash of this connection. Please see [Proof of Connection](/protocol/proof-of-connection/) for detail design and implementation                        |
+| `latestEvent`       | ConnectionEvent | The latest event of this connection including the proof. Please see [Proof of Connection](/protocol/proof-of-connection/) for detail design and implementation. |
+| `latestAnchorEvent` | ConnectionEvent | The latest event of this connection which can be found on Arweave                                                                                               |
 
 For `followStatus`, there will be two boolean variables: `isFollowed` and `isFollowing`.
 For `state`, there will be four enum values: `EMPTY`、`PENDING`、`CONNECTD` and `BLACKLIST`. Our protocol defines a state machine to show relationship among these states and different bidirectional connection:
@@ -72,12 +74,25 @@ import TabItem from "@theme/TabItem";
 ```javascript
 query ProofQuery {
   bidirectionalConnections(
-    fromAddr: "0x9dd481d6c1656816bfd564151e29d57e041d2c8f", 
-    toAddrList:["0xc76fbe40144ac56822c651b6e02497d4a576f23d"], 
+    fromAddr: "0xd45D6496DC32AA91E069C1D7870C5363bC5c8Fbd",
+    toAddrList:["0xC76fbE40144ac56822C651B6e02497D4A576F23d"],
     network: ETH) {
     from
     to
-    latestHash
+    latestEvent {
+      proof {
+        content
+        digest
+        signature
+        signingKey
+        signingKeyAuth {
+          message
+          signature
+          address
+        }
+        arweaveTxHash
+      }
+    }
   }
 }
 ```
@@ -90,9 +105,22 @@ query ProofQuery {
   "data": {
     "bidirectionalConnections": [
       {
-        "from": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+        "from": "0xd45d6496dc32aa91e069c1d7870c5363bc5c8fbd",
         "to": "0xc76fbe40144ac56822c651b6e02497d4a576f23d",
-        "latestHash": "945d5d041901a836f0d9e97291c04e0671d6e68e9569e3507fc19f2267625272"
+        "latestEvent": {
+          "proof": {
+            "content": "{\"name\":\"ACCEPT\",\"from\":\"0xc76fbe40144ac56822c651b6e02497d4a576f23d\",\"to\":\"0xd45D6496DC32AA91E069C1D7870C5363bC5c8Fbd\",\"namespace\":\"CyberConnect\",\"network\":\"ETH\",\"timestamp\":1654883805555}",
+            "digest": "0x9f1c215b4d1d50906385d379b2bfc5a6d08f385264e151092d53bbccc81f75a5",
+            "signature": "0x17835e2173aa10d1870fc9f4780d0b9a0afc84594687d0a8e4d862df22509de01426923fc062db3c991210b380a865e40b6b22b3692b5397a0318268755eeff8",
+            "signingKey": "SubjectPublicKeyInfo:MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzMJQc/4ZrUlJME3gACoSffOCH+UNrpegzJ+U2HbtddLHR0QYiaFS+p45I9nHNJ6OM416F8I4viQJfSnb3ljBdQ==",
+            "signingKeyAuth": {
+              "message": "I authorize CyberConnect from this device using signing key:\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzMJQc/4ZrUlJME3gACoSffOCH+UNrpegzJ+U2HbtddLHR0QYiaFS+p45I9nHNJ6OM416F8I4viQJfSnb3ljBdQ==",
+              "signature": "0xcdae12e5acd0ad05b8a3456820266b4a7e5ff5f23da83f6e46062392b68971ab5f4e3d853058ea84ea0faa816b19b0d9d1b3035b10ab4814b1570574a966f3b51c",
+              "address": "0xc76fbe40144ac56822c651b6e02497d4a576f23d"
+            },
+            "arweaveTxHash": "Z5HPm7q7BjMLNE407U7dKPFvukJizkWqRipAb5j2kG8"
+          }
+        }
       }
     ]
   }
@@ -117,8 +145,8 @@ This is an example of a query to fetch the `state` and `direction` that you can 
 ```javascript
 query StateQuery {
   bidirectionalConnections(
-    fromAddr: "0x9dd481d6c1656816bfd564151e29d57e041d2c8f", 
-    toAddrList:["0xc76fbe40144ac56822c651b6e02497d4a576f23d"], 
+    fromAddr: "0xd45D6496DC32AA91E069C1D7870C5363bC5c8Fbd",
+    toAddrList:["0xc76fbe40144ac56822c651b6e02497d4a576f23d"],
     network: ETH) {
     from
     to
@@ -136,7 +164,7 @@ query StateQuery {
   "data": {
     "bidirectionalConnections": [
       {
-        "from": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+        "from": "0xd45d6496dc32aa91e069c1d7870c5363bc5c8fbd",
         "to": "0xc76fbe40144ac56822c651b6e02497d4a576f23d",
         "state": "CONNECTED",
         "direction": "BIDIRECTION"
@@ -164,8 +192,8 @@ This is a full example for the Bidirectional Connections query that you can also
 ```javascript
 query BidirectionalConnectionsQuery {
   bidirectionalConnections(
-    fromAddr: "0x9dd481d6c1656816bfd564151e29d57e041d2c8f", 
-    toAddrList:["0xc76fbe40144ac56822c651b6e02497d4a576f23d"], 
+    fromAddr: "0xd45D6496DC32AA91E069C1D7870C5363bC5c8Fbd",
+    toAddrList:["0xC76fbE40144ac56822C651B6e02497D4A576F23d"],
     network: ETH) {
     from
     to
@@ -173,8 +201,53 @@ query BidirectionalConnectionsQuery {
     state
     direction
     namespace
-    latestHash
     updatedAt
+    latestEvent {
+      hash
+      parentHash
+      fromAddr
+      toAddr
+      network
+      namespace
+      createdAt
+      isAnchor
+      instruction
+      proof {
+        content
+        digest
+        signature
+        signingKey
+        signingKeyAuth {
+          message
+          signature
+          address
+        }
+        arweaveTxHash
+      }
+    }
+    latestAnchorEvent {
+      hash
+      parentHash
+      fromAddr
+      toAddr
+      network
+      namespace
+      createdAt
+      isAnchor
+      instruction
+      proof {
+        content
+        digest
+        signature
+        signingKey
+        signingKeyAuth {
+          message
+          signature
+          address
+        }
+        arweaveTxHash
+      }
+    }
   }
 }
 ```
@@ -187,14 +260,59 @@ query BidirectionalConnectionsQuery {
   "data": {
     "bidirectionalConnections": [
       {
-        "from": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+        "from": "0xd45d6496dc32aa91e069c1d7870c5363bc5c8fbd",
         "to": "0xc76fbe40144ac56822c651b6e02497d4a576f23d",
         "network": "ETH",
         "state": "CONNECTED",
         "direction": "BIDIRECTION",
         "namespace": "CyberConnect",
-        "latestHash": "945d5d041901a836f0d9e97291c04e0671d6e68e9569e3507fc19f2267625272",
-        "updatedAt": "2022-06-08T04:01:35Z"
+        "updatedAt": "2022-06-10T17:56:45Z",
+        "latestEvent": {
+          "hash": "0xb01af668596a4299eada36a82d6598a28880902aadbd146cba6cd511e28927dc",
+          "parentHash": "0xf082a91e1af31a3d7cf0fad006b96a7a7c8347612789197ea585225e3baa15c1",
+          "fromAddr": "0xc76fbe40144ac56822c651b6e02497d4a576f23d",
+          "toAddr": "0xd45d6496dc32aa91e069c1d7870c5363bc5c8fbd",
+          "network": "ETH",
+          "namespace": "CyberConnect",
+          "createdAt": "2022-06-10T17:56:45Z",
+          "isAnchor": true,
+          "instruction": "ACCEPT",
+          "proof": {
+            "content": "{\"name\":\"ACCEPT\",\"from\":\"0xc76fbe40144ac56822c651b6e02497d4a576f23d\",\"to\":\"0xd45D6496DC32AA91E069C1D7870C5363bC5c8Fbd\",\"namespace\":\"CyberConnect\",\"network\":\"ETH\",\"timestamp\":1654883805555}",
+            "digest": "0x9f1c215b4d1d50906385d379b2bfc5a6d08f385264e151092d53bbccc81f75a5",
+            "signature": "0x17835e2173aa10d1870fc9f4780d0b9a0afc84594687d0a8e4d862df22509de01426923fc062db3c991210b380a865e40b6b22b3692b5397a0318268755eeff8",
+            "signingKey": "SubjectPublicKeyInfo:MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzMJQc/4ZrUlJME3gACoSffOCH+UNrpegzJ+U2HbtddLHR0QYiaFS+p45I9nHNJ6OM416F8I4viQJfSnb3ljBdQ==",
+            "signingKeyAuth": {
+              "message": "I authorize CyberConnect from this device using signing key:\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzMJQc/4ZrUlJME3gACoSffOCH+UNrpegzJ+U2HbtddLHR0QYiaFS+p45I9nHNJ6OM416F8I4viQJfSnb3ljBdQ==",
+              "signature": "0xcdae12e5acd0ad05b8a3456820266b4a7e5ff5f23da83f6e46062392b68971ab5f4e3d853058ea84ea0faa816b19b0d9d1b3035b10ab4814b1570574a966f3b51c",
+              "address": "0xc76fbe40144ac56822c651b6e02497d4a576f23d"
+            },
+            "arweaveTxHash": "Z5HPm7q7BjMLNE407U7dKPFvukJizkWqRipAb5j2kG8"
+          }
+        },
+        "latestAnchorEvent": {
+          "hash": "0xb01af668596a4299eada36a82d6598a28880902aadbd146cba6cd511e28927dc",
+          "parentHash": "0xf082a91e1af31a3d7cf0fad006b96a7a7c8347612789197ea585225e3baa15c1",
+          "fromAddr": "0xc76fbe40144ac56822c651b6e02497d4a576f23d",
+          "toAddr": "0xd45d6496dc32aa91e069c1d7870c5363bc5c8fbd",
+          "network": "ETH",
+          "namespace": "CyberConnect",
+          "createdAt": "2022-06-10T17:56:45Z",
+          "isAnchor": true,
+          "instruction": "ACCEPT",
+          "proof": {
+            "content": "{\"name\":\"ACCEPT\",\"from\":\"0xc76fbe40144ac56822c651b6e02497d4a576f23d\",\"to\":\"0xd45D6496DC32AA91E069C1D7870C5363bC5c8Fbd\",\"namespace\":\"CyberConnect\",\"network\":\"ETH\",\"timestamp\":1654883805555}",
+            "digest": "0x9f1c215b4d1d50906385d379b2bfc5a6d08f385264e151092d53bbccc81f75a5",
+            "signature": "0x17835e2173aa10d1870fc9f4780d0b9a0afc84594687d0a8e4d862df22509de01426923fc062db3c991210b380a865e40b6b22b3692b5397a0318268755eeff8",
+            "signingKey": "SubjectPublicKeyInfo:MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzMJQc/4ZrUlJME3gACoSffOCH+UNrpegzJ+U2HbtddLHR0QYiaFS+p45I9nHNJ6OM416F8I4viQJfSnb3ljBdQ==",
+            "signingKeyAuth": {
+              "message": "I authorize CyberConnect from this device using signing key:\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzMJQc/4ZrUlJME3gACoSffOCH+UNrpegzJ+U2HbtddLHR0QYiaFS+p45I9nHNJ6OM416F8I4viQJfSnb3ljBdQ==",
+              "signature": "0xcdae12e5acd0ad05b8a3456820266b4a7e5ff5f23da83f6e46062392b68971ab5f4e3d853058ea84ea0faa816b19b0d9d1b3035b10ab4814b1570574a966f3b51c",
+              "address": "0xc76fbe40144ac56822c651b6e02497d4a576f23d"
+            },
+            "arweaveTxHash": "Z5HPm7q7BjMLNE407U7dKPFvukJizkWqRipAb5j2kG8"
+          }
+        }
       }
     ]
   }
