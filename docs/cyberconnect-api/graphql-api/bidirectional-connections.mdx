@@ -39,7 +39,7 @@ With correct inputs, you will get a list of `BidirectionalConnection` objects, c
 | `updatedAt`         | String          | The latest update time of this connection                                                                                                                       |
 | `latestHash`        | String          | The proof hash of this connection. Please see [Proof of Connection](/protocol/proof-of-connection/) for detail design and implementation                        |
 | `latestEvent`       | ConnectionEvent | The latest event of this connection including the proof. Please see [Proof of Connection](/protocol/proof-of-connection/) for detail design and implementation. |
-| `latestAnchorEvent` | ConnectionEvent | The latest event of this connection which can be found on Arweave                                                                                               |
+| `latestAnchorEvent` | ConnectionEvent | The latest event of this connection which can be found on [Arweave](https://viewblock.io/arweave)                                                               |
 
 For `followStatus`, there will be two boolean variables: `isFollowed` and `isFollowing`.
 For `state`, there will be four enum values: `EMPTY`、`PENDING`、`CONNECTD` and `BLACKLIST`. Our protocol defines a state machine to show relationship among these states and different bidirectional connection:
@@ -74,27 +74,45 @@ import TabItem from "@theme/TabItem";
 ```javascript
 query ProofQuery {
   bidirectionalConnections(
-    fromAddr: "0xd45D6496DC32AA91E069C1D7870C5363bC5c8Fbd",
-    toAddrList:["0xC76fbE40144ac56822C651B6e02497D4A576F23d"],
-    network: ETH) {
+    fromAddr: "0xd45D6496DC32AA91E069C1D7870C5363bC5c8Fbd"
+    toAddrList: ["0xC76fbE40144ac56822C651B6e02497D4A576F23d"]
+    network: ETH
+  ) {
     from
     to
     latestEvent {
-      proof {
-        content
-        digest
-        signature
-        signingKey
-        signingKeyAuth {
-          message
-          signature
-          address
-        }
-        arweaveTxHash
-      }
+      ...event
+    }
+    latestAnchorEvent {
+      ...event
     }
   }
 }
+
+fragment event on BiConnEvent {
+  hash
+  parentHash
+  fromAddr
+  toAddr
+  network
+  namespace
+  createdAt
+  isAnchor
+  proof {
+    content
+    digest
+    signature
+    signingKey
+    signingKeyAuth {
+      message
+      signature
+      address
+    }
+    arweaveTxHash
+  }
+  instruction
+}
+
 ```
 
 </TabItem>
@@ -108,6 +126,14 @@ query ProofQuery {
         "from": "0xd45d6496dc32aa91e069c1d7870c5363bc5c8fbd",
         "to": "0xc76fbe40144ac56822c651b6e02497d4a576f23d",
         "latestEvent": {
+          "hash": "0xb01af668596a4299eada36a82d6598a28880902aadbd146cba6cd511e28927dc",
+          "parentHash": "0xf082a91e1af31a3d7cf0fad006b96a7a7c8347612789197ea585225e3baa15c1",
+          "fromAddr": "0xc76fbe40144ac56822c651b6e02497d4a576f23d",
+          "toAddr": "0xd45d6496dc32aa91e069c1d7870c5363bc5c8fbd",
+          "network": "ETH",
+          "namespace": "CyberConnect",
+          "createdAt": "2022-06-10T17:56:45Z",
+          "isAnchor": true,
           "proof": {
             "content": "{\"name\":\"ACCEPT\",\"from\":\"0xc76fbe40144ac56822c651b6e02497d4a576f23d\",\"to\":\"0xd45D6496DC32AA91E069C1D7870C5363bC5c8Fbd\",\"namespace\":\"CyberConnect\",\"network\":\"ETH\",\"timestamp\":1654883805555}",
             "digest": "0x9f1c215b4d1d50906385d379b2bfc5a6d08f385264e151092d53bbccc81f75a5",
@@ -119,7 +145,31 @@ query ProofQuery {
               "address": "0xc76fbe40144ac56822c651b6e02497d4a576f23d"
             },
             "arweaveTxHash": "Z5HPm7q7BjMLNE407U7dKPFvukJizkWqRipAb5j2kG8"
-          }
+          },
+          "instruction": "ACCEPT"
+        },
+        "latestAnchorEvent": {
+          "hash": "0xb01af668596a4299eada36a82d6598a28880902aadbd146cba6cd511e28927dc",
+          "parentHash": "0xf082a91e1af31a3d7cf0fad006b96a7a7c8347612789197ea585225e3baa15c1",
+          "fromAddr": "0xc76fbe40144ac56822c651b6e02497d4a576f23d",
+          "toAddr": "0xd45d6496dc32aa91e069c1d7870c5363bc5c8fbd",
+          "network": "ETH",
+          "namespace": "CyberConnect",
+          "createdAt": "2022-06-10T17:56:45Z",
+          "isAnchor": true,
+          "proof": {
+            "content": "{\"name\":\"ACCEPT\",\"from\":\"0xc76fbe40144ac56822c651b6e02497d4a576f23d\",\"to\":\"0xd45D6496DC32AA91E069C1D7870C5363bC5c8Fbd\",\"namespace\":\"CyberConnect\",\"network\":\"ETH\",\"timestamp\":1654883805555}",
+            "digest": "0x9f1c215b4d1d50906385d379b2bfc5a6d08f385264e151092d53bbccc81f75a5",
+            "signature": "0x17835e2173aa10d1870fc9f4780d0b9a0afc84594687d0a8e4d862df22509de01426923fc062db3c991210b380a865e40b6b22b3692b5397a0318268755eeff8",
+            "signingKey": "SubjectPublicKeyInfo:MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzMJQc/4ZrUlJME3gACoSffOCH+UNrpegzJ+U2HbtddLHR0QYiaFS+p45I9nHNJ6OM416F8I4viQJfSnb3ljBdQ==",
+            "signingKeyAuth": {
+              "message": "I authorize CyberConnect from this device using signing key:\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzMJQc/4ZrUlJME3gACoSffOCH+UNrpegzJ+U2HbtddLHR0QYiaFS+p45I9nHNJ6OM416F8I4viQJfSnb3ljBdQ==",
+              "signature": "0xcdae12e5acd0ad05b8a3456820266b4a7e5ff5f23da83f6e46062392b68971ab5f4e3d853058ea84ea0faa816b19b0d9d1b3035b10ab4814b1570574a966f3b51c",
+              "address": "0xc76fbe40144ac56822c651b6e02497d4a576f23d"
+            },
+            "arweaveTxHash": "Z5HPm7q7BjMLNE407U7dKPFvukJizkWqRipAb5j2kG8"
+          },
+          "instruction": "ACCEPT"
         }
       }
     ]
@@ -179,7 +229,8 @@ query StateQuery {
 
 ### Full Example
 
-This is a full example for the Bidirectional Connections query that you can also test out in the [Playground](/cyberconnect-api/playground/):
+This is a full example for the Bidirectional Connections query that you can also test out in the [Playground](/cyberconnect-api/playground/)
+With `arweaveTxHash` you can query it on [Arweave](https://viewblock.io/arweave) to proof the connection.
 
 <Tabs
     defaultValue="javascript"

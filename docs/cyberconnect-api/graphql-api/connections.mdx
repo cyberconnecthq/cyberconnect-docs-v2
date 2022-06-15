@@ -38,7 +38,7 @@ With correct inputs, you will get a list of `Connection` objects, consisting of 
 | `createdAt`         | String          | The creation time of this connection                                                                                                                            |
 | `updatedAt`         | String          | The latest update time of this connection                                                                                                                       |
 | `latestEvent`       | ConnectionEvent | The latest event of this connection including the proof. Please see [Proof of Connection](/protocol/proof-of-connection/) for detail design and implementation. |
-| `latestAnchorEvent` | ConnectionEvent | The latest event of this connection which can be found on Arweave                                                                                               |
+| `latestAnchorEvent` | ConnectionEvent | The latest event of this connection which can be found on [Arweave](https://viewblock.io/arweave)                                                               |
 
 For `followStatus`, there will be two boolean variables: `isFollowed` and `isFollowing`.
 
@@ -50,7 +50,8 @@ If `isFollowing` is true, `fromAddr` has followed `toAddr`.
 
 ### Fetch Proof Example
 
-This is an example of a query to fetch `proof` data that you can also test out in the [Playground](/cyberconnect-api/playground/):
+This is an example of a query to fetch `proof` data that you can also test out in the [Playground](/cyberconnect-api/playground/).
+With `arweaveTxHash` you can query it on [Arweave](https://viewblock.io/arweave) to proof the connection.
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
