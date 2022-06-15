@@ -65,58 +65,41 @@ import TabItem from "@theme/TabItem";
 
 ```javascript
 query ProofQuery {
-    connections(
-        fromAddr: "jiayi92.eth"
-        toAddrList: ["cyberlab.eth"]
-    ) {
-        fromAddr
-        toAddr
-        latestEvent {
-          hash
-          parentHash
-          fromAddr
-          toAddr
-          network
-          namespace
-          createdAt
-          isAnchor
-          proof {
-            content
-            digest
-            signature
-            signingKey
-            signingKeyAuth {
-              message
-              signature
-              address
-            }
-            arweaveTxHash
-          }
-        }
-    		latestAnchorEvent {
-          hash
-          parentHash
-          fromAddr
-          toAddr
-          network
-          namespace
-          createdAt
-          isAnchor
-          proof {
-            content
-            digest
-            signature
-            signingKey
-            signingKeyAuth {
-              message
-              signature
-              address
-            }
-            arweaveTxHash
-          }
-        }
+  connections(fromAddr: "jiayi92.eth", toAddrList: ["cyberlab.eth"]) {
+    fromAddr
+    toAddr
+    latestEvent {
+      ...event
     }
+    latestAnchorEvent {
+      ...event
+    }
+  }
 }
+
+fragment event on ConnectionEvent {
+  hash
+  parentHash
+  fromAddr
+  toAddr
+  network
+  namespace
+  createdAt
+  isAnchor
+  proof {
+    content
+    digest
+    signature
+    signingKey
+    signingKeyAuth {
+      message
+      signature
+      address
+    }
+    arweaveTxHash
+  }
+}
+
 ```
 
 </TabItem>
@@ -248,67 +231,50 @@ This is a full example for the Connections query that you can also test out in t
 
 ```javascript
 query ConnectionsQuery {
-    connections(
-        fromAddr: "jiayi92.eth"
-        toAddrList: ["cyberlab.eth"]
-    ) {
-        fromAddr
-        toAddr
-        followStatus {
-          isFollowed
-          isFollowing
-        }
-        namespace
-        alias
-        network
-        createdAt
-        updatedAt
-        latestEvent {
-          hash
-          parentHash
-          fromAddr
-          toAddr
-          network
-          namespace
-          createdAt
-          isAnchor
-          proof {
-            content
-            digest
-            signature
-            signingKey
-            signingKeyAuth {
-              message
-              signature
-              address
-            }
-            arweaveTxHash
-          }
-        }
-    		latestAnchorEvent {
-          hash
-          parentHash
-          fromAddr
-          toAddr
-          network
-          namespace
-          createdAt
-          isAnchor
-          proof {
-            content
-            digest
-            signature
-            signingKey
-            signingKeyAuth {
-              message
-              signature
-              address
-            }
-            arweaveTxHash
-          }
-        }
+  connections(fromAddr: "jiayi92.eth", toAddrList: ["cyberlab.eth"]) {
+    fromAddr
+    toAddr
+    followStatus {
+      isFollowed
+      isFollowing
     }
+    namespace
+    alias
+    network
+    createdAt
+    updatedAt
+    latestEvent {
+      ...event
+    }
+    latestAnchorEvent {
+      ...event
+    }
+  }
 }
+
+fragment event on ConnectionEvent {
+  hash
+  parentHash
+  fromAddr
+  toAddr
+  network
+  namespace
+  createdAt
+  isAnchor
+  proof {
+    content
+    digest
+    signature
+    signingKey
+    signingKeyAuth {
+      message
+      signature
+      address
+    }
+    arweaveTxHash
+  }
+}
+
 ```
 
 </TabItem>

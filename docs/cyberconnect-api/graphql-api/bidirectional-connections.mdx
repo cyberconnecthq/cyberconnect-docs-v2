@@ -203,52 +203,36 @@ query BidirectionalConnectionsQuery {
     namespace
     updatedAt
     latestEvent {
-      hash
-      parentHash
-      fromAddr
-      toAddr
-      network
-      namespace
-      createdAt
-      isAnchor
-      instruction
-      proof {
-        content
-        digest
-        signature
-        signingKey
-        signingKeyAuth {
-          message
-          signature
-          address
-        }
-        arweaveTxHash
-      }
+      ...event
     }
     latestAnchorEvent {
-      hash
-      parentHash
-      fromAddr
-      toAddr
-      network
-      namespace
-      createdAt
-      isAnchor
-      instruction
-      proof {
-        content
-        digest
-        signature
-        signingKey
-        signingKeyAuth {
-          message
-          signature
-          address
-        }
-        arweaveTxHash
-      }
+      ...event
     }
   }
+}
+
+fragment event on BiConnEvent {
+  hash
+  parentHash
+  fromAddr
+  toAddr
+  network
+  namespace
+  createdAt
+  isAnchor
+  proof {
+    content
+    digest
+    signature
+    signingKey
+    signingKeyAuth {
+      address
+      message
+      signature
+    }
+    arweaveTxHash
+  }
+  instruction
 }
 ```
 
