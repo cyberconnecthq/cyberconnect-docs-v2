@@ -1,33 +1,33 @@
 ---
 id: verify-a-twitter-account
-title: Verify a Twitter Account
+title: 验证推特账户
 slug: /get-started/verify-a-twitter-account/
-sidebar_label: Verify a Twitter Account
+sidebar_label: 验证推特账户
 sidebar_position: 4
 description: In this section we'll go through verifying a Twitter account.
 ---
 
-:::tip
+:::tip 提示
 
-[Install the CyberConnect Social Verifier](/get-started/quick-setup/) before starting this section.
+在开始本节之前，请先 [安装 CyberConnect JS SDK](/get-started/quick-setup/) 。
 
 :::
 
-In this section, we'll walk through how you can help users establish their credentials by verifying their social media accounts. We use **Twitter** as an example.
+在本节中，我们将介绍如何通过验证用户的社交媒体账户来帮助用户建立他们的凭证。我们以**推特**为例。
 
-Before you start, make sure that the user's crypto wallet is connected to your application (follow instructions in [Connect with User Wallet](/get-started/create-a-connection/).
+在你开始之前，确保用户的加密货币钱包已经连接到你的应用程序（按照 [与用户钱包连接](/get-started/create-a-connection/) 的指示）。
 
-## Create a Twitter Verification Button
+## 创建一个推特验证按钮
 
-In this tutorial, we'll help you implement a simple `button` that user can click on and verify their Twitter account.
+在本教程中，我们将帮助你实现一个简单的 “按钮”，用户可以点击它来验证他们的推特账户。
 
-1. Import the method `twitterAuthorize` into your application from the CyberConnect Social Verifier package.
+1. 从 CyberConnect Social Verifier 软件包中导入 `twitterAuthorize` 方法到你的应用程序中。
 
 ```jsx title="/src/components/TweetButton.tsx"
 import { twitterAuthorize } from "@cyberlab/social-verifier";
 ```
 
-2. After clicking, the function `handleOnClick` in the component `VerifyButton` gets the user's wallet address, generates a signature and a message for user to post on their Twitter for verification, and opens up a new tab so that user can post the tweet:
+2. 点击后，组件 `VerifyButton` 中的函数 `handleOnClick` 获得用户的钱包地址，生成签名和信息让用户在他们的推特上发布验证，并打开一个新的浏览器分页，让用户发布推文。
 
 ```jsx title="/src/components/TweetButton.tsx"
 const handleOnClick = async () => {
@@ -56,13 +56,12 @@ const handleOnClick = async () => {
 };
 ```
 
-:::caution
+:::caution 注意
 
-In the Sandbox the new window popping up might get blocked by the Twitter API. If this is the case, copy the URL and paste it in a new tab.
-
+在沙盒中，弹出的新窗口可能会被推特的 API 阻止。如果遇到这种情况，请复制 URL 并将其粘贴到新的浏览器分页中。
 :::
 
-3. Finish up our code by assigning the function `handleOnClick` to the handler `onClick` on the `button`:
+3. 完成我们的代码，将函数 `handleOnClick` 分配给 `button` 上的 `onClick` 事件监听器。
 
 ```jsx title="/src/components/TweetButton.tsx"
 <button className="tweetButton" onClick={handleOnClick}>
@@ -70,17 +69,17 @@ In the Sandbox the new window popping up might get blocked by the Twitter API. I
 </button>
 ```
 
-## Verify the Twitter Account
+## 验证推特账户
 
-Next, we move on to complete the verification procedure.
+接下来，我们继续完成验证程序。
 
-1. Import the method `twitterVerify` from the CyberConnect Social Verifier package:
+1. 从 CyberConnect Social Verifier 软件包中导入 `twitterVerify` 方法。
 
 ```jsx title="/src/components/VerifyButton.tsx"
 import { twitterVerify } from "@cyberlab/social-verifier";
 ```
 
-2. We'll help you implement another `button` that user can click on and complete the verification of their Twitter account. After clicking, the function `handleOnClick` in the component `VerifyButton` gets the user's wallet address, prompts user to enter their Twitter handle, and verifies their Twitter account:
+2. W 我们将帮助你实现另一个 `button` ，用户可以点击并完成对其推特账户的验证。点击后，组件 `VerifyButton` 中的函数 `handleOnClick` 会获得用户的钱包地址，提示用户输入他们的推特 ID，并验证他们的推特账户。
 
 ```jsx title="/src/components/VerifyButton.tsx"
 const handleOnClick = async () => {
@@ -102,7 +101,7 @@ const handleOnClick = async () => {
 };
 ```
 
-3. Finish up our code by assigning the function `handleOnClick` to the handler `onClick` on the `button`:
+3. 将函数 `handleOnClick` 分配给 `button` 上的 `onClick` 事件监听器，完成我们的代码。
 
 ```jsx title="/src/components/VerifyButton.tsx"
 <button className="verifyButton" onClick={handleOnClick}>
@@ -110,11 +109,11 @@ const handleOnClick = async () => {
 </button>
 ```
 
-That's it! You've implemented a simple social verifier in your application. For more advanced features, learn more about the [CyberConnect Social Verifier](/cyberconnect-sdk/connect-with-social-verifier/).
+你已经在你的应用程序中实现了一个简单的社交验证器。对于更高级的功能，请到 [CyberConnect Social Verifier](/cyberconnect-sdk/connect-with-social-verifier/) 了解更多。
 
-## Sandbox
+## 沙盒
 
-Check out the entire code from the tutorial and play around with it in the sandbox below!
+请查看教程中的全部代码，并在下面的沙盒中测试本节中示范的代码：
 
 <iframe
   src="https://codesandbox.io/embed/verify-a-twitter-account-d4ddmt?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/App.tsx,/src/components/ConnectButton.tsx,/src/components/TweetButton.tsx,/src/components/VerifyButton.tsx"

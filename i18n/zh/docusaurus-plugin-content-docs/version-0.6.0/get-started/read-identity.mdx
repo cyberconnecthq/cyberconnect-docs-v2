@@ -1,33 +1,33 @@
 ---
 id: read-identity
-title: Read Identity
+title: 读取身份
 slug: /get-started/read-identity/
-sidebar_label: Read Identity
+sidebar_label: 读取身份
 sidebar_position: 5
 description: In this section you'll learn how to write a query in order to read the identity.
 ---
 
-:::tip
+:::tip 提示
 
-[Install the GraphQL packages](/get-started/quick-setup/) before starting this section.
+开始这一节之前， 请先 [安装 GraphQL 套件](/get-started/quick-setup/) 。
 
 :::
 
-In this section, we'll help you write a simple query to read a user's [identity](/concepts/identity/) in the social graph.
+在本节中，我们将帮助你写一个简单的查询去读取社交图谱中用户的 [身份](/concepts/identity/) 。
 
-1. Initialize the GraphQL client:
+1. 初始化 GraphQL 客户端：
 
-### Initialize the GraphQL Client
+### 初始化 GraphQL 客户端：
 
 ```jsx title="/src/queries/GetIdentity.tsx"
 const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 ```
 
-2. Write a query to get the `domain`, `followerCount`, and `followingCount` of the user with address:
+2. 编写一个查询，通过地址获得用户的 `domain`, `followerCount`, and `followingCount` 。
 
 ```jsx title="/src/queries/GetIdentity.tsx"
 export const GET_IDENTITY = gql`
-  query($address: String!) {
+  query ($address: String!) {
     identity(address: $address) {
       domain
       followerCount
@@ -37,11 +37,11 @@ export const GET_IDENTITY = gql`
 `;
 ```
 
-Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
+请务必查看 [CyberConnect API](/cyberconnect-api/overview/) 中可用字段的完整列表。
 
-## Sandbox
+## 沙盒
 
-You can write your own query in the [Playground](/cyberconnect-api/playground/) or experiment with our code in the sandbox below!
+你可以在 [Playground](/cyberconnect-api/playground/) 中编写自己的查询，或者在下面的沙盒中试验我们的代码！
 
 <iframe
   src="https://codesandbox.io/embed/read-identity-2zjn9k?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetIdentity.tsx"

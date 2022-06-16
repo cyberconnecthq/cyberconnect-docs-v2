@@ -1,24 +1,24 @@
 ---
 id: namespace
-title: Namespace
+title: 名称空间
 slug: /resources/terminology/namespace/
-sidebar_label: Namespace
+sidebar_label: 名称空间
 sidebar_position: 1
 description: CyberConnect provides namespace as an attribute for each connection, to identify the source of the connection.
 ---
 
-CyberConnect provides `namespace` as an attribute for each [connection](/concepts/connection/), to identify the source of the connection. You can set only one `namespace` value for each connection and then filter it with the specified `namespace`.   
+CyberConnect 为每个[社交连接](/concepts/connection/)提供 `namespace` （名称空间）作为属性，以识别连接的来源。您可以为每个连接只设置一个 `namespace` 值，然后用指定的 `namespace` 进行过滤。
 
-When writing a new connection, a customized `namespace` is recommended. We suggest you use a string that can serve as your unique id, such as the name of your application, organization, or platform. If no `namespace` or an empty value of `namespace` is given, the connection will be added to the default namespace: `CyberConnect`.
+当编写一个新的连接时，建议使用自定义的`namespace`。我们建议你使用一个可以作为你的唯一 ID 的字符串，例如你的应用程序、组织或平台的名称。如果没有给出 `namespace` 或 `namespace` 为空值，连接将被添加到默认的命名空间： `CyberConnect`。
 
-When querying the follower, following, friend list, or the numbers of them, the results can be filtered by `namepsace`, as an optional parameter. If no `namespace` or an empty value of `namespace` is given, connections in all namespaces will be returned. 
+当查询追随者、关注者、朋友列表或其中的数字时，结果可以通过 `namespace` 过滤，作为一个可选参数。如果没有给出 `namespace` 或 `namespace` 为空值，将返回所有命名空间的连接。
 
-Let's take the scenario in the following picture as an example.
+让我们以下图中的情景为例：
 
-Alice has three followers in total: one in CyberConnect, one in CyberChat, and one in Project Galaxy.
+Alice 总共有三个追随者：一个在 CyberConnect，一个在 CyberChat，还有一个在 Project Galaxy。
 
-- If we try to write a new connection without specifying the `namespace`,  the connection will be put into `CyberConnect` namespace.
-- If we query the follower list of Alice with `CyberChat` as the namespace parameter, we will get one connection (the orange arrow).
-- If we query the follower list of Alice without a namespace parameter or set it as an empty string, we will get three connections.
+- 如果我们试图编写一个新的连接，而不指定 `namespace`，该连接将被放入 `CyberConnect` 名称空间。
+- 如果我们用 `CyberChat` 作为名称空间参数来查询 Alice 的关注者列表，我们将得到一个连接（橙色箭头）。
+- 如果我们在查询 Alice 的关注者列表时没有命名空间参数或将其设置为空白字串，我们将得到三个连接。
 
 ![Namespace](/img/v0.2.0/resources/namespace.png)
