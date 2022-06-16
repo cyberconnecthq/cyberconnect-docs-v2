@@ -1,31 +1,31 @@
 ---
 id: read-connections
-title: Read Connections
+title: 读取社交连接
 slug: /get-started/read-connections/
-sidebar_label: Read Connections
+sidebar_label: 读取社交连接
 sidebar_position: 6
 description: In this section you'll learn how to write a query in order to read the connections.
 ---
 
-:::tip
+:::tip 提示
 
-[Install the GraphQL packages](/get-started/quick-setup/) before starting this section.
+开始这一节之前，请先 [安装 GraphQL 套件](/get-started/quick-setup/) 。
 
 :::
 
-In this section, we'll help you write a simple query to read a user's [connections](/concepts/connection/) from the [social graph](/concepts/social-graph/).
+在本节中，我们将帮助你编写一个简单的查询，从 [社交图谱](/concepts/social-graph/) 中读取一个用户的 [社交连接](/concepts/connection/) 。
 
-1. Initialize the GraphQL client:
+1. 初始化 GraphQL 客户端：
 
 ```jsx title="/src/queries/GetConnections.tsx"
 const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 ```
 
-2. Write a query to get the `address` and `domain` of the user’s `followings` and `followers`:
+2. 写一个查询，获得用户的 `followings`（关注者）和 `followers`（追随者）的 `address` （地址）和 `domain` （域名）：
 
 ```jsx title="/src/queries/GetConnections.tsx"
 const GET_CONNECTIONS = gql`
-  query($address: String!, $first: Int) {
+  query ($address: String!, $first: Int) {
     identity(address: $address) {
       followings(first: $first) {
         list {
@@ -44,11 +44,11 @@ const GET_CONNECTIONS = gql`
 `;
 ```
 
-Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
+M 请务必查看 [CyberConnect API](/cyberconnect-api/overview/)中可用字段的完整列表。
 
-## Sandbox
+## 沙盒
 
-You can write your own query in the [Playground](/cyberconnect-api/playground/) or experiment with our code in the sandbox below!
+你可以在 [Playground](/cyberconnect-api/playground/) 中编写自己的查询，或者在下面的沙盒中试验我们的代码！
 
 <iframe
   src="https://codesandbox.io/embed/read-connections-fk75zg?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetConnections.tsx"

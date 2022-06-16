@@ -1,18 +1,19 @@
 ---
 id: recommend
-title: Recommend
+title: 推荐
 slug: /concepts/recommend/
-sidebar_label: Recommend
+sidebar_label: 推荐
 sidebar_position: 4
 description: An interoperable social graph opens up the possibility for developers to better leverage data insights and more accurately recommend potential connections to their users.
 ---
 
-An interoperable [social graphs](/concepts/social-graph/) opens up the possibility for developers to better leverage data insights and more accurately recommend potential [connections](/concepts/connection/) to their users. The recommender layer of the CyberConnect Protocol enables several types of algorithms to retrieve lists of recommended users:
+可交互的 [社交图谱](/concepts/social-graph/) 能够让开发者更好地利用数据的可见性，并更准确地推荐用户潜在的 [连接](/concepts/connection/)。 CyberConnect 协议的推荐层支持几种类型的算法来检索推荐用户列表：
+
 <ul>
-    <li>Asset-based weighted recommendation.</li>
-    <li>Connection-based weighted recommendation.</li>
-    <li>Unweighted recommendation (by overall popularity).</li>
-    <li>Customizable recommendation.</li>
+    <li>基于资产的加权推荐。</li>
+    <li>基于连接的加权推荐。</li>
+    <li>未加权推荐（按照整体受欢迎程度）。</li>
+    <li>可定制的推荐。</li>
 </ul>
 
-Developers can leverage those insights to build better social experiences by making a simple call to the [CyberConnect API](/cyberconnect-api/overview/).
+开发者可以通过调用 [CyberConnect API](/cyberconnect-api/overview/) 来构建更好的社交体验。
