@@ -1,26 +1,26 @@
 ---
 id: connection
-title: Connection
+title: 连接
 slug: /concepts/connection/
-sidebar_label: Connection
+sidebar_label: 连接
 sidebar_position: 3
 description: The CyberConnect Protocol allows users to form social connections that are recorded and verified on blockchain networks.
 ---
 
-The CyberConnect Protocol allows users to form social connections that are recorded and verified on blockchain networks. The protocol supports different types of connections for different purposes:
+CyberConnect 协议允许用户形成在区块链网络上记录并验证的社交连接。 该协议支持用于不同目的的不同类型的连接：
 
 import ConnectCards from "@site/src/components/ConnectCards";
 
 <ConnectCards />
 
-:::note
+:::note 注意
 
-**Report** means one user flagging another user. **Watch** means one user observing another user, but not necessarily forming a **Follow** - type connection.
+**报告 (Report)** 是指一个用户标记另一个用户。 **监视 (Watch)** 表示一个用户正在观察另一个用户，但不一定形成 **关注 (Follow)** 的连接关系。
 
 :::
 
-Developers can incorporate various connection modules to diversify the user experience by using the [CyberConnect JS SDK](/cyberconnect-sdk/connect-with-js-sdk/).
+开发者可以通过使用 [CyberConnect JS SDK](/cyberconnect-sdk/connect-with-js-sdk/) 和 [Connect with iOS SDK](/cyberconnect-sdk/connect-with-ios-sdk/)来整合各种连接模块以使用户的体验变得多样化。
 
-## How does it work?
+## 它是如何工作的？
 
-Let's take "follow" as an example. A user clicking the "follow" button in an application invokes the "connect" function in the CyberConnect JavaScript library. If this is their first connection in the current session, they need to manually sign the message. The CyberConnect library then generates and stores a derived key to authorize writing connection data onto IPFS and Arweave storage.
+我们以 “关注” 为例。 用户单击应用程序中的 “关注” 按钮可以调用 CyberConnect JavaScript 库中的 “连接” 功能。 如果这是用户当前的第一次连接，他们需要手动签署消息。然后 CyberConnect 库将生成并存储派生密钥，以授权将连接数据写入 IPFS 和 Arweave 存储。

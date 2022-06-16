@@ -7,69 +7,68 @@ sidebar_position: 9
 description: In this section, we'll help make a simple call to fetch a user's profile.
 ---
 
-In this section, we'll help make a simple call to fetch a user's profile by using the profile endpoint: 
+在本节中，我们将帮助你写一个简单的查询去读取社交图谱中的用户资料。
 
 ```curl
 https://cyberprofile-v2.vercel.app/api/profile/{id}
 ```
 
-We will write a simple function to fetch the profile:
+编写一个查询，通过地址或 ETH 域名获取用户资料：
 
 ```jsx title="/src/App.tsx"
 type DataEnsAvatar = {
-  record: string;
-  type: "uri:https" | "uri:data" | "uri:ipfs" | "nft:erc721" | "nft:erc1155";
-  nftMetadata: string | null;
-  nftOwner: string | null;
-  nftBalance: string | null;
-  nftOwned: boolean | null;
-  url: string | null;
+  record: string,
+  type: "uri:https" | "uri:data" | "uri:ipfs" | "nft:erc721" | "nft:erc1155",
+  nftMetadata: string | null,
+  nftOwner: string | null,
+  nftBalance: string | null,
+  nftOwned: boolean | null,
+  url: string | null,
 };
 
 type Data = {
-  address: string;
-  name: string | null;
-  primaryName: string | null;
-  ensAvatar: DataEnsAvatar | null;
+  address: string,
+  name: string | null,
+  primaryName: string | null,
+  ensAvatar: DataEnsAvatar | null,
 };
 
 const fetchProfile = async (id: string): Promise<Data> => {
   const res = await fetch(
     `https://cyberprofile-v2.vercel.app/api/profile/${id}`,
     {
-        method: "GET",
-        headers: { "Content-Type": "application/json" }
-    }
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    },
   );
   return await res.json();
 };
 ```
 
-In our example we call the `fetchProfile` function and pass “pisofa.eth” as the id param.  If successful, you'll retrieve the user's address, `name`, and `ensAvatar` including its `record`, `type`, `nftOwner`, and `url` among other information:
+在这个例子中，我们使用 `fetchProfile` 函数并输入域名 “pisofa.eth” 作为参数，以获取用户的地址， `name` 和 `ensAvatar` 包括 `record`, `type`, `nftOwner`, `url` 等信息：
 
 ```json
 {
-    "address": "0xeBeD0BF2701e905b4C576B3dC943D797bAc226ed",
-    "name": "pisofa.eth",
-    "primaryName": "pisofa.eth",
-    "ensAvatar": {
-        "record": "eip155:1/erc721:0x49cF6f5d44E70224e2E23fDcdd2C053F30aDA28B/11850",
-        "type": "nft:erc721",
-        "nftMetadata": "{\"name\":\"CloneX #18924\",\"description\":\"🧬 CLONE X 🧬\\n\\n20,000 next-gen Avatars, by RTFKT and Takashi Murakami 🌸\\n\\nIf you own a clone without any Murakami trait please read the terms regarding RTFKT - Owned Content here: https://rtfkt.com/legal-2A\\n\\nYou are also entitled to a commercial license, please read the terms to that here: https://rtfkt.com/legal-2C\",\"attributes\":[{\"trait_type\":\"DNA\",\"value\":\"Human\"},{\"trait_type\":\"Eye Color\",\"value\":\"BLU\"},{\"trait_type\":\"Hair\",\"value\":\"BLU Curtains\"},{\"trait_type\":\"Clothing\",\"value\":\"BLCK VARSITY JCKT\"},{\"trait_type\":\"Mouth\",\"value\":\"ROBO\"}],\"image\":\"https://clonex-assets.rtfkt.com/images/11850.png\"}",
-        "nftOwner": "0xeBeD0BF2701e905b4C576B3dC943D797bAc226ed",
-        "nftBalance": null,
-        "nftOwned": true,
-        "url": "https://clonex-assets.rtfkt.com/images/11850.png"
-    }
+  "address": "0xeBeD0BF2701e905b4C576B3dC943D797bAc226ed",
+  "name": "pisofa.eth",
+  "primaryName": "pisofa.eth",
+  "ensAvatar": {
+    "record": "eip155:1/erc721:0x49cF6f5d44E70224e2E23fDcdd2C053F30aDA28B/11850",
+    "type": "nft:erc721",
+    "nftMetadata": "{\"name\":\"CloneX #18924\",\"description\":\"🧬 CLONE X 🧬\\n\\n20,000 next-gen Avatars, by RTFKT and Takashi Murakami 🌸\\n\\nIf you own a clone without any Murakami trait please read the terms regarding RTFKT - Owned Content here: https://rtfkt.com/legal-2A\\n\\nYou are also entitled to a commercial license, please read the terms to that here: https://rtfkt.com/legal-2C\",\"attributes\":[{\"trait_type\":\"DNA\",\"value\":\"Human\"},{\"trait_type\":\"Eye Color\",\"value\":\"BLU\"},{\"trait_type\":\"Hair\",\"value\":\"BLU Curtains\"},{\"trait_type\":\"Clothing\",\"value\":\"BLCK VARSITY JCKT\"},{\"trait_type\":\"Mouth\",\"value\":\"ROBO\"}],\"image\":\"https://clonex-assets.rtfkt.com/images/11850.png\"}",
+    "nftOwner": "0xeBeD0BF2701e905b4C576B3dC943D797bAc226ed",
+    "nftBalance": null,
+    "nftOwned": true,
+    "url": "https://clonex-assets.rtfkt.com/images/11850.png"
+  }
 }
 ```
 
-Make sure to check out the full list of fields available in [Profile API](/cyberconnect-api/rest-api/profile/).
+请务必查看 [Profile API](/cyberconnect-api/rest-api/profile/) 中可用字段的完整列表。
 
+## 沙盒
 
-## Sandbox
-
-Feel free to test it out in [Next Swagger Doc Demo App](https://cyberprofile-v2.vercel.app/) or experiment with our code in the sandbox below!
+你可以在 [Next Swagger Doc Demo App](https://cyberprofile-v2.vercel.app/) 中编写你自己的查询，或者在下面的沙盒中试验我们的代码！
 
 <iframe
   src="https://codesandbox.io/embed/read-a-profile-i4l5lw?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetIdentity.tsx"
