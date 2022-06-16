@@ -12,7 +12,7 @@ Notifications are chronological messages that users need to check to keep them u
 <ul>
     <li>Someone follows them.</li>
     <li>They receive a bidirectional connection request.</li>
-    <li>Their accept a bidirectional connection request.</li>
+    <li>They accept a bidirectional connection request.</li>
     <li>Other scenarios to be added…</li>
 </ul>
 
