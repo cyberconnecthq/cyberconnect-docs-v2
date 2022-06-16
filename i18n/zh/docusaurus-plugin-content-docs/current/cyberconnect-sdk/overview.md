@@ -1,8 +1,8 @@
 ---
 id: overview
-title: Overview
+title: 总览
 slug: /cyberconnect-sdk/overview/
-sidebar_label: Overview
+sidebar_label: 总览
 sidebar_position: 1
 description: In this section, we'll cover how the CyberConnect SDK can help developers store users’ social data in a scalable and interoperable way.
 ---
@@ -20,4 +20,4 @@ Next up, we will cover in more detail how the SDK works under the hood and the l
 
 ## How does it work?
 
-The CyberConnect SDK encapsulates a complex authentication logic (authenticate to Ceramic Network) and it provides two primary easy-to-use functions, connect and disconnect, which in social graphs are follow and unfollow. 
+The CyberConnect SDK encapsulates a complex authentication logic (authenticate to Ceramic Network) and it provides two primary easy-to-use functions, connect and disconnect, which in social graphs are follow and unfollow.
