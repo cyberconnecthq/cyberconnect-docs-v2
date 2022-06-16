@@ -9,12 +9,8 @@ description: CyberConnect 协议的目的是让用户在遨游 Web3 世界的同
 
 ## 简介
 
-CyberConnect is a decentralized [social graph](/concepts/social-graph/) protocol that helps dApps bootstrap network effects and build personalized social experiences. The decentralized protocol allows users to own their social connections while providing a composable social data layer for developers.
-
-
-CyberConnect describes a data standard, storage infrastructure, identity, and permissions management mechanism as the foundation of a seamless and secure digital social experience in Web3. CyberConnect also proposes the topology of a social data network of indexed data and recommendations that can be universally accessed and permissionlessly contribute to. Incentive mechanisms are designed to grow the protocol into a thriving self-sustaining economy with expanding utility.
-
 CyberConnect 协议的目的是让用户在遨游 Web3 世界的同时，对其社交数据拥有完全所有权。通过建立去中心化的[社交图谱](/concepts/social-graph/)，开发人员可获得一个通用数据层来构建下一代的去中心化应用。
+
 ## 为什么 CyberConnect 协议是独一无二的？?
 
 该协议旨在解决 Web2 世界中现有社交网络和图谱的三个主要问题：

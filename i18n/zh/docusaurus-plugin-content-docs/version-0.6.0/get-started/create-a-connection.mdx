@@ -1,23 +1,23 @@
 ---
 id: create-a-connection
-title: Create a Connection
+title: 创建社交连接
 slug: /get-started/create-a-connection/
-sidebar_label: Create a Connection
+sidebar_label: 创建社交连接
 sidebar_position: 3
 description: We have to make sure that the user is connecting to the application using a wallet. In our example we will write the logic for the connection to the application using MetaMask, one of the most popular wallets out there.
 ---
 
-:::tip
+:::tip 提示
 
-[Install the CyberConnect JS SDK](/get-started/quick-setup/) before starting this section.
+在开始本章之前请先 [安装 CyberConnect JS SDK](/get-started/quick-setup/) 。
 
 :::
 
-## Connect with User Wallet
+## 连接用户钱包
 
-Before helping users connect with each other, you need to make sure that their crypto wallets are connected to your application. Here, we'll use the MetaMask wallet as an example.
+在帮助用户关联彼此之前，你需要先确保用户将他们的虚拟货币钱包连接上了你的应用，我们将以 MetaMask 为例。
 
-1. Implement function `isMetaMaskInstalled` to verify that user has installed MetaMask:
+1. 实现函数 `isMetaMaskInstalled` 来确认用户是否安装 MetaMask:
 
 ```jsx title="/src/components/ConnectButton.tsx"
 // Check function if MetaMask is installed
@@ -27,7 +27,7 @@ const isMetaMaskInstalled = () => {
 };
 ```
 
-2. In this tutorial, we'll help you implement a simple `button` that user can click on and connect their wallet. After clicking, the function `handleOnClick` in the component `connectButton` sends a request to MetaMask and, if successful, alerts the user's corresponding wallet address:
+2. 在本教程中，我们将帮助你安装一个简单的 `button`，用户可以点击来连接他们的钱包。点击之后， `connectButton` 组件中的 `handleOnClick` 函数会向 MetaMask 发送请求，如果请求成功，将会提示用户所对应的钱包地址：
 
 ```jsx title="/src/components/ConnectButton.tsx"
 const handleOnClick = async () => {
@@ -47,7 +47,7 @@ const handleOnClick = async () => {
 };
 ```
 
-3. Finish up our code by assigning the function `handleOnClick` to the handler `onClick` on the `button`:
+3. 作为收尾，你需要将 `handleOnClick` 函数赋值给 `button` 的 `onClick` 事件处理器。
 
 ```jsx title="/src/components/ConnectButton.tsx"
 <button className="connectButton" onClick={handleOnClick}>
@@ -55,19 +55,19 @@ const handleOnClick = async () => {
 </button>
 ```
 
-Your `connectButton` component is completed! Now, users can connect to your application using MetaMask.
+这样，你的 `connectButton`   组件就已经完成了！现在用户就可以使用 MetaMask 连接上你的应用了。
 
-## Create a follow button
+## 创建一个关注按钮
 
-After connecting with MetaMask, you'll be able to help users connect with each other.
+在连接了自己的钱包之后，你就可以帮助用户关注彼此了。
 
-1. To start, import `CyberConnect`, `Env`, and `Blockchain` into your application from the CyberConnect SDK:
+1. 首先，你需要在 CyberConnect SDK 引用 `CyberConnect`, `Env`, 以及 `Blockchain` 到你的应用中：
 
 ```jsx title="/src/components/FollowButton.tsx"
 import CyberConnect, { Env, Blockchain } from "@cyberlab/cyberconnect";
 ```
 
-2. Before creating a connection, you'll need to instantiate a `CyberConnect` object and initialize variables `namespace`, `env`, `chain` and `provider`:
+2. 创建连接之前，你需要先预制一个 `CyberConnect` 对象，并初始化 `namespace`, `env`, `chain` 以及 `provider` 变量：
 
 ```jsx title="/src/components/FollowButton.tsx"
 const cyberConnect = new CyberConnect({
@@ -78,7 +78,7 @@ const cyberConnect = new CyberConnect({
 });
 ```
 
-3. In this tutorial, we'll help you implement a simple button that user can click on and follow another user. After clicking, the function `handleOnClick` in the component `followButton` sends a request to MetaMask and, if successful, alerts the user's corresponding wallet address.
+3. 在本教程中，我们将会帮助你完成一个简单的按钮，用户可以点击来关注另一个用户。点击之后， `followButton` 函数会向 MetaMask 发送请求，提醒用户对应的钱包地址。
 
 ```jsx title="/src/components/FollowButton.tsx"
 const handleOnClick = async () => {
@@ -94,7 +94,7 @@ const handleOnClick = async () => {
 };
 ```
 
-4. Finish up our code by assigning the function `handleOnClick` to the handler `onClick` on the `button`:
+4. 为了完成我们的代码，你需要将 `handleOnClick` 函数赋值给 `button` 上的`onClick` 事件处理器。
 
 ```jsx title="/src/components/FollowButton.tsx"
 <button className="followButton" onClick={handleOnClick}>
@@ -102,11 +102,11 @@ const handleOnClick = async () => {
 </button>
 ```
 
-Your `followButton` component is completed! Now, your users can connect with each other on the Ethereum network. For more advanced features, learn more about the [CyberConnect JS SDK](/cyberconnect-sdk/connect-with-js-sdk/).
+你的 `followButton` 组件已经完成了。现在你的用户可以在以太坊网络上连接彼此。您也可以在 [CyberConnect JS SDK](/cyberconnect-sdk/connect-with-js-sdk/) 找到很多高级功能。
 
-## Sandbox
+## 沙盒
 
-Check out the entire code from the tutorial and play around with it in the sandbox below!
+你可以在教程中找到完整代码，并在下方的沙盒中进行试验！
 
 <iframe
   src="https://codesandbox.io/embed/create-a-connection-fvecwy?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/App.tsx,/src/components/ConnectButton.tsx,/src/components/FollowButton.tsx"
@@ -115,4 +115,4 @@ Check out the entire code from the tutorial and play around with it in the sandb
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-Congrats 🎉 You're ready to move on to the next step: implementing the CyberConnect Social Verifier.
+恭喜 🎉 你已经可以进行下一步：验证推特账户！

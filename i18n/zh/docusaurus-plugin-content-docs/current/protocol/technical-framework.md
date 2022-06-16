@@ -1,46 +1,44 @@
 ---
 id: technical-framework
-title: Technical Framework
+title: 技术框架
 slug: /protocol/technical-framework/
-sidebar_label: Technical Framework
+sidebar_label: 技术框架
 sidebar_position: 1
 description: At its core, CyberConnect is a tamper-proof data structure that efficiently facilitates creation, update, query, and verification of user-centric data.
 ---
 
-## Storage
+## 存储
 
-At its core, CyberConnect is a tamper-proof data structure that efficiently facilitates creation, update, query, and verification of user-centric data.
+CyberConnect 的核心是一个防篡改的数据结构，有效地促进了以用户为中心的数据的创建、更新、查询和验证。
 
-Each piece of user-centric data is represented as a data stream where updates are only allowed by the data owner. Each update to the data is appended to the data stream in the form of an append-only commit log and the resulting data structure becomes a hash linked data structure called a Merkle DAG. To provide data authenticity, we utilize dag-jose IPLD codec so that each piece of data, whether the creation file or the individual updates is signed and optionally encrypted by the data owner. Before appending a new commit to the data stream, an authorization check is performed to ensure that only the data owner could append new updates. After the custom IPLD encoding, the data is safely stored in IPFS to provide content addressed lookup and data integrity. By this design, each user's [social graph](/concepts/social-graph/) is only modifiable by the user, readable to applications with proper decryption permission given by the user, and verifiable by the signature attached.
+每一块以用户为中心的数据都被表示为一个数据流 (data stream)，只有数据的所有者才允许将其更新。对数据的每一次更新都以 ”仅附加 (append-only)“ 提交日志的形式附加到数据流中，由此产生的数据结构成为一个哈希链接数据结构，称为 Merkle DAG。为了提供数据的真实性，我们利用 dag-jose IPLD 编解码器，这样每一块数据，无论是创建文件还是单独的更新，都由数据所有者签名并选择性将其加密。在向数据流追加新的提交之前，会进行授权检查，以确保只有数据所有者可以追加新的更新。在自定义 IPLD 编码之后，数据被安全地存储在 IPFS 中，以提供内容地址查询和数据完整性。通过这种设计，每个用户的 [社交图谱](/concepts/social-graph/) 只可由用户本身修改，可由用户给予适当的解密权限的应用程序读取，并可由附加的签名所验证。
 
-We partner with Ceramic for our first release based on their implementation of such a mutable data stream storage system on top of IPFS. Further performance improvements will be achieved by writing a heavy data model.
+我们与 Ceramic 公司合作，基于他们在 IPFS 上实现的这种可变数据流存储系统来发布我们的第一个版本。进一步的性能改进将通过编写一个重数据模型 (heavy data model) 来实现。
 
-Data availability among nodes is achieved through libp2p pubsub so that as long as one node subscribed to the pubsub topic has the needed commit log, data will be available for query among all the nodes.
+节点之间的数据可用性是通过 libp2p pubsub 实现的，因此只要订阅 pubsub topic 的一个节点有需要的提交日志，数据就可以在所有节点之间查询。
 
-Long-term data retention is guaranteed through Ceramic's blockchain anchoring and our custom data pinning service.
+通过 Ceramic 的区块链锚定和我们定制的数据钉住服务 (data pinning service)，保证了长期的数据保留。
 
-## Authentication and Authorization
+## 认证和授权
 
-To fully give back to users' data ownership, we have to first sort out authentication and authorization. The authentication of users simply means to verify if they are who they claim to be and this is easily achieved by a signature using a user's private key. The authorization of user data means that only the user has the access to write their own data and no other central party like Facebook could modify anyone's data. Authorization is done with the help of pre-commit checks and dag-jose IPLD encoding to ensure correct signing after commit.
+为了完全交还用户的数据所有权，我们必须首先理清认证和授权。对用户的认证只是意味着验证他们是否是他们所声称的人，这很容易通过用户的私钥进行签名来实现。用户数据的授权意味着只有用户才有权利写他们自己的数据，没有其他中心方如 Facebook 可以修改任何人的数据。授权是在提交前检查以及通过 dag-jose IPLD 编码的帮助下完成的，以确保提交后的签名正确。
 
-Given these two requirements on authentication and authorization, we designed a safe keychain scheme for Authentication and Authorization based on a public-key system (asymmetric key pairs). Firstly, users should not sign any non-transactional data with their blockchain private key. Signing with a blockchain private key presents an extra hurdle to user experience and broadens the attack surface. Thus, we need to generate key pairs with ed25519 curve from the entropy of a blockchain wallet signature on the client side. The private key is generated inside a protected iframe and exposed to applications only through RPC to prevent xss attacks.
-The key pairs are then later encrypted with the user's existing keychain private key (blockchain private key if keychain private key is not existent) and stored in the specific data stream for a keychain. The keychain data stream is authorized and protected through a key rotation scheme combined with blockchain anchoring to resolve conflicts.
+鉴于这两个关于认证和授权的要求，我们设计了一个基于公钥系统（非对称密钥对）的认证和授权的安全钥匙链方案。首先，用户不应该用他们的区块链私钥签署任何非交易性数据。用区块链私钥签名给用户体验带来了额外的障碍，扩大了攻击面。因此，我们需要在客户端从区块链钱包签名的熵中生成具有 ed25519 曲线的密钥对。私钥是在一个受保护的 iframe 内生成的，只通过 RPC 暴露给应用程序，以防止 XSS 攻击。然后，密钥对与用户现有的钥匙链 (keychain) 私钥（如果钥匙链私钥不存在，则为区块链私钥）进行加密，并存储在钥匙链的特定数据流中。钥匙链数据流通过钥匙旋转方案 (key rotation scheme) 与区块链锚定相结合的方式进行授权和保护，以解决冲突。
 
-## User-centric User Tables
+## 以用户为中心的用户表
 
-IPFS storage has a common centralization concern about CIDs being stored in a centralized server. This raises the problem of data authenticity where a central server could swap out the real user-created data with fake ones by changing the CID. As mentioned above, we do enforce data signature with dag-jose codec so that data authenticity is guaranteed.
-To look up a certain user's social graph, we first need to look up the keychain of the user through their blockchain address. Then we could look up the user table through the keychain public key. In contrast to an application-centric design in Web2, where each application stores some information about the user and information like name and avatar are duplicated across applications, in our design, a single user table for each user contains all the information needed and could be used across all applications. By putting all the social graph information inside one user table, only that user has the permission to update any data involved and only the parties that have been given the decryption key could read the data inside if encrypted.
+IPFS 存储有一个共有的集中化问题，即 CID 被存储在一个集中的服务器中。这就产生了数据真实性的问题，中央服务器可以通过改变 CID 将真实的用户创建的数据与假的数据交换。如上所述，我们用 dag-jose 编解码器强制执行数据签名，以保证数据的真实性。为了查询某个用户的社交图谱，我们首先需要通过用户的区块链地址查询该用户的钥匙链。然后我们可以通过钥匙链 (keychain) 的公钥来查询用户表 (user table)。与 Web2 中以应用为中心的设计相比，每个应用都存储了一些关于用户的信息，像名字和头像这样的信息在不同的应用中是重复的，在我们的设计中，每个用户的单一用户表包含了所有需要的信息，可以在所有应用中使用。通过把所有的社交图信息放在一个用户表中，只有该用户有权限更新任何涉及的数据，而且只有被赋予解密密钥的各方可以读取里面的数据，如果它被加密了的话。
 
-## Data Indexer
+## 数据索引器
 
-Similar to how thegraph indexes transactional data on Ethereum, all social graph data on top of CyberConnect welcome data indexers. On CyberConnect, social graph data is stored as unilateral [connections](/concepts/connection/). For example, if Alice follows Bob, Alice would add Bob to her own following list. However, Alice could not modify Bob's follower list due to limited access. Thus, we only store the following list inside the user table but not a follower list. Any indexer could easily retrieve such following list and recover a counter-party follower list and provide such data for easier application queries. We would first rollout an indexer for the aforementioned follower list use case (stored in computed index) and welcome our community to take up other interesting data indexing opportunities. Any user with some technical skills could verify the validity of a computed index and a more sophisticated system involving slashing could be developed in the future.
+与 thegraph 在以太链上对交易数据进行索引的方式类似，CyberConnect 上面的所有社交图谱数据都欢迎数据索引器。在 CyberConnect 上，社交图谱数据被存储为单边 [社交连接](/concepts/connection/)。例如，如果 Alice 关注 Bob，Alice 会将 Bob 添加到自己的关注列表中。然而，由于访问权限有限，Alice 无法修改 Bob 的关注者列表。因此，我们只在用户表内存储关注列表，而不是关注者列表。任何索引器都可以很容易地检索到这样的追随者列表并恢复对方的追随者列表，并提供这样的数据以方便应用查询。我们将首先为上述追随者列表的用例推出一个索引器（存储在计算的索引中），并欢迎我们的社区利用其他有趣的数据发掘索引机会。任何有一定技术能力的用户都可以验证计算索引的有效性，未来还可以开发出一个更复杂的系统，涉及到切分 (slashing)。
 
-## Node
+## 节点
 
-A node must provide the following functionalities to maintain such a decentralized social graph:
+一个节点必须提供以下功能来维护一个分散的社会图谱：
 
 <ol>
-    <li>A Ceramic node including a custom IPFS daemon with dag-jose IPLD encoding. This handles all the keychain authenticated data stream creation and update. It also maintains the desired data availability through libp2p and IPFS data pinning service, and stream data consensus with blockchain anchoring.</li>
-    <li>An RPC endpoint that exposes the data stream.</li>
-    <li>A data indexer that provides reverse lookups and data aggregation. To generate a reverse "follower list" based on unidirectional following connection.</li>
+    <li>一个 Ceramic 节点，包括一个定制的 IPFS 守护进程 (daemon)，采用 dag-jose IPLD 编码。这将处理所有钥匙链 (keychain) 认证的数据流创建和更新。它还通过 libp2p 和 IPFS 的数据钉子服务 (data pinning service) 维持所需的数据可用性，并通过区块链锚定达成数据流共识。</li>
+    <li>一个暴露数据流的 RPC 端点 (endpoint)。</li>
+    <li>一个提供反向查找和数据聚合的数据索引器。在单向跟随连接的基础上生成一个反向 ”跟随者名单“。</li>
 </ol>
