@@ -16,7 +16,7 @@ const config = {
   tagline: "Building the composable social graph protocol for Web3.",
   url: "https://docs.cyberconnect.me",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "cyberconnecthq",
