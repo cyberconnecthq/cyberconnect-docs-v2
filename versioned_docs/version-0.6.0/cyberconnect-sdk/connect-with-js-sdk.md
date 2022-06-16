@@ -142,7 +142,7 @@ Only one type connection can be created from one to another, which means you **c
 
 ### BiConnection Type
 
-You can create different types of connections for different purposes (e.g. you can like a NFT by creating a `LIKE` connection from you to the NFT).
+You can create different types of bi-connections for different purposes (e.g. you can send a request by using `INIT` type or accept a request by using `ACCEPT` type).
 
 ```jsx
 import { BiConnectionType } from "@cyberlab/cyberconnect";
