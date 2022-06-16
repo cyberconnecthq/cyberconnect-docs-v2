@@ -27,17 +27,18 @@ connections(fromAddr: String!, toAddrList: [String!]!, network: Network) [Connec
 
 With correct inputs, you will get a list of `Connection` objects, consisting of the following fields:
 
-| Field           | Type         | Description                                                                                                                         |
-| --------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `fromAddr `     | String       | The source address that you want to query connections about                                                                         |
-| `toAddr`        | String       | An address that is given in `toAddrList`                                                                                            |
-| `followStatus ` | FollowStatus | The following and followed relationships between `fromAddr` and `toAddr`                                                            |
-| `namespace`     | String       | The namespace of this connection                                                                                                    |
-| `alias`         | String       | The alias set by the `fromAddress` for `toAddr`.                                                                                    |
-| `network`       | Network      | The network that is given as the querying parameter                                                                                 |
-| `createdAt`     | String       | The creation time of this connection                                                                                                |
-| `updatedAt`     | String       | The latest update time of this connection                                                                                           |
-| `proof`         | String       | The proof of this connection. Please see [Proof of Connection](/protocol/proof-of-connection/) for detail design and implementation |
+| Field               | Type            | Description                                                                                                                                                     |
+| ------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fromAddr `         | String          | The source address that you want to query connections about                                                                                                     |
+| `toAddr`            | String          | An address that is given in `toAddrList`                                                                                                                        |
+| `followStatus `     | FollowStatus    | The following and followed relationships between `fromAddr` and `toAddr`                                                                                        |
+| `namespace`         | String          | The namespace of this connection                                                                                                                                |
+| `alias`             | String          | The alias set by the `fromAddress` for `toAddr`.                                                                                                                |
+| `network`           | Network         | The network that is given as the querying parameter                                                                                                             |
+| `createdAt`         | String          | The creation time of this connection                                                                                                                            |
+| `updatedAt`         | String          | The latest update time of this connection                                                                                                                       |
+| `latestEvent`       | ConnectionEvent | The latest event of this connection including the proof. Please see [Proof of Connection](/protocol/proof-of-connection/) for detail design and implementation. |
+| `latestAnchorEvent` | ConnectionEvent | The latest event of this connection which can be found on [Arweave](https://viewblock.io/arweave)                                                               |
 
 For `followStatus`, there will be two boolean variables: `isFollowed` and `isFollowing`.
 
@@ -49,7 +50,8 @@ If `isFollowing` is true, `fromAddr` has followed `toAddr`.
 
 ### Fetch Proof Example
 
-This is an example of a query to fetch `proof` data that you can also test out in the [Playground](/cyberconnect-api/playground/):
+This is an example of a query to fetch `proof` data that you can also test out in the [Playground](/cyberconnect-api/playground/).
+With `arweaveTxHash` you can query it on [Arweave](https://viewblock.io/arweave) to proof the connection.
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
@@ -64,16 +66,41 @@ import TabItem from "@theme/TabItem";
 
 ```javascript
 query ProofQuery {
-    connections(
-        fromAddr: "51je9UThqqhcZbVgY9kZgASthAVCafgqNGDaW3vpyXrr"
-        toAddrList: ["EPBtp2MmAM68CBnt8KBCMoKzwpQtQ486hWehDhGrtKi8"]
-        network: SOLANA
-    ) {
-        fromAddr
-        toAddr
-        proof
+  connections(fromAddr: "jiayi92.eth", toAddrList: ["cyberlab.eth"]) {
+    fromAddr
+    toAddr
+    latestEvent {
+      ...event
     }
+    latestAnchorEvent {
+      ...event
+    }
+  }
 }
+
+fragment event on ConnectionEvent {
+  hash
+  parentHash
+  fromAddr
+  toAddr
+  network
+  namespace
+  createdAt
+  isAnchor
+  proof {
+    content
+    digest
+    signature
+    signingKey
+    signingKeyAuth {
+      message
+      signature
+      address
+    }
+    arweaveTxHash
+  }
+}
+
 ```
 
 </TabItem>
@@ -84,9 +111,52 @@ query ProofQuery {
   "data": {
     "connections": [
       {
-        "fromAddr": "51je9UThqqhcZbVgY9kZgASthAVCafgqNGDaW3vpyXrr",
-        "toAddr": "EPBtp2MmAM68CBnt8KBCMoKzwpQtQ486hWehDhGrtKi8",
-        "proof": "{\"operation\":\"{\\\"name\\\":\\\"follow\\\",\\\"from\\\":\\\"51je9UThqqhcZbVgY9kZgASthAVCafgqNGDaW3vpyXrr\\\",\\\"to\\\":\\\"EPBtp2MmAM68CBnt8KBCMoKzwpQtQ486hWehDhGrtKi8\\\",\\\"namespace\\\":\\\"CyberConnect\\\",\\\"network\\\":\\\"SOLANA\\\",\\\"alias\\\":\\\"\\\",\\\"timestamp\\\":1645500266794}\",\"digest\":\"0xf8dd7b357e8b738a3ad91080ccea4b07003a2c967b631ba950c2a3e00ff64cf2\",\"signature\":\"0x103fb899c224244740cf1eaa16ce401b218ae85fc0507ca07d29f91b57cf9708a5d6cdede97dc326663fe4f432f52c1ddaef9fb21b8d06f93e6893548aae825c\",\"signingKey\":{\"publicKey\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEngy/L6H1b5u9DVIRIFu2z6Tn+qgkn60NyaAJVbBnTDEQ/PjdvilGWCKUSHgPHIIqpxX9BfQHi+3e+xHKTlrFsQ==\",\"format\":\"SubjectPublicKeyInfo\",\"algorithm\":\"ES256\"},\"signingKeyAuth\":{\"authorship\":\"51je9UThqqhcZbVgY9kZgASthAVCafgqNGDaW3vpyXrr\",\"signingKeySignature\":\"4kMtz6iCjockVhwQwGLzdGxKEESPF3EZXGFkfs2KrFs6a9YYDpRTkxAWcBWFpHjH1DFDLYkaD84TZsv4THmzCL81\",\"signingKeyMessage\":\"I authorize CyberConnect from this device using signing key:\\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEngy/L6H1b5u9DVIRIFu2z6Tn+qgkn60NyaAJVbBnTDEQ/PjdvilGWCKUSHgPHIIqpxX9BfQHi+3e+xHKTlrFsQ==\"}}"
+        "fromAddr": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+        "toAddr": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
+        "latestEvent": {
+          "hash": "0xf5b17780eea3c4131aec0ce903500fc8c0f36e925c0db6e2bae643bf20bc6c7e",
+          "parentHash": "0xfde6d16bcf9981612a356a9464a3c3546c2960c67fb3be3d9cb641634a75168d",
+          "fromAddr": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+          "toAddr": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
+          "network": "ETH",
+          "namespace": "CyberConnect",
+          "createdAt": "2022-06-14T17:39:26Z",
+          "isAnchor": false,
+          "proof": {
+            "content": "{\"name\":\"follow\",\"from\":\"0x9dd481d6c1656816bfd564151e29d57e041d2c8f\",\"to\":\"0x148d59faf10b52063071eddf4aaf63a395f2d41c\",\"namespace\":\"CyberConnect\",\"network\":\"ETH\",\"alias\":\"\",\"timestamp\":1655228365995}",
+            "digest": "0x6fc5a86ecf3a579c2db0753e0ab5bbb58f4239572f67d40eff1c5a70bb426ffe",
+            "signature": "0x5edad7a53ba156a07d67cf0e27214cab6199d39e742183038e109e31f9a7a0226e5c03440c1b6a197f7109ff620e584f167f5f7656dbfc519b8219a348fbd755",
+            "signingKey": "SubjectPublicKeyInfo:MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAErdNg/pAoMZ3U75Jksul0mQZ9nr/JdZ3DnpRU3z++4ryIq5HPTL3RHHkjReGUbL6Wg+hRe2MpDH9dBMV/Xxtxbg==",
+            "signingKeyAuth": {
+              "message": "I authorize CyberConnect from this device using signing key:\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAErdNg/pAoMZ3U75Jksul0mQZ9nr/JdZ3DnpRU3z++4ryIq5HPTL3RHHkjReGUbL6Wg+hRe2MpDH9dBMV/Xxtxbg==",
+              "signature": "0xce8462674766b80f53d7b08b971b543ea2e7fc204ca62a986911c307f7147e6815dc0402b6b097eb04d8db53418c1f472bf6ce543286af87e44b449ac9ad9d1e1c",
+              "address": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f"
+            },
+            "arweaveTxHash": ""
+          }
+        },
+        "latestAnchorEvent": {
+          "hash": "0x630a18ca043271c78b16087e4c6dd853794aad0118cb1e2fc74ac0cdb0002dc9",
+          "parentHash": "0xd98417073a9d51e8b789122b5a4be7bbe860b06bcb37dbd1ba5150242f4aee2b",
+          "fromAddr": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+          "toAddr": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
+          "network": "ETH",
+          "namespace": "Nifty-canvas",
+          "createdAt": "2022-06-02T02:46:44Z",
+          "isAnchor": true,
+          "proof": {
+            "content": "{\"name\":\"follow\",\"from\":\"0x9dd481d6c1656816bfd564151e29d57e041d2c8f\",\"to\":\"0x148d59faf10b52063071eddf4aaf63a395f2d41c\",\"namespace\":\"Nifty-canvas\",\"network\":\"ETH\",\"timestamp\":1654138003884,\"alias\":\"\"}",
+            "digest": "0x4ef9ed6a3dfd5d2145e8cb4e2e2e924483ccf4204e188206ef41d6d5600ecd58",
+            "signature": "0x510709f49a87637f9791f96ab55ba28d899171707316dcb41fa4da2f1105489ef7f63bd1126b45aec4974b1a7ba51f23bae14c74b63d2bc9e4cdecb8640e7638",
+            "signingKey": "SubjectPublicKeyInfo:MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdIkW7Se8/JGRlOOA7q8McUuaTw5wK4lIQplqEALXX4bKzSmRPGxmgAlPwXeraLqiVVDOlCpEnmmHNFFjsvJpjA==",
+            "signingKeyAuth": {
+              "message": "I authorize CyberConnect from this device using signing key:\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdIkW7Se8/JGRlOOA7q8McUuaTw5wK4lIQplqEALXX4bKzSmRPGxmgAlPwXeraLqiVVDOlCpEnmmHNFFjsvJpjA==",
+              "signature": "0xb8b6e8335b647ca6b5fbc83b187ebe9fb7f9670e0c0a5d3392b4226fb969614b5487a1fe7e4856fa4f039fea0c155f9d8a729e8d2c93f446ed3cc83c9e7cc1ac1b",
+              "address": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f"
+            },
+            "arweaveTxHash": "tRU4wwCeaACzm3Tub1JZ_7sh-dY7udt6polRti7oUlw"
+          }
+        }
       }
     ]
   }
@@ -162,25 +232,50 @@ This is a full example for the Connections query that you can also test out in t
 
 ```javascript
 query ConnectionsQuery {
-    connections(
-        fromAddr: "51je9UThqqhcZbVgY9kZgASthAVCafgqNGDaW3vpyXrr"
-        toAddrList: ["EPBtp2MmAM68CBnt8KBCMoKzwpQtQ486hWehDhGrtKi8"]
-        network: SOLANA
-    ) {
-        fromAddr
-        toAddr
-        followStatus {
-            isFollowed
-            isFollowing
-        }
-        namespace
-        alias
-        network
-        createdAt
-        updatedAt
-        proof
+  connections(fromAddr: "jiayi92.eth", toAddrList: ["cyberlab.eth"]) {
+    fromAddr
+    toAddr
+    followStatus {
+      isFollowed
+      isFollowing
     }
+    namespace
+    alias
+    network
+    createdAt
+    updatedAt
+    latestEvent {
+      ...event
+    }
+    latestAnchorEvent {
+      ...event
+    }
+  }
 }
+
+fragment event on ConnectionEvent {
+  hash
+  parentHash
+  fromAddr
+  toAddr
+  network
+  namespace
+  createdAt
+  isAnchor
+  proof {
+    content
+    digest
+    signature
+    signingKey
+    signingKeyAuth {
+      message
+      signature
+      address
+    }
+    arweaveTxHash
+  }
+}
+
 ```
 
 </TabItem>
@@ -191,18 +286,61 @@ query ConnectionsQuery {
   "data": {
     "connections": [
       {
-        "fromAddr": "51je9UThqqhcZbVgY9kZgASthAVCafgqNGDaW3vpyXrr",
-        "toAddr": "EPBtp2MmAM68CBnt8KBCMoKzwpQtQ486hWehDhGrtKi8",
+        "fromAddr": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+        "toAddr": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
         "followStatus": {
           "isFollowed": false,
           "isFollowing": true
         },
         "namespace": "CyberConnect",
         "alias": "",
-        "network": "SOLANA",
-        "createdAt": "2022-02-22T03:05:27Z",
-        "updatedAt": "2022-02-22T03:24:27Z",
-        "proof": "{\"operation\":\"{\\\"name\\\":\\\"follow\\\",\\\"from\\\":\\\"51je9UThqqhcZbVgY9kZgASthAVCafgqNGDaW3vpyXrr\\\",\\\"to\\\":\\\"EPBtp2MmAM68CBnt8KBCMoKzwpQtQ486hWehDhGrtKi8\\\",\\\"namespace\\\":\\\"CyberConnect\\\",\\\"network\\\":\\\"SOLANA\\\",\\\"alias\\\":\\\"\\\",\\\"timestamp\\\":1645500266794}\",\"digest\":\"0xf8dd7b357e8b738a3ad91080ccea4b07003a2c967b631ba950c2a3e00ff64cf2\",\"signature\":\"0x103fb899c224244740cf1eaa16ce401b218ae85fc0507ca07d29f91b57cf9708a5d6cdede97dc326663fe4f432f52c1ddaef9fb21b8d06f93e6893548aae825c\",\"signingKey\":{\"publicKey\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEngy/L6H1b5u9DVIRIFu2z6Tn+qgkn60NyaAJVbBnTDEQ/PjdvilGWCKUSHgPHIIqpxX9BfQHi+3e+xHKTlrFsQ==\",\"format\":\"SubjectPublicKeyInfo\",\"algorithm\":\"ES256\"},\"signingKeyAuth\":{\"authorship\":\"51je9UThqqhcZbVgY9kZgASthAVCafgqNGDaW3vpyXrr\",\"signingKeySignature\":\"4kMtz6iCjockVhwQwGLzdGxKEESPF3EZXGFkfs2KrFs6a9YYDpRTkxAWcBWFpHjH1DFDLYkaD84TZsv4THmzCL81\",\"signingKeyMessage\":\"I authorize CyberConnect from this device using signing key:\\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEngy/L6H1b5u9DVIRIFu2z6Tn+qgkn60NyaAJVbBnTDEQ/PjdvilGWCKUSHgPHIIqpxX9BfQHi+3e+xHKTlrFsQ==\"}}"
+        "network": "ETH",
+        "createdAt": "2021-12-10T23:40:43Z",
+        "updatedAt": "2022-06-14T17:39:26Z",
+        "latestEvent": {
+          "hash": "0xf5b17780eea3c4131aec0ce903500fc8c0f36e925c0db6e2bae643bf20bc6c7e",
+          "parentHash": "0xfde6d16bcf9981612a356a9464a3c3546c2960c67fb3be3d9cb641634a75168d",
+          "fromAddr": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+          "toAddr": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
+          "network": "ETH",
+          "namespace": "CyberConnect",
+          "createdAt": "2022-06-14T17:39:26Z",
+          "isAnchor": false,
+          "proof": {
+            "content": "{\"name\":\"follow\",\"from\":\"0x9dd481d6c1656816bfd564151e29d57e041d2c8f\",\"to\":\"0x148d59faf10b52063071eddf4aaf63a395f2d41c\",\"namespace\":\"CyberConnect\",\"network\":\"ETH\",\"alias\":\"\",\"timestamp\":1655228365995}",
+            "digest": "0x6fc5a86ecf3a579c2db0753e0ab5bbb58f4239572f67d40eff1c5a70bb426ffe",
+            "signature": "0x5edad7a53ba156a07d67cf0e27214cab6199d39e742183038e109e31f9a7a0226e5c03440c1b6a197f7109ff620e584f167f5f7656dbfc519b8219a348fbd755",
+            "signingKey": "SubjectPublicKeyInfo:MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAErdNg/pAoMZ3U75Jksul0mQZ9nr/JdZ3DnpRU3z++4ryIq5HPTL3RHHkjReGUbL6Wg+hRe2MpDH9dBMV/Xxtxbg==",
+            "signingKeyAuth": {
+              "message": "I authorize CyberConnect from this device using signing key:\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAErdNg/pAoMZ3U75Jksul0mQZ9nr/JdZ3DnpRU3z++4ryIq5HPTL3RHHkjReGUbL6Wg+hRe2MpDH9dBMV/Xxtxbg==",
+              "signature": "0xce8462674766b80f53d7b08b971b543ea2e7fc204ca62a986911c307f7147e6815dc0402b6b097eb04d8db53418c1f472bf6ce543286af87e44b449ac9ad9d1e1c",
+              "address": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f"
+            },
+            "arweaveTxHash": ""
+          }
+        },
+        "latestAnchorEvent": {
+          "hash": "0x630a18ca043271c78b16087e4c6dd853794aad0118cb1e2fc74ac0cdb0002dc9",
+          "parentHash": "0xd98417073a9d51e8b789122b5a4be7bbe860b06bcb37dbd1ba5150242f4aee2b",
+          "fromAddr": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f",
+          "toAddr": "0x148d59faf10b52063071eddf4aaf63a395f2d41c",
+          "network": "ETH",
+          "namespace": "Nifty-canvas",
+          "createdAt": "2022-06-02T02:46:44Z",
+          "isAnchor": true,
+          "proof": {
+            "content": "{\"name\":\"follow\",\"from\":\"0x9dd481d6c1656816bfd564151e29d57e041d2c8f\",\"to\":\"0x148d59faf10b52063071eddf4aaf63a395f2d41c\",\"namespace\":\"Nifty-canvas\",\"network\":\"ETH\",\"timestamp\":1654138003884,\"alias\":\"\"}",
+            "digest": "0x4ef9ed6a3dfd5d2145e8cb4e2e2e924483ccf4204e188206ef41d6d5600ecd58",
+            "signature": "0x510709f49a87637f9791f96ab55ba28d899171707316dcb41fa4da2f1105489ef7f63bd1126b45aec4974b1a7ba51f23bae14c74b63d2bc9e4cdecb8640e7638",
+            "signingKey": "SubjectPublicKeyInfo:MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdIkW7Se8/JGRlOOA7q8McUuaTw5wK4lIQplqEALXX4bKzSmRPGxmgAlPwXeraLqiVVDOlCpEnmmHNFFjsvJpjA==",
+            "signingKeyAuth": {
+              "message": "I authorize CyberConnect from this device using signing key:\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdIkW7Se8/JGRlOOA7q8McUuaTw5wK4lIQplqEALXX4bKzSmRPGxmgAlPwXeraLqiVVDOlCpEnmmHNFFjsvJpjA==",
+              "signature": "0xb8b6e8335b647ca6b5fbc83b187ebe9fb7f9670e0c0a5d3392b4226fb969614b5487a1fe7e4856fa4f039fea0c155f9d8a729e8d2c93f446ed3cc83c9e7cc1ac1b",
+              "address": "0x9dd481d6c1656816bfd564151e29d57e041d2c8f"
+            },
+            "arweaveTxHash": "tRU4wwCeaACzm3Tub1JZ_7sh-dY7udt6polRti7oUlw"
+          }
+        }
       }
     ]
   }
