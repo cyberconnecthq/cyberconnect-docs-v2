@@ -7,7 +7,7 @@ sidebar_position: 2
 description: By adopting a decentralized social graph, users aggregate their identities across different platforms and applications.
 ---
 
-通过采用去中心化的 [社交图谱](/concepts/social-graph/),用户可以跨不同平台和应用程序聚合他们的身份。这允许开发者检索与用户地址相关的更全面的数据，例如：
+通过采用去中心化的 [社交图谱](/concepts/social-graph/)， 用户可以跨不同平台和应用程序聚合他们的身份。这允许开发者检索与用户地址相关的更全面的数据，例如：
 
 <ul>
     <li>ENS 或 Solana 域名</li>

@@ -78,5 +78,9 @@
   "sidebar.tutorialSidebar.category.Changelog": {
     "message": "变更日志",
     "description": "The label for category Changelog in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Interfaces": {
+    "message": "Interfaces",
+    "description": "The label for category Interfaces in sidebar tutorialSidebar"
   }
 }

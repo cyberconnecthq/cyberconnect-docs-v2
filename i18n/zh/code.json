@@ -448,5 +448,37 @@
   "NFTSCAN is a professional NFT asset explorer and data open platform.": {
     "message": "NFTSCAN 是一个专业的 NFT 资产浏览器和数据开放平台。",
     "description": "showcase NFTSCAN"
+  },
+  "Social Verifier": {
+    "message": "社交验证器",
+    "description": "feature description Social Verifier"
+  },
+  "NFT Ownership": {
+    "message": "NFT 所有权（证明）",
+    "description": "feature description NFT Ownership"
+  },
+  "Recommendation Engine": {
+    "message": "推荐引擎",
+    "description": "feature description Recommendation Engine"
+  },
+  "Follow": {
+    "message": "关注",
+    "description": "connection type follow"
+  },
+  "Like": {
+    "message": "喜欢",
+    "description": "connection type Like"
+  },
+  "Report": {
+    "message": "报告",
+    "description": "connection type Report"
+  },
+  "Watch": {
+    "message": "查看",
+    "description": "connection type Watch"
+  },
+  "Vote": {
+    "message": "投票",
+    "description": "connection type Vote"
   }
 }

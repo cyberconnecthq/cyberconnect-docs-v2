@@ -5,7 +5,7 @@ import LinkSvg from "@site/static/img/v0.4.0/link.svg";
 import Translate from "@docusaurus/Translate";
 
 type FeatureItem = {
-  title: string;
+  title: any;
   path: string;
   description: any;
 };
@@ -21,7 +21,11 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: "Social Verifier",
+    title: (
+      <Translate description="feature description Social Verifier">
+        Social Verifier
+      </Translate>
+    ),
     path: "/cyberconnect-sdk/connect-with-social-verifier/",
     description: (
       <Translate description="feature item Social Verifier">
@@ -30,7 +34,11 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: "NFT Ownership",
+    title: (
+      <Translate description="feature description NFT Ownership">
+        NFT Ownership
+      </Translate>
+    ),
     path: "/get-started/read-nft-ownership/",
     description: (
       <Translate description="feature item NFT Ownership">
@@ -48,7 +56,11 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: "Recommendation Engine",
+    title: (
+      <Translate description="feature description Recommendation Engine">
+        Recommendation Engine
+      </Translate>
+    ),
     path: "/get-started/read-recommendations/",
     description: (
       <Translate description="feature item Recommendation Engine">

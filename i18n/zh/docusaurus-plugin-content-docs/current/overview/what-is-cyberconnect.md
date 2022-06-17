@@ -11,7 +11,7 @@ description: CyberConnect 协议的目的是让用户在遨游 Web3 世界的同
 
 CyberConnect 协议的目的是让用户在遨游 Web3 世界的同时，对其社交数据拥有完全所有权。通过建立去中心化的[社交图谱](/concepts/social-graph/)，开发人员可获得一个通用数据层来构建下一代的去中心化应用。
 
-## 为什么 CyberConnect 协议是独一无二的？?
+## 为什么 CyberConnect 协议是独一无二的？
 
 该协议旨在解决 Web2 世界中现有社交网络和图谱的三个主要问题：
 
