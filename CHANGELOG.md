@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 0.6.0 (2022-06-16)
+
+### Features
+
+- chinese-overview-section ([2cc4673](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/2cc4673e31e823e2cdea17e32d2571e19e2ea461))
+- created grants pool page ([ee438e4](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/ee438e4cb8f865a2d2d7dd4678cb9906eb51f247))
+- updated chinese translation overview, get started, protocol etc ([76d9ce4](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/76d9ce49a00e43dc479cd99e1bb258aeda1bd0ac))
+- initial 0.6.0 ([c27a03a](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/c27a03aac12e29740f0d24f3e02fc84464d0b687))
+
 ## 0.5.0 (2022-06-10)
 
 ### Features

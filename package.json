@@ -1,6 +1,6 @@
 {
   "name": "cyberconnect-docs-v2",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -13,8 +13,9 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "release": "standard-version",
-    "update-version": "node ./version.js"
+    "release": "standard-version --release-as minor",
+    "update-version": "node ./version.js",
+    "update-reference": "npx docusaurus graphql-to-doc"
   },
   "standard-version": {
     "skip": {

@@ -1,0 +1,86 @@
+{
+  "version.label": {
+    "message": "0.6.0",
+    "description": "The label for version 0.6.0"
+  },
+  "sidebar.tutorialSidebar.category.Overview": {
+    "message": "总览",
+    "description": "The label for category Overview in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Concepts": {
+    "message": "概念",
+    "description": "The label for category Concepts in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Get started": {
+    "message": "从这开始",
+    "description": "The label for category Get started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CyberConnect SDK": {
+    "message": "CyberConnect SDK",
+    "description": "The label for category CyberConnect SDK in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CyberConnect API": {
+    "message": "CyberConnect API",
+    "description": "The label for category CyberConnect API in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.GraphQL API": {
+    "message": "GraphQL API",
+    "description": "The label for category GraphQL API in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.REST API": {
+    "message": "REST API",
+    "description": "The label for category REST API in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Reference": {
+    "message": "参考",
+    "description": "The label for category Reference in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Directives": {
+    "message": "指令",
+    "description": "The label for category Directives in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Enums": {
+    "message": "枚举",
+    "description": "The label for category Enums in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Inputs": {
+    "message": "Inputs",
+    "description": "The label for category Inputs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.interfaces": {
+    "message": "interfaces",
+    "description": "The label for category interfaces in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Objects": {
+    "message": "Objects",
+    "description": "The label for category Objects in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Queries": {
+    "message": "Queries",
+    "description": "The label for category Queries in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Scalars": {
+    "message": "Scalars",
+    "description": "The label for category Scalars in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Protocol": {
+    "message": "协议",
+    "description": "The label for category Protocol in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Resources": {
+    "message": "资源",
+    "description": "The label for category Resources in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Terminology": {
+    "message": "术语",
+    "description": "The label for category Terminology in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Changelog": {
+    "message": "变更日志",
+    "description": "The label for category Changelog in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Interfaces": {
+    "message": "Interfaces",
+    "description": "The label for category Interfaces in sidebar tutorialSidebar"
+  }
+}

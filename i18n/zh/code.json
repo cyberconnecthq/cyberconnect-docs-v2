@@ -288,5 +288,197 @@
   "Accelerate bootstrapping by recommending connections based on the social graph.": {
     "message": "通过基于社交图谱的推荐算法实现加速自举。",
     "description": "feature item Recommendation Engine"
+  },
+  "Display your users\\' decentralized identities.": {
+    "message": "展示用户的去中心化身份。",
+    "description": "usercase profile description"
+  },
+  "Profile": {
+    "message": "个人资料",
+    "description": "usercase profile"
+  },
+  "Messaging": {
+    "message": "传送讯息",
+    "description": "usercase Messaging"
+  },
+  "Enable users to stay connected with friends.": {
+    "message": "允许用户与他的朋友们沟通交流。",
+    "description": "usercase Messaging description"
+  },
+  "Notification": {
+    "message": "通知",
+    "description": "usercase Notification"
+  },
+  "Keep followers updated.": {
+    "message": "实时更新你追随的人的动态。",
+    "description": "usercase Notification description"
+  },
+  "Search": {
+    "message": "搜索",
+    "description": "usercase Search"
+  },
+  "Explore new connections.": {
+    "message": "搜索并结交一些新的朋友。",
+    "description": "usercase Search description"
+  },
+  "Recommendation": {
+    "message": "推荐",
+    "description": "usercase Recommendation"
+  },
+  "Recommend connections to accelerate bootstrapping.": {
+    "message": "推荐用户关系以加速引导。",
+    "description": "usercase Recommendation description"
+  },
+  "Feeds": {
+    "message": "推送",
+    "description": "usercase Feeds"
+  },
+  "Enable users to post and share content.": {
+    "message": "允许用户分享并展示信息。",
+    "description": "usercase Feeds description"
+  },
+  "Reputation": {
+    "message": "声誉系统",
+    "description": "usercase Reputation"
+  },
+  "Create a scoring system based on social networks.": {
+    "message": "创建一个基于社交网络的评分系统。",
+    "description": "usercase Reputation description"
+  },
+  "Monetization": {
+    "message": "货币化",
+    "description": "usercase Monetization"
+  },
+  "Monetize your influence in Metaverse.": {
+    "message": "将你在元宇宙中的影响力货币化。",
+    "description": "usercase Monetization description"
+  },
+  "Fan community": {
+    "message": "粉丝社区",
+    "description": "usercase Fan community"
+  },
+  "Build your fandom.": {
+    "message": "打造你的粉丝群。",
+    "description": "usercase Fan community description"
+  },
+  "Gamer matching": {
+    "message": "玩家匹配",
+    "description": "usercase Gamer matching"
+  },
+  "Play with friends and make friends when you play.": {
+    "message": "和朋友畅玩，在玩的时候结交朋友。",
+    "description": "usercase Gamer matching description"
+  },
+  "Airdrop": {
+    "message": "空投",
+    "description": "usercase Airdrop"
+  },
+  "Design fair drop mechanics based on social networks.": {
+    "message": "设计基于社交网络的公平空投发放机制。",
+    "description": "usercase Airdrop description"
+  },
+  "DAO tooling": {
+    "message": "DAO 工具",
+    "description": "usercase DAO tooling"
+  },
+  "Tighten relationships between members for better coordination.": {
+    "message": "加强成员之间的关系以更好地协调。",
+    "description": "usercase DAO tooling description"
+  },
+  "Data analytics": {
+    "message": "数据分析",
+    "description": "usercase Data analytics"
+  },
+  "Analyze connections to boost value creation.": {
+    "message": "分析社交数据以促进价值创造。",
+    "description": "usercase Data analytics description"
+  },
+  "Visualization": {
+    "message": "可视化",
+    "description": "usercase Visualization"
+  },
+  "See and cultivate your social graph.": {
+    "message": "查看并培养你的社交图谱。",
+    "description": "usercase Visualization description"
+  },
+  "Project Galaxy is the largest web3 credential data network.": {
+    "message": "Project Galaxy 是最大的 Web3 凭证数据网络。",
+    "description": "showcase Project Galaxy"
+  },
+  "Light.so is a Metaverse Explorer enabling users to curate, discover, and explore meaningful interactions in a way that wasn't possible before.": {
+    "message": "Light.so 是一款元宇宙浏览器，使用户能够以之前不可能的方式策划、发现和探索有意义的交互。",
+    "description": "showcase Light.so"
+  },
+  "Grape.art is a toolkit for building token-based communities on the Solana Blockchain.": {
+    "message": "Grape.art 是一个用于在 Solana 区块链上构建基于代币的社区的工具包。",
+    "description": "showcase Grape.art"
+  },
+  "Hello World is a web application enabling users to discover their social network on the Ethereum Blockchain.": {
+    "message": "Hello World 是一个 Web 应用程序，使用户能够在以太坊区块链上发现自己的社交网络。",
+    "description": "showcase Hello World"
+  },
+  "UniPass is a multi-chain unified crypto identity—the carrier for the concept of 'people' in Metaverse.": {
+    "message": "UniPass 是一个多链统一的加密身份，是元宇宙中 “人” 的概念载体。",
+    "description": "showcase UniPass"
+  },
+  "Convo Space offers one-stop tooling and infrastructure to build social platforms composable across web3.": {
+    "message": "Convo Space 提供一站式工具和基础架构，以构建可跨 Web3 组合的社交平台。",
+    "description": "showcase Convo Space"
+  },
+  "Bress.xyz is a decentralized social platform built on Mirror.xyz.": {
+    "message": "Bress.xyz 是一个基于 Mirror.xyz 的去中心化社交平台。",
+    "description": "showcase Bress.xyz"
+  },
+  "Etherloop is a web app enabling users to build social connections and track tokens, balances, transactions, NFTs, and POAPs.": {
+    "message": "Etherloop 是一款 Web 应用程序，使用户能够建立社交关系，并且可以查看、追踪代币、余额、交易、NFT 和 POAP 的变化情况。",
+    "description": "showcase Etherloop"
+  },
+  "Reveal is a web3 social explorer to connect with people based on their on-chain activities.": {
+    "message": "Reveal 是一个 Web3 社交浏览器，它可以根据链上活动让用户建立联系。",
+    "description": "showcase Reveal"
+  },
+  "Treasureland is a cross-chain NFT platform for NFT issuance, trading, collection, and tailored in-shop services.": {
+    "message": "Treasureland 是一个跨链 NFT 平台，用于 NFT 发行、交易、收集和定制的一站式服务。",
+    "description": "showcase Treasureland"
+  },
+  "In Metajam, you can discover, fund, build web3 products, and JAM into the new paradigm.": {
+    "message": "在 Metajam，您可以发现、资助、构建 Web3 产品，并加入新的范例。",
+    "description": "showcase Metajam"
+  },
+  "NFTSCAN is a professional NFT asset explorer and data open platform.": {
+    "message": "NFTSCAN 是一个专业的 NFT 资产浏览器和数据开放平台。",
+    "description": "showcase NFTSCAN"
+  },
+  "Social Verifier": {
+    "message": "社交验证器",
+    "description": "feature description Social Verifier"
+  },
+  "NFT Ownership": {
+    "message": "NFT 所有权（证明）",
+    "description": "feature description NFT Ownership"
+  },
+  "Recommendation Engine": {
+    "message": "推荐引擎",
+    "description": "feature description Recommendation Engine"
+  },
+  "Follow": {
+    "message": "关注",
+    "description": "connection type follow"
+  },
+  "Like": {
+    "message": "喜欢",
+    "description": "connection type Like"
+  },
+  "Report": {
+    "message": "报告",
+    "description": "connection type Report"
+  },
+  "Watch": {
+    "message": "查看",
+    "description": "connection type Watch"
+  },
+  "Vote": {
+    "message": "投票",
+    "description": "connection type Vote"
   }
 }
