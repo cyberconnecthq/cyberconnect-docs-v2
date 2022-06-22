@@ -1,0 +1,74 @@
+---
+id: read-notifications
+title: Read Notifications
+slug: /get-started/read-notifications/
+sidebar_label: Read Notifications
+sidebar_position: 10
+description: In this section you'll learn how to write a query in order to read the connections.
+---
+
+:::tip
+
+[Install the GraphQL packages](/get-started/quick-setup/) before starting this section.
+
+:::
+
+In this section, we'll help you write a simple query to read a user's [notifications](/concepts/notifications/) from the [social graph](/concepts/social-graph/).
+
+1. Initialize the GraphQL client:
+
+```jsx title="/src/queries/GetConnections.tsx"
+const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
+```
+
+2. Write a query to get the `address` and `domain` of the user’s `followings` and `followers`:
+
+```jsx title="/src/queries/GetNotifications.tsx"
+export const GET_NOTIFICATIONS = gql`
+  query ($address: String!) {
+    identity(address: $address, network: ETH) {
+      unreadNotificationCount
+      notifications {
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+          endCursor
+          startCursor
+        }
+        list {
+          id
+          toAddress
+          network
+          namespace
+          hasRead
+          type
+          timestamp
+          ... on NewConnectionNotification {
+            fromAddress
+            connectionType
+          }
+          ... on BiConnectReceivedNotification {
+            fromAddress
+          }
+          ... on BiConnectAcceptedNotification {
+            fromAddress
+          }
+        }
+      }
+    }
+  }
+`;
+```
+
+Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
+
+## Sandbox
+
+You can write your own query in the [Playground](/cyberconnect-api/playground/) or experiment with our code in the sandbox below!
+
+<iframe
+  src="https://codesandbox.io/embed/read-connections-fk75zg?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetConnections.tsx"
+  title="read-connections"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
