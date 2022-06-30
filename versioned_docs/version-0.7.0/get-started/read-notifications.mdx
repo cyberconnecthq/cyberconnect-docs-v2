@@ -13,13 +13,13 @@ description: In this section you'll learn how to write a query in order to read 
 
 :::
 
-In this section, we'll help you write a simple query to read a user's [notifications](/concepts/notifications/) from the [social graph](/concepts/social-graph/). Also, we will show you how to acknowledge a notification and acknowledge all notifications. Here is an example to use those features.
+In this section, we'll help you write a simple query to read a user's [notifications](/concepts/notification/) from the [social graph](/concepts/social-graph/). Also, we will show you how to acknowledge a notification and acknowledge all notifications. Here is an example on how to use these features.
 
 ![Read notifications](/img/v0.7.0/gifs/read-notification.gif)
 
 ## Read Notifications
 
-1. Create with User Wallet
+1. Connect with User Wallet:
    Before checking notifications, you need to make sure that their crypto wallets are connected to your application.
    Check out the tutorial from [Connect with User Wallet](/get-started/create-a-connection/#connect-with-user-wallet/).
 
@@ -91,7 +91,7 @@ const cyberConnect = new CyberConnect({
 });
 ```
 
-3. In this tutorial, we'll help you implement a simple button that user can click on and acknowledge a notification. After clicking, the function `ackNotificationsHandler` will send a request to MetaMask and, if successful, it will set the notification `hasRead` to `true` and alert the user the success message.
+3. In this tutorial, we'll help you implement a simple button that user can click on and acknowledge a notification. However, you can also acknowledge a portion of notifications because `ackNotifications([notificationId])` can take array of `notificationId`. After clicking, the function `ackNotificationsHandler` will send a request to MetaMask and, if successful, it will set the notification `hasRead` to `true` and alert the user the success message.
 
 ```jsx title="/src/components/Notifications.tsx"
 const ackNotificationsHandler = async (notificationIds) => {
