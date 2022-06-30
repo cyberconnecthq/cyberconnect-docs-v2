@@ -1,0 +1,58 @@
+---
+id: read-connections
+title: 读取社交连接
+slug: /get-started/read-connections/
+sidebar_label: 读取社交连接
+sidebar_position: 6
+description: In this section you'll learn how to write a query in order to read the connections.
+---
+
+:::tip 提示
+
+开始这一节之前，请先 [安装 GraphQL 套件](/get-started/quick-setup/) 。
+
+:::
+
+在本节中，我们将帮助你编写一个简单的查询，从 [社交图谱](/concepts/social-graph/) 中读取一个用户的 [社交连接](/concepts/connection/) 。
+
+1. 初始化 GraphQL 客户端：
+
+```jsx title="/src/queries/GetConnections.tsx"
+const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
+```
+
+2. 写一个查询，获得用户的 `followings`（关注者）和 `followers`（追随者）的 `address` （地址）和 `domain` （域名）：
+
+```jsx title="/src/queries/GetConnections.tsx"
+const GET_CONNECTIONS = gql`
+  query ($address: String!, $first: Int) {
+    identity(address: $address) {
+      followings(first: $first) {
+        list {
+          address
+          domain
+        }
+      }
+      followers(first: $first) {
+        list {
+          address
+          domain
+        }
+      }
+    }
+  }
+`;
+```
+
+M 请务必查看 [CyberConnect API](/cyberconnect-api/overview/)中可用字段的完整列表。
+
+## 沙盒
+
+你可以在 [Playground](/cyberconnect-api/playground/) 中编写自己的查询，或者在下面的沙盒中试验我们的代码！
+
+<iframe
+  src="https://codesandbox.io/embed/read-connections-fk75zg?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetConnections.tsx"
+  title="read-connections"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
