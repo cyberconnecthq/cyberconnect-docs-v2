@@ -7,7 +7,7 @@ sidebar_position: 2
 description: The CyberConnect SDK provides two primary functions, connect and disconnect, which in social graph are follow and unfollow.
 ---
 
-The CyberConnect SDK provides two primary functions, **connect** and **disconnect**, which in [social graphs](/concepts/social-graph/) are **follow** and **unfollow**. 
+The CyberConnect SDK provides two primary functions, **connect** and **disconnect**, which in [social graphs](/concepts/social-graph/) are **follow** and **unfollow**.
 
 The library encapsulates the complex authentication logic (authenticate to Ceramic Network) into easy-to-use functions.
 
@@ -43,11 +43,11 @@ After the user signs the first message, the library will generate a **derived s
 import CyberConnect, { Env, Blockchain } from "@cyberlab/cyberconnect";
 
 const cyberConnect = new CyberConnect({
-    namespace: "CyberConnect",
-    env: Env.Production,
-    chain: Blockchain.ETH,
-    provider: provider,
-    signingMessageEntity: "CyberConnect" || "YOUR_ENTITY_HERE",
+  namespace: "CyberConnect",
+  env: Env.Production,
+  chain: Blockchain.ETH,
+  provider: provider,
+  signingMessageEntity: "CyberConnect" || "YOUR_ENTITY_HERE",
 });
 ```
 
@@ -82,7 +82,7 @@ cyberConnect.batchConnect(targetAddrs, connectionType);
 ```
 
 - `targetAddrs` - A list of wallet addresses to connect.
-- `connectionType` - (optional) The type of the connection. The default value is `Connection.FOLLOW`.
+- `connectionType` - (optional) The type of the connection. The default value is `Connection.FOLLOW`. See [Connection Type](#connection-type) for more details.
 
 ### SetAlias
 
@@ -92,6 +92,35 @@ cyberConnect.setAlias(targetAddr, alias);
 
 - `targetAddr` - The target wallet address to disconnect.
 - `alias` - The alias for the target address.
+
+### BidirectionalConnect
+
+```jsx
+cyberConnect.bidirectionalConnect(targetAddr, biConnectType);
+```
+
+- `targetAddr` - The target wallet address to disconnect.
+- `biConnectionType` - The type of the bidirectional connection. See [BiConnection Type](#biconnection-type) for more details.
+
+Learn more about bidirectional Connection [here](/concepts/bidirectional-connection/)
+
+### AckNotifications
+
+```jsx
+cyberConnect.ackNotifications(notificationIds);
+```
+
+- `notificationIds` - A list of notificationId .
+
+Learn more about notification [here](/concepts/notification/).
+
+### AckAllNotifications
+
+```jsx
+cyberConnect.ackAllNotifications();
+```
+
+Learn more about notification [here](/concepts/notification/).
 
 ### Connection Type
 
@@ -110,6 +139,18 @@ The types we support: `FOLLOW`, `LIKE`, `REPORT`, `WATCH` and `VOTE`.
 Only one type connection can be created from one to another, which means you **can't create both** `FOLLOW` connection and `LIKE` connection from you to "Ryan".
 
 :::
+
+### BiConnection Type
+
+You can create different types of bi-connections for different purposes (e.g. you can send a request by using `INIT` type or accept a request by using `ACCEPT` type).
+
+```jsx
+import { BiConnectionType } from "@cyberlab/cyberconnect";
+
+cyberConnect.bidirectionalConnect(targetAddr, BiConnectionType.INIT);
+```
+
+The types we support: `INIT`, `ACCEPT`, `REJECT`, `TERMINATE`, `BLOCK` and `UNBLOCK`.
 
 ### Solana
 
@@ -130,10 +171,10 @@ You need to pass `chainRef` when you connect to Solana. Now we have three option
 import CyberConnect, { Env, Blockchain, Solana } from "@cyberlab/cyberconnect";
 
 const cyberConnect = new CyberConnect({
-    namespace: "CyberConnect",
-    env: Env.Production,
-    chain: Blockchain.ETH,
-    provider: solanaProvider,
-    chainRef: Solana.SOLANA_MAINNET_CHAIN_REF,
+  namespace: "CyberConnect",
+  env: Env.Production,
+  chain: Blockchain.ETH,
+  provider: solanaProvider,
+  chainRef: Solana.SOLANA_MAINNET_CHAIN_REF,
 });
 ```
