@@ -1,17 +1,17 @@
 ---
 id: Create-connection
 title: Create a Connection (Follow / Unfollow an Address)
-slug: /tutorials/repositories/Scaffold-Eth-Starter-Kit/Create-connection
+slug: /get-started/Scaffold-Eth-Starter-Kit/create-connection
 sidebar_label: Create a Connection
-sidebar_position: 4
+sidebar_position: 3
 description: Here, we will demonstrate how you can help the users of your DApp follow each other by embedding a simple follow button to Scaffold-ETH.
 ---
 
 Here, we will demonstrate how you can help the users of your DApp follow each other by embedding a simple follow button to Scaffold-ETH.
 
-### Write a Get Connection Query
+### Write a Get Connections Query
 
-Before allowing users to follow another user, we first check whether such a connection already exists. You can retrieve the connection status between two addresses (whether A follows/is followed by B) using a GraphQL query. For more details and all fields retrievable from CyberConnect Identity API, please read [Connections](/cyberconnect-api/graphql-api/connections/).
+Before allowing users to follow another user, we first check whether such a connection already exists. You can retrieve the connection status between two addresses (whether A follows/is followed by B) using our "Connections" GraphQL query. For more details and all fields retrievable from CyberConnect Connections API, please read [Connections](/cyberconnect-api/graphql-api/connections/).
 
 - Go to **packages\react-app\src\queries\cyberconnect.js** and add the following code in **cyberconnect.js** to implement a Get Follow Status query in **cyberconnect.js**:
 
@@ -156,7 +156,7 @@ To create a follow button component, go to directory **packages/react-app/src/co
   export default CyberConnectFollowButton;
   ```
 
-- Add the follow button and follow address components to ExampleUI at **packages\react-app\src\views\ExampleUI.jsx**.
+- Add the follow button to ExampleUI at **packages\react-app\src\views\ExampleUI.jsx**.
 
   ```jsx title="packages\react-app\src\views\ExampleUI.jsx"
   import { SyncOutlined } from "@ant-design/icons";
@@ -375,8 +375,11 @@ In order to make sure that your user use their logged-in account to follow anoth
 
 If successful, ExampleUI should display the following:
 
-![finished](/img/v0.7.0/tutorial-scaffold-eth/finished.png)
+<div style={{ textAlign: "center" }}>
+  <img src="/img/v0.7.0/tutorial-scaffold-eth/finished.png" />
+</div>
 
 Play around with the connect functionality by inputting different addresses or ENS domains. Feel free to check out several popular users [here](https://app.cyberconnect.me/plaza). When you follow a new user, you’ll find your followings count and list to be updated as well.
+![finished demo](/img/v0.7.0/tutorial-scaffold-eth/finished-demo.gif)
 
 That’s it! You’ve done a simple integration of CyberConnect to Scaffold-ETH. Check out the finished Starter Project [here](https://github.com/cyberconnecthq/scaffold-eth-examples/tree/cyberconnect-starter). We look forward to seeing more DApps built on top of the CyberConnect Protocol!
