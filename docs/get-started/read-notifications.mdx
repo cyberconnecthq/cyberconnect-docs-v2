@@ -13,9 +13,17 @@ description: In this section you'll learn how to write a query in order to read 
 
 :::
 
-In this section, we'll help you write a simple query to read a user's [notifications](/concepts/notifications/) from the [social graph](/concepts/social-graph/).
+In this section, we'll help you write a simple query to read a user's [notifications](/concepts/notification/) from the [social graph](/concepts/social-graph/). Also, we will show you how to acknowledge a notification and acknowledge all notifications. Here is an example on how to use these features.
 
-1. Initialize the GraphQL client:
+![Read notifications](/img/v0.7.0/gifs/read-notification.gif)
+
+## Read Notifications
+
+1. Connect with User Wallet:
+   Before checking notifications, you need to make sure that their crypto wallets are connected to your application.
+   Check out the tutorial from [Connect with User Wallet](/get-started/create-a-connection/#connect-with-user-wallet/).
+
+2. Initialize the GraphQL client:
 
 ```jsx title="/src/queries/GetConnections.tsx"
 const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
@@ -24,6 +32,8 @@ const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
 2. Write a query to get the `unreadNotificationCount` and the list of the user’s `notifications`:
 
 ```jsx title="/src/queries/GetNotifications.tsx"
+import { gql } from "graphql-request";
+
 export const GET_NOTIFICATIONS = gql`
   query ($address: String!) {
     identity(address: $address, network: ETH) {
@@ -61,6 +71,63 @@ export const GET_NOTIFICATIONS = gql`
 ```
 
 Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
+
+## Acknowledge a Notification
+
+1. To start, import `CyberConnect`, `Env`, and `Blockchain` into your application from the CyberConnect SDK:
+
+```jsx title="/src/components/Notifications.tsx"
+import CyberConnect, { Env, Blockchain } from "@cyberlab/cyberconnect";
+```
+
+2. Before creating a connection, you'll need to instantiate a `CyberConnect` object and initialize variables `namespace`, `env`, `chain` and `provider`:
+
+```jsx title="/src/components/FollowButton.tsx"
+const cyberConnect = new CyberConnect({
+  namespace: "CyberConnect",
+  env: Env.PRODUCTION,
+  chain: Blockchain.ETH,
+  provider: window.ethereum,
+});
+```
+
+3. In this tutorial, we'll help you implement a simple button that user can click on and acknowledge a notification. However, you can also acknowledge a portion of notifications because `ackNotifications([notificationId])` can take array of `notificationId`. After clicking, the function `ackNotificationsHandler` will send a request to MetaMask and, if successful, it will set the notification `hasRead` to `true` and alert the user the success message.
+
+```jsx title="/src/components/Notifications.tsx"
+const ackNotificationsHandler = async (notificationIds) => {
+  if (!account) return;
+  if (!notificationIds) return;
+
+  try {
+    await cyberConnect.ackNotifications(notificationIds);
+    alert(`Success: you read this notification!`);
+    await fetchNotificaions(account);
+  } catch (err) {
+    alert(`Failed: you have already read this notification!`);
+    console.error(err.message);
+  }
+};
+```
+
+## Acknowledge All Notifications
+
+We can also implement a simple button that user can click on and acknowledge all notifications. After clicking, the function `ackAllNotificationsHandler` will send a request to MetaMask and, if successful, it will clean all the notifications and set `unreadNotificationCount` to 0 and alert the user the success message.
+
+```jsx title="/src/components/Notifications.tsx"
+const ackAllNotificationsHandler = async () => {
+  if (!account) return;
+  try {
+    await cyberConnect.ackAllNotifications();
+    alert(`Success: you cleaned all the notification`);
+    await fetchNotificaions(account);
+  } catch (err) {
+    alert(`Failed: please connect your wallet!`);
+    console.error(err.message);
+  }
+};
+```
+
+For the full code, please check out the Sandbox example in the below.
 
 ## Sandbox
 
