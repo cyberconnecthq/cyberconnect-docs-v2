@@ -51,15 +51,6 @@ const ProjectList: ProjectItem[] = [
     ],
   },
   {
-    title: "CyberConnect iOS SDK Starter Demo",
-    urls: [
-      {
-        icon: <GithubSvg />,
-        url: "https://github.com/cyberconnecthq/cyberconnect-swift-example",
-      },
-    ],
-  },
-  {
     title: "CyberConnect JS SDK Starter Demo",
     urls: [
       {
@@ -73,6 +64,15 @@ const ProjectList: ProjectItem[] = [
     ],
   },
   {
+    title: "CyberConnect iOS SDK Starter Demo",
+    urls: [
+      {
+        icon: <GithubSvg />,
+        url: "https://github.com/cyberconnecthq/cyberconnect-swift-example",
+      },
+    ],
+  },
+  {
     title: "CyberProfile REST API Starter Demo",
     urls: [
       {
@@ -81,7 +81,7 @@ const ProjectList: ProjectItem[] = [
       },
       {
         icon: <CgWebsite />,
-        url: "https://cyber-graph.vercel.app/",
+        url: "https://cyberprofile-v2.vercel.app/",
       },
     ],
   },
@@ -94,7 +94,7 @@ const ProjectList: ProjectItem[] = [
       },
       {
         icon: <CgWebsite />,
-        url: "https://cyber-graph.vercel.app/",
+        url: "https://graph.cyberconnect.me/",
       },
     ],
   },
