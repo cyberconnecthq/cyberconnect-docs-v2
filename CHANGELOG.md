@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 0.9.0 (2022-07-22)
+
+### Features
+
+- add changelog ([c77c2f8](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/c77c2f8090d11d27c091431040b97ec6c22baa62))
+- add explorer ([52b3ac9](https://github.com/cyberconnecthq/cyberconnect-docs-v2/commit/52b3ac93d8da9a6dd0e6cdbdd7f6448a52af8d92))
+
 ## 0.6.0 (2022-06-16)
 
 ### Features

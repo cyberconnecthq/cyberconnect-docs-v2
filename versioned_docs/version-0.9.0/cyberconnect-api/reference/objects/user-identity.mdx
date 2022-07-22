@@ -1,0 +1,187 @@
+---
+id: user-identity
+title: UserIdentity
+---
+
+
+No description
+
+```graphql
+type UserIdentity {
+  address: String!
+  domain: String!
+  ens: String!
+  social: Social!
+  avatar: String!
+  joinTime: String!
+  twitter: Twitter!
+  github: Github!
+  followerCount(
+  namespace: String
+  type: ConnectionType = FOLLOW
+): Int!
+  followingCount(
+  namespace: String
+  type: ConnectionType = FOLLOW
+): Int!
+  followings(
+  namespace: String
+  type: ConnectionType = FOLLOW
+  first: Int
+  after: String
+): ConnectionIdentityPage!
+  followers(
+  namespace: String
+  type: ConnectionType = FOLLOW
+  first: Int
+  after: String
+): ConnectionIdentityPage!
+  friends(
+  namespace: String
+  type: ConnectionType = FOLLOW
+  first: Int
+  after: String
+): ConnectionIdentityPage!
+}
+```
+
+
+### Fields
+
+#### `address` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+#### `domain` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+Ethereum: ENS updated every week; Solana: SNS from Bonfida.
+
+
+#### `ens` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+#### `social` ([`Social`](/cyberconnect-api/reference/objects/social))
+
+
+
+
+#### `avatar` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+Ethereum: ENS avatar updated every week; Solana: customized profile avatar.
+
+
+#### `joinTime` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+The time of user's first sent transaction.
+
+
+#### `twitter` ([`Twitter`](/cyberconnect-api/reference/objects/twitter))
+
+Twitter info bound to the address.
+
+
+#### `github` ([`Github`](/cyberconnect-api/reference/objects/github))
+
+Github info bound to the address.
+
+
+#### `followerCount` ([`Int`](/cyberconnect-api/reference/scalars/int))
+
+
+- ##### `namespace` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+- ##### `type` ([`ConnectionType`](/cyberconnect-api/reference/enums/connection-type))
+
+
+
+
+#### `followingCount` ([`Int`](/cyberconnect-api/reference/scalars/int))
+
+
+- ##### `namespace` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+- ##### `type` ([`ConnectionType`](/cyberconnect-api/reference/enums/connection-type))
+
+
+
+
+#### `followings` ([`ConnectionIdentityPage`](/cyberconnect-api/reference/objects/connection-identity-page))
+
+
+- ##### `namespace` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+- ##### `type` ([`ConnectionType`](/cyberconnect-api/reference/enums/connection-type))
+
+
+
+
+- ##### `first` ([`Int`](/cyberconnect-api/reference/scalars/int))
+
+
+
+
+- ##### `after` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+#### `followers` ([`ConnectionIdentityPage`](/cyberconnect-api/reference/objects/connection-identity-page))
+
+
+- ##### `namespace` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+- ##### `type` ([`ConnectionType`](/cyberconnect-api/reference/enums/connection-type))
+
+
+
+
+- ##### `first` ([`Int`](/cyberconnect-api/reference/scalars/int))
+
+
+
+
+- ##### `after` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+#### `friends` ([`ConnectionIdentityPage`](/cyberconnect-api/reference/objects/connection-identity-page))
+
+Mutually followed.
+- ##### `namespace` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+- ##### `type` ([`ConnectionType`](/cyberconnect-api/reference/enums/connection-type))
+
+
+
+
+- ##### `first` ([`Int`](/cyberconnect-api/reference/scalars/int))
+
+
+
+
+- ##### `after` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+
+
