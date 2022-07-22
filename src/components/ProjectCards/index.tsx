@@ -86,7 +86,7 @@ const ProjectList: ProjectItem[] = [
     ],
   },
   {
-    title: "CyberGraph Explorer Demo",
+    title: "CyberGraph Demo",
     urls: [
       {
         icon: <GithubSvg />,
