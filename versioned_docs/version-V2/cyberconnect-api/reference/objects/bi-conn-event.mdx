@@ -1,0 +1,85 @@
+---
+id: bi-conn-event
+title: BiConnEvent
+---
+
+
+No description
+
+```graphql
+type BiConnEvent implements Event {
+  hash: String!
+  parentHash: String!
+  fromAddr: String!
+  toAddr: String!
+  network: Network!
+  namespace: String!
+  createdAt: String!
+  isAnchor: Boolean!
+  proof: Proof!
+  instruction: BiConnInstruction!
+}
+```
+
+
+### Fields
+
+#### `hash` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+#### `parentHash` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+#### `fromAddr` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+#### `toAddr` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+#### `network` ([`Network`](/cyberconnect-api/reference/enums/network))
+
+
+
+
+#### `namespace` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+#### `createdAt` ([`String`](/cyberconnect-api/reference/scalars/string))
+
+
+
+
+#### `isAnchor` ([`Boolean`](/cyberconnect-api/reference/scalars/boolean))
+
+
+
+
+#### `proof` ([`Proof`](/cyberconnect-api/reference/objects/proof))
+
+
+
+
+#### `instruction` ([`BiConnInstruction`](/cyberconnect-api/reference/enums/bi-conn-instruction))
+
+
+
+
+### Interfaces
+
+#### [`Event`](/cyberconnect-api/reference/interfaces/event) 
+
+
+
+
+
+
