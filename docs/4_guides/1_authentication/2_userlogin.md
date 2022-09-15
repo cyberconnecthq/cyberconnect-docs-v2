@@ -18,7 +18,7 @@ CyberConnect uses sign in with ethereum (SIWE) login flow for users to
 
 [Run in Postman](https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-65a1a72b-22e5-4a54-be1d-b1b91dba31ac) [Example](https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-8d396a05-d7cc-4385-9fd4-acb7fa4306a0)
 
-2. Sign this message with the wallet you specified. Remember to replace `\n` with new lines. Use the following tools to sign the message with your ETH wallet
+2. Sign this message with the wallet you specified. Remember to replace \n with new lines. ([unescape json](https://www.freeformatter.com/json-escape.html#before-output)) Use the following tools to sign the message with your ETH wallet.
 
    1. Use [Etherscan tool](https://etherscan.io/verifiedSignatures#)
       ![siwe.png](/img/v2/siwe.png)
