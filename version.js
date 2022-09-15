@@ -39,14 +39,17 @@ const deleteDir = (dir) => {
 const updateVersion = () => {
   try {
     // Revert version in version.json first
-    const preVersion = getPreVersionNum();
-    const jsonString = JSON.stringify([preVersion]);
-    fs.writeFileSync("./versions.json", jsonString);
-    console.log("\x1b[33m%s\x1b[0m", `version is reverted to ${preVersion}\n`);
+    fs.writeFileSync("./versions.json", '["V1"]');
+    console.log("\x1b[33m%s\x1b[0m", `version is reverted to V1\n`);
 
     // Update version using docusaurus
     const result = child_process
-      .execFileSync(`${os.platform() === "win32" ? "yarn.cmd" : "yarn"}`, ["run", "docusaurus", "docs:version", version])
+      .execFileSync(`${os.platform() === "win32" ? "yarn.cmd" : "yarn"}`, [
+        "run",
+        "docusaurus",
+        "docs:version",
+        version,
+      ])
       .toString()
       .trim();
     console.log(result);
