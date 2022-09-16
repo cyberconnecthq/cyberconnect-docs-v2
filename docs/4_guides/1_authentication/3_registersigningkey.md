@@ -1,3 +1,12 @@
+---
+id: signingkey
+title: Register Signing Key
+slug: /guides/authentication/signingkey
+sidebar_label: Register Signing Key
+sidebar_position: 3
+description: Authentication - Register Signing Key
+---
+
 Data stored offchain are all signed with a signing key belonging to each user. Users will need to create a ECDSA P256 (also known as`secp256r1` and `ES256`) key pair to operate on CyberConnect’s decentralized data store with sovereignty.
 
 Here is the reference doc [**Proof of Connection**](https://www.notion.so/Proof-of-Connection-c5334def58e14f9b86375e57dd64413e).

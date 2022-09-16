@@ -3,7 +3,7 @@ id: userlogin
 title: User Login
 slug: /guides/authentication/userlogin
 sidebar_label: User Login
-sidebar_position: 1
+sidebar_position: 2
 description: Authentication - User Login
 ---
 
