@@ -7,6 +7,8 @@ sidebar_position: 2
 description: Mutation - Paid Subscribe
 ---
 
+## Workflow
+
 ![subscribe-to-profile.gif](/gif/subscribe-to-profile.gif)
 
 Subscribing to a profile can be implemented in just a few easy steps. What subscribing to a profile essentially means is that the user will mint an NFT by calling a couple of APIs.

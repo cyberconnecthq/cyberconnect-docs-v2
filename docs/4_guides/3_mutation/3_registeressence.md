@@ -7,6 +7,8 @@ sidebar_position: 3
 description: Mutation - Register Essence
 ---
 
+## Workflow
+
 ![register-essence.gif](/gif/register-essence.gif)
 
 Registering an essence can be implemented in just a few easy steps. What registering an essence essentially means is that the user will deploy an NFT contract by calling a couple of APIs.

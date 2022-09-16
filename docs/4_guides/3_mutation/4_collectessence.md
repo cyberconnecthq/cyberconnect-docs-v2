@@ -7,6 +7,8 @@ sidebar_position: 4
 description: Mutation - Collect Essence
 ---
 
+## Workflow
+
 ![collect-essence.gif](/gif/collect-essence.gif)
 
 Collecting an essence can be implemented in just a few easy steps. What collecting an essence essentially means is that the user will mint an NFT by calling a couple of APIs.

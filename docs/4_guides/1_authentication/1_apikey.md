@@ -7,6 +7,8 @@ sidebar_position: 1
 description: Authentication - API Key
 ---
 
+## Set up your dApp
+
 As a developer you’ll need an API Key for your social application to enable your users to generate data including creating content, following someone and others under the global namespace or your own namespace.
 
 Using API Keys makes sure that

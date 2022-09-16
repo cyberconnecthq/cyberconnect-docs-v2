@@ -12,7 +12,7 @@ CyberConnect uses sign in with ethereum (SIWE) login flow for users to
 1. send the on-chain transaction thru relay service. In this way, users would not need to pay for gas.
 2. It’s also used while registering signing key for storing data offchain (follow).
 
-## Here is the instruction to generate a personal access token.
+## Login Flow
 
 1. Send `loginGetMessage` request with following fields.
 

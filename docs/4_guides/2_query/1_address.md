@@ -7,6 +7,8 @@ sidebar_position: 1
 description: Query - Address
 ---
 
+## Get single address
+
 The most basic concept in CyberConnect is a EVM `address` which encapsulates multiple `wallet`. Each Wallet is a combination of `<chainId, address>` .
 
 [Run in Postman](https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-fd9325d2-5d4f-457a-8bf4-7b073fcad3ee) [Example](https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-a4a2cc7c-7d61-4c34-8584-9469c1604eea)
