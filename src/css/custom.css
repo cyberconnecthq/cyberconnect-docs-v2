@@ -605,7 +605,7 @@ iframe[title="playground"] {
   text-align: center;
 }
 
-.theme-doc-sidebar-item-link a::before {
+/* .theme-doc-sidebar-item-link a::before {
   align-self: center;
   content: "";
   background-color: transparent;
@@ -614,7 +614,7 @@ iframe[title="playground"] {
   height: 23px;
   text-align: center;
   padding-right: 11px;
-}
+} */
 
 .menu__link--sublist.menu__link--sublist-caret::before,
 .menu__link--sublist.menu__link--sublist-caret::after {
@@ -623,133 +623,11 @@ iframe[title="playground"] {
   text-align: center;
 }
 
-ul.menu__list li .menu__link--sublist.menu__link--sublist-caret::before,
-ul.menu__list
-  li
-  .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
-  content: "";
-  background-color: transparent;
-  background-repeat: no-repeat;
-  width: 23px;
-  height: 1.4375rem;
-  line-height: 2.15rem;
-}
-
 .menu__link--sublist.menu__link--sublist-caret {
   display: grid;
-  grid-template-columns: 22px 1fr 11px;
+  grid-template-columns: 1fr 11px;
   grid-gap: 11px;
   align-items: center;
-}
-
-nav.menu > ul.menu__list > li:nth-child(1) > .menu__link::before {
-  content: url(/img/v0.4.0/icons/default/waving_hand.svg);
-}
-nav.menu
-  > ul.menu__list
-  > li:nth-child(1)
-  > .menu__link.menu__link--active::before {
-  content: url(/img/v0.4.0/icons/active/waving_hand.svg);
-}
-
-ul.menu__list
-  li:nth-child(2)
-  .menu__link--sublist.menu__link--sublist-caret::before {
-  content: url(/img/v0.4.0/icons/default/assignment.svg);
-}
-ul.menu__list
-  li:nth-child(2)
-  .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
-  content: url(/img/v0.4.0/icons/active/assignment.svg);
-}
-
-ul.menu__list
-  li:nth-child(3)
-  .menu__link--sublist.menu__link--sublist-caret::before {
-  content: url(/img/v0.4.0/icons/default/lightbulb.svg);
-}
-ul.menu__list
-  li:nth-child(3)
-  .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
-  content: url(/img/v0.4.0/icons/active/lightbulb.svg);
-}
-
-ul.menu__list
-  li:nth-child(4)
-  .menu__link--sublist.menu__link--sublist-caret::before {
-  content: url(/img/v0.4.0/icons/default/construction.svg);
-}
-ul.menu__list
-  li:nth-child(4)
-  .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
-  content: url(/img/v0.4.0/icons/active/construction.svg);
-}
-
-nav.menu > ul.menu__list > li:nth-child(5) > .menu__link::before {
-  width: 24px;
-  height: 24px;
-  content: url(/img/v0.4.0/icons/default/search.svg);
-}
-nav.menu
-  > ul.menu__list
-  > li:nth-child(5)
-  > .menu__link.menu__link--active::before {
-  content: url(/img/v0.4.0/icons/active/search.svg);
-}
-
-ul.menu__list
-  li:nth-child(6)
-  .menu__link--sublist.menu__link--sublist-caret::before {
-  content: url(/img/v0.4.0/icons/default/smart_toy.svg);
-}
-ul.menu__list
-  li:nth-child(6)
-  .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
-  content: url(/img/v0.4.0/icons/active/smart_toy.svg);
-}
-
-ul.menu__list
-  li:nth-child(7)
-  .menu__link--sublist.menu__link--sublist-caret:first-child::before {
-  content: url(/img/v0.4.0/icons/default/cloud.svg);
-}
-ul.menu__list
-  li:nth-child(7)
-  .menu__link--sublist.menu__link--sublist-caret:first-child.menu__link--active::before {
-  content: url(/img/v0.4.0/icons/active/cloud.svg);
-}
-
-ul.menu__list
-  li:nth-child(8)
-  .menu__link--sublist.menu__link--sublist-caret::before {
-  content: url(/img/v0.4.0/icons/default/settings.svg);
-}
-ul.menu__list
-  li:nth-child(8)
-  .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
-  content: url(/img/v0.4.0/icons/active/settings.svg);
-}
-
-ul.menu__list
-  li:nth-child(9)
-  .menu__link--sublist.menu__link--sublist-caret::before {
-  content: url(/img/v0.4.0/icons/default/auto_stories.svg);
-}
-ul.menu__list
-  li:nth-child(9)
-  .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
-  content: url(/img/v0.4.0/icons/active/auto_stories.svg);
-}
-
-ul.menu__list
-  li:nth-child(10)
-  .menu__link--sublist.menu__link--sublist-caret::before {
-  content: url(/img/v0.4.0/icons/default/published_with_changes.svg);
-}
-ul.menu__list
-  li:nth-child(10)
-  .menu__link--sublist.menu__link--sublist-caret.menu__link--active::before {
-  content: url(/img/v0.4.0/icons/active/published_with_changes.svg);
 }
 
 .theme-doc-sidebar-item-category-level-1 a::before,
