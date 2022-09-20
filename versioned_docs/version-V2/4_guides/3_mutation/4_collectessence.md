@@ -36,4 +36,8 @@ We’ve created an example that incorporates all the steps for Collect Essence. 
 1. Login with wallet
 2. Subscribe to a profile
 
-[https://codesandbox.io/embed/collect-essence-phlqfs?fontsize=14&hidenavigation=1&theme=dark](https://codesandbox.io/embed/collect-essence-phlqfs?fontsize=14&hidenavigation=1&theme=dark)
+<iframe src="https://codesandbox.io/embed/collect-essence-phlqfs?fontsize=14&hidenavigation=1&theme=dark"
+    title="collect-essence"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
