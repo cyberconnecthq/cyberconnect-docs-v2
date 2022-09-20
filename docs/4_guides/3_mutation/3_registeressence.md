@@ -35,7 +35,7 @@ We’ve created an example that incorporates all the steps for Register Essence.
 2. Register Essence
 
 <iframe src="https://codesandbox.io/embed/register-essence-kfmjbi?fontsize=14&hidenavigation=1&theme=dark"
-    title="connect-with-follow-button"
+    title="register-essence"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>

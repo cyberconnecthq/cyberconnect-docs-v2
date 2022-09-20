@@ -37,7 +37,7 @@ We’ve created an example that incorporates all the steps for Subscribe to a pr
 2. Subscribe to a profile
 
 <iframe src="https://codesandbox.io/embed/subscribe-to-profile-l1hts6?fontsize=14&hidenavigation=1&theme=dark"
-    title="connect-with-follow-button"
+    title="subscribe-to-profile"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
