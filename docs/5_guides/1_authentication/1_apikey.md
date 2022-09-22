@@ -18,7 +18,12 @@ Using API Keys makes sure that
 
 In the future we’ll gradually replace API Key method with Public Key Infrastructure (PKI).
 
-[Run in Postman](https://cyberconnect-v2.postman.co/workspace/CyberConnect-V2~aae5e431-a27c-48e0-a97f-983df4efa6e7/request/20133006-4bbcb46e-3eea-41b4-9512-241205c389cb) [Example](https://cyberconnect-v2.postman.co/workspace/CyberConnect-V2~aae5e431-a27c-48e0-a97f-983df4efa6e7/example/20133006-03c76460-2607-4f8a-9d6b-08632a5cda94)
+import PostmanCard from "@site/src/components/PostmanCard";
+
+<PostmanCard 
+  queryURL="https://cyberconnect-v2.postman.co/workspace/CyberConnect-V2~aae5e431-a27c-48e0-a97f-983df4efa6e7/request/20133006-4bbcb46e-3eea-41b4-9512-241205c389cb"
+  exampleURL="https://cyberconnect-v2.postman.co/workspace/CyberConnect-V2~aae5e431-a27c-48e0-a97f-983df4efa6e7/example/20133006-03c76460-2607-4f8a-9d6b-08632a5cda94"
+/>
 
 ## Next Step
 
@@ -31,6 +36,6 @@ Use the resulting `apiKey` as your `X-API-KEY` header.
 
 ```json
 {
-  "X-API-KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcxNzk4NjkxODQsImVtYWlsIjoiaGlAY3liZXJjb25uZWN0Lm1lIiwidHdpdHRlcklEIjoiQGN5YmVyY29ubmVjdGhxIiwibmFtZXNwYWNlIjoiQ3liZXJDb25uZWN0Iiwib3JpZ2luX2hvc3QiOiJjeWJlcmNvbm5lY3QubWUiLCJpc3MiOiJDeWJlckNvbm5lY3QiLCJleHAiOjE2NjU4NjUyNzQsImlhdCI6MTY2MzI3MzI3NH0.VCqlS7eDzqZGq--WfJ102qVWlgXcLkMgSSlzkl9bQLU"
+    "X-API-KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcxNzk4NjkxODQsImVtYWlsIjoiaGlAY3liZXJjb25uZWN0Lm1lIiwidHdpdHRlcklEIjoiQGN5YmVyY29ubmVjdGhxIiwibmFtZXNwYWNlIjoiQ3liZXJDb25uZWN0Iiwib3JpZ2luX2hvc3QiOiJjeWJlcmNvbm5lY3QubWUiLCJpc3MiOiJDeWJlckNvbm5lY3QiLCJleHAiOjE2NjU4NjUyNzQsImlhdCI6MTY2MzI3MzI3NH0.VCqlS7eDzqZGq--WfJ102qVWlgXcLkMgSSlzkl9bQLU"
 }
 ```

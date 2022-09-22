@@ -15,9 +15,14 @@ Collecting an essence can be implemented in just a few easy steps. What collecti
 
 1. First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createCollectEssenceTypedData` API that takes care of this.
 
-   If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
+    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
-[Run in Postman](https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-13c81f40-2b83-4725-be86-e06d50fa842a) [Example](https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-1e5ae208-8e99-4e24-b2f4-5218840dddce)
+import PostmanCard from "@site/src/components/PostmanCard";
+
+<PostmanCard 
+  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-13c81f40-2b83-4725-be86-e06d50fa842a"
+  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-1e5ae208-8e99-4e24-b2f4-5218840dddce"
+/>
 
 1. Second, once you received data in a readable format, you’ll need to get the user’s signature for it. Basically, you’ll need to write a function and pass it a `message` as a param and return the `signature` that it’s necessary for the next step.
 
@@ -25,7 +30,10 @@ Collecting an essence can be implemented in just a few easy steps. What collecti
 
 1. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the NFT for the collected essence.
 
-[Run in Postman](https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-9bb3c34f-a84e-4094-be17-f998b8e7bb4e) [Example](https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-b0437b46-abc6-4165-8763-a5786c864b03)
+<PostmanCard 
+  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-9bb3c34f-a84e-4094-be17-f998b8e7bb4e"
+  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-b0437b46-abc6-4165-8763-a5786c864b03"
+/>
 
 You can now verify the transaction by looking up the `txHash` from the response on [etherscan.io](http://etherscan.io). That’s it! You’re all done!
 
