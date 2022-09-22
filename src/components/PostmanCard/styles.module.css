@@ -1,0 +1,26 @@
+.postmanCard {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px 0px;
+}
+
+.postmanCard h3 {
+    font-size: 1.15rem;
+    margin: 0px;
+    margin-right: 6px;
+}
+
+.postmanCard svg {
+    font-size: 1.05rem;
+    margin-right: 12px;
+}
+
+.postmanCard svg path {
+    fill: #F76836;
+}
+
+.postmanCard a {
+    font-size: 1.1rem;
+    margin: 0px 6px;
+}
