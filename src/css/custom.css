@@ -58,8 +58,8 @@ code {
   background-color: var(--secondary-black-5);
   border: 1px solid var(--secondary-black-10);
   color: var(--primary-black);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.75rem;
+  font-family: monospace;
+  font-size: 0.85rem;
   font-weight: 400;
   line-height: 18px;
   padding: 2px 8px;
@@ -107,12 +107,16 @@ main {
   min-height: calc(100vh - 60px);
 }
 
+ol {
+  padding-left: 22px;
+}
+
 p,
 article li {
   font-family: var(--font-family-primary);
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5rem;
+  line-height: 1.7rem;
   text-align: left;
 }
 
@@ -269,7 +273,7 @@ nav.theme-doc-breadcrumbs {
 
 .theme-code-block div:first-child {
   background-color: var(--secondary-black-5) !important;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: monospace;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -279,14 +283,18 @@ nav.theme-doc-breadcrumbs {
   background-color: var(--secondary-black-5);
 }
 
+.theme-code-block pre code {
+  padding: 20px;
+}
+
 .theme-code-block svg path {
   background-color: transparent;
   fill: var(--primary-green);
 }
 
 .theme-code-block span {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.875rem;
+  font-family: monospace;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 22px;
 }
