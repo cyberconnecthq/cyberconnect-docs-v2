@@ -15,8 +15,16 @@ Use the following to get `Link3` namespaces on BNB, ETH Mainnet. Or `CyberConnec
 
 ## Link3 on ETH
 
-[Run on Postman](https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-60a8c464-8c6b-48cd-a138-7f5ca462a00b) [Example](https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-79eb293e-a493-48fc-ac97-5c06eea53d20)
+import PostmanCard from "@site/src/components/PostmanCard";
+
+<PostmanCard 
+  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-60a8c464-8c6b-48cd-a138-7f5ca462a00b"
+  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-79eb293e-a493-48fc-ac97-5c06eea53d20"
+/>
 
 ## CyberConnect on Goerli
 
-[Run on Postman](https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-2067d63f-e7d5-4d86-a2d2-2d96077d2b97) [Example](https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-54797ffe-ddb0-4773-b658-f4f712af02cb)
+<PostmanCard 
+  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-2067d63f-e7d5-4d86-a2d2-2d96077d2b97"
+  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-54797ffe-ddb0-4773-b658-f4f712af02cb"
+/>
