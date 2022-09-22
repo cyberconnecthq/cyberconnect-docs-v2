@@ -103,10 +103,11 @@ const config = {
             className: "header-github-link",
             "aria-label": "GitHub repository",
           },
-          {
-            type: "localeDropdown",
-            position: "right",
-          },
+          // Disabled translation
+          // {
+          //   type: "localeDropdown",
+          //   position: "right",
+          // },
         ],
       },
       footer: {
