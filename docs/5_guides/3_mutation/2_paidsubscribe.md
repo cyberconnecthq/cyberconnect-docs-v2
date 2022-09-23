@@ -21,7 +21,7 @@ import PostmanCard from "@site/src/components/PostmanCard";
 
 <PostmanCard 
   queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-669eb260-06b2-4249-a871-43ec428fcf0e"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-8109f784-fe2b-4210-b564-b36d0f1f7b06"
+  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-2e3e7dc7-982d-455c-a0c0-acd1b1fc7a2c"
 />
 
 2. Second, once you received data in a readable format, you’ll need to get the user’s signature (`eth_signTypedData_v4`) for it. Basically, you’ll need to write a function and pass it a `message` as a param and return the `signature` that it’s necessary for the next step.
@@ -32,7 +32,7 @@ import PostmanCard from "@site/src/components/PostmanCard";
 
 <PostmanCard 
   queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-f0980b70-f2fb-4100-acdf-90fb12fd8381"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-c88037b4-f410-44e2-91c5-5304019503ed"
+  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-e5d95891-f318-4c38-97ce-b367b8d3ba55"
 />
 
 You can now verify the transaction by looking up the `txHash` from the response on [etherscan.io](http://etherscan.io). That’s it! You’re all done!
