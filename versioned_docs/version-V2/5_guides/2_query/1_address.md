@@ -15,7 +15,7 @@ import PostmanCard from "@site/src/components/PostmanCard";
 
 <PostmanCard 
   queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-fd9325d2-5d4f-457a-8bf4-7b073fcad3ee"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-06d1eb3b-3841-4047-a726-4849ad198a06"
+  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-a4a2cc7c-7d61-4c34-8584-9469c1604eea"
 />
 
 ## Batch get multiple addresses
