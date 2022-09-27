@@ -28,5 +28,5 @@ To enable dynamic rules involved in profile creation, collecting contents and pa
 - `CollectDisallowedMw` - Collecting the essence is disallowed.
 - `CollectOnlySubscribedMw` - Only subscribed profiles can collect the essence.
 - `CollectPaidMw` - Users pay a certain fee in ERC20 token to collect the essence.
-- `CollectPermissionMw` - Users can collect the essence only if they have a valid signiture from the essence owner.
+- `CollectPermissionMw` - Users can collect the essence only if they have a valid signature from the signer.
 - `CollectMerkleDropMw` - Users can only collect an essence using the correct merkle proof.
