@@ -57,7 +57,7 @@ button {
 code {
   background-color: var(--secondary-black-5);
   border: 1px solid var(--secondary-black-10);
-  color: var(--primary-black);
+  color: #e1329b !important;
   font-family: monospace;
   font-size: 0.85rem;
   font-weight: 400;
