@@ -82,7 +82,7 @@ Then, there is `metadata`, and here is where the Profile NFT starts to shine bec
 
 :::tip
 
-`metadata` doesn't follow a schema and it allows you developers to customize it as much as they want.
+Because `metadata` doesn't follow a specific schema, this allows developers to customize its structure as much as they want.
 
 :::
 
