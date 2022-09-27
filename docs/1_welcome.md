@@ -43,19 +43,29 @@ import UsecaseCardsV2 from "@site/src/components/UsecaseCardsV2";
             Discord community
         </a>{" "}
         where you will find channels specifically dedicated to developers and
-        hackathon events. To stay updated, subscribe to our{" "}
+        hackathon events.
+    </p>
+    <p>
+    Join the discussion on our{" "}
+        <a
+            href="https://forum.cyberconnect.me/"
+            target="_blank"
+            rel="noopener noreferrer">
+            forum
+        </a>{" "}
+        and stay updated by subscribing to our{" "}
         <a
             href="https://www.getrevue.co/profile/cyberconnect"
             target="_blank"
             rel="noopener noreferrer">
             newsletter
         </a>
-        , read our <a
+        , reading our <a
             href="https://mirror.xyz/cyberlab.eth"
             target="_blank"
             rel="noopener noreferrer">
             Mirror posts
-        </a>, and follow us on <a
+        </a>, and following us on <a
             href="https://twitter.com/CyberConnectHQ"
             target="_blank"
             rel="noopener noreferrer">
