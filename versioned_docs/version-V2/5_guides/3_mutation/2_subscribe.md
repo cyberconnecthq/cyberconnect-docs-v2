@@ -1,10 +1,10 @@
 ---
-id: paidsubscribe
-title: Paid Subscribe
-slug: /guides/mutation/paid-subscribe
-sidebar_label: Paid Subscribe
+id: subscribe
+title: Subscribe
+slug: /guides/mutation/subscribe
+sidebar_label: Subscribe
 sidebar_position: 2
-description: Mutation - Paid Subscribe
+description: Mutation - Subscribe
 ---
 
 ## Workflow
@@ -15,7 +15,7 @@ Subscribing to a profile can be implemented in just a few easy steps. What subsc
 
 1. First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createSubscribeTypedData` API that takes care of this.
 
-    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
+   If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
 import PostmanCard from "@site/src/components/PostmanCard";
 
