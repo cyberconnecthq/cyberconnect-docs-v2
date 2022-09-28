@@ -15,7 +15,7 @@ Subscribing to a profile can be implemented in just a few easy steps. What subsc
 
 1. First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createSubscribeTypedData` API that takes care of this.
 
-   If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
+    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
 import PostmanCard from "@site/src/components/PostmanCard";
 
@@ -44,7 +44,7 @@ We’ve created an example that incorporates all the steps for Subscribe to a pr
 1. Login with wallet
 2. Subscribe to a profile
 
-<iframe src="https://codesandbox.io/embed/subscribe-to-profile-l1hts6?fontsize=14&hidenavigation=1&theme=dark"
+<iframe src="https://codesandbox.io/embed/subscribe-to-profile-l1hts6?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/App.tsx"
     title="subscribe-to-profile"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
