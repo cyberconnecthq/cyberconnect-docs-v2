@@ -3,7 +3,7 @@ id: cheatSheet
 title: Cheat sheet
 slug: cheatSheet
 sidebar_label: Cheat sheet
-sidebar_position: 7
+sidebar_position: 8
 description: Cheat sheet
 ---
 
