@@ -1,17 +1,17 @@
 ---
 id: authentication
 title: Authentication
-slug: /howTo/buildASbtApp/authentication
+slug: /how-to/build-a-nft-sbt-platform/authentication
 sidebar_label: Authentication
 sidebar_position: 2
 description: How to Build an SBT app - Authentication
 ---
 
-For authentication, you will actually be implementing the [User Login](/guides/authentication/userlogin) flow to receive the `accessToken` that will be used later on in this guide to mint the actual SBT.
+For authentication, you will actually be implementing the [User Login](/guides/authentication/userlogin) flow to receive the `accessToken` that will be used later on in this guide to create an essence NFT.
 
 ## Workflow
 
-![sbt-authentication.gif](/gif/sbt-authentication.gif)
+![how-to-build-nft-sbt-authentication.gif](/gif/how-to-build-nft-sbt-authentication.gif)
 
 ## Apollo Client
 
@@ -74,7 +74,7 @@ export const LOGIN_GET_MESSAGE = gql`
 `;
 ```
 
-## Login button
+## Login
 
 Now that you have the necessary GraphQL mutations, you only need to create a `LoginBtn` component that incorporates the logic for the user authentication.
 
@@ -88,9 +88,11 @@ const DEMO_DOMAIN = "example.com";
 
 function LoginBtn({
     provider,
+    disabled,
     setAccessToken,
 }: {
     provider: Web3Provider | null,
+    disabled: boolean,
     setAccessToken: (accessToken: string) => void,
 }) {
     const [loginGetMessage] = useMutation(LOGIN_GET_MESSAGE);
@@ -156,12 +158,13 @@ function LoginBtn({
 
             alert(`Successfully logged in!`);
         } catch (error) {
+            alert(error);
             console.error(error);
         }
     };
 
     return (
-        <button className="loginBtn" onClick={handleOnClick}>
+        <button onClick={handleOnClick} disabled={disabled}>
             Login
         </button>
     );
@@ -170,4 +173,4 @@ function LoginBtn({
 export default LoginBtn;
 ```
 
-This wraps up the Authentication process! In the next section you will learn how to [Create a Profile NFT](/howTo/buildASbtApp/createProfileNft) by interacting directly with the contract.
+This wraps up the Authentication process! In the next section you will learn how to [Create a Profile NFT](/how-to/build-a-nft-sbt-platform/create-profile-nft) by interacting directly with the smart contract.

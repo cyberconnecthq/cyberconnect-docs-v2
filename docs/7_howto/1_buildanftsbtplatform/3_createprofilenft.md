@@ -1,29 +1,35 @@
 ---
-id: createProfileNft
+id: createprofilenft
 title: Create Profile NFT
-slug: /howTo/buildASbtApp/createProfileNft
+slug: /how-to/build-a-nft-sbt-platform/create-profile-nft
 sidebar_label: Create Profile NFT
 sidebar_position: 3
-description: How to Build a SBT app - Create Profile NFT
+description: How to Build a NFT/SBT platform - Create Profile NFT
 ---
 
 To allow the user to create a profile, you'll need to implement a way to interact with the Profile NFT contract directly from the user's wallet. This can be achieved with the help of that particular Profile NFT contract's ABI.
 
 You can check out an ABI's specification [here](https://docs.soliditylang.org/en/v0.8.17/abi-spec.html) if you're unfamiliar with it.
 
-The reason why it's called Profile NFT contract is that, once a profile is created, an NFT will automatically be minted and transferred to the user's wallet.
+The reason why it's called Profile NFT contract is that, once a profile is created, a NFT will automatically be minted and transferred to the user's wallet.
 
 ## Workflow
 
-![sbt-create-profile.gif](/gif/sbt-create-profile.gif)
+![how-to-build-nft-sbt-create-profile.gif](/gif/how-to-build-nft-sbt-create-profile.gif)
 
 ## Profile NFT ABI
 
 In this guide, you will be using CyberConnect's ABI for the Profile NFT contract `0x9CeA22A644B9172736dE345fE55b74c0908348E5`. The ABI is simply a JSON file that needs to be imported into your project, and, the best part is that you only need to add the functions that you need.
 
-Since you only need to create a profile retrieve the profile id after the profile has been created, the ABI file contain both the `createProfile` and the `getProfileIdByHandle` functions:
+:::info
 
-```jsx title="/src/abi/index.tsx"
+The demo presented in this guide is using the **CyberConnect Profile** smart contract for the Goerli Testnet Network. Please refer to the [Cheat sheet](/cheatSheet) to find the full list of contract addresses for the CyberConnect Protocol.
+
+:::
+
+Since you only need to create a profile and retrieve the profile id after the profile has been created, the ABI .json file contain both the `createProfile` and the `getProfileIdByHandle` functions:
+
+```jsx title="/src/abi/ProfileNFT.json"
 [
     {
         inputs: [
@@ -69,14 +75,22 @@ Since you only need to create a profile retrieve the profile id after the profil
 
 :::info
 
-Users can create as many profiles as they wish. There is also a `setPrimaryProfile` function in the Profile NFT's contract ABI that you can implement by following the same logic as the one described for the `createProfile`.
+Users can create as many profiles as they wish. There is also a `setPrimaryProfile` function in the Profile NFT's contract ABI that it can be implemented by following the same logic as the one described for `createProfile`.
 
 :::
 
-Let's take a closer look at the required params that the function is expecting: `CreateProfileParams`, `preData` and `postData`.
+Let's take a closer look at the required params that the function is expecting:
+
+-   `CreateProfileParams`;
+-   `preData`;
+-   `postData`.
 
 First, there are the `CreateProfileParams` that contain all the necessary information about a profile.
-The first 3 key-value pairs for this param are pretty self-explanatory: `to` is the user's wallet address, `handle` is the user's handle, and `avatar` is a URL link for the user's avatar.
+The first 3 key-value pairs for this param are pretty self-explanatory:
+
+-   `to` is the user's wallet address;
+-   `handle` is the user's handle;
+-   `avatar` is a URL link for the user's avatar.
 
 Then, there is `metadata`, and here is where the Profile NFT starts to shine because it allows you to get creative. It all depends on how your app will look and the information it will display.
 
@@ -86,7 +100,7 @@ Because `metadata` doesn't follow a specific schema, this allows developers to c
 
 :::
 
-For this guide, we'll keep it simple and create a metadata schema that will only contain the input `name`, `bio`, and `handle`, plus the `version` that will be useful for future releases.
+This is how `metadata` looks like in our example:
 
 ```js
 interface IMetadata {
@@ -99,13 +113,15 @@ interface IMetadata {
 
 Last but not least, there is `operator` which is telling the contract what address is allowed to make changes on behalf of the user's wallet address.
 
-The next required params are `preData` and `postData` which are essentially middlewares that will dictate what the contract should process before and after a profile is created. To keep things simple, you won't set any middleware in this example. More on this topic in the [Middleware](/concepts/middleware) section.
+The next required params are `preData` and `postData` which are essentially middlewares that will dictate what the contract should process before and after a profile is created.
 
-## Create Profile button
+To keep things simple, you won't set any middleware in this example. More on this topic in the [Middleware](/concepts/middleware) section.
 
-Now it's time to create the `CreateProfileBtn` component that the user can click on and connect with its wallet. After clicking, the `handleOnClick` function will trigger the MetaMask wallet to prompt, collect the user's input, perform a couple of checks, and call the create the profile function as intended:
+## Create Profile
 
-```jsx title="src/components/CreateProfileBtn.tsx"
+Now it's time to create the `CreateProfileNFTBtn` component that the user can click on and connect with its wallet. After clicking, the `handleOnClick` function will trigger the MetaMask wallet to prompt, collect the user's input, perform a couple of checks, and call the `createProfile` function as intended:
+
+```jsx title="src/components/CreateProfileNFTBtn.tsx"
 import { ethers } from "ethers";
 import { Web3Provider } from "@ethersproject/providers";
 import ProfileNFTABI from "../abi/ProfileNFT.json";
@@ -121,14 +137,16 @@ interface IMetadata {
     version: string;
 }
 
-function CreateProfileBtn({
+function CreateProfileNFTBtn({
     provider,
     setProfileID,
     setHandle,
+    disabled,
 }: {
     provider: Web3Provider | null,
     setProfileID: (profileID: number) => void,
     setHandle: (handle: string) => void,
+    disabled: boolean,
 }) {
     const handleOnClick = async () => {
         try {
@@ -214,18 +232,19 @@ function CreateProfileBtn({
 
             alert(`Successfully created the profile!`);
         } catch (error) {
+            alert(error);
             console.error(error);
         }
     };
 
     return (
-        <button className="createProfileBtn" onClick={handleOnClick}>
-            Create Profile
+        <button onClick={handleOnClick} disabled={disabled}>
+            Create Profile NFT
         </button>
     );
 }
 
-export default CreateProfileBtn;
+export default CreateProfileNFTBtn;
 ```
 
-Nice work! You've officially implemented the functionality to create a profile! In the next section you will learn how to [Mint a SBT](/howTo/buildASbtApp/mintAnSbt).
+Nice work! You've officially implemented the functionality to create a profile! In the next section you will learn how to [Create an Essence NFT](/how-to/build-a-nft-sbt-platform/create-essence-nft).

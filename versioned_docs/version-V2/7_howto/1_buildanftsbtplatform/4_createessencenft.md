@@ -1,21 +1,21 @@
 ---
-id: mintASbt
-title: Mint a SBT
-slug: /howTo/buildASbtApp/mintASbt
-sidebar_label: Mint a SBT
+id: createessencenft
+title: Create Essence NFT
+slug: /how-to/build-a-nft-sbt-platform/create-essence-nft
+sidebar_label: Create Essence NFT
 sidebar_position: 4
-description: How to Build a SBT app - Mint a SBT
+description: How to Build a NFT/SBT platform - Create Essence NFT
 ---
 
-In order to mint a SBT, you will actually be implementing the [Register Essence](/guides/mutation/register-essence) steps.
+In order to Create an Essence NFT, you will actually be implementing the steps described in the [Register Essence](/guides/mutation/register-essence) section.
 
 ## Workflow
 
-![sbt-mint-sbt.gif](/gif/sbt-mint-sbt.gif)
+![how-to-build-nft-sbt-create-essence.gif](/gif/how-to-build-nft-sbt-create-essence.gif)
 
 ## GraphQL mutations
 
-As previously mentioned, you need to Register an Essence. To do so, you need to write the GraphQL mutations required for it:
+As previously mentioned, you will Register an Essence. To do so, you need to write the GraphQL mutations required for it:
 
 1. first mutation is to format data so that the user can sign data in a readable format:
 
@@ -39,7 +39,7 @@ export const CREATE_REGISTER_ESSENCE_TYPED_DATA = gql`
 `;
 ```
 
-2. second mutation is to call the `relay` that will broadcast the transaction and mint the essence SBT:
+2. second mutation is to call the `relay` that will broadcast the transaction and create the Essence NFT:
 
 ```jsx title="/src/graphql/Relay.ts"
 import { gql } from "@apollo/client";
@@ -67,19 +67,26 @@ export const RELAY = gql`
 
 :::info
 
-The underlying differences between the SBT Essence and the Content NFT Essence consist of the fact that they follow different `metadata` schemas and that SBTs have the `transferable` input variable set to `false`.
+The underlying difference between a Non-fungible token (NFT) and a Soulbound token (SBT) is that the SBT is a **non-transferable token**.
 
 :::
 
-When it comes to the `metadata` schema, it can be slipt into 3 parts:
+The **metadata schema** contains all the fields that make up the minted NFT/SBT. In other words, it holds data used to display the Essence NFT in your app and it is customized by the user based on the user's input.
 
-1. The first part follows the [Opensea Metadata Standard](https://docs.opensea.io/docs/metadata-standards). These are the fields that make up the minted NFT associated to the SBT. It is up to the developer to decide which fields to pass to the schema.
+The schema can be slipt into 3 main parts:
 
-2. The second part we entitled it **CyberConnect Metadata Schema** and this is common to both the SBT Essence and the Content NFT Essence.
+1. The first part follows the [Opensea Metadata Standard](https://docs.opensea.io/docs/metadata-standards).
 
-3. The third part consists of a fields that are specific to SBTs.
+2. The second part we entitled it **CyberConnect Metadata Schema** and this is common for all Essence NFTs.
 
-In our example, the `metadata` will be constructed based on already set values (e.g. `type`, `appId`, etc) and values associated to the profile that will mint the SBT (e.g. `holder`, `issuer`, etc):
+3. The third part consists of a couple of fields that are specific to SBTs.
+
+In this example you will creating a SBT which means that the `metadata` will contain the _required_ fields specific to SBTs:
+
+-   `holder` is the user's handle;
+-   `issuer` is the address that created it;
+
+A couple of things to note, like setting the correct `type` as `SBT` for it (useful for indexing) and pass the `transferable` param as `false` since, as previously mentioned, SBTs are non-transferable tokens.
 
 ```jsx
 const metadata = {
@@ -109,11 +116,11 @@ const metadata = {
 };
 ```
 
-## Mint SBT button
+## Create Essence NFT
 
-Now that we've covered the Metadata schema, what is left to do is to put all logic into a `MintSBTBtn` component. Once the button is clicked, it will compute the `tokenURI` as a `base64` string and call both `createRegisterEssenceTypedData` and `relay` APIs.
+Now that we've covered the Metadata schema, what is left to do is to put all logic into a `CreateEssenceNFTBtn` component. Once the button is clicked, it will compute the `tokenURI` as a `base64` string and call both `createRegisterEssenceTypedData` and `relay` APIs.
 
-```jsx title="/src/components/MintSBTBtn.tsx"
+```jsx title="/src/components/CreateEssenceNFTBtn.tsx"
 import { Web3Provider } from "@ethersproject/providers";
 import { useMutation } from "@apollo/client";
 import { CREATE_REGISTER_ESSENCE_TYPED_DATA, RELAY } from "../graphql";
@@ -123,16 +130,18 @@ const DEMO_NAMESPACE = "CyberConnect";
 const DEMO_APP_ID = "CyberConnect";
 const DEMO_OPERATOR_MW_CONTRACT = "0x0000000000000000000000000000000000000000";
 
-function MintSBTBtn({
+function CreateEssenceNFTBtn({
     provider,
-    accessToken,
     handle,
     profileID,
+    setEssenceID,
+    disabled,
 }: {
     provider: Web3Provider | null,
-    accessToken: string,
     handle: string,
     profileID: number,
+    setEssenceID: (essenceID: number) => void,
+    disabled: boolean,
 }) {
     const [createRegisterEssenceTypedData] = useMutation(
         CREATE_REGISTER_ESSENCE_TYPED_DATA
@@ -144,18 +153,6 @@ function MintSBTBtn({
             // Check for the provider
             if (!provider) {
                 throw Error("No provier detected.");
-            }
-
-            // Alert the user to log in
-            if (!accessToken) {
-                alert("You need to log in!");
-                throw Error("User not logged in.");
-            }
-
-            // Alert the user to create profile
-            if (!profileID) {
-                alert("You need to create profile!");
-                throw Error("User doesn't have a profile.");
             }
 
             // Check for the chain id
@@ -248,22 +245,27 @@ function MintSBTBtn({
             console.log("~~ Tx hash ~~");
             console.log(txHash);
 
-            alert(`Successfully minted the SBT!`);
+            // Update state for essenceID
+            // First Essence NFT created will start at 1. Second Essence NFT will have the essenceID 2, etc.
+            setEssenceID(1);
+
+            alert(`Successfully created the SBT!`);
         } catch (error) {
+            alert(error);
             console.error(error);
         }
     };
 
     return (
-        <button className="mintSBTBtn" onClick={handleOnClick}>
-            Mint SBT
+        <button onClick={handleOnClick} disabled={disabled}>
+            Create Essence NFT
         </button>
     );
 }
 
-export default MintSBTBtn;
+export default CreateEssenceNFTBtn;
 ```
 
-The `relay` with return as a reponse the `txHash` that you can verify on [goerli.etherscan.io](https://goerli.etherscan.io/).
+The `relay` will return as a reponse the `txHash` that you can verify on [goerli.etherscan.io](https://goerli.etherscan.io/) to check that the SBT was indeed created!
 
-And with this you've completed the guide! Now you can build your own SBT issuing application. Be as creative as possible and don't forget to share it with our community on [Discord](https://discord.com/invite/cUc8VRGmPs)!
+Well done! Next up, you will learn how to implement the [Collect an Essence NFT](/how-to/build-a-nft-sbt-platform/collect-essence-nft) functionality.
