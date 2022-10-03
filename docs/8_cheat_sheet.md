@@ -31,6 +31,7 @@ The followings are deployed smart contracts addresses for CyberConnect protocol.
 | Essence MW (CollectPaidMw)                   | 0x9e5e171fadcc01f204bdff12a87f1573e40b0cd2 |
 | Essence MW (CollectPermissionMw)             | 0xaf53c3101c4b57a3d48100832ab8d1732b58c64c |
 
+
 | Arbitrum Nova                                | Address                                    |
 | -------------------------------------------- | ------------------------------------------ |
 | Action Lib                                   | 0x8ccbe07f1e12a61e4fbb3a1895d35dce001ff73a |
