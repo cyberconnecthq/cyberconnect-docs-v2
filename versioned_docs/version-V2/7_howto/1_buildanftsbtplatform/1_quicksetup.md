@@ -31,7 +31,7 @@ In addition, you will be using the [Apollo client](https://www.apollographql.com
 npm install @apollo/client graphql
 ```
 
-## Sandbox
+## Full code
 
 :::info
 
@@ -39,12 +39,20 @@ The demo presented in this guide is using the **CyberConnect Profile** smart con
 
 :::
 
-You can find the full code in the sandbox below. It covers all the steps that are described in this guide:
+The demo in this guide covers the following steps:
 
 1. [Authentication](/how-to/build-a-nft-sbt-platform/authentication)
 2. [Create Profile NFT](/how-to/build-a-nft-sbt-platform/create-profile-nft)
 3. [Create Essence NFT](/how-to/build-a-nft-sbt-platform/create-essence-nft)
 4. [Collect Essence NFT](/how-to/build-a-nft-sbt-platform/collect-essence-nft)
+
+### Github
+
+Check out the full code for the demo in the repo: [https://github.com/cyberconnecthq/build-nft-sbt-guide](https://github.com/cyberconnecthq/build-nft-sbt-guide).
+
+### Sandbox
+
+Test out or play around with the the code in the sandbox below.
 
 <iframe
   src="https://codesandbox.io/embed/build-nft-sbt-guide-9s56gs?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/App.tsx"
