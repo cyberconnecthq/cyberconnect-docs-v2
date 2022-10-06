@@ -1,5 +1,5 @@
 ---
-id: registeressence
+id: register-essence
 title: Register Essence
 slug: /guides/mutation/register-essence
 sidebar_label: Register Essence

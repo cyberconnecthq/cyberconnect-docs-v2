@@ -1,5 +1,5 @@
 ---
-id: collectessencenft
+id: collect-essence-nft
 title: Collect Essence NFT
 slug: /how-to/build-a-nft-sbt-platform/collect-essence-nft
 sidebar_label: Collect Essence NFT

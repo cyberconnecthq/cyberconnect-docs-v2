@@ -7,7 +7,7 @@ sidebar_position: 2
 description: How to Build an SBT app - Authentication
 ---
 
-For authentication, you will actually be implementing the [User Login](/guides/authentication/userlogin) flow to receive the `accessToken` that will be used later on in this guide to create an essence NFT.
+For authentication, you will actually be implementing the [User Login](/guides/authentication/user-login) flow to receive the `accessToken` that will be used later on in this guide to create an essence NFT.
 
 ## Workflow
 

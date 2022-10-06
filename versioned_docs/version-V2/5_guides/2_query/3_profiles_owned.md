@@ -1,5 +1,5 @@
 ---
-id: profilesowned
+id: profiles-owned
 title: List Profiles owned by Wallet
 slug: /guides/query/profiles-owned
 sidebar_label: Profiles Owned

@@ -1,7 +1,7 @@
 ---
-id: userlogin
+id: user-login
 title: User Login
-slug: /guides/authentication/userlogin
+slug: /guides/authentication/user-login
 sidebar_label: User Login
 sidebar_position: 2
 description: Authentication - User Login

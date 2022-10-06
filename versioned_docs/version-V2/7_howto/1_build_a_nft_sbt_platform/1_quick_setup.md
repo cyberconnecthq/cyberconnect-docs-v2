@@ -1,7 +1,7 @@
 ---
-id: quickSetup
+id: quick-setup
 title: Quick Setup
-slug: /how-to/build-a-nft-sbt-platform/quickSetup
+slug: /how-to/build-a-nft-sbt-platform/quick-setup
 sidebar_label: Quick Setup
 sidebar_position: 1
 description: How to Build a NFT/SBT platform - Quick Setup
@@ -35,7 +35,7 @@ npm install @apollo/client graphql
 
 :::info
 
-The demo presented in this guide is using the **CyberConnect Profile** smart contract for the Goerli Testnet Network. Please refer to the [Cheat sheet](/cheatSheet) to find the full list of contract addresses for the CyberConnect Protocol.
+The demo presented in this guide is using the **CyberConnect Profile** smart contract for the Goerli Testnet Network. Please refer to the [Cheat sheet](/cheat-sheet) to find the full list of contract addresses for the CyberConnect Protocol.
 
 :::
 
