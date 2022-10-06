@@ -7,7 +7,7 @@ sidebar_position: 2
 description: Interest Graph Engine
 ---
 
-CyberConnect has two components to help developer build social applications: Social Data Network and **Interest Graph Engine**.
+CyberConnect has two components to help developer build social applications: [Social Data Network](/overview/social-data-network) and **Interest Graph Engine**.
 
 CyberConnect Interest Graph Engine indexes, aggregates onchain and offchain data sources related to an identity and its activities to create a holistic view. Developers could easily leverage the indexed data and the recommendation models for user acquisition and user retention.
 

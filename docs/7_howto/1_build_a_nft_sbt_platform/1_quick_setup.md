@@ -35,7 +35,7 @@ npm install @apollo/client graphql
 
 :::info
 
-The demo presented in this guide is using the **CyberConnect Profile** smart contract for the Goerli Testnet Network. Please refer to the [Cheat sheet](/cheatSheet) to find the full list of contract addresses for the CyberConnect Protocol.
+The demo presented in this guide is using the **CyberConnect Profile** smart contract for the Goerli Testnet Network. Please refer to the [Cheat sheet](/cheat-sheet) to find the full list of contract addresses for the CyberConnect Protocol.
 
 :::
 

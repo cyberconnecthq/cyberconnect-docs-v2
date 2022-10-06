@@ -1,10 +1,10 @@
 ---
-id: infra
-title: Sufficiently Decentralized Data Infrastructures
-slug: /protocol/infra/infra
-sidebar_label: Sufficiently Decentralized Data Infrastructures
+id: data-infrastructure
+title: Data Infrastructure
+slug: /protocol/social-data-network/data-infrastructure
+sidebar_label: Data Infrastructure
 sidebar_position: 1
-description: Sufficiently Decentralized Data Infrastructures
+description: Data Infrastructure
 ---
 
 Developers who use CyberConnect to store users’ social data should be able to safely rely on the protocol to write and update millions of records. At the same time, developers need to be assured that CyberConnect doesn’t become a single point of failure for malicious attackers. Therefore, we need a sufficiently decentralized data storage system that is performant and provides guarantees of data sovereignty, availability, and integrity.
