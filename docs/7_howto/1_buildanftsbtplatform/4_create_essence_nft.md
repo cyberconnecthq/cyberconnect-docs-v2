@@ -1,5 +1,5 @@
 ---
-id: createessencenft
+id: create-essence-nft
 title: Create Essence NFT
 slug: /how-to/build-a-nft-sbt-platform/create-essence-nft
 sidebar_label: Create Essence NFT

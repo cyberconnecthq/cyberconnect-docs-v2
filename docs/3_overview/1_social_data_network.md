@@ -1,7 +1,7 @@
 ---
-id: socialDataNetwork
+id: social-data-network
 title: Social Data Network
-slug: /overview/socialDataNetwork
+slug: /overview/social-data-network
 sidebar_label: Social Data Network
 sidebar_position: 2
 description: Social Data Network

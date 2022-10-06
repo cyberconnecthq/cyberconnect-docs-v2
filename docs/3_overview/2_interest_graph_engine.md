@@ -1,7 +1,7 @@
 ---
-id: interestGraphEngine
+id: interest-graph-engine
 title: Interest Graph Engine
-slug: /overview/interestGraphEngine
+slug: /overview/interest-graph-engine
 sidebar_label: Interest Graph Engine
 sidebar_position: 2
 description: Interest Graph Engine

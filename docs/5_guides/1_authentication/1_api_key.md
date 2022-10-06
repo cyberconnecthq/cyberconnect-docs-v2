@@ -1,7 +1,7 @@
 ---
-id: apikey
+id: api-key
 title: Create an Application API Key
-slug: /guides/authentication/apikey
+slug: /guides/authentication/api-key
 sidebar_label: Create an Application API Key
 sidebar_position: 1
 description: Authentication - API Key

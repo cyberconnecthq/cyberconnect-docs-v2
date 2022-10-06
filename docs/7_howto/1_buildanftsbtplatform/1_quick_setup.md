@@ -1,7 +1,7 @@
 ---
-id: quickSetup
+id: quick-setup
 title: Quick Setup
-slug: /how-to/build-a-nft-sbt-platform/quickSetup
+slug: /how-to/build-a-nft-sbt-platform/quick-setup
 sidebar_label: Quick Setup
 sidebar_position: 1
 description: How to Build a NFT/SBT platform - Quick Setup

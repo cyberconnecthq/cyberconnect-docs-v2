@@ -1,5 +1,5 @@
 ---
-id: collectessence
+id: collect-essence
 title: Collect Essence
 slug: /guides/mutation/collect-essence
 sidebar_label: Collect Essence

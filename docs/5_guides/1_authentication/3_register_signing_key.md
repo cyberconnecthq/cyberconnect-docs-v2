@@ -1,7 +1,7 @@
 ---
-id: signingkey
+id: signing-key
 title: Register Signing Key
-slug: /guides/authentication/signingkey
+slug: /guides/authentication/signing-key
 sidebar_label: Register Signing Key
 sidebar_position: 3
 description: Authentication - Register Signing Key

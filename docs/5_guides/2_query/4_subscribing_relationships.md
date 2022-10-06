@@ -1,5 +1,5 @@
 ---
-id: subscribingrelationships
+id: subscribing-relationships
 title: Get Subscribing Relationships by an EVM address
 slug: /guides/query/subscribing-relationships
 sidebar_label: Subscribing Relationships

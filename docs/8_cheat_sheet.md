@@ -1,7 +1,7 @@
 ---
-id: cheatSheet
+id: cheat-sheet
 title: Cheat sheet
-slug: cheatSheet
+slug: cheat-sheet
 sidebar_label: Cheat sheet
 sidebar_position: 8
 description: Cheat sheet
@@ -30,7 +30,6 @@ The followings are deployed smart contracts addresses for CyberConnect protocol.
 | Subscribe MW (SubscribePaidMw)               | 0x9b5678862e143c970f4a63f57dd8a677f5942c40 |
 | Essence MW (CollectPaidMw)                   | 0x9e5e171fadcc01f204bdff12a87f1573e40b0cd2 |
 | Essence MW (CollectPermissionMw)             | 0xaf53c3101c4b57a3d48100832ab8d1732b58c64c |
-
 
 | Arbitrum Nova                                | Address                                    |
 | -------------------------------------------- | ------------------------------------------ |

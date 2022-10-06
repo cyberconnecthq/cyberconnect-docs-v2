@@ -1,5 +1,5 @@
 ---
-id: createprofilenft
+id: create-profile-nft
 title: Create Profile NFT
 slug: /how-to/build-a-nft-sbt-platform/create-profile-nft
 sidebar_label: Create Profile NFT
