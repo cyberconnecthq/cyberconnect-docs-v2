@@ -1,0 +1,60 @@
+---
+id: create-register-essence-typed-data-input
+title: CreateRegisterEssenceTypedDataInput
+---
+
+
+The `CreateRegisterEssenceTypedDataInput` input type specifies the params required to register an essence.
+
+```graphql
+input CreateRegisterEssenceTypedDataInput {
+  options: RegisterEssenceTypedDataOptions!
+  profileID: Int!
+  name: String!
+  symbol: String!
+  tokenURI: URL!
+  mwContract: ContractAddressEVM!
+  transferable: Boolean!
+}
+```
+
+
+### Fields
+
+#### `options` ([`RegisterEssenceTypedDataOptions`](/reference/inputs/register-essence-typed-data-options))
+
+`options` the options to register an essence.
+
+
+#### `profileID` ([`Int`](/reference/scalars/int))
+
+`profileID` the id of the profile that is registering the essence.
+
+
+#### `name` ([`String`](/reference/scalars/string))
+
+`name` the name of the essence.
+
+
+#### `symbol` ([`String`](/reference/scalars/string))
+
+`symbol` the symbol of the essence.
+
+
+#### `tokenURI` ([`URL`](/reference/scalars/url))
+
+`tokenURI` the token URI of the essence NFT.
+
+
+#### `mwContract` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`mwContract` the contract address of the essence middleware.
+
+
+#### `transferable` ([`Boolean`](/reference/scalars/boolean))
+
+`transferable` whether the essence is transferable.
+
+
+
+

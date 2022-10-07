@@ -1,0 +1,42 @@
+---
+id: create-collect-essence-typed-data-input
+title: CreateCollectEssenceTypedDataInput
+---
+
+
+The `CreateCollectEssenceTypedDataInput` input type specifies the params required to collect an essence.
+
+```graphql
+input CreateCollectEssenceTypedDataInput {
+  options: CollectEssenceTypedDataOptions!
+  collector: AddressEVM!
+  profileID: Int!
+  essenceID: Int!
+}
+```
+
+
+### Fields
+
+#### `options` ([`CollectEssenceTypedDataOptions`](/reference/inputs/collect-essence-typed-data-options))
+
+`options` the options to collect an essence.
+
+
+#### `collector` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`collector` the collector address of the essence.
+
+
+#### `profileID` ([`Int`](/reference/scalars/int))
+
+`profileID` the profile id of the profile that is collecting the essence.
+
+
+#### `essenceID` ([`Int`](/reference/scalars/int))
+
+`essenceID` the id of the essence that is being collected.
+
+
+
+

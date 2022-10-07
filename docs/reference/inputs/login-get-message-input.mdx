@@ -1,0 +1,36 @@
+---
+id: login-get-message-input
+title: LoginGetMessageInput
+---
+
+
+The `LoginGetMessageInput` input type specifies the Typed Data message parameters.
+
+```graphql
+input LoginGetMessageInput {
+  domain: String!
+  address: AddressEVM!
+  chainID: ChainID!
+}
+```
+
+
+### Fields
+
+#### `domain` ([`String`](/reference/scalars/string))
+
+`domain` the domain of the app.
+
+
+#### `address` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`address` the address of the user.
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainID` the chain ID of the network.
+
+
+
+

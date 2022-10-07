@@ -1,0 +1,194 @@
+---
+id: wallet
+title: Wallet
+---
+
+
+No description
+
+```graphql
+type Wallet implements Node {
+  id: ID!
+  address: AddressEVM!
+  chainID: ChainID!
+  primaryProfile(
+  chainID: ChainID!
+): Profile
+  profiles(
+  after: Cursor
+  first: Int
+  before: Cursor
+  last: Int
+  orderBy: ProfileOrder
+): ProfileConnection!
+  subscribings(
+  after: Cursor
+  first: Int
+  before: Cursor
+  last: Int
+  orderBy: SubscribeOrder
+): SubscribeConnection!
+  collectedEssences(
+  after: Cursor
+  first: Int
+  before: Cursor
+  last: Int
+  orderBy: CollectOrder
+): CollectConnection!
+  subscribingCount: Int!
+  feed(
+  offset: Int
+  limit: Int
+): [ERCTransferCard!]
+  recommendation: Recommendation!
+  metadata: WalletMetadata!
+}
+```
+
+
+### Fields
+
+#### `id` ([`ID`](/reference/scalars/id))
+
+`id` the wallet's unique identifier.
+
+
+#### `address` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`address` the wallet's address.
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainID` the chain id of the network.
+
+
+#### `primaryProfile` ([`Profile`](/reference/objects/profile))
+
+`primaryProfile` provides information about the primary profile of a wallet.
+- ##### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+
+
+
+#### `profiles` ([`ProfileConnection`](/reference/objects/profile-connection))
+
+`profiles` provides a paginated list of a specified wallet's profiles.
+- ##### `after` ([`Cursor`](/reference/scalars/cursor))
+
+`after` the cursor to retreive results after.
+
+
+- ##### `first` ([`Int`](/reference/scalars/int))
+
+`first` the maximum number of profiles to return after a cursor.
+
+
+- ##### `before` ([`Cursor`](/reference/scalars/cursor))
+
+`before` the cursor to retreive results before.
+
+
+- ##### `last` ([`Int`](/reference/scalars/int))
+
+`last` the maximum number of profiles to return before a cursor.
+
+
+- ##### `orderBy` ([`ProfileOrder`](/reference/inputs/profile-order))
+
+`orderBy` the order in which results are returned.
+
+
+#### `subscribings` ([`SubscribeConnection`](/reference/objects/subscribe-connection))
+
+`subscribings` provides a paginated list of a specified wallet's subscribings.
+- ##### `after` ([`Cursor`](/reference/scalars/cursor))
+
+`after` the cursor to retreive results after.
+
+
+- ##### `first` ([`Int`](/reference/scalars/int))
+
+`first` the maximum number of subscribings to return after a cursor.
+
+
+- ##### `before` ([`Cursor`](/reference/scalars/cursor))
+
+`before` the cursor to retreive results before.
+
+
+- ##### `last` ([`Int`](/reference/scalars/int))
+
+`last` the maximum number of subscribings to return before a cursor.
+
+
+- ##### `orderBy` ([`SubscribeOrder`](/reference/inputs/subscribe-order))
+
+`orderBy` the order in which results are returned.
+
+
+#### `collectedEssences` ([`CollectConnection`](/reference/objects/collect-connection))
+
+`collectedEssences` provides a paginated list of a specified wallet's collected essences.
+- ##### `after` ([`Cursor`](/reference/scalars/cursor))
+
+`after` the cursor to retreive results after.
+
+
+- ##### `first` ([`Int`](/reference/scalars/int))
+
+`first` the maximum number of collected essences to return after a cursor.
+
+
+- ##### `before` ([`Cursor`](/reference/scalars/cursor))
+
+`before` the cursor to retreive results before.
+
+
+- ##### `last` ([`Int`](/reference/scalars/int))
+
+`last` the maximum number of collected essences to return before a cursor.
+
+
+- ##### `orderBy` ([`CollectOrder`](/reference/inputs/collect-order))
+
+`orderBy` the order in which results are returned.
+
+
+#### `subscribingCount` ([`Int`](/reference/scalars/int))
+
+`subscribingCount` the number of subscribings.
+
+
+#### `feed` ([`ERCTransferCard`](/reference/objects/erctransfer-card))
+
+
+- ##### `offset` ([`Int`](/reference/scalars/int))
+
+
+
+
+- ##### `limit` ([`Int`](/reference/scalars/int))
+
+
+
+
+#### `recommendation` ([`Recommendation`](/reference/objects/recommendation))
+
+
+
+
+#### `metadata` ([`WalletMetadata`](/reference/objects/wallet-metadata))
+
+
+
+
+### Interfaces
+
+#### [`Node`](/reference/interfaces/node) 
+
+The `Node` interface follows relay.dev spec.
+
+
+
+

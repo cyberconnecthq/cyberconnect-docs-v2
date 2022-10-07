@@ -1,0 +1,42 @@
+---
+id: login-verify-input
+title: LoginVerifyInput
+---
+
+
+The `LoginVerifyInput` input type specifies the Typed Data message parameters along with it's signature.
+
+```graphql
+input LoginVerifyInput {
+  domain: String!
+  address: AddressEVM!
+  chainID: ChainID!
+  signature: String!
+}
+```
+
+
+### Fields
+
+#### `domain` ([`String`](/reference/scalars/string))
+
+`domain` the domain of the app.
+
+
+#### `address` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`address` the address of the user.
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainID` the chain ID of the network.
+
+
+#### `signature` ([`String`](/reference/scalars/string))
+
+`signature` the signature of the message.
+
+
+
+

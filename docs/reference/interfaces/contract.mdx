@@ -1,0 +1,54 @@
+---
+id: contract
+title: Contract
+---
+
+
+The `Contract` interface provides base details that should be available for all EVM contracts.
+
+```graphql
+interface Contract {
+  contractAddress: ContractAddressEVM!
+  name: String!
+  contract_creation_time: String!
+  block_number: Int!
+  block_hash: String!
+  bytecode: String!
+}
+```
+
+
+### Fields
+
+#### `contractAddress` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+
+
+
+#### `name` ([`String`](/reference/scalars/string))
+
+
+
+
+#### `contract_creation_time` ([`String`](/reference/scalars/string))
+
+The date the contract was deployed
+
+
+#### `block_number` ([`Int`](/reference/scalars/int))
+
+The block number in which the contract was deployed
+
+
+#### `block_hash` ([`String`](/reference/scalars/string))
+
+The block hash in which the contract was deployed
+
+
+#### `bytecode` ([`String`](/reference/scalars/string))
+
+The bytecode of the contract
+
+
+
+

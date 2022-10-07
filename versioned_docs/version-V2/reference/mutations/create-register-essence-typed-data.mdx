@@ -1,0 +1,31 @@
+---
+id: create-register-essence-typed-data
+title: createRegisterEssenceTypedData
+---
+
+
+`createRegisterEssenceTypedData` returns an EIP-712 spec Typed Data message to sign with a wallet in order to register an essence. This mutation requires an `Authorization` header with a valid `Bearer` token.
+
+```graphql
+createRegisterEssenceTypedData(
+  input: CreateRegisterEssenceTypedDataInput!
+): CreateRegisterEssenceTypedDataResult!
+```
+
+
+### Arguments
+
+#### `input` ([`CreateRegisterEssenceTypedDataInput`](/reference/inputs/create-register-essence-typed-data-input))
+
+
+
+
+### Type
+
+#### [`CreateRegisterEssenceTypedDataResult`](/reference/objects/create-register-essence-typed-data-result) 
+
+The `CreateRegisterEssenceTypedDataResult` type provides the generated EIP-712 spec Typed Data information.
+
+
+
+

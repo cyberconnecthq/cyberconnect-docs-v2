@@ -1,0 +1,35 @@
+---
+id: token
+title: Token
+---
+
+
+The `Token` union type is meant to combine all major Ethereum token interfaces.
+
+```graphql
+union Token = ERC20 | ERC721 | ERC1155
+```
+
+
+### Possible types
+
+#### [`ERC20`](/reference/objects/erc20) 
+
+The `ERC20` type conforms to the standard described in https://ethereum.org/en/developers/docs/standards/tokens/erc-20/.
+Added fields include symbol, decimals.
+
+
+#### [`ERC721`](/reference/objects/erc721) 
+
+The `ERC721` type conforms to the standard described in https://ethereum.org/en/developers/docs/standards/tokens/erc-721/.
+Added fields include symbol, decimals.
+
+
+#### [`ERC1155`](/reference/objects/erc1155) 
+
+The `ERC1155` type conforms to the standard described in https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/.
+ERC-1155 token can do the same functions as an ERC-20 and ERC-721 token, and even both at the same time.
+
+
+
+
