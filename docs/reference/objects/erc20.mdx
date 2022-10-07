@@ -1,0 +1,74 @@
+---
+id: erc20
+title: ERC20
+---
+
+
+The `ERC20` type conforms to the standard described in https://ethereum.org/en/developers/docs/standards/tokens/erc-20/.
+Added fields include symbol, decimals.
+
+```graphql
+type ERC20 implements Contract {
+  contractAddress: ContractAddressEVM!
+  name: String!
+  contract_creation_time: String!
+  block_number: Int!
+  block_hash: String!
+  bytecode: String!
+  symbol: String!
+  decimals: Int!
+}
+```
+
+
+### Fields
+
+#### `contractAddress` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+
+
+
+#### `name` ([`String`](/reference/scalars/string))
+
+
+
+
+#### `contract_creation_time` ([`String`](/reference/scalars/string))
+
+
+
+
+#### `block_number` ([`Int`](/reference/scalars/int))
+
+
+
+
+#### `block_hash` ([`String`](/reference/scalars/string))
+
+
+
+
+#### `bytecode` ([`String`](/reference/scalars/string))
+
+
+
+
+#### `symbol` ([`String`](/reference/scalars/string))
+
+
+
+
+#### `decimals` ([`Int`](/reference/scalars/int))
+
+
+
+
+### Interfaces
+
+#### [`Contract`](/reference/interfaces/contract) 
+
+The `Contract` interface provides base details that should be available for all EVM contracts.
+
+
+
+

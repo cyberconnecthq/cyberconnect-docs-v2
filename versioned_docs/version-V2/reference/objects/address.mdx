@@ -1,0 +1,104 @@
+---
+id: address
+title: Address
+---
+
+
+The `Address` type provides an address information on multiple EVM chains.
+
+```graphql
+type Address {
+  address: AddressEVM!
+  ethWallet: Wallet
+  goerliWallet: Wallet
+  identity: Identity!
+  followers(
+  offset: Int
+  limit: Int
+): FollowConnection!
+  followings(
+  offset: Int
+  limit: Int
+): FollowConnection!
+  followStats: FollowStats!
+  isFollowedBy(
+  addresses: [AddressEVM!]!
+): [Boolean!]!
+  isFollowing(
+  addresses: [AddressEVM!]!
+): [Boolean!]!
+}
+```
+
+
+### Fields
+
+#### `address` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`address` the address.
+
+
+#### `ethWallet` ([`Wallet`](/reference/objects/wallet))
+
+`ethWallet` the wallet address on Ethereum.
+
+
+#### `goerliWallet` ([`Wallet`](/reference/objects/wallet))
+
+`goerliWallet` the wallet address on Goerli.
+
+
+#### `identity` ([`Identity`](/reference/objects/identity))
+
+
+
+
+#### `followers` ([`FollowConnection`](/reference/objects/follow-connection))
+
+
+- ##### `offset` ([`Int`](/reference/scalars/int))
+
+
+
+
+- ##### `limit` ([`Int`](/reference/scalars/int))
+
+
+
+
+#### `followings` ([`FollowConnection`](/reference/objects/follow-connection))
+
+
+- ##### `offset` ([`Int`](/reference/scalars/int))
+
+
+
+
+- ##### `limit` ([`Int`](/reference/scalars/int))
+
+
+
+
+#### `followStats` ([`FollowStats`](/reference/objects/follow-stats))
+
+
+
+
+#### `isFollowedBy` ([`Boolean`](/reference/scalars/boolean))
+
+
+- ##### `addresses` ([`AddressEVM`](/reference/scalars/address-evm))
+
+
+
+
+#### `isFollowing` ([`Boolean`](/reference/scalars/boolean))
+
+
+- ##### `addresses` ([`AddressEVM`](/reference/scalars/address-evm))
+
+
+
+
+
+

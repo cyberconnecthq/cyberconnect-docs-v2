@@ -57,11 +57,11 @@ const config = {
     [
       require.resolve("@edno/docusaurus2-graphql-doc-generator"),
       {
-        schema: "https://api.cybertino.io/connect/",
+        schema: "https://api.cyberconnect.dev/",
         rootPath: "./docs",
-        baseURL: "/cyberconnect-api/reference/",
+        baseURL: "/reference/",
         linkRoot: "/",
-        homepage: "./docs/cyberconnect-api/reference/graphql.md",
+        homepage: "./docs/reference/graphql.md",
         loaders: {
           UrlLoader: "@graphql-tools/url-loader",
         },

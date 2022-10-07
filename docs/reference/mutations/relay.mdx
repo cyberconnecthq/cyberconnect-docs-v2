@@ -1,0 +1,31 @@
+---
+id: relay
+title: relay
+---
+
+
+`relay` broadcasts a transaction to the EVM chain. This mutation requires an `Authorization` header with a valid `Bearer` token.
+
+```graphql
+relay(
+  input: RelayInput!
+): RelayResult!
+```
+
+
+### Arguments
+
+#### `input` ([`RelayInput`](/reference/inputs/relay-input))
+
+
+
+
+### Type
+
+#### [`RelayResult`](/reference/objects/relay-result) 
+
+The `RelayResult` type provides information about the relayed transaction.
+
+
+
+
