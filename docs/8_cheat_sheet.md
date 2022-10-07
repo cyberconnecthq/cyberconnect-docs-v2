@@ -1,7 +1,7 @@
 ---
-id: cheatSheet
+id: cheat-sheet
 title: Cheat sheet
-slug: cheatSheet
+slug: cheat-sheet
 sidebar_label: Cheat sheet
 sidebar_position: 8
 description: Cheat sheet

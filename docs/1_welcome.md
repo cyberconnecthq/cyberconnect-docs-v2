@@ -45,6 +45,7 @@ import UsecaseCardsV2 from "@site/src/components/UsecaseCardsV2";
         where you will find channels specifically dedicated to developers and
         hackathon events.
     </p>
+    <br></br>
     <p>
     Join the discussion on our{" "}
         <a

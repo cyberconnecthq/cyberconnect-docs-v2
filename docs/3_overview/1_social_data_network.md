@@ -1,13 +1,13 @@
 ---
-id: socialDataNetwork
+id: social-data-network
 title: Social Data Network
-slug: /overview/socialDataNetwork
+slug: /overview/social-data-network
 sidebar_label: Social Data Network
 sidebar_position: 2
 description: Social Data Network
 ---
 
-CyberConnect has two components to help developer build social applications: **Social Data Network** and Interest Graph Engine.
+CyberConnect has two components to help developer build social applications: **Social Data Network** and [Interest Graph Engine](/overview/interest-graph-engine).
 
 ## Modules
 

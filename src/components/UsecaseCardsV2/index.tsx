@@ -16,7 +16,7 @@ type UsecaseItemV2 = {
 
 const UsecaseListV2: UsecaseItemV2[] = [
   {
-    path: "/buildWithCyberConnect/#blogging-with-crowdfunding",
+    path: "/build-with-cyberconnect/#blogging-with-crowdfunding",
     icon: <SiCrowdsource />,
     title: <Translate description="usercase profile">Blogging with Crowdfunding</Translate>,
     description: (
@@ -26,7 +26,7 @@ const UsecaseListV2: UsecaseItemV2[] = [
     ),
   },
   {
-    path: "/buildWithCyberConnect/#sbtnft-issuing-platform",
+    path: "/build-with-cyberconnect/#sbtnft-issuing-platform",
     icon: <BsPersonBadge />,
     title: <Translate description="usercase profile">SBT/NFT issuing platform</Translate>,
     description: (
@@ -36,7 +36,7 @@ const UsecaseListV2: UsecaseItemV2[] = [
     ),
   },
   {
-    path: "/buildWithCyberConnect/#recommendation",
+    path: "/build-with-cyberconnect/#recommendation",
     icon: <BiNetworkChart />,
     title: <Translate description="usercase profile">Recommendation</Translate>,
     description: (

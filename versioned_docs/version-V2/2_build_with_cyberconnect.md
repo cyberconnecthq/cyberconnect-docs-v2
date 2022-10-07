@@ -1,7 +1,7 @@
 ---
-id: buildWithCyberConnect
+id: build-with-cyberconnect
 title: Build with CyberConnect
-slug: /buildWithCyberConnect
+slug: /build-with-cyberconnect
 sidebar_label: Build with CyberConnect
 sidebar_position: 2
 description: Build with CyberConnect
