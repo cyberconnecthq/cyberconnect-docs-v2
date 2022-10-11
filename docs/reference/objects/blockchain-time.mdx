@@ -1,0 +1,30 @@
+---
+id: blockchain-time
+title: BlockchainTime
+---
+
+
+The `BlockchainTime` type provides block information.
+
+```graphql
+type BlockchainTime {
+  blockNumber: Int!
+  blocksBehind: Int!
+}
+```
+
+
+### Fields
+
+#### `blockNumber` ([`Int`](/reference/scalars/int))
+
+`blockNumber` the last synced block number.
+
+
+#### `blocksBehind` ([`Int`](/reference/scalars/int))
+
+`blocksBehind` the number of blocks behind the latest block.
+
+
+
+

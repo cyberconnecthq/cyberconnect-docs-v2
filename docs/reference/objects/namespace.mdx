@@ -1,0 +1,55 @@
+---
+id: namespace
+title: Namespace
+---
+
+
+The `Namespace` type provides information about a namespace.
+
+```graphql
+type Namespace implements Node {
+  id: ID!
+  name: String!
+  chainID: ChainID!
+  contractAddress: ContractAddressEVM!
+  descriptorContract: ContractAddressEVM!
+}
+```
+
+
+### Fields
+
+#### `id` ([`ID`](/reference/scalars/id))
+
+`id` the namespace's unique identifier.
+
+
+#### `name` ([`String`](/reference/scalars/string))
+
+`name` the namespace's name.
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainId` the chain ID of the network this namespace is created on.
+
+
+#### `contractAddress` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`contractAddress` the address of the namespace's contract.
+
+
+#### `descriptorContract` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`descriptorContract` the address of the namespace's descriptor contract.
+
+
+### Interfaces
+
+#### [`Node`](/reference/interfaces/node) 
+
+The `Node` interface follows relay.dev spec.
+
+
+
+

@@ -1,0 +1,36 @@
+---
+id: subscribe
+title: Subscribe
+---
+
+
+The `Subscribe` type provides information about a subscription.
+
+```graphql
+type Subscribe {
+  wallet: Wallet!
+  profile: Profile!
+  blockNumber: Int!
+}
+```
+
+
+### Fields
+
+#### `wallet` ([`Wallet`](/reference/objects/wallet))
+
+`wallet` the wallet address of the Subscriber.
+
+
+#### `profile` ([`Profile`](/reference/objects/profile))
+
+`profile` the profile of the Subscriber.
+
+
+#### `blockNumber` ([`Int`](/reference/scalars/int))
+
+`blockNumber` the block number at which the subscription was created.
+
+
+
+

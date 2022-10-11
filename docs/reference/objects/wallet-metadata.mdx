@@ -1,0 +1,41 @@
+---
+id: wallet-metadata
+title: WalletMetadata
+---
+
+
+The `WalletMetadata` type is the base query for getting information that profiles addresses based on their transaction history.
+
+```graphql
+type WalletMetadata {
+  labels: [String!]
+  projectInteractionStats(
+  offset: Int
+  limit: Int
+): [ProjectLevelInteraction!]
+}
+```
+
+
+### Fields
+
+#### `labels` ([`String`](/reference/scalars/string))
+
+`labels` are internally generated labels for the input address.
+
+
+#### `projectInteractionStats` ([`ProjectLevelInteraction`](/reference/objects/project-level-interaction))
+
+`projectInteractionStats` provides a list of sorted tx counts with named/known projects
+- ##### `offset` ([`Int`](/reference/scalars/int))
+
+
+
+
+- ##### `limit` ([`Int`](/reference/scalars/int))
+
+
+
+
+
+

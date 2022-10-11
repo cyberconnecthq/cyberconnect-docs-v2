@@ -1,0 +1,42 @@
+---
+id: page-info
+title: PageInfo
+---
+
+
+The `PageInfo` type provides pagination info for lists.
+
+```graphql
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: Cursor
+  endCursor: Cursor
+}
+```
+
+
+### Fields
+
+#### `hasNextPage` ([`Boolean`](/reference/scalars/boolean))
+
+`hasNextPage` wether there are results in the connection after the current page.
+
+
+#### `hasPreviousPage` ([`Boolean`](/reference/scalars/boolean))
+
+`hasPreviousPage` whether there are results in the connection before the current page..
+
+
+#### `startCursor` ([`Cursor`](/reference/scalars/cursor))
+
+`startCursor` the cursor of the first item in the current page.
+
+
+#### `endCursor` ([`Cursor`](/reference/scalars/cursor))
+
+`endCursor` the cursor of the last item in the current page.
+
+
+
+

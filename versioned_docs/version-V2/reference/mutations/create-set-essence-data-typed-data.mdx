@@ -1,0 +1,31 @@
+---
+id: create-set-essence-data-typed-data
+title: createSetEssenceDataTypedData
+---
+
+
+`createSetEssenceDataTypedData` returns an EIP-712 spec Typed Data message to sign with a wallet in order to set the essence data. This mutation requires an `Authorization` header with a valid `Bearer` token.
+
+```graphql
+createSetEssenceDataTypedData(
+  input: CreateSetEssenceDataTypedDataInput!
+): CreateSetEssenceDataTypedDataResult!
+```
+
+
+### Arguments
+
+#### `input` ([`CreateSetEssenceDataTypedDataInput`](/reference/inputs/create-set-essence-data-typed-data-input))
+
+
+
+
+### Type
+
+#### [`CreateSetEssenceDataTypedDataResult`](/reference/objects/create-set-essence-data-typed-data-result) 
+
+The `CreateSetEssenceDataTypedDataResult` type provides the generated EIP-712 spec Typed Data information.
+
+
+
+

@@ -1,0 +1,36 @@
+---
+id: subscribe-connection
+title: SubscribeConnection
+---
+
+
+The `SubscribeConnection` type provides a paginated list of `SubscribeEdge` along with the total count of subscriptions.
+
+```graphql
+type SubscribeConnection {
+  totalCount: Int!
+  pageInfo: PageInfo!
+  edges: [SubscribeEdge]
+}
+```
+
+
+### Fields
+
+#### `totalCount` ([`Int`](/reference/scalars/int))
+
+`totalCount` the total number of subscriptions.
+
+
+#### `pageInfo` ([`PageInfo`](/reference/objects/page-info))
+
+`pageInfo` contains information about the current page.
+
+
+#### `edges` ([`SubscribeEdge`](/reference/objects/subscribe-edge))
+
+`edges` list of `SubscribeEdge` objects.
+
+
+
+
