@@ -1,10 +1,10 @@
 ---
 id: quick-setup
 title: Quick Setup
-slug: /how-to/build-a-nft-sbt-platform/quick-setup
+slug: /how-to/build-nft-sbt-platform/quick-setup
 sidebar_label: Quick Setup
 sidebar_position: 1
-description: How to Build a NFT/SBT platform - Quick Setup
+description: How to Build NFT/SBT platform - Quick Setup
 ---
 
 This guide will cover all the necessary steps and teach you how to create a NFT/SBT issuing platform. You are going to build this project using [React.js](https://reactjs.org/).
@@ -41,10 +41,10 @@ The demo presented in this guide is using the **CyberConnect Profile** smart con
 
 The demo in this guide covers the following steps:
 
-1. [Authentication](/how-to/build-a-nft-sbt-platform/authentication)
-2. [Create Profile NFT](/how-to/build-a-nft-sbt-platform/create-profile-nft)
-3. [Create Essence NFT](/how-to/build-a-nft-sbt-platform/create-essence-nft)
-4. [Collect Essence NFT](/how-to/build-a-nft-sbt-platform/collect-essence-nft)
+1. [Authentication](/how-to/build-nft-sbt-platform/authentication)
+2. [Create Profile NFT](/how-to/build-nft-sbt-platform/create-profile-nft)
+3. [Create Essence NFT](/how-to/build-nft-sbt-platform/create-essence-nft)
+4. [Collect Essence NFT](/how-to/build-nft-sbt-platform/collect-essence-nft)
 
 ### Github
 

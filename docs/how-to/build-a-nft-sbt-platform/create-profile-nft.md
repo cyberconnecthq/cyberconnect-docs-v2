@@ -1,10 +1,10 @@
 ---
 id: create-profile-nft
 title: Create Profile NFT
-slug: /how-to/build-a-nft-sbt-platform/create-profile-nft
+slug: /how-to/build-nft-sbt-platform/create-profile-nft
 sidebar_label: Create Profile NFT
 sidebar_position: 3
-description: How to Build a NFT/SBT platform - Create Profile NFT
+description: How to Build NFT/SBT platform - Create Profile NFT
 ---
 
 To allow the user to create a profile, you'll need to implement a way to interact with the Profile NFT contract directly from the user's wallet. This can be achieved with the help of that particular Profile NFT contract's ABI.
@@ -247,4 +247,4 @@ function CreateProfileNFTBtn({
 export default CreateProfileNFTBtn;
 ```
 
-Nice work! You've officially implemented the functionality to create a profile! In the next section you will learn how to [Create an Essence NFT](/how-to/build-a-nft-sbt-platform/create-essence-nft).
+Nice work! You've officially implemented the functionality to create a profile! In the next section you will learn how to [Create an Essence NFT](/how-to/build-nft-sbt-platform/create-essence-nft).

@@ -1,10 +1,10 @@
 ---
 id: collect-essence-nft
 title: Collect Essence NFT
-slug: /how-to/build-a-nft-sbt-platform/collect-essence-nft
+slug: /how-to/build-nft-sbt-platform/collect-essence-nft
 sidebar_label: Collect Essence NFT
 sidebar_position: 5
-description: How to Build a NFT/SBT platform - Collect Essence NFT
+description: How to Build NFT/SBT platform - Collect Essence NFT
 ---
 
 In order to allow the user to Collect an Essence NFT, you will actually be implementing the steps described in the [Collect Essence](/guides/mutation/collect-essence) section.
