@@ -3,7 +3,7 @@ id: social-data-network
 title: Social Data Network
 slug: /overview/social-data-network
 sidebar_label: Social Data Network
-sidebar_position: 2
+sidebar_position: 1
 description: Social Data Network
 ---
 

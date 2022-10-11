@@ -1,10 +1,10 @@
 ---
 id: create-essence-nft
 title: Create Essence NFT
-slug: /how-to/build-a-nft-sbt-platform/create-essence-nft
+slug: /how-to/build-nft-sbt-platform/create-essence-nft
 sidebar_label: Create Essence NFT
 sidebar_position: 4
-description: How to Build a NFT/SBT platform - Create Essence NFT
+description: How to Build NFT/SBT platform - Create Essence NFT
 ---
 
 In order to Create an Essence NFT, you will actually be implementing the steps described in the [Register Essence](/guides/mutation/register-essence) section.
@@ -268,4 +268,4 @@ export default CreateEssenceNFTBtn;
 
 The `relay` will return as a reponse the `txHash` that you can verify on [goerli.etherscan.io](https://goerli.etherscan.io/) to check that the SBT was indeed created!
 
-Well done! Next up, you will learn how to implement the [Collect an Essence NFT](/how-to/build-a-nft-sbt-platform/collect-essence-nft) functionality.
+Well done! Next up, you will learn how to implement the [Collect an Essence NFT](/how-to/build-nft-sbt-platform/collect-essence-nft) functionality.

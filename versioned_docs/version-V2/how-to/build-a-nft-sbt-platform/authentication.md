@@ -1,10 +1,10 @@
 ---
 id: authentication
 title: Authentication
-slug: /how-to/build-a-nft-sbt-platform/authentication
+slug: /how-to/build-nft-sbt-platform/authentication
 sidebar_label: Authentication
 sidebar_position: 2
-description: How to Build an SBT app - Authentication
+description: How to Build NFT/SBT platform - Authentication
 ---
 
 For authentication, you will actually be implementing the [User Login](/guides/authentication/user-login) flow to receive the `accessToken` that will be used later on in this guide to create an essence NFT.
@@ -173,4 +173,4 @@ function LoginBtn({
 export default LoginBtn;
 ```
 
-This wraps up the Authentication process! In the next section you will learn how to [Create a Profile NFT](/how-to/build-a-nft-sbt-platform/create-profile-nft) by interacting directly with the smart contract.
+This wraps up the Authentication process! In the next section you will learn how to [Create a Profile NFT](/how-to/build-nft-sbt-platform/create-profile-nft) by interacting directly with the smart contract.
