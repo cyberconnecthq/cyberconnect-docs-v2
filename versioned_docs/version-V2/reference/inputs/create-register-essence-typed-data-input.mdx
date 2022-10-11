@@ -13,7 +13,7 @@ input CreateRegisterEssenceTypedDataInput {
   name: String!
   symbol: String!
   tokenURI: URL!
-  mwContract: ContractAddressEVM!
+  middleware: EssenceMiddleware!
   transferable: Boolean!
 }
 ```
@@ -46,9 +46,9 @@ input CreateRegisterEssenceTypedDataInput {
 `tokenURI` the token URI of the essence NFT.
 
 
-#### `mwContract` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+#### `middleware` ([`EssenceMiddleware`](/reference/inputs/essence-middleware))
 
-`mwContract` the contract address of the essence middleware.
+`middleware` the essence middleware to set.
 
 
 #### `transferable` ([`Boolean`](/reference/scalars/boolean))

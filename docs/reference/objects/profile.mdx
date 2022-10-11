@@ -35,12 +35,6 @@ type Profile implements Node {
   subscribeNFT: ContractAddressEVM
   subscribeMw: ContractAddressEVM
   namespace: Namespace!
-  isSubscribedBy(
-  addresses: [AddressEVM!]!
-): [Boolean!]!
-  isSubscribing(
-  addresses: [AddressEVM!]!
-): [Boolean!]!
   subscriberCount: Int!
 }
 ```
@@ -167,22 +161,6 @@ type Profile implements Node {
 #### `namespace` ([`Namespace`](/reference/objects/namespace))
 
 `namespace` information about the profile's namespace.
-
-
-#### `isSubscribedBy` ([`Boolean`](/reference/scalars/boolean))
-
-`isSubscribedBy` provides the subscription status of a specified list of addresses.
-- ##### `addresses` ([`AddressEVM`](/reference/scalars/address-evm))
-
-
-
-
-#### `isSubscribing` ([`Boolean`](/reference/scalars/boolean))
-
-
-- ##### `addresses` ([`AddressEVM`](/reference/scalars/address-evm))
-
-
 
 
 #### `subscriberCount` ([`Int`](/reference/scalars/int))

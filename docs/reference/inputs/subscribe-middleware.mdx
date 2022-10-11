@@ -1,0 +1,36 @@
+---
+id: subscribe-middleware
+title: SubscribeMiddleware
+---
+
+
+The `SubscribeMiddleware` input type specifies the middleware to set.
+
+```graphql
+input SubscribeMiddleware {
+  subscribeFree: Boolean
+  subscribePaid: subscribePaidMwParams
+  customMiddleware: customMwParams
+}
+```
+
+
+### Fields
+
+#### `subscribeFree` ([`Boolean`](/reference/scalars/boolean))
+
+`subscribeFree` the default module where the subscription to the profile is free.
+
+
+#### `subscribePaid` ([`subscribePaidMwParams`](/reference/inputs/subscribe-paid-mw-params))
+
+`subscribePaid` the subscription to the profile requires the subscriber to pay a fee.
+
+
+#### `customMiddleware` ([`customMwParams`](/reference/inputs/custom-mw-params))
+
+`customMiddleware` for setting a custom middleware.
+
+
+
+

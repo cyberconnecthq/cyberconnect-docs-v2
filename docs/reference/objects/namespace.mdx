@@ -13,17 +13,6 @@ type Namespace implements Node {
   chainID: ChainID!
   contractAddress: ContractAddressEVM!
   descriptorContract: ContractAddressEVM!
-  syncedAt: BlockchainTime!
-  profileByHandle(
-  handle: String!
-): Profile
-  profiles(
-  after: Cursor
-  first: Int
-  before: Cursor
-  last: Int
-  orderBy: ProfileOrder
-): ProfileConnection!
 }
 ```
 
@@ -53,47 +42,6 @@ type Namespace implements Node {
 #### `descriptorContract` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
 
 `descriptorContract` the address of the namespace's descriptor contract.
-
-
-#### `syncedAt` ([`BlockchainTime`](/reference/objects/blockchain-time))
-
-`syncedAt` the last time the namespace was synced.
-
-
-#### `profileByHandle` ([`Profile`](/reference/objects/profile))
-
-`profileByHandle` provides information about a profile based on the profile's `handle` input.
-- ##### `handle` ([`String`](/reference/scalars/string))
-
-
-
-
-#### `profiles` ([`ProfileConnection`](/reference/objects/profile-connection))
-
-`profiles` provides a paginated list of ordered profiles.
-- ##### `after` ([`Cursor`](/reference/scalars/cursor))
-
-`after` the cursor to retreive results after.
-
-
-- ##### `first` ([`Int`](/reference/scalars/int))
-
-`first` the maximum number of profiles to return after a cursor.
-
-
-- ##### `before` ([`Cursor`](/reference/scalars/cursor))
-
-`before` the cursor to retreive results before.
-
-
-- ##### `last` ([`Int`](/reference/scalars/int))
-
-`last` the maximum number of profiles to return before a cursor.
-
-
-- ##### `orderBy` ([`ProfileOrder`](/reference/inputs/profile-order))
-
-`orderBy` the order in which results are returned.
 
 
 ### Interfaces

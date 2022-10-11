@@ -50,12 +50,12 @@ type Address {
 
 #### `identity` ([`Identity`](/reference/objects/identity))
 
-
+`identity` provides information about a user's identity.
 
 
 #### `followers` ([`FollowConnection`](/reference/objects/follow-connection))
 
-
+`followers` provides a paginated list of ordered followers profiles.
 - ##### `offset` ([`Int`](/reference/scalars/int))
 
 
@@ -68,7 +68,7 @@ type Address {
 
 #### `followings` ([`FollowConnection`](/reference/objects/follow-connection))
 
-
+`followings` provides a paginated list of ordered followings profiles.
 - ##### `offset` ([`Int`](/reference/scalars/int))
 
 
@@ -81,12 +81,12 @@ type Address {
 
 #### `followStats` ([`FollowStats`](/reference/objects/follow-stats))
 
-
+`followStats` returns stats about a user's followers and followings
 
 
 #### `isFollowedBy` ([`Boolean`](/reference/scalars/boolean))
 
-
+`isFollowedBy` returns the `followed by` status of one or multiple addresses.
 - ##### `addresses` ([`AddressEVM`](/reference/scalars/address-evm))
 
 
@@ -94,7 +94,7 @@ type Address {
 
 #### `isFollowing` ([`Boolean`](/reference/scalars/boolean))
 
-
+`isFollowing` returns the `following` status to one or multiple addresses.
 - ##### `addresses` ([`AddressEVM`](/reference/scalars/address-evm))
 
 
