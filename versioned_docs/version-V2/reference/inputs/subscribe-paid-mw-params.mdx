@@ -1,0 +1,48 @@
+---
+id: subscribe-paid-mw-params
+title: subscribePaidMwParams
+---
+
+
+The `subscribePaidMwParams` input type specifies the `subscribePaid` middleware params.
+
+```graphql
+input subscribePaidMwParams {
+  amount: Int!
+  recipient: AddressEVM!
+  currency: ContractAddressEVM!
+  nftRequired: Boolean!
+  nftAddress: ContractAddressEVM!
+}
+```
+
+
+### Fields
+
+#### `amount` ([`Int`](/reference/scalars/int))
+
+`amount` the amount to pay.
+
+
+#### `recipient` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`recipient` the recipient wallet address.
+
+
+#### `currency` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`currency` the currency contract address.
+
+
+#### `nftRequired` ([`Boolean`](/reference/scalars/boolean))
+
+`nftRequired` if holding an nft is required.
+
+
+#### `nftAddress` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`nftAddress` the nft contract address.
+
+
+
+

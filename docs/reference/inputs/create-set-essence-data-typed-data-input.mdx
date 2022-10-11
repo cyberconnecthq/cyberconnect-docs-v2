@@ -12,7 +12,7 @@ input CreateSetEssenceDataTypedDataInput {
   profileId: Int!
   essenceId: Int!
   tokenURI: URL!
-  mwAddress: ContractAddressEVM!
+  middleware: EssenceMiddleware!
 }
 ```
 
@@ -39,9 +39,9 @@ input CreateSetEssenceDataTypedDataInput {
 `tokenURI` the token URI of the essence.
 
 
-#### `mwAddress` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+#### `middleware` ([`EssenceMiddleware`](/reference/inputs/essence-middleware))
 
-`mwAddress` the address of the middleware contract.
+`middleware` the essence middleware to set.
 
 
 
