@@ -20,7 +20,7 @@ npx create-react-app my-app --template typescript
 or
 
 ```bash
-yarn  create-react-app my-app --template typescript
+yarn create-react-app my-app --template typescript
 ```
 
 ## Apollo client

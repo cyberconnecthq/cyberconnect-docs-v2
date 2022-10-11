@@ -4,7 +4,7 @@ title: Authentication
 slug: /how-to/build-a-nft-sbt-platform/authentication
 sidebar_label: Authentication
 sidebar_position: 2
-description: How to Build an SBT app - Authentication
+description: How to Build a NFT/SBT platform - Authentication
 ---
 
 For authentication, you will actually be implementing the [User Login](/guides/authentication/user-login) flow to receive the `accessToken` that will be used later on in this guide to create an essence NFT.
