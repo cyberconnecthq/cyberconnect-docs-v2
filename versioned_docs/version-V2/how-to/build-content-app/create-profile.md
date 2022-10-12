@@ -46,49 +46,70 @@ When writing the logic for the `connectWallet` function there are a couple of th
 -   a bit of error handling (e.g. when user rejects the connection);
 
 ```tsx title="src/App.tsx"
-const connectWallet = async () => {
-    try {
-        /* Function to detect most providers injected at window.ethereum */
-        const detectedProvider =
-            (await detectEthereumProvider()) as ExternalProvider;
+import { ethers } from "ethers";
+import detectEthereumProvider from "@metamask/detect-provider";
+import { ExternalProvider, Web3Provider } from "@ethersproject/providers";
 
-        /* Check if the Ethereum provider exists */
-        if (!detectedProvider) {
-            throw new Error("Please install MetaMask!");
+function ConnectWalletBtn({
+    setAddress,
+    setProvider,
+    disabled,
+}: {
+    setAddress: (address: string | undefined) => void;
+    setProvider: (provider: Web3Provider | undefined) => void;
+    disabled: boolean;
+}) {
+    const handleOnClick = async () => {
+        try {
+            /* Function to detect most providers injected at window.ethereum */
+            const detectedProvider =
+                (await detectEthereumProvider()) as ExternalProvider;
+
+            /* Check if the Ethereum provider exists */
+            if (!detectedProvider) {
+                throw new Error("Please install MetaMask!");
+            }
+
+            /* Ethers Web3Provider wraps the standard Web3 provider injected by MetaMask */
+            const web3Provider = new ethers.providers.Web3Provider(
+                detectedProvider
+            );
+
+            /* Connect to Ethereum. MetaMask will ask permission to connect user accounts */
+            await web3Provider.send("eth_requestAccounts", []);
+
+            /* Get the signer from the provider */
+            const signer = web3Provider.getSigner();
+
+            /* Get the address of the connected wallet */
+            const address = await signer.getAddress();
+
+            /* Set the providers in the state variables */
+            setProvider(web3Provider);
+
+            /* Set the address in the state variable */
+            setAddress(address);
+        } catch (error) {
+            /* This error code indicates that the user rejected the connection */
+            if (error.code === 4001) {
+                /* Reset the state variables */
+                setProvider(undefined);
+                setAddress(undefined);
+            } else {
+                /* Display error message */
+                alert(error.message);
+            }
         }
+    };
 
-        /* Ethers Web3Provider wraps the standard Web3 provider injected by MetaMask */
-        const web3Provider = new ethers.providers.Web3Provider(
-            detectedProvider
-        );
+    return (
+        <button onClick={handleOnClick} disabled={disabled}>
+            Connect Wallet
+        </button>
+    );
+}
 
-        /* Connect to Ethereum. MetaMask will ask permission to connect user accounts */
-        await web3Provider.send("eth_requestAccounts", []);
-
-        /* Get the signer from the provider */
-        const signer = web3Provider.getSigner();
-
-        /* Get the address of the connected wallet */
-        const address = await signer.getAddress();
-
-        /* Set the providers in the state variables */
-        setProvider(web3Provider);
-
-        /* Set the address in the state variable */
-        setAddress(address);
-    } catch (error) {
-        /* This error code indicates that the user rejected the connection */
-        if (error.code === 4001) {
-            /* Reset the state variables */
-            setProvider(undefined);
-            setAddress(undefined);
-        } else {
-            /* Display error message */
-            alert(error.message);
-            console.error(error);
-        }
-    }
-};
+export default ConnectWalletBtn;
 ```
 
 There is one more important thing to implement. You also have to write the logic for a `checkNetwork` function. This is a function that will also be used throughout the application. Every single time the user uses its wallet, you have to make sure its on the correct network.
@@ -148,17 +169,25 @@ useEffect(() => {
 }, [provider, address]);
 ```
 
-For now, the `App` will just return a `button` to guide the user to connect with MetaMask and display the `address` once that connection is done. Further down the line you will update the app and add some style to make it beautiful.
+For now, the `App` will just return the `ConnectWalletBtn` to guide the user to connect with MetaMask and display the `address` once that connection is done.
 
 ```tsx title="src/App.tsx"
-if (!address) {
-    return <button onClick={connectWallet}>Connect with MetaMask</button>;
-}
-
 return (
-    <div>
-        <p>Connected with MetaMask</p>
-        <p>Address: {address}</p>
+    <div className="App">
+        <div className="container">
+            <h2>Connect Wallet</h2>
+            <ConnectWalletBtn
+                setProvider={setProvider}
+                setAddress={setAddress}
+                disabled={Boolean(provider)}
+            />
+            {provider && address && (
+                <div>
+                    <div>Address:</div>
+                    <div>{address}</div>
+                </div>
+            )}
+        </div>
     </div>
 );
 ```
@@ -343,10 +372,10 @@ const [handle, setHandle] = useState<string | undefined>(undefined);
 
 When writing the logic for the `CreateProfileBtn` button there are a couple of things to keep in mind:
 
--   collect user input and construct the metadata object;
--   upload the metadata to IPFS;
--   create the profile and get the profile id;
--   update the state of the variables;
+-   Collect user input and construct the metadata object;
+-   Upload the metadata to IPFS;
+-   Create the profile and get the profile id;
+-   Update the state of the variables;
 
 ```tsx title="src/components/CreateProfileBtn.tsx"
 import { ethers } from "ethers";
@@ -403,10 +432,10 @@ function CreateProfileBtn({
                 handle: handle,
                 version: "1.0.0",
             };
-
+            console.log("IPFS Hash:", metadata);
             /* Upload metadata to IPFS */
             const ipfsHash = await pinJSONToIPFS(metadata);
-
+            console.log("IPFS Hash:", ipfsHash);
             /* Get the signer from the provider */
             const signer = provider.getSigner();
 
@@ -467,25 +496,41 @@ function CreateProfileBtn({
 export default CreateProfileBtn;
 ```
 
-Now you can import the `CreateProfileBtn` in the app and test it out.
+Now you can import the `CreateProfileBtn` in the app and test it out. Once the transaction is confirmed, the `handle` will update and you will be able to see the profile NFT.
 
 ```tsx title="src/App.tsx"
-if (!address) {
-    return <button onClick={connectWallet}>Connect with MetaMask</button>;
-}
-
 return (
-    <div>
-        <p>Connected with MetaMask</p>
-        <p>Address: {address}</p>
-        <CreateProfileBtn
-            provider={provider}
-            address={address}
-            checkNetwork={checkNetwork}
-            setProfileID={setProfileID}
-            setHandle={setHandle}
-            disabled={!provider}
-        />
+    <div className="App">
+        <div className="container">
+            <h2>Connect Wallet</h2>
+            <ConnectWalletBtn
+                setProvider={setProvider}
+                setAddress={setAddress}
+                disabled={Boolean(provider)}
+            />
+            {provider && address && (
+                <div>
+                    <div>Address:</div>
+                    <div>{address}</div>
+                </div>
+            )}
+            <h2>Create Profile</h2>
+            <CreateProfileBtn
+                provider={provider}
+                address={address}
+                checkNetwork={checkNetwork}
+                setProfileID={setProfileID}
+                setHandle={setHandle}
+                disabled={!Boolean(provider && address)}
+            />
+            {handle && (
+                <iframe
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    height="100%"
+                    sandbox="allow-scripts"
+                    src={`https://cyberconnect.mypinata.cloud/ipfs/bafkreic7ur7evrpy45md2xpth3zvy4mjcczzodjg7xciupty6dvmliye6i?handle=${handle}`}></iframe>
+            )}
+        </div>
     </div>
 );
 ```
@@ -498,4 +543,4 @@ You can also view the NFT for the profile on [testnets.opensea.io](https://testn
 
 ![nft profile](/img/v2/build-content-app-create-profile-nft.png)
 
-Great job! You've created your first profile! In the next section you will learn how to [Create an Essence NFT](/how-to/build-nft-sbt-platform/create-essence-nft).
+Great job! You've created your first profile! In the next section we will go over and implement the [Authentication](/how-to/build-content-app/authentication) process.
