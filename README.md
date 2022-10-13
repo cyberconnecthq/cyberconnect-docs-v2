@@ -49,7 +49,7 @@ This command starts a local development server and opens up a browser window. Mo
 ```
 $ yarn update-version V2
 ```
-This command update auto-generated code. Include them into the commit.
+This command updates auto-generated code. Include them into the commit.
 
 ## Contact
 
