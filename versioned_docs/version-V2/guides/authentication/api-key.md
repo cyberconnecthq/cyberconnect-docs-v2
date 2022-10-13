@@ -14,7 +14,7 @@ As a developer you’ll need an API Key for your social application to enable yo
 Using API Keys makes sure that
 
 1. social data live under specific namespace that belongs to a developer
-2. no other developer could forge data that don’t belong to their namespace.
+2. no other developer could forge data that don’t belong to their origin.
 
 In the future we’ll gradually replace API Key method with Public Key Infrastructure (PKI).
 
