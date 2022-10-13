@@ -7,6 +7,14 @@ sidebar_position: 9
 description: Cheat sheet
 ---
 
+## Playground Link
+
+### Release (only indexing on mainnets) 
+https://api.stg.cyberconnect.dev/playground
+
+### Stage (indexing on both mainnets and testnets)
+https://api.cyberconnect.dev/playground
+
 ## Deployment Addresses
 
 The followings are deployed smart contracts addresses for CyberConnect protocol.
