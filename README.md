@@ -44,6 +44,13 @@ $ yarn start
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 <br></br>
 
+### Update Version
+
+```
+$ yarn update-version V2
+```
+This command update auto-generated code. Include them into the commit.
+
 ## Contact
 
 These are our communication channels, so feel free to contact us:
