@@ -15,7 +15,7 @@ Collecting an essence can be implemented in just a few easy steps. What collecti
 
 1. First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createCollectEssenceTypedData` API that takes care of this.
 
-    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
+   If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
 import PostmanCard from "@site/src/components/PostmanCard";
 
@@ -42,7 +42,7 @@ You can now verify the transaction by looking up the `txHash` from the response 
 We’ve created an example that incorporates all the steps for Collect Essence. Feel free to experiment with our code in the sandbox below. This covers a couple of steps
 
 1. Login with wallet
-2. Subscribe to a profile
+2. Collect the Essence
 
 <iframe src="https://codesandbox.io/embed/collect-essence-phlqfs?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/App.tsx"
     title="collect-essence"
