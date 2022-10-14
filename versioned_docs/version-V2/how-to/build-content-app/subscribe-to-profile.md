@@ -7,7 +7,7 @@ sidebar_position: 4
 description: How to Build Content app - Subscribe to profile
 ---
 
-To allow the user to subscribe to a profile, you will actually be implementing the steps described in the [Subscribe](/guides/mutation/subscribe) section.
+When a user subscribes to a profile, a non-fungible token (NFT) is being minted and transferred to the user's wallet. To make this a reality, you will implement the same steps described in the [Subscribe](/guides/mutation/subscribe) section.
 
 ## GraphQL mutations
 
@@ -35,7 +35,7 @@ export const CREATE_SUBSCRIBE_TYPED_DATA = gql`
 `;
 ```
 
-2. `Relay` is responsible for broadcasting the transaction, minting and transfering the NFT:
+2. `Relay` is responsible for broadcasting the transaction, minting and transferring the NFT:
 
 ```tsx title="graphql/Relay.ts"
 import { gql } from "@apollo/client";
@@ -59,7 +59,7 @@ export const RELAY = gql`
 `;
 ```
 
-You know what APIs to use and all is left to do is connect them:
+Now that you know what APIs to use, the only thing left is to make the connection between them, like so:
 
 1. Get data in a readable format and the `typedDataID` for it;
 2. Get the user to sign the message data and get its `signature`;
