@@ -1,13 +1,14 @@
 ---
 id: subscribe-to-profile
-title: Subscribe to profile
+title: Subscribe to Profile
 slug: /how-to/build-content-app/subscribe-to-profile
-sidebar_label: Subscribe to profile
+sidebar_label: Subscribe to Profile
 sidebar_position: 4
-description: How to Build Content app - Subscribe to profile
+description: How to Build Content app - Subscribe to Profile
 ---
 
-When a user subscribes to a profile, a non-fungible token (NFT) is being minted and transferred to the user's wallet. To make this a reality, you will implement the same steps described in the [Subscribe](/guides/mutation/subscribe) section.
+In this section you'll learn how to implement the subscribe functionality. Under the hood, when the user subscribes to a profile, a non-fungible token (NFT) is minted and automatically transferred to the user's wallet.
+To make this a reality, you will implement the same steps described in the [Subscribe](/guides/mutation/subscribe) section.
 
 ## GraphQL mutations
 
@@ -58,6 +59,8 @@ export const RELAY = gql`
     }
 `;
 ```
+
+## Subscribe to Profile
 
 Now that you know what APIs to use, the only thing left is to make the connection between them, like so:
 
@@ -135,4 +138,4 @@ try {
 
 If the process was successful, you can verify the logged transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
 
-Next up we will cover content and how it relates to the Essence NFT in the [Create Content](/how-to/build-content-app/create-a-post) section.
+Next up we will cover content and how it relates to the Essence NFT in the [Create a post](/how-to/build-content-app/create-a-post) section.
