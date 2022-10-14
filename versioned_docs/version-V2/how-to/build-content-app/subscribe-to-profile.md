@@ -135,4 +135,4 @@ try {
 
 If the process was successful, you can verify the logged transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
 
-Next up we will cover content and how it relates to the Essence NFT in the [Create Content](/how-to/build-content-app/create-content) section.
+Next up we will cover content and how it relates to the Essence NFT in the [Create Content](/how-to/build-content-app/create-a-post) section.
