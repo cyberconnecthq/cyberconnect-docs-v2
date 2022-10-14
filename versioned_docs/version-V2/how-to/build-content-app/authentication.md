@@ -243,4 +243,4 @@ return (
 ```
 
 This is it! Congrats! Now that you have an access token, you will be able to make queries and mutations that will allow you to add many features to your app.
-Next up we will cover content and how it relates to the Essence NFT in the [Create Essence](/how-to/build-content-app/create-essence).
+Next up we will cover content and how it relates to the Essence NFT in the [Create Content](/how-to/build-content-app/create-content) section.

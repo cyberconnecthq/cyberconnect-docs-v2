@@ -7,20 +7,20 @@ sidebar_position: 1
 description: How to Build Content app - Quick Setup
 ---
 
-This guide will teach you how to create your own content application from scratch using [React.js](https://reactjs.org/).
+This guide will teach you how to create your own content application from scratch using [Next.js](https://nextjs.org/).
 
 ## Installation
 
 Make sure that you have installed [Node.js](https://nodejs.org/en/download/) on your computer and [MetaMask](https://metamask.io/) extension in your Chrome browser. Once they are installed you can open the terminal and run the command:
 
 ```bash
-npx create-react-app cc-content-app --template typescript
+npx create-next-app@latest --ts
 ```
 
 or
 
 ```bash
-yarn create-react-app cc-content-app --template typescript
+yarn create next-app --typescript
 ```
 
 ## Apollo client
@@ -39,11 +39,5 @@ The app you're going to build by following this guide is using the **Link3 Profi
 
 :::
 
-### GitHub
-
-You can find the full code for the demo on GitHub:
-[https://github.com/cyberconnecthq/cc-content-app.git](https://github.com/cyberconnecthq/cc-content-app.git).
-
-### Sandbox
-
-[coming soon]
+You can find the full code on GitHub
+[https://github.com/cyberconnecthq/cc-content-app.git](https://github.com/cyberconnecthq/cc-content-app.git) or directly play around with the live demo [https://cc-content-app.vercel.app/](https://cc-content-app.vercel.app/).
