@@ -17,180 +17,91 @@ The app you're building in this example is using the **Link3 Profile** smart con
 
 ## Connect wallet
 
-The very first step in building any web3 application is to allow the user to connect to the app using its wallet, in this case the MetaMask wallet. Before interacting with a smart contract, the user must connect first to the application.
+The very first step in building any web3 application is to allow the user to connect to the app using its wallet, in this case the MetaMask wallet.
 
-In this example you will be using [Ethers](https://docs.ethers.io/v5/) library since it will make things much easier when it comes to connecting with the wallet and interactiong with a smart contract.
+Whether the user wants to create a profile or subscribe and so on, you nee to make sure that user first connects to the application.
 
-The first function you need to write is the `connectWallet` function and to achieve that you have to install a couple of the packages:
+```tsx title="components/ConnectBtn.tsx"
+try {
+    /* Function to detect most providers injected at window.ethereum */
+    const detectedProvider =
+        (await detectEthereumProvider()) as ExternalProvider;
 
-```bash npm2yarn
-npm install ethers @ethersproject/providers @metamask/detect-provider
-```
-
-Throughout the application you will be using the `provider` and `address` variables, so go ahead and declare them.
-
-```tsx title="src/App.tsx"
-/* State variable to store the provider */
-const [provider, setProvider] = useState<Web3Provider | undefined>(undefined);
-
-/* State variable to store the address */
-const [address, setAddress] = useState<string | undefined>(undefined);
-```
-
-When writing the logic for the `connectWallet` function there are a couple of things to keep in mind:
-
--   detect the Ethereum provider injected by MetaMask;
--   wrap that injected provider into a `Web3Provider`;
--   trigger MetaMask wallet to pop up and ask for the permission to connect user accounts;
--   update the state of the variables;
--   a bit of error handling (e.g. when user rejects the connection);
-
-```tsx title="src/App.tsx"
-import { ethers } from "ethers";
-import detectEthereumProvider from "@metamask/detect-provider";
-import { ExternalProvider, Web3Provider } from "@ethersproject/providers";
-
-function ConnectWalletBtn({
-    setAddress,
-    setProvider,
-    disabled,
-}: {
-    setAddress: (address: string | undefined) => void;
-    setProvider: (provider: Web3Provider | undefined) => void;
-    disabled: boolean;
-}) {
-    const handleOnClick = async () => {
-        try {
-            /* Function to detect most providers injected at window.ethereum */
-            const detectedProvider =
-                (await detectEthereumProvider()) as ExternalProvider;
-
-            /* Check if the Ethereum provider exists */
-            if (!detectedProvider) {
-                throw new Error("Please install MetaMask!");
-            }
-
-            /* Ethers Web3Provider wraps the standard Web3 provider injected by MetaMask */
-            const web3Provider = new ethers.providers.Web3Provider(
-                detectedProvider
-            );
-
-            /* Connect to Ethereum. MetaMask will ask permission to connect user accounts */
-            await web3Provider.send("eth_requestAccounts", []);
-
-            /* Get the signer from the provider */
-            const signer = web3Provider.getSigner();
-
-            /* Get the address of the connected wallet */
-            const address = await signer.getAddress();
-
-            /* Set the providers in the state variables */
-            setProvider(web3Provider);
-
-            /* Set the address in the state variable */
-            setAddress(address);
-        } catch (error) {
-            /* This error code indicates that the user rejected the connection */
-            if (error.code === 4001) {
-                /* Reset the state variables */
-                setProvider(undefined);
-                setAddress(undefined);
-            } else {
-                /* Display error message */
-                alert(error.message);
-            }
-        }
-    };
-
-    return (
-        <button onClick={handleOnClick} disabled={disabled}>
-            Connect Wallet
-        </button>
-    );
-}
-
-export default ConnectWalletBtn;
-```
-
-There is one more important thing to implement. You also have to write the logic for a `checkNetwork` function. This is a function that will also be used throughout the application. Every single time the user uses its wallet, you have to make sure its on the correct network.
-
-This application will be on top of **Goerli Testnet Network** so it's best to declare its chain id as a constant in the `helpers` directory and then imported it.
-
-```tsx title="src/helpers/constants.ts"
-const CHAIN_ID = 5; // Goerli Testnet Network chain id
-```
-
-When checking if the user is connected to the correct network, you mainly have to focus on what should be done if the user is not on the correct chain. The way to handle this is to help the user switch to the correct network and cover the case for when that network isn't in the wallet because you'll have to add it to MetaMask.
-
-```tsx title="src/App.tsx"
-const checkNetwork = async (provider: Web3Provider) => {
-    try {
-        /* Get the network from the provider */
-        const network = await provider.getNetwork();
-
-        /* Check if the network is the correct one */
-        if (network.chainId !== CHAIN_ID) {
-            /* Switch network if the chain id doesn't correspond to Goerli Testnet Network */
-            await provider.send("wallet_switchEthereumChain", [
-                { chainId: "0x" + CHAIN_ID.toString(16) },
-            ]);
-        }
-    } catch (error) {
-        /* This error code indicates that the chain has not been added to MetaMask */
-        if (error.code === 4902) {
-            await provider.send("wallet_addEthereumChain", [
-                {
-                    chainId: "0x" + CHAIN_ID.toString(16),
-                    rpcUrls: ["https://goerli.infura.io/v3/"],
-                },
-            ]);
-        } else {
-            /* Throw the error */
-            throw error;
-        }
+    /* Check if the Ethereum provider exists */
+    if (!detectedProvider) {
+        throw new Error("Please install MetaMask!");
     }
-};
-```
 
-Now that you have your function to check whether or not the user is on the correct network, you can put it in a `useEffect` and add `provider` and `address` as dependecies and the function will be called only after the user connected with its wallet.
+    /* Ethers Web3Provider wraps the standard Web3 provider injected by MetaMask */
+    const web3Provider = new ethers.providers.Web3Provider(detectedProvider);
 
-```tsx title="src/App.tsx"
-useEffect(() => {
-    /* Check if the user connected with wallet */
-    if (!(provider && address)) return;
+    /* Connect to Ethereum. MetaMask will ask permission to connect user accounts */
+    await web3Provider.send("eth_requestAccounts", []);
 
-    try {
-        /* Function to check if the network is the correct one */
-        checkNetwork(provider);
-    } catch (error) {
+    /* Get the signer from the provider */
+    const signer = web3Provider.getSigner();
+
+    /* Get the address of the connected wallet */
+    const address = await signer.getAddress();
+
+    /* Set the providers in the state variables */
+    setProvider(web3Provider);
+
+    /* Set the address in the state variable */
+    setAddress(address);
+
+    /* Display success message */
+    alert("Connected to MetaMask!");
+} catch (error) {
+    /* This error code indicates that the user rejected the connection */
+    if (error.code === 4001) {
+        /* Reset the state variables */
+        setProvider(undefined);
+        setAddress(undefined);
+    } else {
         /* Display error message */
         alert(error.message);
     }
-}, [provider, address]);
+}
 ```
 
-For now, the `App` will just return the `ConnectWalletBtn` to guide the user to connect with MetaMask and display the `address` once that connection is done.
+There is one more important thing to implement. Every time the user uses its wallet, you have to make sure its on the correct network so a check function to verify if the user is connected to the correct network will help with that.
 
-```tsx title="src/App.tsx"
-return (
-    <div className="App">
-        <div className="container">
-            <h2>Connect Wallet</h2>
-            <ConnectWalletBtn
-                setProvider={setProvider}
-                setAddress={setAddress}
-                disabled={Boolean(provider)}
-            />
-            {provider && address && (
-                <div>
-                    <div>Address:</div>
-                    <div>{address}</div>
-                </div>
-            )}
-        </div>
-    </div>
-);
+```tsx title="context/auth.tsx"
+try {
+    /* Get the network from the provider */
+    const network = await provider.getNetwork();
+
+    /* Check if the network is the correct one */
+    if (network.chainId !== CHAIN_ID) {
+        /* Switch network if the chain id doesn't correspond to Goerli Testnet Network */
+        await provider.send("wallet_switchEthereumChain", [
+            { chainId: "0x" + CHAIN_ID.toString(16) },
+        ]);
+
+        /* Trigger a page reload */
+        window.location.reload();
+    }
+} catch (error) {
+    /* This error code indicates that the chain has not been added to MetaMask */
+    if (error.code === 4902) {
+        await provider.send("wallet_addEthereumChain", [
+            {
+                chainId: "0x" + CHAIN_ID.toString(16),
+                rpcUrls: ["https://goerli.infura.io/v3/"],
+            },
+        ]);
+
+        /* Trigger a page reload */
+        window.location.reload();
+    } else {
+        /* Throw the error */
+        throw error;
+    }
+}
 ```
+
+Now that you've solved the main functionalities involving the MetaMask wallet you can move on to bigger things like interacting with the smart contract.
 
 ## Contract ABI
 
@@ -198,9 +109,9 @@ An ABI (Application Binary Interface) is a way to interact with a smart contract
 
 The ABI is simply a JSON file that needs to be imported into your project, and, the best part is that you only need to add the functions that you actually use in your app.
 
-In this example you will be working with Link3 Profile NFT's ABI for the contract `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271`. Since you only need to create a profile and retrieve the profile id after the profile has been created, go ahead a create the .json file containing both the `createProfile` and the `getProfileIdByHandle` functions.
+In this example you will be working with Link3 Profile NFT's ABI for the contract `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271`. Since you only need to create a profile and retrieve the profile id after the profile has been created, go ahead a mention in your .json file the `createProfile` and the `getProfileIdByHandle` functions.
 
-```json title="/src/abi/ProfileNFT.json"
+```json title="abi/ProfileNFT.json"
 [
     {
         "inputs": [
@@ -283,13 +194,13 @@ Then, there is `metadata`, and here is where the Profile NFT starts to shine bec
 
 :::tip
 
-Because `metadata` doesn't follow a specific schema, this allows developers to customize its structure as much as they want.
+`metadata` doesn't follow a specific schema so it allows developers to customize the structure.
 
 :::
 
 This is how the interface for `metadata` looks like for this application:
 
-```tsx title="src/types.ts"
+```tsx title="types.ts"
 /* Metadata schema for Profile NFT */
 interface IProfileMetadata {
     name: string;
@@ -307,232 +218,89 @@ To keep things simple, you won't set any middleware in this example. More on thi
 
 ## Create profile
 
-As mentioned previously, you will be working with the Link3 Profile NFT which means that, for the profile creation, you'll need to have both the `contract` and the `operator` param, so add these constants and import them in your project.
+As mentioned previously, you will be working with the Link3 Profile NFT respectively the `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271` contract.
 
-```tsx title="src/helpers/constants.ts"
-export const PROFILE_NFT_CONTRACT =
-    "0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271"; // Link3 ProfileNFT contract address
+Everything will take place on the client side:
 
-export const PROFILE_NFT_OPERATOR =
-    "0x0000000000000000000000000000000000000000"; // Zero Address
-```
+-   collecting user input and construct the metadata schema;
+-   uploading metadata to IPFS to get the hash;
+-   instantiating the `contract` object to call the `createProfile` and `getProfileIdByHandle` functions.
 
-Next up, you will create a `CreateProfileBtn` component that the user can click on to create its profile.
+```tsx title="components/Buttons/SignupBtn.tsx"
+try {
+    /* Check if the user connected with wallet */
+    if (!(provider && address)) {
+        throw Error("Connect with MetaMask.");
+    }
 
-Before getting into the logic for the button, a couple of packages are needed: `@ngneat/falso` to generate fake data for the `metadata` object and `axios` for a function that will upload it to IPFS.
+    /* Check if the network is the correct one */
+    await checkNetwork(provider);
 
-```bash npm2yarn
-npm install axios @ngneat/falso
-```
+    /* Collect user input */
+    const handle = prompt("Handle:") || randUserName();
+    const avatar = prompt("Avatar URL:") || randAvatar({ size: 200 });
+    const name = prompt("Name:") || randFullName();
+    const bio = prompt("Bio:") || randPhrase();
 
-To construct the `metadata` object you will collect user input or make use of all the great functions that [False](https://ngneat.github.io/falso/) has to offer for generating fake data. Once the object is constructed, you will upload it to IPFS meaning that a function to do this is required.
-
-```tsx title="src/helpers/functions.ts"
-import axios from "axios";
-import { IProfileMetadata } from "../types";
-
-const apiKey = process.env.REACT_APP_PINATA_API_KEY;
-const apiSecret = process.env.REACT_APP_PINATA_API_SECRET;
-
-export const pinJSONToIPFS = async (json: IProfileMetadata) => {
-    const data = JSON.stringify(json);
-    const url = "https://api.pinata.cloud/pinning/pinJSONToIPFS";
-
-    return axios
-        .post(url, data, {
-            headers: {
-                "Content-Type": "application/json",
-                pinata_api_key: apiKey,
-                pinata_secret_api_key: apiSecret,
-            },
-        })
-        .then((response) => response.data.IpfsHash)
-        .catch((error) => {
-            throw error;
-        });
-};
-```
-
-Don't forget to create the `.env` file with your Pinata API key and API secret. If you don't have them, you can go to [Pinata docs](https://docs.pinata.cloud/master) to register and generate them for free. It will only take a couple of minutes.
-
-```
-REACT_APP_PINATA_API_KEY=
-REACT_APP_PINATA_API_SECRET=
-```
-
-Declare state variables for `handle` and `profileID` because those will be neccessary later on after the profile is created.
-
-```tsx title="src/App.tsx"
-/* State variable to store the profile ID */
-const [profileID, setProfileID] = useState<number | undefined>(undefined);
-
-/* State variable to store the handle */
-const [handle, setHandle] = useState<string | undefined>(undefined);
-```
-
-When writing the logic for the `CreateProfileBtn` button there are a couple of things to keep in mind:
-
--   Collect user input and construct the metadata object;
--   Upload the metadata to IPFS;
--   Create the profile and get the profile id;
--   Update the state of the variables;
-
-```tsx title="src/components/CreateProfileBtn.tsx"
-import { ethers } from "ethers";
-import { Web3Provider } from "@ethersproject/providers";
-import ProfileNFTABI from "../abi/ProfileNFT.json";
-import {
-    PROFILE_NFT_CONTRACT,
-    PROFILE_NFT_OPERATOR,
-} from "../helpers/constants";
-import { pinJSONToIPFS } from "../helpers/functions";
-import {
-    randUserName,
-    randAvatar,
-    randPhrase,
-    randFullName,
-} from "@ngneat/falso";
-import { IProfileMetadata } from "../types";
-
-function CreateProfileBtn({
-    provider,
-    address,
-    checkNetwork,
-    setProfileID,
-    setHandle,
-    disabled,
-}: {
-    provider: Web3Provider | undefined;
-    address: string | undefined;
-    checkNetwork: (provider: Web3Provider) => Promise<void>;
-    setProfileID: (profileID: number) => void;
-    setHandle: (handle: string) => void;
-    disabled: boolean;
-}) {
-    const handleOnClick = async () => {
-        try {
-            /* Check if the user connected with wallet */
-            if (!(provider && address)) {
-                throw Error("Connect with MetaMask.");
-            }
-
-            /* Check if the network is the correct one */
-            await checkNetwork(provider);
-
-            /* Collect user input */
-            const handle = prompt("Handle:") || randUserName();
-            const avatar = prompt("Avatar URL:") || randAvatar({ size: 200 });
-            const name = prompt("Name:") || randFullName();
-            const bio = prompt("Bio:") || randPhrase();
-
-            /* Construct metadata schema */
-            const metadata: IProfileMetadata = {
-                name: name,
-                bio: bio,
-                handle: handle,
-                version: "1.0.0",
-            };
-            console.log("IPFS Hash:", metadata);
-            /* Upload metadata to IPFS */
-            const ipfsHash = await pinJSONToIPFS(metadata);
-            console.log("IPFS Hash:", ipfsHash);
-            /* Get the signer from the provider */
-            const signer = provider.getSigner();
-
-            /* Get the contract instance */
-            const contract = new ethers.Contract(
-                PROFILE_NFT_CONTRACT,
-                ProfileNFTABI,
-                signer
-            );
-
-            /* Call the createProfile function to create the profile */
-            const tx = await contract.createProfile(
-                /* CreateProfileParams */
-                {
-                    to: address,
-                    handle: handle,
-                    avatar: avatar,
-                    metadata: ipfsHash,
-                    operator: PROFILE_NFT_OPERATOR,
-                },
-                /* preData */
-                0x0,
-                /* postData */
-                0x0
-            );
-
-            /* Wait for the transaction to be mined */
-            await tx.wait();
-
-            /* Log the transaction hash */
-            console.log("~~ Tx hash ~~");
-            console.log(tx.hash);
-
-            /* Call the getProfileIdByHandle function to get the profile id */
-            const profileID = await contract.getProfileIdByHandle(handle);
-
-            /* Set the profileID in the state variables */
-            setProfileID(Number(profileID));
-
-            /* Set the handle in the state variable */
-            setHandle(handle);
-
-            /* Display success message */
-            alert("Successfully created the profile!");
-        } catch (error) {
-            /* Display error message */
-            alert(error.message);
-        }
+    /* Construct metadata schema */
+    const metadata: IProfileMetadata = {
+        name: name,
+        bio: bio,
+        handle: handle,
+        version: "1.0.0",
     };
 
-    return (
-        <button onClick={handleOnClick} disabled={disabled}>
-            Create Profile
-        </button>
+    /* Upload metadata to IPFS */
+    const ipfsHash = await pinJSONToIPFS(metadata);
+
+    /* Get the signer from the provider */
+    const signer = provider.getSigner();
+
+    /* Get the contract instance */
+    const contract = new ethers.Contract(
+        PROFILE_NFT_CONTRACT,
+        ProfileNFTABI,
+        signer
     );
+
+    /* Call the createProfile function to create the profile */
+    const tx = await contract.createProfile(
+        /* CreateProfileParams */
+        {
+            to: address,
+            handle: handle,
+            avatar: avatar,
+            metadata: ipfsHash,
+            operator: PROFILE_NFT_OPERATOR,
+        },
+        /* preData */
+        0x0,
+        /* postData */
+        0x0
+    );
+
+    /* Wait for the transaction to be mined */
+    await tx.wait();
+
+    /* Log the transaction hash */
+    console.log("~~ Tx hash ~~");
+    console.log(tx.hash);
+
+    /* Call the getProfileIdByHandle function to get the profile id */
+    const profileID = await contract.getProfileIdByHandle(handle);
+
+    /* Set the profileID in the state variables */
+    setProfileID(Number(profileID));
+
+    /* Set the handle in the state variables */
+    setHandle(handle);
+
+    /* Display success message */
+    alert("Successfully created the profile!");
+} catch (error) {
+    /* Display error message */
+    alert(error.message);
 }
-
-export default CreateProfileBtn;
-```
-
-Now you can import the `CreateProfileBtn` in the app and test it out. Once the transaction is confirmed, the `handle` will update and you will be able to see the profile NFT.
-
-```tsx title="src/App.tsx"
-return (
-    <div className="App">
-        <div className="container">
-            <h2>Connect Wallet</h2>
-            <ConnectWalletBtn
-                setProvider={setProvider}
-                setAddress={setAddress}
-                disabled={Boolean(provider)}
-            />
-            {provider && address && (
-                <div>
-                    <div>Address:</div>
-                    <div>{address}</div>
-                </div>
-            )}
-            <h2>Create Profile</h2>
-            <CreateProfileBtn
-                provider={provider}
-                address={address}
-                checkNetwork={checkNetwork}
-                setProfileID={setProfileID}
-                setHandle={setHandle}
-                disabled={!Boolean(provider && address)}
-            />
-            {handle && (
-                <iframe
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    height="100%"
-                    sandbox="allow-scripts"
-                    src={`https://cyberconnect.mypinata.cloud/ipfs/bafkreic7ur7evrpy45md2xpth3zvy4mjcczzodjg7xciupty6dvmliye6i?handle=${handle}`}></iframe>
-            )}
-        </div>
-    </div>
-);
 ```
 
 If the profile was successfully created, you can verify the logged transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
