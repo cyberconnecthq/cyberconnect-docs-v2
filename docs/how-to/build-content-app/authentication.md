@@ -144,4 +144,4 @@ try {
 
 This is it! Pretty simple, right?! Now that you have an access token, you will be able to make queries and mutations that will allow you to add many features to your app.
 
-Next up we will cover content and how it relates to the Essence NFT in the [Create Content](/how-to/build-content-app/create-content) section.
+Next up we will cover how to implement the [Subscribe to profile](/how-to/build-content-app/subscribe-to-profile) functionality.
