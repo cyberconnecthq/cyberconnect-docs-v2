@@ -3,7 +3,7 @@ id: address
 title: Query Address
 slug: /guides/query/address
 sidebar_label: Address
-sidebar_position: 1
+sidebar_position: 2
 description: Query - Address
 ---
 

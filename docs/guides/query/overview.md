@@ -1,10 +1,10 @@
 ---
-id: query-social-data
-title: Query Social Data
-slug: /how-to/build-nft-sbt-platform/query-social-data
-sidebar_label: Query Social Data
-sidebar_position: 5
-description: How to Build NFT/SBT platform - Query Social Data
+id: Overview
+title: Overview
+slug: /guides/query/overview
+sidebar_label: Overview
+sidebar_position: 1
+description: Query - Query Social Data
 ---
 
 ## Schema
