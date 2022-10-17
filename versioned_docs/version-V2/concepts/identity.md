@@ -3,7 +3,7 @@ id: identity
 title: Identity
 slug: /concepts/identity
 sidebar_label: Identity
-sidebar_position: 1
+sidebar_position: 2
 description: Major Concepts of CyberConnect
 ---
 

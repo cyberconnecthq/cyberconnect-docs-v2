@@ -1,10 +1,10 @@
 ---
 id: Overview
 title: Overview
-slug: /guides/query/overview
+slug: /concepts/overview
 sidebar_label: Overview
 sidebar_position: 1
-description: Query - Query Social Data
+description: Concepts - Overview
 ---
 
 ## Schema

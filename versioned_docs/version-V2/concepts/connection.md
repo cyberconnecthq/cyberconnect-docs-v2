@@ -3,7 +3,7 @@ id: connection
 title: Connection
 slug: /concepts/connection
 sidebar_label: Connection
-sidebar_position: 3
+sidebar_position: 4
 description: Major Concepts of CyberConnect
 ---
 

@@ -3,7 +3,7 @@ id: content
 title: Content
 slug: /concepts/content
 sidebar_label: Content
-sidebar_position: 2
+sidebar_position: 3
 description: Major Concepts of CyberConnect
 ---
 
