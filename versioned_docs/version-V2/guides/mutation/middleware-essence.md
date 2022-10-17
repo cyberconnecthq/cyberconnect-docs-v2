@@ -15,6 +15,11 @@ Set middleware for essence is a powerful API that allows developers to customize
 
    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
+   This API sets/updates the parameters for the essence such as `tokenURI` and `middleware` so when a user collects this essence, the Middleware will be triggered and the NFT minted will have the specified Token URI.
+
+   In this example we are setting the `collectPaid` middleware which will require the user to pay a fee to collect the essence.<br/>
+   To view a full list of supported middlewares check out the [Middleware](/concepts/middleware) guide.
+
 import PostmanCard from "@site/src/components/PostmanCard";
 
 <PostmanCard 
