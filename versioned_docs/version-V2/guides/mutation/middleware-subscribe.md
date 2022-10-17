@@ -15,6 +15,11 @@ Set middleware for subscribe is a powerful API that allows developers to customi
 
    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
+   This API sets the parameters for subscribing such as `tokenURI` and `middleware` so when a user subscribes to this profile, the Middleware will be triggered and the NFT minted will have the specified Token URI.
+
+   In this example we are setting the `subscribePaid` middleware which will require the user to pay a fee to subscribe to the profile.<br/>
+   To view a full list of supported middlewares check out the [Middleware](/concepts/middleware) guide.
+
 import PostmanCard from "@site/src/components/PostmanCard";
 
 <PostmanCard 
