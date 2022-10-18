@@ -9,14 +9,9 @@ description: How to Build Content app - Middleware for Post
 
 Middlewares enable dynamic rules for when an action is performed. Middlewares are essentially smart contracts that execute a piece of logic before that action is executed. In this section the action we are looking at is to [Collect a Post](/how-to/build-content-app/collect-a-post).
 
-Middleware for Post can be used for two different purposes:
-
-1. To set the rules on what should happen when a user collects a post (e.g. users should pay a specific ERC-20 token amount or set the number of times the post can be collected);
-2. To set the `tokenURI` of the Essence NFT that get minted and transferred to the collector's wallet address.
+Middleware for Post can be used to set the rules on what should happen when a user collects a post (e.g. users should pay a specific ERC-20 token amount and/or set the number of times the post can be collected with `CollectPaidMw` etc).
 
 ## GraphQL mutations
-
-If you haven't already set the `ApolloClient` please go [Apollo Client](/how-to/build-content-app/authentication#apollo-client) section to do so.
 
 By now this process should be really familiar. Set middleware for post follows the same two step process that requires two GraphQL mutations: `CreateSetEssenceDataTypedData` and `Relay`.
 
@@ -68,17 +63,32 @@ export const RELAY = gql`
 
 ## Middleware for Post
 
+:::info
+
+Setting a middleware for an essence can be done either during the essence registration as it was initially done in the [Create a Post](/how-to/build-content-app/create-a-post) section or after the registration process as described in this section.
+
+:::
+
 :::tip
 
 There are multiple available middlewares that can be implemented. Visit the [Middleware](/concepts/middleware) section to view the full list.
 
 :::
 
-Let's get to the implementation! The approach is almost exactly the same as it was for [Middleware for Subscribe](/how-to/build-content-app/middleware-for-subscribe). In this example you will only enable a rule so that when others want to collect a user's essence they will have to pay 1 LINK to do so. Same process with the difference being highlighted by the parameters that get passed:
+Let's get to the implementation! The approach is almost exactly the same as it was for [Middleware for Subscribe](/how-to/build-content-app/middleware-for-subscribe).
+
+Note that `CreateSetEssenceDataTypedData` allows you to do the following:
+
+1. To set the rules on what should happen when a user collects a post (e.g. users should pay a specific ERC-20 token amount or set the number of times the post can be collected);
+2. To set the `tokenURI` of the Essence NFT that get minted and transferred to the collector's wallet address.
+
+The focus in this example is to set `collectPaid` middleware to enable a rule so that when others want to collect a user's essence they will have to pay 1 LINK to do so.
 
 1. Get data in a readable format and the `typedDataID` for it;
 2. Get the user to sign the message data and get its `signature`;
 3. Call the `relay` and pass it the `typedDataID` and `signature`;
+
+Optionally you can also set the `tokenURI` by constructing the metadata object for the Essence NFT and uploading it to IPFS to get the hash and pass it as a parameter.
 
 ```tsx title="components/SetEssenceBtn.tsx"
 /* Create typed data in a readable format */
