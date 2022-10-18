@@ -8,13 +8,13 @@ description: How to Build Content app - Subscribe to Profile
 ---
 
 In this section you'll learn how to implement the subscribe functionality. Under the hood, when the user subscribes to a profile, a non-fungible token (NFT) is minted and automatically transferred to the user's wallet.
-To make this a reality, you will implement the same steps described in the [Subscribe](/guides/mutation/subscribe) section.
+To make this happen, you will essentially be following the steps described in the [Subscribe](/guides/mutation/subscribe) section.
 
 ## GraphQL mutations
 
-If you haven't already set the `ApolloClient` please go [Authentication](/how-to/build-content-app/authentication) to do so.
+If you haven't already set the `ApolloClient` please go [Apollo Client](/how-to/build-content-app/authentication#apollo-client) section to do so.
 
-Subscribe to a profile is a two step process and requires two GraphQL mutations: `CreateSubscribeTypedData` and `Relay`:
+Subscribe to a profile is a two step process and requires two GraphQL mutations: `CreateSubscribeTypedData` and `Relay`.
 
 1. `CreateSubscribeTypedData` is used to present data to the user in a readable format:
 
@@ -62,80 +62,52 @@ export const RELAY = gql`
 
 ## Subscribe to Profile
 
-Now that you know what APIs to use, the only thing left is to make the connection between them, like so:
+Now you know what APIs to use to implement the Subscribe functionality. The only thing remaining is to make the connection between them, like so:
 
 1. Get data in a readable format and the `typedDataID` for it;
 2. Get the user to sign the message data and get its `signature`;
 3. Call the `relay` and pass it the `typedDataID` and `signature`;
 
 ```tsx title="components/SubscribeBtn.tsx"
-try {
-    /* Check if the user connected with wallet */
-    if (!(provider && address)) {
-        throw Error("Connect with MetaMask.");
-    }
-
-    /* Check if the user logged in */
-    if (!accessToken) {
-        throw Error("You need to log in first.");
-    }
-
-    /* Check if the network is the correct one */
-    await checkNetwork(provider);
-
-    /* Get the signer from the provider */
-    const signer = provider.getSigner();
-
-    /* Get the network from the provider */
-    const network = await provider.getNetwork();
-
-    /* Get the chain id from the network */
-    const chainID = network.chainId;
-
-    /* Create typed data in a readable format */
-    const typedDataResult = await createSubscribeTypedData({
-        variables: {
-            input: {
-                options: {
-                    chainID: chainID,
-                },
-                profileIDs: [profileID],
+/* Create typed data in a readable format */
+const typedDataResult = await createSubscribeTypedData({
+    variables: {
+        input: {
+            options: {
+                chainID: chainID,
             },
+            profileIDs: [profileID],
         },
-    });
-    const typedData = typedDataResult.data?.createSubscribeTypedData?.typedData;
-    const message = typedData.data;
-    const typedDataID = typedData.id;
+    },
+});
+const typedData = typedDataResult.data?.createSubscribeTypedData?.typedData;
+const message = typedData.data;
+const typedDataID = typedData.id;
 
-    /* Get the signature for the message signed with the wallet */
-    const fromAddress = await signer.getAddress();
-    const params = [fromAddress, message];
-    const method = "eth_signTypedData_v4";
-    const signature = await signer.provider.send(method, params);
+/* Get the signature for the message signed with the wallet */
+const fromAddress = await signer.getAddress();
+const params = [fromAddress, message];
+const method = "eth_signTypedData_v4";
+const signature = await signer.provider.send(method, params);
 
-    /* Call the relay to broadcast the transaction */
-    const relayResult = await relay({
-        variables: {
-            input: {
-                typedDataID: typedDataID,
-                signature: signature,
-            },
+/* Call the relay to broadcast the transaction */
+const relayResult = await relay({
+    variables: {
+        input: {
+            typedDataID: typedDataID,
+            signature: signature,
         },
-    });
-    const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
-
-    /* Log the transation hash */
-    console.log("~~ Tx hash ~~");
-    console.log(txHash);
-
-    /* Display success message */
-    alert(`Successfully subscribed to profile!`);
-} catch (error) {
-    /* Display error message */
-    alert(error.message);
-}
+    },
+});
+const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 ```
 
-If the process was successful, you can verify the logged transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
+If the subscribe process was successful, you can verify the transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
+
+![transaction hash](/img/v2/build-content-app-subscribe-to-profile-tx.png)
+
+You can also view the NFT when a user subscribes to a profile on [testnets.opensea.io](testnets.opensea.io). At this stage the NFT doesn't have a middleware set nor a NFT image, but you will learn how to do all that in the [Middleware for Subscribe](/how-to/build-content-app/middleware-for-post).
+
+![nft subscribe](/img/v2/build-content-app-subscribe-to-profile-nft.png)
 
 Next up we will cover content and how it relates to the Essence NFT in the [Create a post](/how-to/build-content-app/create-a-post) section.
