@@ -1,6 +1,6 @@
 ---
 id: following-relationships
-title: Get following Relationships by an EVM address
+title: Get Following Relationships by an EVM address
 slug: /guides/query/following-relationships
 sidebar_label: Following Relationships
 sidebar_position: 5
