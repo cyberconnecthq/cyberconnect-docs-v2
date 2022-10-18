@@ -148,6 +148,97 @@ const apolloData = {
     },
     headers: {},
   },
+  getProfileByHandle: {
+    query: `query getProfileByHandle($chainID: ChainID, $handle: String!){
+  profileByHandle(chainID: $chainID, handle: $handle) {
+    avatar
+    owner {
+      address
+    }
+    isPrimary
+  }
+}`,
+    variables: {
+      chainID: 1,
+      handle: "ryan",
+    },
+    headers: {},
+  },
+  getAddressIdentity: {
+    query: `query getAddressIdentity($address: AddressEVM!){
+  address(address: $address) {
+    identity{
+      socialInfo{
+        github{
+          username
+        }
+        twitter{
+          handle
+        }
+      }
+      ens{
+        domain
+      }
+    }
+  }
+}`,
+    variables: {
+      address: "0x148D59faF10b52063071eDdf4Aaf63A395f2d41c",
+    },
+    headers: {},
+  },
+  getFollowersByAddressEVM: {
+    query: `query getFollowersByAddressEVM($address: AddressEVM!){
+  address(address: $address) {
+    followers(limit: 5) {
+      totalCount
+      edges{
+        node{
+          from {
+            address
+          }
+          to {
+              address
+          }
+        }
+      }
+    }
+    followStats {
+      followerCount
+    }
+  }
+}`,
+    variables: {
+      address: "0x148D59faF10b52063071eDdf4Aaf63A395f2d41c",
+    },
+    headers: {},
+  },
+  getFollowingsByAddressEVM: {
+    query: `query getFollowingsByAddressEVM($address: AddressEVM!){
+  address(address: $address) {
+    followings(limit: 5) {
+      totalCount
+      edges{
+        node{
+          from {
+          address
+          }
+          to {
+            address
+          }
+        }
+      }
+    }
+    followStats {
+      followingCount
+    }
+  }
+}`,
+    variables: {
+      address: "0x148D59faF10b52063071eDdf4Aaf63A395f2d41c",
+    },
+    headers: {},
+  },
   getSubscribingByAddressEVM: {
     query: `query getSubscribingByAddressEVM($address: AddressEVM!) {
   address(address: $address) {

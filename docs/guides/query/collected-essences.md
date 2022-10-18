@@ -3,7 +3,7 @@ id: collected-essences
 title: List Collected Essences by a wallet
 slug: /guides/query/collected-essences
 sidebar_label: Collected Essences
-sidebar_position: 4
+sidebar_position: 7
 description: Query - Collected Essences
 ---
 
