@@ -27,22 +27,14 @@ Make sure that you have installed [Node.js](https://nodejs.org/en/download/) on 
 
 ## Installation
 
-Clone the repo [https://github.com/cyberconnecthq/cc-content-app.git](https://github.com/cyberconnecthq/cc-content-app.git) and run the following command in your terminal to install all the packages that are necessary to start the development server:
-
-```bash npm2yarn
-npm install
-```
+Clone the repo [https://github.com/cyberconnecthq/cc-content-app.git](https://github.com/cyberconnecthq/cc-content-app.git) and run the following command in your terminal to install all the packages that are necessary to start the development server: `npm install` or `yarn add`.
 
 ## Local Development
 
-To start the local development server run the command below and open up the browser window http://localhost:3000. Most changes are reflected live without having to restart the server.
-
-```bash npm2yarn
-npm dev
-```
+To start the local development server run the command `npm dev` or `yarn dev` and open up the browser window http://localhost:3000. Most changes are reflected live without having to restart the server.
 
 ## Live demo
 
 This is the link for the live version of the app you are about to build: [https://cc-content-app.vercel.app/](https://cc-content-app.vercel.app/)
 
-Let's dive into it and start building a content app!
+Let's dive into the docs and start building a content app!
