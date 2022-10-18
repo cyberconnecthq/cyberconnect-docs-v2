@@ -17,23 +17,29 @@ Collecting an essence can be implemented in just a few easy steps. What collecti
 
    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
-import PostmanCard from "@site/src/components/PostmanCard";
+:::tip
 
-<PostmanCard 
-  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-13c81f40-2b83-4725-be86-e06d50fa842a"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-21261833-8545-4541-98bd-23888f81a4b9"
-/>
+This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
+
+:::
+
+import ApolloCard from "@site/src/components/ApolloCard";
+
+<ApolloCard queryName="CreateCollectEssenceTypedData" />
 
 1. Second, once you received data in a readable format, you’ll need to get the user’s signature for it. Basically, you’ll need to write a function and pass it a `message` as a param and return the `signature` that it’s necessary for the next step.
 
 [Ethers](https://docs.ethers.io/v5/) library is one option that can quickly help you write a function to get the user’s signature for a specific message. In this our case the message represents the typed data from step 1.
 
-1. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the NFT for the collected essence.
+1. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the NFT for the collected essence, you will need to put as params the `typedDataID` you received from `createCollectEssenceTypedData` mutation call and the user's `signature`.
 
-<PostmanCard 
-  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-9bb3c34f-a84e-4094-be17-f998b8e7bb4e"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-18ed802d-4666-4cfb-a725-93470d8155bf"
-/>
+:::tip
+
+This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
+
+:::
+
+<ApolloCard queryName="relay" />
 
 You can now verify the transaction by looking up the `txHash` from the response on [etherscan.io](http://etherscan.io). That’s it! You’re all done!
 

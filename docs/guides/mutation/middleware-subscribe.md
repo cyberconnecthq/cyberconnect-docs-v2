@@ -15,21 +15,27 @@ Set middleware for subscribe is a powerful API that allows developers to customi
 
    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
-import PostmanCard from "@site/src/components/PostmanCard";
+:::tip
 
-<PostmanCard 
-  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-e5d96dc7-a4a4-44dd-8293-d8248a99b97b"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-2e2505da-2aae-4cbb-8e4f-ac51af565b1d"
-/>
+This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
+
+:::
+
+import ApolloCard from "@site/src/components/ApolloCard";
+
+<ApolloCard queryName="createSetSubscribeDataTypedData" />
 
 2. Second, once you received data in a readable format, you’ll need to get the user’s signature for it. Basically, you’ll need to write a function and pass it a `message` as a param and return the `signature` that it’s necessary for the next step.
 
-3. Third, you’ll have to call the `relay` API that will broadcast the transaction and interact with the smart contract setting the middleware.
+3. Third, you’ll have to call the `relay` API that will broadcast the transaction and interact with the smart contract setting the middleware, you will need to put as params the `typedDataID` you received from `createSetSubscribeDataTypedData` mutation call and the user's `signature`.
 
-<PostmanCard 
-  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-96e22ded-0561-496f-8a1a-c03d9b934a27"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-90070a1c-5be2-47e1-b30d-b9c5a6db4fbd"
-/>
+:::tip
+
+This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
+
+:::
+
+<ApolloCard queryName="relay" />
 
 You can now verify the transaction by looking up the `txHash` from the response on [etherscan.io](http://etherscan.io). That’s it! You’re all done!
 

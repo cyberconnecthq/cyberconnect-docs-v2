@@ -15,25 +15,31 @@ Subscribing to a profile can be implemented in just a few easy steps. What subsc
 
 1. First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createSubscribeTypedData` API that takes care of this.
 
-    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
+   If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
-import PostmanCard from "@site/src/components/PostmanCard";
+:::tip
 
-<PostmanCard 
-  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-669eb260-06b2-4249-a871-43ec428fcf0e"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-2e3e7dc7-982d-455c-a0c0-acd1b1fc7a2c"
-/>
+This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
+
+:::
+
+import ApolloCard from "@site/src/components/ApolloCard";
+
+<ApolloCard queryName="createSubscribeTypedData" />
 
 2. Second, once you received data in a readable format, you’ll need to get the user’s signature (`eth_signTypedData_v4`) for it. Basically, you’ll need to write a function and pass it a `message` as a param and return the `signature` that it’s necessary for the next step.
 
 [Ethers](https://docs.ethers.io/v5/) library is one option that can quickly help you write a function to get the user’s signature for a specific message. In this our case the message represents the typed data from step 1.
 
-3. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the subscribe NFT.
+3. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the subscribe NFT, you will need to put as params the `typedDataID` you received from `createSubscribeTypedData` mutation call and the user's `signature`.
 
-<PostmanCard 
-  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-f0980b70-f2fb-4100-acdf-90fb12fd8381"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-e5d95891-f318-4c38-97ce-b367b8d3ba55"
-/>
+:::tip
+
+This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
+
+:::
+
+<ApolloCard queryName="relay" />
 
 You can now verify the transaction by looking up the `txHash` from the response on [etherscan.io](http://etherscan.io). That’s it! You’re all done!
 
