@@ -144,4 +144,4 @@ Now that the middleware is set, whenever someone wants to collect the user's ess
 
 ![nft essence](/img/v2/build-content-app-middleware-for-post-nft.png)
 
-Awesome job! You've completed the **How to Build Content app** guide! Now you can build your own content application and get super creative with it. We would love you see your work so don't forget to share it on our [Discord](https://discord.com/invite/cUc8VRGmPs) channel!
+Congrats! You've completed the **How to Build Content app** guide! Now you can build your own content application and get super creative with it. We would love you see your work so don't forget to share it on our [Discord](https://discord.com/invite/cUc8VRGmPs) channel!
