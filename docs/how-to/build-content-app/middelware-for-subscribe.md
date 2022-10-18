@@ -9,14 +9,9 @@ description: How to Build Content app - Middleware for Subscribe
 
 Middlewares enable dynamic rules for when an action is performed. Middlewares are essentially smart contracts that execute a piece of logic before that action is executed. In this section the action we are looking at is to [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile).
 
-Middleware for Subscribe can be used for two different purposes:
-
-1. To set the rules on what should happen when someone subscribes to the user's profile (e.g. allow other users to subscribe only once or users should pay a specific ERC-20 token amount);
-2. To set the `tokenURI` of the Subscribe NFT that get minted and transferred to the subscriber's wallet address.
+Middleware for Subscribe can be used to set the rules on what should happen when someone subscribes to the user's profile (e.g. to allow other users to subscribe only once with `SubscribeOnlyOnceMw` or to pay a specific ERC-20 token amount with `SubscribePaidMw` etc).
 
 ## GraphQL mutations
-
-If you haven't already set the `ApolloClient` please go [Apollo Client](/how-to/build-content-app/authentication#apollo-client) section to do so.
 
 By now this process should be really familiar. Set middleware for subscribe follows the same two step process that requires two GraphQL mutations: `CreateSetSubscribeDataTypedData` and `Relay`.
 
@@ -74,13 +69,20 @@ There are multiple available middlewares that can be implemented. Visit the [Mid
 
 :::
 
-Let's get to the implementation! The approach is almost exactly the same as it was for [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile). In this example you will set both the `tokenURI` so that subscribers receive a cute NFT when they subscribe and enable a rule so that when others want to subscribe to the user's profile they will have to pay 1 LINK to do so. The steps are similar but what matters in the end are the parameters that get passed:
+Let's get to the implementation! The approach is almost exactly the same as it was for [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile).
 
-1. Construct the metadata object for the Subscribe NFT;
-2. Upload the metadata to IPFS to get the hash;
-3. Get data in a readable format and the `typedDataID` for it;
-4. Get the user to sign the message data and get its `signature`;
-5. Call the `relay` and pass it the `typedDataID` and `signature`;
+Note that `CreateSetSubscribeDataTypedData` allows you to do the following:
+
+1. To set the rules on what should happen when someone subscribes to the user's profile;
+2. To set the `tokenURI` of the Subscribe NFT that get minted and transferred to the subscriber's wallet address.
+
+The focus in this example is to set the `subscribePaid` middleware to enable a rule so that when others want to subscribe to the user's profile they will have to pay 1 LINK to do so:
+
+1. Get data in a readable format and the `typedDataID` for it;
+2. Get the user to sign the message data and get its `signature`;
+3. Call the `relay` and pass it the `typedDataID` and `signature`;
+
+Optionally you can also set the `tokenURI` by constructing the metadata object for the Subscribe NFT and uploading it to IPFS to get the hash and pass it as a parameter.
 
 ```tsx title="components/SetSubscribeBtn.tsx"
 /* Construct the metadata object for the Subscribe NFT */

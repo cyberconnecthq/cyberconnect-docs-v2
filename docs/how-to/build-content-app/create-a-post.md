@@ -9,11 +9,9 @@ description: How to Build Content app - Create a Post
 
 In this section you'll learn how to implement the [Register Essence](/guides/mutation/register-essence) functionality. We call _essence_ everything that is content and related to it. Yes, it's also a NFT. It can take the form a post, an article, a soulbound token (SBT) or something completely different that's up to your imagination.
 
-You'll notice that the process is very similar to the one is described [Subscribe to profile](/how-to/build-content-app/subscribe-to-profile) but there is a small difference. When the user creates an essence, a non-fungible token (NFT) is noly being created. The minting and transferring of the NFT is being executed in the _collect essence_ process to the user that collects it, which you'll learn all about in the upcoming section.
+You'll notice that the process is very similar to the one is described [Subscribe to profile](/how-to/build-content-app/subscribe-to-profile) but there is a small difference. When the user creates an essence, a non-fungible token (NFT) is only being created. The minting and transferring of the NFT is being executed in the _collect essence_ process to the user that collects it, which you'll learn all about in the upcoming section.
 
 ## GraphQL mutations
-
-If you haven't already set the `ApolloClient` please go [Apollo Client](/how-to/build-content-app/authentication#apollo-client) section to do so.
 
 To register an essence, meaning to create a post for this example, is a two step process and requires two GraphQL mutations: `CreateRegisterEssenceTypedData` and `Relay`.
 
@@ -233,15 +231,19 @@ const relayResult = await relay({
 const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 ```
 
+:::info
+
+Setting a middleware for an essence can be done either during the essence registration as presented in this section or after the registration process as described in the [Middleware for Post](/how-to/build-content-app/middleware-for-post).
+
+:::
+
 :::tip
 
 There are multiple available middlewares that can be implemented. Visit the [Middleware](/concepts/middleware) section to view the full list.
 
 :::
 
-In production applications will tend to be a bit more complex in terms of collecting input from the user. This is simply because there are so many options than can be presented and it all comes down to how much customization will the app allow the user to have.
-
-To give an example, the user can be presented with an option to choose from a dropdown of middlewares (paid vs. free, unlimited supply vs. fixed supply etc) or even create its own. Middleware can be set at when the post is created or it can be set afterward. More details on that in the [Middleware for Post](/how-to/build-content-app/middleware-for-post) section.
+In this example we simply pass as `middleware` the `collectFree` middleware that will allow users to collect the post for free. There are more options in terms of middlewares that you can choose from in the [Middleware](/concepts/middleware) section.
 
 If the registration of the essence (or post in our case) was successful, you can verify the transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
 

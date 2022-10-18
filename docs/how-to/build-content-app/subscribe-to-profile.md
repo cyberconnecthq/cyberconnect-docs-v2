@@ -12,8 +12,6 @@ To make this happen, you will essentially be following the steps described in th
 
 ## GraphQL mutations
 
-If you haven't already set the `ApolloClient` please go [Apollo Client](/how-to/build-content-app/authentication#apollo-client) section to do so.
-
 Subscribe to a profile is a two step process and requires two GraphQL mutations: `CreateSubscribeTypedData` and `Relay`.
 
 1. `CreateSubscribeTypedData` is used to present data to the user in a readable format:

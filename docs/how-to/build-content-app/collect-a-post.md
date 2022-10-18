@@ -11,8 +11,6 @@ In this section you'll learn how to implement the [Collect Essence](/guides/muta
 
 ## GraphQL mutations
 
-If you haven't already set the `ApolloClient` please go [Apollo Client](/how-to/build-content-app/authentication#apollo-client) section to do so.
-
 To collect an essence, meaning to collect a post, is a two step process and requires two GraphQL mutations: `CreateCollectEssenceTypedData` and `Relay`.
 
 1. `CreateCollectEssenceTypedData` is used to present data to the user in a readable format:
