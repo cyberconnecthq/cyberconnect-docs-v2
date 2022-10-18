@@ -9,42 +9,9 @@ description: How to Build Content app - Quick Setup
 
 This guide will teach you how to create your own content application from scratch using [Next.js](https://nextjs.org/).
 
-## Installation
+## Jump to
 
-Make sure that you have installed [Node.js](https://nodejs.org/en/download/) on your computer and [MetaMask](https://metamask.io/) extension in your Chrome browser. Once they are installed you can open the terminal and run the command:
-
-```bash
-npx create-next-app@latest --ts
-```
-
-or
-
-```bash
-yarn create next-app --typescript
-```
-
-## Apollo client
-
-Since you will be using the [Apollo client](https://www.apollographql.com/docs/) library to query the CyberConnect API, now it's a good time to open the in the terminal in the main directory of your app and install the following packages:
-
-```bash npm2yarn
-npm install @apollo/client graphql
-```
-
-## Full code
-
-:::info
-
-The app you're going to build by following this guide is using the **Link3 Profile** smart contract for the **Goerli Testnet Network**. Please refer to the [Cheat sheet](/cheat-sheet) to find the full list of contract addresses on top of the CyberConnect Protocol.
-
-:::
-
-You can find the full code on GitHub
-[https://github.com/cyberconnecthq/cc-content-app.git](https://github.com/cyberconnecthq/cc-content-app.git) or test the live demo [https://cc-content-app.vercel.app/](https://cc-content-app.vercel.app/).
-
-## Quick jumps
-
-How to Build Content app will be covering the following:
+How to Build Content app covers the following sections:
 
 1. [Create a Profile](/how-to/build-content-app/create-a-profile)
 2. [Authentication](/how-to/build-content-app/authentication)
@@ -53,5 +20,29 @@ How to Build Content app will be covering the following:
 5. [Collect a Post](/how-to/build-content-app/collect-a-post)
 6. [Middleware for Subscribe](/how-to/build-content-app/middleware-for-subscribe)
 7. [Middleware for Post](/how-to/build-content-app/middleware-for-post)
+
+## Prerequisites
+
+Make sure that you have installed [Node.js](https://nodejs.org/en/download/) on your computer and [MetaMask](https://metamask.io/) extension in your Chrome browser.
+
+## Installation
+
+Clone the repo [https://github.com/cyberconnecthq/cc-content-app.git](https://github.com/cyberconnecthq/cc-content-app.git) and run the following command in your terminal to install all the packages that are necessary to start the development server:
+
+```bash npm2yarn
+npm install
+```
+
+## Local Development
+
+To start the local development server run the command below and open up the browser window http://localhost:3000. Most changes are reflected live without having to restart the server.
+
+```bash npm2yarn
+npm dev
+```
+
+## Live demo
+
+This is the link for the live version of the app you are about to build: [https://cc-content-app.vercel.app/](https://cc-content-app.vercel.app/)
 
 Let's dive into it and start building a content app!
