@@ -1,10 +1,10 @@
 ---
-id: create-profile
-title: Create Profile
-slug: /how-to/build-content-app/create-profile
-sidebar_label: Create Profile
+id: create-a-profile
+title: Create a Profile
+slug: /how-to/build-content-app/create-a-profile
+sidebar_label: Create a Profile
 sidebar_position: 2
-description: How to Build Content app - Create Profile
+description: How to Build Content app - Create a Profile
 ---
 
 In this section you will learn how to interact with a smart contract to create a profile. We sometimes refer to it as a _profile NFT_ and the reason behind it is that, once the profile is created, a NFT will automatically be minted and transferred to the user's wallet.
@@ -216,7 +216,7 @@ The next required params are `preData` and `postData` which are essentially midd
 
 To keep things simple, you won't set any middleware in this example. More on this topic in the [Middleware](/concepts/middleware) section.
 
-## Create profile
+## Create a Profile
 
 As mentioned previously, you will be working with the Link3 Profile NFT respectively the `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271` contract.
 
@@ -305,10 +305,10 @@ try {
 
 If the profile was successfully created, you can verify the logged transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
 
-![transaction hash](/img/v2/build-content-app-create-profile-tx.png)
+![transaction hash](/img/v2/build-content-app-create-a-profile-tx.png)
 
 You can also view the NFT for the profile on [testnets.opensea.io](https://testnets.opensea.io/). The Link3 Profile NFT contract is generating these beautiful SVGs for the NFTs, mints the profile NFT and then transfers it into the owner's wallet address.
 
-![nft profile](/img/v2/build-content-app-create-profile-nft.png)
+![nft profile](/img/v2/build-content-app-create-a-profile-nft.png)
 
 Great job! You've created your first profile! In the next section we will go over and implement the [Authentication](/how-to/build-content-app/authentication) process.

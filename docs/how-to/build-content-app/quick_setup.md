@@ -40,4 +40,18 @@ The app you're going to build by following this guide is using the **Link3 Profi
 :::
 
 You can find the full code on GitHub
-[https://github.com/cyberconnecthq/cc-content-app.git](https://github.com/cyberconnecthq/cc-content-app.git) or directly play around with the live demo [https://cc-content-app.vercel.app/](https://cc-content-app.vercel.app/).
+[https://github.com/cyberconnecthq/cc-content-app.git](https://github.com/cyberconnecthq/cc-content-app.git) or test the live demo [https://cc-content-app.vercel.app/](https://cc-content-app.vercel.app/).
+
+## Quick jumps
+
+How to Build Content app will be covering the following:
+
+1. [Create a Profile](/how-to/build-content-app/create-a-profile)
+2. [Authentication](/how-to/build-content-app/authentication)
+3. [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile)
+4. [Create a Post](/how-to/build-content-app/create-a-post)
+5. [Collect a Post](/how-to/build-content-app/collect-a-post)
+6. [Middleware for Subscribe](/how-to/build-content-app/middleware-for-subscribe)
+7. [Middleware for Post](/how-to/build-content-app/middleware-for-post)
+
+Let's dive into it and start building a content app!

@@ -1,7 +1,7 @@
 ---
 id: create-a-post
 title: Create a Post
-slug: /how-to/build-content-appcreate-a-post
+slug: /how-to/build-content-app/create-a-post
 sidebar_label: Create a Post
 sidebar_position: 5
 description: How to Build Content app - Create a Post
@@ -9,13 +9,13 @@ description: How to Build Content app - Create a Post
 
 In this section you'll learn how to implement the [Register Essence](/guides/mutation/register-essence) functionality. We call _essence_ everything that is content and related to it. Yes, it's also a NFT. It can take the form a post, an article, a soulbound token (SBT) or something completely different that's up to your imagination.
 
-You'll notice that the process is very to the one is described [Subscribe to profile](/how-to/build-content-app/subscribe-to-profile) but there is a small difference. When the user creates an essence, a non-fungible token (NFT) is created. The minting and transfer of that NFT is being executed in the _collect essence_ process to the user that collects it, which you'll learn all about in the upcoming section.
+You'll notice that the process is very similar to the one is described [Subscribe to profile](/how-to/build-content-app/subscribe-to-profile) but there is a small difference. When the user creates an essence, a non-fungible token (NFT) is noly being created. The minting and transferring of the NFT is being executed in the _collect essence_ process to the user that collects it, which you'll learn all about in the upcoming section.
 
 ## GraphQL mutations
 
-If you haven't already set the `ApolloClient` please go [Authentication](/how-to/build-content-app/authentication) to do so.
+If you haven't already set the `ApolloClient` please go [Apollo Client](/how-to/build-content-app/authentication#apollo-client) section to do so.
 
-To register an essence, meaning to create a post in this example, is a two step process and requires two GraphQL mutations: `CreateRegisterEssenceTypedData` and `Relay`:
+To register an essence, meaning to create a post for this example, is a two step process and requires two GraphQL mutations: `CreateRegisterEssenceTypedData` and `Relay`.
 
 1. `CreateRegisterEssenceTypedData` is used to present data to the user in a readable format:
 
@@ -63,7 +63,13 @@ export const RELAY = gql`
 `;
 ```
 
-## Essence Metadata Schema
+## Metadata Schema
+
+You can think of the Essence Metadata Schema as a standard template used to store data related to content and the NFT holding that data.
+
+You'll notice that some of the fields are following the [OpenSea Metadata Standards](https://docs.opensea.io/docs/metadata-standards) and this is to ensure that the NFT will be displayed properly on OpenSea and other marketplaces.
+
+Below are all the fields for the Essence Metadata Schema accompanied by a short description on what they represent.
 
 ```tsx title="types.ts"
 /* Metadata schema for Essence NFT */
@@ -71,7 +77,7 @@ export enum Version {
     V1 = "1.0.0",
 }
 
-export interface Media {
+interface Media {
     /* The MIME type for the media */
     media_type: string;
     /* The URL link for the media */
@@ -82,8 +88,21 @@ export interface Media {
     preview_image_url?: string;
 }
 
+interface Attribute {
+    /* Field indicating how you would like it to be displayed */
+    /* optional if the trait_type is string */
+    display_type?: string;
+    /* Name of the trait */
+    trait_type: string;
+    /* Value of the trait */
+    value: number;
+}
+
 export interface IEssenceMetadata {
     /* ~~ REQUIRED ~~ */
+    /* Unique id for the issued item */
+    metadata_id: string;
+
     /* Version of the metadata schema used for the issued item. */
     version: Version;
 
@@ -111,7 +130,8 @@ export interface IEssenceMetadata {
     /* URL to the image of the item. */
     image?: string;
 
-    /* SVG image data when the image is not passed. Only use this if you're not including the image parameter. */
+    /* SVG image data when the image is not passed. Only use this if you're not 
+		including the image parameter. */
     image_data?: string;
 
     /* Name of the item. */
@@ -122,114 +142,109 @@ export interface IEssenceMetadata {
 
     /* URL to a multi-media attachment for the item. */
     animation_url?: string;
+
+    /* Attributes for the item. */
+    attributes?: Attribute[];
+
+    /* URL to the item on your site. */
+    external_url?: string;
 }
 ```
 
 ## Create a Post
 
+To create a post means to [Register a Essence](/guides/mutation/register-essence). The process for it does require a couple of extra steps compared to Subscribe, but those steps are only related to the data associated to the Essence NFT:
+
+1. Construct the metadata object for the Essence NFT;
+2. Upload the metadata to IPFS to get the hash;
+3. Get data in a readable format and the `typedDataID` for it;
+4. Get the user to sign the message data and get its `signature`;
+5. Call the `relay` and pass it the `typedDataID` and `signature`;
+
 ```tsx title="components/PostBtn.tsx"
-try {
-    /* Check if the user connected with wallet */
-    if (!(provider && address)) {
-        throw Error("Connect with MetaMask.");
-    }
+/* Construct the metadata object for the Essence NFT */
+const metadata: IEssenceMetadata = {
+    metadata_id: uuidv4(),
+    version: Version.V1,
+    app_id: "cyberconnect",
+    lang: "en",
+    issue_date: new Date().toISOString(),
+    content: post,
+    media: [],
+    tags: [],
+    image: nftImageURL ? nftImageURL : "",
+    image_data: !nftImageURL ? svg_data : "",
+    name: `@${handle}'s post`,
+    description: `@${handle}'s post on CyberConnect Content app`,
+    animation_url: "",
+    external_url: "",
+    attributes: [],
+};
 
-    /* Check if the has signed in */
-    if (!accessToken) {
-        throw Error("Youn need to Sign in.");
-    }
+/* Upload metadata to IPFS */
+const ipfsHash = await pinJSONToIPFS(metadata);
 
-    /* Check if the has signed up */
-    if (!profileID) {
-        throw Error("Youn need to Sign up.");
-    }
-
-    /* Check if the network is the correct one */
-    await checkNetwork(provider);
-
-    /* Function to render the svg data for the NFT */
-    /* (default if the user doesn't pass a image url) */
-    const svg_data = renderSVGData(post);
-
-    /* Collect user input for NFT image */
-    const nftImageURL = prompt("NFT image URL:");
-
-    /* Create the metadata for the NFT */
-    const metadata: IEssenceMetadata = {
-        version: Version.V1,
-        app_id: "cyberconnect",
-        lang: "en",
-        issue_date: new Date().toISOString(),
-        content: post,
-        media: [],
-        tags: [],
-        image: nftImageURL ? nftImageURL : "",
-        image_data: !nftImageURL ? svg_data : "",
-        name: `@${handle}'s post`,
-        description: `@${handle}'s post on CyberConnect Content app`,
-        animation_url: "",
-    };
-
-    /* Upload metadata to IPFS */
-    const ipfsHash = await pinJSONToIPFS(metadata);
-
-    /* Get the signer from the provider */
-    const signer = provider.getSigner();
-
-    /* Get the network from the provider */
-    const network = await provider.getNetwork();
-
-    /* Get the chain id from the network */
-    const chainID = network.chainId;
-
-    /* Create typed data in a readable format */
-    const typedDataResult = await createRegisterEssenceTypedData({
-        variables: {
-            input: {
-                options: {
-                    chainID: chainID,
-                },
-                profileID: profileID,
-                name: "Post",
-                symbol: "POST",
-                tokenURI: `https://cyberconnect.mypinata.cloud/ipfs/${ipfsHash}`,
-                middleware: {
-                    collectFree: true,
-                },
-                transferable: true,
+/* Create typed data in a readable format */
+const typedDataResult = await createRegisterEssenceTypedData({
+    variables: {
+        input: {
+            options: {
+                /* The chain id on which the Essence NFT will be minted on */
+                chainID: chainID,
             },
-        },
-    });
-    const typedData =
-        typedDataResult.data?.createRegisterEssenceTypedData?.typedData;
-    const message = typedData.data;
-    const typedDataID = typedData.id;
-
-    /* Get the signature for the message signed with the wallet */
-    const fromAddress = await signer.getAddress();
-    const params = [fromAddress, message];
-    const method = "eth_signTypedData_v4";
-    const signature = await signer.provider.send(method, params);
-
-    /* Call the relay to broadcast the transaction */
-    const relayResult = await relay({
-        variables: {
-            input: {
-                typedDataID: typedDataID,
-                signature: signature,
+            /* The profile id under which the Essence is registered */
+            profileID: profileID,
+            /* Name of the Essence */
+            name: "Post",
+            /* Symbol of the Essence */
+            symbol: "POST",
+            /* URL for the json object containing data about content and the Essence NFT */
+            tokenURI: `https://cyberconnect.mypinata.cloud/ipfs/${ipfsHash}`,
+            /* Middleware that allows users to collect the Essence NFT for free */
+            middleware: {
+                collectFree: true,
             },
+            /* Set if the Essence should be transferable or not */
+            transferable: true,
         },
-    });
-    const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
+    },
+});
 
-    /* Log the transaction hash */
-    console.log("~~ Tx hash ~~");
-    console.log(txHash);
+const typedData =
+    typedDataResult.data?.createRegisterEssenceTypedData?.typedData;
+const message = typedData.data;
+const typedDataID = typedData.id;
 
-    /* Display success message */
-    alert("Successfully created the post!");
-} catch (error) {
-    /* Display error message */
-    alert(error.message);
-}
+/* Get the signature for the message signed with the wallet */
+const fromAddress = await signer.getAddress();
+const params = [fromAddress, message];
+const method = "eth_signTypedData_v4";
+const signature = await signer.provider.send(method, params);
+
+/* Call the relay to broadcast the transaction */
+const relayResult = await relay({
+    variables: {
+        input: {
+            typedDataID: typedDataID,
+            signature: signature,
+        },
+    },
+});
+const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 ```
+
+:::tip
+
+There are multiple available middlewares that can be implemented. Visit the [Middleware](/concepts/middleware) section to view the full list.
+
+:::
+
+In production applications will tend to be a bit more complex in terms of collecting input from the user. This is simply because there are so many options than can be presented and it all comes down to how much customization will the app allow the user to have.
+
+To give an example, the user can be presented with an option to choose from a dropdown of middlewares (paid vs. free, unlimited supply vs. fixed supply etc) or even create its own. Middleware can be set at when the post is created or it can be set afterward. More details on that in the [Middleware for Post](/how-to/build-content-app/middleware-for-post) section.
+
+If the registration of the essence (or post in our case) was successful, you can verify the transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
+
+![transaction hash](/img/v2/build-content-app-create-a-post-tx.png)
+
+Remember that at this stage you are only registering the NFT. When a user collects a post this is when the NFT actually gets minted and transferred to the user's wallet address, which you'll learn all about in the next section [Collect a Post](/how-to/build-content-app/collect-a-post).
