@@ -20,21 +20,27 @@ Set middleware for essence is a powerful API that allows developers to customize
    In this example we are setting the `collectPaid` middleware which will require the user to pay a fee to collect the essence.<br/>
    To view a full list of supported middlewares check out the [Middleware](/concepts/middleware) guide.
 
-import PostmanCard from "@site/src/components/PostmanCard";
+:::tip
 
-<PostmanCard 
-  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-3682ce14-45e2-4f10-af3d-75d351fddbd5"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-176d8ef8-7ec5-4d25-922e-22b577a5e53c"
-/>
+This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
+
+:::
+
+import ApolloCard from "@site/src/components/ApolloCard";
+
+<ApolloCard queryName="createSetEssenceDataTypedData" />
 
 2. Second, once you received data in a readable format, you’ll need to get the user’s signature for it. Basically, you’ll need to write a function and pass it a `message` as a param and return the `signature` that it’s necessary for the next step.
 
-3. Third, you’ll have to call the `relay` API that will broadcast the transaction and interact with the smart contract setting the middleware.
+3. Third, you’ll have to call the `relay` API that will broadcast the transaction and interact with the smart contract setting the middleware, you will need to put as params the `typedDataID` you received from `createSetEssenceDataTypedData` mutation call and the user's `signature`.
 
-<PostmanCard 
-  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-280ae85f-0d8a-49d3-88f1-ce02cd44372e"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-90383573-4d45-4bb4-8b80-b0ca4b41681d"
-/>
+:::tip
+
+This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
+
+:::
+
+<ApolloCard queryName="relay" />
 
 You can now verify the transaction by looking up the `txHash` from the response on [etherscan.io](http://etherscan.io). That’s it! You’re all done!
 
