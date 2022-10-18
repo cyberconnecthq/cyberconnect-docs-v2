@@ -16,25 +16,19 @@ CyberConnect uses sign in with ethereum (SIWE) login flow for users to
 
 1. Send `loginGetMessage` request with following fields.
 
-import PostmanCard from "@site/src/components/PostmanCard";
+import ApolloCard from "@site/src/components/ApolloCard";
 
-<PostmanCard
-queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-65a1a72b-22e5-4a54-be1d-b1b91dba31ac"
-exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-8d396a05-d7cc-4385-9fd4-acb7fa4306a0"
-/>
+<ApolloCard queryName="loginGetMessage" />
 
 2. Sign this message with the wallet you specified. Remember to replace \n with new lines. ([unescape json](https://www.freeformatter.com/json-escape.html#before-output)) Use the following tools to sign the message with your ETH wallet.
 
-    1. Use [Etherscan tool](https://etherscan.io/verifiedSignatures#)
-       ![siwe.png](/img/v2/siwe.png)
-    2. Your familiar Ether.js, web3.js and other package
+   1. Use [Etherscan tool](https://etherscan.io/verifiedSignatures#)
+      ![siwe.png](/img/v2/siwe.png)
+   2. Your familiar Ether.js, web3.js and other package
 
 3. Verify the signature with gateway and save the token.
 
-<PostmanCard
-queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-1d6e0771-8200-45d0-8d63-be0ef2091752"
-exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-62493db6-fdda-4d78-af2b-5486e35d0a0d"
-/>
+<ApolloCard queryName="loginVerify" />
 
 ## Next Step
 
@@ -48,10 +42,10 @@ The following `mutations` require `Authorization` header:
 6. `createSetSubscribeDataTypedData`
 7. `relay`
 
-Use this persona access token in HTTP header `Authorization` . Don’t miss the `bearer` in front.
+Use this personal access token in HTTP header `Authorization` . Don’t miss the `bearer` in front.
 
 ```json
 {
-    "Authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoiY3liZXJjb25uZWN0Lm1lIiwiYWRkcmVzcyI6IjB4OTI3ZjM1NTExNzcyMWUwRThBN2I1ZUEyMDAwMmI2NUI4YTU1MTg5MCIsImlzcyI6IkN5YmVyQ29ubmVjdCIsImV4cCI6MTY2NTA4NDU2MywiaWF0IjoxNjYyNDkyNTYzfQ.X3Y-gTTnsmpNRqkZ3vAAv3UOnHBb5WH5EZ2sOcJRPnw"
+  "Authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoiY3liZXJjb25uZWN0Lm1lIiwiYWRkcmVzcyI6IjB4OTI3ZjM1NTExNzcyMWUwRThBN2I1ZUEyMDAwMmI2NUI4YTU1MTg5MCIsImlzcyI6IkN5YmVyQ29ubmVjdCIsImV4cCI6MTY2NTA4NDU2MywiaWF0IjoxNjYyNDkyNTYzfQ.X3Y-gTTnsmpNRqkZ3vAAv3UOnHBb5WH5EZ2sOcJRPnw"
 }
 ```

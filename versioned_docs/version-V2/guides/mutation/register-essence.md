@@ -17,21 +17,27 @@ Registering an essence can be implemented in just a few easy steps. What registe
 
    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
-import PostmanCard from "@site/src/components/PostmanCard";
+:::tip
 
-<PostmanCard 
-  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-88e0cbdb-6643-4b6c-a4dd-990158e777e1"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-3f161af1-1f12-4421-b819-f467d373a3e0"
-/>
+This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
+
+:::
+
+import ApolloCard from "@site/src/components/ApolloCard";
+
+<ApolloCard queryName="createRegisterEssenceTypedData" />
 
 2. Second, once you received data in a readable format, you’ll need to get the user’s signature (`eth_signTypedData_v4`) for it. Basically, you’ll need to write a function and pass it a `message` as a param and return the `signature` that it’s necessary for the next step.
 
-3. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the essence NFT.
+3. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the essence NFT, you will need to put as params the `typedDataID` you received from `createRegisterEssenceTypedData` mutation call and the user's `signature`.
 
-<PostmanCard 
-  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-bb70b78d-e71d-40b1-8a11-6c520714d4a5"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-55d6ea39-89ba-4cb5-8d9c-b926df01b388"
-/>
+:::tip
+
+This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
+
+:::
+
+<ApolloCard queryName="relay" />
 
 You can now verify the transaction by looking up the `txHash` from the response on [etherscan.io](http://etherscan.io). That’s it! You’re all done!
 
