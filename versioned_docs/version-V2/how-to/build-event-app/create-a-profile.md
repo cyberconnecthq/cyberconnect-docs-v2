@@ -1,10 +1,10 @@
 ---
 id: create-a-profile
 title: Create a Profile
-slug: /how-to/build-content-app/create-a-profile
+slug: /how-to/build-event-app/create-a-profile
 sidebar_label: Create a Profile
 sidebar_position: 2
-description: How to Build Content app - Create a Profile
+description: How to Build Event app - Create a Profile
 ---
 
 In this section you will learn how to interact with a smart contract to create a profile. We sometimes refer to it as a _profile NFT_ and the reason behind it is that, once the profile is created, a NFT will automatically be minted and transferred to the user's wallet.
@@ -19,7 +19,7 @@ The app you're building in this example is using the **Link3 Profile** smart con
 
 The very first step in building any web3 application is to allow the user to connect to the app using its wallet, in this case the MetaMask wallet.
 
-Whether the user wants to create a profile or subscribe and so on, you need to make sure that user first connects to the application and you can use a library like [Ethers.js](https://docs.ethers.io/v5/) for that.
+Whether the user wants to create a profile or collect and so on, you need to make sure that user first connects to the application and you can use a library like [Ethers.js](https://docs.ethers.io/v5/) for that.
 
 As best practice, it would be helpful to consider implementing a check function to verify if the user is connected to the correct network every time the user uses its wallet.
 
@@ -207,4 +207,4 @@ You can also view the NFT for the profile on [testnets.opensea.io](https://testn
 
 ![nft profile](/img/v2/build-content-app-create-a-profile-nft.png)
 
-Great job! You've created your first profile! In the next section we will go over the [Authentication](/how-to/build-content-app/authentication) process.
+Nice work! You've created your first profile! In the next section we will go over the [Authentication](/how-to/build-event-app/authentication) process.

@@ -1,17 +1,17 @@
 ---
-id: collect-a-post
-title: Collect a Post
-slug: /how-to/build-content-app/collect-a-post
-sidebar_label: Collect a Post
-sidebar_position: 6
-description: How to Build Content app - Collect a Post
+id: collect-an-event
+title: Collect an Event
+slug: /how-to/build-event-app/collect-an-event
+sidebar_label: Collect an Event
+sidebar_position: 5
+description: How to Build Event app - Collect an Event
 ---
 
-In this section you'll learn how to implement the [Collect Essence](/guides/mutation/collect-essence) functionality. Previously you've learned that creating a post means registering an essence, but the process of minting and transferring the NFT is actually executed when a user collects the post.
+In this section you'll learn how to implement the [Collect Essence](/guides/mutation/collect-essence) functionality. Previously you've learned that creating an event means registering an essence, but the process of minting and transferring the NFT is actually executed when a user collects the event.
 
 ## GraphQL mutations
 
-To collect an essence, meaning to collect a post, is a two step process and requires two GraphQL mutations: `CreateCollectEssenceTypedData` and `Relay`.
+To collect an essence, meaning to collect an event, is a two step process and requires two GraphQL mutations: `CreateCollectEssenceTypedData` and `Relay`.
 
 1. `CreateCollectEssenceTypedData` is used to present data to the user in a readable format:
 
@@ -59,9 +59,9 @@ export const RELAY = gql`
 `;
 ```
 
-## Collect a Post
+## Collect an Event
 
-Now that you set up the APIs required, you can implement the Collect functionality. The approach is almost exactly the same as it was for [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile):
+Now that you set up the APIs required, you can implement the Collect functionality. The approach is similar to the approach from [Create an Event](/how-to/build-event-app/create-an-event):
 
 1. Get data in a readable format and the `typedDataID` for it;
 2. Get the user to sign the message data and get its `signature`;
@@ -106,10 +106,10 @@ const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 
 If the collect process was successful, you can verify the transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
 
-![transaction hash](/img/v2/build-content-app-collect-a-post-tx.png)
+![transaction hash](/img/v2/build-event-app-collect-an-event-tx.png)
 
-You can also view the NFT when a user collects a post on [testnets.opensea.io](testnets.opensea.io). You'll notice that the image for the NFT and all other details about it correspond to the details passed to the [Metadata Schema](/how-to/build-content-app/create-a-post#metadata-schema) fields (e.g. `image_data`, `name`, `description`, etc).
+You can also view the NFT when a user collects an event on [testnets.opensea.io](testnets.opensea.io). You'll notice that the image for the NFT and all other details about it correspond to the details passed to the [Metadata Schema](/how-to/build-event-app/create-an-event#metadata-schema) fields (e.g. `image_data`, `name`, `attributes`, etc).
 
-![nft essence](/img/v2/build-content-app-collect-a-post-nft.png)
+![nft essence](/img/v2/build-event-app-collect-an-event-nft.png)
 
-Next up you will dive deep into middlewares and learn how to set them. Let's start with [Middleware for Subscribe](/how-to/build-content-app/middleware-for-subscribe).
+Awesome! You've completed the **How to Build Event app** guide! Now you can build your own event application. Share your work on our [Discord](https://discord.com/invite/cUc8VRGmPs) channel. We would love to see what you've built!
