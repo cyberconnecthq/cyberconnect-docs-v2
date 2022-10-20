@@ -93,7 +93,7 @@ interface Attribute {
     /* Name of the trait */
     trait_type: string;
     /* Value of the trait */
-    value: number;
+    value: number | string;
 }
 
 export interface IEssenceMetadata {
@@ -249,4 +249,6 @@ If the registration of the essence (or post in our case) was successful, you can
 
 ![transaction hash](/img/v2/build-content-app-create-a-post-tx.png)
 
-Remember that at this stage you are only registering the NFT. When a user collects a post this is when the NFT actually gets minted and transferred to the user's wallet address, which you'll learn all about in the next section [Collect a Post](/how-to/build-content-app/collect-a-post).
+![transaction hash](/img/v2/build-content-app-create-a-post-tx2.png)
+
+Note that at this stage you are only registering the NFT. When a user collects a post this is when the NFT actually gets minted and transferred to the user's wallet address, which you'll learn all about in the next section [Collect a Post](/how-to/build-content-app/collect-a-post).

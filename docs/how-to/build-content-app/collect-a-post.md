@@ -7,7 +7,7 @@ sidebar_position: 6
 description: How to Build Content app - Collect a Post
 ---
 
-In this section you'll learn how to implement the [Collect Essence](/guides/mutation/collect-essence) functionality. Previously you learned that creating a post means registering an essence, but the process of minting and transferring the NFT is actually executed when a user collects the post.
+In this section you'll learn how to implement the [Collect Essence](/guides/mutation/collect-essence) functionality. Previously you've learned that creating a post means registering an essence, but the process of minting and transferring the NFT is actually executed when a user collects the post.
 
 ## GraphQL mutations
 
