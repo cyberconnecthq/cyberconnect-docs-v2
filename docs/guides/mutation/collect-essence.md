@@ -15,7 +15,7 @@ Collecting an essence can be implemented in just a few easy steps. What collecti
 
     If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
-:::tip
+:::caution
 
 This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
 
@@ -31,7 +31,7 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 1. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the NFT for the collected essence, you will need to put as params the `typedDataID` you received from `createCollectEssenceTypedData` mutation call and the user's `signature`.
 
-:::tip
+:::caution
 
 This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
 

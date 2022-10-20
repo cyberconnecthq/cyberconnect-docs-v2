@@ -15,7 +15,7 @@ Subscribing to a profile can be implemented in just a few easy steps. What subsc
 
     If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
-:::tip
+:::caution
 
 This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
 
@@ -31,7 +31,7 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 3. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the subscribe NFT, you will need to put as params the `typedDataID` you received from `createSubscribeTypedData` mutation call and the user's `signature`.
 
-:::tip
+:::caution
 
 This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
 
