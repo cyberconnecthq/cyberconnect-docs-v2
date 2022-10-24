@@ -11,9 +11,7 @@ type Wallet implements Node {
   id: ID!
   address: AddressEVM!
   chainID: ChainID!
-  primaryProfile(
-  chainID: ChainID!
-): Profile
+  primaryProfile: Profile
   profiles(
   after: Cursor
   first: Int
@@ -66,9 +64,6 @@ type Wallet implements Node {
 #### `primaryProfile` ([`Profile`](/reference/objects/profile))
 
 `primaryProfile` provides information about the primary profile of a wallet.
-- ##### `chainID` ([`ChainID`](/reference/scalars/chain-id))
-
-
 
 
 #### `profiles` ([`ProfileConnection`](/reference/objects/profile-connection))

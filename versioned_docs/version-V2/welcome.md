@@ -34,16 +34,14 @@ import UsecaseCardsV2 from "@site/src/components/UsecaseCardsV2";
             title="Direct link to heading"></a>
     </h2>
     <p>
-        The CyberConnect Protocol is built with and for developers. Don't
-        hesitate to join our vibrant{" "}
+        The CyberConnect Protocol is built with and for developers. Join our vibrant{" "}
         <a
             href="https://discord.com/invite/cUc8VRGmPs"
             target="_blank"
             rel="noopener noreferrer">
             Discord community
         </a>{" "}
-        where you will find channels specifically dedicated to developers and
-        hackathon events.
+        where you will find channels dedicated to developers and hackathon events.
     </p>
     <br></br>
     <p>
@@ -65,7 +63,12 @@ import UsecaseCardsV2 from "@site/src/components/UsecaseCardsV2";
             href="https://mirror.xyz/cyberlab.eth"
             target="_blank"
             rel="noopener noreferrer">
-            Mirror posts
+            Mirror posts 
+        </a> and dev focused <a
+            href="https://cyberconnect.hashnode.dev/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Hashnode blogs
         </a>, and following us on <a
             href="https://twitter.com/CyberConnectHQ"
             target="_blank"

@@ -13,14 +13,14 @@ Set middleware for subscribe is a powerful API that allows developers to customi
 
 1. First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createSetSubscribeDataTypedData` API that takes care of this.
 
-   If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
+    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
-   This API sets the parameters for subscribing such as `tokenURI` and `middleware` so when a user subscribes to this profile, the Middleware will be triggered and the NFT minted will have the specified Token URI.
+    This API sets the parameters for subscribing such as `tokenURI` and `middleware` so when a user subscribes to this profile, the Middleware will be triggered and the NFT minted will have the specified Token URI.
 
-   In this example we are setting the `subscribePaid` middleware which will require the user to pay a fee to subscribe to the profile.<br/>
-   To view a full list of supported middlewares check out the [Middleware](/concepts/middleware) guide.
+    In this example we are setting the `subscribePaid` middleware which will require the user to pay a fee to subscribe to the profile.<br/>
+    To view a full list of supported middlewares check out the [Middleware](/concepts/middleware) guide.
 
-:::tip
+:::caution
 
 This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
 
@@ -34,7 +34,7 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 3. Third, you’ll have to call the `relay` API that will broadcast the transaction and interact with the smart contract setting the middleware, you will need to put as params the `typedDataID` you received from `createSetSubscribeDataTypedData` mutation call and the user's `signature`.
 
-:::tip
+:::caution
 
 This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
 

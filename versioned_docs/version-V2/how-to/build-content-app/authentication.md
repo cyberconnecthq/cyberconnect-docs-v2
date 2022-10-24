@@ -106,4 +106,4 @@ const accessToken = accessTokenResult?.data?.loginVerify?.accessToken;
 
 Now that you have an access token, you will be able to make queries and mutations that will allow you to add many features to your app.
 
-Next up we will cover the implementation of the [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile) functionality.
+Next up we will cover the implementation of the [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile) feature.

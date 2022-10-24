@@ -150,8 +150,10 @@ If the middleware was set successfully, you can verify the transaction hash on [
 
 ![transaction hash](/img/v2/build-content-app-middleware-for-post-tx.png)
 
+![transaction hash](/img/v2/build-content-app-middleware-for-post-tx2.png)
+
 Now that the middleware is set, whenever someone wants to collect the user's essence they will have to pay 1 LINK to collect and will receive an Essence NFT that looks like this:
 
 ![nft essence](/img/v2/build-content-app-middleware-for-post-nft.png)
 
-Congrats! You've completed the **How to Build Content app** guide! Now you can build your own content application and get super creative with it. We would love you see your work so don't forget to share it on our [Discord](https://discord.com/invite/cUc8VRGmPs) channel!
+Congrats! You've completed the **How to Build Content app** guide! Now you can build your own content application and get super creative with it. We would love to see your work so don't forget to share it on our [Discord](https://discord.com/invite/cUc8VRGmPs) channel!
