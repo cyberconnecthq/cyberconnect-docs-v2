@@ -57,7 +57,7 @@ const config = {
     [
       require.resolve("@edno/docusaurus2-graphql-doc-generator"),
       {
-        schema: "https://api.cyberconnect.dev/",
+        schema: "https://api.stg.cyberconnect.dev/",
         rootPath: "./docs",
         baseURL: "/reference/",
         linkRoot: "/",
