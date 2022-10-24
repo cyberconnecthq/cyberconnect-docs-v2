@@ -9,15 +9,13 @@ description: Mutation - Collect Essence
 
 ## Workflow
 
-![collect-essence.gif](/gif/collect-essence.gif)
-
 Collecting an essence can be implemented in just a few easy steps. What collecting an essence essentially means is that the user will mint an NFT by calling a couple of APIs.
 
 1. First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createCollectEssenceTypedData` API that takes care of this.
 
-   If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
+    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
-:::tip
+:::caution
 
 This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
 
@@ -33,7 +31,7 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 1. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the NFT for the collected essence, you will need to put as params the `typedDataID` you received from `createCollectEssenceTypedData` mutation call and the user's `signature`.
 
-:::tip
+:::caution
 
 This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
 

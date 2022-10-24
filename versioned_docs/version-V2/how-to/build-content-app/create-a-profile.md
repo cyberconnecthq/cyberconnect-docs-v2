@@ -207,4 +207,4 @@ You can also view the NFT for the profile on [testnets.opensea.io](https://testn
 
 ![nft profile](/img/v2/build-content-app-create-a-profile-nft.png)
 
-Great job! You've created your first profile! In the next section we will go over and implement the [Authentication](/how-to/build-content-app/authentication) process.
+Great job! You've created your first profile! In the next section we will go over the [Authentication](/how-to/build-content-app/authentication) process.

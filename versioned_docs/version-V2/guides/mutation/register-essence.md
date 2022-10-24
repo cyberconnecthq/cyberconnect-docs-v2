@@ -9,15 +9,13 @@ description: Mutation - Register Essence
 
 ## Workflow
 
-![register-essence.gif](/gif/register-essence.gif)
-
 Registering an essence can be implemented in just a few easy steps. What registering an essence essentially means is that the user will deploy an NFT contract by calling a couple of APIs.
 
 1. First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createRegisterEssenceTypedData` API that takes care of this.
 
-   If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
+    If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
-:::tip
+:::caution
 
 This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
 
@@ -31,7 +29,7 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 3. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the essence NFT, you will need to put as params the `typedDataID` you received from `createRegisterEssenceTypedData` mutation call and the user's `signature`.
 
-:::tip
+:::caution
 
 This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
 

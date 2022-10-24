@@ -151,6 +151,8 @@ If the middleware was set successfully, you can verify the transaction hash on [
 
 ![transaction hash](/img/v2/build-content-app-middleware-for-subscribe-tx.png)
 
+![transaction hash](/img/v2/build-content-app-middleware-for-subscribe-tx2.png)
+
 Now that the middleware is set, whenever someone wants to subscribe to the user's profile they will have to pay 1 LINK to subscribe and will receive a Subscribe NFT that looks like this:
 
 ![nft subscribe](/img/v2/build-content-app-subscribe-to-profile-nft.png)

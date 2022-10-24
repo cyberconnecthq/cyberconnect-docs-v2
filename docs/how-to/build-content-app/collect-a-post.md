@@ -7,7 +7,7 @@ sidebar_position: 6
 description: How to Build Content app - Collect a Post
 ---
 
-In this section you'll learn how to implement the [Collect Essence](/guides/mutation/collect-essence) functionality. Previously you learned that creating a post means registering an essence, but the process of minting and transferring the NFT is actually executed when a user collects the post.
+In this section you'll learn how to implement the [Collect Essence](/guides/mutation/collect-essence) feature. Previously you've learned that creating a post means registering an essence, but the process of minting and transferring the NFT is actually executed when a user collects the post.
 
 ## GraphQL mutations
 
@@ -61,7 +61,7 @@ export const RELAY = gql`
 
 ## Collect a Post
 
-Now that you set up the APIs required, you can implement the Collect functionality. The approach is almost exactly the same as it was for [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile):
+Now that you set up the APIs required, you can implement the Collect feature. The approach is almost exactly the same as it was for [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile):
 
 1. Get data in a readable format and the `typedDataID` for it;
 2. Get the user to sign the message data and get its `signature`;

@@ -7,7 +7,7 @@ sidebar_position: 4
 description: How to Build Content app - Subscribe to Profile
 ---
 
-In this section you'll learn how to implement the subscribe functionality. Under the hood, when the user subscribes to a profile, a non-fungible token (NFT) is minted and automatically transferred to the user's wallet.
+In this section you'll learn how to implement the subscribe feature. Under the hood, when the user subscribes to a profile, a non-fungible token (NFT) is minted and automatically transferred to the user's wallet.
 To make this happen, you will essentially be following the steps described in the [Subscribe](/guides/mutation/subscribe) section.
 
 ## GraphQL mutations
@@ -60,7 +60,7 @@ export const RELAY = gql`
 
 ## Subscribe to Profile
 
-Now you know what APIs to use to implement the Subscribe functionality. The only thing remaining is to make the connection between them, like so:
+Now you know what APIs to use to implement the Subscribe feature. The only thing remaining is to make the connection between them, like so:
 
 1. Get data in a readable format and the `typedDataID` for it;
 2. Get the user to sign the message data and get its `signature`;
