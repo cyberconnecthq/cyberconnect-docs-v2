@@ -1,10 +1,10 @@
 ---
 id: create-a-profile
 title: Create a Profile
-slug: /how-to/build-event-app/create-a-profile
+slug: /how-to/build-badge-app/create-a-profile
 sidebar_label: Create a Profile
 sidebar_position: 2
-description: How to Build Event app - Create a Profile
+description: How to Build Badge app - Create a Profile
 ---
 
 In this section you will learn how to interact with a smart contract to create a profile. We sometimes refer to it as a _profile NFT_ and the reason behind it is that, once the profile is created, a NFT will automatically be minted and transferred to the user's wallet.
@@ -207,4 +207,4 @@ You can also view the NFT for the profile on [testnets.opensea.io](https://testn
 
 ![nft profile](/img/v2/build-content-app-create-a-profile-nft.png)
 
-Nice work! You've created your first profile! In the next section we will go over the [Authentication](/how-to/build-event-app/authentication) process.
+Nice work! You've created your first profile! In the next section we will go over the [Authentication](/how-to/build-badge-app/authentication) process.

@@ -7,7 +7,7 @@ sidebar_position: 5
 description: How to Build Content app - Create a Post
 ---
 
-In this section you'll learn how to implement the [Register Essence](/guides/mutation/register-essence) functionality. We call _essence_ everything that is content and related to it. Yes, it's also a NFT. It can take the form a post, an article, a soulbound token (SBT) or something completely different that's up to your imagination.
+In this section you'll learn how to implement the [Register Essence](/guides/mutation/register-essence) feature. We call _essence_ everything that is content and related to it. Yes, it's also a NFT. It can take the form a post, an article, a soulbound token (SBT) or something completely different that's up to your imagination.
 
 You'll notice that the process is very similar to the one is described [Subscribe to profile](/how-to/build-content-app/subscribe-to-profile) but there is a small difference. When the user creates an essence, a non-fungible token (NFT) is only being created. The minting and transferring of the NFT is being executed in the _collect essence_ process to the user that collects it, which you'll learn all about in the upcoming section.
 

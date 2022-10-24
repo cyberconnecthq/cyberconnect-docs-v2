@@ -1,10 +1,10 @@
 ---
 id: authentication
 title: Authentication
-slug: /how-to/build-event-app/authentication
+slug: /how-to/build-badge-app/authentication
 sidebar_label: Authentication
 sidebar_position: 3
-description: How to Build Event app - Authentication
+description: How to Build Badge app - Authentication
 ---
 
 For authentication, you will actually be implementing the [User Login](/guides/authentication/user-login) flow to receive the `accessToken` that will be used later on for different queries and mutations.
@@ -106,4 +106,4 @@ const accessToken = accessTokenResult?.data?.loginVerify?.accessToken;
 
 Now that you have an access token, you will be able to make queries and mutations that will allow you to add many features to your app.
 
-Next up we will cover the implementation of the [Create an Event](/how-to/build-event-app/create-an-event) functionality.
+Next up we will cover the implementation of the [Create a Badge](/how-to/build-badge-app/create-a-badge) feature.

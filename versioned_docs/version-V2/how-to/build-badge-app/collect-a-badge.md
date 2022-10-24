@@ -1,17 +1,19 @@
 ---
-id: collect-an-event
-title: Collect an Event
-slug: /how-to/build-event-app/collect-an-event
-sidebar_label: Collect an Event
+id: collect-a-badge
+title: Collect a Badge
+slug: /how-to/build-badge-app/collect-a-badge
+sidebar_label: Collect an Badge
 sidebar_position: 5
-description: How to Build Event app - Collect an Event
+description: How to Build Badge app - Collect a Badge
 ---
 
-In this section you'll learn how to implement the [Collect Essence](/guides/mutation/collect-essence) functionality. Previously you've learned that creating an event means registering an essence, but the process of minting and transferring the NFT is actually executed when a user collects the event.
+In this section you'll learn how to implement the [Collect Essence](/guides/mutation/collect-essence) feature. Previously you've learned that creating a badge means registering an essence, but the process of minting and transferring the SBT is actually executed when a user collects the badge by attending an event.
+
+To keep things simple we will only focus on the actual implementation of users collecting badges. Linking them to an actual event and checking whether users have attended the event falls beyond the scope of the tutorial.
 
 ## GraphQL mutations
 
-To collect an essence, meaning to collect an event, is a two step process and requires two GraphQL mutations: `CreateCollectEssenceTypedData` and `Relay`.
+To collect an essence, meaning to collect a SBT badge, is a two step process and requires two GraphQL mutations: `CreateCollectEssenceTypedData` and `Relay`.
 
 1. `CreateCollectEssenceTypedData` is used to present data to the user in a readable format:
 
@@ -59,9 +61,9 @@ export const RELAY = gql`
 `;
 ```
 
-## Collect an Event
+## Collect a Badge
 
-Now that you set up the APIs required, you can implement the Collect functionality. The approach is similar to the approach from [Create an Event](/how-to/build-event-app/create-an-event):
+Now that you set up the APIs required, you can implement the Collect feature. The approach is similar to the approach from [Create a Badge](/how-to/build-badge-app/create-a-badge):
 
 1. Get data in a readable format and the `typedDataID` for it;
 2. Get the user to sign the message data and get its `signature`;
@@ -106,10 +108,10 @@ const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 
 If the collect process was successful, you can verify the transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
 
-![transaction hash](/img/v2/build-event-app-collect-an-event-tx.png)
+![transaction hash](/img/v2/build-badge-app-collect-a-badge-tx.png)
 
-You can also view the NFT when a user collects an event on [testnets.opensea.io](testnets.opensea.io). You'll notice that the image for the NFT and all other details about it correspond to the details passed to the [Metadata Schema](/how-to/build-event-app/create-an-event#metadata-schema) fields (e.g. `image_data`, `name`, `attributes`, etc).
+You can also view the NFT when a user collects a badge on [testnets.opensea.io](testnets.opensea.io). You'll notice that the image for the NFT and all other details about it correspond to the details passed to the [Metadata Schema](/how-to/build-badge-app/create-a-badge#metadata-schema) fields (e.g. `image_data`, `name`, `attributes`, etc).
 
-![nft essence](/img/v2/build-event-app-collect-an-event-nft.png)
+![nft essence](/img/v2/build-badge-app-collect-a-badge-nft.png)
 
-Awesome! You've completed the **How to Build Event app** guide! Now you can build your own event application. Share your work on our [Discord](https://discord.com/invite/cUc8VRGmPs) channel. We would love to see what you've built!
+Awesome! You've completed the **How to Build Badge app** guide! Now you can build your own application that issues baadges. Share your work on our [Discord](https://discord.com/invite/cUc8VRGmPs) channel. We would love to see what you've built!

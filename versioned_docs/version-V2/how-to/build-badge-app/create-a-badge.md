@@ -1,17 +1,17 @@
 ---
-id: create-an-event
-title: Create an Event
-slug: /how-to/build-nft-sbt-platform/create-an-event
-sidebar_label: Create an Event
+id: create-a-badge
+title: Create a Badge
+slug: /how-to/build-nft-sbt-platform/create-a-badge
+sidebar_label: Create a Badge
 sidebar_position: 4
-description: How to Build Event app - Create an Event
+description: How to Build Badge app - Create a Badge
 ---
 
-In this section you'll learn how to implement the [Register Essence](/guides/mutation/register-essence) functionality. We call _essence_ everything that is content and related to it. Yes, it's also a NFT. It can take the form an event, a post, a badge or something completely different that's up to your imagination.
+In this section you'll learn how to implement the [Register Essence](/guides/mutation/register-essence) feature. We call _essence_ everything that is content and related to it. Yes, it's also a NFT. It can take the form of a badge, a post, or something completely different that's up to your imagination.
 
 When the user creates an essence, a non-fungible token (NFT) is only being created. The minting and transferring of the NFT is being executed in the _collect essence_ process to the user that collects it, which you'll learn all about in the upcoming section.
 
-We use the terms SBT and NFT interchangeably in this section because a SBT is still a NFT, the only difference being that is non-transferable.
+We use the terms SBT and NFT interchangeably in this section because a SBT is still a NFT, the only difference being that is non-transferable. In this example the essence will take the form of a badge and will be issued as a SBT. Feel free to change this since these badges can be transferable or non-transferable.
 
 :::info
 
@@ -21,7 +21,7 @@ The underlying difference between a Non-fungible token (NFT) and a Soulbound tok
 
 ## GraphQL mutations
 
-To register an essence, meaning to create an event for this example, is a two step process and requires two GraphQL mutations: `CreateRegisterEssenceTypedData` and `Relay`.
+To register an essence, meaning to create a badge for this example, is a two step process and requires two GraphQL mutations: `CreateRegisterEssenceTypedData` and `Relay`.
 
 1. `CreateRegisterEssenceTypedData` is used to present data to the user in a readable format:
 
@@ -157,9 +157,9 @@ export interface IEssenceMetadata {
 }
 ```
 
-## Create an Event
+## Create a Badge
 
-To create an event means to [Register a Essence](/guides/mutation/register-essence) and the process for it does require the following steps:
+To create a badge means to [Register a Essence](/guides/mutation/register-essence) and the process for it does require the following steps:
 
 1. Construct the metadata object for the Essence NFT;
 2. Upload the metadata to IPFS to get the hash;
@@ -167,7 +167,7 @@ To create an event means to [Register a Essence](/guides/mutation/register-essen
 4. Get the user to sign the message data and get its `signature`;
 5. Call the `relay` and pass it the `typedDataID` and `signature`;
 
-```tsx title="components/CreateEventBtn.tsx"
+```tsx title="components/BadgeBtn.tsx"
 /* Construct the metadata object for the Essence NFT */
 const metadata: IEssenceMetadata = {
     metadata_id: uuidv4(),
@@ -181,7 +181,7 @@ const metadata: IEssenceMetadata = {
     image: nftImageURL ? nftImageURL : "",
     image_data: !nftImageURL ? svg_data : "",
     name: `@${handle}'s event`,
-    description: `@${handle}'s event on CyberConnect Event app`,
+    description: `@${handle}'s event on CyberConnect Badge app`,
     animation_url: "",
     external_url: "",
     attributes: [
@@ -257,16 +257,16 @@ const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 
 A couple of things to note:
 
--   We used the `attributes` field to store information about the event and followed the [OpenSea Metadata Standards](https://docs.opensea.io/docs/metadata-standards) to ensure that it will display properly on marketplaces;
+-   We used the `attributes` field to store information about the badge (or the event linked to it) and followed the [OpenSea Metadata Standards](https://docs.opensea.io/docs/metadata-standards) to ensure that it will display properly on marketplaces;
 
 -   We passed as `middleware` the `collectFree` middleware to will allow users to collect the post for free. We won't dive into middlewares in this guide but you can always check out the [Middleware](/concepts/middleware) section;
 
 -   We set `transferable` to `false` so that the NFT won't be transferable once it ends up in the user's wallet address;
 
-If the registration of the essence (or event in our case) was successful, you can verify the transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
+If the registration of the essence (or badge in our case) was successful, you can verify the transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
 
-![transaction hash](/img/v2/build-event-app-create-an-event-tx.png)
+![transaction hash](/img/v2/build-badge-app-create-a-badge-tx.png)
 
-![transaction hash](/img/v2/build-event-app-create-an-event-tx2.png)
+![transaction hash](/img/v2/build-badge-app-create-a-badge-tx2.png)
 
-Note that at this stage you are only registering the NFT. When a user collects an event this is when the NFT actually gets minted and transferred to the user's wallet address, which you'll learn all about in the next section [Collect an Event](/how-to/build-event-app/collect-an-event).
+Note that at this stage you are only registering the SBT. When a user collects a badge is when the SBT actually gets minted and transferred to the user's wallet address, which you'll learn all about in the next section [Collect a Badge](/how-to/build-badge-app/collect-a-badge).
