@@ -36,4 +36,4 @@ To start the local development server run the command `npm run dev` or `yarn dev
 
 This is the link for the live version of the app you are about to build: [https://cc-badge-app.vercel.app/](https://cc-badge-app.vercel.app/)
 
-Let's get started with building an app that users can issue and collect badges!
+Let's get started with building an application where users can issue and collect badges!

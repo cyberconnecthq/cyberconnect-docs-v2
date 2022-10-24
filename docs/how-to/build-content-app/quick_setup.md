@@ -41,4 +41,4 @@ To start the local development server run the command `npm run dev` or `yarn dev
 
 This is the link for the live version of the app you are about to build: [https://cc-content-app.vercel.app/](https://cc-content-app.vercel.app/)
 
-Let's dive into the docs and start building a content app!
+Let's dive into the docs and start building a content application!
