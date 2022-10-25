@@ -3,7 +3,7 @@ id: profile-handle
 title: Get Profile by Handle
 slug: /guides/query/profiles-handle
 sidebar_label: Profile Handle
-sidebar_position: 3
+sidebar_position: 4
 description: Query - Profile Handle
 ---
 
