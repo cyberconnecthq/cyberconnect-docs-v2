@@ -3,7 +3,7 @@ id: subscribing-relationships
 title: Get Subscribing Relationships by an EVM address
 slug: /guides/query/subscribing-relationships
 sidebar_label: Subscribing Relationships
-sidebar_position: 6
+sidebar_position: 7
 description: Query - Subscribing Relationships
 ---
 
