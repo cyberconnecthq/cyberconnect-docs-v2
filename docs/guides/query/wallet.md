@@ -20,4 +20,3 @@ import ApolloCard from "@site/src/components/ApolloCard";
 You can also get multiple `wallets` by the `address` list and `chainID`.
 
 <ApolloCard queryName="getWallets" />
-

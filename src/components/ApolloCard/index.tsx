@@ -118,6 +118,49 @@ const apolloData = {
     },
     headers: {},
   },
+  getWallet: {
+    query: `query wallet($address: AddressEVM!, $chainID: ChainID!){
+  wallet(address: $address, chainID: $chainID) {
+    address
+    chainID
+    profiles {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }
+}`,
+    variables: {
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+      chainID: 1,
+    },
+    headers: {},
+  },
+  getWallets: {
+    query: `query wallets($addresses: [AddressEVM!]!, $chainID: ChainID!){
+  wallets(addresses: $addresses, chainID: $chainID) {
+    address
+    chainID
+    profiles {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }
+}`,
+    variables: {
+      addresses: [
+        "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+        "0x7628ca7119C215603b4c04A10257674DfFB3b2cA",
+      ],
+      chainID: 1,
+    },
+    headers: {},
+  },
   listProfilesOwnedByAddress: {
     query: `query getProfilesbyOwner($address: AddressEVM!) {
   address(address: $address) {
@@ -239,6 +282,40 @@ const apolloData = {
     },
     headers: {},
   },
+  getEssenceByTokenURI: {
+    query: `query getEssenceByTokenURI($tokenURI: URL!) {
+   essenceByTokenURI(tokenURI: $tokenURI) {
+    essenceID
+    name
+  }
+}`,
+    variables: {
+      tokenURI: "https://metadata.cyberconnect.dev/essence/aec5c5f34f9da637",
+    },
+    headers: {},
+  },
+  verifyEssenceMetadata: {
+    query: `query verifyEssenceMetadata($version: String!, $tokenURI: URL!, $name: String!, $appID: String, $lang: String) {
+  verifyEssenceMetadata(input: {
+    version: $version
+    tokenURI: $tokenURI
+    name: $name
+    appID: $appID
+    lang: $lang
+  }) {
+    verified
+  }
+}`,
+    variables: {
+      version: "1.0.13",
+      tokenURI:
+        "https://metadata.stg.cyberconnect.dev/essence/66206fb0ca020cf0",
+      name: "Link3 event token",
+      appID: "Link3",
+      lang: "EN",
+    },
+    headers: {},
+  },
   getSubscribingByAddressEVM: {
     query: `query getSubscribingByAddressEVM($address: AddressEVM!) {
   address(address: $address) {
@@ -304,7 +381,7 @@ const apolloData = {
   }
 }`,
     variables: {
-      address: "0x2c9c6A240eC45Ac2C22E5B720aAaB0C904484085",
+      address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
     },
     headers: {},
   },
@@ -337,7 +414,7 @@ const apolloData = {
   }
 }`,
     variables: {
-      address: "0x2c9c6A240eC45Ac2C22E5B720aAaB0C904484085",
+      address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
     },
     headers: {},
   },

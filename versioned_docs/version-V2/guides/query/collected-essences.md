@@ -13,12 +13,10 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 <ApolloCard queryName="getCollectedEssencesByAddressEVM" />
 
-
 You can query the `essence` directly by its `tokenURI`
 
-<ApolloCard queryName="essenceByTokenURI" />
+<ApolloCard queryName="getEssenceByTokenURI" />
 
 And verify if the essence metadata meet our Link3 standard.
 
 <ApolloCard queryName="verifyEssenceMetadata" />
-
