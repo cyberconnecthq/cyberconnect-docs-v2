@@ -1,0 +1,90 @@
+---
+id: verify-essence-metadata-input
+title: VerifyEssenceMetadataInput
+---
+
+
+No description
+
+```graphql
+input VerifyEssenceMetadataInput {
+  version: String!
+  name: String
+  app_id: String
+  description: String
+  image: URL
+  issue_date: String
+  external_url: URL
+  lang: String
+  tags: [String!]
+  media: [Media!]
+  attributes: [Attribute!]
+  image_data: String
+}
+```
+
+
+### Fields
+
+#### `version` ([`String`](/reference/scalars/string))
+
+`version` the version of essence metadata schema. Right now only support `1.0.0`
+
+
+#### `name` ([`String`](/reference/scalars/string))
+
+`tokenURI` the token URI of the essence NFT.
+
+
+#### `app_id` ([`String`](/reference/scalars/string))
+
+`appID` the appID of the essence belongs to.
+
+
+#### `description` ([`String`](/reference/scalars/string))
+
+`description` the readable description of the essence.
+
+
+#### `image` ([`URL`](/reference/scalars/url))
+
+`image` the essence image url link.
+
+
+#### `issue_date` ([`String`](/reference/scalars/string))
+
+`issue_date` creation time of the item as ISO 8601.
+
+
+#### `external_url` ([`URL`](/reference/scalars/url))
+
+`externalURL` the Link3 url link to the host profile page.
+
+
+#### `lang` ([`String`](/reference/scalars/string))
+
+`lang` the language of the content as a BCP47 language tag
+
+
+#### `tags` ([`String`](/reference/scalars/string))
+
+
+
+
+#### `media` ([`Media`](/reference/inputs/media))
+
+`media` refers to any image, video, or any other MIME type attached to the content. Limited to max. 10 media objects.
+
+
+#### `attributes` ([`Attribute`](/reference/inputs/attribute))
+
+`attributes` for the item.
+
+
+#### `image_data` ([`String`](/reference/scalars/string))
+
+`image_data` SVG image data when the image is not passed. Only use this if you're not including the image parameter
+
+
+
+

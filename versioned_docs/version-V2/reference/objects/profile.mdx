@@ -33,7 +33,7 @@ type Profile implements Node {
   orderBy: SubscribeOrder
 ): SubscribeConnection!
   subscribeNFT: ContractAddressEVM
-  subscribeMw: ContractAddressEVM
+  subscribeMw: MiddlewareInfo
   namespace: Namespace!
   subscriberCount: Int!
 }
@@ -153,9 +153,9 @@ type Profile implements Node {
 `subscribeNFT` the profile's subscribe NFT contract address.
 
 
-#### `subscribeMw` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+#### `subscribeMw` ([`MiddlewareInfo`](/reference/objects/middleware-info))
 
-`subscribeMw` the profile's subscribe middleware contract address.
+`subscribeMw` information about the profile's subscribe middleware.
 
 
 #### `namespace` ([`Namespace`](/reference/objects/namespace))

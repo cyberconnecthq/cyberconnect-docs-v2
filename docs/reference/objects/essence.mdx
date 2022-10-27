@@ -13,7 +13,7 @@ type Essence implements Node {
   name: String!
   symbol: String!
   tokenURI: URL!
-  mwContract: ContractAddressEVM!
+  collectMw: MiddlewareInfo!
   collectedBy(
   after: Cursor
   first: Int
@@ -53,9 +53,9 @@ type Essence implements Node {
 `tokenURI` the token URI of the essence.
 
 
-#### `mwContract` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+#### `collectMw` ([`MiddlewareInfo`](/reference/objects/middleware-info))
 
-`mwContract` the contract address of the essence middleware.
+`collectMw` information about the essence's collect middleware.
 
 
 #### `collectedBy` ([`CollectConnection`](/reference/objects/collect-connection))

@@ -4,11 +4,12 @@ title: batchGetAddresses
 ---
 
 
-`address` returns information about a list of EVM addresses.
+`batchGetAddresses` returns information about a list of EVM addresses on a certain chain.
 
 ```graphql
 batchGetAddresses(
   addresses: [AddressEVM!]!
+  chainID: ChainID!
 ): [Address!]!
 ```
 
@@ -16,6 +17,11 @@ batchGetAddresses(
 ### Arguments
 
 #### `addresses` ([`AddressEVM`](/reference/scalars/address-evm))
+
+
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
 
 
 
