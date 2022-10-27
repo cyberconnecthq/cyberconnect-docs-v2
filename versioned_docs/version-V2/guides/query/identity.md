@@ -3,7 +3,7 @@ id: identity
 title: Query Identity
 slug: /guides/query/identity
 sidebar_label: Identity
-sidebar_position: 5
+sidebar_position: 4
 description: Query - Identity
 ---
 

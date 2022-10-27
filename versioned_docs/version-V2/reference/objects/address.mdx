@@ -9,8 +9,8 @@ The `Address` type provides an address information on multiple EVM chains.
 ```graphql
 type Address {
   address: AddressEVM!
-  ethWallet: Wallet
-  goerliWallet: Wallet
+  chainID: ChainID!
+  wallet: Wallet
   identity: Identity!
   followers(
   offset: Int
@@ -38,14 +38,14 @@ type Address {
 `address` the address.
 
 
-#### `ethWallet` ([`Wallet`](/reference/objects/wallet))
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainID` the ChainID.
+
+
+#### `wallet` ([`Wallet`](/reference/objects/wallet))
 
 `ethWallet` the wallet address on Ethereum.
-
-
-#### `goerliWallet` ([`Wallet`](/reference/objects/wallet))
-
-`goerliWallet` the wallet address on Goerli.
 
 
 #### `identity` ([`Identity`](/reference/objects/identity))

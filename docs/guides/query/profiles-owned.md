@@ -3,7 +3,7 @@ id: profiles-owned
 title: List Profiles owned by Wallet
 slug: /guides/query/profiles-owned
 sidebar_label: Profiles Owned
-sidebar_position: 3
+sidebar_position: 2
 description: Query - Profiles Owned
 ---
 
