@@ -80,33 +80,41 @@ const apolloData = {
     },
   },
   getAddressByEVMWallet: {
-    query: `query getAddressByEVMWallet($address: AddressEVM!) {
-  address (address: $address) {
-    ethWallet{
-      address
-      chainID
+    query: `query address($address: AddressEVM!, $chainID: ChainID!){
+  address(address: $address, chainID: $chainID) {
+    address
+    chainID
+    wallet {
+      profiles {
+      edges {
+        node {
+          id
+        }
+      }
     }
-    goerliWallet{
-      address
-      chainID
     }
   }
 }`,
     variables: {
       address: "0x7c04786f04c522ca664bb8b6804e0d182eec505f",
+      chainID: 1,
     },
     headers: {},
   },
   batchGetAddressByEVMWallet: {
-    query: `query batchGetAddressByEVMWallet($addresses: [AddressEVM!]!) {
-  batchGetAddresses (addresses: $addresses) {
-    ethWallet{
-      address
-      chainID
+    query: `query batchGetAddressByEVMWallet($addresses: [AddressEVM!]!,
+$chainID: ChainID!) {
+  batchGetAddresses (addresses: $addresses, chainID: $chainID) {
+    address
+    chainID
+    wallet {
+      profiles {
+      edges {
+        node {
+          id
+        }
+      }
     }
-    goerliWallet{
-      address
-      chainID
     }
   }
 }`,
@@ -115,56 +123,16 @@ const apolloData = {
         "0x7c04786f04c522ca664bb8b6804e0d182eec505f",
         "0x1C0E779f50B8A6443b6f8CCaE5ea07986d5588F5",
       ],
-    },
-    headers: {},
-  },
-  getWallet: {
-    query: `query wallet($address: AddressEVM!, $chainID: ChainID!){
-  wallet(address: $address, chainID: $chainID) {
-    address
-    chainID
-    profiles {
-      edges {
-        node {
-          id
-        }
-      }
-    }
-  }
-}`,
-    variables: {
-      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
-      chainID: 1,
-    },
-    headers: {},
-  },
-  getWallets: {
-    query: `query wallets($addresses: [AddressEVM!]!, $chainID: ChainID!){
-  wallets(addresses: $addresses, chainID: $chainID) {
-    address
-    chainID
-    profiles {
-      edges {
-        node {
-          id
-        }
-      }
-    }
-  }
-}`,
-    variables: {
-      addresses: [
-        "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
-        "0x7628ca7119C215603b4c04A10257674DfFB3b2cA",
-      ],
       chainID: 1,
     },
     headers: {},
   },
   listProfilesOwnedByAddress: {
-    query: `query getProfilesbyOwner($address: AddressEVM!) {
-  address(address: $address) {
-    goerliWallet {
+    query: `query getProfilesbyOwner($address: AddressEVM!,
+ $chainID: ChainID!) {
+  address(address: $address,
+   chainID: $chainID) {
+    wallet {
       profiles(first:5) {
         edges {
           node {
@@ -188,6 +156,7 @@ const apolloData = {
 }`,
     variables: {
       address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
+      chainID: 5,
     },
     headers: {},
   },
@@ -208,8 +177,9 @@ const apolloData = {
     headers: {},
   },
   getAddressIdentity: {
-    query: `query getAddressIdentity($address: AddressEVM!){
-  address(address: $address) {
+    query: `query getAddressIdentity($address: AddressEVM!,
+ $chainID: ChainID!){
+  address(address: $address, chainID: $chainID) {
     identity{
       socialInfo{
         github{
@@ -227,12 +197,14 @@ const apolloData = {
 }`,
     variables: {
       address: "0x148D59faF10b52063071eDdf4Aaf63A395f2d41c",
+      chainID: 1,
     },
     headers: {},
   },
   getFollowersByAddressEVM: {
-    query: `query getFollowersByAddressEVM($address: AddressEVM!){
-  address(address: $address) {
+    query: `query getFollowersByAddressEVM($address: AddressEVM!,
+ $chainID: ChainID!){
+  address(address: $address, chainID: $chainID) {
     followers(limit: 5) {
       totalCount
       edges{
@@ -241,7 +213,7 @@ const apolloData = {
             address
           }
           to {
-              address
+            address
           }
         }
       }
@@ -253,18 +225,20 @@ const apolloData = {
 }`,
     variables: {
       address: "0x148D59faF10b52063071eDdf4Aaf63A395f2d41c",
+      chainID: 1,
     },
     headers: {},
   },
   getFollowingsByAddressEVM: {
-    query: `query getFollowingsByAddressEVM($address: AddressEVM!){
-  address(address: $address) {
+    query: `query getFollowingsByAddressEVM($address: AddressEVM!,
+ $chainID: ChainID!){
+  address(address: $address, chainID: $chainID) {
     followings(limit: 5) {
       totalCount
       edges{
         node{
           from {
-          address
+            address
           }
           to {
             address
@@ -279,47 +253,35 @@ const apolloData = {
 }`,
     variables: {
       address: "0x148D59faF10b52063071eDdf4Aaf63A395f2d41c",
-    },
-    headers: {},
-  },
-  getEssenceByTokenURI: {
-    query: `query getEssenceByTokenURI($tokenURI: URL!) {
-   essenceByTokenURI(tokenURI: $tokenURI) {
-    essenceID
-    name
-  }
-}`,
-    variables: {
-      tokenURI: "https://metadata.cyberconnect.dev/essence/aec5c5f34f9da637",
+      chainID: 1,
     },
     headers: {},
   },
   verifyEssenceMetadata: {
-    query: `query verifyEssenceMetadata($version: String!, $tokenURI: URL!, $name: String!, $appID: String, $lang: String) {
+    query: `query verifyEssenceMetadata($version: String!,
+ $name: String!, $app_id: String, $lang: String) {
   verifyEssenceMetadata(input: {
     version: $version
-    tokenURI: $tokenURI
     name: $name
-    appID: $appID
+    app_id: $app_id
     lang: $lang
   }) {
     verified
   }
 }`,
     variables: {
-      version: "1.0.13",
-      tokenURI:
-        "https://metadata.stg.cyberconnect.dev/essence/66206fb0ca020cf0",
+      version: "1.0.0",
       name: "Link3 event token",
-      appID: "Link3",
+      app_id: "Link3",
       lang: "EN",
     },
     headers: {},
   },
   getSubscribingByAddressEVM: {
-    query: `query getSubscribingByAddressEVM($address: AddressEVM!) {
-  address(address: $address) {
-    goerliWallet {
+    query: `query getSubscribingByAddressEVM($address: AddressEVM!,
+ $chainID: ChainID!){
+  address(address: $address, chainID: $chainID) {
+    wallet {
       subscribings {
         totalCount
         edges {
@@ -342,13 +304,15 @@ const apolloData = {
 }`,
     variables: {
       address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
+      chainID: 5,
     },
     headers: {},
   },
   getSubscribersByProfile: {
-    query: `query getSubscribersByProfile($address: AddressEVM!) {
-  address(address: $address) {
-    goerliWallet {
+    query: `query getSubscribersByProfile($address: AddressEVM!,
+ $chainID: ChainID!){
+  address(address: $address, chainID: $chainID) {
+    wallet {
       profiles(first:1) {
         edges {
           node {
@@ -382,13 +346,15 @@ const apolloData = {
 }`,
     variables: {
       address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
+      chainID: 5,
     },
     headers: {},
   },
   getCollectedEssencesByAddressEVM: {
-    query: `query getCollectedEssencesByAddressEVM($address: AddressEVM!) {
-  address(address: $address) {
-    goerliWallet {
+    query: `query getCollectedEssencesByAddressEVM($address: AddressEVM!,
+ $chainID: ChainID!){
+  address(address: $address, chainID: $chainID) {
+    wallet {
 			collectedEssences(first: 4){
         edges{
           node{
@@ -415,6 +381,7 @@ const apolloData = {
 }`,
     variables: {
       address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
+      chainID: 5,
     },
     headers: {},
   },

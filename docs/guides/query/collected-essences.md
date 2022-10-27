@@ -3,7 +3,7 @@ id: collected-essences
 title: List Collected Essences by a wallet
 slug: /guides/query/collected-essences
 sidebar_label: Collected Essences
-sidebar_position: 7
+sidebar_position: 6
 description: Query - Collected Essences
 ---
 
@@ -12,10 +12,6 @@ A `Wallet` can collect `Essence` created by different `Profile`. When the `Essen
 import ApolloCard from "@site/src/components/ApolloCard";
 
 <ApolloCard queryName="getCollectedEssencesByAddressEVM" />
-
-You can query the `essence` directly by its `tokenURI`
-
-<ApolloCard queryName="getEssenceByTokenURI" />
 
 And verify if the essence metadata meet our Link3 standard.
 
