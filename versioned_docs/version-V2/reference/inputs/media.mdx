@@ -1,0 +1,42 @@
+---
+id: media
+title: Media
+---
+
+
+The `VerifyEssenceMetadataInput` input type specifies the params required to verify an essence's metadata.
+
+```graphql
+input Media {
+  media_type: String!
+  media_url: String!
+  alt_tag: String
+  preview_image_url: String
+}
+```
+
+
+### Fields
+
+#### `media_type` ([`String`](/reference/scalars/string))
+
+`media_type`the MIME type for the media 
+
+
+#### `media_url` ([`String`](/reference/scalars/string))
+
+`media_url` the URL link for the media 
+
+
+#### `alt_tag` ([`String`](/reference/scalars/string))
+
+`alt_tag` alternative text when media can't be rendered
+
+
+#### `preview_image_url` ([`String`](/reference/scalars/string))
+
+`preview_image_url` the preview image for the media
+
+
+
+
