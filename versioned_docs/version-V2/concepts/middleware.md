@@ -13,10 +13,6 @@ To enable dynamic rules involved in profile creation, collecting contents and pa
 
 # Supported Middlewares
 
-## Profile Middleware
-
-- `PermissionedFeeCreationMw` - The namespace owner sets a tier fee for profile creation.
-
 ## Subscribe Middleware
 
 - `SubscribeDisallowedMw` - Subscribing to a user is disallowed.

@@ -10,10 +10,10 @@ description: Cheat sheet
 ## Playground Link
 
 ### Release (only indexing on mainnets) 
-https://api.stg.cyberconnect.dev/playground
+https://api.cyberconnect.dev/playground
 
 ### Stage (indexing on both mainnets and testnets)
-https://api.cyberconnect.dev/playground
+https://api.stg.cyberconnect.dev/playground
 
 ## Deployment Addresses
 
