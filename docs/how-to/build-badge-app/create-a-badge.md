@@ -79,9 +79,6 @@ Below are all the fields for the Essence Metadata Schema accompanied by a short 
 
 ```tsx title="types.ts"
 /* Metadata schema for Essence NFT */
-export enum Version {
-    V1 = "1.0.0",
-}
 
 interface Media {
     /* The MIME type for the media */
@@ -110,7 +107,7 @@ export interface IEssenceMetadata {
     metadata_id: string;
 
     /* Version of the metadata schema used for the issued item. */
-    version: Version;
+    version: string;
 
     /* ~~ OPTIONAL ~~ */
     /* Id of the application under which the items are being minted. */
@@ -157,6 +154,12 @@ export interface IEssenceMetadata {
 }
 ```
 
+:::tip
+
+[Verify Essence Metadata](/guides/query/verify-essence-metadata) allows you to verify the validity of an essence's metadata schema.
+
+:::
+
 ## Create a Badge
 
 To create a badge means to [Register a Essence](/guides/mutation/register-essence) and the process for it does require the following steps:
@@ -171,7 +174,7 @@ To create a badge means to [Register a Essence](/guides/mutation/register-essenc
 /* Construct the metadata object for the Essence NFT */
 const metadata: IEssenceMetadata = {
     metadata_id: uuidv4(),
-    version: Version.V1,
+    version: "1.0.0",
     app_id: "cyberconnect",
     lang: "en",
     issue_date: new Date().toISOString(),

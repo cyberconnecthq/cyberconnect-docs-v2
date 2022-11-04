@@ -9,23 +9,21 @@ description: Recommendation Engine - Labels
 
 ## CyberConnect Labels
 
-Looking up someone’s address on a block explorer can be quite confusing for people new to blockchain data. All these random hexadecimal encoded strings `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045` aren't user friendly and can alienate newcomers. That’s where CyberConnect Labels come in. CyberConnect Labels are meant to 
+Looking up someone’s address on a block explorer can be quite confusing for people new to blockchain data. All these random hexadecimal encoded strings `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045` aren't user friendly and can alienate newcomers. That’s where CyberConnect Labels come in. CyberConnect Labels are meant to
 
 ### What is a label?
 
 A label is **a piece of metadata about an address**, a tag if you will, represented as a string. There are currently two kinds of labels:
 
 1. **Contract Labels<sup>1</sup>**
-   - Map **1-to-1** with contract addresses
-   - These are similar to contract names on etherscan
-   ![contract](/img/v2/contract-labels-comparison.png)
+    - Map **1-to-1** with contract addresses
+    - These are similar to contract names on etherscan
+      ![contract](/img/v2/contract-labels-comparison.png)
 2. **Project Labels**
-   - Map **1-to-Many** with contract addresses
-   - Are meant to be higher level object tying multiple contracts to one entity
-   - These are similar to badge/tags found at the top of contracts/addresses on etherscan
-    ![project](/img/v2/project-labels-comparison.png)
-
-
+    - Map **1-to-Many** with contract addresses
+    - Are meant to be higher level object tying multiple contracts to one entity
+    - These are similar to badge/tags found at the top of contracts/addresses on etherscan
+      ![project](/img/v2/project-labels-comparison.png)
 
 Another way to think of the two label types are that project labels are the parent of contract labels. For example where `Opensea` is the project label and `OpenSea: Wyvern Exchange v1` is an example of a child contract label.
 
@@ -47,7 +45,8 @@ Another way to think of the two label types are that project labels are the pare
 ```
 
 # How can I use these labels?
-Right now we primary way of accessing these labels is through getting the number of interactions an address has had with those labels (i.e. the number of transactions that address has sent/received from contracts belonging to those labels). We currently only expose the project level interactions, but plan to release contract level detail in an upcoming release. 
+
+Right now we primary way of accessing these labels is through getting the number of interactions an address has had with those labels (i.e. the number of transactions that address has sent/received from contracts belonging to those labels). We currently only expose the project level interactions, but plan to release contract level detail in an upcoming release.
 
 ## Project Level interactions stats
 
@@ -59,7 +58,8 @@ The `projectInteractionStats` provides a list of projects with which the input a
 
 import PostmanCard from "@site/src/components/PostmanCard";
 
-### Detailed View 
+### Detailed View
+
 <PostmanCard 
   queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-f8948b6d-4c42-448b-bc0a-65ee75815847"
   exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-9a0f9ff3-2fb4-4086-819b-e115f09e7a48"
@@ -97,7 +97,7 @@ import PostmanCard from "@site/src/components/PostmanCard";
                         },
 ```
 
-### Aggregated View 
+### Aggregated View
 
 <PostmanCard 
   queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-0483574a-f11c-4053-9fd7-daa4f11cda78"
@@ -131,7 +131,6 @@ import PostmanCard from "@site/src/components/PostmanCard";
     }
 }
 ```
-
 
 <details>
     <summary>
