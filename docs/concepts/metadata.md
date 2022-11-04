@@ -7,11 +7,21 @@ sidebar_position: 6
 description: Major Concepts of CyberConnect
 ---
 
+# Essence Metadata
 
-# Essence Metadatas
+The Essence Metadata Schema acts as a standard template that is being used to store data about the Essence NFT. This metadata schema was created to ensure proper parsing and indexing of the Essence NFT.
 
-To parse and index the essence metadata correctly, we have our eesence metadata as following. Our metadata standard supports OpenSea and other marketplaces. Please reach out to us if you have any questions or having any suggestions to keep refining our metadata standard. 
-```json
+:::tip
+
+[Verify Essence Metadata](/guides/query/verify-essence-metadata) allows you to verify the validity of an essence's metadata schema.
+
+:::
+
+The Essence Metadata Schema follows the [OpenSea Metadata Standards](https://docs.opensea.io/docs/metadata-standards) which means that the Essence NFT is supported by OpenSea and other marketplaces.
+
+Below you will find the list of fields for the Essence Metadata Schema accompanied by a short description on what each field represents.
+
+```tsx
 interface Media {
     /* The MIME type for the media */
     media_type: string;
@@ -35,6 +45,8 @@ interface Attribute {
 
 interface Metadata {
     /* ~~ REQUIRED ~~ */
+    /* Unique id for the issued item */
+    metadata_id: string;
 
     /* Version of the metadata schema used for the issued item. Only support 1.0.0 for now. */
     version: string;
@@ -63,7 +75,7 @@ interface Metadata {
     /* URL to the image of the item. */
     image?: string;
 
-    /* SVG image data when the image is not passed. Only use this if you're not 
+    /* SVG image data when the image is not passed. Only use this if you're not
     including the image parameter. */
     image_data?: string;
 
