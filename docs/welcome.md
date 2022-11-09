@@ -45,14 +45,7 @@ import UsecaseCardsV2 from "@site/src/components/UsecaseCardsV2";
     </p>
     <br></br>
     <p>
-    Join the discussion on our{" "}
-        <a
-            href="https://forum.cyberconnect.me/"
-            target="_blank"
-            rel="noopener noreferrer">
-            forum
-        </a>{" "}
-        and stay updated by subscribing to our{" "}
+    Stay updated by subscribing to our{" "}
         <a
             href="https://www.getrevue.co/profile/cyberconnect"
             target="_blank"
