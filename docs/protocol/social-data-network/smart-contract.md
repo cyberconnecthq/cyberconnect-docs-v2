@@ -29,10 +29,6 @@ SubscribeNFT represents the unidirectional relationship between an address and a
 
 EssenceNFT is a generic NFT that individual ProfileNFT holders can issue to express an arbitrary relationship such as investor, patron, team member, community participant, etc. Each EssenceNFT can be configured with rules like pay-to-mint (crowdfunding), hold-to-mint (community participants), etc. It can be also configured as a tradable NFT or a non-transferable soul bound token (SBT).
 
-### Namespace
-
-Namespace represents a context-specific social network. Any application can customize the ProfileNFT minting conditions such as minting price, handle validation logic, and treasury fee structure. The project can extend the utility of namespace to build a decentralized Domain Name Service on the top of it.
-
 ## Composable Middleware
 
 Although the computational condition varies a lot on different dApps, many commonly seen patterns can be generalized into reusable and extensible modules. For example, dApp A wants to build a BAYC club by setting the condition that only BAYC holders can mint their app-specific ProfileNFT and dApp B wants to do the same thing for CloneX holders. The underlying pattern is the same and the only difference is the gated ERC-721 contract address.
