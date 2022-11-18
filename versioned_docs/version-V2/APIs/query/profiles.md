@@ -1,10 +1,10 @@
 ---
-id: link3-profiles
-title: Link3 Profiles
-slug: /guides/query/link3-profiles
-sidebar_label: Link3 Profiles
+id: profiles
+title: Profiles
+slug: /guides/query/profiles
+sidebar_label: Profiles
 sidebar_position: 2
-description: Query - Link3 Profiles
+description: Query - Profiles
 ---
 
 You can find a Link3 `profile` by it's `handle`.
