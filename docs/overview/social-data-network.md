@@ -11,7 +11,7 @@ CyberConnect has two components to help developer build social applications: **S
 
 ## Modules
 
-Users generate various data when they are engaging in social platforms thru setting up their profile for the first time, following content creators and creating contents. We categorize them into the following three components.
+Users generate various data when they are engaging in social platforms through setting up their profile for the first time, following content creators and creating contents. We categorize them into the following three components.
 
 ### Identity
 
