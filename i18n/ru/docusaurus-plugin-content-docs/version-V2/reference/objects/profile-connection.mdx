@@ -1,0 +1,36 @@
+---
+id: profile-connection
+title: ProfileConnection
+---
+
+
+Тип `ProfileConnection` предоставляет постраничный список `ProfileEdge` вместе с общим количеством профилей.
+
+```graphql
+type ProfileConnection {
+  totalCount: Int!
+  pageInfo: PageInfo!
+  edges: [ProfileEdge]
+}
+```
+
+
+### Поля
+
+#### `totalCount` ([`Int`](/reference/scalars/int))
+
+`totalCount` - общее количество профилей.
+
+
+#### `pageInfo` ([`PageInfo`](/reference/objects/page-info))
+
+`pageInfo` - содержит информацию о текущей странице.
+
+
+#### `edges` ([`ProfileEdge`](/reference/objects/profile-edge))
+
+`edges` - список объектов `ProfileEdge`.
+
+
+
+

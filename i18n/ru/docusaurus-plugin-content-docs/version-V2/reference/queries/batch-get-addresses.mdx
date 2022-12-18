@@ -1,0 +1,37 @@
+---
+id: batch-get-addresses
+title: batchGetAddresses
+---
+
+
+`batchGetAddresses` возвращает информацию о списке EVM адресов в определенной цепочке.
+
+```graphql
+batchGetAddresses(
+  addresses: [AddressEVM!]!
+  chainID: ChainID!
+): [Address!]!
+```
+
+
+### Аргументы
+
+#### `addresses` ([`AddressEVM`](/reference/scalars/address-evm))
+
+
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+
+
+
+### Типы
+
+#### [`Address`](/reference/objects/address) 
+
+Тип `Address` предоставляет информацию об адресе в нескольких EVM цепочках.
+
+
+
+

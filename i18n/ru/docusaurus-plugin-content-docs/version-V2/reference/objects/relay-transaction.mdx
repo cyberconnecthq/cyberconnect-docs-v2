@@ -1,0 +1,42 @@
+---
+id: relay-transaction
+title: RelayTransaction
+---
+
+
+Тип `RelayTransaction` содержит информацию о связанной транзакции.
+
+```graphql
+type RelayTransaction implements Node {
+  id: ID!
+  txHash: String!
+  typedData: TypedData
+}
+```
+
+
+### Поля
+
+#### `id` ([`ID`](/reference/scalars/id))
+
+`id` - идентификатор связанной транзакции.
+
+
+#### `txHash` ([`String`](/reference/scalars/string))
+
+`txHash` - хэш транзакции.
+
+
+#### `typedData` ([`TypedData`](/reference/objects/typed-data))
+
+`typedData` - информация о Typed Data.
+
+
+### Интерфейсы
+
+#### [`Node`](/reference/interfaces/node) 
+
+Интерфейс `Node` соответсвует спецификации relay.dev.
+
+
+

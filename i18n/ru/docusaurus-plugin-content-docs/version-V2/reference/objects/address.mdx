@@ -1,0 +1,104 @@
+---
+id: address
+title: Address
+---
+
+
+Тип `Address` предоставляет информацию об адресе в нескольких EVM цепочках.
+
+```graphql
+type Address {
+  address: AddressEVM!
+  chainID: ChainID!
+  wallet: Wallet
+  identity: Identity!
+  followers(
+  offset: Int
+  limit: Int
+): FollowConnection!
+  followings(
+  offset: Int
+  limit: Int
+): FollowConnection!
+  followStats: FollowStats!
+  isFollowedBy(
+  addresses: [AddressEVM!]!
+): [Boolean!]!
+  isFollowing(
+  addresses: [AddressEVM!]!
+): [Boolean!]!
+}
+```
+
+
+### Поля
+
+#### `address` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`address` - адрес.
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainID` - идентификатор цепочки.
+
+
+#### `wallet` ([`Wallet`](/reference/objects/wallet))
+
+`ethWallet` - адрес кошелька в Ethereum.
+
+
+#### `identity` ([`Identity`](/reference/objects/identity))
+
+`identity` - предоставляет информацию об идентичности пользователя.
+
+
+#### `followers` ([`FollowConnection`](/reference/objects/follow-connection))
+
+`followers` - предоставляет постраничный упорядоченный список профилей подписанных на пользователя.
+- ##### `offset` ([`Int`](/reference/scalars/int))
+
+
+
+
+- ##### `limit` ([`Int`](/reference/scalars/int))
+
+
+
+
+#### `followings` ([`FollowConnection`](/reference/objects/follow-connection))
+
+`followings` - предоставляет постраничный упорядоченный список профилей на которые подписан пользователь.
+- ##### `offset` ([`Int`](/reference/scalars/int))
+
+
+
+
+- ##### `limit` ([`Int`](/reference/scalars/int))
+
+
+
+
+#### `followStats` ([`FollowStats`](/reference/objects/follow-stats))
+
+`followStats` - возвращает статистику о подписчиках пользователя и его подписках.
+
+
+#### `isFollowedBy` ([`Boolean`](/reference/scalars/boolean))
+
+`isFollowedBy` - возвращает статус `followed by` для одного или нескольких адресов.
+- ##### `addresses` ([`AddressEVM`](/reference/scalars/address-evm))
+
+
+
+
+#### `isFollowing` ([`Boolean`](/reference/scalars/boolean))
+
+`isFollowing` - возвращает статус `following` для одного или нескольких адресов.
+- ##### `addresses` ([`AddressEVM`](/reference/scalars/address-evm))
+
+
+
+
+
+

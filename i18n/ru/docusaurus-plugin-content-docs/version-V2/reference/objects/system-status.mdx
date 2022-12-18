@@ -1,0 +1,30 @@
+---
+id: system-status
+title: SystemStatus
+---
+
+
+Тип `SystemStatus`  предоставляет информацию о высоте последнего синхронизированного блока.
+
+```graphql
+type SystemStatus {
+  ethBlockNumber: Int!
+  goerliBlockNumber: Int!
+}
+```
+
+
+### Поля
+
+#### `ethBlockNumber` ([`Int`](/reference/scalars/int))
+
+`ethBlockNumber` - номер последнего синхронизированного блока основной сети ETH.
+
+
+#### `goerliBlockNumber` ([`Int`](/reference/scalars/int))
+
+`goerliBlockNumber` - номер последнего синхронизирован блока тестовой сети Goerli.
+
+
+
+

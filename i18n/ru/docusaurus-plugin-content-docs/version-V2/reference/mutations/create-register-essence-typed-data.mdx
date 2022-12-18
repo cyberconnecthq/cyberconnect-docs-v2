@@ -1,0 +1,29 @@
+---
+id: create-register-essence-typed-data
+title: createRegisterEssenceTypedData
+---
+
+
+`createRegisterEssenceTypedData` возвращает сообщение с типизированными данными спецификации EIP-712 для подписи с помощью кошелька, чтобы зарегистрировать сущность. Для этой мутации требуется заголовок `Authorization` с действительным токеном `Bearer`.
+
+```graphql
+createRegisterEssenceTypedData(
+  input: CreateRegisterEssenceTypedDataInput!
+): CreateRegisterEssenceTypedDataResult!
+```
+
+
+### Аргументы
+
+#### `input` ([`CreateRegisterEssenceTypedDataInput`](/reference/inputs/create-register-essence-typed-data-input))
+
+
+
+
+### Тип
+
+#### [`CreateRegisterEssenceTypedDataResult`](/reference/objects/create-register-essence-typed-data-result) 
+
+Тип `CreateRegisterEssenceTypedDataResult` предоставляет сгенерированную информацию о типизированных данных спецификации EIP-712.
+
+

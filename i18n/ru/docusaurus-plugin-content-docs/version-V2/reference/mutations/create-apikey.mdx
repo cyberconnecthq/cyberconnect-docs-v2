@@ -1,0 +1,31 @@
+---
+id: create-apikey
+title: createAPIKey
+---
+
+
+`createAPIKey` возвращает `API key` для включения в заголовок `X-API-KEY` запросов на мутацию, требующих `API key` аутентификации.
+
+```graphql
+createAPIKey(
+  input: CreateAPIKeyInput!
+): CreateAPIKeyResult!
+```
+
+
+### Аргументы
+
+#### `input` ([`CreateAPIKeyInput`](/reference/inputs/create-apikey-input))
+
+
+
+
+### Тип
+
+#### [`CreateAPIKeyResult`](/reference/objects/create-apikey-result) 
+
+Тип `CreateAPIKeyResult` возвращает сгенерированный `API key`.
+
+
+
+

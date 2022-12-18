@@ -1,0 +1,66 @@
+---
+id: metadata-detail
+title: MetadataDetail
+---
+
+
+Тип `MetadataDetail` предоставляет информацию о метаданных профиля.
+
+```graphql
+type MetadataDetail {
+  name: String!
+  bio: String!
+  type: ProfileType!
+  title: String!
+  organization: String!
+  nameType: NameType!
+  avatarType: AvatarType!
+  version: String!
+}
+```
+
+
+### Поля
+
+#### `name` ([`String`](/reference/scalars/string))
+
+`name` - имя профиля.
+
+
+#### `bio` ([`String`](/reference/scalars/string))
+
+`bio` - био профиля.
+
+
+#### `type` ([`ProfileType`](/reference/enums/profile-type))
+
+`type` - тип профиля.
+
+
+#### `title` ([`String`](/reference/scalars/string))
+
+`title` - заголовок профиля.
+
+
+#### `organization` ([`String`](/reference/scalars/string))
+
+`organisation` - организация профиля..
+
+
+#### `nameType` ([`NameType`](/reference/enums/name-type))
+
+`nameType` - тип имени профиля.
+
+
+#### `avatarType` ([`AvatarType`](/reference/enums/avatar-type))
+
+`avatarType` - тип аватара профиля.
+
+
+#### `version` ([`String`](/reference/scalars/string))
+
+`version` - версия профиля..
+
+
+
+

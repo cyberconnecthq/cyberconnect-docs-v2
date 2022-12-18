@@ -1,0 +1,89 @@
+---
+id: verify-essence-metadata-input
+title: VerifyEssenceMetadataInput
+---
+
+
+Нет описания
+
+```graphql
+input VerifyEssenceMetadataInput {
+  version: String!
+  name: String
+  app_id: String
+  description: String
+  image: URL
+  issue_date: String
+  external_url: URL
+  lang: String
+  tags: [String!]
+  media: [Media!]
+  attributes: [Attribute!]
+  image_data: String
+}
+```
+
+
+### Поля
+
+#### `version` ([`String`](/reference/scalars/string))
+
+`version` - версия схемы метаданных сущности. Прямо сейчас поддерживается только `1.0.0`.
+
+
+#### `name` ([`String`](/reference/scalars/string))
+
+`tokenURI` - URI токена NFT сущности.
+
+
+#### `app_id` ([`String`](/reference/scalars/string))
+
+`appID` - идентификатор приложения к которому принадлежит сущность.
+
+
+#### `description` ([`String`](/reference/scalars/string))
+
+`description` - читаемое описание сущности.
+
+
+#### `image` ([`URL`](/reference/scalars/url))
+
+`image` - URL-ссылка на изображение сущности.
+
+
+#### `issue_date` ([`String`](/reference/scalars/string))
+
+`issue_date` - время создания элемента в соответствии с ISO 8601.
+
+
+#### `external_url` ([`URL`](/reference/scalars/url))
+
+`externalURL` - Link3 URL-ссылка на страницу профиля хоста. 
+
+
+#### `lang` ([`String`](/reference/scalars/string))
+
+`lang` - язык контента в виде языкового тега BCP47.
+
+
+#### `tags` ([`String`](/reference/scalars/string))
+
+
+
+
+#### `media` ([`Media`](/reference/inputs/media))
+
+`media` - относится к любому изображению, видео или любому другому типу MIME, прикрепленному к контенту. Ограничено макс. 10 медиаобъектов.
+
+#### `attributes` ([`Attribute`](/reference/inputs/attribute))
+
+`attributes` - атрибуты для этого элемента.
+
+
+#### `image_data` ([`String`](/reference/scalars/string))
+
+`image_data` - данные изображения SVG, когда изображение не передается. Используйте это только в том случае, если вы не включаете параметр `image`.
+
+
+
+

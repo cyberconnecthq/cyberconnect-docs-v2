@@ -1,0 +1,48 @@
+---
+id: create-set-essence-data-typed-data-input
+title: CreateSetEssenceDataTypedDataInput
+---
+
+
+Тип ввода `CreateSetEssenceDataTypedDataInput` определяет параметры, необходимые для установки данных сущности.
+
+```graphql
+input CreateSetEssenceDataTypedDataInput {
+  options: TypedDataOptions
+  profileId: Int!
+  essenceId: Int!
+  tokenURI: URL!
+  middleware: EssenceMiddleware!
+}
+```
+
+
+### Поля
+
+#### `options` ([`TypedDataOptions`](/reference/inputs/typed-data-options))
+
+`options` - опции установки данных сущности.
+
+
+#### `profileId` ([`Int`](/reference/scalars/int))
+
+`profileId` - идентификатор профиля, который устанавливает данные сущности.
+
+
+#### `essenceId` ([`Int`](/reference/scalars/int))
+
+`essenceId` - идентификатор сущности, у которой есть свой набор данных.
+
+
+#### `tokenURI` ([`URL`](/reference/scalars/url))
+
+`tokenURI` - URI токена сущности.
+
+
+#### `middleware` ([`EssenceMiddleware`](/reference/inputs/essence-middleware))
+
+`middleware` - промежуточная программа сущности для установки.
+
+
+
+

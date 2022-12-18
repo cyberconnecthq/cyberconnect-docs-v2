@@ -1,0 +1,30 @@
+---
+id: create-subscribe-typed-data-input
+title: CreateSubscribeTypedDataInput
+---
+
+
+Тип ввода `CreateSubscribeTypedDataInput` определяет параметры для подписки на один или несколько профилей.
+
+```graphql
+input CreateSubscribeTypedDataInput {
+  options: TypedDataOptions!
+  profileIDs: [Int!]!
+}
+```
+
+
+### Поля
+
+#### `options` ([`TypedDataOptions`](/reference/inputs/typed-data-options))
+
+`options` - опции подписки на один или несколько профилей.
+
+
+#### `profileIDs` ([`Int`](/reference/scalars/int))
+
+`profileIDs` - список идентификаторов профиля для подписки.
+
+
+
+

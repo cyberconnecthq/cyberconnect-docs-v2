@@ -1,0 +1,36 @@
+---
+id: subscribe-connection
+title: SubscribeConnection
+---
+
+
+Тип `SubscribeConnection` предоставляет постраничный список `SubscribeEdge` вместе с общим количеством подписок.
+
+```graphql
+type SubscribeConnection {
+  totalCount: Int!
+  pageInfo: PageInfo!
+  edges: [SubscribeEdge]
+}
+```
+
+
+### Поля
+
+#### `totalCount` ([`Int`](/reference/scalars/int))
+
+`totalCount` - общее количество подписок.
+
+
+#### `pageInfo` ([`PageInfo`](/reference/objects/page-info))
+
+`pageInfo` - содержит информацию о текущей странице.
+
+
+#### `edges` ([`SubscribeEdge`](/reference/objects/subscribe-edge))
+
+`edges` - список `SubscribeEdge` объектов.
+
+
+
+

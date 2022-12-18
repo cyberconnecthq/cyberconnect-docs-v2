@@ -1,0 +1,100 @@
+---
+id: essence
+title: Essence
+---
+
+
+Тип `Essence` предоставляет информацию о сущности.
+
+```graphql
+type Essence implements Node {
+  id: ID!
+  essenceID: Int!
+  name: String!
+  symbol: String!
+  tokenURI: URL!
+  collectMw: MiddlewareInfo!
+  collectedBy(
+  after: Cursor
+  first: Int
+  before: Cursor
+  last: Int
+  orderBy: CollectOrder
+): CollectConnection!
+  createdBy: Profile!
+}
+```
+
+
+### Поля
+
+#### `id` ([`ID`](/reference/scalars/id))
+
+`id` - уникальный идентификатор сущности.
+
+
+#### `essenceID` ([`Int`](/reference/scalars/int))
+
+`essenceID` - идентификатор токена сущности.
+
+
+#### `name` ([`String`](/reference/scalars/string))
+
+`name` - название сущности.
+
+
+#### `symbol` ([`String`](/reference/scalars/string))
+
+`symbol` - символ сущности.
+
+
+#### `tokenURI` ([`URL`](/reference/scalars/url))
+
+`tokenURI` - URI-адрес токена сущности.
+
+
+#### `collectMw` ([`MiddlewareInfo`](/reference/objects/middleware-info))
+
+`collectMw` - информация о промежуточных программах сущности.
+
+
+#### `collectedBy` ([`CollectConnection`](/reference/objects/collect-connection))
+
+`collectedBy` - предоставляет постраничный список профилей, которые собрали эту сущность.
+- ##### `after` ([`Cursor`](/reference/scalars/cursor))
+
+`after` - курсор для получения результатов после.
+
+
+- ##### `first` ([`Int`](/reference/scalars/int))
+
+`first` - максимальное количество профилей, возвращаемое после курсора.
+
+
+- ##### `before` ([`Cursor`](/reference/scalars/cursor))
+
+`before` - курсор для получения результатов ранее.
+
+
+- ##### `last` ([`Int`](/reference/scalars/int))
+
+`last` - максимальное количество профилей, возвращаемых перед курсором.
+
+
+- ##### `orderBy` ([`CollectOrder`](/reference/inputs/collect-order))
+
+`orderBy` - порядок, в котором возвращаются результаты.
+
+
+#### `createdBy` ([`Profile`](/reference/objects/profile))
+
+`createdBy` - информация о профиле, который создал эту сущность.
+
+
+### Интерфейсы
+
+#### [`Node`](/reference/interfaces/node) 
+
+Интерфейс `Node` соответсвует спецификации relay.dev.
+
+

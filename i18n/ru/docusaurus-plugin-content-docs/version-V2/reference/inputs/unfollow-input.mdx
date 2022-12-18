@@ -1,0 +1,48 @@
+---
+id: unfollow-input
+title: UnfollowInput
+---
+
+
+Тип ввода `UnfollowInput` определяет параметры, необходимые для отмены подписки на адрес.
+
+```graphql
+input UnfollowInput {
+  fromAddr: String!
+  toAddr: String!
+  signature: String!
+  operation: String!
+  signingKey: String!
+}
+```
+
+
+### Поля
+
+#### `fromAddr` ([`String`](/reference/scalars/string))
+
+`fromAddr` - адрес пользователя.
+
+
+#### `toAddr` ([`String`](/reference/scalars/string))
+
+`toAddr`- адрес, от которого пользователь хочет отписаться.
+
+
+#### `signature` ([`String`](/reference/scalars/string))
+
+`signature` - подпись от подписания json строки `operation`.
+
+
+#### `operation` ([`String`](/reference/scalars/string))
+
+`operation` - json строка operation для подписи.
+
+
+#### `signingKey` ([`String`](/reference/scalars/string))
+
+`signingKey` - зарегистрированный ключ подписи.
+
+
+
+

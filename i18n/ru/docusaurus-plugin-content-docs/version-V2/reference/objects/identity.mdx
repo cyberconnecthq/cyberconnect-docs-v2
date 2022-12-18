@@ -1,0 +1,36 @@
+---
+id: identity
+title: Identity
+---
+
+
+Тип `Identity`  предоставляет информацию об идентичности пользователя.
+
+```graphql
+type Identity {
+  ens: ENSInfo!
+  joinTime: String!
+  socialInfo: SocialInfo!
+}
+```
+
+
+### Поля
+
+#### `ens` ([`ENSInfo`](/reference/objects/ensinfo))
+
+`ens` - информация о ENS домене.
+
+
+#### `joinTime` ([`String`](/reference/scalars/string))
+
+`joinTime` - время первой отправленной транзакции пользователя.
+
+
+#### `socialInfo` ([`SocialInfo`](/reference/objects/social-info))
+
+`socialInfo` - информация о социальных профилях.
+
+
+
+

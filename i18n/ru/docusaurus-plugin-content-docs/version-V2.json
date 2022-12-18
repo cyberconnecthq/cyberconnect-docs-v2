@@ -1,0 +1,102 @@
+{
+  "version.label": {
+    "message": "V2",
+    "description": "The label for version V2"
+  },
+  "sidebar.tutorialSidebar.category.Overview": {
+    "message": "Обзор",
+    "description": "The label for category Overview in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Concepts": {
+    "message": "Концепции",
+    "description": "The label for category Concepts in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.APIs": {
+    "message": "API",
+    "description": "The label for category APIs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Authentication": {
+    "message": "Аутентификация",
+    "description": "The label for category Authentication in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Query": {
+    "message": "Запросы",
+    "description": "The label for category Query in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Mutation": {
+    "message": "Мутации",
+    "description": "The label for category Mutation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Recommendation Engine": {
+    "message": "Механизм рекомендаций",
+    "description": "The label for category Recommendation Engine in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tutorials": {
+    "message": "Руководства",
+    "description": "The label for category Tutorials in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Build SBT Issuing App": {
+    "message": "Создайте приложение по выпуску SBT",
+    "description": "The label for category Build SBT Issuing App in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Build Content Platform": {
+    "message": "Создайте контент платформу",
+    "description": "The label for category Build Content Platform in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Create NFT with App Backend": {
+    "message": "Создайте NFT с помощью бэкенда приложения",
+    "description": "The label for category Create NFT with App Backend in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Protocol": {
+    "message": "Протокол",
+    "description": "The label for category Protocol in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Social Data Network": {
+    "message": "Сеть социальных данных",
+    "description": "The label for category Social Data Network in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Interest Graph Engine": {
+    "message": "Механизм графа интересов",
+    "description": "The label for category Interest Graph Engine in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.API Reference": {
+    "message": "Справочник API",
+    "description": "The label for category API Reference in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Directives": {
+    "message": "Директивы",
+    "description": "The label for category Directives in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Enums": {
+    "message": "Перечисления",
+    "description": "The label for category Enums in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Inputs": {
+    "message": "Вводы",
+    "description": "The label for category Inputs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Interfaces": {
+    "message": "Интерфейсы",
+    "description": "The label for category Interfaces in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Mutations": {
+    "message": "Мутации",
+    "description": "The label for category Mutations in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Objects": {
+    "message": "Объекты",
+    "description": "The label for category Objects in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Queries": {
+    "message": "Запросы",
+    "description": "The label for category Queries in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Scalars": {
+    "message": "Скаляры",
+    "description": "The label for category Scalars in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Unions": {
+    "message": "Объединения",
+    "description": "The label for category Unions in sidebar tutorialSidebar"
+  }
+}

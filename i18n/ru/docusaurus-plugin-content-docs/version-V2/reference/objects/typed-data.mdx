@@ -1,0 +1,48 @@
+---
+id: typed-data
+title: TypedData
+---
+
+
+Тип `TypedData` предоставляет сгенерированную информацию о типизированных данных спецификации EIP-712.
+
+```graphql
+type TypedData {
+  id: ID!
+  chainID: ChainID!
+  sender: AddressEVM!
+  data: String!
+  nonce: Int!
+}
+```
+
+
+### Поля
+
+#### `id` ([`ID`](/reference/scalars/id))
+
+`id` - Typed Data ID.
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainID` - идентификатор цепочки в сети.
+
+
+#### `sender` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`sender` - адрес отправителя.
+
+
+#### `data` ([`String`](/reference/scalars/string))
+
+`data` - Typed Data сообщение.
+
+
+#### `nonce` ([`Int`](/reference/scalars/int))
+
+`nonce` - одноразовый номер отправителя.
+
+
+
+

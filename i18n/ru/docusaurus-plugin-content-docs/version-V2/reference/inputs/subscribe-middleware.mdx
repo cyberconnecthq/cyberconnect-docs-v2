@@ -1,0 +1,36 @@
+---
+id: subscribe-middleware
+title: SubscribeMiddleware
+---
+
+
+Тип ввода `SubscribeMiddleware` определяет промежуточную программу для установки.
+
+```graphql
+input SubscribeMiddleware {
+  subscribeFree: Boolean
+  subscribePaid: subscribePaidMwParams
+  customMiddleware: customMwParams
+}
+```
+
+
+### Поля
+
+#### `subscribeFree` ([`Boolean`](/reference/scalars/boolean))
+
+`subscribeFree` - модуль по умолчанию, в котором подписка на профиль бесплатна.
+
+
+#### `subscribePaid` ([`subscribePaidMwParams`](/reference/inputs/subscribe-paid-mw-params))
+
+`subscribePaid` - подписка на профиль требует от подписчика уплаты комиссии.
+
+
+#### `customMiddleware` ([`customMwParams`](/reference/inputs/custom-mw-params))
+
+`customMiddleware` - для настройки пользовательского промежуточного программного обеспечения.
+
+
+
+

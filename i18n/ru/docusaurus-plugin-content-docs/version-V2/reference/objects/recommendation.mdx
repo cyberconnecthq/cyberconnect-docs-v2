@@ -1,0 +1,69 @@
+---
+id: recommendation
+title: Recommendation
+---
+
+
+Тип `Recommendation` является основой для поиска всей информации, которая может быть интересна / привлекательна для данного адреса, на основе истории транзакций и текущего баланса.
+
+```graphql
+type Recommendation {
+  tokenBalanceInfo(
+  offset: Int
+  limit: Int
+): [TokenInfo!]
+  tokenRecommendation(
+  offset: Int
+  limit: Int
+): [TokenRecommendation!]
+  userRecommendation(
+  offset: Int
+  limit: Int
+): [UserRecommendation!]
+}
+```
+
+
+### Поля
+
+#### `tokenBalanceInfo` ([`TokenInfo`](/reference/objects/token-info))
+
+`tokenBalanceInfo` - предоставляет информацию о токенах, которые входной кошелек хранит на своем балансе.
+- ##### `offset` ([`Int`](/reference/scalars/int))
+
+
+
+
+- ##### `limit` ([`Int`](/reference/scalars/int))
+
+
+
+
+#### `tokenRecommendation` ([`TokenRecommendation`](/reference/objects/token-recommendation))
+
+`tokenRecommendation` - рекомендуемые токены, которые адрес должен приобрести на основе моделирования торгового поведения и удержания относительно других адресов (т.е. модель совместной фильтрации).
+- ##### `offset` ([`Int`](/reference/scalars/int))
+
+
+
+
+- ##### `limit` ([`Int`](/reference/scalars/int))
+
+
+
+
+#### `userRecommendation` ([`UserRecommendation`](/reference/objects/user-recommendation))
+
+`userRecommendation` - рекомендуемые адреса для отслеживания на основе поиска других адресов с аналогичной историей торговли NFT в качестве входных адресов.
+- ##### `offset` ([`Int`](/reference/scalars/int))
+
+
+
+
+- ##### `limit` ([`Int`](/reference/scalars/int))
+
+
+
+
+
+

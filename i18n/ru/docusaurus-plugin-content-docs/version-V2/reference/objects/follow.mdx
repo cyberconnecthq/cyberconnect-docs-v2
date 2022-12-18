@@ -1,0 +1,30 @@
+---
+id: follow
+title: Follow
+---
+
+
+Тип `Follow` предоставляет информацию ою отношениях следования.
+
+```graphql
+type Follow {
+  from: Address!
+  to: Address!
+}
+```
+
+
+### Поля
+
+#### `from` ([`Address`](/reference/objects/address))
+
+`from` - исходный адрес.
+
+
+#### `to` ([`Address`](/reference/objects/address))
+
+`to` адрес, за которым следует `from` адрес.
+
+
+
+

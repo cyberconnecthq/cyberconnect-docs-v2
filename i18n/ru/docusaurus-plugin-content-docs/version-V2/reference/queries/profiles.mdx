@@ -1,0 +1,59 @@
+---
+id: profiles
+title: profiles
+---
+
+
+`profiles` предоставляет постраничный список упорядоченных профилей.
+
+```graphql
+profiles(
+  chainID: ChainID
+  after: Cursor
+  first: Int
+  before: Cursor
+  last: Int
+  orderBy: ProfileOrder
+): ProfileConnection!
+```
+
+
+### Аргументы
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainID` - идентификатор цепочки для выборки профилей. По умолчанию используется основная сеть ETH.
+
+
+#### `after` ([`Cursor`](/reference/scalars/cursor))
+
+`after` - курсор для получения результатов после.
+
+
+#### `first` ([`Int`](/reference/scalars/int))
+
+`first` - максимальное количество профилей, возвращаемых после курсора.
+
+
+#### `before` ([`Cursor`](/reference/scalars/cursor))
+
+`before` - курсор для получения результатов ранее.
+
+
+#### `last` ([`Int`](/reference/scalars/int))
+
+`last` - максимальное количество профилей, возвращаемых перед курсором.
+
+
+#### `orderBy` ([`ProfileOrder`](/reference/inputs/profile-order))
+
+`orderBy` - порядок, в котором возвращаются результаты.
+
+
+### Тип
+
+#### [`ProfileConnection`](/reference/objects/profile-connection) 
+
+Тип `ProfileConnection` предоставляет постраничный список `ProfileEdge` вместе с общим количеством профилей.
+
+

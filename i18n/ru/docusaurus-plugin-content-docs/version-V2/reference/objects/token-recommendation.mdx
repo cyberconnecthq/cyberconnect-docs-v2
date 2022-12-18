@@ -1,0 +1,36 @@
+---
+id: token-recommendation
+title: TokenRecommendation
+---
+
+
+Тип `TokenRecommendation` предоставляет дополнительную сводную информацию о контракте токена, его сообществе, команде разработчиков и достижениях.
+
+```graphql
+type TokenRecommendation {
+  tokenInfo: TokenInfo!
+  distanceScore: Float!
+  rank: Int!
+}
+```
+
+
+### Поля
+
+#### `tokenInfo` ([`TokenInfo`](/reference/objects/token-info))
+
+
+
+
+#### `distanceScore` ([`Float`](/reference/scalars/float))
+
+`distanceScore` - показатель того, насколько близко, по нашему мнению, эта рекомендация соответствует вводным данным. Чем ниже, тем лучше.
+
+
+#### `rank` ([`Int`](/reference/scalars/int))
+
+`rank` - является ранжированием этой рекомендации для данного ввода. Ниже здесь тоже лучше.
+
+
+
+

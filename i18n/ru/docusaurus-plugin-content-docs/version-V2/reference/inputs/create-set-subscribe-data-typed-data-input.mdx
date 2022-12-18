@@ -1,0 +1,42 @@
+---
+id: create-set-subscribe-data-typed-data-input
+title: CreateSetSubscribeDataTypedDataInput
+---
+
+
+Тип ввода `CreateSetSubscribeDataTypedDataInput` определяет параметры, необходимые для установки промежуточной программы подписки.
+
+```graphql
+input CreateSetSubscribeDataTypedDataInput {
+  options: TypedDataOptions
+  profileId: Int!
+  tokenURI: URL!
+  middleware: SubscribeMiddleware!
+}
+```
+
+
+### Поля
+
+#### `options` ([`TypedDataOptions`](/reference/inputs/typed-data-options))
+
+`options` - опции установки промежуточной программы подписки.
+
+
+#### `profileId` ([`Int`](/reference/scalars/int))
+
+`profileId` - идентификатор профиля, устанавливающего промежуточную программу подписки.
+
+
+#### `tokenURI` ([`URL`](/reference/scalars/url))
+
+`tokenURI` - URI токена Subscribe NFT.
+
+
+#### `middleware` ([`SubscribeMiddleware`](/reference/inputs/subscribe-middleware))
+
+`middleware` - промежуточная программа подписки для установки.
+
+
+
+

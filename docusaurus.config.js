@@ -71,7 +71,7 @@ const config = {
   ],
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "zh"],
+    locales: ["en", "zh", "ru"],
     localeConfigs: {
       en: {
         htmlLang: "en-GB",
@@ -80,6 +80,10 @@ const config = {
       zh: {
         htmlLang: "zh-CN",
         label: "Chinese",
+      },
+      ru: {
+        htmlLang: "ru-RU",
+        label: "Русский",
       },
     },
   },
@@ -104,10 +108,10 @@ const config = {
             "aria-label": "GitHub repository",
           },
           // Disabled translation
-          // {
-          //   type: "localeDropdown",
-          //   position: "right",
-          // },
+          {
+            type: "localeDropdown",
+            position: "right",
+          },
         ],
       },
       footer: {

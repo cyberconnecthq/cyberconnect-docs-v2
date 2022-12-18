@@ -1,0 +1,30 @@
+---
+id: blockchain-time
+title: BlockchainTime
+---
+
+
+Тип `BlockchainTime` предоставляет информацию о блоке.
+
+```graphql
+type BlockchainTime {
+  blockNumber: Int!
+  blocksBehind: Int!
+}
+```
+
+
+### Поля
+
+#### `blockNumber` ([`Int`](/reference/scalars/int))
+
+`blockNumber` - номер последнего синхронизированного блока.
+
+
+#### `blocksBehind` ([`Int`](/reference/scalars/int))
+
+`blocksBehind` - количество блоков позади последнего блока.
+
+
+
+

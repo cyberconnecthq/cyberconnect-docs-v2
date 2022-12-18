@@ -1,0 +1,35 @@
+---
+id: token
+title: Token
+---
+
+
+Тип объединения `Token` предназначен для объединения всех основных интерфейсов токенов Ethereum.
+
+```graphql
+union Token = ERC20 | ERC721 | ERC1155
+```
+
+
+### Возможные типы
+
+#### [`ERC20`](/reference/objects/erc20) 
+
+Тип `ERC20` соответствует стандарту, описанному в https://ethereum.org/en/developers/docs/standards/tokens/erc-20/.
+Добавленные поля включают символ, десятичные дроби.
+
+
+#### [`ERC721`](/reference/objects/erc721) 
+
+Тип `ERC721` соответствует стандарту, описанному в https://ethereum.org/en/developers/docs/standards/tokens/erc-721/.
+Добавленные поля включают символ, десятичные дроби.
+
+
+#### [`ERC1155`](/reference/objects/erc1155) 
+
+Тип `ERC1155` соответствует стандарту, описанному в  https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/.
+Токен ERC-1155 может выполнять те же функции, что и токены ERC-20 и ERC-721, и даже оба одновременно.
+
+
+
+

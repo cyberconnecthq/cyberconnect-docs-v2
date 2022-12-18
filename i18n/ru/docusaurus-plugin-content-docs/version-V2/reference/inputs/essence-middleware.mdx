@@ -1,0 +1,42 @@
+---
+id: essence-middleware
+title: EssenceMiddleware
+---
+
+
+Тип ввода `SubscribeMiddleware` определяет промежуточную программу для установки.
+
+```graphql
+input EssenceMiddleware {
+  collectFree: Boolean
+  collectPaid: collectPaidMwParams
+  collectPermission: collectPermissionMwParams
+  customMiddleware: customMwParams
+}
+```
+
+
+### Поля
+
+#### `collectFree` ([`Boolean`](/reference/scalars/boolean))
+
+`collectFree` - модуль по умолчанию, где сбор сущности бесплатен.
+
+
+#### `collectPaid` ([`collectPaidMwParams`](/reference/inputs/collect-paid-mw-params))
+
+`collectPaid` - сбор сущности требует от сборщика уплаты комиссии.
+
+
+#### `collectPermission` ([`collectPermissionMwParams`](/reference/inputs/collect-permission-mw-params))
+
+`collectPermission` - для сбора сущности требуется наличие действительной подписи подписанта.
+
+
+#### `customMiddleware` ([`customMwParams`](/reference/inputs/custom-mw-params))
+
+`customMiddleware` - для настройки пользовательского промежуточного программного обеспечения.
+
+
+
+
