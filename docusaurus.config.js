@@ -71,15 +71,11 @@ const config = {
   ],
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "zh", "ru"],
+    locales: ["en", "ru"],
     localeConfigs: {
       en: {
         htmlLang: "en-GB",
         label: "English",
-      },
-      zh: {
-        htmlLang: "zh-CN",
-        label: "Chinese",
       },
       ru: {
         htmlLang: "ru-RU",
