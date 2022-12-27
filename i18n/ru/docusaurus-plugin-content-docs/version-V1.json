@@ -1,0 +1,86 @@
+{
+  "version.label": {
+    "message": "V1",
+    "description": "The label for version V1"
+  },
+  "sidebar.tutorialSidebar.category.Overview": {
+    "message": "Overview",
+    "description": "The label for category Overview in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Concepts": {
+    "message": "Concepts",
+    "description": "The label for category Concepts in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Get started": {
+    "message": "Get started",
+    "description": "The label for category Get started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Scaffold-Eth-Starter-Kit": {
+    "message": "Scaffold-Eth-Starter-Kit",
+    "description": "The label for category Scaffold-Eth-Starter-Kit in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CyberConnect SDK": {
+    "message": "CyberConnect SDK",
+    "description": "The label for category CyberConnect SDK in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CyberConnect API": {
+    "message": "CyberConnect API",
+    "description": "The label for category CyberConnect API in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.GraphQL API": {
+    "message": "GraphQL API",
+    "description": "The label for category GraphQL API in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.REST API": {
+    "message": "REST API",
+    "description": "The label for category REST API in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Reference": {
+    "message": "Reference",
+    "description": "The label for category Reference in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Directives": {
+    "message": "Directives",
+    "description": "The label for category Directives in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Enums": {
+    "message": "Enums",
+    "description": "The label for category Enums in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Inputs": {
+    "message": "Inputs",
+    "description": "The label for category Inputs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Interfaces": {
+    "message": "Interfaces",
+    "description": "The label for category Interfaces in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Objects": {
+    "message": "Objects",
+    "description": "The label for category Objects in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Queries": {
+    "message": "Queries",
+    "description": "The label for category Queries in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Scalars": {
+    "message": "Scalars",
+    "description": "The label for category Scalars in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Protocol": {
+    "message": "Protocol",
+    "description": "The label for category Protocol in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Resources": {
+    "message": "Resources",
+    "description": "The label for category Resources in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Terminology": {
+    "message": "Terminology",
+    "description": "The label for category Terminology in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Changelog": {
+    "message": "Changelog",
+    "description": "The label for category Changelog in sidebar tutorialSidebar"
+  }
+}

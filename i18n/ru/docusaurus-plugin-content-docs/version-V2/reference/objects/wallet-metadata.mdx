@@ -1,0 +1,41 @@
+---
+id: wallet-metadata
+title: WalletMetadata
+---
+
+
+Тип `WalletMetadata` - это базовый запрос для получения информации, которая профилирует адреса на основе их истории транзакций.
+
+```graphql
+type WalletMetadata {
+  labels: [String!]
+  projectInteractionStats(
+  offset: Int
+  limit: Int
+): [ProjectLevelInteraction!]
+}
+```
+
+
+### Поля
+
+#### `labels` ([`String`](/reference/scalars/string))
+
+`labels` - являются внутренне сгенерированными ярлыками для входного адреса.
+
+
+#### `projectInteractionStats` ([`ProjectLevelInteraction`](/reference/objects/project-level-interaction))
+
+`projectInteractionStats` - предоставляет список отсортированных подсчетов tx с названными/ известными проектами.
+- ##### `offset` ([`Int`](/reference/scalars/int))
+
+
+
+
+- ##### `limit` ([`Int`](/reference/scalars/int))
+
+
+
+
+
+

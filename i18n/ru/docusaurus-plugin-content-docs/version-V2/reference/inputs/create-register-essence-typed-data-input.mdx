@@ -1,0 +1,60 @@
+---
+id: create-register-essence-typed-data-input
+title: CreateRegisterEssenceTypedDataInput
+---
+
+
+Тип ввода `CreateRegisterEssenceTypedDataInput` определяет параметры, необходимые для регистрации сущности.
+
+```graphql
+input CreateRegisterEssenceTypedDataInput {
+  options: RegisterEssenceTypedDataOptions!
+  profileID: Int!
+  name: String!
+  symbol: String!
+  tokenURI: URL!
+  middleware: EssenceMiddleware!
+  transferable: Boolean!
+}
+```
+
+
+### Поля
+
+#### `options` ([`RegisterEssenceTypedDataOptions`](/reference/inputs/register-essence-typed-data-options))
+
+`options` - опции регистрации сущности.
+
+
+#### `profileID` ([`Int`](/reference/scalars/int))
+
+`profileID` - идентификатор профиля, который регистрирует сущность.
+
+
+#### `name` ([`String`](/reference/scalars/string))
+
+`name` - название сущности.
+
+
+#### `symbol` ([`String`](/reference/scalars/string))
+
+`symbol` - символ сущности.
+
+
+#### `tokenURI` ([`URL`](/reference/scalars/url))
+
+`tokenURI` - URI токена Essence NFT.
+
+
+#### `middleware` ([`EssenceMiddleware`](/reference/inputs/essence-middleware))
+
+`middleware` - промежуточная программа сущности для установки.
+
+
+#### `transferable` ([`Boolean`](/reference/scalars/boolean))
+
+`transferable` - является ли сущность передаваемой.
+
+
+
+

@@ -1,0 +1,36 @@
+---
+id: attribute
+title: Attribute
+---
+
+
+Поле, указывающее, как вы хотели бы, чтобы оно отображалось.
+
+```graphql
+input Attribute {
+  display_type: String
+  trait_type: String
+  value: String
+}
+```
+
+
+### Поля
+
+#### `display_type` ([`String`](/reference/scalars/string))
+
+`display_type` - необязательно, если trait_type является строковым.
+
+
+#### `trait_type` ([`String`](/reference/scalars/string))
+
+`trait_type` - название признака.
+
+
+#### `value` ([`String`](/reference/scalars/string))
+
+`value` - значение признака.
+
+
+
+

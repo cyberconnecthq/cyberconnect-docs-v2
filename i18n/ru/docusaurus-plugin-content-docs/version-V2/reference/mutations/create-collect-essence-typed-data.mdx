@@ -1,0 +1,31 @@
+---
+id: create-collect-essence-typed-data
+title: createCollectEssenceTypedData
+---
+
+
+`createCollectEssenceTypedData` возвращает сообщение с типизированными данными спецификации EIP-712 для подписи с помощью кошелька, чтобы собрать сущность. Для этой мутации требуется заголовок `Authorization` с действительным токеном `Bearer`.
+
+```graphql
+createCollectEssenceTypedData(
+  input: CreateCollectEssenceTypedDataInput!
+): CreateCollectEssenceTypedDataResult!
+```
+
+
+### Аргументы
+
+#### `input` ([`CreateCollectEssenceTypedDataInput`](/reference/inputs/create-collect-essence-typed-data-input))
+
+
+
+
+### Тип
+
+#### [`CreateCollectEssenceTypedDataResult`](/reference/objects/create-collect-essence-typed-data-result) 
+
+Тип `CreateCollectEssenceTypedDataResult` предоставляет сгенерированную информацию о типизированных данных спецификации EIP-712.
+
+
+
+

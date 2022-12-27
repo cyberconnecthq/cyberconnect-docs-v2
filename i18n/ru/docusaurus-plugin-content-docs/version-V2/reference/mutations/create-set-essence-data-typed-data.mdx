@@ -1,0 +1,30 @@
+---
+id: create-set-essence-data-typed-data
+title: createSetEssenceDataTypedData
+---
+
+
+`createSetEssenceDataTypedData` возвращает сообщение с типизированными данными спецификации EIP-712 для подписи с помощью кошелька, чтобы установить данные сущности. Для этой мутации требуется заголовок `Authorization` с действительным токеном `Bearer`.
+
+```graphql
+createSetEssenceDataTypedData(
+  input: CreateSetEssenceDataTypedDataInput!
+): CreateSetEssenceDataTypedDataResult!
+```
+
+
+### Аргументы
+
+#### `input` ([`CreateSetEssenceDataTypedDataInput`](/reference/inputs/create-set-essence-data-typed-data-input))
+
+
+
+
+### Тип
+
+#### [`CreateSetEssenceDataTypedDataResult`](/reference/objects/create-set-essence-data-typed-data-result) 
+
+Тип `CreateSetEssenceDataTypedDataResult` предоставляет сгенерированную информацию о типизированных данных спецификации EIP-712.
+
+
+

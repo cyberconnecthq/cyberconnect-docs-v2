@@ -1,0 +1,30 @@
+---
+id: profile-order
+title: ProfileOrder
+---
+
+
+Тип ввода `ProfileOrder` определяет порядок, в котором возвращаются результаты.
+
+```graphql
+input ProfileOrder {
+  direction: OrderDirection!
+  field: ProfileOrderField
+}
+```
+
+
+### Поля
+
+#### `direction` ([`OrderDirection`](/reference/enums/order-direction))
+
+`direction` - указывает направление вывода.
+
+
+#### `field` ([`ProfileOrderField`](/reference/enums/profile-order-field))
+
+`field` - определяет поле порядка.
+
+
+
+

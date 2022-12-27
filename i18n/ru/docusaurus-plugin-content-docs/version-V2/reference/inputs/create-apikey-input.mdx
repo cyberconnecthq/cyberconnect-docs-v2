@@ -1,0 +1,36 @@
+---
+id: create-apikey-input
+title: CreateAPIKeyInput
+---
+
+
+Тип ввода `CreateAPIKeyInput` определяет параметры, необходимые для создания `API key`.
+
+```graphql
+input CreateAPIKeyInput {
+  email: String!
+  twitterID: String!
+  origin: String!
+}
+```
+
+
+### Поля
+
+#### `email` ([`String`](/reference/scalars/string))
+
+`email` - адрес электронной почты пользователя.
+
+
+#### `twitterID` ([`String`](/reference/scalars/string))
+
+`twitterID` - идентификатор пользователя в Twitter.
+
+
+#### `origin` ([`String`](/reference/scalars/string))
+
+`origin` - домен/хост.
+
+
+
+

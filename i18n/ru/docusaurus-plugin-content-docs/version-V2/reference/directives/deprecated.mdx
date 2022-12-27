@@ -1,0 +1,24 @@
+---
+id: deprecated
+title: deprecated
+---
+
+
+Помечает элемент схемы GraphQL как больше не поддерживаемый.
+
+```graphql
+directive @deprecated(
+  reason: String = "No longer supported"
+)
+```
+
+
+### Аргументы
+
+#### `reason` ([`String`](/reference/scalars/string))
+
+Объясняет, почему этот элемент был признан устаревшим, обычно также включая предложение о том, как получить доступ к поддерживаемым аналогичным данным. Отформатирован с использованием синтаксиса Markdown, в соответсвии с [CommonMark](https://commonmark.org/).
+
+
+
+

@@ -1,0 +1,55 @@
+---
+id: namespace
+title: Namespace
+---
+
+
+Тип `Namespace` предоставляет информацию о пространстве имен.
+
+```graphql
+type Namespace implements Node {
+  id: ID!
+  name: String!
+  chainID: ChainID!
+  contractAddress: ContractAddressEVM!
+  descriptorContract: ContractAddressEVM!
+}
+```
+
+
+### Поля
+
+#### `id` ([`ID`](/reference/scalars/id))
+
+`id` - уникальный идентификатор пространства имен.
+
+
+#### `name` ([`String`](/reference/scalars/string))
+
+`name` - название пространства имен.
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainId` - идентификатор цепочки сети, в которой создано это пространство имен.
+
+
+#### `contractAddress` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`contractAddress` - адрес контракта пространств имен.
+
+
+#### `descriptorContract` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`descriptorContract` - адрес контракта дескриптора пространства имен.
+
+
+### Интерфейсы
+
+#### [`Node`](/reference/interfaces/node) 
+
+Интерфейс `Node` соответсвует спецификацим relay.dev.
+
+
+
+

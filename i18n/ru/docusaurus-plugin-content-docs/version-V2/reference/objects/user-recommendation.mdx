@@ -1,0 +1,42 @@
+---
+id: user-recommendation
+title: UserRecommendation
+---
+
+
+Тип `UserRecommendation`  рекомендует пользователям следовать на основе истории торговли / переводов / чеканки NFT (на основе модели совместной фильтрации).
+
+```graphql
+type UserRecommendation {
+  userToFollow: AddressEVM!
+  userToFollowRank: Int!
+  userToFollowDistanceScore: Float!
+  userToFollowReason: String!
+}
+```
+
+
+### Поля
+
+#### `userToFollow` ([`AddressEVM`](/reference/scalars/address-evm))
+
+
+
+
+#### `userToFollowRank` ([`Int`](/reference/scalars/int))
+
+`userToFollowRank` - является ранжированием этой рекомендации для данного ввода.
+
+
+#### `userToFollowDistanceScore` ([`Float`](/reference/scalars/float))
+
+`userToFollowDistanceScore` - это показатель того, насколько близко, по нашему мнению, эта рекомендация соответствует вводным данным. Чем ниже, тем лучше.
+
+
+#### `userToFollowReason` ([`String`](/reference/scalars/string))
+
+
+
+
+
+

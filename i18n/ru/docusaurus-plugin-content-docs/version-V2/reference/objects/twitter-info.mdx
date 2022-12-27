@@ -1,0 +1,54 @@
+---
+id: twitter-info
+title: TwitterInfo
+---
+
+
+Тип `TwitterInfo` предоставляет информацию о профиле в Twitter.
+
+```graphql
+type TwitterInfo {
+  handle: String!
+  avatar: String!
+  verified: Boolean!
+  tweetID: String!
+  source: String!
+  followerCount: Int!
+}
+```
+
+
+### Поля
+
+#### `handle` ([`String`](/reference/scalars/string))
+
+`handle` - дескриптор профиля в Twitter.
+
+
+#### `avatar` ([`String`](/reference/scalars/string))
+
+`avatar` - аватар профиля в Twitter.
+
+
+#### `verified` ([`Boolean`](/reference/scalars/boolean))
+
+`verified` - статус подтверждения профиля в Twitter.
+
+
+#### `tweetID` ([`String`](/reference/scalars/string))
+
+`tweetID` - идентификатор твита, используемый для проверки.
+
+
+#### `source` ([`String`](/reference/scalars/string))
+
+`source` - источник данных дескриптора Twitter.
+
+
+#### `followerCount` ([`Int`](/reference/scalars/int))
+
+`followerCount` - количество подписчиков в Twitter.
+
+
+
+

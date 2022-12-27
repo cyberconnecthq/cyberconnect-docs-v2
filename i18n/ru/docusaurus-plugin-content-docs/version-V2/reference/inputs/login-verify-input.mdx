@@ -1,0 +1,42 @@
+---
+id: login-verify-input
+title: LoginVerifyInput
+---
+
+
+Тип ввода `LoginVerifyInput` определяет параметры сообщения типизированных данных вместе с его подписью.
+
+```graphql
+input LoginVerifyInput {
+  domain: String!
+  address: AddressEVM!
+  chainID: ChainID!
+  signature: String!
+}
+```
+
+
+### Поля
+
+#### `domain` ([`String`](/reference/scalars/string))
+
+`domain` - домен приложения.
+
+
+#### `address` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`address` - адрес пользователя.
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainID` - идентификатор цепочки в сети.
+
+
+#### `signature` ([`String`](/reference/scalars/string))
+
+`signature` - подпись к сообщению.
+
+
+
+

@@ -1,0 +1,36 @@
+---
+id: essence-connection
+title: EssenceConnection
+---
+
+
+Тип `EssenceConnection` предоставляет постраничный список `EssenceEdge` вместе с общим количеством профилей.
+
+```graphql
+type EssenceConnection {
+  totalCount: Int!
+  pageInfo: PageInfo!
+  edges: [EssenceEdge]
+}
+```
+
+
+### Поля
+
+#### `totalCount` ([`Int`](/reference/scalars/int))
+
+`totalCount` - общее количество сущностей.
+
+
+#### `pageInfo` ([`PageInfo`](/reference/objects/page-info))
+
+`pageInfo` - содержит информацию о текущей странице.
+
+
+#### `edges` ([`EssenceEdge`](/reference/objects/essence-edge))
+
+`edges` - список объектов `EssenceEdge`.
+
+
+
+

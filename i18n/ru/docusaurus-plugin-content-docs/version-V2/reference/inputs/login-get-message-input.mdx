@@ -1,0 +1,36 @@
+---
+id: login-get-message-input
+title: LoginGetMessageInput
+---
+
+
+Тип ввода `LoginGetMessageInput` определяет параметры сообщения типизированных данных.
+
+```graphql
+input LoginGetMessageInput {
+  domain: String!
+  address: AddressEVM!
+  chainID: ChainID!
+}
+```
+
+
+### Поля
+
+#### `domain` ([`String`](/reference/scalars/string))
+
+`domain` - домен приложения.
+
+
+#### `address` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`address` - адрес пользователя.
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainID` - идентификатор цепочки в сети.
+
+
+
+

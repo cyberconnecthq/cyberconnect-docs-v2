@@ -1,0 +1,30 @@
+---
+id: typed-data-options
+title: TypedDataOptions
+---
+
+
+Тип ввода `TypedDataOptions` определяет параметры типизированных данных, необходимые для создания сообщения типизированных данных.
+
+```graphql
+input TypedDataOptions {
+  overrideNonce: Int
+  chainID: ChainID!
+}
+```
+
+
+### Поля
+
+#### `overrideNonce` ([`Int`](/reference/scalars/int))
+
+`overrideNonce` - следует ли переопределять одноразовый номер.
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainID` - идентификатор цепочки в сети.
+
+
+
+

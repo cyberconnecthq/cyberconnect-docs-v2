@@ -1,0 +1,36 @@
+---
+id: wallet-connection
+title: WalletConnection
+---
+
+
+Тип `WalletConnection` предоставляет постраничный список `WalletEdge` вместе с общим количеством профилей.
+
+```graphql
+type WalletConnection {
+  totalCount: Int!
+  pageInfo: PageInfo!
+  edges: [WalletEdge]
+}
+```
+
+
+### Поля
+
+#### `totalCount` ([`Int`](/reference/scalars/int))
+
+`totalCount` - общее количество кошельков.
+
+
+#### `pageInfo` ([`PageInfo`](/reference/objects/page-info))
+
+`pageInfo` - содержит информацию о текущей странице.
+
+
+#### `edges` ([`WalletEdge`](/reference/objects/wallet-edge))
+
+`edges` - список объектов `WalletEdge`.
+
+
+
+

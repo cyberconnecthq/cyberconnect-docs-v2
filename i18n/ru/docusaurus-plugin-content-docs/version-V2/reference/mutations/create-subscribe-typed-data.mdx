@@ -1,0 +1,30 @@
+---
+id: create-subscribe-typed-data
+title: createSubscribeTypedData
+---
+
+
+`createSubscribeTypedData` возвращает сообщение с типизированными данными спецификации EIP-712 для подписи с помощью кошелька, чтобы подписаться на один или несколько профилей. Для этой мутации требуется заголовок `Authorization` с действительным токеном `Bearer`.
+
+```graphql
+createSubscribeTypedData(
+  input: CreateSubscribeTypedDataInput!
+): CreateSubscribeTypedDataResult!
+```
+
+
+### Аргументы
+
+#### `input` ([`CreateSubscribeTypedDataInput`](/reference/inputs/create-subscribe-typed-data-input))
+
+
+
+
+### Тип
+
+#### [`CreateSubscribeTypedDataResult`](/reference/objects/create-subscribe-typed-data-result) 
+
+Тип `CreateSubscribeTypedDataResult` предоставляет сгенерированную информацию о типизированных данных спецификации EIP-712.
+
+
+

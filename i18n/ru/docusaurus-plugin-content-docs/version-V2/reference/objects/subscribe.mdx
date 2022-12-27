@@ -1,0 +1,36 @@
+---
+id: subscribe
+title: Subscribe
+---
+
+
+Тип `Subscribe` предоставляет информацию о подписке.
+
+```graphql
+type Subscribe {
+  wallet: Wallet!
+  profile: Profile!
+  blockNumber: Int!
+}
+```
+
+
+### Поля
+
+#### `wallet` ([`Wallet`](/reference/objects/wallet))
+
+`wallet` - адрес кошелька подписчика.
+
+
+#### `profile` ([`Profile`](/reference/objects/profile))
+
+`profile` - профиль подписчика.
+
+
+#### `blockNumber` ([`Int`](/reference/scalars/int))
+
+`blockNumber` - номер блока, на котором была создана подписка.
+
+
+
+

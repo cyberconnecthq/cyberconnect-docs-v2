@@ -1,0 +1,31 @@
+---
+id: relay
+title: relay
+---
+
+
+`relay` транслирует транзакцию в EVM цепочку. Для этой мутации требуется заголовок `Authorization` с действительным токеном `Bearer`.
+
+```graphql
+relay(
+  input: RelayInput!
+): RelayResult!
+```
+
+
+### Аргументы
+
+#### `input` ([`RelayInput`](/reference/inputs/relay-input))
+
+
+
+
+### Тип
+
+#### [`RelayResult`](/reference/objects/relay-result) 
+
+Тип `RelayResult` предоставляет информацию о соответствующей транзакции.
+
+
+
+

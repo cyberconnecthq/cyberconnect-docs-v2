@@ -1,0 +1,42 @@
+---
+id: create-collect-essence-typed-data-input
+title: CreateCollectEssenceTypedDataInput
+---
+
+
+Тип ввода `CreateCollectEssenceTypedDataInput` определяет параметры, необходимые для сбора сущности.
+
+```graphql
+input CreateCollectEssenceTypedDataInput {
+  options: CollectEssenceTypedDataOptions!
+  collector: AddressEVM!
+  profileID: Int!
+  essenceID: Int!
+}
+```
+
+
+### Поля
+
+#### `options` ([`CollectEssenceTypedDataOptions`](/reference/inputs/collect-essence-typed-data-options))
+
+`options` - опции сбора сущности.
+
+
+#### `collector` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`collector` - адрес сборщика сущности.
+
+
+#### `profileID` ([`Int`](/reference/scalars/int))
+
+`profileID` - идентификатор профиля, который собирает сущность.
+
+
+#### `essenceID` ([`Int`](/reference/scalars/int))
+
+`essenceID` - идентификатор сущности, которая была собрана.
+
+
+
+

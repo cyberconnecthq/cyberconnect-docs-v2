@@ -1,0 +1,48 @@
+---
+id: collect
+title: Collect
+---
+
+
+Тип `Collect` предоставляет информацию о сущности, которая была собрана.
+
+```graphql
+type Collect {
+  wallet: Wallet!
+  essence: Essence!
+  mintingBlock: Int!
+  transferBlock: Int!
+  tokenID: Int!
+}
+```
+
+
+### Поля
+
+#### `wallet` ([`Wallet`](/reference/objects/wallet))
+
+`wallet` - адрес кошелька коллекционера.
+
+
+#### `essence` ([`Essence`](/reference/objects/essence))
+
+`essence` - сущность, которая была собрана.
+
+
+#### `mintingBlock` ([`Int`](/reference/scalars/int))
+
+`mintingBlock` - блок, в котором была отчеканена сущность.
+
+
+#### `transferBlock` ([`Int`](/reference/scalars/int))
+
+`transferBlock` - блок, в который была передана сущность.
+
+
+#### `tokenID` ([`Int`](/reference/scalars/int))
+
+`tokenID` - идентификатор токена собранной сущности.
+
+
+
+

@@ -1,0 +1,30 @@
+---
+id: register-signing-key-input
+title: RegisterSigningKeyInput
+---
+
+
+Тип ввода `RegisterSigningKeyInput` определяет параметры, необходимые для регистрации ключа подписи.
+
+```graphql
+input RegisterSigningKeyInput {
+  address: String!
+  pubKey: String!
+}
+```
+
+
+### Поля
+
+#### `address` ([`String`](/reference/scalars/string))
+
+`address` - адрес пользователя.
+
+
+#### `pubKey` ([`String`](/reference/scalars/string))
+
+`pubKey` - сгенерированный открытый ключ.
+
+
+
+

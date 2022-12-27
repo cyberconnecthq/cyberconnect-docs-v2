@@ -1,0 +1,189 @@
+---
+id: wallet
+title: Wallet
+---
+
+
+Нет описания
+
+```graphql
+type Wallet implements Node {
+  id: ID!
+  address: AddressEVM!
+  chainID: ChainID!
+  primaryProfile: Profile
+  profiles(
+  after: Cursor
+  first: Int
+  before: Cursor
+  last: Int
+  orderBy: ProfileOrder
+): ProfileConnection!
+  subscribings(
+  after: Cursor
+  first: Int
+  before: Cursor
+  last: Int
+  orderBy: SubscribeOrder
+): SubscribeConnection!
+  collectedEssences(
+  after: Cursor
+  first: Int
+  before: Cursor
+  last: Int
+  orderBy: CollectOrder
+): CollectConnection!
+  subscribingCount: Int!
+  feed(
+  offset: Int
+  limit: Int
+): [ERCTransferCard!]
+  recommendation: Recommendation!
+  metadata: WalletMetadata!
+}
+```
+
+
+### Поля
+
+#### `id` ([`ID`](/reference/scalars/id))
+
+`id` - уникальный идентификатор кошелька.
+
+
+#### `address` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`address` - адрес кошелька.
+
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainID` - идентификатор цепочки в сети.
+
+
+#### `primaryProfile` ([`Profile`](/reference/objects/profile))
+
+`primaryProfile` - предоставляет информацию об основном профиле кошелька.
+
+
+#### `profiles` ([`ProfileConnection`](/reference/objects/profile-connection))
+
+`profiles` - предоставляет постраничный список профилей указанного кошелька.
+- ##### `after` ([`Cursor`](/reference/scalars/cursor))
+
+`after` - курсор для получения результатов после.
+
+
+- ##### `first` ([`Int`](/reference/scalars/int))
+
+`first` - максимальное количество профилей, возвращаемых после курсора.
+
+
+- ##### `before` ([`Cursor`](/reference/scalars/cursor))
+
+`before` - курсор для получения результатов ранее.
+
+
+- ##### `last` ([`Int`](/reference/scalars/int))
+
+`last` максимальное количество профилей, возвращаемых перед курсором.
+
+
+- ##### `orderBy` ([`ProfileOrder`](/reference/inputs/profile-order))
+
+`orderBy` - порядок, в котором возвращаются результаты.
+
+
+#### `subscribings` ([`SubscribeConnection`](/reference/objects/subscribe-connection))
+
+`subscribings` - предоставляет постраничный список подписок указанного кошелька.
+- ##### `after` ([`Cursor`](/reference/scalars/cursor))
+
+`after` курсор для получения результатов после.
+
+
+- ##### `first` ([`Int`](/reference/scalars/int))
+
+`first` - максимальное количество подписок, возвращаемых после курсора.
+
+
+- ##### `before` ([`Cursor`](/reference/scalars/cursor))
+
+`before` - курсор для получения результатов ранее.
+
+
+- ##### `last` ([`Int`](/reference/scalars/int))
+
+`last` - максимальное количество подписок, возвращаемых перед курсором.
+
+
+- ##### `orderBy` ([`SubscribeOrder`](/reference/inputs/subscribe-order))
+
+`orderBy` - порядок, в котором возвращаются результаты.
+
+
+#### `collectedEssences` ([`CollectConnection`](/reference/objects/collect-connection))
+
+`collectedEssences` - предоставляет постраничный список собранных сущностей указанного кошелька.
+- ##### `after` ([`Cursor`](/reference/scalars/cursor))
+
+`after` - курсор для получения результатов после.
+
+
+- ##### `first` ([`Int`](/reference/scalars/int))
+
+`first` - максимальное количество собранных сущностей, возвращаемых после курсора.
+
+
+- ##### `before` ([`Cursor`](/reference/scalars/cursor))
+
+`before` - курсор для получения результатов ранее.
+
+
+- ##### `last` ([`Int`](/reference/scalars/int))
+
+`last` - максимальное количество собранных сущностей, возвращаемых перед курсором.
+
+
+- ##### `orderBy` ([`CollectOrder`](/reference/inputs/collect-order))
+
+`orderBy` - порядок, в котором возвращаются результаты.
+
+
+#### `subscribingCount` ([`Int`](/reference/scalars/int))
+
+`subscribingCount` - количество подписок.
+
+
+#### `feed` ([`ERCTransferCard`](/reference/objects/erctransfer-card))
+
+
+- ##### `offset` ([`Int`](/reference/scalars/int))
+
+
+
+
+- ##### `limit` ([`Int`](/reference/scalars/int))
+
+
+
+
+#### `recommendation` ([`Recommendation`](/reference/objects/recommendation))
+
+
+
+
+#### `metadata` ([`WalletMetadata`](/reference/objects/wallet-metadata))
+
+
+
+
+### Интерфейсы
+
+#### [`Node`](/reference/interfaces/node) 
+
+Интерфейс `Node` соответсвует спецификации relay.dev.
+
+
+
+

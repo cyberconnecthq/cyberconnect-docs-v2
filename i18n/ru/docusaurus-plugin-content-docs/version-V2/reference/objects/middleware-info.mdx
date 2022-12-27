@@ -1,0 +1,36 @@
+---
+id: middleware-info
+title: MiddlewareInfo
+---
+
+
+Тип `MiddlewareInfo` предоставляет информацию о промежуточных программах.
+
+```graphql
+type MiddlewareInfo {
+  contractAddress: ContractAddressEVM!
+  type: MiddlewareType!
+  data: String!
+}
+```
+
+
+### Поля
+
+#### `contractAddress` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`contractAddress` - адрес контракта промежуточной программы.
+
+
+#### `type` ([`MiddlewareType`](/reference/enums/middleware-type))
+
+`type` - тип промежуточной программы.
+
+
+#### `data` ([`String`](/reference/scalars/string))
+
+`data` - данные промежуточной программы.
+
+
+
+

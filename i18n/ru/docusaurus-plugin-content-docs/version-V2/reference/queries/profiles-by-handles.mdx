@@ -1,0 +1,37 @@
+---
+id: profiles-by-handles
+title: profilesByHandles
+---
+
+
+`profilesByHandles` предоставляет информацию о профилях на основе ввода списка `handles`  профилей.
+
+```graphql
+profilesByHandles(
+  chainID: ChainID
+  handles: [String!]!
+): [Profile]
+```
+
+
+### Аргументы
+
+#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+
+
+
+
+#### `handles` ([`String`](/reference/scalars/string))
+
+
+
+
+### Тип
+
+#### [`Profile`](/reference/objects/profile) 
+
+Тип `Profile` предоставляет информацию о профиле.
+
+
+
+

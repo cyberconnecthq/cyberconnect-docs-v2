@@ -1,0 +1,66 @@
+---
+id: erc721
+title: ERC721
+---
+
+
+Тип `ERC721` соответствует стандарту, описанному в https://ethereum.org/en/developers/docs/standards/tokens/erc-721 /.
+Добавленные поля включают символ, десятичные дроби.
+
+```graphql
+type ERC721 implements Contract {
+  contractAddress: ContractAddressEVM!
+  name: String!
+  contract_creation_time: String!
+  block_number: Int!
+  block_hash: String!
+  bytecode: String!
+  symbol: String!
+}
+```
+
+
+### Поля
+
+#### `contractAddress` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+
+
+
+#### `name` ([`String`](/reference/scalars/string))
+
+
+
+
+#### `contract_creation_time` ([`String`](/reference/scalars/string))
+
+
+
+
+#### `block_number` ([`Int`](/reference/scalars/int))
+
+
+
+
+#### `block_hash` ([`String`](/reference/scalars/string))
+
+
+
+
+#### `bytecode` ([`String`](/reference/scalars/string))
+
+
+
+
+#### `symbol` ([`String`](/reference/scalars/string))
+
+
+
+
+### Интерфейсы
+
+#### [`Contract`](/reference/interfaces/contract) 
+
+Интерфейс `Contract` предоставляет базовые сведения, которые должны быть доступны для всех EVM контрактов.
+
+

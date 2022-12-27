@@ -1,0 +1,48 @@
+---
+id: collect-paid-mw-params
+title: collectPaidMwParams
+---
+
+
+Тип ввода `collectPaidMwParams` определяет параметры промежуточной программы `collectPaid`.
+
+```graphql
+input collectPaidMwParams {
+  totalSupply: Int!
+  amount: Int!
+  recipient: AddressEVM!
+  currency: ContractAddressEVM!
+  subscribeRequired: Boolean!
+}
+```
+
+
+### Поля
+
+#### `totalSupply` ([`Int`](/reference/scalars/int))
+
+`totalSupply` - общий запас коллекции.
+
+
+#### `amount` ([`Int`](/reference/scalars/int))
+
+`amount` - сумма, которую нужно заплатить.
+
+
+#### `recipient` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`recipient` - адрес кошелька получателя.
+
+
+#### `currency` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`currency` - адрес валютного контракта.
+
+
+#### `subscribeRequired` ([`Boolean`](/reference/scalars/boolean))
+
+`subscribeRequired` - если требуется подписка.
+
+
+
+

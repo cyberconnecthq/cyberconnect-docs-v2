@@ -1,0 +1,29 @@
+---
+id: register-signing-key
+title: registerSigningKey
+---
+
+
+`registerSigningKey` регистрирует ключ подписи для использования с вводами `follow` и `unfollow`. Для этой мутации требуется заголовок `Authorization` с действительным токеном `Bearer`.
+
+```graphql
+registerSigningKey(
+  input: RegisterSigningKeyInput!
+): RegisterKeyResponse!
+```
+
+
+### Аргументы
+
+#### `input` ([`RegisterSigningKeyInput`](/reference/inputs/register-signing-key-input))
+
+
+
+
+### Тип
+
+#### [`RegisterKeyResponse`](/reference/objects/register-key-response) 
+
+Тип ответа `RegisterKeyResponse` возвращает статус запроса `registerSigningKey`.
+
+

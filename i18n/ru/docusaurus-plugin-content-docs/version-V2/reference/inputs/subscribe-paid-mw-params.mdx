@@ -1,0 +1,48 @@
+---
+id: subscribe-paid-mw-params
+title: subscribePaidMwParams
+---
+
+
+Тип ввода `subscribePaidMwParams` определяет параметры промежуточной программы `subscribePaid`.
+
+```graphql
+input subscribePaidMwParams {
+  amount: Int!
+  recipient: AddressEVM!
+  currency: ContractAddressEVM!
+  nftRequired: Boolean!
+  nftAddress: ContractAddressEVM!
+}
+```
+
+
+### Поля
+
+#### `amount` ([`Int`](/reference/scalars/int))
+
+`amount` - сумма, которую нужно заплатить.
+
+
+#### `recipient` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`recipient` - адрес кошелька получателя.
+
+
+#### `currency` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`currency` - адрес валютного контракта.
+
+
+#### `nftRequired` ([`Boolean`](/reference/scalars/boolean))
+
+`nftRequired` - если требуется держать nft.
+
+
+#### `nftAddress` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`nftAddress` - адрес контракта nft.
+
+
+
+

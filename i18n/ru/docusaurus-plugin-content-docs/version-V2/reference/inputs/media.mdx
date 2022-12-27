@@ -1,0 +1,42 @@
+---
+id: media
+title: Media
+---
+
+
+Тип ввода `VerifyEssenceMetadataInput` определяет параметры, необходимые для проверки метаданных сущности.
+
+```graphql
+input Media {
+  media_type: String!
+  media_url: String!
+  alt_tag: String
+  preview_image_url: String
+}
+```
+
+
+### Поля
+
+#### `media_type` ([`String`](/reference/scalars/string))
+
+`media_type` - тип MIME для медиа.
+
+
+#### `media_url` ([`String`](/reference/scalars/string))
+
+`media_url` - URL-ссылка для медиа.
+
+
+#### `alt_tag` ([`String`](/reference/scalars/string))
+
+`alt_tag` - альтернативный текст, когда медиа не может быть отображено.
+
+
+#### `preview_image_url` ([`String`](/reference/scalars/string))
+
+`preview_image_url` - изображение предварительного просмотра для медиа.
+
+
+
+

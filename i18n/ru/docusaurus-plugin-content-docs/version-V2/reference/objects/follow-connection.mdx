@@ -1,0 +1,36 @@
+---
+id: follow-connection
+title: FollowConnection
+---
+
+
+Тип `FollowConnection` предоставляет постраничный список `FollowEdge`  вместе с общим количеством последующих подключений.
+
+```graphql
+type FollowConnection {
+  totalCount: Int!
+  pageInfo: PageInfo!
+  edges: [FollowEdge]!
+}
+```
+
+
+### Поля
+
+#### `totalCount` ([`Int`](/reference/scalars/int))
+
+`totalCount` - общее количество последующих связей.
+
+
+#### `pageInfo` ([`PageInfo`](/reference/objects/page-info))
+
+`pageInfo` - содержит информацию о текущей странице.
+
+
+#### `edges` ([`FollowEdge`](/reference/objects/follow-edge))
+
+`edges` - список объектов `FollowEdge`.
+
+
+
+

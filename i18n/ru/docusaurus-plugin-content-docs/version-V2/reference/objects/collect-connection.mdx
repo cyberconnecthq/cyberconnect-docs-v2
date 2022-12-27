@@ -1,0 +1,36 @@
+---
+id: collect-connection
+title: CollectConnection
+---
+
+
+Тип `CollectConnection` предоставляет постраничный список `CollectEdge` вместе с общим количеством собранных сущностей.
+
+```graphql
+type CollectConnection {
+  totalCount: Int!
+  pageInfo: PageInfo!
+  edges: [CollectEdge]
+}
+```
+
+
+### Поля
+
+#### `totalCount` ([`Int`](/reference/scalars/int))
+
+`totalCount` - общее количество коллекций.
+
+
+#### `pageInfo` ([`PageInfo`](/reference/objects/page-info))
+
+`pageInfo` - содержит информацию о текущей странице.
+
+
+#### `edges` ([`CollectEdge`](/reference/objects/collect-edge))
+
+`edges` - список `CollectEdge` объектов.
+
+
+
+

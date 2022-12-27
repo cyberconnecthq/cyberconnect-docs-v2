@@ -1,0 +1,42 @@
+---
+id: page-info
+title: PageInfo
+---
+
+
+Тип `PageInfo` предоставляет информацию о разбивке на страницы для списков.
+
+```graphql
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: Cursor
+  endCursor: Cursor
+}
+```
+
+
+### Поля
+
+#### `hasNextPage` ([`Boolean`](/reference/scalars/boolean))
+
+`hasNextPage` - есть ли результаты в связи после текущей страницы.
+
+
+#### `hasPreviousPage` ([`Boolean`](/reference/scalars/boolean))
+
+`hasPreviousPage` - есть ли результаты в связи перед текущей страницей.
+
+
+#### `startCursor` ([`Cursor`](/reference/scalars/cursor))
+
+`startCursor` - курсор первого элемента на текущей странице.
+
+
+#### `endCursor` ([`Cursor`](/reference/scalars/cursor))
+
+`endCursor` - курсор последнего элемента на текущей странице.
+
+
+
+
