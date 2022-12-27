@@ -571,110 +571,111 @@ $chainID: ChainID!) {
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
   },
-  getLink3Data: {
-    query: `query getLink3Data($chainID: ChainID, $handle: String!){
+  getLink3ProfileData: {
+    query: `query getLink3ProfileData($chainID: ChainID, $handle: String!) {
   profileByHandle(chainID: $chainID, handle: $handle) {
-	  externalMetadataInfo{
-	      type
-	      handle
-	      displayName{
-		type
-		value
-	      }
-	      avatar{
-	      type
-		  nfts{
-			  chainId
-			  contract
-			  tokenId
-			  type
-			  name
-			  image
-			  owner
-		  }
-		  image
-	      }
-	      background{
-	      type
-		  nfts{
-			chainId
-			contract
-			tokenId
-			type
-			name
-			image
-			owner
-		  }
-		  image
-	      }
-	      bio
-	      organization{
-		twitterId
-		verified
-		followersCount
-		cmcTokenId
-		sector
-		networks
-	      }
-	      personal{
-		headline{
-		  twitter{
-			  id
-			  handle
-			  name
-			  avatar
-		  }
-		  title
-		}
-	      }
-	      section{
-		type
-		name
-		links{
-		  title
-		  link
-		}
-		superLinks{
-		  type
-		  title
-		  link
-		  description
-		  image
-		}
-		mentions{
-		  twitter{
-			  id
-			  handle
-			  name
-			  avatar
-		  }
-		  title
-		  description
-		}
-		galaxyCredentials{
-		  id
-		  name
-		}
-		poaps{
-		  id
-		  image
-		}
-		nfts{
-			chainId
-			contract
-			tokenId
-			type
-			name
-			image
-			owner
-		}
-		w3sts{
-		  tokenUri
-		}
-	      }
-	    }
+    externalMetadataInfo {
+      type
+      handle
+      displayName {
+        type
+        value
+      }
+      avatar {
+        type
+        nfts {
+          chainId
+          contract
+          tokenId
+          type
+          name
+          image
+          owner
+        }
+        image
+      }
+      background {
+        type
+        nfts {
+          chainId
+          contract
+          tokenId
+          type
+          name
+          image
+          owner
+        }
+        image
+      }
+      bio
+      organization {
+        twitterId
+        verified
+        followersCount
+        cmcTokenId
+        sector
+        networks
+      }
+      personal {
+        headline {
+          twitter {
+            id
+            handle
+            name
+            avatar
+          }
+          title
+        }
+      }
+      section {
+        type
+        name
+        links {
+          title
+          link
+        }
+        superLinks {
+          type
+          title
+          link
+          description
+          image
+        }
+        mentions {
+          twitter {
+            id
+            handle
+            name
+            avatar
+          }
+          title
+          description
+        }
+        galaxyCredentials {
+          id
+          name
+        }
+        poaps {
+          id
+          image
+        }
+        nfts {
+          chainId
+          contract
+          tokenId
+          type
+          name
+          image
+          owner
+        }
+        w3sts {
+          tokenUri
+        }
+      }
+    }
   }
-}`,
+}
+`,
     variables: {
       chainID: 1,
       handle: "ryan",

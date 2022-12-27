@@ -19,4 +19,4 @@ Also, you can find a CyberProfile by the wallet address. Each `wallet` can own m
 
 To get Link3 profile data from a CyberProfile, you need to specify `externalMetadataInfo` field in the query.
 
-<ApolloCard queryName="getLink3Data" />
+<ApolloCard queryName="getLink3ProfileData" />
