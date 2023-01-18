@@ -114,14 +114,24 @@ const config = {
         style: "light",
         links: [],
       },
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
       colorMode: {
-        defaultMode: "light",
-        disableSwitch: true,
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
       },
+      // colorMode: {
+      //   defaultMode: "light",
+      //   disableSwitch: true,
+      // },
       metadata: [
         // Keywords
         {

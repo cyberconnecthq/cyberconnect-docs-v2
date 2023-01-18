@@ -7,23 +7,27 @@ sidebar_position: 1
 description: Welcome to CyberConnect Developer Center. This is a perfect space for you to learn about the CyberConnect Protocol, get inspired, and start building meaningful social experiences for users.
 ---
 
-:::tip
 
-We want to make our CyberConnect Developer Center better. Use [this form](https://9txmc3wk3bc.typeform.com/to/Oapbu1SX) and let us know what are your thoughts!
-
-:::
 
 Welcome to CyberConnect Developer Center. This is a perfect space for you to learn about the CyberConnect Protocol, get inspired, and start building meaningful social experiences for users. Dive deep into our documentation! For unanswered questions, feel free to [ask our community in Discord](https://discord.com/invite/cUc8VRGmPs).
 
 ## What is CyberConnect?
 
-CyberConnect is a decentralized social graph protocol that helps Web3 applications bootstrap network effects. It empowers users to truly own their social identities, contents, and connections in a social network and provides developers with a rich set of tools to build applications with meaningful social experiences.
+CyberConnect is a **decentralized social graph protocol** that helps Web3 applications bootstrap network effects. It empowers users to truly own their social identities, contents, and connections in a social network and provides developers with a rich set of tools to build applications with meaningful social experiences.
 
 ## What to build with CyberConnect?
 
 import UsecaseCardsV2 from "@site/src/components/UsecaseCardsV2";
 
 <UsecaseCardsV2 />
+
+<br/>
+
+:::tip
+
+We want to make our CyberConnect Developer Center better. Use [this form](https://9txmc3wk3bc.typeform.com/to/Oapbu1SX) and let us know what are your thoughts!
+
+:::
 
 <div className="welcomeCard">
     <h2 className="anchor" id="cyberconnect-developer-community">

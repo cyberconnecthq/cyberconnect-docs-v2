@@ -12,8 +12,12 @@ type UsecaseItemV2 = {
   icon: any;
   title: any;
   description: any;
+  image: string;
 };
 
+// ![blog](/img/v2/blog.png) crowd
+// ![sbt](/img/v2/sbt.png) sbt
+// ![recommendation](/img/v2/recommendation.png) rec
 const UsecaseListV2: UsecaseItemV2[] = [
   {
     path: "/build-with-cyberconnect/#blogging-with-crowdfunding",
@@ -24,6 +28,7 @@ const UsecaseListV2: UsecaseItemV2[] = [
         Users can publish their data in NFT format on a chosen blockchain for monetization purposes.
       </Translate>
     ),
+    image: "/img/v2/blog.png"
   },
   {
     path: "/build-with-cyberconnect/#sbtnft-issuing-platform",
@@ -34,6 +39,7 @@ const UsecaseListV2: UsecaseItemV2[] = [
         Utilize airdrops and tokens to attract early adopters, convert them to contributors and retain them through rewards like badges.
       </Translate>
     ),
+    image: "/img/v2/sbt.png"
   },
   {
     path: "/build-with-cyberconnect/#recommendation",
@@ -44,10 +50,11 @@ const UsecaseListV2: UsecaseItemV2[] = [
         Recommend people to follow based on users' relationships and social data from both off-chain and on-chain sources.
       </Translate>
     ),
+    image: "/img/v2/recommendation.png"
   },
 ];
 
-function UsecaseCard({ icon, title, description, path }: UsecaseItemV2) {
+function UsecaseCard({ icon, title, description, path, image }: UsecaseItemV2) {
   return (
     <div className={styles.usecaseCardV2}>
       <Link className={styles.usecaseCardLinkV2} to={path}>
@@ -56,6 +63,7 @@ function UsecaseCard({ icon, title, description, path }: UsecaseItemV2) {
       <div className={styles.usecaseCardIconV2}>{icon}</div>
       <h3>{title}</h3>
       <div className={styles.usecaseDescriptionV2}>{description}</div>
+      <img className={styles.usecaseImageV2} src={image} />
     </div>
   );
 }
