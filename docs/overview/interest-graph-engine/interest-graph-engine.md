@@ -3,7 +3,7 @@ id: interest-graph-engine
 title: Interest Graph Engine
 slug: /overview/interest-graph-engine
 sidebar_label: Interest Graph Engine
-sidebar_position: 2
+sidebar_position: 1
 description: Interest Graph Engine
 ---
 

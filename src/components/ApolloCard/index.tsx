@@ -682,6 +682,282 @@ $chainID: ChainID!) {
     },
     headers: {},
   },
+  getCCLabelsDetailed: {
+    query: `query getCCLabelsDetailed($address: AddressEVM!, $chainID: ChainID!)
+    {
+      address(address:$address, chainID:$chainID) {
+        wallet {
+          metadata {
+            projectInteractionStats {
+              project
+              txCount
+              numSent
+              numReceived
+              firstInteraction
+              lastInteraction
+              sampleTxHashes
+            }
+          }
+        }
+      }
+    } 
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getCCLabels: {
+    query: `query getCCLabels($address:AddressEVM!, $chainID:ChainID!)
+    {
+      address(address:$address, chainID:$chainID) {
+        address
+        wallet {
+          metadata {
+            labels
+          }
+          
+        }
+      }
+    }
+    
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getCCLabels: {
+    query: `query getCCLabels($address:AddressEVM!, $chainID:ChainID!)
+    {
+      address(address:$address, chainID:$chainID) {
+        address
+        wallet {
+          metadata {
+            labels
+          }
+          
+        }
+      }
+    }
+    
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getTokenBalanceInfo: {
+    query: `query getTokenBalanceInfo($address:AddressEVM!, $chainID:ChainID!)
+    {
+    address(address: $address, chainID:$chainID) {
+        wallet {
+          recommendation {
+            tokenBalanceInfo {
+              token {
+                ... on ERC721 {
+                  name
+                  contractAddress
+                  contract_creation_time
+                  block_number
+                }
+                ... on ERC1155 {
+                  name
+                  contractAddress
+                  contract_creation_time
+                  block_number
+                }
+                ... on ERC20 {
+                  name
+                  contractAddress
+                  contract_creation_time
+                  block_number 
+                }
+              }
+              tokenLogo
+              twitter
+              homepage
+              etherscan_labels
+              etherscan_token_contractnames
+              etherscan_acccount_contractnames
+              trustwallet_tags
+              dune_category
+              coingecko_categories
+              blog
+              medium
+              github_organization
+              github
+              subreddit_url
+              telegram_channel_url
+              facebook_page
+              discord
+              total_supply
+              description
+              banner_image_url
+              opensea_status
+            }
+           
+          }
+        }
+      }
+    }    
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getUserRecommendation: {
+    query: `query getUserRecommendation($address: AddressEVM!, $chainId: ChainID!) {
+      address(address: $address, chainID: $chainId) {
+        wallet   
+         {
+          recommendation {
+            userRecommendation {
+              userToFollow
+              userToFollowRank
+              userToFollowDistanceScore
+              userToFollowReason
+            }
+          }
+        }
+      }
+    }
+    
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getTokenRecommendation: {
+    query: `query GetTokenRecommendation($address:AddressEVM!, $chainId: ChainID!)
+    {
+    address(address: $address, chainID: $chainId) {
+      wallet {    
+          recommendation {
+            tokenRecommendation {
+              rank
+              tokenInfo {
+                token {
+                  ... on ERC721 {
+                    name
+                    symbol
+                    contractAddress
+                  }
+                  }
+                
+                tokenLogo
+                twitter
+                homepage
+                etherscan_labels
+                etherscan_token_contractnames
+              }
+            }
+           
+          }
+        }
+      }
+      }
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getUserFeed: {
+    query: `query getUserFeed($address: AddressEVM!, $chainID: ChainID!) {
+      address(address: $address, chainID: $chainID) {
+        wallet {
+          feed {
+            evt_type
+            token_standard
+            evt_block_time
+            token_address
+            tx_hash
+            amount
+            tokenId
+            token {
+              token {
+                ... on ERC721 {
+                  name
+                  contractAddress
+                  contract_creation_time
+                  block_number
+                }
+                ... on ERC1155 {
+                  name
+                  contractAddress
+                  contract_creation_time
+                  block_number
+                }
+                ... on ERC20 {
+                  name
+                  contractAddress
+                  contract_creation_time
+                  block_number
+                }
+              }
+              tokenLogo
+              twitter
+              homepage
+              etherscan_labels
+              etherscan_token_contractnames
+              etherscan_acccount_contractnames
+              trustwallet_tags
+              dune_category
+              coingecko_categories
+              blog
+              medium
+              github_organization
+              github
+              subreddit_url
+              telegram_channel_url
+              facebook_page
+              discord
+              total_supply
+              description
+              banner_image_url
+              opensea_status
+            }
+          }
+        }
+      }
+    }
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
 };
 
 export default function ApolloCard({

@@ -1,9 +1,9 @@
 ---
 id: data-indexing
 title: Data Indexing
-slug: /protocol/interest-graph-engine/data-indexing
+slug: /overview/interest-graph-engine/data-indexing
 sidebar_label: Data Indexing
-sidebar_position: 1
+sidebar_position: 2
 description: Data Indexing
 ---
 

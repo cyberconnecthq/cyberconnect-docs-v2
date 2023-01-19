@@ -42,6 +42,7 @@
         "eslint-plugin-react": "^7.29.4",
         "eslint-plugin-react-hooks": "^4.5.0",
         "graphql": "^16.5.0",
+        "graphql-playground-react": "^1.7.28",
         "hast-util-is-element": "1.1.0",
         "prettier": "^2.6.2",
         "prism-react-renderer": "^1.3.1",

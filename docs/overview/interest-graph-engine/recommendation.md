@@ -1,9 +1,9 @@
 ---
 id: recommendation
 title: Recommendation
-slug: /protocol/interest-graph-engine/recommendation
+slug: /overview/interest-graph-engine/recommendation
 sidebar_label: Recommendation
-sidebar_position: 2
+sidebar_position: 3
 description: Recommendation
 ---
 

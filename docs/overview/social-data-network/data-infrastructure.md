@@ -1,9 +1,9 @@
 ---
 id: data-infrastructure
 title: Data Infrastructure
-slug: /protocol/social-data-network/data-infrastructure
+slug: /overview/social-data-network/data-infrastructure
 sidebar_label: Data Infrastructure
-sidebar_position: 1
+sidebar_position: 2
 description: Data Infrastructure
 ---
 

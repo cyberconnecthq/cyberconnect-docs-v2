@@ -1,10 +1,10 @@
 ---
-id: build-with-cyberconnect
-title: Build with CyberConnect
-slug: /build-with-cyberconnect
-sidebar_label: Build with CyberConnect
+id: what-is-cyberconnect
+title: What is CyberConnect?
+slug: /what-is-cyberconnect
+sidebar_label: What is CyberConnect?
 sidebar_position: 2
-description: Build with CyberConnect
+description: What is CyberConnect?
 ---
 
 ## Blogging with crowdfunding

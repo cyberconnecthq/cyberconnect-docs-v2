@@ -20,7 +20,7 @@ type UsecaseItemV2 = {
 // ![recommendation](/img/v2/recommendation.png) rec
 const UsecaseListV2: UsecaseItemV2[] = [
   {
-    path: "/build-with-cyberconnect/#blogging-with-crowdfunding",
+    path: "/how-to/build-content-app/quick-setup",
     icon: <SiCrowdsource />,
     title: <Translate description="usercase profile">Blogging with Crowdfunding</Translate>,
     description: (
@@ -31,7 +31,7 @@ const UsecaseListV2: UsecaseItemV2[] = [
     image: "/img/v2/blog.png"
   },
   {
-    path: "/build-with-cyberconnect/#sbtnft-issuing-platform",
+    path: "/how-to/build-badge-app/quick-setup",
     icon: <BsPersonBadge />,
     title: <Translate description="usercase profile">SBT/NFT issuing platform</Translate>,
     description: (
@@ -42,7 +42,7 @@ const UsecaseListV2: UsecaseItemV2[] = [
     image: "/img/v2/sbt.png"
   },
   {
-    path: "/build-with-cyberconnect/#recommendation",
+    path: "/guides/recommendation-engine/recommendation",
     icon: <BiNetworkChart />,
     title: <Translate description="usercase profile">Recommendation</Translate>,
     description: (

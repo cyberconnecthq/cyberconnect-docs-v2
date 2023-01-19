@@ -1,9 +1,9 @@
 ---
 id: smart-contract-protocol
 title: Smart Contract Protocol
-slug: /protocol/social-data-network/smart-contract-protocol
+slug: /overview/social-data-network/smart-contract-protocol
 sidebar_label: Smart Contract Protocol
-sidebar_position: 2
+sidebar_position: 3
 description: Smart Contract Protocol
 ---
 
