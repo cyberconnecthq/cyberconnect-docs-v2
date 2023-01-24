@@ -735,30 +735,6 @@ $chainID: ChainID!) {
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
   },
-  getCCLabels: {
-    query: `query getCCLabels($address:AddressEVM!, $chainID:ChainID!)
-    {
-      address(address:$address, chainID:$chainID) {
-        address
-        wallet {
-          metadata {
-            labels
-          }
-          
-        }
-      }
-    }
-    
-`,
-    variables: {
-      chainID: 1,
-      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
-    },
-    headers:{
-      Authorization:
-        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
-    },
-  },
   getTokenBalanceInfo: {
     query: `query getTokenBalanceInfo($address:AddressEVM!, $chainID:ChainID!)
     {

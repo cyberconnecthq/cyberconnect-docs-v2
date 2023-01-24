@@ -15,9 +15,7 @@ type UsecaseItemV2 = {
   image: string;
 };
 
-// ![blog](/img/v2/blog.png) crowd
-// ![sbt](/img/v2/sbt.png) sbt
-// ![recommendation](/img/v2/recommendation.png) rec
+
 const UsecaseListV2: UsecaseItemV2[] = [
   {
     path: "/how-to/build-content-app/quick-setup",

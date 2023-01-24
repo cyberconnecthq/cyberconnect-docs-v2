@@ -333,6 +333,18 @@ nav.theme-doc-breadcrumbs {
   background-color: var(--primary-white);
 } */
 
+/* Override non-category links to be horizonally compact */
+li > a.menu__link {
+  justify-content: flex-start;
+}
+
+.welcome a::after {
+  padding-right: 0.5rem;
+  content: url(/img/v0.4.0/icons/active/arrow_forward.svg);
+  justify-content: flex-start;
+}
+
+
 .menu__link {
   border-radius: 8px;
   /* color: var(--secondary-black-50); */

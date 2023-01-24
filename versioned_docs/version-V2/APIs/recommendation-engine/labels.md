@@ -56,14 +56,15 @@ The `projectInteractionStats` provides a list of projects with which the input a
 -   first & last transactions’ timestamps
 -   sample transaction hash from the given interactions
 
-import PostmanCard from "@site/src/components/PostmanCard";
+<!-- import PostmanCard from "@site/src/components/PostmanCard"; -->
+import ApolloCard from "@site/src/components/ApolloCard";
 
 ### Detailed View
 
-<PostmanCard 
-  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-f8948b6d-4c42-448b-bc0a-65ee75815847"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-9a0f9ff3-2fb4-4086-819b-e115f09e7a48"
-/>
+
+<ApolloCard queryName="getCCLabelsDetailed" />
+
+#### Sample output 
 
 ```json
 "address": {
@@ -99,10 +100,10 @@ import PostmanCard from "@site/src/components/PostmanCard";
 
 ### Aggregated View
 
-<PostmanCard 
-  queryURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/request/20133006-0483574a-f11c-4053-9fd7-daa4f11cda78"
-  exampleURL="https://www.postman.com/cyberconnect-v2/workspace/cyberconnect-v2/example/20133006-92cb285d-2e04-4ea8-9f20-0da2a7cf3a9d"
-/>
+<ApolloCard queryName="getCCLabels" />
+
+
+#### Sample output 
 
 ```json
 {
