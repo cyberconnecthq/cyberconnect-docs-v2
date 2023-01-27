@@ -11,7 +11,7 @@ CyberConnect has two components to help developer build social applications: **S
 
 ## Modules
 
-Users generate various data when they are engaging in social platforms thru setting up their profile for the first time, following content creators and creating contents. We categorize them into the following three components.
+Users generate various data when they are engaging in social platforms through setting up their profile for the first time, following content creators and creating contents. We categorize them into the following three components.
 
 ### Identity
 
@@ -27,7 +27,7 @@ User-generated content such as posts, videos, and publications. We also look at 
 
 ## Architecture
 
-To build a social application, a developer should only focus on user experience, user acquisition, and content moderation rather than worrying about building and maintaining the infrastructure. CyberConnect supports developers to build new applications thru APIs and SDKs. Although the experience is seamless to developers, we want to highlight our architectural design that makes CyberConnect gasless, composable and highly scalable.
+To build a social application, a developer should only focus on user experience, user acquisition, and content moderation rather than worrying about building and maintaining the infrastructure. CyberConnect supports developers to build new applications through APIs and SDKs. Although the experience is seamless to developers, we want to highlight our architectural design that makes CyberConnect gasless, composable and highly scalable.
 
 **Sufficiently decentralized data infrastructures** that help users manage their portable and self-sovereign social data at scale. The data are represented in _verifiable credentials_ and developers can safely rely on the infrastructures to write and update millions of records.
 

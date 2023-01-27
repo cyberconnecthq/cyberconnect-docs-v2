@@ -338,12 +338,21 @@ li > a.menu__link {
   justify-content: flex-start;
 }
 
-.welcome a::after {
+.cyberconnect a::after {
   padding-right: 0.5rem;
-  content: url(/img/v0.4.0/icons/active/arrow_forward.svg);
+  content: url(/img/logo-white.svg);
   justify-content: flex-start;
 }
 
+.boxBorder {
+  border: 2px solid #058b24;
+  background: #058b24;
+  border-radius: 25px;
+  color: var(--primary-white);
+  /* padding: 2px; */
+  /* outline: #058b24 solid 5px; */
+  /* outline-offset: 1px; */
+}
 
 .menu__link {
   border-radius: 8px;

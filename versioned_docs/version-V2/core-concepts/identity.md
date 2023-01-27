@@ -7,7 +7,7 @@ sidebar_position: 2
 description: Addresses vs. ccProfiles
 ---
 
-User-generated social profiles and on-chain address-related data that form the user’s decentralized identity. Whether it’s an NFT, an ENS name, a Twitter handle, or a DID, we map all of them to one holistic identity. In CyberConnect’s infrastructure, an identity is currently manifested thru either an address or a profile.
+User-generated social profiles and on-chain address-related data that form the user’s decentralized identity. Whether it’s an NFT, an ENS name, a Twitter handle, or a DID, we map all of them to one holistic identity. In CyberConnect’s infrastructure, an identity is currently manifested through either an address or a profile.
 
 ## Address
 

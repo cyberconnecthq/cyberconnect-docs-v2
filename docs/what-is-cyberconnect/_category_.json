@@ -1,5 +1,8 @@
-{
-    "label": "welcome",
+{  
+    "label": "Introduction",
     "position": 1,
-    "className": "welcome"
+    "link": {
+        "type": "generated-index",
+        "description": "Examples guides and tutorials to build using the CyberConnect API"
+      }
 }

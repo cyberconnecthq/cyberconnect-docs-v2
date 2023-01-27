@@ -3,7 +3,7 @@ id: content
 title: Content
 slug: /concepts/content
 sidebar_label: Content
-sidebar_position: 3
+sidebar_position: 4
 description: Types of on-chain content supported
 ---
 
