@@ -54,14 +54,7 @@ We want to make our CyberConnect Developer Center better. Use [this form](https:
     </p>
     <br></br>
     <p>
-    Stay updated by subscribing to our{" "}
-        <a
-            href="https://www.getrevue.co/profile/cyberconnect"
-            target="_blank"
-            rel="noopener noreferrer">
-            newsletter
-        </a>
-        , reading our <a
+    Stay updated by reading our <a
             href="https://mirror.xyz/cyberlab.eth"
             target="_blank"
             rel="noopener noreferrer">
