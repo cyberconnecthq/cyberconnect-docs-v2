@@ -1,0 +1,72 @@
+---
+id: section
+title: Section
+---
+
+
+The `Section` type provides the information about secions in the Link3 profile. Every Link3 profile has up to 20 sections in order.
+
+```graphql
+type Section {
+  type: SectionType!
+  name: String!
+  links: [Link!]
+  superLinks: [SuperLink!]
+  mentions: [Mention!]
+  galaxyCredentials: [GalaxyCredential!]
+  poaps: [POAP!]
+  nfts: [NFT!]
+  w3sts: [W3ST!]
+}
+```
+
+
+### Fields
+
+#### `type` ([`SectionType`](/reference/enums/section-type))
+
+`type` the type of the section.
+
+
+#### `name` ([`String`](/reference/scalars/string))
+
+`name` the name of the section.
+
+
+#### `links` ([`Link`](/reference/objects/link))
+
+`links` take this field if the `type` is `LINK`.
+
+
+#### `superLinks` ([`SuperLink`](/reference/objects/super-link))
+
+`superLinks` take this field if the `type` is `SUPERLINK`.
+
+
+#### `mentions` ([`Mention`](/reference/objects/mention))
+
+`mentions` take this field if the `type` is `MENTION`.
+
+
+#### `galaxyCredentials` ([`GalaxyCredential`](/reference/objects/galaxy-credential))
+
+`galaxyCredentials` take this field if the `type` is `GALAXY_CREDENTIAL`.
+
+
+#### `poaps` ([`POAP`](/reference/objects/poap))
+
+`poaps` take this field if the `type` is `POAP`.
+
+
+#### `nfts` ([`NFT`](/reference/objects/nft))
+
+`nfts` take this field if the `type` is `NFT_GALLERY`.
+
+
+#### `w3sts` ([`W3ST`](/reference/objects/w3-st))
+
+`w3sts` take this field if the `type` is `W3ST_GALLERY`.
+
+
+
+

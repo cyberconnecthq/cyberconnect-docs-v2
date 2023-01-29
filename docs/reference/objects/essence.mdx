@@ -21,6 +21,9 @@ type Essence implements Node {
   last: Int
   orderBy: CollectOrder
 ): CollectConnection!
+  isCollectedByMe(
+  me: AddressEVM!
+): Boolean!
   createdBy: Profile!
 }
 ```
@@ -84,6 +87,14 @@ type Essence implements Node {
 - ##### `orderBy` ([`CollectOrder`](/reference/inputs/collect-order))
 
 `orderBy` the order in which results are returned.
+
+
+#### `isCollectedByMe` ([`Boolean`](/reference/scalars/boolean))
+
+`isCollectedByMe` whether the given address has collected this essence.
+- ##### `me` ([`AddressEVM`](/reference/scalars/address-evm))
+
+
 
 
 #### `createdBy` ([`Profile`](/reference/objects/profile))

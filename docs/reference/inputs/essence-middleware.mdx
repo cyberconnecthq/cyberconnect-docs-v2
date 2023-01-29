@@ -11,6 +11,9 @@ input EssenceMiddleware {
   collectFree: Boolean
   collectPaid: collectPaidMwParams
   collectPermission: collectPermissionMwParams
+  collectDisallowed: Boolean
+  collectOnlySubscribed: Boolean
+  collectMerkleDrop: collectMerkleDropMwParams
   customMiddleware: customMwParams
 }
 ```
@@ -31,6 +34,21 @@ input EssenceMiddleware {
 #### `collectPermission` ([`collectPermissionMwParams`](/reference/inputs/collect-permission-mw-params))
 
 `collectPermission` collecting an essence requires having a valid signature from the signer.
+
+
+#### `collectDisallowed` ([`Boolean`](/reference/scalars/boolean))
+
+`collectDisallowed` collecting an essence is disallowed.
+
+
+#### `collectOnlySubscribed` ([`Boolean`](/reference/scalars/boolean))
+
+`collectOnlySubscribed` collecting an essence requires the collector to subscribe to the profile that publishes the essence.
+
+
+#### `collectMerkleDrop` ([`collectMerkleDropMwParams`](/reference/inputs/collect-merkle-drop-mw-params))
+
+`collectMerkleDrop` collecting an essence requires having a correct merkle proof.
 
 
 #### `customMiddleware` ([`customMwParams`](/reference/inputs/custom-mw-params))

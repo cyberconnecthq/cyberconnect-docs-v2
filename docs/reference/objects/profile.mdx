@@ -15,6 +15,7 @@ type Profile implements Node {
   metadata: URL
   metadataInfo: MetadataDetail
   avatar: URL
+  externalMetadataInfo: ExternalMetadataDetail
   mintingBlock: Int!
   isPrimary: Boolean!
   operators: [AddressEVM!]!
@@ -36,6 +37,9 @@ type Profile implements Node {
   subscribeMw: MiddlewareInfo
   namespace: Namespace!
   subscriberCount: Int!
+  isSubscribedByMe(
+  me: AddressEVM!
+): Boolean!
 }
 ```
 
@@ -75,6 +79,11 @@ type Profile implements Node {
 #### `avatar` ([`URL`](/reference/scalars/url))
 
 `avatar` the profile's avatar url.
+
+
+#### `externalMetadataInfo` ([`ExternalMetadataDetail`](/reference/objects/external-metadata-detail))
+
+`externalMetadataInfo` informantion about the profile's metadata on Link3.
 
 
 #### `mintingBlock` ([`Int`](/reference/scalars/int))
@@ -166,6 +175,14 @@ type Profile implements Node {
 #### `subscriberCount` ([`Int`](/reference/scalars/int))
 
 `subscriberCount` the number of subscribers.
+
+
+#### `isSubscribedByMe` ([`Boolean`](/reference/scalars/boolean))
+
+`isSubscribedByMe` whether the given address has subscribed to the profile.
+- ##### `me` ([`AddressEVM`](/reference/scalars/address-evm))
+
+
 
 
 ### Interfaces

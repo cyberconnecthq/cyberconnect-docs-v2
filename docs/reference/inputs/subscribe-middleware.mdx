@@ -10,6 +10,8 @@ The `SubscribeMiddleware` input type specifies the middleware to set.
 input SubscribeMiddleware {
   subscribeFree: Boolean
   subscribePaid: subscribePaidMwParams
+  subscribeDisallowed: Boolean
+  subscribeOnlyOnce: Boolean
   customMiddleware: customMwParams
 }
 ```
@@ -25,6 +27,16 @@ input SubscribeMiddleware {
 #### `subscribePaid` ([`subscribePaidMwParams`](/reference/inputs/subscribe-paid-mw-params))
 
 `subscribePaid` the subscription to the profile requires the subscriber to pay a fee.
+
+
+#### `subscribeDisallowed` ([`Boolean`](/reference/scalars/boolean))
+
+`subscribeDisallowed` the subscription to the profile is disallowed.
+
+
+#### `subscribeOnlyOnce` ([`Boolean`](/reference/scalars/boolean))
+
+`subscribeOnlyOnce` the subscription to the profile can happen only once from every other address.
 
 
 #### `customMiddleware` ([`customMwParams`](/reference/inputs/custom-mw-params))
