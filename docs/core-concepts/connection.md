@@ -1,15 +1,20 @@
 ---
 id: connection
-title: Connection
+title: SubscribeNFT (Connections)
 slug: /concepts/connection
-sidebar_label: Connection
+sidebar_label: SubscribeNFT (Connections)
 sidebar_position: 3
 description: Types of on & off-chain connections supported
 ---
-Connections are at the fabric that weave together social graphs. Within CyberConnect,
-a connection represents relationships between two [ccProfiles](/concepts/cc-profile). 
+Connections are at the fabric that weave together online social graphs. In CyberConnect's protocol, connections are represented by **SubscribeNFTs**. 
 
-There are two forms of connections: **follow and subscribe**. 
+A SubscribeNFT represents the uni-directional relationship between an address and a ProfileNFT. Once a user has minted their own [ProfileNFT/ccProfile](/concepts/cc-profile) contract, they can issue their own SubscribeNFT, which in turn can be collected by other users.
+
+ Each ProfileNFT holder can issue _only one unique SubscribeNFT_. Each SubscribeNFT can be configured with rules like pay-to-follow (paid subscribers), hold-to-follow (token-gated community), etc. The SubcribeNFT is highly-customizable and can be used to represent arbitrary social connections; including following, subscribing to a creator, friend relationship, belonging to an organization, and participations in activities and communities.
+
+![follow-gif](/img/v2/follow-gif.gif)
+
+# Example use-cases / implementations of SubscribeNFT
 
 ## 1. Follow
 

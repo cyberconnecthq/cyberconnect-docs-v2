@@ -2,7 +2,7 @@
 id: apis-playground
 title: CyberConnect API 
 slug: /APIs/APIs
-sidebar_label: APIs
+sidebar_label: CyberConnect API
 sidebar_position: 1
 description: API Introduction
 ---

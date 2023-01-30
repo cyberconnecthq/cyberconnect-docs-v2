@@ -7,14 +7,12 @@ sidebar_position: 2
 description: Contract Architecture
 ---
 
-## Core Concepts
-
 The smart contract protocol consists of generative smart contracts, which means it will generate a set of new smart contracts associated with dApps or users when they interact with the protocol. This pattern is similar to the Uniswap protocol where a set of liquidity pair smart contracts will be generated when people create a new liquidity pool.
 
 On CyberConnect, these generated smart contracts enable dApps to create their context-specific on-chain social network or users to issue their customizable NFTs to monetize their social data. At a high level, the protocol represents social data using three main contracts (all implementations of the ERC721 standard):
-1. [ProfileNFT](/overview/smart-contract-protocol/smart-contract#profilenft) 👤
-2. [EssenceNFT](/overview/smart-contract-protocol/smart-contract#essencenft) 👥
-3. [SubsrcibeNFT](/overview/smart-contract-protocol/smart-contract#subsrcibenft) 📝
+1. [ProfileNFT](/overview/smart-contract-protocol/contract-architecture#profilenft) 👤
+2. [SubscribeNFT](/overview/smart-contract-protocol/contract-architecture#subsrcibenft) 👥
+3. [EssenceNFT](/overview/smart-contract-protocol/contract-architecture#essencenft) 📝
 
 
 # Architecture
