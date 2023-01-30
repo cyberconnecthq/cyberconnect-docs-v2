@@ -15,6 +15,7 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 CyberConnect is a **decentralized** <strong id="social-graph" class="boxBorder"> social graph  </strong> protocol that helps Web3 applications bootstrap network effects. It empowers users to truly own their social identities, contents, and connections in a social network and provides developers with a rich set of tools to build applications with meaningful social experiences.
 
+
 ## What to build with CyberConnect?
 
 import UsecaseCardsV2 from "@site/src/components/UsecaseCardsV2";
