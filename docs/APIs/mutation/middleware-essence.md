@@ -30,7 +30,7 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 <ApolloCard queryName="createSetEssenceDataTypedData" />
 
-2. Second, once you received data in a readable format, you’ll need to get the user’s signature for it. Basically, you’ll need to write a function and pass it a `message` as a param and return the `signature` that it’s necessary for the next step.
+2. Second, once you received data in a readable format, you’ll need to get the user’s signature for it. Basically, you’ll need to write a function and pass it a `message` as a param and return the `signature` that is necessary for the next step.
 
 3. Third, you’ll have to call the `relay` API that will broadcast the transaction and interact with the smart contract setting the middleware, you will need to put as params the `typedDataID` you received from `createSetEssenceDataTypedData` mutation call and the user's `signature`.
 

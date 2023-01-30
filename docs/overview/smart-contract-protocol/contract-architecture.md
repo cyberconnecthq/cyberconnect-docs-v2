@@ -17,7 +17,7 @@ On CyberConnect, these generated smart contracts enable dApps to create their co
 
 # Architecture
 
-![gp_sm](/img/v2/gp_sm.png)
+![gp_sm](/img/v2/SmartContractGuideDiagram.png)
 
 
 ## ProfileNFT
