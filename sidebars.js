@@ -42,6 +42,11 @@ const sidebars = {
             items: [ 
             {
               type: 'link',
+              label: 'CyberConnect', // The link label
+              href: 'https://cc.me/', // The external URL
+            },
+            {
+              type: 'link',
               label: 'Link3', // The link label
               href: 'https://link3.to/', // The external URL
             },

@@ -11,6 +11,11 @@ While the [Smart Contract Protocol](/overview/smart-contract-protocol) is the co
 
 CyberConnect's Interest Graph Engine indexes & aggregates on/off-chain data sources to create a holistic view of users' on-chain identiy and activities. Developers can easily leverage the indexed data and the recommendation models for user acquisition and user retention.
 
+## Architecture
+
+![indexerv2](/img/v2/interest_graph_engine_overview.png)
+
+
 ## Indexing 
 
 Indexing system indexes data from _blockchains, decentralized stores, as well as off-chain platforms_ like Twitter to offer insights that can be used in various social contexts. These insights include social trading signals, gaming activities, DAO engagements, and more.
@@ -19,4 +24,3 @@ Indexing system indexes data from _blockchains, decentralized stores, as well as
 
 Recommendation platform converts indexed data into graph representation to provide _graph-based data analysis and recommendations_. On top of this, a token-curated marketplace is built that empowers developers to build and curate better models together.
 
-![overview](/img/v2/overview.png)

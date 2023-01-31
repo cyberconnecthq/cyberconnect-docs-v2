@@ -27,7 +27,7 @@ Let’s dig into each a bit further and show some examples to make things concre
     2. **Related Content:** Get content similar to other content based on categories or tags along with user engagement.
        - For example, getting recommendations for Bored Ape Kennel Club after opening the profile page of BAYC. 
 3. **Feed Recommendations**
-    1. **User Feeds:**  eeds catered to a specific user / address' content & on-chain interactions
+    1. **User Feeds:**  Feeds catered to a specific user / address' content & on-chain interactions
        - Get a timeline of content from accounts a user is following.
        - Get a timeline of content from accounts a user has interacted with.
        - This will look like NFT transfers, essences

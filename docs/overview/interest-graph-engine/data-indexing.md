@@ -27,6 +27,3 @@ Future research could introduce different aggregating schemes based on the persi
 
 The Querier serves three main purposes: providing identity data, providing relationship data, and connection recommendations. It retrieves data from graph databases, gets recommendation results from the Recommender, and returns data in the way requested.
 
-## Architecture
-
-![indexerv2](/img/v2/indexerv2.png)
