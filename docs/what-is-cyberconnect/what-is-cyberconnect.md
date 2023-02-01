@@ -15,7 +15,22 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 CyberConnect is a **decentralized** <strong id="social-graph" class="boxBorder"> social graph  </strong> protocol that helps Web3 applications bootstrap network effects. It empowers users to truly own their social identities, contents, and connections in a social network and provides developers with a rich set of tools to build applications with meaningful social experiences.
 
-![ccprofile](/img/v2/ccProfile_prerequisite.png)
+
+<div class="side-by-side-images" >
+<div>
+<img src="/img/v2/ccProfile_prerequisite.png"/>
+</div>
+<div>
+<h2>Mint your ccProfile now 👇</h2>
+<a href="https://cc.me/mint">
+<img src="/img/v2/card.svg" alt="mint ccprofile" align="center" />
+</a>
+</div>
+</div>
+
+
+
+
 
 ## What to build with CyberConnect?
 
