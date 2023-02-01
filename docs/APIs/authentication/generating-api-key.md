@@ -1,0 +1,24 @@
+---
+id: get-api-key
+title: Get your API key
+slug: /guides/authentication/get-api-key
+sidebar_label: Get your API key
+sidebar_position: 1
+description: Authentication - Get your API & Relay Key
+---
+
+In order to interact with the CyberConnect API you're going to need two keys:
+1. **API Key**: Used for standard authentication / identification 
+2. **Relay Address**: A unique **proxy relayer** address to delegate to. The relayer is responsible for broadcasting the transaction, minting and transferring the NFT
+
+**Steps to get your keys:**
+1. First go to https://cyber-dev-center.vercel.app/ 
+2. Log in with your gmail account
+3. Select "Create New Project"
+4. Name your project and choose an Environment
+ - Select "Staging" for testing (ex. on testnet) and "Production" for your mainnet/final deployment
+5. You should now see your API Key & Relayer Key.
+6. Select "Chain Config" to adjust the "Gas fee cap" for your relayer and find info for depositing funds into your relayer
+7. Nice! Now you're ready to start 🧑‍💻
+
+![](/img/v2/cyberconnect_api_key_fast.gif)
