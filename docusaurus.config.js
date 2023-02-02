@@ -61,7 +61,7 @@ const config = {
         rootPath: "./docs",
         baseURL: "/reference/",
         linkRoot: "/",
-        homepage: "./docs/reference/graphql.md",
+        homepage: "./docs/cyberconnect/reference/graphql.md",
         loaders: {
           UrlLoader: "@graphql-tools/url-loader",
         },

@@ -1,7 +1,7 @@
 ---
 id: Overview
 title: Overview
-slug: /concepts/overview
+slug: /core-concepts/overview
 sidebar_label: Overview
 sidebar_position: 1
 description: Concepts - Overview

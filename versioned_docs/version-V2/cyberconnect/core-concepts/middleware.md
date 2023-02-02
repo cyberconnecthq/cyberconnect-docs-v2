@@ -1,7 +1,7 @@
 ---
 id: middleware
 title: Middleware
-slug: /core-concepts/middleware
+slug: /concepts/middleware
 sidebar_label: Middleware
 sidebar_position: 6
 description: Major Concepts of CyberConnect

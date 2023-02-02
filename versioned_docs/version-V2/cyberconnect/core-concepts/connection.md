@@ -1,7 +1,7 @@
 ---
 id: subscribe-nft
 title: SubscribeNFT
-slug: /core-concepts/subscribe-nft
+slug: /concepts/subscribe-nft
 sidebar_label: SubscribeNFT (Connections 👥)
 sidebar_position: 3
 description: Types of on & off-chain connections supported

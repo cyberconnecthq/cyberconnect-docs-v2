@@ -1,0 +1,30 @@
+---
+id: custom-mw-params
+title: customMwParams
+---
+
+
+The `customMwParams` input type specifies the custom middleware to set.
+
+```graphql
+input customMwParams {
+  contractAddress: ContractAddressEVM!
+  initData: String!
+}
+```
+
+
+### Fields
+
+#### `contractAddress` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`contractAddress` the middleware contract address.
+
+
+#### `initData` ([`String`](/reference/scalars/string))
+
+`data` the middleware init data, formatted in hex with 0x prefix
+
+
+
+

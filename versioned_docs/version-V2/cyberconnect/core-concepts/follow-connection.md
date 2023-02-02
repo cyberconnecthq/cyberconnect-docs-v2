@@ -1,7 +1,7 @@
 ---
 id: follow-connection
 title: Follow
-slug: /core-concepts/follow-connection
+slug: /concepts/follow-connection
 sidebar_label: Follow (Connections 👥) 
 sidebar_position: 4
 description: Off-chain connections supported
