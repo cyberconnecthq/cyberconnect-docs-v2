@@ -1,7 +1,7 @@
 ---
 id: ccProfile
 title: ccProfileNFT (Identity 👤)
-slug: /concepts/cc-profile
+slug: /core-concepts/cc-profile
 sidebar_label: ccProfileNFT (Identity 👤)
 sidebar_position: 2
 description: ccProfiles - The backbone of your social identity

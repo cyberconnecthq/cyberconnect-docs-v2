@@ -13,6 +13,6 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 <ApolloCard queryName="getCollectedEssencesByAddressEVM" />
 
-And verify if the essence metadata meet our Link3 standard. Please refer to  [**Essenec Metadata**](/concepts/metadata)
+And verify if the essence metadata meet our Link3 standard. Please refer to  [**Essence Metadata**](/concepts/metadata)
 
 <ApolloCard queryName="verifyEssenceMetadata" />

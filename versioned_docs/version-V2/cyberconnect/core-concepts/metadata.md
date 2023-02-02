@@ -1,7 +1,7 @@
 ---
 id: metadata
 title: Metadata
-slug: /concepts/metadata
+slug: /core-concepts/metadata
 sidebar_label: Metadata
 sidebar_position: 7
 description: Major Concepts of CyberConnect
