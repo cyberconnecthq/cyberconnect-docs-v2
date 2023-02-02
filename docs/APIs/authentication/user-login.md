@@ -20,11 +20,26 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 <ApolloCard queryName="loginGetMessage" />
 
-2. Sign this message with the wallet you specified. Remember to replace \n with new lines. ([unescape json](https://www.freeformatter.com/json-escape.html#before-output)) Use the following tools to sign the message with your ETH wallet.
-
+2. The next step is to **sign this message with the wallet you specified above**. 
+:::info
+Remember to replace \n with new lines. ([unescape json](https://www.freeformatter.com/json-escape.html#before-output)) Use the following tools to sign the message with your ETH wallet.
+:::
    1. Use [Etherscan tool](https://etherscan.io/verifiedSignatures#)
-      ![siwe.png](/img/v2/siwe.png)
+      <div class="side-by-side-images" >
+      <div>
+      <img src="/img/v2/auth_token_cc.gif" />
+      </div>
+      <div>
+      <h2>Link to tool here 👇</h2>
+      <a href="https://etherscan.io/verifiedSignatures#">
+      <img src="/img/v2/siwe.png" alt="" height="300px" width="300px"/> 
+      </a>
+      </div>
+      </div>
    2. Your familiar Ether.js, web3.js and other package
+
+
+
 
 3. Verify the signature with gateway and save the token.
 
