@@ -4,12 +4,12 @@ title: Get your API key
 slug: /guides/authentication/get-api-key
 sidebar_label: Get your API key
 sidebar_position: 1
-description: Authentication - Get your API & Relay Key
+description: Authentication - Get your API & Relay Address
 ---
 
-In order to interact with the CyberConnect API you're going to need two keys:
-1. **API Key**: Used for standard authentication / identification 
-2. **Relay Address**: A unique **proxy relayer** address to delegate to. The relayer is responsible for broadcasting the transaction, minting and transferring the NFT
+In order to interact with the CyberConnect API you're going to need:
+1. **API Key [Required]**: Used for standard authentication / identification 
+2. **Relay Address [Optional]**: A unique **proxy relayer** address to delegate to. The relayer is responsible for broadcasting the transaction, minting and transferring the NFT
 
 **Steps to get your keys:**
 1. First go to https://dashboard.cyberconnect.me/

@@ -14,13 +14,13 @@ CyberConnect uses sign in with ethereum (SIWE) login flow for users to
 
 ## Login Flow
 
-1. Send `loginGetMessage` request with following fields.
+### 1. Send `loginGetMessage` request with following fields.
 
 import ApolloCard from "@site/src/components/ApolloCard";
 
 <ApolloCard queryName="loginGetMessage" />
 
-2. The next step is to **sign this message with the wallet you specified above**. 
+### 2. Sign this message with the wallet you specified above.
 :::info
 Remember to replace \n with new lines. ([unescape json](https://www.freeformatter.com/json-escape.html#before-output)) Use the following tools to sign the message with your ETH wallet.
 :::
@@ -38,10 +38,7 @@ Remember to replace \n with new lines. ([unescape json](https://www.freeformatte
       </div>
    2. Your familiar Ether.js, web3.js and other package
 
-
-
-
-3. Verify the signature with gateway and save the token.
+### 3. Verify the signature with gateway and save the token.
 
 <ApolloCard queryName="loginVerify" />
 

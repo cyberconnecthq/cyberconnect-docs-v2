@@ -17,7 +17,10 @@ Subscribing to a profile can be implemented in just a few easy steps. What subsc
 
 :::caution
 
-This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
+This API requires: 
+1. `Authorization` header with the `Bearer` token 
+2. `X-API-KEY` 
+You can learn more about it [here](/guides/authentication/authentication).
 
 :::
 
@@ -25,19 +28,23 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 <ApolloCard queryName="createSubscribeTypedData" />
 
+## 2. Get User Signature ✍️
 2. Second, once you received data in a readable format, you’ll need to get the user’s signature (`eth_signTypedData_v4`) for it. Basically, you’ll need to write a function and pass it a `message` as a param and return the `signature` that is necessary for the next step.
 
 [Ethers](https://docs.ethers.io/v5/) library is one option that can quickly help you write a function to get the user’s signature for a specific message. In this our case the message represents the typed data from step 1.
 
+## 3. Call `relay` and get `relayActionID`
 3. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the subscribe NFT, you will need to put as params the `typedDataID` you received from `createSubscribeTypedData` mutation call and the user's `signature`.
 
-:::caution
-
-This API requires `Authorization` header with the `Bearer` token. You can learn more about it [here](/guides/authentication/user-login).
-
-:::
-
 <ApolloCard queryName="relay" />
+
+## 4. Call `relayActionStatus` to receive `txHash`
+Finally you poll the `relayActionStatus` API using the `relayActionId` returned from the previous step to get the status of the related transaction. There are three possible response types:
+1. `RelayActionStatusResult`
+2. `RelayActionQueued`
+3. `RelayActionError`
+
+<ApolloCard queryName="relayActionStatus" />
 
 You can now verify the transaction by looking up the `txHash` from the response on [etherscan.io](http://etherscan.io). That’s it! You’re all done!
 

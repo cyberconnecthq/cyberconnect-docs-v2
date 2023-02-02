@@ -1,8 +1,8 @@
 ---
-id: connection
-title: SubscribeNFT (Connections)
-slug: /concepts/connection
-sidebar_label: SubscribeNFT (Connections)
+id: subscribe-nft
+title: SubscribeNFT
+slug: /concepts/subscribe-nft
+sidebar_label: SubscribeNFT (Connections 👥)
 sidebar_position: 3
 description: Types of on & off-chain connections supported
 ---
@@ -12,15 +12,11 @@ A SubscribeNFT represents the uni-directional relationship between an address an
 
  Each ProfileNFT holder can issue _only one unique SubscribeNFT_. Each SubscribeNFT can be configured with rules like pay-to-follow (paid subscribers), hold-to-follow (token-gated community), etc. The SubcribeNFT is highly-customizable and can be used to represent arbitrary social connections; including following, subscribing to a creator, friend relationship, belonging to an organization, and participations in activities and communities.
 
-![follow-gif](/img/v2/follow-gif.gif)
 
 # Example use-cases / implementations of SubscribeNFT
 
-## 1. Follow
 
-Follow is the simplest form of unilateral connection where one ccProfile follows another ccProfile. This profile to profile following connection is represented as a ERC721 NFT on whichever EVM chain it's being deployed on. This is great for applications with light weight social graph needs like following another user’s wallet activity.
-
-## 2. Subscribe
+## 1. Subscribe
 
 While `Follow` represents a simple directed relationship from one ccProfile to the other, `Subscribe` represent the a more composale relationship. Subscriptions include [middleware](/concepts/middleware), which can include arbitrary rules for subscription. For example, they could provide the ability to being subscribed to with payment attached. Each profile could specify the amount of token needed to pay for becoming a subscribers to that profile and subscribers will obtain a subscriber NFT. For more examples check out the next section on [Middlewares](/concepts/middleware).
 

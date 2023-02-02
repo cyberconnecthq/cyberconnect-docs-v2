@@ -3,7 +3,7 @@ id: metadata
 title: Metadata
 slug: /concepts/metadata
 sidebar_label: Metadata
-sidebar_position: 6
+sidebar_position: 7
 description: Major Concepts of CyberConnect
 ---
 
