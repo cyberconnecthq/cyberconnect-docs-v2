@@ -1,9 +1,11 @@
 ---
-id: link3-and-cyberconnect
-title: link3-and-cyberconnect
-slug: /link3-and-cyberconnect
-sidebar_label: link3-and-cyberconnect
+id: how-to-use-link3
+title: How to use Link3
+slug: /how-to-use-link3
+sidebar_label: How to use Link3
 sidebar_position: 2
 displayed_sidebar: link3Sidebar
-description: Welcome to Link3 Developer Center. This is a perfect space for you to learn about the Link3 Protocol, get inspired, and start building meaningful social experiences for users.
+description: How to use Link3
 ---
+
+<iframe src="https://mirror.xyz/cyberlab.eth/grMv_HOOidUptWy7Ebd3m-RUBJUdRWwBkYOXAY6m-YE"></iframe>

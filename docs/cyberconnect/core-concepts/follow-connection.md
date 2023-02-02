@@ -7,11 +7,43 @@ sidebar_position: 4
 description: Off-chain connections supported
 ---
 
-## 1. Follow
+Unlike SubscribeNFT, the follow feature offers developers/users **a cheaper alternative** of establishing **uni-directional relationships between addresses & ccProfiles**. 
 
-Follow is the simplest form of unilateral connection where one ccProfile follows another ccProfile. This profile to profile following connection is represented as a ERC721 NFT on whichever EVM chain it's being deployed on. This is great for applications with light weight social graph needs like following another user’s wallet activity.
+The lower cost comes from the architecture of this connection. Instead of minting another profiles' SubscribeNFT, the follow feature takes advantage of [Ceramic](https://ceramic.network/)'s decentralized data network and asymmetric cryptography to establish the connection. It does not require any on-chain transaction and therefore users/applications do not have to pay gas. This is great for applications with light weight social graph needs.
 
 ![follow-gif](/img/v2/follow-gif.gif)
+
+## How does it work? 
+
+To achieve data sovereignty, every connection and content on CyberConnect has to be signed by a cryptographic key pair, meaning that only the person with the private key could have produced such connection and content. This mechanism is designed in a manner that is both easy to use and future-proof.
+
+When a user interacts with CyberConnect through a dApp for the first time, they would create a key pair on the device and publish the public key to the CyberConnect Social Data Network. We support a variety of Elliptic Curve Digital Signature Algorithms (ECDSA) for compatibility. As a user initiates an action, the previously generated private key will be loaded from the local environment to sign the message.
+
+The following section will explain how nodes in the network run the job of storing these signed data. It is worth noting that at the same time, the Social Data Network is compatible with Ceramic’s DID design to enable some data to be easily stored on Ceramic.
+
+### User Profile
+
+Each user should have a dedicated space for storing relevant social profile information. We adopted Ceramic’s BasicProfile schema as a starting point and added the CyberProfile schema for users to append arbitrary content blocks. The following is a pseudo schema in Typescript. All raw images for background and avatar are stored on IPFS or other decentralized data stores.
+
+```js
+type Profile = {
+    /** Profile background picture, hash of IPFS address. */
+    backgroundPicture: string,
+    /** Bio, up to 1,000 characters. */
+    bio: string,
+    /** Blocks belonging to the profile, ordered. */
+    blocks: Array<Block>,
+    /** Display name of the profile, standard: 1-20 characters; letters, numbers, and blanks only. */
+    displayName: string,
+    /** Handle of the profile. */
+    handle: string,
+    /** Profile avatar picture, hash of IPFS address. */
+    profilePicture: string,
+    /** Twitter verification info of the profile. */
+    twitterVerification: TwitterVerification,
+};
+```
+
 
 ### Idempotent Proof of Connection and Content
 
