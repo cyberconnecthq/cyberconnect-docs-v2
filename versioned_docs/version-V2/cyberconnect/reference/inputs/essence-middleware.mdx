@@ -1,0 +1,60 @@
+---
+id: essence-middleware
+title: EssenceMiddleware
+---
+
+
+The `SubscribeMiddleware` input type specifies the middleware to set.
+
+```graphql
+input EssenceMiddleware {
+  collectFree: Boolean
+  collectPaid: collectPaidMwParams
+  collectPermission: collectPermissionMwParams
+  collectDisallowed: Boolean
+  collectOnlySubscribed: Boolean
+  collectMerkleDrop: collectMerkleDropMwParams
+  customMiddleware: customMwParams
+}
+```
+
+
+### Fields
+
+#### `collectFree` ([`Boolean`](/reference/scalars/boolean))
+
+`collectFree` the default module where the collecting an essence is free.
+
+
+#### `collectPaid` ([`collectPaidMwParams`](/reference/inputs/collect-paid-mw-params))
+
+`collectPaid` collecting an essence requires the collector to pay a fee.
+
+
+#### `collectPermission` ([`collectPermissionMwParams`](/reference/inputs/collect-permission-mw-params))
+
+`collectPermission` collecting an essence requires having a valid signature from the signer.
+
+
+#### `collectDisallowed` ([`Boolean`](/reference/scalars/boolean))
+
+`collectDisallowed` collecting an essence is disallowed.
+
+
+#### `collectOnlySubscribed` ([`Boolean`](/reference/scalars/boolean))
+
+`collectOnlySubscribed` collecting an essence requires the collector to subscribe to the profile that publishes the essence.
+
+
+#### `collectMerkleDrop` ([`collectMerkleDropMwParams`](/reference/inputs/collect-merkle-drop-mw-params))
+
+`collectMerkleDrop` collecting an essence requires having a correct merkle proof.
+
+
+#### `customMiddleware` ([`customMwParams`](/reference/inputs/custom-mw-params))
+
+`customMiddleware` for setting a custom middleware.
+
+
+
+

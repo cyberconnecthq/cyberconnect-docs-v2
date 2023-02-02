@@ -1,0 +1,36 @@
+---
+id: picture
+title: Picture
+---
+
+
+The `Picture` type provides the picture on Link3. Take different values according to the `type` field.
+
+```graphql
+type Picture {
+  image: URL
+  nfts: [NFT!]
+  type: AvatarType!
+}
+```
+
+
+### Fields
+
+#### `image` ([`URL`](/reference/scalars/url))
+
+`image` a ganeral image. Take this field if `type` = `GENERAL`.
+
+
+#### `nfts` ([`NFT`](/reference/objects/nft))
+
+`nfts` an image consists of one or more NFTs. Take this field if `type` = `NFT`.
+
+
+#### `type` ([`AvatarType`](/reference/enums/avatar-type))
+
+`type` the type of the picture.
+
+
+
+

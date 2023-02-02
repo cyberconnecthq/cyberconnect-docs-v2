@@ -1,0 +1,60 @@
+---
+id: nft
+title: NFT
+---
+
+
+The `NFT` type provides the NFT data.
+
+```graphql
+type NFT {
+  chainId: ChainID!
+  contract: ContractAddressEVM!
+  tokenId: String!
+  type: ERCType!
+  name: String!
+  image: String!
+  owner: AddressEVM!
+}
+```
+
+
+### Fields
+
+#### `chainId` ([`ChainID`](/reference/scalars/chain-id))
+
+`chainId` the chain ID of the NFT.
+
+
+#### `contract` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+
+`contract` the contract address of the NFT.
+
+
+#### `tokenId` ([`String`](/reference/scalars/string))
+
+`tokenId` the token ID of the NFT.
+
+
+#### `type` ([`ERCType`](/reference/enums/erctype))
+
+`type` the ERC type of the NFT.
+
+
+#### `name` ([`String`](/reference/scalars/string))
+
+`name` the name of the NFT.
+
+
+#### `image` ([`String`](/reference/scalars/string))
+
+`image` the content or url of the NFT image.
+
+
+#### `owner` ([`AddressEVM`](/reference/scalars/address-evm))
+
+`owner` the owner's address of the NFT.
+
+
+
+

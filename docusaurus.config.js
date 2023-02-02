@@ -61,13 +61,13 @@ const config = {
         rootPath: "./docs",
         baseURL: "/reference/",
         linkRoot: "/",
-        homepage: "./docs/reference/graphql.md",
+        homepage: "./docs/cyberconnect/reference/graphql.md",
         loaders: {
           UrlLoader: "@graphql-tools/url-loader",
         },
         diffMethod: false, // The method to be used for identifying changes in the schema for triggering the documentation generation. Set it to false to prevent from automatic updates.
-      },
-    ],
+      }
+    ]
   ],
   i18n: {
     defaultLocale: "en",
@@ -94,6 +94,18 @@ const config = {
         },
         items: [
           {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'cyberconnectSidebar',
+            label: 'CyberConnect',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'link3Sidebar',
+            label: 'Link3',
+          },
+          {
             type: "docsVersionDropdown",
             position: "right",
           },
@@ -114,14 +126,24 @@ const config = {
         style: "light",
         links: [],
       },
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
       colorMode: {
-        defaultMode: "light",
-        disableSwitch: true,
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
       },
+      // colorMode: {
+      //   defaultMode: "light",
+      //   disableSwitch: true,
+      // },
       metadata: [
         // Keywords
         {

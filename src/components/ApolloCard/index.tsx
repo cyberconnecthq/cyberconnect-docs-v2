@@ -56,6 +56,7 @@ const apolloData = {
         "0x94f97dc981130aa6b7df130e08f660ddb4996f74118585eae14429e019b499043a42c8826850d50be197dffc0c7b51a5e20f90fe68067b72deb83e59fe25959c1b",
     },
     headers: {
+      "X-API-KEY": "oK6TuroglIWefsTjnpT2D2Du7qeyGAe5",
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoiY3liZXJjb25uZWN0Lm1lIiwiYWRkcmVzcyI6IjB4OTI3ZjM1NTExNzcyMWUwRThBN2I1ZUEyMDAwMmI2NUI4YTU1MTg5MCIsImlzcyI6IkN5YmVyQ29ubmVjdCIsImV4cCI6MTY2NTA4NDU2MywiaWF0IjoxNjYyNDkyNTYzfQ.X3Y-gTTnsmpNRqkZ3vAAv3UOnHBb5WH5EZ2sOcJRPnw",
     },
@@ -75,6 +76,7 @@ const apolloData = {
         "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzOFJXfxXMzNYQ2OXqe/HA8R3Xd5TiT3ltZO5Hi3WQjxvkUBtXn7ZUPj5Qm6+lZoIVh8SWBxUVVt+S04q06PJlw==",
     },
     headers: {
+      "X-API-KEY": "oK6TuroglIWefsTjnpT2D2Du7qeyGAe5",
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoiY3liZXJjb25uZWN0Lm1lIiwiYWRkcmVzcyI6IjB4OTI3ZjM1NTExNzcyMWUwRThBN2I1ZUEyMDAwMmI2NUI4YTU1MTg5MCIsImlzcyI6IkN5YmVyQ29ubmVjdCIsImV4cCI6MTY2NTA4NDU2MywiaWF0IjoxNjYyNDkyNTYzfQ.X3Y-gTTnsmpNRqkZ3vAAv3UOnHBb5WH5EZ2sOcJRPnw",
     },
@@ -387,18 +389,8 @@ $chainID: ChainID!) {
   },
   relay: {
     query: `mutation callRelay($input: RelayInput!) {
-	relay(input: $input) {
-		relayTransaction {
-			id
-			txHash
-			typedData {
-				id
-				chainID
-				sender
-				data
-				nonce
-			}
-		}
+	  relay(input: $input) {
+		  relayActionId
 	}
 }`,
     variables: {
@@ -409,6 +401,33 @@ $chainID: ChainID!) {
       },
     },
     headers: {
+      "X-API-KEY": "oK6TuroglIWefsTjnpT2D2Du7qeyGAe5",
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  relayActionStatus: {
+    query: `query getRelayActionStatus($relayActionId: ID!) {
+      relayActionStatus(relayActionId: $relayActionId) {
+        ... on RelayActionStatusResult {
+          txHash
+          txStatus
+        }
+        ... on RelayActionQueued {
+          queuedAt
+          reason
+        }
+        ... on RelayActionError {
+          reason
+          lastKnownTxHash
+        }
+      }
+    }`,
+    variables: {
+        relayActionId: "167503724722",
+    },
+    headers: {
+      "X-API-KEY": "oK6TuroglIWefsTjnpT2D2Du7qeyGAe5",
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
@@ -434,6 +453,7 @@ $chainID: ChainID!) {
       },
     },
     headers: {
+      "X-API-KEY": "oK6TuroglIWefsTjnpT2D2Du7qeyGAe5",
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
@@ -467,6 +487,7 @@ $chainID: ChainID!) {
       },
     },
     headers: {
+      "X-API-KEY": "oK6TuroglIWefsTjnpT2D2Du7qeyGAe5",
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
@@ -494,6 +515,7 @@ $chainID: ChainID!) {
       },
     },
     headers: {
+      "X-API-KEY": "oK6TuroglIWefsTjnpT2D2Du7qeyGAe5",
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
@@ -530,6 +552,7 @@ $chainID: ChainID!) {
       },
     },
     headers: {
+      "X-API-KEY": "oK6TuroglIWefsTjnpT2D2Du7qeyGAe5",
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
@@ -567,6 +590,7 @@ $chainID: ChainID!) {
       },
     },
     headers: {
+      "X-API-KEY": "oK6TuroglIWefsTjnpT2D2Du7qeyGAe5",
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
@@ -682,6 +706,258 @@ $chainID: ChainID!) {
     },
     headers: {},
   },
+  getCCLabelsDetailed: {
+    query: `query getCCLabelsDetailed($address: AddressEVM!, $chainID: ChainID!)
+    {
+      address(address:$address, chainID:$chainID) {
+        wallet {
+          metadata {
+            projectInteractionStats {
+              project
+              txCount
+              numSent
+              numReceived
+              firstInteraction
+              lastInteraction
+              sampleTxHashes
+            }
+          }
+        }
+      }
+    } 
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getCCLabels: {
+    query: `query getCCLabels($address:AddressEVM!, $chainID:ChainID!)
+    {
+      address(address:$address, chainID:$chainID) {
+        address
+        wallet {
+          metadata {
+            labels
+          }
+          
+        }
+      }
+    }
+    
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getTokenBalanceInfo: {
+    query: `query getTokenBalanceInfo($address:AddressEVM!, $chainID:ChainID!)
+    {
+    address(address: $address, chainID:$chainID) {
+        wallet {
+          recommendation {
+            tokenBalanceInfo {
+              token {
+                ... on ERC721 {
+                  name
+                  contractAddress
+                  contract_creation_time
+                  block_number
+                }
+                ... on ERC1155 {
+                  name
+                  contractAddress
+                  contract_creation_time
+                  block_number
+                }
+                ... on ERC20 {
+                  name
+                  contractAddress
+                  contract_creation_time
+                  block_number 
+                }
+              }
+              tokenLogo
+              twitter
+              homepage
+              etherscan_labels
+              etherscan_token_contractnames
+              etherscan_acccount_contractnames
+              trustwallet_tags
+              dune_category
+              coingecko_categories
+              blog
+              medium
+              github_organization
+              github
+              subreddit_url
+              telegram_channel_url
+              facebook_page
+              discord
+              total_supply
+              description
+              banner_image_url
+              opensea_status
+            }
+           
+          }
+        }
+      }
+    }    
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getUserRecommendation: {
+    query: `query getUserRecommendation($address: AddressEVM!, $chainId: ChainID!) {
+      address(address: $address, chainID: $chainId) {
+        wallet   
+         {
+          recommendation {
+            userRecommendation {
+              userToFollow
+              userToFollowRank
+              userToFollowDistanceScore
+              userToFollowReason
+            }
+          }
+        }
+      }
+    }
+    
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getTokenRecommendation: {
+    query: `query GetTokenRecommendation($address:AddressEVM!, $chainId: ChainID!)
+    {
+    address(address: $address, chainID: $chainId) {
+      wallet {    
+          recommendation {
+            tokenRecommendation {
+              rank
+              tokenInfo {
+                token {
+                  ... on ERC721 {
+                    name
+                    symbol
+                    contractAddress
+                  }
+                  }
+                
+                tokenLogo
+                twitter
+                homepage
+                etherscan_labels
+                etherscan_token_contractnames
+              }
+            }
+           
+          }
+        }
+      }
+      }
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getUserFeed: {
+    query: `query getUserFeed($address: AddressEVM!, $chainID: ChainID!) {
+      address(address: $address, chainID: $chainID) {
+        wallet {
+          feed {
+            evt_type
+            token_standard
+            evt_block_time
+            token_address
+            tx_hash
+            amount
+            tokenId
+            token {
+              token {
+                ... on ERC721 {
+                  name
+                  contractAddress
+                  contract_creation_time
+                  block_number
+                }
+                ... on ERC1155 {
+                  name
+                  contractAddress
+                  contract_creation_time
+                  block_number
+                }
+                ... on ERC20 {
+                  name
+                  contractAddress
+                  contract_creation_time
+                  block_number
+                }
+              }
+              tokenLogo
+              twitter
+              homepage
+              etherscan_labels
+              etherscan_token_contractnames
+              etherscan_acccount_contractnames
+              trustwallet_tags
+              dune_category
+              coingecko_categories
+              blog
+              medium
+              github_organization
+              github
+              subreddit_url
+              telegram_channel_url
+              facebook_page
+              discord
+              total_supply
+              description
+              banner_image_url
+              opensea_status
+            }
+          }
+        }
+      }
+    }
+`,
+    variables: {
+      chainID: 1,
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers:{
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
 };
 
 export default function ApolloCard({
@@ -706,3 +982,4 @@ export default function ApolloCard({
     />
   );
 }
+
