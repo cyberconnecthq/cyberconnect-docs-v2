@@ -94,6 +94,18 @@ const config = {
         },
         items: [
           {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'cyberconnectSidebar',
+            label: 'CyberConnect',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'link3Sidebar',
+            label: 'Link3',
+          },
+          {
             type: "docsVersionDropdown",
             position: "right",
           },
