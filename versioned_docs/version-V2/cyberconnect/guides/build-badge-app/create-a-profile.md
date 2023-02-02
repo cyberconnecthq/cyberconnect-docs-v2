@@ -136,11 +136,11 @@ Last but not least, there is `operator` which is telling the contract what addre
 
 The next required params are `preData` and `postData` which are essentially middlewares that will dictate what the contract should process before and after a profile is created.
 
-To keep things simple, you won't set any middleware in this example. More on this topic in the [Middleware](/concepts/middleware) section.
+To keep things simple, you won't set any middleware in this example. More on this topic in the [Middleware](/core-concepts/middleware) section.
 
 ## Create a Profile
 
-As mentioned previously, you will be working with the Link3 Profile NFT respectively the `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271` contract.
+As mentioned previously, you will be working with the Link3 Profile NFT contract deployed on Goerli Testnet ([`0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271`](https://goerli.etherscan.io/address/0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271)).
 
 Everything will take place on the client side:
 

@@ -242,11 +242,11 @@ Setting a middleware for an essence can be done either during the essence regist
 
 :::tip
 
-There are multiple available middlewares that can be implemented. Visit the [Middleware](/concepts/middleware) section to view the full list.
+There are multiple available middlewares that can be implemented. Visit the [Middleware](/core-concepts/middleware) section to view the full list.
 
 :::
 
-In this example we simply pass as `middleware` the `collectFree` middleware that will allow users to collect the post for free. There are more options in terms of middlewares that you can choose from in the [Middleware](/concepts/middleware) section.
+In this example we simply pass as `middleware` the `collectFree` middleware that will allow users to collect the post for free. There are more options in terms of middlewares that you can choose from in the [Middleware](/core-concepts/middleware) section.
 
 If the registration of the essence (or post in our case) was successful, you can verify the transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
 

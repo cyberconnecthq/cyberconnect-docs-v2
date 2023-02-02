@@ -14,7 +14,6 @@ However, sometimes it will be challenging to issue these NFTs based on **off-cha
 1. Use permission middleware such as **collectPermissionMw**
 2. Delegate to **proxy relayer** to finish the actions
 
-
 **Solution 1** needs the application backend to manage a signer key and sign each action with this key. The permission middleware will check if the signature is valid before each action (e.g. mint an EssenceNFT). 
 
 **Solution 2** offers a quick way for developers to interact with CyberConnect protocol. This tutorial will give more details about how to delegate actions to a proxy relayer.
@@ -39,7 +38,7 @@ Use https://api.stg.cyberconnect.dev/proxy/playground for proxy replayer playgro
 ## Step 1: Register EssenceNFT
 
 1. Application backend call **ProxyRegister** to Proxy Relayer with params
-2. when uploading metadata to IPFS, please make sure it complies with [**CyberConnect Metadata Standard**](https://docs.cyberconnect.me/concepts/metadata) so that it can be indexed and displayed properly on NFT marketplace like OpenSea.
+2. when uploading metadata to IPFS, please make sure it complies with [**CyberConnect Metadata Standard**](https://docs.cyberconnect.me/core-concepts/metadata) so that it can be indexed and displayed properly on NFT marketplace like OpenSea.
 3. The proxy relayer will send out a register transaction and returns an **item_id**. This is an async API, so the backend may need to check the proxy relayer later for the final status
 
 ## Step 2: User Collect EssenceNFT

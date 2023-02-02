@@ -136,7 +136,7 @@ Last but not least, there is `operator` which is telling the contract what addre
 
 The next required params are `preData` and `postData` which are essentially middlewares that will dictate what the contract should process before and after a profile is created.
 
-To keep things simple, you won't set any middleware in this example. More on this topic in the [Middleware](/concepts/middleware) section.
+To keep things simple, you won't set any middleware in this example. More on this topic in the [Middleware](/core-concepts/middleware) section.
 
 ## Create a Profile
 

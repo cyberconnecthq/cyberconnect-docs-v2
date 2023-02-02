@@ -65,7 +65,7 @@ export const RELAY = gql`
 
 :::tip
 
-There are multiple available middlewares that can be implemented. Visit the [Middleware](/concepts/middleware) section to view the full list.
+There are multiple available middlewares that can be implemented. Visit the [Middleware](/core-concepts/middleware) section to view the full list.
 
 :::
 

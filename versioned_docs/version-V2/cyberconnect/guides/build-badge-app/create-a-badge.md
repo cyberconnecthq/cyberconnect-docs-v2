@@ -7,7 +7,7 @@ sidebar_position: 4
 description: How to Build Badge app - Create a Badge
 ---
 
-In this section you'll learn how to implement the [Register Essence](/guides/mutation/register-essence) feature. We call _essence_ everything that is content and related to it. Yes, it's also a NFT. It can take the form of a badge, a post, or something completely different that's up to your imagination.
+In this section you'll learn how to implement the [Register Essence](/guides/mutation/register-essence) feature. An _essence_ is any piece of content. Yes, it's also a NFT. It can take the form of a badge, a post, or something completely different that's up to your imagination.
 
 When the user creates an essence, a non-fungible token (NFT) is only being created. The minting and transferring of the NFT is being executed in the _collect essence_ process to the user that collects it, which you'll learn all about in the upcoming section.
 
@@ -262,7 +262,7 @@ A couple of things to note:
 
 -   We used the `attributes` field to store information about the badge (or the event linked to it) and followed the [OpenSea Metadata Standards](https://docs.opensea.io/docs/metadata-standards) to ensure that it will display properly on marketplaces;
 
--   We passed as `middleware` the `collectFree` middleware to will allow users to collect the post for free. We won't dive into middlewares in this guide but you can always check out the [Middleware](/concepts/middleware) section;
+-   We passed as `middleware` the `collectFree` middleware to will allow users to collect the post for free. We won't dive into middlewares in this guide but you can always check out the [Middleware](/core-concepts/middleware) section;
 
 -   We set `transferable` to `false` so that the NFT won't be transferable once it ends up in the user's wallet address;
 
