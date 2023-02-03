@@ -19,19 +19,19 @@ To collect an essence, meaning to collect a post, is a two step process and requ
 import { gql } from "@apollo/client";
 
 export const CREATE_COLLECT_ESSENCE_TYPED_DATA = gql`
-    mutation CreateCollectEssenceTypedData(
-        $input: CreateCollectEssenceTypedDataInput!
-    ) {
-        createCollectEssenceTypedData(input: $input) {
-            typedData {
-                id
-                chainID
-                sender
-                data
-                nonce
-            }
-        }
+  mutation CreateCollectEssenceTypedData(
+    $input: CreateCollectEssenceTypedDataInput!
+  ) {
+    createCollectEssenceTypedData(input: $input) {
+      typedData {
+        id
+        chainID
+        sender
+        data
+        nonce
+      }
     }
+  }
 `;
 ```
 
@@ -41,21 +41,35 @@ export const CREATE_COLLECT_ESSENCE_TYPED_DATA = gql`
 import { gql } from "@apollo/client";
 
 export const RELAY = gql`
-    mutation Relay($input: RelayInput!) {
-        relay(input: $input) {
-            relayTransaction {
-                id
-                txHash
-                typedData {
-                    id
-                    chainID
-                    sender
-                    data
-                    nonce
-                }
-            }
-        }
+  mutation Relay($input: RelayInput!) {
+    relay(input: $input) {
+      relayActionId
     }
+  }
+`;
+```
+
+3. `RelayActionStatus` is used to get the relaying status:
+
+```tsx title="graphql/RelayActionStatus.ts"
+import { gql } from "@apollo/client";
+
+export const RELAY_ACTION_STATUS = gql`
+  query RelayActionStatus($relayActionId: ID!) {
+    relayActionStatus(relayActionId: $relayActionId) {
+      ... on RelayActionStatusResult {
+        txHash
+        txStatus
+      }
+      ... on RelayActionError {
+        reason
+        lastKnownTxHash
+      }
+      ... on RelayActionQueued {
+        queuedAt
+      }
+    }
+  }
 `;
 ```
 
@@ -70,20 +84,20 @@ Now that you set up the APIs required, you can implement the Collect feature. Th
 ```tsx title="components/CollectBtn.tsx"
 /* Create typed data in a readable format */
 const typedDataResult = await createCollectEssenceTypedData({
-    variables: {
-        input: {
-            options: {
-                chainID: chainID,
-            },
-            collector: account,
-            profileID: profileID,
-            essenceID: essenceID,
-        },
+  variables: {
+    input: {
+      options: {
+        chainID: chainID,
+      },
+      collector: account,
+      profileID: profileID,
+      essenceID: essenceID,
     },
+  },
 });
 
 const typedData =
-    typedDataResult.data?.createCollectEssenceTypedData?.typedData;
+  typedDataResult.data?.createCollectEssenceTypedData?.typedData;
 const message = typedData.data;
 const typedDataID = typedData.id;
 
@@ -94,12 +108,12 @@ const signature = await signer.provider.send(method, params);
 
 /* Call the relay to broadcast the transaction */
 const relayResult = await relay({
-    variables: {
-        input: {
-            typedDataID: typedDataID,
-            signature: signature,
-        },
+  variables: {
+    input: {
+      typedDataID: typedDataID,
+      signature: signature,
     },
+  },
 });
 const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 ```

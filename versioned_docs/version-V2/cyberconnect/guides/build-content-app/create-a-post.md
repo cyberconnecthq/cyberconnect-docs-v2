@@ -21,19 +21,19 @@ To register an essence, meaning to create a post for this example, is a two step
 import { gql } from "@apollo/client";
 
 export const CREATE_REGISTER_ESSENCE_TYPED_DATA = gql`
-    mutation CreateRegisterEssenceTypedData(
-        $input: CreateRegisterEssenceTypedDataInput!
-    ) {
-        createRegisterEssenceTypedData(input: $input) {
-            typedData {
-                id
-                chainID
-                sender
-                data
-                nonce
-            }
-        }
+  mutation CreateRegisterEssenceTypedData(
+    $input: CreateRegisterEssenceTypedDataInput!
+  ) {
+    createRegisterEssenceTypedData(input: $input) {
+      typedData {
+        id
+        chainID
+        sender
+        data
+        nonce
+      }
     }
+  }
 `;
 ```
 
@@ -43,21 +43,35 @@ export const CREATE_REGISTER_ESSENCE_TYPED_DATA = gql`
 import { gql } from "@apollo/client";
 
 export const RELAY = gql`
-    mutation Relay($input: RelayInput!) {
-        relay(input: $input) {
-            relayTransaction {
-                id
-                txHash
-                typedData {
-                    id
-                    chainID
-                    sender
-                    data
-                    nonce
-                }
-            }
-        }
+  mutation Relay($input: RelayInput!) {
+    relay(input: $input) {
+      relayActionId
     }
+  }
+`;
+```
+
+3. `RelayActionStatus` is used to get the relaying status:
+
+```tsx title="graphql/RelayActionStatus.ts"
+import { gql } from "@apollo/client";
+
+export const RELAY_ACTION_STATUS = gql`
+  query RelayActionStatus($relayActionId: ID!) {
+    relayActionStatus(relayActionId: $relayActionId) {
+      ... on RelayActionStatusResult {
+        txHash
+        txStatus
+      }
+      ... on RelayActionError {
+        reason
+        lastKnownTxHash
+      }
+      ... on RelayActionQueued {
+        queuedAt
+      }
+    }
+  }
 `;
 ```
 
@@ -73,76 +87,76 @@ Below are all the fields for the Essence Metadata Schema accompanied by a short 
 /* Metadata schema for Essence NFT */
 
 interface Media {
-    /* The MIME type for the media */
-    media_type: string;
-    /* The URL link for the media */
-    media_url: string;
-    /* Alternative text when media can't be rendered */
-    alt_tag?: string;
-    /* The preview image for the media */
-    preview_image_url?: string;
+  /* The MIME type for the media */
+  media_type: string;
+  /* The URL link for the media */
+  media_url: string;
+  /* Alternative text when media can't be rendered */
+  alt_tag?: string;
+  /* The preview image for the media */
+  preview_image_url?: string;
 }
 
 interface Attribute {
-    /* Field indicating how you would like it to be displayed */
-    /* optional if the trait_type is string */
-    display_type?: string;
-    /* Name of the trait */
-    trait_type: string;
-    /* Value of the trait */
-    value: number | string;
+  /* Field indicating how you would like it to be displayed */
+  /* optional if the trait_type is string */
+  display_type?: string;
+  /* Name of the trait */
+  trait_type: string;
+  /* Value of the trait */
+  value: number | string;
 }
 
 export interface IEssenceMetadata {
-    /* ~~ REQUIRED ~~ */
-    /* Unique id for the issued item */
-    metadata_id: string;
+  /* ~~ REQUIRED ~~ */
+  /* Unique id for the issued item */
+  metadata_id: string;
 
-    /* Version of the metadata schema used for the issued item. */
-    version: string;
+  /* Version of the metadata schema used for the issued item. */
+  version: string;
 
-    /* ~~ OPTIONAL ~~ */
-    /* Id of the application under which the items are being minted. */
-    app_id?: string;
+  /* ~~ OPTIONAL ~~ */
+  /* Id of the application under which the items are being minted. */
+  app_id?: string;
 
-    /* Language of the content as a BCP47 language tag. */
-    lang?: string;
+  /* Language of the content as a BCP47 language tag. */
+  lang?: string;
 
-    /* Creation time of the item as ISO 8601. */
-    issue_date?: string;
+  /* Creation time of the item as ISO 8601. */
+  issue_date?: string;
 
-    /* The content associated with the item */
-    content?: string;
+  /* The content associated with the item */
+  content?: string;
 
-    /* Media refers to any image, video, or any other MIME type attached to the content.
+  /* Media refers to any image, video, or any other MIME type attached to the content.
     Limited to max. 10 media objects. */
-    media?: Media[];
+  media?: Media[];
 
-    /* Field indicating the tags associated with the content. Limited to max. 5 tags. */
-    tags?: string[];
+  /* Field indicating the tags associated with the content. Limited to max. 5 tags. */
+  tags?: string[];
 
-    /* ~~ OPENSEA (optional) ~~ */
-    /* URL to the image of the item. */
-    image?: string;
+  /* ~~ OPENSEA (optional) ~~ */
+  /* URL to the image of the item. */
+  image?: string;
 
-    /* SVG image data when the image is not passed. Only use this if you're not 
+  /* SVG image data when the image is not passed. Only use this if you're not 
 		including the image parameter. */
-    image_data?: string;
+  image_data?: string;
 
-    /* Name of the item. */
-    name?: string;
+  /* Name of the item. */
+  name?: string;
 
-    /* Description of the item. */
-    description?: string;
+  /* Description of the item. */
+  description?: string;
 
-    /* URL to a multi-media attachment for the item. */
-    animation_url?: string;
+  /* URL to a multi-media attachment for the item. */
+  animation_url?: string;
 
-    /* Attributes for the item. */
-    attributes?: Attribute[];
+  /* Attributes for the item. */
+  attributes?: Attribute[];
 
-    /* URL to the item on your site. */
-    external_url?: string;
+  /* URL to the item on your site. */
+  external_url?: string;
 }
 ```
 
@@ -165,21 +179,21 @@ To create a post means to [Register a Essence](/guides/mutation/register-essence
 ```tsx title="components/PostBtn.tsx"
 /* Construct the metadata object for the Essence NFT */
 const metadata: IEssenceMetadata = {
-    metadata_id: uuidv4(),
-    version: "1.0.0",
-    app_id: "cyberconnect",
-    lang: "en",
-    issue_date: new Date().toISOString(),
-    content: post,
-    media: [],
-    tags: [],
-    image: nftImageURL ? nftImageURL : "",
-    image_data: !nftImageURL ? svg_data : "",
-    name: `@${handle}'s post`,
-    description: `@${handle}'s post on CyberConnect Content app`,
-    animation_url: "",
-    external_url: "",
-    attributes: [],
+  metadata_id: uuidv4(),
+  version: "1.0.0",
+  app_id: "cyberconnect",
+  lang: "en",
+  issue_date: new Date().toISOString(),
+  content: post,
+  media: [],
+  tags: [],
+  image: nftImageURL ? nftImageURL : "",
+  image_data: !nftImageURL ? svg_data : "",
+  name: `@${handle}'s post`,
+  description: `@${handle}'s post on CyberConnect Content app`,
+  animation_url: "",
+  external_url: "",
+  attributes: [],
 };
 
 /* Upload metadata to IPFS */
@@ -187,32 +201,32 @@ const ipfsHash = await pinJSONToIPFS(metadata);
 
 /* Create typed data in a readable format */
 const typedDataResult = await createRegisterEssenceTypedData({
-    variables: {
-        input: {
-            options: {
-                /* The chain id on which the Essence NFT will be minted on */
-                chainID: chainID,
-            },
-            /* The profile id under which the Essence is registered */
-            profileID: profileID,
-            /* Name of the Essence */
-            name: "Post",
-            /* Symbol of the Essence */
-            symbol: "POST",
-            /* URL for the json object containing data about content and the Essence NFT */
-            tokenURI: `https://cyberconnect.mypinata.cloud/ipfs/${ipfsHash}`,
-            /* Middleware that allows users to collect the Essence NFT for free */
-            middleware: {
-                collectFree: true,
-            },
-            /* Set if the Essence should be transferable or not */
-            transferable: true,
-        },
+  variables: {
+    input: {
+      options: {
+        /* The chain id on which the Essence NFT will be minted on */
+        chainID: chainID,
+      },
+      /* The profile id under which the Essence is registered */
+      profileID: profileID,
+      /* Name of the Essence */
+      name: "Post",
+      /* Symbol of the Essence */
+      symbol: "POST",
+      /* URL for the json object containing data about content and the Essence NFT */
+      tokenURI: `https://cyberconnect.mypinata.cloud/ipfs/${ipfsHash}`,
+      /* Middleware that allows users to collect the Essence NFT for free */
+      middleware: {
+        collectFree: true,
+      },
+      /* Set if the Essence should be transferable or not */
+      transferable: true,
     },
+  },
 });
 
 const typedData =
-    typedDataResult.data?.createRegisterEssenceTypedData?.typedData;
+  typedDataResult.data?.createRegisterEssenceTypedData?.typedData;
 const message = typedData.data;
 const typedDataID = typedData.id;
 
@@ -224,12 +238,12 @@ const signature = await signer.provider.send(method, params);
 
 /* Call the relay to broadcast the transaction */
 const relayResult = await relay({
-    variables: {
-        input: {
-            typedDataID: typedDataID,
-            signature: signature,
-        },
+  variables: {
+    input: {
+      typedDataID: typedDataID,
+      signature: signature,
     },
+  },
 });
 const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 ```
