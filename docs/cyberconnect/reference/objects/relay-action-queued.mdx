@@ -1,0 +1,30 @@
+---
+id: relay-action-queued
+title: RelayActionQueued
+---
+
+
+The `RelayActionQueued` type provides the queued time of a relay action, which means the relay action is not submitted to the chain yet.
+
+```graphql
+type RelayActionQueued {
+  reason: String!
+  queuedAt: DateTime!
+}
+```
+
+
+### Fields
+
+#### `reason` ([`String`](/cyberconnect/reference/scalars/string))
+
+`reason` the reason of being in queue.
+
+
+#### `queuedAt` ([`DateTime`](/cyberconnect/reference/scalars/date-time))
+
+`queuedAt` the queued time of the relay action.
+
+
+
+

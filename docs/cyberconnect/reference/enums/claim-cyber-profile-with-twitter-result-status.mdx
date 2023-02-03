@@ -1,0 +1,90 @@
+---
+id: claim-cyber-profile-with-twitter-result-status
+title: ClaimCyberProfileWithTwitterResult_Status
+---
+
+
+No description
+
+```graphql
+enum ClaimCyberProfileWithTwitterResult_Status {
+  SUCCESS
+  NOT_LOGIN
+  INVALID_HANDLE_FORMAT
+  REGISTERED_HANDLE
+  ALREADY_CLAIMED
+  CLAIMING_OTHER_HANDLE
+  CLAIM_IN_PROGRESS_BY_OTHER
+  BLOCKCHAIN_CALL_FAILED
+  TRY_AGAIN_LATER
+  RESERVED_HANDLE
+  NOT_ELIGIBLE
+  TWITTER_NOT_LINK
+}
+```
+
+
+### Values
+
+#### `SUCCESS` 
+
+`SUCCESS` the profile is claimed successfully.
+
+
+#### `NOT_LOGIN` 
+
+`NOT_LOGIN` the user is not logged in.
+
+
+#### `INVALID_HANDLE_FORMAT` 
+
+`INVALID_HANDLE_FORMAT` the handle format is invalid.
+
+
+#### `REGISTERED_HANDLE` 
+
+`REGISTERED_HANDLE` the handle is already registered.
+
+
+#### `ALREADY_CLAIMED` 
+
+`ALREADY_CLAIMED` the user has already claimed profile.
+
+
+#### `CLAIMING_OTHER_HANDLE` 
+
+`CLAIMING_OTHER_HANDLE` the user is claiming another handle, should wait for the handle to be unlocked if the user wants to claim a new handle.
+
+
+#### `CLAIM_IN_PROGRESS_BY_OTHER` 
+
+`CLAIM_IN_PROGRESS_BY_OTHER` the handle is being claimed by another user.
+
+
+#### `BLOCKCHAIN_CALL_FAILED` 
+
+`BLOCKCHAIN_CALL_FAILED` the blockchain call failed. Usually because of blockchain network issue.
+
+
+#### `TRY_AGAIN_LATER` 
+
+`TRY_AGAIN_LATER` network is busy, try again later.
+
+
+#### `RESERVED_HANDLE` 
+
+`RESERVED_HANDLE` the handle is reserved.
+
+
+#### `NOT_ELIGIBLE` 
+
+`NOT_ELIGIBLE` the user is not eligible to claim profile.
+
+
+#### `TWITTER_NOT_LINK` 
+
+`TWITTER_NOT_LINK` the user dose not link the twitter.
+
+
+
+

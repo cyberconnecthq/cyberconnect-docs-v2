@@ -46,148 +46,148 @@ type Profile implements Node {
 
 ### Fields
 
-#### `id` ([`ID`](/reference/scalars/id))
+#### `id` ([`ID`](/cyberconnect/reference/scalars/id))
 
 `id` the profile's unique identifier.
 
 
-#### `profileID` ([`Int`](/reference/scalars/int))
+#### `profileID` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `profileID` the profile's token id.
 
 
-#### `handle` ([`String`](/reference/scalars/string))
+#### `handle` ([`String`](/cyberconnect/reference/scalars/string))
 
 `handle` the profile's handle.
 
 
-#### `owner` ([`Wallet`](/reference/objects/wallet))
+#### `owner` ([`Wallet`](/cyberconnect/reference/objects/wallet))
 
 `owner` the profile's owner wallet.
 
 
-#### `metadata` ([`URL`](/reference/scalars/url))
+#### `metadata` ([`URL`](/cyberconnect/reference/scalars/url))
 
 `metadata` the profile's metadata url.
 
 
-#### `metadataInfo` ([`MetadataDetail`](/reference/objects/metadata-detail))
+#### `metadataInfo` ([`MetadataDetail`](/cyberconnect/reference/objects/metadata-detail))
 
 `metadataInfo` information about the profile's metadata.
 
 
-#### `avatar` ([`URL`](/reference/scalars/url))
+#### `avatar` ([`URL`](/cyberconnect/reference/scalars/url))
 
 `avatar` the profile's avatar url.
 
 
-#### `externalMetadataInfo` ([`ExternalMetadataDetail`](/reference/objects/external-metadata-detail))
+#### `externalMetadataInfo` ([`ExternalMetadataDetail`](/cyberconnect/reference/objects/external-metadata-detail))
 
 `externalMetadataInfo` informantion about the profile's metadata on Link3.
 
 
-#### `mintingBlock` ([`Int`](/reference/scalars/int))
+#### `mintingBlock` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `mintingBlock` the block number when the profile was minted.
 
 
-#### `isPrimary` ([`Boolean`](/reference/scalars/boolean))
+#### `isPrimary` ([`Boolean`](/cyberconnect/reference/scalars/boolean))
 
 `isPrimary` whether the profile is the primary profile of the owner.
 
 
-#### `operators` ([`AddressEVM`](/reference/scalars/address-evm))
+#### `operators` ([`AddressEVM`](/cyberconnect/reference/scalars/address-evm))
 
 `operators` the profile's list of operator addresses
 
 
-#### `essences` ([`EssenceConnection`](/reference/objects/essence-connection))
+#### `essences` ([`EssenceConnection`](/cyberconnect/reference/objects/essence-connection))
 
 `essences` provides a paginated list of ordered essences.
-- ##### `after` ([`Cursor`](/reference/scalars/cursor))
+- ##### `after` ([`Cursor`](/cyberconnect/reference/scalars/cursor))
 
 `after` the cursor to retreive results after.
 
 
-- ##### `first` ([`Int`](/reference/scalars/int))
+- ##### `first` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `first` the maximum number of essences to return after a cursor.
 
 
-- ##### `before` ([`Cursor`](/reference/scalars/cursor))
+- ##### `before` ([`Cursor`](/cyberconnect/reference/scalars/cursor))
 
 `before` the cursor to retreive results before.
 
 
-- ##### `last` ([`Int`](/reference/scalars/int))
+- ##### `last` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `last` the maximum number of essences to return before a cursor.
 
 
-- ##### `orderBy` ([`EssenceOrder`](/reference/inputs/essence-order))
+- ##### `orderBy` ([`EssenceOrder`](/cyberconnect/reference/inputs/essence-order))
 
 `orderBy` the order in which results are returned.
 
 
-#### `subscribers` ([`SubscribeConnection`](/reference/objects/subscribe-connection))
+#### `subscribers` ([`SubscribeConnection`](/cyberconnect/reference/objects/subscribe-connection))
 
 `subscribers` provides a paginated list of ordered subscribers.
-- ##### `after` ([`Cursor`](/reference/scalars/cursor))
+- ##### `after` ([`Cursor`](/cyberconnect/reference/scalars/cursor))
 
 `after` the cursor to retreive results after.
 
 
-- ##### `first` ([`Int`](/reference/scalars/int))
+- ##### `first` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `first` the maximum number of subscribers to return after a cursor.
 
 
-- ##### `before` ([`Cursor`](/reference/scalars/cursor))
+- ##### `before` ([`Cursor`](/cyberconnect/reference/scalars/cursor))
 
 `before` the cursor to retreive results before.
 
 
-- ##### `last` ([`Int`](/reference/scalars/int))
+- ##### `last` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `last` the maximum number of subscribers to return before a cursor.
 
 
-- ##### `orderBy` ([`SubscribeOrder`](/reference/inputs/subscribe-order))
+- ##### `orderBy` ([`SubscribeOrder`](/cyberconnect/reference/inputs/subscribe-order))
 
 `orderBy` the order in which results are returned.
 
 
-#### `subscribeNFT` ([`ContractAddressEVM`](/reference/scalars/contract-address-evm))
+#### `subscribeNFT` ([`ContractAddressEVM`](/cyberconnect/reference/scalars/contract-address-evm))
 
 `subscribeNFT` the profile's subscribe NFT contract address.
 
 
-#### `subscribeMw` ([`MiddlewareInfo`](/reference/objects/middleware-info))
+#### `subscribeMw` ([`MiddlewareInfo`](/cyberconnect/reference/objects/middleware-info))
 
 `subscribeMw` information about the profile's subscribe middleware.
 
 
-#### `namespace` ([`Namespace`](/reference/objects/namespace))
+#### `namespace` ([`Namespace`](/cyberconnect/reference/objects/namespace))
 
 `namespace` information about the profile's namespace.
 
 
-#### `subscriberCount` ([`Int`](/reference/scalars/int))
+#### `subscriberCount` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `subscriberCount` the number of subscribers.
 
 
-#### `isSubscribedByMe` ([`Boolean`](/reference/scalars/boolean))
+#### `isSubscribedByMe` ([`Boolean`](/cyberconnect/reference/scalars/boolean))
 
 `isSubscribedByMe` whether the given address has subscribed to the profile.
-- ##### `me` ([`AddressEVM`](/reference/scalars/address-evm))
+- ##### `me` ([`AddressEVM`](/cyberconnect/reference/scalars/address-evm))
 
 
 
 
 ### Interfaces
 
-#### [`Node`](/reference/interfaces/node) 
+#### [`Node`](/cyberconnect/reference/interfaces/node) 
 
 The `Node` interface follows relay.dev spec.
 
