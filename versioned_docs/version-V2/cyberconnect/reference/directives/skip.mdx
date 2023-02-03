@@ -4,7 +4,7 @@ title: skip
 ---
 
 
-Directs the executor to skip this field or fragment when the `if` argument is true.
+The @skip directive may be provided for fields, fragment spreads, and inline fragments, and allows for conditional exclusion during execution as described by the if argument.
 
 ```graphql
 directive @skip(
@@ -15,9 +15,9 @@ directive @skip(
 
 ### Arguments
 
-#### `if` ([`Boolean`](/reference/scalars/boolean))
+#### `if` ([`Boolean`](/cyberconnect/reference/scalars/boolean))
 
-Skipped when true.
+
 
 
 

@@ -1,0 +1,32 @@
+---
+id: relay-action-status-result-union
+title: RelayActionStatusResultUnion
+---
+
+
+No description
+
+```graphql
+union RelayActionStatusResultUnion = RelayActionStatusResult | RelayActionError | RelayActionQueued
+```
+
+
+### Possible types
+
+#### [`RelayActionStatusResult`](/cyberconnect/reference/objects/relay-action-status-result) 
+
+The `RelayActionStatusResult` type provides relay action status.
+
+
+#### [`RelayActionError`](/cyberconnect/reference/objects/relay-action-error) 
+
+The `RelayActionError` type provides error info on a failed relay action.
+
+
+#### [`RelayActionQueued`](/cyberconnect/reference/objects/relay-action-queued) 
+
+The `RelayActionQueued` type provides the queued time of a relay action, which means the relay action is not submitted to the chain yet.
+
+
+
+

@@ -46,141 +46,141 @@ type Wallet implements Node {
 
 ### Fields
 
-#### `id` ([`ID`](/reference/scalars/id))
+#### `id` ([`ID`](/cyberconnect/reference/scalars/id))
 
 `id` the wallet's unique identifier.
 
 
-#### `address` ([`AddressEVM`](/reference/scalars/address-evm))
+#### `address` ([`AddressEVM`](/cyberconnect/reference/scalars/address-evm))
 
 `address` the wallet's address.
 
 
-#### `chainID` ([`ChainID`](/reference/scalars/chain-id))
+#### `chainID` ([`ChainID`](/cyberconnect/reference/scalars/chain-id))
 
 `chainID` the chain id of the network.
 
 
-#### `primaryProfile` ([`Profile`](/reference/objects/profile))
+#### `primaryProfile` ([`Profile`](/cyberconnect/reference/objects/profile))
 
 `primaryProfile` provides information about the primary profile of a wallet.
 
 
-#### `profiles` ([`ProfileConnection`](/reference/objects/profile-connection))
+#### `profiles` ([`ProfileConnection`](/cyberconnect/reference/objects/profile-connection))
 
 `profiles` provides a paginated list of a specified wallet's profiles.
-- ##### `after` ([`Cursor`](/reference/scalars/cursor))
+- ##### `after` ([`Cursor`](/cyberconnect/reference/scalars/cursor))
 
 `after` the cursor to retreive results after.
 
 
-- ##### `first` ([`Int`](/reference/scalars/int))
+- ##### `first` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `first` the maximum number of profiles to return after a cursor.
 
 
-- ##### `before` ([`Cursor`](/reference/scalars/cursor))
+- ##### `before` ([`Cursor`](/cyberconnect/reference/scalars/cursor))
 
 `before` the cursor to retreive results before.
 
 
-- ##### `last` ([`Int`](/reference/scalars/int))
+- ##### `last` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `last` the maximum number of profiles to return before a cursor.
 
 
-- ##### `orderBy` ([`ProfileOrder`](/reference/inputs/profile-order))
+- ##### `orderBy` ([`ProfileOrder`](/cyberconnect/reference/inputs/profile-order))
 
 `orderBy` the order in which results are returned.
 
 
-#### `subscribings` ([`SubscribeConnection`](/reference/objects/subscribe-connection))
+#### `subscribings` ([`SubscribeConnection`](/cyberconnect/reference/objects/subscribe-connection))
 
 `subscribings` provides a paginated list of a specified wallet's subscribings.
-- ##### `after` ([`Cursor`](/reference/scalars/cursor))
+- ##### `after` ([`Cursor`](/cyberconnect/reference/scalars/cursor))
 
 `after` the cursor to retreive results after.
 
 
-- ##### `first` ([`Int`](/reference/scalars/int))
+- ##### `first` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `first` the maximum number of subscribings to return after a cursor.
 
 
-- ##### `before` ([`Cursor`](/reference/scalars/cursor))
+- ##### `before` ([`Cursor`](/cyberconnect/reference/scalars/cursor))
 
 `before` the cursor to retreive results before.
 
 
-- ##### `last` ([`Int`](/reference/scalars/int))
+- ##### `last` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `last` the maximum number of subscribings to return before a cursor.
 
 
-- ##### `orderBy` ([`SubscribeOrder`](/reference/inputs/subscribe-order))
+- ##### `orderBy` ([`SubscribeOrder`](/cyberconnect/reference/inputs/subscribe-order))
 
 `orderBy` the order in which results are returned.
 
 
-#### `collectedEssences` ([`CollectConnection`](/reference/objects/collect-connection))
+#### `collectedEssences` ([`CollectConnection`](/cyberconnect/reference/objects/collect-connection))
 
 `collectedEssences` provides a paginated list of a specified wallet's collected essences.
-- ##### `after` ([`Cursor`](/reference/scalars/cursor))
+- ##### `after` ([`Cursor`](/cyberconnect/reference/scalars/cursor))
 
 `after` the cursor to retreive results after.
 
 
-- ##### `first` ([`Int`](/reference/scalars/int))
+- ##### `first` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `first` the maximum number of collected essences to return after a cursor.
 
 
-- ##### `before` ([`Cursor`](/reference/scalars/cursor))
+- ##### `before` ([`Cursor`](/cyberconnect/reference/scalars/cursor))
 
 `before` the cursor to retreive results before.
 
 
-- ##### `last` ([`Int`](/reference/scalars/int))
+- ##### `last` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `last` the maximum number of collected essences to return before a cursor.
 
 
-- ##### `orderBy` ([`CollectOrder`](/reference/inputs/collect-order))
+- ##### `orderBy` ([`CollectOrder`](/cyberconnect/reference/inputs/collect-order))
 
 `orderBy` the order in which results are returned.
 
 
-#### `subscribingCount` ([`Int`](/reference/scalars/int))
+#### `subscribingCount` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `subscribingCount` the number of subscribings.
 
 
-#### `feed` ([`ERCTransferCard`](/reference/objects/erctransfer-card))
+#### `feed` ([`ERCTransferCard`](/cyberconnect/reference/objects/erctransfer-card))
 
 
-- ##### `offset` ([`Int`](/reference/scalars/int))
-
-
-
-
-- ##### `limit` ([`Int`](/reference/scalars/int))
+- ##### `offset` ([`Int`](/cyberconnect/reference/scalars/int))
 
 
 
 
-#### `recommendation` ([`Recommendation`](/reference/objects/recommendation))
+- ##### `limit` ([`Int`](/cyberconnect/reference/scalars/int))
 
 
 
 
-#### `metadata` ([`WalletMetadata`](/reference/objects/wallet-metadata))
+#### `recommendation` ([`Recommendation`](/cyberconnect/reference/objects/recommendation))
+
+
+
+
+#### `metadata` ([`WalletMetadata`](/cyberconnect/reference/objects/wallet-metadata))
 
 
 
 
 ### Interfaces
 
-#### [`Node`](/reference/interfaces/node) 
+#### [`Node`](/cyberconnect/reference/interfaces/node) 
 
 The `Node` interface follows relay.dev spec.
 

@@ -4,20 +4,20 @@ title: RelayResult
 ---
 
 
-The `RelayResult` type provides information about the relayed transaction.
+The `RelayResult` type provides a relay receipt used to query the relayed transaction status.
 
 ```graphql
 type RelayResult {
-  relayTransaction: RelayTransaction!
+  relayActionId: ID!
 }
 ```
 
 
 ### Fields
 
-#### `relayTransaction` ([`RelayTransaction`](/reference/objects/relay-transaction))
+#### `relayActionId` ([`ID`](/cyberconnect/reference/scalars/id))
 
-`relayTransaction` information about the relayed transaction.
+`relayActionId` receipt used to query the relayed transaction status.
 
 
 

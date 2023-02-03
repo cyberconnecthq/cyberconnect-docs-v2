@@ -1,0 +1,30 @@
+---
+id: relay-action-error
+title: RelayActionError
+---
+
+
+The `RelayActionError` type provides error info on a failed relay action.
+
+```graphql
+type RelayActionError {
+  reason: String!
+  lastKnownTxHash: String
+}
+```
+
+
+### Fields
+
+#### `reason` ([`String`](/cyberconnect/reference/scalars/string))
+
+`reason` the reason of the failure.
+
+
+#### `lastKnownTxHash` ([`String`](/cyberconnect/reference/scalars/string))
+
+`lastKnownTxHash` the last known transaction hash, only presented when the transaction is submitted to the chain.
+
+
+
+

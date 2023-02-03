@@ -1,0 +1,30 @@
+---
+id: relay-action-status-result
+title: RelayActionStatusResult
+---
+
+
+The `RelayActionStatusResult` type provides relay action status.
+
+```graphql
+type RelayActionStatusResult {
+  txHash: String
+  txStatus: TxStatus!
+}
+```
+
+
+### Fields
+
+#### `txHash` ([`String`](/cyberconnect/reference/scalars/string))
+
+`txHash` txHash of the relayed transaction, only presented when `txStatus` is `MINTING`, `SUCCESS` or `FAIL`
+
+
+#### `txStatus` ([`TxStatus`](/cyberconnect/reference/enums/tx-status))
+
+`txStatus` status of the relayed transaction.
+
+
+
+
