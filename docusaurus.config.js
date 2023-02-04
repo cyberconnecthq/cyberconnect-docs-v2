@@ -105,6 +105,7 @@ const config = {
             sidebarId: 'link3Sidebar',
             label: 'Link3',
           },
+          {href: 'https://form.typeform.com/to/T2pjguoP', label: 'Feedback', position: 'right'},
           {
             type: "docsVersionDropdown",
             position: "right",

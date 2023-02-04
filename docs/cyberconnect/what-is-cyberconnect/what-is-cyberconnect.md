@@ -40,11 +40,6 @@ import UsecaseCardsV2 from "@site/src/components/UsecaseCardsV2";
 
 <br/>
 
-:::tip
-
-We want to make our CyberConnect Developer Center better. Use [this form](https://9txmc3wk3bc.typeform.com/to/Oapbu1SX) and let us know what are your thoughts!
-
-:::
 
 <div className="welcomeCard">
     <h2 className="anchor" id="cyberconnect-developer-community">
@@ -68,10 +63,10 @@ We want to make our CyberConnect Developer Center better. Use [this form](https:
     <p>
     Stay updated by subscribing to our{" "}
         <a
-            href="https://www.getrevue.co/profile/cyberconnect"
+            href="https://cyberconnect.me/"
             target="_blank"
             rel="noopener noreferrer">
-            newsletter
+            newsletter (@ the bottom of page)
         </a>
         , reading our <a
             href="https://mirror.xyz/cyberlab.eth"
