@@ -62,11 +62,11 @@ const apolloData = {
     },
   },
   registerSigningKey: {
-    query: `mutation registerSigningKey($address:String!,$message:String!, $pubKey:String!) {
+    query: `mutation registerSigningKey($address:String!,$message:String!, $signature:String!) {
   registerSigningKey(input:{
     address:$address,
     message:$message,
-    pubKey:$pubKey,
+    signature:$signature,
   }) {
     status
   }
@@ -74,7 +74,7 @@ const apolloData = {
     variables: {
       address: "0x927f355117721e0E8A7b5eA20002b65B8a551890",
       message:"",
-      pubKey:
+      signature:
         "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzOFJXfxXMzNYQ2OXqe/HA8R3Xd5TiT3ltZO5Hi3WQjxvkUBtXn7ZUPj5Qm6+lZoIVh8SWBxUVVt+S04q06PJlw==",
     },
     headers: {

@@ -7,34 +7,28 @@ sidebar_position: 3
 description: Authentication - Register Signing Key
 ---
 
-Data stored offchain are all signed with a signing key belonging to each user. Users will need to create a ECDSA P256 (also known as`secp256r1` and `ES256`) key pair to operate on CyberConnect’s decentralized data store with sovereignty.
+Data stored offchain are all signed with a signing key belonging to each user. Users use their EVM address as their keypair.
 
 Here is the reference doc [**Core Concept - Follow - Proof of Connection**](/concepts/follow-connection).
 
 ## Workflow
 
-To create a key pair, you could use the following `openssl` command.
 
-1. Generate public and private keys.
+### 1. Generate the message to be signed
 
+### 2. Send `registerSigningKey` request (the `RegisterSigningKeyRequest` input type specifies the params required to register a signing key)
+
+```graphql
+
+input RegisterSigningKeyRequest {
+  "`address` the user's address."
+  address: String!
+  "`message` the generated message to be signed, including the signing key public key information."
+  message: String!
+  "`signature` the signature from signing the `message`."
+  signature: String!
+}
 ```
-openssl ecparam -genkey -name prime256v1 -noout -out private.pem
-openssl ec -in private.pem -pubout -out public.pem
-```
-
-```js
------BEGIN EC PRIVATE KEY-----
-MHcCAQEEIBsl8YngX7uLkp8yWQcdHjceD4FKYpUi6zsnaLrMOsU3oAoGCCqGSM49
-AwEHoUQDQgAEnea0iASyPC2cp/fcuPLnu+xHKkSeo9St2B8gvrhwW3GxcoGELL4a
-/vUHUopa8U7HEDD1MiNFyYuspYfZgRkc7A==
------END EC PRIVATE KEY-----
------BEGIN PUBLIC KEY-----
-MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEnea0iASyPC2cp/fcuPLnu+xHKkSe
-o9St2B8gvrhwW3GxcoGELL4a/vUHUopa8U7HEDD1MiNFyYuspYfZgRkc7A==
------END PUBLIC KEY-----
-```
-
-2. Send `registerSigningKey` request.
 
 import ApolloCard from "@site/src/components/ApolloCard";
 
