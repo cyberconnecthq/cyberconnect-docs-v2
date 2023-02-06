@@ -1,21 +1,21 @@
 ---
-id: following-relationships
-title: Get Following Relationships by an EVM address
-slug: /guides/query/following-relationships
-sidebar_label: Following Relationships
+id: follower-following-relationship
+title: Get Followers by Handle / Following by an EVM address
+slug: /guides/query/follower-following-relationship
+sidebar_label: Follower Following Relationship
 sidebar_position: 5
-description: Query - Following Relationships
+description: Query - Follower Following Relationship
 ---
 
-We support following relationship between `addresses`, which is compatible with our V1 API. You can find the `followers` and `followings` subfields under `wallets`
+We support following relationship between `addresses` and `handles`. Since an address can only follow a `handle` (i.e. a user that has minted a ProfileNFT on a supported chain), then finding followers is only relevant by ProfileID or handle. Similarly since only EVM addresses can follow `handles`, looking up the following is only relevant on an EVM address.
 
 
-## List followers by a wallet
+## List followers by a handle
 
 import ApolloCard from "@site/src/components/ApolloCard";
 
-<ApolloCard queryName="getFollowersByAddressEVM" />
+<ApolloCard queryName="getFollowersByHandle" />
 
-## List followings by a wallet
+## List followings by a EVM Adress
 
 <ApolloCard queryName="getFollowingsByAddressEVM" />
