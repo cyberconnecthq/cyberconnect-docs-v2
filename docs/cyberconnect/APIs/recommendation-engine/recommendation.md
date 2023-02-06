@@ -21,18 +21,21 @@ There are 3 subfields/queries currently supported:
 - `tokenBalanceInfo` is memory/heuristic-based while 
 - The two others (`tokenRecommendation` & `userRecommendation`) are model-based.
 
-### Here are some more details on each of the supported sub-fields: 
+# Here are some more details on each of the supported sub-fields: 
 
+## 1. tokenBalanceInfo
 1. `tokenBalanceInfo` are recommended web2 social profiles that might be interesting to an address based on trading history & current balance.
 
 import ApolloCard from "@site/src/components/ApolloCard";
 
 <ApolloCard queryName="getTokenBalanceInfo" />
 
+## 2. tokenRecommendation
 2. `tokenRecommendation` are recommended Tokens the address should purchase based on modeling trading behavior & holdings relative to other addresses (i.e. collaborative filtering model).
 
 <ApolloCard queryName="getTokenRecommendation" />
 
+## 3.  userRecommendation
 3.  `userRecommendation` are recommended addresses to follow based on the finding other addresses with similar NFT trading history as the input addresses.
 
 <ApolloCard queryName="getUserRecommendation" />

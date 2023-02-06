@@ -21,7 +21,7 @@ On CyberConnect, these generated smart contracts enable dApps to create their co
 
 
 
-## ProfileNFT
+## ProfileNFT 👤
 
 ProfileNFT represents each user’s profile as an NFT. It serves as a prerequisite for users who want to issue their customized EssenceNFTs or SubscribeNFTs. In addition, the deployed ProfileNFT contract is used as the gateway for users to perform actions such as collecting essence, creating a profile, and subscribing to a profile in a specific dApp context. 
 
@@ -37,21 +37,16 @@ All Link3 profiles will soon be upgraded to ccProfiles as part of our universal 
 
 <img src="https://media.giphy.com/media/ONopM3fhonIkFxVKWw/giphy.gif" alt="ccProfile" width="200" height="400" class="center" />
 
-## SubscribeNFT
+## SubscribeNFT 👥
 
 SubscribeNFT represents the uni-directional relationship between an address and a ProfileNFT. Each ProfileNFT holder can only issue one unique SubscribeNFT. Each SubscribeNFT can be configured with rules like pay-to-follow (paid subscribers), hold-to-follow (token-gated community), etc. The SubcribeNFT is highly-customizable and can be used to represent arbitrary social connections; including following, subscribing to a creator, friend relationship, belonging to an organization, and participations in activities and communities.
 
 ![follow-gif](/img/v2/follow-gif.gif)
 
-## EssenceNFT
+## EssenceNFT 📝
+
 
 EssenceNFT is a generic NFT that individual ProfileNFT holders can issue to represent any piece of content (ex. social media posts, videos, blog publications). Each EssenceNFT can be configured with rules like pay-to-mint (crowdfunding), hold-to-mint (community participants), etc. It can be also configured as a tradable NFT or a non-transferable soul bound token (SBT) to represent a given role such as investor, patron, team member, community participant, etc.
-
-![follow-gif](/img/v2/follow-gif.gif)
-
-### EssenceNFT 📝
-
-EssenceNFT is a generic NFT that individual ProfileNFT holders can issue to express an arbitrary peices of content. This can be used to emulate familiar Web2 forms such as posts, videos, and publications; but more interesting are the innovative smart contract-enabled use-cases like funding public goods, donating to charity, and governance. Each EssenceNFT can be configured with rules like pay-to-mint (crowdfunding), hold-to-mint (community participants), etc. It can be also configured as a tradable NFT or a non-transferable soul bound token (SBT). SBTs can be particularly useful in issuing decentralized forms of identification (ex. issuing role bages like investor, patron, team member, community participant, etc.)
 
 
 

@@ -9,14 +9,14 @@ description: Why CyberConnect?
 
 ## Why does the world need a decentralized social graph?
 
-1. **Censorship** 
+## 1. Censorship 
 
 <img src="/img/v2/social-censorship.jpeg"  width="20%" height="20%" align="center"/> 
 
 Centralized control of our social data means that a few large companies have complete control over what social opinions, ideas, and content get propogated. <br/> This censorship comes in different flavors; politically driven suspensions by platforms, nation-state pressured censoring, or unsolicited/unexplained censorships (ex. shadow banning). 
 <br clear="left"/>
 
-2. **Lost Creator Value**
+## 2. Lost Creator Value
 
 <div>
 <img src="/img/v2/zuck-stealing.jpeg"  width="40%" height="40%" align="center"/>
@@ -26,7 +26,7 @@ Social media content produces so much value for the world, yet in Web 2.0 conten
 <br clear="left"/>
 
 
-3. **Data is siloed and redundant**
+## 3. Data is siloed and redundant
 <div>
 <img src="/img/v2/walled-gardens.jpeg"  width="40%" height="40%" align="center"/>
 </div>
@@ -35,7 +35,7 @@ In the centralized structure of Web 2.0, our social data/graphs are “walled ga
 
 
 
-4. **Stifled Innovation**
+## 4. Stifled Innovation
 
 <div>
 <img src="/img/v2/man-stealing-ideas.jpeg"  width="40%" height="40%" align="center"/>
@@ -46,6 +46,6 @@ Siloed data also means reduced innovation. With only a few players having access
 
 
 
-### Read more about why we think the world needs a decentralized social graph in our blog post:
+**Read more about why we think the world needs a decentralized social graph in our blog post:**
 <iframe src="https://mirror.xyz/cyberlab.eth/Rqr8tiXed6helt5LfSotEdLFxB6Kv_fA1Poz3K_6g0c"></iframe>
 
