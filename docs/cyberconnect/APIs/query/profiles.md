@@ -7,7 +7,7 @@ sidebar_position: 2
 description: Query - Profiles
 ---
 
-You can find a Link3 `profile` by it's `handle`.
+You can find a `ccProfile` by it's `handle` - the `ccProfile`’s data is in `externalMetadataInfo`
 
 import ApolloCard from "@site/src/components/ApolloCard";
 

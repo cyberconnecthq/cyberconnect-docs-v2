@@ -20,6 +20,7 @@ On CyberConnect, these generated smart contracts enable dApps to create their co
 ![gp_sm](/img/v2/SmartContractGuideDiagram.png)
 
 
+
 ## ProfileNFT
 
 ProfileNFT represents each user’s profile as an NFT. It serves as a prerequisite for users who want to issue their customized EssenceNFTs or SubscribeNFTs. In addition, the deployed ProfileNFT contract is used as the gateway for users to perform actions such as collecting essence, creating a profile, and subscribing to a profile in a specific dApp context. 
