@@ -37,7 +37,15 @@ type Profile implements Node {
   subscribeMw: MiddlewareInfo
   namespace: Namespace!
   subscriberCount: Int!
+  followers(
+  offset: Int
+  limit: Int
+): FollowConnection!
+  followerCount: Int!
   isSubscribedByMe(
+  me: AddressEVM!
+): Boolean!
+  isFollowedByMe(
   me: AddressEVM!
 ): Boolean!
 }
@@ -177,9 +185,35 @@ type Profile implements Node {
 `subscriberCount` the number of subscribers.
 
 
+#### `followers` ([`FollowConnection`](/cyberconnect/reference/objects/follow-connection))
+
+`followers` provides a paginated list of ordered followers.
+- ##### `offset` ([`Int`](/cyberconnect/reference/scalars/int))
+
+
+
+
+- ##### `limit` ([`Int`](/cyberconnect/reference/scalars/int))
+
+
+
+
+#### `followerCount` ([`Int`](/cyberconnect/reference/scalars/int))
+
+`followerCount` the number of followers.
+
+
 #### `isSubscribedByMe` ([`Boolean`](/cyberconnect/reference/scalars/boolean))
 
 `isSubscribedByMe` whether the given address has subscribed to the profile.
+- ##### `me` ([`AddressEVM`](/cyberconnect/reference/scalars/address-evm))
+
+
+
+
+#### `isFollowedByMe` ([`Boolean`](/cyberconnect/reference/scalars/boolean))
+
+`isFollowedByMe` whether the given address has followed the profile.
 - ##### `me` ([`AddressEVM`](/cyberconnect/reference/scalars/address-evm))
 
 

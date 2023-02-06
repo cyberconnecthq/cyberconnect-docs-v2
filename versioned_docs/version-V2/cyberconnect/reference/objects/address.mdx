@@ -11,22 +11,11 @@ type Address {
   address: AddressEVM!
   chainID: ChainID!
   wallet: Wallet
-  identity: Identity!
-  followers(
-  offset: Int
-  limit: Int
-): FollowConnection!
   followings(
   offset: Int
   limit: Int
 ): FollowConnection!
-  followStats: FollowStats!
-  isFollowedBy(
-  addresses: [AddressEVM!]!
-): [Boolean!]!
-  isFollowing(
-  addresses: [AddressEVM!]!
-): [Boolean!]!
+  followingCount: Int!
 }
 ```
 
@@ -48,24 +37,6 @@ type Address {
 `wallet` the wallet address on Ethereum.
 
 
-#### `identity` ([`Identity`](/cyberconnect/reference/objects/identity))
-
-`identity` provides information about a user's identity.
-
-
-#### `followers` ([`FollowConnection`](/cyberconnect/reference/objects/follow-connection))
-
-`followers` provides a paginated list of ordered followers profiles.
-- ##### `offset` ([`Int`](/cyberconnect/reference/scalars/int))
-
-
-
-
-- ##### `limit` ([`Int`](/cyberconnect/reference/scalars/int))
-
-
-
-
 #### `followings` ([`FollowConnection`](/cyberconnect/reference/objects/follow-connection))
 
 `followings` provides a paginated list of ordered followings profiles.
@@ -79,25 +50,9 @@ type Address {
 
 
 
-#### `followStats` ([`FollowStats`](/cyberconnect/reference/objects/follow-stats))
+#### `followingCount` ([`Int`](/cyberconnect/reference/scalars/int))
 
-`followStats` returns stats about a user's followers and followings
-
-
-#### `isFollowedBy` ([`Boolean`](/cyberconnect/reference/scalars/boolean))
-
-`isFollowedBy` returns the `followed by` status of one or multiple addresses.
-- ##### `addresses` ([`AddressEVM`](/cyberconnect/reference/scalars/address-evm))
-
-
-
-
-#### `isFollowing` ([`Boolean`](/cyberconnect/reference/scalars/boolean))
-
-`isFollowing` returns the `following` status to one or multiple addresses.
-- ##### `addresses` ([`AddressEVM`](/cyberconnect/reference/scalars/address-evm))
-
-
+`followingCount` returns stats about a user's followers and followings
 
 
 

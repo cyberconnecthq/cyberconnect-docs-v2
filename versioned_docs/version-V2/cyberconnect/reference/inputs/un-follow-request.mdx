@@ -1,0 +1,48 @@
+---
+id: un-follow-request
+title: UnFollowRequest
+---
+
+
+The `UnFollowRequest` input type specifies the params required to unfollow a profile.
+
+```graphql
+input UnFollowRequest {
+  address: String!
+  handle: String!
+  message: String!
+  signature: String!
+  signingKey: String!
+}
+```
+
+
+### Fields
+
+#### `address` ([`String`](/cyberconnect/reference/scalars/string))
+
+`address` the user's address.
+
+
+#### `handle` ([`String`](/cyberconnect/reference/scalars/string))
+
+`handle` the profile's handle the user wants to unfollow.
+
+
+#### `message` ([`String`](/cyberconnect/reference/scalars/string))
+
+`message` the operation json string to sign.
+
+
+#### `signature` ([`String`](/cyberconnect/reference/scalars/string))
+
+`signature` the signature from signing the `message` json string.
+
+
+#### `signingKey` ([`String`](/cyberconnect/reference/scalars/string))
+
+`signingKey` the registered signing key.
+
+
+
+
