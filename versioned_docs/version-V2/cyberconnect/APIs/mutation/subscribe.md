@@ -60,8 +60,8 @@ We’ve created an example that incorporates all the steps for Subscribe to a pr
 1. Login with wallet
 2. Subscribe to a profile
 
-<iframe src="https://codesandbox.io/embed/subscribe-to-profile-l1hts6?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/App.tsx"
-    title="subscribe-to-profile"
-    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+<iframe src="https://codesandbox.io/embed/subscribe-to-profile-forked-fjkd8b?fontsize=14&hidenavigation=1&theme=dark"
+     title="subscribe-to-profile (forked)"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
