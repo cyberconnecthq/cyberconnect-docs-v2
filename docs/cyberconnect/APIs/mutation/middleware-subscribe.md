@@ -60,8 +60,8 @@ You can now verify the transaction by looking up the `txHash` from the response 
 
 We’ve created an example that incorporates all the steps for Set Middleware for Subscribe. Feel free to experiment with our code in the sandbox below.
 
-<iframe src="https://codesandbox.io/embed/set-middleware-subscribe-bc24yk?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/App.tsx"
-     title="set-middleware-subscribe"
-    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+<iframe src="https://codesandbox.io/embed/set-middleware-subscribe-forked-0x8ghh?fontsize=14&hidenavigation=1&theme=dark"
+     title="set-middleware-subscribe (forked)"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
