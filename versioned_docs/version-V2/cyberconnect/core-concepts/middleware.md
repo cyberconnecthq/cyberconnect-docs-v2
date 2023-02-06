@@ -3,7 +3,7 @@ id: middleware
 title: Middleware
 slug: /core-concepts/middleware
 sidebar_label: Middleware
-sidebar_position: 6
+sidebar_position: 7
 description: Major Concepts of CyberConnect
 ---
 ## Composable Middleware

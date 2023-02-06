@@ -62,17 +62,19 @@ const apolloData = {
     },
   },
   registerSigningKey: {
-    query: `mutation registerSigningKey($address:String!, $pubKey:String!) {
+    query: `mutation registerSigningKey($address:String!,$message:String!, $signature:String!) {
   registerSigningKey(input:{
     address:$address,
-    pubKey:$pubKey,
+    message:$message,
+    signature:$signature,
   }) {
-    success
+    status
   }
 }`,
     variables: {
       address: "0x927f355117721e0E8A7b5eA20002b65B8a551890",
-      pubKey:
+      message:"",
+      signature:
         "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzOFJXfxXMzNYQ2OXqe/HA8R3Xd5TiT3ltZO5Hi3WQjxvkUBtXn7ZUPj5Qm6+lZoIVh8SWBxUVVt+S04q06PJlw==",
     },
     headers: {
@@ -231,28 +233,47 @@ $chainID: ChainID!) {
     },
     headers: {},
   },
-  getFollowingsByAddressEVM: {
-    query: `query getFollowingsByAddressEVM($address: AddressEVM!,
- $chainID: ChainID!){
-  address(address: $address, chainID: $chainID) {
-    followings(limit: 5) {
-      totalCount
-      edges{
-        node{
-          from {
-            address
-          }
-          to {
-            address
+  getFollowersByHandle: {
+    query: `query getFollowersByHandle($handle: String!, $me: AddressEVM!) {
+      profileByHandle(handle: $handle) {
+        followerCount
+        isFollowedByMe(me: $me)
+        followers {
+          totalCount
+          pageInfo {
+            hasPreviousPage
+            startCursor
+            hasNextPage
           }
         }
       }
-    }
-    followStats {
-      followingCount
-    }
-  }
-}`,
+    }`,
+    variables: {
+      handle: "shiyu",
+      me: "0xD790D1711A9dCb3970F47fd775f2f9A2f0bCc348",
+    },
+    headers: {},
+  },
+  getFollowingsByAddressEVM: {
+    query: `query getFollowingsByAddressEVM($address: AddressEVM!, $chainID: ChainID!) {
+      address(address: $address, chainID: $chainID) {
+        followingCount
+        followings {
+          totalCount
+          edges {
+            node {
+              handle
+              address
+            }
+          }
+          pageInfo {
+            hasPreviousPage
+            startCursor
+            hasNextPage
+          }
+        }
+      }
+    }`,
     variables: {
       address: "0x148D59faF10b52063071eDdf4Aaf63A395f2d41c",
       chainID: 1,

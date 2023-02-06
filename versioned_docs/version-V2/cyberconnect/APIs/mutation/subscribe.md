@@ -7,9 +7,10 @@ sidebar_position: 2
 description: Mutation - Subscribe
 ---
 
+Subscribing to a profile means is that the user will mint an SubscribeNFT deployed by the profile (ProfileNFT) they wish to subscribe to. Implementing a subscribe option in your dApp only requires one signature & one trasaction (which can be either _relayed_ (for gasless experience) or executed directly by the user onto the contract (if you'd like the user to pay the gas).
+
 ## Workflow
 
-Subscribing to a profile can be implemented in just a few easy steps. What subscribing to a profile essentially means is that the user will mint an NFT by calling a couple of APIs.
 
 ## 1. Generate Typed Data
 

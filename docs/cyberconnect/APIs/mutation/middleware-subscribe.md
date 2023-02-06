@@ -3,7 +3,7 @@ id: subscribemw
 title: Set Subscribe Middleware
 slug: /guides/mutation/middleware-subscribe
 sidebar_label: Set Subscribe Middleware
-sidebar_position: 5
+sidebar_position: 7
 description: Middleware - Subscribe Middleware
 ---
 

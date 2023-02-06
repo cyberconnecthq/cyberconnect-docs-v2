@@ -56,7 +56,6 @@ The `projectInteractionStats` provides a list of projects with which the input a
 -   first & last transactions’ timestamps
 -   sample transaction hash from the given interactions
 
-<!-- import PostmanCard from "@site/src/components/PostmanCard"; -->
 import ApolloCard from "@site/src/components/ApolloCard";
 
 ### Detailed View
