@@ -3,7 +3,7 @@ id: content
 title: EssenceNFT
 slug: /core-concepts/content
 sidebar_label: EssenceNFT (Content 📝)
-sidebar_position: 5
+sidebar_position: 6
 description: Types of on-chain content supported
 ---
 

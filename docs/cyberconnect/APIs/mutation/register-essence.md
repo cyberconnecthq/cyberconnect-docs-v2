@@ -3,7 +3,7 @@ id: register-essence
 title: Register Essence
 slug: /guides/mutation/register-essence
 sidebar_label: Register Essence
-sidebar_position: 3
+sidebar_position: 5
 description: Mutation - Register Essence
 ---
 
