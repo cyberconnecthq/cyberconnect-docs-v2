@@ -851,9 +851,9 @@ $chainID: ChainID!) {
     },
   },
   getTokenRecommendation: {
-    query: `query GetTokenRecommendation($address:AddressEVM!, $chainId: ChainID!)
+    query: `query GetTokenRecommendation($address:AddressEVM!, $chainID: ChainID!)
     {
-    address(address: $address, chainID: $chainId) {
+    address(address: $address, chainID: $chainID) {
       wallet {    
           recommendation {
             tokenRecommendation {
