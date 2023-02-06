@@ -3,7 +3,7 @@ id: collect-essence
 title: Collect Essence
 slug: /guides/mutation/collect-essence
 sidebar_label: Collect Essence
-sidebar_position: 4
+sidebar_position: 6
 description: Mutation - Collect Essence
 ---
 
