@@ -11,7 +11,7 @@ description: Mutation - Subscribe
 
 Subscribing to a profile can be implemented in just a few easy steps. What subscribing to a profile essentially means is that the user will mint an NFT by calling a couple of APIs.
 
-## 1. Format Data
+## 1. Generate Typed Data
 
 First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createSubscribeTypedData` API that takes care of this.
 
