@@ -11,14 +11,16 @@ description: Middleware - Subscribe Middleware
 
 Set middleware for subscribe is a powerful API that allows developers to customize their apps and create a unique experience for their users. The API interacts with the smart contract and sets the defined rules on how it should behave for a specific action, such as subscribing to a profile.
 
-1. First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createSetSubscribeDataTypedData` API that takes care of this.
+## 1. Generate Typed Data
 
-   If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
+First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createSetSubscribeDataTypedData` API that takes care of this.
 
-   This API sets the parameters for subscribing such as `tokenURI` and `middleware` so when a user subscribes to this profile, the Middleware will be triggered and the NFT minted will have the specified Token URI.
+If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
-   In this example we are setting the `subscribePaid` middleware which will require the user to pay a fee to subscribe to the profile.<br/>
-   To view a full list of supported middlewares check out the [Middleware](/core-concepts/middleware) guide.
+This API sets the parameters for subscribing such as `tokenURI` and `middleware` so when a user subscribes to this profile, the Middleware will be triggered and the NFT minted will have the specified Token URI.
+
+In this example we are setting the `subscribePaid` middleware which will require the user to pay a fee to subscribe to the profile.<br/>
+To view a full list of supported middlewares check out the [Middleware](/core-concepts/middleware) guide.
 
 :::caution
 
