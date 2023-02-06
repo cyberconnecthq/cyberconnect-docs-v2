@@ -42,7 +42,7 @@ export const apolloClient = new ApolloClient({
 
 After setting up the `ApolloClient`, you need to write the GraphQL mutations needed for the login flow:
 
-1. first mutation is to request a message that the user will sign with its MetaMask wallet:
+1. first mutation is to request a message that the user will sign with their MetaMask wallet:
 
 ```tsx title="graphql/LoginGetMessage.ts"
 import { gql } from "@apollo/client";
