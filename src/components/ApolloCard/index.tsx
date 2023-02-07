@@ -20,38 +20,34 @@ const apolloData = {
     headers: {},
   },
   loginGetMessage: {
-    query: `mutation loginGetMessage($domain:String!,$address:AddressEVM!,  $chainID:ChainID! ) {
-  loginGetMessage(input:{
-    domain: $domain ,
-    address: $address,
-    chainID: $chainID
-  }) {
-    message
-  }
-}`,
+    query: `mutation loginGetMessage($domain:String!,$address:AddressEVM!) {
+      loginGetMessage(input:{
+        domain: $domain,
+        address: $address
+      }) {
+        message
+      }
+    }`,
     variables: {
       domain: "cyberconnect.me",
-      address: "0x803F69aE5f5D839071fcD712e25BF3c8c35B2664",
-      chainID: 1,
+      address: "0x803F69aE5f5D839071fcD712e25BF3c8c35B2664"
     },
     headers: {},
   },
   loginVerify: {
-    query: `mutation loginVerify($domain:String!,$address:AddressEVM!,  $chainID:ChainID!, $signature:String!) 
-{
-  loginVerify(input:{
-    domain:$domain,
-    address:$address,
-    chainID:$chainID,
-    signature:$signature
-  }){
-    accessToken
-  }
-}`,
+    query: `mutation loginVerify ($domain:String!,$address:AddressEVM!,$signature:String!) 
+    {
+      loginVerify(input:{
+        domain:$domain,
+        address:$address,
+        signature:$signature
+      }){
+        accessToken
+      }
+    }`,
     variables: {
       domain: "cyberconnect.me",
       address: "0x927f355117721e0E8A7b5eA20002b65B8a551890",
-      chainID: 1,
       signature:
         "0x94f97dc981130aa6b7df130e08f660ddb4996f74118585eae14429e019b499043a42c8826850d50be197dffc0c7b51a5e20f90fe68067b72deb83e59fe25959c1b",
     },
@@ -84,98 +80,91 @@ const apolloData = {
     },
   },
   getAddressByEVMWallet: {
-    query: `query address($address: AddressEVM!, $chainID: ChainID!){
-  address(address: $address, chainID: $chainID) {
-    address
-    chainID
-    wallet {
-      profiles {
-      edges {
-        node {
-          id
+    query: `query address($address: AddressEVM!){
+      address(address: $address) {
+        address
+        chainID
+        wallet {
+          profiles {
+          edges {
+            node {
+              id
+            }
+          }
+        }
         }
       }
-    }
-    }
-  }
-}`,
+    }`,
     variables: {
       address: "0x7c04786f04c522ca664bb8b6804e0d182eec505f",
-      chainID: 1,
     },
     headers: {},
   },
   batchGetAddressByEVMWallet: {
-    query: `query batchGetAddressByEVMWallet($addresses: [AddressEVM!]!,
-$chainID: ChainID!) {
-  batchGetAddresses (addresses: $addresses, chainID: $chainID) {
-    address
-    chainID
-    wallet {
-      profiles {
-      edges {
-        node {
-          id
+    query: `query batchGetAddressByEVMWallet($addresses: [AddressEVM!]!) {
+      batchGetAddresses (addresses: $addresses) {
+        address
+        chainID
+        wallet {
+          profiles {
+          edges {
+            node {
+              id
+            }
+          }
+        }
         }
       }
-    }
-    }
-  }
-}`,
+    }`,
     variables: {
       addresses: [
         "0x7c04786f04c522ca664bb8b6804e0d182eec505f",
         "0x1C0E779f50B8A6443b6f8CCaE5ea07986d5588F5",
-      ],
-      chainID: 1,
+      ]
     },
     headers: {},
   },
   listProfilesOwnedByAddress: {
-    query: `query getProfilesbyOwner($address: AddressEVM!,
- $chainID: ChainID!) {
-  address(address: $address,
-   chainID: $chainID) {
-    wallet {
-      profiles(first:5) {
-        edges {
-          node {
-            profileID
-            isPrimary
-            handle
-            avatar
-            owner {
-              address
-            }
-            namespace{
-                name
-                contractAddress
-                chainID
+    query: `query getProfilesbyOwner($address: AddressEVM!) {
+      address(address: $address) {
+        wallet {
+          profiles(first:5) {
+            edges {
+              node {
+                profileID
+                isPrimary
+                handle
+                avatar
+                owner {
+                  address
+                }
+                namespace{
+                    name
+                    contractAddress
+                    chainID
+                }
+              }
             }
           }
         }
       }
-    }
-  }
-}`,
+    }`,
     variables: {
       address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
-      chainID: 5,
     },
     headers: {},
   },
   getProfileByHandle: {
-    query: `query getProfileByHandle($chainID: ChainID, $handle: String!){
-  profileByHandle(chainID: $chainID, handle: $handle) {
-    avatar
-    owner {
-      address
-    }
-    isPrimary
-  }
-}`,
+    query: `query getProfileByHandle($handle: String!){
+      profileByHandle(handle: $handle) {
+        avatar
+        owner {
+          address
+        }
+        isPrimary
+      }
+    }`,
     variables: {
-      chainID: 1,
       handle: "ryan",
     },
     headers: {},
@@ -255,8 +244,8 @@ $chainID: ChainID!) {
     headers: {},
   },
   getFollowingsByAddressEVM: {
-    query: `query getFollowingsByAddressEVM($address: AddressEVM!, $chainID: ChainID!) {
-      address(address: $address, chainID: $chainID) {
+    query: `query getFollowingsByAddressEVM($address: AddressEVM!, ) {
+      address(address: $address) {
         followingCount
         followings {
           totalCount
@@ -276,22 +265,21 @@ $chainID: ChainID!) {
     }`,
     variables: {
       address: "0x148D59faF10b52063071eDdf4Aaf63A395f2d41c",
-      chainID: 1,
     },
     headers: {},
   },
   verifyEssenceMetadata: {
     query: `query verifyEssenceMetadata($version: String!,
- $name: String!, $app_id: String, $lang: String) {
-  verifyEssenceMetadata(input: {
-    version: $version
-    name: $name
-    app_id: $app_id
-    lang: $lang
-  }) {
-    verified
-  }
-}`,
+      $name: String!, $app_id: String, $lang: String) {
+       verifyEssenceMetadata(input: {
+         version: $version
+         name: $name
+         app_id: $app_id
+         lang: $lang
+       }) {
+         verified
+       }
+     }`,
     variables: {
       version: "1.0.0",
       name: "Link3 event token",
@@ -301,62 +289,61 @@ $chainID: ChainID!) {
     headers: {},
   },
   getSubscribingByAddressEVM: {
-    query: `query getSubscribingByAddressEVM($address: AddressEVM!,
- $chainID: ChainID!){
-  address(address: $address, chainID: $chainID) {
-    wallet {
-      subscribings {
-        totalCount
-        edges {
-          node {
-            profile {
-              id
-              profileID
-              handle
-              owner {
-                address
+    query: `query getSubscribingByAddressEVM($address: AddressEVM!){
+      address(address: $address) {
+        wallet {
+          subscribings {
+            totalCount
+            edges {
+              node {
+                profile {
+                  id
+                  profileID
+                  handle
+                  owner {
+                    address
+                  }
+                  avatar
+                  isPrimary
+                }
               }
-              avatar
-              isPrimary
             }
           }
         }
       }
-    }
-  }
-}`,
+    }`,
     variables: {
-      address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
-      chainID: 5,
+      address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF"
     },
     headers: {},
   },
   getSubscribersByProfile: {
-    query: `query getSubscribersByProfile($address: AddressEVM!,
- $chainID: ChainID!){
-  address(address: $address, chainID: $chainID) {
-    wallet {
-      profiles(first:1) {
-        edges {
-          node {
-            id
-            profileID
-            isPrimary
-            handle
-            avatar
-            owner {
-              address
-            }
-            subscribers(first:5) {
-              totalCount
-              edges {
-                node {
-                  profile {
-                    handle
-                    avatar
-                  }
-                  wallet {
-                    address
+    query: `query getSubscribersByProfile($address: AddressEVM!){
+      address(address: $address) {
+        wallet {
+          profiles(first:1) {
+            edges {
+              node {
+                id
+                profileID
+                isPrimary
+                handle
+                avatar
+                owner {
+                  address
+                }
+                subscribers(first:5) {
+                  totalCount
+                  edges {
+                    node {
+                      profile {
+                        handle
+                        avatar
+                      }
+                      wallet {
+                        address
+                      }
+                    }
                   }
                 }
               }
@@ -364,47 +351,42 @@ $chainID: ChainID!) {
           }
         }
       }
-    }
-  }
-}`,
+    }`,
     variables: {
       address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
-      chainID: 5,
     },
     headers: {},
   },
   getCollectedEssencesByAddressEVM: {
-    query: `query getCollectedEssencesByAddressEVM($address: AddressEVM!,
- $chainID: ChainID!){
-  address(address: $address, chainID: $chainID) {
-    wallet {
-			collectedEssences(first: 4){
-        edges{
-          node{
-            tokenID
-            wallet{
-              address
-              chainID
-              
-            }
-            essence{
-              essenceID
-              name
-              tokenURI
-              createdBy{
-                profileID
-                handle
+    query: `query getCollectedEssencesByAddressEVM($address: AddressEVM!){
+      address(address: $address) {
+        wallet {
+          collectedEssences(first: 4){
+            edges{
+              node{
+                tokenID
+                wallet{
+                  address
+                  chainID
+                  
+                }
+                essence{
+                  essenceID
+                  name
+                  tokenURI
+                  createdBy{
+                    profileID
+                    handle
+                  }
+                }
               }
             }
           }
         }
       }
-    }
-  }
-}`,
+    }`,
     variables: {
       address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
-      chainID: 5,
     },
     headers: {},
   },
@@ -781,11 +763,11 @@ $chainID: ChainID!) {
     },
   },
   getTokenBalanceInfo: {
-    query: `query getTokenBalanceInfo($address:AddressEVM!, $chainID:ChainID!)
+    query: `query getTokenBalanceInfo($address:AddressEVM!, $chainId: ChainID!)
     {
-    address(address: $address, chainID:$chainID) {
+    address(address: $address) {
         wallet {
-          recommendation {
+          recommendation(chainID: $chainId) {
             tokenBalanceInfo {
               token {
                 ... on ERC721 {
@@ -833,7 +815,7 @@ $chainID: ChainID!) {
           }
         }
       }
-    }    
+    }      
 `,
     variables: {
       chainID: 1,
@@ -845,11 +827,11 @@ $chainID: ChainID!) {
     },
   },
   getUserRecommendation: {
-    query: `query getUserRecommendation($address: AddressEVM!, $chainId: ChainID!) {
-      address(address: $address, chainID: $chainId) {
+    query: `query getUserRecommendation($address: AddressEVM!, $chainID:ChainID!) {
+      address(address: $address) {
         wallet   
          {
-          recommendation {
+          recommendation(chainID:$chainID) {
             userRecommendation {
               userToFollow
               userToFollowRank
@@ -859,8 +841,7 @@ $chainID: ChainID!) {
           }
         }
       }
-    }
-    
+    }    
 `,
     variables: {
       chainID: 1,
@@ -872,11 +853,11 @@ $chainID: ChainID!) {
     },
   },
   getTokenRecommendation: {
-    query: `query GetTokenRecommendation($address:AddressEVM!, $chainID: ChainID!)
+    query: `query GetTokenRecommendation($address:AddressEVM!, $chainId: ChainID!)
     {
-    address(address: $address, chainID: $chainID) {
+    address(address: $address) {
       wallet {    
-          recommendation {
+          recommendation(chainID: $chainId) {
             tokenRecommendation {
               rank
               tokenInfo {
