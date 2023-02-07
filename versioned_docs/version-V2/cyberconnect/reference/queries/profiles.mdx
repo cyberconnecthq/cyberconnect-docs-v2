@@ -1,0 +1,55 @@
+---
+id: profiles
+title: profiles
+---
+
+
+`profiles` provides a paginated list of ordered profiles.
+
+```graphql
+profiles(
+  after: Cursor
+  first: Int
+  before: Cursor
+  last: Int
+  orderBy: ProfileOrder
+): ProfileConnection!
+```
+
+
+### Arguments
+
+#### `after` ([`Cursor`](/cyberconnect/reference/scalars/cursor))
+
+`after` the cursor to retrieve results after.
+
+
+#### `first` ([`Int`](/cyberconnect/reference/scalars/int))
+
+`first` the maximum number of profiles to return after a cursor.
+
+
+#### `before` ([`Cursor`](/cyberconnect/reference/scalars/cursor))
+
+`before` the cursor to retrieve results before.
+
+
+#### `last` ([`Int`](/cyberconnect/reference/scalars/int))
+
+`last` the maximum number of profiles to return before a cursor.
+
+
+#### `orderBy` ([`ProfileOrder`](/cyberconnect/reference/inputs/profile-order))
+
+`orderBy` the order in which results are returned.
+
+
+### Type
+
+#### [`ProfileConnection`](/cyberconnect/reference/objects/profile-connection) 
+
+The `ProfileConnection` type provides a paginated list of `ProfileEdge` along with the total count of profiles.
+
+
+
+
