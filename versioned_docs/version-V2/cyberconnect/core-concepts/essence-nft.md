@@ -1,7 +1,7 @@
 ---
 id: content
 title: EssenceNFT
-slug: /core-concepts/content
+slug: /core-concepts/essence-nft
 sidebar_label: EssenceNFT (Content 📝)
 sidebar_position: 6
 description: Types of on-chain content supported
@@ -11,7 +11,7 @@ description: Types of on-chain content supported
 
 EssenceNFT is a generic NFT that individual ProfileNFT holders can issue to represent any piece of content (ex. social media posts, videos, blog publications). Each EssenceNFT can be configured with rules like pay-to-mint (crowdfunding), hold-to-mint (community participants), etc. It can be also configured as a tradable NFT or a non-transferable soul bound token (SBT) to represent a given role such as investor, patron, team member, community participant, etc.
 
- To build trust and authority, each content is tied to a profile, so users will need to create their profiles before they can create contents. Each content can be collected based on dynamic rules.
+To build trust and authority, each content is tied to a profile, so users will need to create their profiles before they can create contents. Each content can be collected based on dynamic rules.
 
 # Example use-cases / implementations of EssenceNFT
 

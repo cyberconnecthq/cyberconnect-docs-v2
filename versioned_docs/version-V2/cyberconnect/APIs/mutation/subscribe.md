@@ -3,7 +3,7 @@ id: subscribe
 title: Subscribe
 slug: /guides/mutation/subscribe
 sidebar_label: Subscribe
-sidebar_position: 2
+sidebar_position: 3
 description: Mutation - Subscribe
 ---
 
@@ -54,7 +54,7 @@ Finally you poll the `relayActionStatus` API using the `relayActionId` returned 
 
 <!-- <ApolloCard queryName="relayActionStatus" /> -->
 
-You can now verify the transaction by looking up the `txHash` from the response on [etherscan.io](http://etherscan.io). That’s it! You’re all done!
+You can now verify the transaction by looking up the `txHash` from the response on [bscscan](https://bscscan.com/). That’s it! You’re all done!
 
 ## Experiment in Sandbox
 

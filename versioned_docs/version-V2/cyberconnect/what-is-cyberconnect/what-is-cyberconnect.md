@@ -13,7 +13,12 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 <Tooltip anchorId="social-graph" content="Social graphs describe relationships on the Internet, making them a representation of the social system online" />
 
-CyberConnect is a **decentralized** <strong id="social-graph" class="boxBorder"> social graph  </strong> protocol that helps Web3 applications bootstrap network effects. It empowers users to truly own their social identities, contents, and connections in a social network and provides developers with a rich set of tools to build applications with meaningful social experiences.
+
+CyberConnect is a decentralized <strong id="social-graph" class="boxBorder"> social graph  </strong> protocol that helps Web3 applications bootstrap network effects. 
+
+<Tooltip anchorId="BNB-CHAIN" html="Build N Build (BNB) Chain is a distributed blockchain network upon which <br/> developers and innovators can build decentralized applications (DApps)<br/> as part of the move to Web3" />
+
+Built on <strong id="BNB-CHAIN" class="boxBorderBNB"> BNB Chain</strong>, CyberConnect empowers users to truly own their social identities, contents, and connections in a social network and provides developers with a rich set of tools to build applications with meaningful social experiences.
 
 
 <div class="side-by-side-images" >

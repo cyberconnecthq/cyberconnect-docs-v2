@@ -14,7 +14,7 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 The Smart Contract Protocol is the core of the CyberConnect and categorizes social data into three core components. All three components are represented as <strong id="ERC721" class="boxBorder"> ERC-721 tokens </strong> and together create the underlying nodes & edges of the decentralized social graph. 
 
-### 1. **Identity 👤 ~>** [ProfileNFT](/overview/smart-contract-protocol/smart-contract#profilenft)
+### 1. **Identity 👤 ~>** [ccProfileNFT](/overview/smart-contract-protocol/smart-contract#profilenft)
 ### 2. **Connection 👥 ~>** [SubscribeNFT](/overview/smart-contract-protocol/smart-contract#subsrcibenft) 
 ### 3. **Content  📝 ~>** [EssenceNFT](/overview/smart-contract-protocol/smart-contract#essencenft)
 

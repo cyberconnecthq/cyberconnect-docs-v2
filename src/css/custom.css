@@ -364,6 +364,16 @@ li > a.menu__link {
   /* outline: #058b24 solid 5px; */
   /* outline-offset: 1px; */
 }
+.boxBorderBNB {
+  /* border: 2px solid #058b24;
+  background: #058b24;
+  border-radius: 25px; */
+  color: #F3BA2F;
+  font-size: 1.1rem;
+  /* padding: 2px; */
+  /* outline: #058b24 solid 5px; */
+  /* outline-offset: 1px; */
+}
 
 .menu__link {
   border-radius: 8px;

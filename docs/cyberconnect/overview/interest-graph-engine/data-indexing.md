@@ -7,13 +7,13 @@ sidebar_position: 2
 description: Data Indexing
 ---
 
-There are three data sources in our indexing system: blockchains (e.g. Ethereum, Solana, BNB Chain), decentralized stores (e.g. IPFS, Arweave), and off-chain platforms (e.g. Foundation, Rarible, Twitter). Its general philosophy is to index data that could be potentially reused in various social contexts. For example, connection data on existing platforms like Foundation, POAP token for each address.
+There are three data sources in our indexing system: blockchains (e.g. BNB Chain), decentralized stores (e.g. IPFS, Arweave), and off-chain platforms (e.g. Foundation, Rarible, Twitter). Its general philosophy is to index data that could be potentially reused in various social contexts. For example, connection data on existing platforms like Foundation, POAP token for each address.
 
 Data indexing is composed of three components: data processing, data aggregation and data querier.
 
 ## Data Processor
 
-The processor connects to different blockchain full nodes (e.g. ETH, Solana) to watch real-time contract event data and run cron jobs to regularly fetch data from off-chain social platforms (e.g. Twitter, Context, Foundation). It stores this indexed information as structured data in relational databases such as MySQL and PostgreSQL. These data are indexed for long-term persistent storage to avoid re-processing penalties.
+The processor connects to different blockchain full nodes (e.g. BNB Chain) to watch real-time contract event data and run cron jobs to regularly fetch data from off-chain social platforms (e.g. Twitter, Context, Foundation). It stores this indexed information as structured data in relational databases such as MySQL and PostgreSQL. These data are indexed for long-term persistent storage to avoid re-processing penalties.
 
 ## Data Aggregator
 

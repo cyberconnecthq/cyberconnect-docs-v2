@@ -1,22 +1,42 @@
 ---
-id: subscribe
-title: Subscribe
-slug: /guides/mutation/subscribe
-sidebar_label: Subscribe
-sidebar_position: 3
-description: Mutation - Subscribe
+id: create-profile
+title: Create ccProfile
+slug: /guides/mutation/create-profile
+sidebar_label: Create ccProfile
+sidebar_position: 2
+description: Mutation - Create ccProfile
 ---
 
-Subscribing to a profile means is that the user will mint an SubscribeNFT deployed by the profile (ProfileNFT) they wish to subscribe to. Implementing a subscribe option in your dApp only requires one signature & one trasaction (which can be either _relayed_ (for gasless experience) or executed directly by the user onto the contract (if you'd like the user to pay the gas).
+
+Creating a ccProfile is a prerequisite to deploying your own Subscribe/EssenceNFTs. Implementing ccProfile creation in your dApp only requires one signature & one trasaction (which can be either _relayed_ (for gasless experience) or executed directly by the user onto the contract (if you'd like the user to pay the gas).
 
 ## Workflow
 
 
 ## 1. Generate Typed Data
 
-First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createSubscribeTypedData` API that takes care of this.
+First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createCreateProfileTypedData` API that takes care of this.
 
 If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
+
+```graphql
+"""
+The `CreateCreateProfileTypedDataInput` input type specifies the params required to create a ccProfile.
+"""
+input CreateCreateProfileTypedDataInput {
+  "`to` the owner address of the ccProfile."
+  to: AddressEVM!
+  "`handle` the handle of the ccProfile."
+  handle: String!
+  "`avatar` the avatar of the ccProfile, should be a valid image link."
+  avatar: URL!
+  "`metadata` the metadata of the ccProfile, should be a valid IPFS CID which points to a valid json file."
+  metadata: String!
+  "`operator` the operator address of the ccProfile. In addition to the profile owner, operator address could also help to manage the profile. The field could be void address if no operator is needed."
+  operator: AddressEVM!
+}
+
+```
 
 :::caution
 
