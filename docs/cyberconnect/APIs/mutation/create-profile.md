@@ -20,6 +20,7 @@ First, data should be presented to the user in a readable format when signing fr
 If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
 ```graphql
+# SCHEMA
 """
 The `CreateCreateProfileTypedDataInput` input type specifies the params required to create a ccProfile.
 """
@@ -35,6 +36,8 @@ input CreateCreateProfileTypedDataInput {
   "`operator` the operator address of the ccProfile. In addition to the profile owner, operator address could also help to manage the profile. The field could be void address if no operator is needed."
   operator: AddressEVM!
 }
+# SAMPLE CALL
+
 
 ```
 
@@ -48,23 +51,33 @@ This API requires:
 
 :::
 
+## 3. Upon calling `createCreateProfileTypedData` you should receive a `CreateCreateProfileTypedDataResult` response which includes `typeDataID`  to be used in the next step
+
+```graphql
+# SCHEMA
+"""
+The `CreateCreateProfileTypedDataResult` type provides the generated EIP-712 spec Typed Data information.
+Attention, different from other methods, the data does not need to be signed by the user.
+"""
+type CreateCreateProfileTypedDataResult {
+  "`typedDataID` the id of the typed data, used to relay."
+  typedDataID: ID!
+}
+```
+
 <!-- import ApolloCard from "@site/src/components/ApolloCard"; -->
 
 <!-- <ApolloCard queryName="createSubscribeTypedData" /> -->
 
-## 2. Get User Signature ✍️
 
-Once you received data in a readable format, you’ll need to get the user’s signature (`eth_signTypedData_v4`) for it. Basically, you’ll need to write a function and pass it a `message` as a param and return the `signature` that is necessary for the next step.
 
-[Ethers](https://docs.ethers.io/v5/) library is one option that can quickly help you write a function to get the user’s signature for a specific message. In this our case the message represents the typed data from step 1.
-
-## 3. Call `relay` and get `relayActionID`
+## 4. Call `relay` using the `typeDataID` returned above get `relayActionID`
 
 You’ll have to call the `relay` API that will broadcast the transaction and mint the subscribe NFT, you will need to put as params the `typedDataID` you received from `createSubscribeTypedData` mutation call and the user's `signature`.
 
 <!-- <ApolloCard queryName="relay" /> -->
 
-## 4. Call `relayActionStatus` to receive `txHash`
+## 5. Call `relayActionStatus` to receive `txHash`
 
 Finally you poll the `relayActionStatus` API using the `relayActionId` returned from the previous step to get the status of the related transaction. There are three possible response types:
 

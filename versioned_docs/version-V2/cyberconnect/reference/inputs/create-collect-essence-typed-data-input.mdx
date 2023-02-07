@@ -1,0 +1,54 @@
+---
+id: create-collect-essence-typed-data-input
+title: CreateCollectEssenceTypedDataInput
+---
+
+
+The `CreateCollectEssenceTypedDataInput` input type specifies the params required to collect an essence.
+
+```graphql
+input CreateCollectEssenceTypedDataInput {
+  options: TypedDataOptions
+  collector: AddressEVM!
+  profileID: Int!
+  essenceID: Int!
+  preData: String
+  postData: String
+}
+```
+
+
+### Fields
+
+#### `options` ([`TypedDataOptions`](/cyberconnect/reference/inputs/typed-data-options))
+
+`options` the options to collect an essence.
+
+
+#### `collector` ([`AddressEVM`](/cyberconnect/reference/scalars/address-evm))
+
+`collector` the collector address of the essence.
+
+
+#### `profileID` ([`Int`](/cyberconnect/reference/scalars/int))
+
+`profileID` the profile id of the profile that is collecting the essence.
+
+
+#### `essenceID` ([`Int`](/cyberconnect/reference/scalars/int))
+
+`essenceID` the id of the essence that is being collected.
+
+
+#### `preData` ([`String`](/cyberconnect/reference/scalars/string))
+
+`preData` pre data send to middleware. formatted in hex with 0x prefix.
+
+
+#### `postData` ([`String`](/cyberconnect/reference/scalars/string))
+
+`postData` post data send to middleware. formatted in hex with 0x prefix.
+
+
+
+
