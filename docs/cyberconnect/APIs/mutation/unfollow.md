@@ -7,6 +7,10 @@ sidebar_position: 4
 description: Mutation - Unfollow
 ---
 
+:::warning
+The follow/unfollow API endpoints are just here for reference - please use the [CyberConnect SDK](/sdk/) instead of calling these APIs directly.
+:::
+
 `Unfollow` is a method to nullify a previously established `follow` connection. For more info on follow/unfollow and the difference between them and Subscribe, please refer to the [core concepts section on follow](/concepts/follow-connection).
 
 

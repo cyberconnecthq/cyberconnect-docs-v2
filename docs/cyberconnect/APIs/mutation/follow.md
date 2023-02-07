@@ -7,6 +7,12 @@ sidebar_position: 3
 description: Mutation - Follow
 ---
 
+:::warning
+The follow/unfollow API endpoints are just here for reference - please use the [CyberConnect SDK](/sdk/) instead of calling these APIs directly.
+:::
+
+
+
 `Follow` is an off-chain form of uni-lateral connection between an address and a handle. For more info on follow and the difference between it and Subscribe, please refer to the [core concepts section on follow](/concepts/follow-connection).
 
 
