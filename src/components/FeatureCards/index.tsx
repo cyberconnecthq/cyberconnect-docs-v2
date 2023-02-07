@@ -58,7 +58,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: (
       <Translate description="feature description Recommendation Engine">
-        Recommendation Engine
+        Recommendation
       </Translate>
     ),
     path: "/get-started/read-recommendations/",

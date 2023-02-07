@@ -15,40 +15,50 @@ type UsecaseItemV2 = {
   image: string;
 };
 
-
 const UsecaseListV2: UsecaseItemV2[] = [
   {
     path: "/how-to/build-content-app/quick-setup",
     icon: <SiCrowdsource />,
-    title: <Translate description="usercase profile">Blogging with Crowdfunding</Translate>,
-    description: (
-      <Translate description="usercase blogging with crowdfunding description">
-        Users can publish their data in NFT format on a chosen blockchain for monetization purposes.
+    title: (
+      <Translate description="usercase profile">
+        Blogging with Crowdfunding
       </Translate>
     ),
-    image: "/img/v2/blog.png"
+    description: (
+      <Translate description="usercase blogging with crowdfunding description">
+        Users can publish their data in NFT format on a chosen blockchain for
+        monetization purposes.
+      </Translate>
+    ),
+    image: "/img/v2/blog.png",
   },
   {
     path: "/how-to/build-badge-app/quick-setup",
     icon: <BsPersonBadge />,
-    title: <Translate description="usercase profile">SBT/NFT issuing platform</Translate>,
-    description: (
-      <Translate description="usercase SBT/NFT issuing platform description">
-        Utilize airdrops and tokens to attract early adopters, convert them to contributors and retain them through rewards like badges.
+    title: (
+      <Translate description="usercase profile">
+        SBT/NFT issuing platform
       </Translate>
     ),
-    image: "/img/v2/sbt.png"
+    description: (
+      <Translate description="usercase SBT/NFT issuing platform description">
+        Utilize airdrops and tokens to attract early adopters, convert them to
+        contributors and retain them through rewards like badges.
+      </Translate>
+    ),
+    image: "/img/v2/sbt.png",
   },
   {
-    path: "/guides/recommendation-engine/recommendation",
+    path: "/guides/recommendation/recommendation",
     icon: <BiNetworkChart />,
     title: <Translate description="usercase profile">Recommendation</Translate>,
     description: (
       <Translate description="usercase Recommendation description">
-        Recommend people to follow based on users' relationships and social data from both off-chain and on-chain sources.
+        Recommend people to follow based on users' relationships and social data
+        from both off-chain and on-chain sources.
       </Translate>
     ),
-    image: "/img/v2/recommendation.png"
+    image: "/img/v2/recommendation.png",
   },
 ];
 
