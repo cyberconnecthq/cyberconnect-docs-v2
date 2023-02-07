@@ -11,7 +11,7 @@ description: Off-chain connections supported
 
 ## Follow vs. Subscribe
 
-Follow is another form of connection supported by the protocol, but unlike Subscribe the follow feature does not require any on-chain transaction and is not represented by an NFT. Instead, follows are implemented through off-chain proofs that are synced to Arweave. Additionally, while subscriptions are represnted through an address minting a ccProfileNFT's SubscribeNFT on a specific chain, follows are represented as address->handle relationships (making the chain-agnostic). This is great for applications with light weight social graph needs like following another user’s wallet activity.
+Follow is another form of connection supported by the protocol, but unlike a SubscribeNFT the follow feature does not require any on-chain transaction and is not represented by an NFT. Instead, follows are implemented through off-chain proofs that are synced to Arweave. Additionally, while subscriptions are represented through an address minting a ccProfileNFT's SubscribeNFT, follows are represented as address->ProfileNFT relationship. This is great for applications with light weight social graph needs, that do not want to incur gas costs.
 
 ![follow_v_subscribe](/img/v2/follow_v_subscribe.png)
 
@@ -25,22 +25,24 @@ Therefore, we adopt idempotent proof to describe the most up-to-date state for c
 
 There could only exist one state per any two addresses per operation, e.g. Alice could either only be following or not following Bob. The proof connection includes the following details of the desired state between an originator and a target address (The content proof has a similar structure):
 
-```json
-type Proof = {
-  /** Name of the operation. E.g, Follow */
-  name: string;
-  /** State of the operation, E.g, true or false for following or not */
-  state: boolean;
-  /** The originator address */
-  from: string;
-  /** The target address */
-  to: string;
-  /** Which dApp is this connection originated */
-  namespace: string;
-  /** Which network is this connection on */
-  network: string;
-  /** timestamp */
-  timestamp: number;
+
+
+```graphql
+
+type Proof {
+  content: String!
+  digest: String!
+  signature: String!
+  signingKey: String!
+  signingKeyAuth: SigningKeyAuth!
+
+  arweaveTxHash: String!
+}
+
+type SigningKeyAuth {
+  address: String!
+  message: String!
+  signature: String!
 }
 ```
 
