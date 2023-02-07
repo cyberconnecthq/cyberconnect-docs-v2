@@ -15,9 +15,10 @@ This is a basic example with the sole purpose of going over core features and hi
 
 How to Build Badge app covers the following sections:
 
-1. [Authentication](/how-to/build-badge-app/authentication)
-2. [Create a Badge](/how-to/build-badge-app/create-a-badge)
-3. [Collect a Badge](/how-to/build-badge-app/collect-a-badge)
+1. [Create a Profile](/how-to/build-badge-app/create-a-profile)
+2. [Authentication](/how-to/build-badge-app/authentication)
+3. [Create a Badge](/how-to/build-badge-app/create-a-badge)
+4. [Collect a Badge](/how-to/build-badge-app/collect-a-badge)
 
 ## Prerequisites
 
@@ -27,9 +28,9 @@ The app you're about to build is using [Next.js](https://nextjs.org/). Make sure
 
 Clone the repo [https://github.com/cyberconnecthq/cc-badge-app.git](https://github.com/cyberconnecthq/cc-badge-app.git) and run the following command in your terminal to install all the packages that are necessary to start the development server: `npm install` or `yarn install`.
 
-## Set up env variables
+## Set up env variables 
 
-In this demo we will be using [Pinata](https://www.pinata.cloud/) to pin our profile & badge metadata. If you don't already have a Pinata account, [signup and get your API keys here](https://docs.pinata.cloud/master).
+In this demo we will be using [Pinata](https://www.pinata.cloud/) to pin our profile & badge metadata. If you don't already have a Pinata account, [signup and get your API keys here](https://docs.pinata.cloud/master). 
 Once you have your API key & secret, create a `.env` file (you can just copy the `.env.example`) and input your credentials:
 
 ```

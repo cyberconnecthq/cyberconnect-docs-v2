@@ -1,3 +1,10 @@
 {
-    "svg.preview.background": "editor"
+  "svg.preview.background": "editor",
+  "grammarly.selectors": [
+    {
+      "language": "markdown",
+      "scheme": "file",
+      "pattern": "docs/cyberconnect/core-concepts/overview.md"
+    }
+  ]
 }

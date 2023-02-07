@@ -17,12 +17,13 @@ This is a more comprehensive example with the sole purpose of going over core fe
 
 How to Build Content app covers the following sections:
 
-1. [Authentication](/how-to/build-content-app/authentication)
-2. [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile)
-3. [Create a Post](/how-to/build-content-app/create-a-post)
-4. [Collect a Post](/how-to/build-content-app/collect-a-post)
-5. [Middleware for Subscribe](/how-to/build-content-app/middleware-for-subscribe)
-6. [Middleware for Post](/how-to/build-content-app/middleware-for-post)
+1. [Create a Profile](/how-to/build-content-app/create-a-profile)
+2. [Authentication](/how-to/build-content-app/authentication)
+3. [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile)
+4. [Create a Post](/how-to/build-content-app/create-a-post)
+5. [Collect a Post](/how-to/build-content-app/collect-a-post)
+6. [Middleware for Subscribe](/how-to/build-content-app/middleware-for-subscribe)
+7. [Middleware for Post](/how-to/build-content-app/middleware-for-post)
 
 ## Prerequisites
 
