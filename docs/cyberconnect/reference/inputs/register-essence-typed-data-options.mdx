@@ -9,6 +9,7 @@ The `RegisterEssenceTypedDataOptions` input type specifies the Typed Data option
 ```graphql
 input RegisterEssenceTypedDataOptions {
   overrideNonce: Int
+  chainID: Int!
 }
 ```
 
@@ -18,6 +19,11 @@ input RegisterEssenceTypedDataOptions {
 #### `overrideNonce` ([`Int`](/cyberconnect/reference/scalars/int))
 
 `overrideNonce` whether to override the nonce.
+
+
+#### `chainID` ([`Int`](/cyberconnect/reference/scalars/int))
+
+`chainID` the chain id of the network.
 
 
 

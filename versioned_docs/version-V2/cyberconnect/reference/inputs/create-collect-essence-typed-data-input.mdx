@@ -8,7 +8,7 @@ The `CreateCollectEssenceTypedDataInput` input type specifies the params require
 
 ```graphql
 input CreateCollectEssenceTypedDataInput {
-  options: TypedDataOptions
+  options: CollectEssenceTypedDataOptions!
   collector: AddressEVM!
   profileID: Int!
   essenceID: Int!
@@ -20,7 +20,7 @@ input CreateCollectEssenceTypedDataInput {
 
 ### Fields
 
-#### `options` ([`TypedDataOptions`](/cyberconnect/reference/inputs/typed-data-options))
+#### `options` ([`CollectEssenceTypedDataOptions`](/cyberconnect/reference/inputs/collect-essence-typed-data-options))
 
 `options` the options to collect an essence.
 

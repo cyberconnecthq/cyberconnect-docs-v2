@@ -9,6 +9,7 @@ No description
 ```graphql
 input ClaimCyberProfileWithPromoCodeInput {
   handle: String!
+  chainId: ChainID!
   avatar: String!
   metadata: String!
   promoCode: String!
@@ -21,6 +22,11 @@ input ClaimCyberProfileWithPromoCodeInput {
 #### `handle` ([`String`](/cyberconnect/reference/scalars/string))
 
 `handle` the handle of the profile.
+
+
+#### `chainId` ([`ChainID`](/cyberconnect/reference/scalars/chain-id))
+
+`chainId` the chain ID of the profile.
 
 
 #### `avatar` ([`String`](/cyberconnect/reference/scalars/string))

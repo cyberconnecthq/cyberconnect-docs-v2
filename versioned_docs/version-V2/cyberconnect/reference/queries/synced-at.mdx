@@ -4,11 +4,20 @@ title: syncedAt
 ---
 
 
-`syncedAt` returns the block information about the latest block when it was last synced.
+`syncedAt` returns the block information about the latest block when the `chainID` was last synced.
 
 ```graphql
-syncedAt: BlockchainTime!
+syncedAt(
+  chainID: ChainID
+): BlockchainTime!
 ```
+
+
+### Arguments
+
+#### `chainID` ([`ChainID`](/cyberconnect/reference/scalars/chain-id))
+
+
 
 
 ### Type

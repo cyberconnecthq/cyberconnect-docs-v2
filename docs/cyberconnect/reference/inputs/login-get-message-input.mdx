@@ -10,6 +10,7 @@ The `LoginGetMessageInput` input type specifies the Typed Data message parameter
 input LoginGetMessageInput {
   domain: String!
   address: AddressEVM!
+  chainID: ChainID!
 }
 ```
 
@@ -24,6 +25,11 @@ input LoginGetMessageInput {
 #### `address` ([`AddressEVM`](/cyberconnect/reference/scalars/address-evm))
 
 `address` the address of the user.
+
+
+#### `chainID` ([`ChainID`](/cyberconnect/reference/scalars/chain-id))
+
+`chainID` the chain ID of the network.
 
 
 

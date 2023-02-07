@@ -26,7 +26,7 @@ This API is in the beta phase and needs an **X-API-Key** token. Please contact u
 
 :::info
 
-Use https://api.stg.cyberconnect.dev/proxy/playground for proxy replayer playground
+Use https://api.cyberconnect.dev/testnet/playground for proxy replayer playground
 
 :::
 
