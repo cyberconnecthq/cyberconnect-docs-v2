@@ -1,0 +1,48 @@
+---
+id: create-create-profile-typed-data-input
+title: CreateCreateProfileTypedDataInput
+---
+
+
+The `CreateCreateProfileTypedDataInput` input type specifies the params required to create a ccProfile.
+
+```graphql
+input CreateCreateProfileTypedDataInput {
+  to: AddressEVM!
+  handle: String!
+  avatar: URL!
+  metadata: String!
+  operator: AddressEVM!
+}
+```
+
+
+### Fields
+
+#### `to` ([`AddressEVM`](/cyberconnect/reference/scalars/address-evm))
+
+`to` the owner address of the ccProfile.
+
+
+#### `handle` ([`String`](/cyberconnect/reference/scalars/string))
+
+`handle` the handle of the ccProfile.
+
+
+#### `avatar` ([`URL`](/cyberconnect/reference/scalars/url))
+
+`avatar` the avatar of the ccProfile, should be a valid image link.
+
+
+#### `metadata` ([`String`](/cyberconnect/reference/scalars/string))
+
+`metadata` the metadata of the ccProfile, should be a valid IPFS CID which points to a valid json file.
+
+
+#### `operator` ([`AddressEVM`](/cyberconnect/reference/scalars/address-evm))
+
+`operator` the operator address of the ccProfile. In addition to the profile owner, operator address could also help to manage the profile. The field could be void address if no operator is needed.
+
+
+
+

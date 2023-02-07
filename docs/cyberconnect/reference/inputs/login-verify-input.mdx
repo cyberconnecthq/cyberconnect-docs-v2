@@ -10,7 +10,6 @@ The `LoginVerifyInput` input type specifies the Typed Data message parameters al
 input LoginVerifyInput {
   domain: String!
   address: AddressEVM!
-  chainID: ChainID!
   signature: String!
   isEIP1271: Boolean
 }
@@ -27,11 +26,6 @@ input LoginVerifyInput {
 #### `address` ([`AddressEVM`](/cyberconnect/reference/scalars/address-evm))
 
 `address` the address of the user.
-
-
-#### `chainID` ([`ChainID`](/cyberconnect/reference/scalars/chain-id))
-
-`chainID` the chain ID of the network.
 
 
 #### `signature` ([`String`](/cyberconnect/reference/scalars/string))

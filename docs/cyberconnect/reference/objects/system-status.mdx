@@ -8,22 +8,16 @@ The `SystemStatus` type provides information about the last synced block height.
 
 ```graphql
 type SystemStatus {
-  ethBlockNumber: Int!
-  goerliBlockNumber: Int!
+  blockNumber: Int!
 }
 ```
 
 
 ### Fields
 
-#### `ethBlockNumber` ([`Int`](/cyberconnect/reference/scalars/int))
+#### `blockNumber` ([`Int`](/cyberconnect/reference/scalars/int))
 
-`ethBlockNumber` the last ETH Mainnet block number synced.
-
-
-#### `goerliBlockNumber` ([`Int`](/cyberconnect/reference/scalars/int))
-
-`goerliBlockNumber` the last Goerli Testnet block number synced.
+`blockNumber` the last block number synced.
 
 
 
