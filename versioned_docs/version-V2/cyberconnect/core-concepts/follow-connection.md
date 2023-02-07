@@ -13,7 +13,7 @@ description: Off-chain connections supported
 
 Follow is another form of connection supported by the protocol, but unlike Subscribe the follow feature does not require any on-chain transaction and is not represented by an NFT. Instead, follows are implemented through off-chain proofs that are synced to Arweave. Additionally, while subscriptions are represnted through an address minting a ccProfileNFT's SubscribeNFT on a specific chain, follows are represented as address->handle relationships (making the chain-agnostic). This is great for applications with light weight social graph needs like following another user’s wallet activity.
 
-![follow_v_subscribe](/img/v2/follow_v_subcribe.png)
+![follow_v_subscribe](/img/v2/follow_v_subscribe.png)
 
 ## Idempotent Proof of Connection and Content
 
