@@ -17,12 +17,12 @@ A label is **a piece of metadata about an address**, a tag if you will, represe
 
 1. **Contract Labels<sup>1</sup>**
     - Map **1-to-1** with contract addresses
-    - These are similar to contract names on etherscan
+    - These are similar to contract names on bscscan
       ![contract](/img/v2/contract-labels-comparison.png)
 2. **Project Labels**
     - Map **1-to-Many** with contract addresses
     - Are meant to be higher level object tying multiple contracts to one entity
-    - These are similar to badge/tags found at the top of contracts/addresses on etherscan
+    - These are similar to badge/tags found at the top of contracts/addresses on bscscan
       ![project](/img/v2/project-labels-comparison.png)
 
 Another way to think of the two label types are that project labels are the parent of contract labels. For example where `Opensea` is the project label and `OpenSea: Wyvern Exchange v1` is an example of a child contract label.
