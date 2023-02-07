@@ -1,17 +1,15 @@
 ---
-id: create-profile
-title: Create ccProfile
-slug: /guides/mutation/create-profile
-sidebar_label: Create ccProfile
-sidebar_position: 2
-description: Mutation - Create ccProfile
+id: create-ccProfile-gasless-mode
+title: Create ccProfile in Gasless Mode
+slug: /how-to/create-ccProfile/gasless-mode
+sidebar_label: Gasless Mode
+sidebar_position: 1
+description: Create ccProfile - Gasless Mode
 ---
 
-
-Creating a ccProfile is a prerequisite to deploying your own Subscribe/EssenceNFTs. Implementing ccProfile creation in your dApp only requires one signature & one trasaction (which can be either _relayed_ (for gasless experience) or executed directly by the user onto the contract (if you'd like the user to pay the gas).
+In this tutorial, you will learn how to use relayer to create a ccProfile in gasless mode.
 
 ## Workflow
-
 
 ## 1. Generate Typed Data
 
@@ -37,8 +35,6 @@ input CreateCreateProfileTypedDataInput {
   operator: AddressEVM!
 }
 # SAMPLE CALL
-
-
 ```
 
 :::caution
@@ -51,7 +47,7 @@ This API requires:
 
 :::
 
-## 3. Upon calling `createCreateProfileTypedData` you should receive a `CreateCreateProfileTypedDataResult` response which includes `typeDataID`  to be used in the next step
+## 3. Upon calling `createCreateProfileTypedData` you should receive a `CreateCreateProfileTypedDataResult` response which includes `typeDataID` to be used in the next step
 
 ```graphql
 # SCHEMA
@@ -68,8 +64,6 @@ type CreateCreateProfileTypedDataResult {
 <!-- import ApolloCard from "@site/src/components/ApolloCard"; -->
 
 <!-- <ApolloCard queryName="createSubscribeTypedData" /> -->
-
-
 
 ## 4. Call `relay` using the `typeDataID` returned above get `relayActionID`
 

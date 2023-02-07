@@ -17,7 +17,7 @@ This is a more comprehensive example with the sole purpose of going over core fe
 
 How to Build Content app covers the following sections:
 
-1. [Create a Profile](/how-to/build-content-app/create-a-profile)
+1. [Create a Profile](/how-to/create-ccProfile/gas-mode)
 2. [Authentication](/how-to/build-content-app/authentication)
 3. [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile)
 4. [Create a Post](/how-to/build-content-app/create-a-post)
