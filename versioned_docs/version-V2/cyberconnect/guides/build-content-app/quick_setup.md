@@ -33,6 +33,20 @@ The app you're about to build is using [Next.js](https://nextjs.org/). Make sure
 
 Clone the repo [https://github.com/cyberconnecthq/cc-content-app.git](https://github.com/cyberconnecthq/cc-content-app.git) and run the following command in your terminal to install all the packages that are necessary to start the development server: `npm install` or `yarn install`.
 
+## Set up env variables
+
+In this demo, you need set 5 env variables:
+
+```
+
+NEXT_PUBLIC_API_KEY=*** // PINATA API KEY
+NEXT_PUBLIC_API_SECRET=*** // PINATA API SECRET
+NEXT_PUBLIC_CYBERCONNECT_API_KEY=*** // CyberConnect API KEY register: https://dashboard.cyberconnect.me/
+NEXT_PUBLIC_GRAPHQL_ENDPOINT=https://api.cyberconnect.dev/testnet/ // CyberConnect Endpoint
+NEXT_PUBLIC_CHAIN_ID=97 // BSC Testnet
+
+```
+
 ## Local Development
 
 To start the local development server run the command `npm run dev` or `yarn dev` and open up the browser window http://localhost:3000. Most changes are reflected live without having to restart the server.

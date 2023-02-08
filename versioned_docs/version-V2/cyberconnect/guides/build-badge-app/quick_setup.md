@@ -30,12 +30,16 @@ Clone the repo [https://github.com/cyberconnecthq/cc-badge-app.git](https://gith
 
 ## Set up env variables
 
-In this demo we will be using [Pinata](https://www.pinata.cloud/) to pin our profile & badge metadata. If you don't already have a Pinata account, [signup and get your API keys here](https://docs.pinata.cloud/master).
-Once you have your API key & secret, create a `.env` file (you can just copy the `.env.example`) and input your credentials:
+In this demo, you need set 5 env variables:
 
 ```
-PINATA_API_KEY="exampleapikey4a715f2cfb"
-PINATA_API_SECRET="exampled1234567898f722249c231648ecbaea8968bc6ab4e762cdcea2dd8d335"
+
+NEXT_PUBLIC_API_KEY=*** // PINATA API KEY
+NEXT_PUBLIC_API_SECRET=*** // PINATA API SECRET
+NEXT_PUBLIC_CYBERCONNECT_API_KEY=*** // CyberConnect API KEY register: https://dashboard.cyberconnect.me/
+NEXT_PUBLIC_GRAPHQL_ENDPOINT=https://api.cyberconnect.dev/testnet/ // CyberConnect Endpoint
+NEXT_PUBLIC_CHAIN_ID=97 // BSC Testnet
+
 ```
 
 ## Local Development
