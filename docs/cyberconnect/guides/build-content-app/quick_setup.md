@@ -37,11 +37,15 @@ Clone the repo [https://github.com/cyberconnecthq/cc-content-app.git](https://gi
 
 In this demo, you need set 5 env variables:
 
-```
+1. `NEXT_PUBLIC_API_KEY` and `NEXT_PUBLIC_API_SECRET` are for uploading metadata using Pinata (register on [Pinata](https://www.pinata.cloud/)).
+2. For development environment, you need set `NEXT_PUBLIC_GRAPHQL_ENDPOINT` to `https://api.cyberconnect.dev/testnet/` .
+3. When you call the `relay` mutation from the API, you need put `X-API-KEY: process.env.NEXT_PUBLIC_CYBERCONNECT_API_KEY` in the request header, you can register the key from the [dashboard](https://dashboard.cyberconnect.me/).
+4. Last but not least, make sure set `NEXT_PUBLIC_CHAIN_ID` to `97` which is BSC Testnet.
 
+```
 NEXT_PUBLIC_API_KEY=*** // PINATA API KEY
 NEXT_PUBLIC_API_SECRET=*** // PINATA API SECRET
-NEXT_PUBLIC_CYBERCONNECT_API_KEY=*** // CyberConnect API KEY register: https://dashboard.cyberconnect.me/
+NEXT_PUBLIC_CYBERCONNECT_API_KEY=*** // CyberConnect API KEY
 NEXT_PUBLIC_GRAPHQL_ENDPOINT=https://api.cyberconnect.dev/testnet/ // CyberConnect Endpoint
 NEXT_PUBLIC_CHAIN_ID=97 // BSC Testnet
 
