@@ -35,7 +35,6 @@ export const CREATE_REGISTER_ESSENCE_TYPED_DATA = gql`
     createRegisterEssenceTypedData(input: $input) {
       typedData {
         id
-        chainID
         sender
         data
         nonce
@@ -227,10 +226,6 @@ const ipfsHash = await pinJSONToIPFS(metadata);
 const typedDataResult = await createRegisterEssenceTypedData({
   variables: {
     input: {
-      options: {
-        /* The chain id on which the Essence NFT will be minted on */
-        chainID: chainID,
-      },
       /* The profile id under which the Essence is registered */
       profileID: profileID,
       /* Name of the Essence */

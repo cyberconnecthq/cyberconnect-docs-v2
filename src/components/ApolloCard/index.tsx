@@ -30,7 +30,7 @@ const apolloData = {
     }`,
     variables: {
       domain: "cyberconnect.me",
-      address: "0x803F69aE5f5D839071fcD712e25BF3c8c35B2664"
+      address: "0x803F69aE5f5D839071fcD712e25BF3c8c35B2664",
     },
     headers: {},
   },
@@ -69,7 +69,7 @@ const apolloData = {
 }`,
     variables: {
       address: "0x927f355117721e0E8A7b5eA20002b65B8a551890",
-      message:"",
+      message: "",
       signature:
         "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzOFJXfxXMzNYQ2OXqe/HA8R3Xd5TiT3ltZO5Hi3WQjxvkUBtXn7ZUPj5Qm6+lZoIVh8SWBxUVVt+S04q06PJlw==",
     },
@@ -83,7 +83,6 @@ const apolloData = {
     query: `query address($address: AddressEVM!){
       address(address: $address) {
         address
-        chainID
         wallet {
           profiles {
           edges {
@@ -104,7 +103,6 @@ const apolloData = {
     query: `query batchGetAddressByEVMWallet($addresses: [AddressEVM!]!) {
       batchGetAddresses (addresses: $addresses) {
         address
-        chainID
         wallet {
           profiles {
           edges {
@@ -120,7 +118,7 @@ const apolloData = {
       addresses: [
         "0x7c04786f04c522ca664bb8b6804e0d182eec505f",
         "0x1C0E779f50B8A6443b6f8CCaE5ea07986d5588F5",
-      ]
+      ],
     },
     headers: {},
   },
@@ -141,7 +139,6 @@ const apolloData = {
                 namespace{
                     name
                     contractAddress
-                    chainID
                 }
               }
             }
@@ -313,7 +310,7 @@ const apolloData = {
       }
     }`,
     variables: {
-      address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF"
+      address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
     },
     headers: {},
   },
@@ -427,7 +424,7 @@ const apolloData = {
       }
     }`,
     variables: {
-        relayActionId: "167503724722",
+      relayActionId: "167503724722",
     },
     headers: {
       "X-API-KEY": "oK6TuroglIWefsTjnpT2D2Du7qeyGAe5",
@@ -733,7 +730,7 @@ const apolloData = {
       chainID: 1,
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
     },
-    headers:{
+    headers: {
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
@@ -757,7 +754,7 @@ const apolloData = {
       chainID: 1,
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
     },
-    headers:{
+    headers: {
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
@@ -821,7 +818,7 @@ const apolloData = {
       chainID: 1,
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
     },
-    headers:{
+    headers: {
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
@@ -847,7 +844,7 @@ const apolloData = {
       chainID: 1,
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
     },
-    headers:{
+    headers: {
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
@@ -886,7 +883,7 @@ const apolloData = {
       chainID: 1,
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
     },
-    headers:{
+    headers: {
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
@@ -955,7 +952,7 @@ const apolloData = {
       chainID: 1,
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
     },
-    headers:{
+    headers: {
       Authorization:
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
@@ -984,4 +981,3 @@ export default function ApolloCard({
     />
   );
 }
-

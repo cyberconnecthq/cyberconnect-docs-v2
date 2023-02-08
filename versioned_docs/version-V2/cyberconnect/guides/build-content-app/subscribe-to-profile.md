@@ -20,17 +20,16 @@ Subscribe to a profile is a two step process and requires two GraphQL mutations:
 import { gql } from "@apollo/client";
 
 export const CREATE_SUBSCRIBE_TYPED_DATA = gql`
-    mutation CreateSubscribeTypedData($input: CreateSubscribeTypedDataInput!) {
-        createSubscribeTypedData(input: $input) {
-            typedData {
-                id
-                chainID
-                sender
-                data
-                nonce
-            }
-        }
+  mutation CreateSubscribeTypedData($input: CreateSubscribeTypedDataInput!) {
+    createSubscribeTypedData(input: $input) {
+      typedData {
+        id
+        sender
+        data
+        nonce
+      }
     }
+  }
 `;
 ```
 
@@ -40,21 +39,20 @@ export const CREATE_SUBSCRIBE_TYPED_DATA = gql`
 import { gql } from "@apollo/client";
 
 export const RELAY = gql`
-    mutation Relay($input: RelayInput!) {
-        relay(input: $input) {
-            relayTransaction {
-                id
-                txHash
-                typedData {
-                    id
-                    chainID
-                    sender
-                    data
-                    nonce
-                }
-            }
+  mutation Relay($input: RelayInput!) {
+    relay(input: $input) {
+      relayTransaction {
+        id
+        txHash
+        typedData {
+          id
+          sender
+          data
+          nonce
         }
+      }
     }
+  }
 `;
 ```
 
@@ -69,14 +67,11 @@ Now you know what APIs to use to implement the Subscribe feature. The only thing
 ```tsx title="components/SubscribeBtn.tsx"
 /* Create typed data in a readable format */
 const typedDataResult = await createSubscribeTypedData({
-    variables: {
-        input: {
-            options: {
-                chainID: chainID,
-            },
-            profileIDs: [profileID],
-        },
+  variables: {
+    input: {
+      profileIDs: [profileID],
     },
+  },
 });
 const typedData = typedDataResult.data?.createSubscribeTypedData?.typedData;
 const message = typedData.data;
@@ -90,12 +85,12 @@ const signature = await signer.provider.send(method, params);
 
 /* Call the relay to broadcast the transaction */
 const relayResult = await relay({
-    variables: {
-        input: {
-            typedDataID: typedDataID,
-            signature: signature,
-        },
+  variables: {
+    input: {
+      typedDataID: typedDataID,
+      signature: signature,
     },
+  },
 });
 const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 ```

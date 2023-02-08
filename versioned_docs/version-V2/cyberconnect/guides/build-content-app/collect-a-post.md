@@ -25,7 +25,6 @@ export const CREATE_COLLECT_ESSENCE_TYPED_DATA = gql`
     createCollectEssenceTypedData(input: $input) {
       typedData {
         id
-        chainID
         sender
         data
         nonce
@@ -86,9 +85,6 @@ Now that you set up the APIs required, you can implement the Collect feature. Th
 const typedDataResult = await createCollectEssenceTypedData({
   variables: {
     input: {
-      options: {
-        chainID: chainID,
-      },
       collector: account,
       profileID: profileID,
       essenceID: essenceID,

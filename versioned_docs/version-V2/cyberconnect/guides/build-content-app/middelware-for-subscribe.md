@@ -21,19 +21,18 @@ By now this process should be really familiar. Set middleware for subscribe foll
 import { gql } from "@apollo/client";
 
 export const CREATE_SET_SUBSCRIBE_DATA_TYPED_DATA = gql`
-    mutation CreateSetSubscribeDataTypedData(
-        $input: CreateSetSubscribeDataTypedDataInput!
-    ) {
-        createSetSubscribeDataTypedData(input: $input) {
-            typedData {
-                id
-                chainID
-                sender
-                data
-                nonce
-            }
-        }
+  mutation CreateSetSubscribeDataTypedData(
+    $input: CreateSetSubscribeDataTypedDataInput!
+  ) {
+    createSetSubscribeDataTypedData(input: $input) {
+      typedData {
+        id
+        sender
+        data
+        nonce
+      }
     }
+  }
 `;
 ```
 
@@ -43,21 +42,20 @@ export const CREATE_SET_SUBSCRIBE_DATA_TYPED_DATA = gql`
 import { gql } from "@apollo/client";
 
 export const RELAY = gql`
-    mutation Relay($input: RelayInput!) {
-        relay(input: $input) {
-            relayTransaction {
-                id
-                txHash
-                typedData {
-                    id
-                    chainID
-                    sender
-                    data
-                    nonce
-                }
-            }
+  mutation Relay($input: RelayInput!) {
+    relay(input: $input) {
+      relayTransaction {
+        id
+        txHash
+        typedData {
+          id
+          sender
+          data
+          nonce
         }
+      }
     }
+  }
 `;
 ```
 
@@ -87,9 +85,9 @@ Optionally you can also set the `tokenURI` by constructing the metadata object f
 ```tsx title="components/SetSubscribeBtn.tsx"
 /* Construct the metadata object for the Subscribe NFT */
 const metadata = {
-    image_data: getSubscriberSVGData(),
-    name: `@${handle}'s subscriber`,
-    description: `@${handle}'s subscriber on CyberConnect Content app`,
+  image_data: getSubscriberSVGData(),
+  name: `@${handle}'s subscriber`,
+  description: `@${handle}'s subscriber on CyberConnect Content app`,
 };
 
 /* Upload metadata to IPFS */
@@ -97,35 +95,31 @@ const ipfsHash = await pinJSONToIPFS(metadata);
 
 /* Create typed data in a readable format */
 const typedDataResult = await createSetSubscribeDataTypedData({
-    variables: {
-        input: {
-            options: {
-                /* The chain id on which the Subscribe NFT will be minted on */
-                chainID: chainID,
-            },
-            /* The user's profile id for which the rules are enabled */
-            profileId: profileID,
-            /* URL for the json object containing data about the Subscribe NFT */
-            tokenURI: `https://cyberconnect.mypinata.cloud/ipfs/${ipfsHash}`,
-            middleware: {
-                subscribePaid: {
-                    /* Address that will receive the amount */
-                    recipient: account,
-                    /* Amount that needs to be paid to subscribe */
-                    amount: 1,
-                    /* The currency for the  amount. Chainlink token contract on Goerli */
-                    currency: "0x326C977E6efc84E512bB9C30f76E30c160eD06FB",
-                    /* If it require the subscriber to hold a NFT */
-                    nftRequired: false,
-                    /* The contract of the NFT that the subscriber needs to hold */
-                    nftAddress: "0x0000000000000000000000000000000000000000",
-                },
-            },
+  variables: {
+    input: {
+      /* The user's profile id for which the rules are enabled */
+      profileId: profileID,
+      /* URL for the json object containing data about the Subscribe NFT */
+      tokenURI: `https://cyberconnect.mypinata.cloud/ipfs/${ipfsHash}`,
+      middleware: {
+        subscribePaid: {
+          /* Address that will receive the amount */
+          recipient: account,
+          /* Amount that needs to be paid to subscribe */
+          amount: 1,
+          /* The currency for the  amount. Chainlink token contract on Goerli */
+          currency: "0x326C977E6efc84E512bB9C30f76E30c160eD06FB",
+          /* If it require the subscriber to hold a NFT */
+          nftRequired: false,
+          /* The contract of the NFT that the subscriber needs to hold */
+          nftAddress: "0x0000000000000000000000000000000000000000",
         },
+      },
     },
+  },
 });
 const typedData =
-    typedDataResult.data?.createSetSubscribeDataTypedData?.typedData;
+  typedDataResult.data?.createSetSubscribeDataTypedData?.typedData;
 const message = typedData.data;
 const typedDataID = typedData.id;
 
@@ -137,12 +131,12 @@ const signature = await signer.provider.send(method, params);
 
 /* Call the relay to broadcast the transaction */
 const relayResult = await relay({
-    variables: {
-        input: {
-            typedDataID: typedDataID,
-            signature: signature,
-        },
+  variables: {
+    input: {
+      typedDataID: typedDataID,
+      signature: signature,
     },
+  },
 });
 const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 ```

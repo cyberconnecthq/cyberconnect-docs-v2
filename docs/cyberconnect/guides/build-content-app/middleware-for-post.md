@@ -21,19 +21,18 @@ By now this process should be really familiar. Set middleware for post follows t
 import { gql } from "@apollo/client";
 
 export const CREATE_SET_ESSENCE_DATA_TYPED_DATA = gql`
-    mutation CreateSetEssenceDataTypedData(
-        $input: CreateSetEssenceDataTypedDataInput!
-    ) {
-        createSetEssenceDataTypedData(input: $input) {
-            typedData {
-                id
-                chainID
-                sender
-                data
-                nonce
-            }
-        }
+  mutation CreateSetEssenceDataTypedData(
+    $input: CreateSetEssenceDataTypedDataInput!
+  ) {
+    createSetEssenceDataTypedData(input: $input) {
+      typedData {
+        id
+        sender
+        data
+        nonce
+      }
     }
+  }
 `;
 ```
 
@@ -43,21 +42,20 @@ export const CREATE_SET_ESSENCE_DATA_TYPED_DATA = gql`
 import { gql } from "@apollo/client";
 
 export const RELAY = gql`
-    mutation Relay($input: RelayInput!) {
-        relay(input: $input) {
-            relayTransaction {
-                id
-                txHash
-                typedData {
-                    id
-                    chainID
-                    sender
-                    data
-                    nonce
-                }
-            }
+  mutation Relay($input: RelayInput!) {
+    relay(input: $input) {
+      relayTransaction {
+        id
+        txHash
+        typedData {
+          id
+          sender
+          data
+          nonce
         }
+      }
     }
+  }
 `;
 ```
 
@@ -93,38 +91,34 @@ Optionally you can also set the `tokenURI` by constructing the metadata object f
 ```tsx title="components/SetEssenceBtn.tsx"
 /* Create typed data in a readable format */
 const typedDataResult = await createSetEssenceDataTypedData({
-    variables: {
-        input: {
-            options: {
-                /* The chain id on which the Essence NFT will be minted on */
-                chainID: chainID,
-            },
-            /* The id of the essence the middleware is set for */
-            essenceId: essenceID,
-            /* The id of the profile that created the essence */
-            profileId: profileID,
-            /* URL for the json object containing data about content and the Essence NFT */
-            tokenURI: `https://cyberconnect.mypinata.cloud/ipfs/QmWeusbdbY2SEry1GEiJpmzd3Frp29wMNS3ZbNN21hLbVw`,
-            /* The middleware that will be set for the essence */
-            middleware: {
-                collectPaid: {
-                    /* Address that will receive the amount */
-                    recipient: account,
-                    /* Number of times the Essence can be collected */
-                    totalSupply: 1000,
-                    /* Amount that needs to be paid to collect essence */
-                    amount: 1,
-                    /* The currency for the  amount. Chainlink token contract on Goerli */
-                    currency: "0x326C977E6efc84E512bB9C30f76E30c160eD06FB",
-                    /* If it require that the collector is also subscribed */
-                    subscribeRequired: false,
-                },
-            },
+  variables: {
+    input: {
+      /* The id of the essence the middleware is set for */
+      essenceId: essenceID,
+      /* The id of the profile that created the essence */
+      profileId: profileID,
+      /* URL for the json object containing data about content and the Essence NFT */
+      tokenURI: `https://cyberconnect.mypinata.cloud/ipfs/QmWeusbdbY2SEry1GEiJpmzd3Frp29wMNS3ZbNN21hLbVw`,
+      /* The middleware that will be set for the essence */
+      middleware: {
+        collectPaid: {
+          /* Address that will receive the amount */
+          recipient: account,
+          /* Number of times the Essence can be collected */
+          totalSupply: 1000,
+          /* Amount that needs to be paid to collect essence */
+          amount: 1,
+          /* The currency for the  amount. Chainlink token contract on Goerli */
+          currency: "0x326C977E6efc84E512bB9C30f76E30c160eD06FB",
+          /* If it require that the collector is also subscribed */
+          subscribeRequired: false,
         },
+      },
     },
+  },
 });
 const typedData =
-    typedDataResult.data?.createSetEssenceDataTypedData?.typedData;
+  typedDataResult.data?.createSetEssenceDataTypedData?.typedData;
 const message = typedData.data;
 const typedDataID = typedData.id;
 
@@ -136,12 +130,12 @@ const signature = await signer.provider.send(method, params);
 
 /* Call the relay to broadcast the transaction */
 const relayResult = await relay({
-    variables: {
-        input: {
-            typedDataID: typedDataID,
-            signature: signature,
-        },
+  variables: {
+    input: {
+      typedDataID: typedDataID,
+      signature: signature,
     },
+  },
 });
 const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 ```
