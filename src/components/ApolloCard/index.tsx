@@ -167,9 +167,9 @@ const apolloData = {
     headers: {},
   },
   getAddressIdentity: {
-    query: `query getAddressIdentity($address: AddressEVM!,
- $chainID: ChainID!){
-  address(address: $address, chainID: $chainID) {
+    query: `query getAddressIdentity($address: AddressEVM!
+ ){
+  address(address: $address) {
     identity{
       socialInfo{
         github{
@@ -187,14 +187,12 @@ const apolloData = {
 }`,
     variables: {
       address: "0x148D59faF10b52063071eDdf4Aaf63A395f2d41c",
-      chainID: 1,
     },
     headers: {},
   },
   getFollowersByAddressEVM: {
-    query: `query getFollowersByAddressEVM($address: AddressEVM!,
- $chainID: ChainID!){
-  address(address: $address, chainID: $chainID) {
+    query: `query getFollowersByAddressEVM($address: AddressEVM!){
+  address(address: $address) {
     followers(limit: 5) {
       totalCount
       edges{
@@ -215,7 +213,6 @@ const apolloData = {
 }`,
     variables: {
       address: "0x148D59faF10b52063071eDdf4Aaf63A395f2d41c",
-      chainID: 1,
     },
     headers: {},
   },
@@ -364,7 +361,6 @@ const apolloData = {
                 tokenID
                 wallet{
                   address
-                  chainID
                   
                 }
                 essence{
@@ -437,7 +433,6 @@ const apolloData = {
     createSubscribeTypedData(input: $input) {
         typedData {
             id
-            chainID
             sender
             data
             nonce
@@ -446,9 +441,6 @@ const apolloData = {
 }`,
     variables: {
       input: {
-        options: {
-          chainID: 5,
-        },
         profileIDs: [26],
       },
     },
@@ -463,7 +455,6 @@ const apolloData = {
     createRegisterEssenceTypedData(input: $input) {
         typedData {
             id
-            chainID
             sender
             data
             nonce
@@ -472,9 +463,6 @@ const apolloData = {
 }`,
     variables: {
       input: {
-        options: {
-          chainID: 5,
-        },
         profileID: 25,
         name: "Essence",
         symbol: "ESSENCE",
@@ -497,7 +485,6 @@ const apolloData = {
     createCollectEssenceTypedData(input: $input) {
         typedData {
             id
-            chainID
             sender
             data
             nonce
@@ -506,9 +493,6 @@ const apolloData = {
 }`,
     variables: {
       input: {
-        options: {
-          chainID: 5,
-        },
         collector: "0x3C858197112C0db082cf4F4e63C587FC258bc805",
         profileID: 2,
         essenceID: 1,
@@ -525,7 +509,6 @@ const apolloData = {
       createSetSubscribeDataTypedData(input: $input) {
           typedData {
               id
-              chainID
               sender
               data
               nonce
@@ -534,9 +517,6 @@ const apolloData = {
   }`,
     variables: {
       input: {
-        options: {
-          chainID: 5,
-        },
         profileId: 2,
         tokenURI:
           "https://cyberconnect.mypinata.cloud/ipfs/QmfLgghGBvB3nu2jJEkMf9zPsEMPdJdhhcKHz32NnF67C2",
@@ -562,7 +542,6 @@ const apolloData = {
       createSetEssenceDataTypedData(input: $input) {
           typedData {
               id
-              chainID
               sender
               data
               nonce
@@ -571,9 +550,6 @@ const apolloData = {
   }`,
     variables: {
       input: {
-        options: {
-          chainID: 5,
-        },
         profileId: 2,
         essenceId: 1,
         tokenURI:
@@ -596,8 +572,8 @@ const apolloData = {
     },
   },
   getLink3ProfileData: {
-    query: `query getLink3ProfileData($chainID: ChainID, $handle: String!) {
-  profileByHandle(chainID: $chainID, handle: $handle) {
+    query: `query getLink3ProfileData($handle: String!) {
+  profileByHandle(handle: $handle) {
     externalMetadataInfo {
       type
       handle
@@ -701,15 +677,14 @@ const apolloData = {
 }
 `,
     variables: {
-      chainID: 1,
       handle: "ryan",
     },
     headers: {},
   },
   getCCLabelsDetailed: {
-    query: `query getCCLabelsDetailed($address: AddressEVM!, $chainID: ChainID!)
+    query: `query getCCLabelsDetailed($address: AddressEVM!)
     {
-      address(address:$address, chainID:$chainID) {
+      address(address:$address) {
         wallet {
           metadata {
             projectInteractionStats {
@@ -727,7 +702,6 @@ const apolloData = {
     } 
 `,
     variables: {
-      chainID: 1,
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
     },
     headers: {
@@ -736,9 +710,9 @@ const apolloData = {
     },
   },
   getCCLabels: {
-    query: `query getCCLabels($address:AddressEVM!, $chainID:ChainID!)
+    query: `query getCCLabels($address:AddressEVM!)
     {
-      address(address:$address, chainID:$chainID) {
+      address(address:$address) {
         address
         wallet {
           metadata {
@@ -751,7 +725,6 @@ const apolloData = {
     
 `,
     variables: {
-      chainID: 1,
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
     },
     headers: {
@@ -764,7 +737,7 @@ const apolloData = {
     {
     address(address: $address) {
         wallet {
-          recommendation(chainID: $chainId) {
+          recommendation {
             tokenBalanceInfo {
               token {
                 ... on ERC721 {
@@ -815,7 +788,6 @@ const apolloData = {
     }      
 `,
     variables: {
-      chainID: 1,
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
     },
     headers: {
@@ -824,11 +796,11 @@ const apolloData = {
     },
   },
   getUserRecommendation: {
-    query: `query getUserRecommendation($address: AddressEVM!, $chainID:ChainID!) {
+    query: `query getUserRecommendation($address: AddressEVM!) {
       address(address: $address) {
         wallet   
          {
-          recommendation(chainID:$chainID) {
+          recommendation {
             userRecommendation {
               userToFollow
               userToFollowRank
@@ -841,7 +813,6 @@ const apolloData = {
     }    
 `,
     variables: {
-      chainID: 1,
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
     },
     headers: {
@@ -854,7 +825,7 @@ const apolloData = {
     {
     address(address: $address) {
       wallet {    
-          recommendation(chainID: $chainId) {
+          recommendation {
             tokenRecommendation {
               rank
               tokenInfo {
@@ -880,7 +851,6 @@ const apolloData = {
       }
 `,
     variables: {
-      chainID: 1,
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
     },
     headers: {
@@ -889,8 +859,8 @@ const apolloData = {
     },
   },
   getUserFeed: {
-    query: `query getUserFeed($address: AddressEVM!, $chainID: ChainID!) {
-      address(address: $address, chainID: $chainID) {
+    query: `query getUserFeed($address: AddressEVM!) {
+      address(address: $address) {
         wallet {
           feed {
             evt_type
@@ -949,7 +919,6 @@ const apolloData = {
     }
 `,
     variables: {
-      chainID: 1,
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
     },
     headers: {
