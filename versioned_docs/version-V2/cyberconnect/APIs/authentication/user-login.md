@@ -21,22 +21,24 @@ import ApolloCard from "@site/src/components/ApolloCard";
 <ApolloCard queryName="loginGetMessage" />
 
 ### 2. Sign this message with the wallet you specified above.
+
 :::info
 Remember to replace \n with new lines. ([unescape json](https://www.freeformatter.com/json-escape.html#before-output)) Use the following tools to sign the message with your ETH wallet.
 :::
-   1. Use [Etherscan tool](https://etherscan.io/verifiedSignatures#)
-      <div class="side-by-side-images" >
-      <div>
-      <img src="/img/v2/auth_token_cc.gif" />
-      </div>
-      <div>
-      <h2>Link to tool here 👇</h2>
-      <a href="https://etherscan.io/verifiedSignatures#">
-      <img src="/img/v2/siwe.png" alt="" height="300px" width="300px"/> 
-      </a>
-      </div>
-      </div>
-   2. Your familiar Ether.js, web3.js and other package
+
+1.  Use [Etherscan tool](https://etherscan.io/verifiedSignatures#)
+    <div class="side-by-side-images" >
+    <div>
+    <img src="/img/v2/auth_token_cc.gif" />
+    </div>
+    <div>
+    <h2>Link to tool here 👇</h2>
+    <a href="https://etherscan.io/verifiedSignatures#">
+    <img src="/img/v2/siwe.png" alt="" height="300px" width="300px"/> 
+    </a>
+    </div>
+    </div>
+2.  Your familiar Ether.js, web3.js and other package
 
 ### 3. Verify the signature with gateway and save the token.
 
@@ -47,12 +49,13 @@ Remember to replace \n with new lines. ([unescape json](https://www.freeformatte
 The following `mutations` require `Authorization` header:
 
 1. `registerSigningKey`
-2. `createRegisterEssenceTypedData`
-3. `createCollectEssenceTypedData`
-4. `createSetEssenceDataTypedData`
-5. `createSubscribeTypedData`
-6. `createSetSubscribeDataTypedData`
-7. `relay`
+2. `createCreateProfileTypedData`
+3. `createRegisterEssenceTypedData`
+4. `createCollectEssenceTypedData`
+5. `createSetEssenceDataTypedData`
+6. `createSubscribeTypedData`
+7. `createSetSubscribeDataTypedData`
+8. `relay`
 
 Use this personal access token in HTTP header `Authorization` . Don’t miss the `bearer` in front.
 
