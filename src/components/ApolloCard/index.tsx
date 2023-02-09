@@ -95,7 +95,7 @@ const apolloData = {
       }
     }`,
     variables: {
-      address: "0x7c04786f04c522ca664bb8b6804e0d182eec505f",
+      address: "0x5fd9b0B7e15B4d106624ea9CF96602996c9c344D",
     },
     headers: {},
   },
@@ -116,8 +116,8 @@ const apolloData = {
     }`,
     variables: {
       addresses: [
-        "0x7c04786f04c522ca664bb8b6804e0d182eec505f",
-        "0x1C0E779f50B8A6443b6f8CCaE5ea07986d5588F5",
+        "0x5fd9b0B7e15B4d106624ea9CF96602996c9c344D",
+        "0xb54B03CFca57624d360C2182d4e053b3fdE14392",
       ],
     },
     headers: {},
@@ -147,7 +147,7 @@ const apolloData = {
       }
     }`,
     variables: {
-      address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
+      address: "0x5fd9b0B7e15B4d106624ea9CF96602996c9c344D",
     },
     headers: {},
   },
@@ -162,7 +162,7 @@ const apolloData = {
       }
     }`,
     variables: {
-      handle: "ryan",
+      handle: "shiyu",
     },
     headers: {},
   },
@@ -309,7 +309,7 @@ const apolloData = {
       }
     }`,
     variables: {
-      address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
+      address: "0xb54B03CFca57624d360C2182d4e053b3fdE14392",
     },
     headers: {},
   },
@@ -349,7 +349,7 @@ const apolloData = {
       }
     }`,
     variables: {
-      address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
+      address: "0x3C858197112C0db082cf4F4e63C587FC258bc805",
     },
     headers: {},
   },
@@ -381,7 +381,7 @@ const apolloData = {
       }
     }`,
     variables: {
-      address: "0x09937314c9dBd33c340f9735123A2c6586Fa1cdF",
+      address: "0x5fd9b0B7e15B4d106624ea9CF96602996c9c344D",
     },
     headers: {},
   },
