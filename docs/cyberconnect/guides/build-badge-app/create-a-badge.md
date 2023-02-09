@@ -175,7 +175,9 @@ export interface IEssenceMetadata {
 
 ## Create a Badge
 
-To create a badge means to [Register a Essence](/guides/mutation/register-essence) and the process for it does require the following steps:
+### Gasless Mode
+
+To create a badge using gasless mode means to [Register a Essence](/guides/mutation/register-essence) and the process for it does require the following steps:
 
 1. Construct the metadata object for the Essence NFT;
 2. Upload the metadata to IPFS to get the hash;
@@ -265,6 +267,35 @@ const relayResult = await relay({
   },
 });
 const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
+```
+
+### Gas Mode
+
+To create a badge using gas mode, you need to call the `ProfileNFT` contract directly:
+
+1. import `ProfileNFTABI`
+2. Pass the abi and contract address `PROFILE_NFT_CONTRACT` which is `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271` to get a contract instance
+3. call the `registerEssence` to create an essence NFT
+
+```js
+const contract = new ethers.Contract(
+  PROFILE_NFT_CONTRACT,
+  ProfileNFTABI,
+  signer
+);
+
+const tx = await contract.registerEssence(
+  {
+    profileId: primaryProfile?.profileID,
+    name: "gas-post",
+    symbol: "gp",
+    essenceTokenURI: ipfsHash,
+    essenceMw: "0x0000000000000000000000000000000000000000",
+    transferable: true,
+    deployAtRegister: true,
+  },
+  0x0
+);
 ```
 
 A couple of things to note:
