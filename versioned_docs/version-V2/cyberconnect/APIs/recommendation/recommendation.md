@@ -10,7 +10,7 @@ description: Recommendation - Recommendation
 The main entry point for address-based recommendations is the `Recommendations` type in `wallet`, it’s used for finding information that might be interesting to a given wallet based on its historical transaction history, current balance & project interactions.
 
 ```graphql
-type Recommendation {
+type Recommendation(chainID: ChainID!) {
   tokenBalanceInfo(offset: Int, limit: Int): [TokenInfo!]
   tokenRecommendation(offset: Int, limit: Int): [TokenRecommendation!]
   userRecommendation(offset: Int, limit: Int): [UserRecommendation!]

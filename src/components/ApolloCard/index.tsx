@@ -741,7 +741,7 @@ const apolloData = {
     {
     address(address: $address) {
         wallet {
-          recommendation {
+          recommendation(chainID: $chainId) {
             tokenBalanceInfo {
               token {
                 ... on ERC721 {
@@ -793,6 +793,7 @@ const apolloData = {
 `,
     variables: {
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+      chainId: 1,
     },
     headers: {
       Authorization:
@@ -800,11 +801,11 @@ const apolloData = {
     },
   },
   getUserRecommendation: {
-    query: `query getUserRecommendation($address: AddressEVM!) {
+    query: `query getUserRecommendation($address: AddressEVM!, $chainId: ChainID!) {
       address(address: $address) {
         wallet   
          {
-          recommendation {
+          recommendation(chainID: $chainId) {
             userRecommendation {
               userToFollow
               userToFollowRank
@@ -818,6 +819,7 @@ const apolloData = {
 `,
     variables: {
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+      chainId: 1,
     },
     headers: {
       Authorization:
@@ -829,7 +831,7 @@ const apolloData = {
     {
     address(address: $address) {
       wallet {    
-          recommendation {
+          recommendation(chainID: $chainId) {
             tokenRecommendation {
               rank
               tokenInfo {
@@ -856,6 +858,7 @@ const apolloData = {
 `,
     variables: {
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+      chainId: 1,
     },
     headers: {
       Authorization:

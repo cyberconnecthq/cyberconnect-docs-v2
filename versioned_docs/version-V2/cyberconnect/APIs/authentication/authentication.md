@@ -39,6 +39,7 @@ Mutations require Authorization header:
 
 ```
 registerSigningKey
+createCreateProfileTypedData
 createRegisterEssenceTypedData
 createCollectEssenceTypedData
 createSetEssenceDataTypedData
