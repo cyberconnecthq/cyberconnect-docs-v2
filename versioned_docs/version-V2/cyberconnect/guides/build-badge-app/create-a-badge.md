@@ -273,9 +273,10 @@ const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 
 To create a badge using gas mode, you need to call the `ProfileNFT` contract directly:
 
-1. import `ProfileNFTABI`
-2. Pass the abi and contract address `PROFILE_NFT_CONTRACT` which is `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271` to get a contract instance
-3. call the `registerEssence` to create an essence NFT
+1. import `ProfileNFTABI` from [GitHub](https://github.com/cyberconnecthq/cybercontracts/tree/main/docs/abi)
+2. Pass the abi, signer and contract address `PROFILE_NFT_CONTRACT` which is `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271` to get a contract instance
+3. Upload the metadata to Pinata, set `ipfsHash` as the value of `essenceTokenURI`
+4. call the `registerEssence` to create an essence NFT
 
 ```js
 const contract = new ethers.Contract(
