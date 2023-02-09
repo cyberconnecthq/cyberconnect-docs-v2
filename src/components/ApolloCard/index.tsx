@@ -264,12 +264,13 @@ const apolloData = {
   },
   verifyEssenceMetadata: {
     query: `query verifyEssenceMetadata($version: String!,
-      $name: String!, $app_id: String, $lang: String) {
+      $name: String!, $app_id: String!, $metadata_id: String!, $lang: String) {
        verifyEssenceMetadata(input: {
          version: $version
          name: $name
          app_id: $app_id
          lang: $lang
+         metadata_id: $metadata_id
        }) {
          verified
        }
@@ -279,6 +280,7 @@ const apolloData = {
       name: "Link3 event token",
       app_id: "Link3",
       lang: "EN",
+      metadata_id: "uuid",
     },
     headers: {},
   },
@@ -682,11 +684,11 @@ const apolloData = {
     headers: {},
   },
   getCCLabelsDetailed: {
-    query: `query getCCLabelsDetailed($address: AddressEVM!)
+    query: `query getCCLabelsDetailed($address: AddressEVM!, $chainID: ChainID!)
     {
       address(address:$address) {
         wallet {
-          metadata {
+          metadata(chainID:$chainID) {
             projectInteractionStats {
               project
               txCount
@@ -703,6 +705,7 @@ const apolloData = {
 `,
     variables: {
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+      chainID: 1,
     },
     headers: {
       Authorization:
@@ -710,12 +713,12 @@ const apolloData = {
     },
   },
   getCCLabels: {
-    query: `query getCCLabels($address:AddressEVM!)
+    query: `query getCCLabels($address:AddressEVM!,$chainID:ChainID!)
     {
       address(address:$address) {
         address
         wallet {
-          metadata {
+          metadata(chainID:$chainID) {
             labels
           }
           
@@ -726,6 +729,7 @@ const apolloData = {
 `,
     variables: {
       address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+      chainID: 1,
     },
     headers: {
       Authorization:

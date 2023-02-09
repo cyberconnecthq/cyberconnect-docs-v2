@@ -57,13 +57,3 @@ Finally you poll the `relayActionStatus` API using the `relayActionId` returned 
 <!-- <ApolloCard queryName="relayActionStatus" /> -->
 
 You can now verify the transaction by looking up the `txHash` from the response on [etherscan.io](http://etherscan.io). That’s it! You’re all done!
-
-## Experiment in Sandbox
-
-We’ve created an example that incorporates all the steps for Set Middleware for Subscribe. Feel free to experiment with our code in the sandbox below.
-
-<iframe src="https://codesandbox.io/embed/set-middleware-essence-forked-t13u7w?fontsize=14&hidenavigation=1&theme=dark"
-     title="set-middleware-essence (forked)"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>

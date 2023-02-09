@@ -82,16 +82,3 @@ Finally you poll the `relayActionStatus` API using the `relayActionId` returned 
 <!-- <ApolloCard queryName="relayActionStatus" /> -->
 
 You can now verify the transaction by looking up the `txHash` from the response on [bscscan](https://bscscan.com/). That’s it! You’re all done!
-
-## Experiment in Sandbox
-
-We’ve created an example that incorporates all the steps for Subscribe to a profile. Feel free to experiment with our code in the sandbox below. This covers a couple of steps
-
-1. Login with wallet
-2. Subscribe to a profile
-
-<iframe src="https://codesandbox.io/embed/subscribe-to-profile-forked-fjkd8b?fontsize=14&hidenavigation=1&theme=dark"
-     title="subscribe-to-profile (forked)"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
