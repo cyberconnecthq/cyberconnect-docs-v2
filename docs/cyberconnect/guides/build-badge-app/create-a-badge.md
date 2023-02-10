@@ -7,7 +7,7 @@ sidebar_position: 4
 description: How to Build Badge app - Create a Badge
 ---
 
-In this section you'll learn how to implement the [Register Essence](/guides/mutation/register-essence) feature. An _essence_ is any piece of content. Yes, it's also a NFT. It can take the form of a badge, a post, or something completely different that's up to your imagination.
+In this section you'll learn how to implement the [Register Essence](/guides/mutation/register-essence) feature in both gasless and gas modes. An _essence_ is any piece of content. Yes, it's also a NFT. It can take the form of a badge, a post, or something completely different that's up to your imagination.
 
 When the user creates an essence, a non-fungible token (NFT) is only being created. The minting and transferring of the NFT is being executed in the _collect essence_ process to the user that collects it, which you'll learn all about in the upcoming section.
 
@@ -19,7 +19,9 @@ The underlying difference between a Non-fungible token (NFT) and a Soulbound tok
 
 :::
 
-## GraphQL mutations
+## Gasless Mode
+
+### GraphQL mutations
 
 To register an essence, meaning to create a badge for this example, is a two step process and requires two GraphQL mutations: `CreateRegisterEssenceTypedData` and `Relay`.
 
@@ -82,7 +84,7 @@ export const RELAY_ACTION_STATUS = gql`
 `;
 ```
 
-## Metadata Schema
+### Metadata Schema
 
 You can think of the Essence Metadata Schema as a standard template used to store data related to content and the NFT holding that data.
 
@@ -173,9 +175,7 @@ export interface IEssenceMetadata {
 
 :::
 
-## Create a Badge
-
-### Gasless Mode
+### Create a Badge
 
 To create a badge using gasless mode means to [Register a Essence](/guides/mutation/register-essence) and the process for it does require the following steps:
 
@@ -269,7 +269,7 @@ const relayResult = await relay({
 const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 ```
 
-### Gas Mode
+## Gas Mode
 
 To create a badge using gas mode, you need to call the `ProfileNFT` contract directly:
 
