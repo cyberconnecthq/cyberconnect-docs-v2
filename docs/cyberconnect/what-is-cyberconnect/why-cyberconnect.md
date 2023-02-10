@@ -13,7 +13,7 @@ description: Why CyberConnect?
 
 <img src="/img/v2/social-censorship.jpeg"  width="20%" height="20%" align="center"/> 
 
-Centralized control of our social data means that a few large companies have complete control over what social opinions, ideas, and content get propogated. <br/> This censorship comes in different flavors; politically driven suspensions by platforms, nation-state pressured censoring, or unsolicited/unexplained censorships (ex. shadow banning). 
+Centralized control of our social data means that a few large companies have complete control over what social opinions, ideas, and content get propagated. <br/> This censorship comes in different flavors; politically driven suspensions by platforms, nation-state pressured censoring, or unsolicited/unexplained censorships (ex. shadow banning). 
 <br clear="left"/>
 
 ## 2. Lost Creator Value
