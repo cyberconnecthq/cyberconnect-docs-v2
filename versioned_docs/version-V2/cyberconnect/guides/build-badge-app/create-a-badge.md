@@ -307,7 +307,7 @@ A couple of things to note:
 
 - We set `transferable` to `false` so that the NFT won't be transferable once it ends up in the user's wallet address;
 
-If the registration of the essence (or badge in our case) was successful, you can verify the transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
+If the registration of the essence (or badge in our case) was successful, you can verify the transaction hash on [BscScan](https://testnet.bscscan.com/).
 
 ![transaction hash](/img/v2/build-badge-app-create-a-badge-tx.png)
 

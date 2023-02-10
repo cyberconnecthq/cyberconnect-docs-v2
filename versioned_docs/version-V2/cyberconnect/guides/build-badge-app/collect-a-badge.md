@@ -7,11 +7,13 @@ sidebar_position: 5
 description: How to Build Badge app - Collect a Badge
 ---
 
-In this section you'll learn how to implement the [Collect Essence](/guides/mutation/collect-essence) feature. Previously you've learned that creating a badge means registering an essence, but the process of minting and transferring the SBT is actually executed when a user collects the badge by attending an event.
+In this section you'll learn how to implement the [Collect Essence](/guides/mutation/collect-essence) feature in both gasless and gas modes. Previously you've learned that creating a badge means registering an essence, but the process of minting and transferring the SBT is actually executed when a user collects the badge by attending an event.
 
 To keep things simple we will only focus on the actual implementation of users collecting badges. Linking them to an actual event and checking whether users have attended the event falls beyond the scope of the tutorial.
 
-## GraphQL mutations
+## Gasless Mode
+
+### GraphQL mutations
 
 To collect an essence, meaning to collect a SBT badge, is a two step process and requires two GraphQL mutations: `CreateCollectEssenceTypedData` and `Relay`.
 
@@ -74,7 +76,7 @@ export const RELAY_ACTION_STATUS = gql`
 `;
 ```
 
-## Collect a Badge
+### Collect a Badge
 
 Now that you set up the APIs required, you can implement the Collect feature. The approach is similar to the approach from [Create a Badge](/how-to/build-badge-app/create-a-badge):
 
@@ -116,7 +118,35 @@ const relayResult = await relay({
 const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
 ```
 
-If the collect process was successful, you can verify the transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
+## Gas Mode
+
+To collect a badge using gasless mode, you need to call the `ProfileNFT` contract directly:
+
+1. import `ProfileNFTABI` from [GitHub](https://github.com/cyberconnecthq/cybercontracts/tree/main/docs/abi)
+2. Pass the abi, signer and contract address `PROFILE_NFT_CONTRACT` which is `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271` to get a contract instance
+3. call the `collect` method from the contract
+
+```js
+const contract = new ethers.Contract(
+  PROFILE_NFT_CONTRACT,
+  ProfileNFTABI,
+  signer
+);
+
+const tx = await contract.collect(
+  {
+    collector: address,
+    profileId: profileID,
+    essenceId: essenceID,
+  },
+  0x0,
+  0x0
+);
+
+console.log("tx", tx);
+```
+
+If the collect process was successful, you can verify the transaction hash on [BscScan](https://testnet.bscscan.com/).
 
 ![transaction hash](/img/v2/build-badge-app-collect-a-badge-tx.png)
 
