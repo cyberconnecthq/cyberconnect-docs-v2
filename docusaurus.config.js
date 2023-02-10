@@ -112,10 +112,9 @@ const config = {
             label: "Link3",
           },
           {
-            type: "docSidebar",
-            position: "left",
-            sidebarId: "testnetSidebar",
+            href: "https://testnet.cyberconnect.me/",
             label: "Testnet",
+            position: "right",
           },
           {
             href: "https://dashboard.cyberconnect.me/",
