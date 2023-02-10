@@ -309,8 +309,4 @@ A couple of things to note:
 
 If the registration of the essence (or badge in our case) was successful, you can verify the transaction hash on [BscScan](https://testnet.bscscan.com/).
 
-![transaction hash](/img/v2/build-badge-app-create-a-badge-tx.png)
-
-![transaction hash](/img/v2/build-badge-app-create-a-badge-tx2.png)
-
 Note that at this stage you are only registering the SBT. When a user collects a badge is when the SBT actually gets minted and transferred to the user's wallet address, which you'll learn all about in the next section [Collect a Badge](/how-to/build-badge-app/collect-a-badge).

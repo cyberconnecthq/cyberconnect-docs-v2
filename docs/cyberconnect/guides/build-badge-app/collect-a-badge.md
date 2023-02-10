@@ -148,8 +148,6 @@ console.log("tx", tx);
 
 If the collect process was successful, you can verify the transaction hash on [BscScan](https://testnet.bscscan.com/).
 
-![transaction hash](/img/v2/build-badge-app-collect-a-badge-tx.png)
-
 You can also view the NFT when a user collects a badge on [testnets.opensea.io](testnets.opensea.io). You'll notice that the image for the NFT and all other details about it correspond to the details passed to the [Metadata Schema](/how-to/build-badge-app/create-a-badge#metadata-schema) fields (e.g. `image_data`, `name`, `attributes`, etc).
 
 ![nft essence](/img/v2/build-badge-app-collect-a-badge-nft.png)
