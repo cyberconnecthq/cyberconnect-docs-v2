@@ -7,7 +7,7 @@ sidebar_position: 3
 description: How to Build Content app - Authentication
 ---
 
-For authentication, you will actually be implementing the [User Login](/guides/authentication/user-login) flow to receive the `accessToken` that will be used later on for different queries and mutations.
+For authentication, you will actually be implementing the [User Login](/api/user-login) flow to receive the `accessToken` that will be used later on for different queries and mutations.
 
 ## Apollo Client
 

@@ -1,7 +1,7 @@
 ---
 id: user-login
 title: Вход пользователя
-slug: /guides/authentication/user-login
+slug: /api/user-login
 sidebar_label: Вход пользователя
 sidebar_position: 2
 description: Аутентификация - Вход пользователя

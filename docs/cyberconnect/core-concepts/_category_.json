@@ -1,8 +1,8 @@
 {
-    "label": "Core Concepts",
-    "position": 4,
-    "link": {
-        "type": "generated-index",
-        "description": "This section contains the core concepts underlying the platform. It is recommended to read this section before starting to use the platform."
-      }
+  "label": "Core Concepts",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "This section contains the core concepts underlying the platform. It is recommended to read this section before starting to use the platform."
+  }
 }

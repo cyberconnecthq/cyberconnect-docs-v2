@@ -13,11 +13,11 @@ description: Мутации - Зарегистрировать сущность
 
 1. Во-первых, данные должны быть представлены пользователю в удобочитаемом формате при подписании из кошелька. Чтобы это сделать, вам нужно будет вызвать `createRegisterEssenceTypedData` API, который позаботится об этом.
 
-    Если вы не знакомы с типизированными данными, вы можете прочитать об этом подробнее [здесь](https://eips.ethereum.org/EIPS/eip-712).
+   Если вы не знакомы с типизированными данными, вы можете прочитать об этом подробнее [здесь](https://eips.ethereum.org/EIPS/eip-712).
 
 :::caution
 
-Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше  [здесь](/guides/authentication/user-login).
+Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/user-login).
 
 :::
 
@@ -31,13 +31,13 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 :::caution
 
-Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше  [здесь](/guides/authentication/user-login).
+Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/user-login).
 
 :::
 
 <ApolloCard queryName="relay" />
 
-Теперь вы можете подтвердить транзакцию, просмотрев `txHash` из ответа на [etherscan.io ](http://etherscan.io ). Вот и все! Вы все закончили!
+Теперь вы можете подтвердить транзакцию, просмотрев `txHash` из ответа на [etherscan.io ](http://etherscan.io). Вот и все! Вы все закончили!
 
 ## Эксперимент в песочнице
 
