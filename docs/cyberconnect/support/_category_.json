@@ -1,9 +1,9 @@
 {
-    "label": "Support",
-    "position": 11,
-    "className": "support",
-    "link": {
-        "type": "generated-index",
-        "description": "Additional supporting documentation for developing with CyberConnect"
-      }
+  "label": "Support",
+  "position": 5,
+  "className": "support",
+  "link": {
+    "type": "generated-index",
+    "description": "Additional supporting documentation for developing with CyberConnect"
+  }
 }

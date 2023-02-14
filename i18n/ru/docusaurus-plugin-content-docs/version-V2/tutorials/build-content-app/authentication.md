@@ -7,7 +7,7 @@ sidebar_position: 3
 description: Как создать контент приложение - Аутентификация
 ---
 
-Для аутентификации вы фактически будете реализовывать поток [Входа пользователя](/guides/authentication/user-login) для получения `accessToken`, который позже будет использоваться для различных запросов и мутаций.
+Для аутентификации вы фактически будете реализовывать поток [Входа пользователя](/api/user-login) для получения `accessToken`, который позже будет использоваться для различных запросов и мутаций.
 
 ## Apollo Client
 
@@ -18,23 +18,23 @@ import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-    uri: "https://api.stg.cyberconnect.dev/",
+  uri: "https://api.stg.cyberconnect.dev/",
 });
 
 const authLink = setContext((_, { headers }) => {
-    const token = localStorage.getItem("accessToken");
+  const token = localStorage.getItem("accessToken");
 
-    return {
-        headers: {
-            ...headers,
-            Authorization: token ? `bearer ${token}` : "",
-        },
-    };
+  return {
+    headers: {
+      ...headers,
+      Authorization: token ? `bearer ${token}` : "",
+    },
+  };
 });
 
 export const apolloClient = new ApolloClient({
-    link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
 });
 ```
 
@@ -48,11 +48,11 @@ export const apolloClient = new ApolloClient({
 import { gql } from "@apollo/client";
 
 export const LOGIN_GET_MESSAGE = gql`
-    mutation LoginGetMessage($input: LoginGetMessageInput!) {
-        loginGetMessage(input: $input) {
-            message
-        }
+  mutation LoginGetMessage($input: LoginGetMessageInput!) {
+    loginGetMessage(input: $input) {
+      message
     }
+  }
 `;
 ```
 
@@ -62,11 +62,11 @@ export const LOGIN_GET_MESSAGE = gql`
 import { gql } from "@apollo/client";
 
 export const LOGIN_VERIFY = gql`
-    mutation LoginVerify($input: LoginVerifyInput!) {
-        loginVerify(input: $input) {
-            accessToken
-        }
+  mutation LoginVerify($input: LoginVerifyInput!) {
+    loginVerify(input: $input) {
+      accessToken
     }
+  }
 `;
 ```
 
@@ -77,13 +77,13 @@ export const LOGIN_VERIFY = gql`
 ```tsx title="components/SigninBtn.tsx"
 /* Получите сообщение с сервера */
 const messageResult = await loginGetMessage({
-    variables: {
-        input: {
-            address: account,
-            domain: DOMAIN,
-            chainID: chainID,
-        },
+  variables: {
+    input: {
+      address: account,
+      domain: DOMAIN,
+      chainID: chainID,
     },
+  },
 });
 const message = messageResult?.data?.loginGetMessage?.message;
 
@@ -92,14 +92,14 @@ const signature = await signer.signMessage(message);
 
 /* Проверьте подпись на сервере и получите токен доступа */
 const accessTokenResult = await loginVerify({
-    variables: {
-        input: {
-            address: account,
-            domain: DOMAIN,
-            chainID: chainID,
-            signature: signature,
-        },
+  variables: {
+    input: {
+      address: account,
+      domain: DOMAIN,
+      chainID: chainID,
+      signature: signature,
     },
+  },
 });
 const accessToken = accessTokenResult?.data?.loginVerify?.accessToken;
 ```

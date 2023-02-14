@@ -1,7 +1,7 @@
 ---
 id: api-key
 title: Создание API ключа приложения
-slug: /guides/authentication/api-key
+slug: /api/api-key
 sidebar_label: Создание API ключа приложения
 sidebar_position: 1
 description: Аутентификация - Ключ API

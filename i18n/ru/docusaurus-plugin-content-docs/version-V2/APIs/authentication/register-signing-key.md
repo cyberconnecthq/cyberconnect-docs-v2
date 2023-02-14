@@ -1,7 +1,7 @@
 ---
 id: signing-key
 title: Регистрация ключа подписи
-slug: /guides/authentication/signing-key
+slug: /api/signing-key
 sidebar_label: Регистрация ключа подписи
 sidebar_position: 3
 description: Аутентификация - Регистрация ключа подписи

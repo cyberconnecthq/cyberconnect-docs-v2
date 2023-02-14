@@ -16,22 +16,22 @@ description: Мутации - Следовать
 ```
 
 1. Подпишите строку `operation` своим приватным ключом для подписания и получите подпись.
-2. Отправьте следующий запрос с вашим `X-API-KEY` заголовком. (Смотрите для справки: [Создание API ключа приложения](/guides/authentication/api-key))
+2. Отправьте следующий запрос с вашим `X-API-KEY` заголовком. (Смотрите для справки: [Создание API ключа приложения](/api/api-key))
 
 ```graphql
 mutation follow {
-    follow(
-        input: {
-            fromAddr: "0x803F69aE5f5D839071fcD712e25BF3c8c35B2664"
-            toAddr: "0xab7824a0ef372c95b9cfeb4a8be487a0d5d8ecb"
-            signature: "0xdcf2dae91b1372767d05f209c096dc35f65e1a91e9e7b0521a8a23802e42ca273aea934046e79ec75f8290ff6c1b7bf35d023c8dcb0bf956f56fdaec3633620f1c"
-            signingKey: "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqw+1M+P+2SBcf6mTtGEQ2rbEIq0/eYbzYPtzu75DfC93Y6twu7yq7BEE3yqokSIpBGXI92m6EPkhH+kUx4+ZyQ=="
-            namespace: "Link3"
-            operation: "{\"name\":\"follow\",\"from\":\"0x803F69aE5f5D839071fcD712e25BF3c8c35B2664\",\"to\":\"0xab7824a05ef372c95b9cfeb4a8be487a0d5d8ecb\",\"namespace\":\"Link3\",\"network\":\"ETH\",\"alias\":\"\",\"timestamp\":1662672662623}"
-        }
-    ) {
-        success
+  follow(
+    input: {
+      fromAddr: "0x803F69aE5f5D839071fcD712e25BF3c8c35B2664"
+      toAddr: "0xab7824a0ef372c95b9cfeb4a8be487a0d5d8ecb"
+      signature: "0xdcf2dae91b1372767d05f209c096dc35f65e1a91e9e7b0521a8a23802e42ca273aea934046e79ec75f8290ff6c1b7bf35d023c8dcb0bf956f56fdaec3633620f1c"
+      signingKey: "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqw+1M+P+2SBcf6mTtGEQ2rbEIq0/eYbzYPtzu75DfC93Y6twu7yq7BEE3yqokSIpBGXI92m6EPkhH+kUx4+ZyQ=="
+      namespace: "Link3"
+      operation: "{\"name\":\"follow\",\"from\":\"0x803F69aE5f5D839071fcD712e25BF3c8c35B2664\",\"to\":\"0xab7824a05ef372c95b9cfeb4a8be487a0d5d8ecb\",\"namespace\":\"Link3\",\"network\":\"ETH\",\"alias\":\"\",\"timestamp\":1662672662623}"
     }
+  ) {
+    success
+  }
 }
 ```
 
