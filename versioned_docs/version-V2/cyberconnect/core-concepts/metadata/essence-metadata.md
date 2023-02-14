@@ -43,7 +43,7 @@ interface Attribute {
   value: number | string;
 }
 
-interface Metadata {
+interface EssenceMetadata {
   /* ~~ REQUIRED ~~ */
   /* Unique id for the issued item */
   metadata_id: string;
