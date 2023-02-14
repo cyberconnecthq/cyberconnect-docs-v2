@@ -40,7 +40,7 @@ interface Attribute {
   /* Name of the trait */
   trait_type: string;
   /* Value of the trait */
-  value: number | string;
+  value: string;
 }
 
 interface EssenceMetadata {
