@@ -14,7 +14,7 @@ The ccProfile is CyberConnect's general deployment of the ProfileNFT in its own 
 
 ## How can I mint a ccProfile NFT?
 
-Go to https://cc.me/mint or interactive with our smart contract directly.
+Go to https://cc.me/mint or interact with our smart contract directly.
 
 ## Is minting a ccProfile NFT free?
 

@@ -51,14 +51,13 @@ const config = {
           anonymizeIP: true,
         },
         sitemap: {
-          changefreq: 'weekly',
+          changefreq: "weekly",
           priority: 0.5,
-          ignorePatterns: ['/tags/**'],
-          filename: 'sitemap.xml',
+          ignorePatterns: ["/tags/**"],
+          filename: "sitemap.xml",
         },
       }),
     ],
-   
   ],
   plugins: [
     [
@@ -73,8 +72,8 @@ const config = {
           UrlLoader: "@graphql-tools/url-loader",
         },
         diffMethod: false, // The method to be used for identifying changes in the schema for triggering the documentation generation. Set it to false to prevent from automatic updates.
-      }
-    ]
+      },
+    ],
   ],
   i18n: {
     defaultLocale: "en",
@@ -101,19 +100,32 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'cyberconnectSidebar',
-            label: 'CyberConnect',
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "cyberconnectSidebar",
+            label: "CyberConnect",
           },
           {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'link3Sidebar',
-            label: 'Link3',
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "link3Sidebar",
+            label: "Link3",
           },
-          {href: 'https://dashboard.cyberconnect.me/', label: 'Dashboard', position: 'right'},
-          {href: 'https://form.typeform.com/to/T2pjguoP', label: 'Feedback', position: 'right'},
+          {
+            href: "https://testnet.cyberconnect.me/",
+            label: "Testnet",
+            position: "right",
+          },
+          {
+            href: "https://dashboard.cyberconnect.me/",
+            label: "Dashboard",
+            position: "right",
+          },
+          {
+            href: "https://form.typeform.com/to/T2pjguoP",
+            label: "Feedback",
+            position: "right",
+          },
           {
             type: "docsVersionDropdown",
             position: "right",
@@ -145,7 +157,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       colorMode: {
-        defaultMode: 'light',
+        defaultMode: "light",
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
@@ -192,7 +204,6 @@ const config = {
         indexName: process.env.ALGOLIA_INDEX_NAME,
         searchPagePath: "search",
         contextualSearch: true,
-
       },
     }),
   stylesheets: [
