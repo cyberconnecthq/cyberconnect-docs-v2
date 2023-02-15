@@ -36,16 +36,3 @@ SubscribeNFT represents the uni-directional relationship between an address and 
 ## EssenceNFT 📝
 
 EssenceNFT is a generic NFT that individual ccProfileNFT holders can issue to represent any piece of content (ex. social media posts, videos, blog publications). Each EssenceNFT can be configured with rules like pay-to-mint (crowdfunding), hold-to-mint (community participants), etc. It can be also configured as a tradable NFT or a non-transferable soul bound token (SBT) to represent a given role such as investor, patron, team member, community participant, etc.
-
-## Composable Middleware
-
-Although the computational condition varies a lot on different dApps, many commonly seen patterns can be generalized into reusable and extensible modules. For example, dApp A wants to build a BAYC club by setting the condition that only BAYC holders can mint their app-specific ccProfileNFT and dApp B wants to do the same thing for CloneX holders. The underlying pattern is the same and the only difference is the gated ERC-721 contract address.
-
-The protocol utilizes a composable middleware layer before and after the user applies their minting actions (e.g. subscribe to a profile or collect essence). The middleware can be created to express generic constraints such as allowing only certain ERC-721 holders to pass the check. In such a way, the community can build a wide range of reusable middlewares together and dApp developers can pick and choose the relevant ones to plug into their dApp easily.
-
-It is important to point out though that while the middleware is powerful when used to set constraints against the current blockchain state or to collect on-chain assets, it has limited utility when using it to check historical state or off-chain data. One possible solution is to call oracle contracts inside middleware to get data feeds from off-chain indexers.
-
-You can find query examples & the GraphQL schema in Apollo for your reference.
-
-- [Schema](https://studio.apollographql.com/public/Cyberconnect-Gaia-Stg-6ewjtr/schema/reference?variant=current)
-- [Query Examples](https://studio.apollographql.com/public/Cyberconnect-Gaia-Stg-6ewjtr/explorer?variant=current)
