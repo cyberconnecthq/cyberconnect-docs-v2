@@ -3,7 +3,7 @@ id: get-api-key
 title: Get your API key
 slug: /api/authentication/get-api-key
 sidebar_label: Get your API key
-sidebar_position: 1
+sidebar_position: 2
 description: Authentication - Get your API & Relay Address
 ---
 

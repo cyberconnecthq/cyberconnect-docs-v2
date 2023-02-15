@@ -1,10 +1,10 @@
 ---
-id: authentication
-title: Authentication
-slug: /api/authentication
-sidebar_label: Authentication
+id: authentication-introduction
+title: Introduction
+slug: /api/authentication/introduction
+sidebar_label: Introduction
 sidebar_position: 1
-description: Authentication - get your API & relay address
+description: Authentication introduction
 ---
 
 In order to interact with the CyberConnect API you're going to need a few things:

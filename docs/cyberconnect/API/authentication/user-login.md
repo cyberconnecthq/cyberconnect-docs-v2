@@ -3,7 +3,7 @@ id: user-login
 title: User login
 slug: /api/authentication/user-login
 sidebar_label: User login
-sidebar_position: 2
+sidebar_position: 3
 description: Authentication - User Login
 ---
 
