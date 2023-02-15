@@ -578,55 +578,20 @@ const apolloData = {
   profileByHandle(handle: $handle) {
     externalMetadataInfo {
       type
-      handle
-      displayName {
-        type
-        value
-      }
-      avatar {
-        type
-        nfts {
-          chainId
-          contract
-          tokenId
-          type
-          name
-          image
-          owner
-        }
-        image
-      }
-      background {
-        type
-        nfts {
-          chainId
-          contract
-          tokenId
-          type
-          name
-          image
-          owner
-        }
-        image
-      }
-      bio
+      verifiedTwitterID
       organization {
-        twitterId
-        verified
-        followersCount
         cmcTokenId
         sector
         networks
       }
       personal {
-        headline {
-          twitter {
-            id
-            handle
-            name
-            avatar
-          }
-          title
+        verifiedDiscordID
+        title
+        organization {
+          id
+          handle
+          name
+          avatar
         }
       }
       section {
