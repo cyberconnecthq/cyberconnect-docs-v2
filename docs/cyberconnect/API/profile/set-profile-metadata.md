@@ -12,8 +12,12 @@ To set the metadata of a profile you need to follow 5 steps:
 - [Upload the metadata to IPFS](#upload-the-metadata-to-ipfs)
 - [Create typed data with the CID](#create-typed-data-with-the-cid)
 - [Sign typed data](#sign-typed-data)
-- [Relay update metadata action](#relay-update-metadata-action)
+- [Relay the action](#relay-the-action)
 - [Check relay result](#check-relay-result)
+
+:::tip
+CyberConnect covers the transaction fee for this operation every 3 days for each user.
+:::
 
 ## Upload the metadata to IPFS
 
@@ -130,7 +134,7 @@ signTypedData({
 });
 ```
 
-## Relay update metadata action
+## Relay the action
 
 After signing the typed data, you'll get a signature which is `signMetadataSignature` here, call `relay` API to broadcast the action, it'll return a relay action id.
 

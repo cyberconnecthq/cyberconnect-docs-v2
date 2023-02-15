@@ -12,12 +12,16 @@ To set the metadata of a profile you need to follow 5 steps:
 - [Upload the metadata to IPFS](#upload-the-metadata-to-ipfs)
 - [Create typed data with the CID](#create-typed-data-with-the-cid)
 - [Sign typed data](#sign-typed-data)
-- [Relay update metadata action](#relay-update-metadata-action)
+- [Relay the action](#relay-the-action)
 - [Check relay result](#check-relay-result)
+
+:::tip
+CyberConnect covers the transaction fee for this operation every 3 days for each user.
+:::
 
 ## Upload the metadata to IPFS
 
-Follow the metadata schema to construct the right data structure, each field of it is modifiable, however we strongly recommend to keep `handle` unchanged, it should be the same as the handle of the profile.
+Follow the metadata schema to construct the right data structure, each field of it is modifiable, however, we strongly recommend keeping the `handle` unchanged, it should be the same as the handle of the profile.
 
 **Profile Metadata Schema**
 
@@ -41,7 +45,7 @@ type ProfileMetadata = {
 
 **Pin to IPFS**
 
-There're many different ways to upload/pin data on IPFS, we use Pinata here, check their doc for detailed usage.
+There're many different ways to upload/pin data to IPFS, we use Pinata here, check their doc for detailed usage.
 
 ```ts
 const pinJSONToIPFS = async (json: { [key: string]: any }) => {
@@ -130,7 +134,7 @@ signTypedData({
 });
 ```
 
-## Relay update metadata action
+## Relay the action
 
 After signing the typed data, you'll get a signature which is `signMetadataSignature` here, call `relay` API to broadcast the action, it'll return a relay action id.
 
@@ -167,7 +171,7 @@ const relayActionId = await relay(metadataTypedDataID, signMetadataSignature);
 
 ## Check relay result
 
-Relay is an asynchronous operation which means it won't be success immediately, you need to keep calling `relayActionStatus` to check the latest result, once it returns `txHash` is success, the update action is completed.
+Relay is an asynchronous operation which means it won't be successful immediately, you need to keep calling `relayActionStatus` to check the latest result, once it returns `txHash` is `SUCCESS`, the update action is completed.
 
 ```ts
 const relayActionStatus = async (relayActionId: string) => {
