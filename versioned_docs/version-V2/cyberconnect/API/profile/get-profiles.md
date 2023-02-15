@@ -2,8 +2,8 @@
 id: profiles
 title: Profiles
 slug: /api/profile/get-profiles
-sidebar_label: Get Profiles
-sidebar_position: 3
+sidebar_label: Get profiles
+sidebar_position: 2
 description: Get profiles
 ---
 
