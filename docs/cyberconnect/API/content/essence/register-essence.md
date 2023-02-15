@@ -2,9 +2,9 @@
 id: register-essence
 title: Register Essence
 slug: /api/content/essence/register-essence
-sidebar_label: Register Essence
+sidebar_label: Register essence
 sidebar_position: 1
-description: Register Essence
+description: Register essence
 ---
 
 ## Workflow

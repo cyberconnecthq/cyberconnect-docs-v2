@@ -1,10 +1,10 @@
 ---
-id: essence-middleware
-title: Set Essence Middleware
-slug: /api/content/essence/essence-middleware
-sidebar_label: Set Essence Middleware
+id: set-essence-middleware
+title: Set essence middleware
+slug: /api/content/essence/set-essence-middleware
+sidebar_label: Set essence middleware
 sidebar_position: 5
-description: Essence Middleware
+description: Set essence middleware
 ---
 
 ## Workflow

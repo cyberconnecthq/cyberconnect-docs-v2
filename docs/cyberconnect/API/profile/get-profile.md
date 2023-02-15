@@ -1,10 +1,10 @@
 ---
-id: profiles
-title: Profiles
-slug: /api/profile/get-profiles
-sidebar_label: Get profiles
+id: get-profile
+title: Get profile
+slug: /api/profile/get-profile
+sidebar_label: Get profile
 sidebar_position: 2
-description: Get profiles
+description: Get profile
 ---
 
 You can find a `ccProfile` by it's `handle` - the `ccProfile`’s data is in `externalMetadataInfo`

@@ -1,13 +1,11 @@
 ---
 id: collect-essence
-title: Collect Essence
+title: Collect essence
 slug: /api/content/essence/collect-essence
-sidebar_label: Collect Essence
+sidebar_label: Collect essence
 sidebar_position: 2
-description: Collect Essence
+description: Collect essence
 ---
-
-# Collect Essence
 
 ## Workflow
 

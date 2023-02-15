@@ -1,10 +1,10 @@
 ---
 id: collect-a-post
-title: Collect a Post
+title: Collect a post
 slug: /how-to/build-content-app/collect-a-post
-sidebar_label: Collect a Post
+sidebar_label: Collect a post
 sidebar_position: 6
-description: How to Build Content app - Collect a Post
+description: How to build content app - collect a post
 ---
 
 In this section you'll learn how to implement the [Collect Essence](/guides/mutation/collect-essence) feature. Previously you've learned that creating a post means registering an essence, but the process of minting and transferring the NFT is actually executed when a user collects the post.

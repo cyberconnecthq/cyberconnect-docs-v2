@@ -1,13 +1,11 @@
 ---
 id: essence-metadata
-title: Essence Metadata
+title: Essence metadata
 slug: /core-concepts/metadata/essence-metadata
-sidebar_label: Essence Metadata
+sidebar_label: Essence metadata
 sidebar_position: 2
-description: Major Concepts of CyberConnect
+description: Essence metadata
 ---
-
-# Essence Metadata
 
 The Essence Metadata Schema acts as a standard template that is being used to store data about the Essence NFT. This metadata schema was created to ensure proper parsing and indexing of the Essence NFT.
 

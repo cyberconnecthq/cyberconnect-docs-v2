@@ -4,7 +4,7 @@ title: Authentication
 slug: /api/authentication
 sidebar_label: Authentication
 sidebar_position: 1
-description: Authentication - Get your API & Relay Address
+description: Authentication - get your API & relay address
 ---
 
 In order to interact with the CyberConnect API you're going to need a few things:

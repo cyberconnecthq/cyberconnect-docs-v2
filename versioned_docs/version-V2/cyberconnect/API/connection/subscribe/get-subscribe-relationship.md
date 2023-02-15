@@ -1,10 +1,10 @@
 ---
-id: get-subscribing-relationships
-title: Get Subscribe Relationships
-slug: apis/connection/subscribe/get-subscribe-relationships
-sidebar_label: Get subscribe relationships
+id: get-subscribing-relationship
+title: Get subscribe relationship
+slug: apis/connection/subscribe/get-subscribe-relationship
+sidebar_label: Get subscribe relationship
 sidebar_position: 2
-description: Get subscribe relationships
+description: Get subscribe relationship
 ---
 
 Since all social data (`w3st` , `content`) are created under a `profile` , a subscription relationship is from a wallet to a profile. Each `wallet` has their subscribing `profiles` and each `profiles` has their subscriber `wallets`.

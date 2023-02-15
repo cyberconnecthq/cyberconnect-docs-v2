@@ -1,10 +1,10 @@
 ---
 id: verify-essence-metadata
-title: Verify Essence Metadata
+title: Verify essence metadata
 slug: /api/content/essence/verify-essence-metadata
-sidebar_label: Verify Essence Metadata
+sidebar_label: Verify essence metadata
 sidebar_position: 3
-description: Query - Verify Essence Metadata
+description: Verify essence metadata
 ---
 
 Verifing that the an [Essence's Metadata](/core-concepts/metadata) Schema is valid is extremely useful during the process of [Registering an Essence](/guides/mutation/register-essence).

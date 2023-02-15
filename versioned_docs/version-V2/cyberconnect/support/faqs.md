@@ -1,8 +1,9 @@
 ---
 id: faqs
 title: FAQs
-slug: faqs
+slug: /support/faqs
 sidebar_label: FAQs
+sidebar_position: 3
 description: FAQs
 ---
 

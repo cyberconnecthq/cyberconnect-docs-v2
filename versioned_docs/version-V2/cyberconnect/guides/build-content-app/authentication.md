@@ -4,7 +4,7 @@ title: Authentication
 slug: /how-to/build-content-app/authentication
 sidebar_label: Authentication
 sidebar_position: 3
-description: How to Build Content app - Authentication
+description: How to build content app - authentication
 ---
 
 For authentication, you will actually be implementing the [User Login](/api/user-login) flow to receive the `accessToken` that will be used later on for different queries and mutations.

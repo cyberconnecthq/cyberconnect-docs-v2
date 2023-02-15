@@ -1,13 +1,11 @@
 ---
 id: profile-metadata
-title: Profile Metadata
+title: Profile metadata
 slug: /core-concepts/metadata/profile-metadata
 sidebar_label: Profile metadata
 sidebar_position: 1
 description: Profile metadata
 ---
-
-# Profile Metadata
 
 The Profile Metadata Schema acts as a standard template that is being used to store data about the Profile NFT. This metadata schema was created to ensure proper parsing and indexing of the Profile NFT.
 

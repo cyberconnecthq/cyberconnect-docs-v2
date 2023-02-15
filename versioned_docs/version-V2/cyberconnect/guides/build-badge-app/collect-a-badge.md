@@ -1,10 +1,10 @@
 ---
 id: collect-a-badge
-title: Collect a Badge
+title: Collect a badge
 slug: /how-to/build-badge-app/collect-a-badge
-sidebar_label: Collect an Badge
+sidebar_label: Collect a badge
 sidebar_position: 5
-description: How to Build Badge app - Collect a Badge
+description: How to build badge app - collect a badge
 ---
 
 In this section you'll learn how to implement the [Collect Essence](/guides/mutation/collect-essence) feature in both gasless and gas modes. Previously you've learned that creating a badge means registering an essence, but the process of minting and transferring the SBT is actually executed when a user collects the badge by attending an event.

@@ -4,7 +4,7 @@ title: Introduction
 slug: /api/introduction
 sidebar_label: Introduction
 sidebar_position: 0
-description: API Introduction
+description: API introduction
 ---
 
 Welcome to CyberConnect's API documentation. We chose to use **GraphQL** for our API because it allows for more flexibility and precision in querying data compared to traditional REST APIs.
@@ -20,7 +20,3 @@ https://api.cyberconnect.dev/playground
 ### Stage (indexing on testnet)
 
 https://api.cyberconnect.dev/testnet/playground
-
-import DocCardList from '@theme/DocCardList';
-
-<DocCardList/>

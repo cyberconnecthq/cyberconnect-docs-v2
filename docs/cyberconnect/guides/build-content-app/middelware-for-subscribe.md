@@ -1,10 +1,10 @@
 ---
 id: middleware-for-subscribe
-title: Middleware for Subscribe
+title: Middleware for subscribe
 slug: /how-to/build-content-app/middleware-for-subscribe
-sidebar_label: Middleware for Subscribe
+sidebar_label: Middleware for subscribe
 sidebar_position: 7
-description: How to Build Content app - Middleware for Subscribe
+description: How to build content app - middleware for subscribe
 ---
 
 Middlewares enable dynamic rules for when an action is performed. Middlewares are essentially smart contracts that execute a piece of logic before that action is executed. In this section the action we are looking at is to [Subscribe to Profile](/how-to/build-content-app/subscribe-to-profile).

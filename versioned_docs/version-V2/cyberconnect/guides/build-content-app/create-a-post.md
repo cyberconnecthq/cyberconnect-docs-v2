@@ -1,10 +1,10 @@
 ---
 id: create-a-post
-title: Create a Post
+title: Create a post
 slug: /how-to/build-content-app/create-a-post
-sidebar_label: Create a Post
+sidebar_label: Create a post
 sidebar_position: 5
-description: How to Build Content app - Create a Post
+description: How to build content app - create a post
 ---
 
 In this section you'll learn how to implement the [Register Essence](/guides/mutation/register-essence) feature. We call _essence_ everything that is content and related to it. Yes, it's also a NFT. It can take the form a post, an article, a soulbound token (SBT) or something completely different that's up to your imagination.

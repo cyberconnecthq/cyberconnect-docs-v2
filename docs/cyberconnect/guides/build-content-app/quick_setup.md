@@ -1,10 +1,10 @@
 ---
 id: quick-setup
-title: Quick Setup
+title: Quick setup
 slug: /how-to/build-content-app/quick-setup
-sidebar_label: Quick Setup
+sidebar_label: Quick setup
 sidebar_position: 1
-description: How to Build Content app - Quick Setup
+description: How to build content app - quick setup
 ---
 
 This guide will teach you how to create a social application where users can create on-chain content and connections in the social network. You will learn to implement features that will empower your users to own their social identities and the content they've created.

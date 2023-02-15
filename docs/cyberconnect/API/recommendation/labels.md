@@ -1,10 +1,10 @@
 ---
-id: labels
+id: recommendation-labels
 title: Labels
 slug: /guides/recommendation/labels
 sidebar_label: Labels
-sidebar_position: 1
-description: Recommendation - Labels
+sidebar_position: 2
+description: Recommendation labels
 ---
 
 ## CyberConnect Labels

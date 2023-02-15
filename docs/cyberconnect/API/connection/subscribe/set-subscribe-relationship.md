@@ -1,10 +1,10 @@
 ---
 id: subscribe
-title: Subscribe
-slug: /api/connection/set-subscribe-relationships
-sidebar_label: Set subscribe relationships
+title: Set subscribe relationship
+slug: /api/connection/set-subscribe-relationship
+sidebar_label: Set subscribe relationship
 sidebar_position: 1
-description: Set subscribe relationships
+description: Set subscribe relationship
 ---
 
 Subscribing to a profile means is that the user will mint an SubscribeNFT deployed by the profile (ProfileNFT) they wish to subscribe to. Implementing a subscribe option in your dApp only requires one signature & one transaction (which can be either _relayed_ (for gasless experience) or executed directly by the user onto the contract (if you'd like the user to pay the gas).

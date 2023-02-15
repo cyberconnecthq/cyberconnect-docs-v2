@@ -1,10 +1,10 @@
 ---
 id: collected-essences
-title: List Collected Essences by a wallet
+title: Get collected essences by a wallet
 slug: /api/content/essence/collected-essence
-sidebar_label: Collected Essences
+sidebar_label: Collected essences
 sidebar_position: 4
-description: Collected Essences
+description: Collected essences
 ---
 
 A `Wallet` can collect `Essence` created by different `Profile`. When the `Essence` is collected, an NFT is minted under the `Wallet` address.

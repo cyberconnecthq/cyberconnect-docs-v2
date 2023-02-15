@@ -1,10 +1,10 @@
 ---
 id: set-follow-relationships
-title: Follow / Unfollow SDK
-slug: /api/connection/set-follow-relationships
-sidebar_label: Set follow relationships
+title: Set follow relationship
+slug: /api/connection/set-follow-relationship
+sidebar_label: Set follow relationship
 sidebar_position: 1
-description: Set follow relationships
+description: Set follow relationship
 ---
 
 # Follow/Unfollow

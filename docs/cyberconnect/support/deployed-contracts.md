@@ -1,10 +1,10 @@
 ---
 id: Deployed-Contracts
-title: Deployed Contracts
-slug: Deployed-Contracts
-sidebar_label: Deployed Contracts
-sidebar_position: 9
-description: Deployed Contracts
+title: Deployed contracts
+slug: /support/deployed-contracts
+sidebar_label: Deployed contracts
+sidebar_position: 2
+description: Deployed contracts
 ---
 
 ## Deployment Addresses

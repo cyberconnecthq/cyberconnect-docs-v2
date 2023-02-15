@@ -1,10 +1,10 @@
 ---
 id: set-subscribe-middleware
-title: Set Subscribe Middleware
+title: Set subscribe middleware
 slug: apis/connection/subscribe/set-subscribe-middleware
-sidebar_label: Set Subscribe Middleware
+sidebar_label: Set subscribe middleware
 sidebar_position: 3
-description: Subscribe Middleware
+description: Subscribe middleware
 ---
 
 ## Workflow

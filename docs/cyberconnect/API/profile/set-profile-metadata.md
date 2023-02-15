@@ -1,6 +1,6 @@
 ---
 id: set-profile-metadata
-title: Set Profile Metadata
+title: Set profile metadata
 slug: /api/profile/set-profile-metadata
 sidebar_label: Set profile metadata
 sidebar_position: 3

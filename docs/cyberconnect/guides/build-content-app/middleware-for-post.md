@@ -1,10 +1,10 @@
 ---
 id: middleware-for-post
-title: Middleware for Post
+title: Middleware for post
 slug: /how-to/build-content-app/middleware-for-post
-sidebar_label: Middleware for Post
+sidebar_label: Middleware for post
 sidebar_position: 8
-description: How to Build Content app - Middleware for Post
+description: How to build content app - middleware for post
 ---
 
 Middlewares enable dynamic rules for when an action is performed. Middlewares are essentially smart contracts that execute a piece of logic before that action is executed. In this section the action we are looking at is to [Collect a Post](/how-to/build-content-app/collect-a-post).

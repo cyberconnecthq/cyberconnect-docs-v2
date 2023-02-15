@@ -1,10 +1,10 @@
 ---
 id: create-a-badge
-title: Create a Badge
+title: Create a badge
 slug: /how-to/build-nft-sbt-platform/create-a-badge
-sidebar_label: Create a Badge
+sidebar_label: Create a badge
 sidebar_position: 4
-description: How to Build Badge app - Create a Badge
+description: How to build badge app - create a badge
 ---
 
 In this section you'll learn how to implement the [Register Essence](/guides/mutation/register-essence) feature in both gasless and gas modes. An _essence_ is any piece of content. Yes, it's also a NFT. It can take the form of a badge, a post, or something completely different that's up to your imagination.

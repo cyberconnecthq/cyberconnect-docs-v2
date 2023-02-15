@@ -1,10 +1,10 @@
 ---
 id: quick-setup
-title: Quick Setup
+title: Quick setup
 slug: /how-to/build-badge-app/quick-setup
-sidebar_label: Quick Setup
+sidebar_label: Quick setup
 sidebar_position: 1
-description: How to Build Badge app - Quick Setup
+description: How to build badge app - quick setup
 ---
 
 This guide will teach you how to create a social application where users can create on-chain badges that can be linked to an event. Once users have set up their profiles, they will be able to create badges for an event and attendees will have the ability to collect them by attending that event.

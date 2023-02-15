@@ -1,6 +1,6 @@
 ---
 id: follow-connection
-title: Follow
+title: Follow connection
 slug: /concepts/follow-connection
 sidebar_label: Follow (Connections 👥)
 sidebar_position: 4

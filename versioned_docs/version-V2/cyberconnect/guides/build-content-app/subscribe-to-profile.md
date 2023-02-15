@@ -1,10 +1,10 @@
 ---
 id: subscribe-to-profile
-title: Subscribe to Profile
+title: Subscribe to profile
 slug: /how-to/build-content-app/subscribe-to-profile
-sidebar_label: Subscribe to Profile
+sidebar_label: Subscribe to profile
 sidebar_position: 4
-description: How to Build Content app - Subscribe to Profile
+description: How to build content app - subscribe to profile
 ---
 
 In this section you'll learn how to implement the subscribe feature. Under the hood, when the user subscribes to a profile, a non-fungible token (NFT) is minted and automatically transferred to the user's wallet.

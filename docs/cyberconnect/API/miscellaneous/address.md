@@ -1,7 +1,7 @@
 ---
-id: address
-title: Query Address
-slug: /api/miscellaneous/address
+id: get-address
+title: Get address
+slug: /api/miscellaneous/get-address
 sidebar_label: Get address
 sidebar_position: 1
 description: Get address

@@ -1,10 +1,10 @@
 ---
-id: recommendation
-title: Recommendations
-slug: /guides/recommendation/recommendation
-sidebar_label: Recommendations
-sidebar_position: 2
-description: Recommendation - Recommendation
+id: recommendation-introduction
+title: Introduction
+slug: /guides/recommendation/introduction
+sidebar_label: Introduction
+sidebar_position: 1
+description: Recommendation introduction
 ---
 
 The main entry point for address-based recommendations is the `Recommendations` type in `wallet`, it’s used for finding information that might be interesting to a given wallet based on its historical transaction history, current balance & project interactions.
