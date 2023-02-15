@@ -154,7 +154,10 @@ const apolloData = {
   getProfileByHandle: {
     query: `query getProfileByHandle($handle: String!){
       profileByHandle(handle: $handle) {
-        avatar
+        metadataInfo {
+          avatar
+          bio
+        }
         owner {
           address
         }
