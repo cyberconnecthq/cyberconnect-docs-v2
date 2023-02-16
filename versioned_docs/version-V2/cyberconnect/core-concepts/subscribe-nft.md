@@ -7,7 +7,7 @@ sidebar_position: 3
 description: Types of on & off-chain connections supported
 ---
 
-Connections are at the fabric that weave together online social graphs. In CyberConnect's protocol, connections are represented by **SubscribeNFTs**.
+Connections are the fabric that weaves together online social graphs. In CyberConnect's protocol, connections are represented by **SubscribeNFTs**.
 
 A SubscribeNFT represents an **on-chain** uni-directional relationship between a wallet and a ccProfileNFT. Once a user has minted their own [ccProfileNFT](/core-concepts/cc-profile), they can set the subscribeMw and the tokenUri for their SubscribeNFT, which in turn can be collected by other users.
 
