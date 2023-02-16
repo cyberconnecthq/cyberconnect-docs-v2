@@ -901,6 +901,58 @@ const apolloData = {
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
   },
+  getPostById: {
+    query: `query getPost($id: String!) {
+      post(id: $id){
+        id
+        author
+        title
+        body
+        createdAt
+        updatedAt
+        arweaveTxHash
+      }
+    }
+    `,
+    variables: {
+      id: "b39cc6650e8697ff304af06135a785f6687dbee3ffd25e7d55c5e45cf04c9b1d",
+    },
+    headers: {
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getPostByAddress: {
+    query: ` query getPostByAddress(
+      $address: AddressEVM!
+    ) {
+      address(address: $address) {
+      posts(first: 10) {
+        totalCount
+        edges {
+          node {
+            id
+            author
+            title
+            body
+            digest
+            arweaveTxHash
+            createdAt
+            updatedAt
+          }
+        }
+      }
+      }
+    }
+      `,
+    variables: {
+      address: "0x370CA01D7314e3EEa59d57E343323bB7e9De24C6",
+    },
+    headers: {
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
 };
 
 export default function ApolloCard({
