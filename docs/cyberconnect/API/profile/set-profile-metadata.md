@@ -21,7 +21,7 @@ CyberConnect covers the transaction fee for this operation every 3 days for each
 
 ## Upload the metadata to IPFS
 
-Follow the metadata schema to construct the right data structure, each field of it is modifiable, however, we strongly recommend keeping the `handle` unchanged, it should be the same as the handle of the profile.
+Follow the metadata schema to construct the right data structure, each field of it is modifiable, however, we strongly recommend keeping `handle` and `version` unchanged, `handle` should be the same as the handle of the profile, `version` represents the version of current schema.
 
 **Profile Metadata Schema**
 
@@ -34,10 +34,10 @@ type Attribute = {
 
 type ProfileMetadata = {
   handle: string;
-  displayName: string;
+  display_name: string;
   bio: string;
   avatar: string;
-  coverImage: string;
+  cover_image: string;
   attributes: Attribute[];
   version: string;
 };
@@ -48,7 +48,7 @@ type ProfileMetadata = {
 There're many different ways to upload/pin data to IPFS, we use Pinata here, check their doc for detailed usage.
 
 ```ts
-const pinJSONToIPFS = async (json: { [key: string]: any }) => {
+const pinJSONToIPFS = async (json: ProfileMetadata) => {
   const data = JSON.stringify(json);
   const url = "https://api.pinata.cloud/pinning/pinJSONToIPFS";
 

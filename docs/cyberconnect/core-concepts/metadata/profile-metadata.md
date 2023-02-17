@@ -18,10 +18,10 @@ type Attribute = {
 
 type ProfileMetadata = {
   handle: string;
-  displayName: string;
+  display_name: string;
   bio: string;
   avatar: string;
-  coverImage: string;
+  cover_image: string;
   attributes: Attribute[];
   version: string;
 };
