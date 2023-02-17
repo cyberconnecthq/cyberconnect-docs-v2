@@ -21,7 +21,7 @@ CyberConnect covers the transaction fee for this operation every 3 days for each
 
 ## Upload the metadata to IPFS
 
-Follow the metadata schema to construct the right data structure, each field of it is modifiable, however, we strongly recommend keeping `handle` and `version` unchanged, `handle` should be the same as the handle of the profile, `version` represents the version of current schema which is `1.0.0` at the moment.
+Follow the metadata schema to construct the right data structure, each field of it is modifiable, however, we strongly recommend keeping `handle` and `version` unchanged, `handle` should be the same as the handle of the profile, `version` represents the version of current schema which is `1.1.0` at the moment.
 
 **Profile Metadata Schema**
 
@@ -39,7 +39,7 @@ type ProfileMetadata = {
   avatar: string;
   cover_image: string;
   attributes: Attribute[];
-  version: string; // Current version: 1.0.0
+  version: string; // Current version: 1.1.0
 };
 ```
 
