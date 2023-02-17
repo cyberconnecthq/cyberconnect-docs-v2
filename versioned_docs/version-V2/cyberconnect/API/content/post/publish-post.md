@@ -121,6 +121,6 @@ enum Status {
 }
 ```
 
-### Verify proof
+### Verify the proof
 
 After creating or updating a post successfully, you can use `arweaveTxHash` to verify the proof, go to https://arweave.net/ + `arweaveTxHash`.
