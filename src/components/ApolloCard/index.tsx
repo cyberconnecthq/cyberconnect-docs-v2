@@ -936,3 +936,26 @@ export default function ApolloCard({
     />
   );
 }
+
+export function ApolloCardProduction({
+  queryName,
+}: {
+  queryName: string;
+}): JSX.Element {
+  return (
+    <ApolloExplorer
+      graphRef="Cyberconnect-Gaia-Prd-1fhjvq@current"
+      persistExplorerState={false}
+      initialState={{
+        document: apolloData[queryName].query,
+        variables: apolloData[queryName].variables,
+        headers: apolloData[queryName].headers,
+        displayOptions: {
+          showHeadersAndEnvVars: true,
+          docsPanelState: "closed",
+          theme: "light",
+        },
+      }}
+    />
+  );
+}

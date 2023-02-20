@@ -9,9 +9,9 @@ description: Get profile
 
 You can find a `ccProfile` by it's `handle`.
 
-import ApolloCard from "@site/src/components/ApolloCard";
+import {ApolloCardProduction} from "@site/src/components/ApolloCard";
 
-<ApolloCard queryName="getProfileByHandle" />
+<ApolloCardProduction queryName="getProfileByHandle" />
 
-Also, you can get the corresponding Link3 `profile` from the `externalMetadataInfo` field.
-<ApolloCard queryName="getLink3ProfileData" />
+Also, you can get the Link3 `profile` from the `externalMetadataInfo` field.
+<ApolloCardProduction queryName="getLink3ProfileData" />
