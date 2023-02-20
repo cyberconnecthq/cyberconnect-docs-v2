@@ -15,7 +15,7 @@ This is a basic example with the sole purpose of going over core features and hi
 
 How to Build Badge app covers the following sections:
 
-1. [Create a Profile](/how-to/create-ccProfile/gas-mode)
+1. [Create a Profile](/api/profile/create-profile)
 2. [Authentication](/how-to/build-badge-app/authentication)
 3. [Create a Badge](/how-to/build-badge-app/create-a-badge)
 4. [Collect a Badge](/how-to/build-badge-app/collect-a-badge)

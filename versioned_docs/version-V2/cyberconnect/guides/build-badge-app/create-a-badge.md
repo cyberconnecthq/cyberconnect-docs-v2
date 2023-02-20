@@ -1,7 +1,7 @@
 ---
 id: create-a-badge
 title: Create a badge
-slug: /how-to/build-nft-sbt-platform/create-a-badge
+slug: /how-to/build-badge-app/create-a-badge
 sidebar_label: Create a badge
 sidebar_position: 4
 description: How to build badge app - create a badge
