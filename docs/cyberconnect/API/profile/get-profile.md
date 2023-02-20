@@ -7,12 +7,11 @@ sidebar_position: 2
 description: Get profile
 ---
 
-You can find a `ccProfile` by it's `handle` - the `ccProfile`’s data is in `externalMetadataInfo`
+You can find a `ccProfile` by it's `handle`.
 
 import ApolloCard from "@site/src/components/ApolloCard";
 
 <ApolloCard queryName="getProfileByHandle" />
 
-Also, you can find a Link3 `profile` by the wallet address. Each `wallet` can own multiple `profiles`, however, there could be only one profile that `isPrimary` .
-
-<ApolloCard queryName="listProfilesOwnedByAddress" />
+Also, you can get the corresponding Link3 `profile` from the `externalMetadataInfo` field.
+<ApolloCard queryName="getLink3ProfileData" />

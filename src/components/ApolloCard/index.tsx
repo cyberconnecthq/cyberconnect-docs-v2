@@ -165,7 +165,7 @@ const apolloData = {
       }
     }`,
     variables: {
-      handle: "shiyu",
+      handle: "ryan",
     },
     headers: {},
   },
@@ -600,47 +600,6 @@ const apolloData = {
       section {
         type
         name
-        links {
-          title
-          link
-        }
-        superLinks {
-          type
-          title
-          link
-          description
-          image
-        }
-        mentions {
-          twitter {
-            id
-            handle
-            name
-            avatar
-          }
-          title
-          description
-        }
-        galaxyCredentials {
-          id
-          name
-        }
-        poaps {
-          id
-          image
-        }
-        nfts {
-          chainId
-          contract
-          tokenId
-          type
-          name
-          image
-          owner
-        }
-        w3sts {
-          tokenUri
-        }
       }
     }
   }
