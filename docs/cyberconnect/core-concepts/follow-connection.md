@@ -23,22 +23,27 @@ Therefore, we adopt idempotent proof to describe the most up-to-date state for c
 
 There could only exist one state per operation, e.g. Alice could either only be following or not following Bob. The proof connection includes the following details of the desired state between an originator and a target profile:
 
-```graphql
-type Proof {
-  content: String!
-  digest: String!
-  signature: String!
-  signingKey: String!
-  signingKeyAuth: SigningKeyAuth!
+```ts
+type Proof = {
+  content: string;
+  digest: string;
+  signature: string;
+  signingKey: string;
+  signingKeyAuth: SigningKeyAuth;
+  arweaveTxHash: string;
+};
 
-  arweaveTxHash: String!
-}
+type SigningKey = {
+  publicKey: string;
+  format: "SubjectPublicKeyInfo";
+  algorithm: "ES256";
+};
 
-type SigningKeyAuth {
-  address: String!
-  message: String!
-  signature: String!
-}
+type SigningKeyAuth = {
+  address: string;
+  signingKeyMessage: string;
+  signingKeySignature: string;
+};
 ```
 
 We only describe these data standard in the raw object format. However, the final message would be encoded with both a digest of the message and a signature signed by the owner.
