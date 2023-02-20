@@ -74,6 +74,17 @@ const config = {
         diffMethod: false, // The method to be used for identifying changes in the schema for triggering the documentation generation. Set it to false to prevent from automatic updates.
       },
     ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: ['/how-to/create-ccProfile/gasless-mode', '/how-to/create-ccProfile/gas-mode'],
+            to: '/api/profile/create-profile',
+          },
+        ]
+      }
+    ]
   ],
   i18n: {
     defaultLocale: "en",
