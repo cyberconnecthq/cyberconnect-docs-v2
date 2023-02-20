@@ -2,7 +2,7 @@
 id: get-post
 title: Get Post
 slug: /api/content/get-post
-sidebar_label: Get Post
+sidebar_label: Get post
 sidebar_position: 1
 description: Get post
 ---

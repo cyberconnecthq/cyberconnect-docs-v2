@@ -9,7 +9,7 @@ description: Post
 
 ## Post vs. Essence
 
-Follow is another form of content supported by the protocol, but unlike an EssenceNFT the post feature does not require any on-chain transaction and is not represented by an NFT. Instead, post is implemented through off-chain proofs that are synced to Arweave. Developers can use Post API to manage the user’s social data such as comments, moments, etc. This is great for applications with lightweight social content needs, that do not want to incur gas costs.
+Post is another form of content supported by the protocol, but unlike an EssenceNFT the post feature does not require any on-chain transaction and is not represented by an NFT. Instead, post is implemented through off-chain proofs that are synced to Arweave. Developers can use Post API to manage the user’s social data such as comments, moments, etc. This is great for applications with lightweight social content needs, that do not want to incur gas costs.
 
 ## Idempotent Proof of Content
 
