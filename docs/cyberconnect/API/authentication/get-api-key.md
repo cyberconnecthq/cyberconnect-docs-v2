@@ -16,7 +16,7 @@ description: Authentication - Get your API & Relay Address
 
 - Select "Staging" for testing (ex. on testnet) and "Production" for your mainnet/final deployment
 
-5. You should now see your API Key & Relayer Key.
+5. You should now see your API Key & Relayer Address.
 
 - You will use the API key for all requests (i.e. include `X-API-KEY: your_key` in the request header )
 

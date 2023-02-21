@@ -210,7 +210,7 @@ This API requires:
 
 1. `Authorization` header with the `Bearer` token
 2. `X-API-KEY`
-   You can learn more about it [here](/api/authentication).
+   You can learn more about it [here](/api/authentication/introduction).
 
 It's important to secure the `X-API-KEY` against public access. It is strongly recommended over the querystring option for passing your API Key in a production environment.
 :::
