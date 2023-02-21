@@ -25,7 +25,7 @@ This API requires:
 
 1. `Authorization` header with the `Bearer` token
 2. `X-API-KEY`
-   You can learn more about it [here](/api/authentication).
+   You can learn more about it [here](/api/authentication/introduction).
 
 :::
 
