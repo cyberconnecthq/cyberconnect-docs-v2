@@ -136,6 +136,12 @@ signTypedData({
 
 ## Relay the action
 
+:::caution 
+In order to call the `relay` mutation, you must include your `X-API-KEY` in the header.
+You can learn more about how to get one [here](/api/authentication/introduction).
+:::
+
+
 After signing the typed data, you'll get a signature which is `signMetadataSignature` here, call `relay` API to broadcast the action, it'll return a relay action id.
 
 ```ts
