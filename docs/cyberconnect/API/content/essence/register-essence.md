@@ -11,21 +11,17 @@ description: Register essence
 
 ## 1. Generate Typed Data
 
+:::caution
+All typedData mutations require an `Authorization` header with the `Bearer` token. You can learn how to get a bearer token in the [User Login](api/authentication/user-login) section.
+:::
+
+
 Registering an essence can be implemented in just a few easy steps. What registering an essence essentially means is that the user will deploy an NFT contract by calling a couple of APIs.
 
 First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createRegisterEssenceTypedData` API that takes care of this.
 
 If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
-:::caution
-
-This API requires:
-
-1. `Authorization` header with the `Bearer` token
-2. `X-API-KEY`
-   You can learn more about it [here](/api/authentication/introduction).
-
-:::
 
 <!-- import ApolloCard from "@site/src/components/ApolloCard"; -->
 
@@ -36,6 +32,11 @@ This API requires:
 2. Second, once you received data in a readable format, you’ll need to get the user’s signature (`eth_signTypedData_v4`) for it. Basically, you’ll need to write a function and pass it a `message` as a param and return the `signature` that is necessary for the next step.
 
 ## 3. Call `relay` and get `relayActionID`
+
+:::caution 
+In order to call the `relay` mutation, you must include your `X-API-KEY` in the header.
+You can learn more about how to get one [here](/api/authentication/introduction).
+:::
 
 3. Third, you’ll have to call the `relay` API that will broadcast the transaction and mint the essence NFT, you will need to put as params the `typedDataID` you received from `createRegisterEssenceTypedData` mutation call and the user's `signature`.
 

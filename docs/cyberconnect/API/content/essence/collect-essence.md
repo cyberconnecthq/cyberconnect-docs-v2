@@ -11,6 +11,11 @@ description: Collect essence
 
 Collecting an essence can be implemented in just a few easy steps. What collecting an essence essentially means is that the user will mint an NFT by calling a couple of APIs.
 
+:::caution
+All typedData mutations require an `Authorization` header with the `Bearer` token. You can learn how to get a bearer token in the [User Login](api/authentication/user-login) section.
+:::
+
+
 ## 1. Generate Typed Data
 
 First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createCollectEssenceTypedData` API that takes care of this.
@@ -18,16 +23,6 @@ First, data should be presented to the user in a readable format when signing fr
     If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
 
 <!-- import ApolloCard from "@site/src/components/ApolloCard"; -->
-
-:::caution
-
-This API requires:
-
-1. `Authorization` header with the `Bearer` token
-2. `X-API-KEY`
-   You can learn more about it [here](/api/authentication/introduction).
-
-:::
 
 <!-- <ApolloCard queryName="CreateCollectEssenceTypedData" /> -->
 
@@ -38,6 +33,11 @@ Second, once you received data in a readable format, you’ll need to get the us
 - [Ethers](https://docs.ethers.io/v5/) library is one option that can quickly help you write a function to get the user’s signature for a specific message. In this our case the message represents the typed data from step 1.
 
 ## 3. Call `relay` and get `relayActionID`
+
+:::caution 
+In order to call the `relay` mutation, you must include your `X-API-KEY` in the header.
+You can learn more about how to get one [here](/api/authentication/introduction).
+:::
 
 Third, you’ll have to call the async `relay` API that will queue the transaction for broadcasting and minting the NFT for the given essence.
 

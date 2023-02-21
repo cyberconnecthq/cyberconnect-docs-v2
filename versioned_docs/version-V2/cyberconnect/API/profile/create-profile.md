@@ -180,6 +180,11 @@ You can also view the NFT for the profile on [OpenSea](https://testnets.opensea.
 
 ### 1. Generate Typed Data
 
+:::caution
+All typedData mutations require an `Authorization` header with the `Bearer` token. You can learn how to get a bearer token in the [User Login](api/authentication/user-login) section.
+:::
+
+
 First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createCreateProfileTypedData` API that takes care of this.
 
 If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
@@ -204,17 +209,6 @@ input CreateCreateProfileTypedDataInput {
 # SAMPLE CALL
 ```
 
-:::caution
-
-This API requires:
-
-1. `Authorization` header with the `Bearer` token
-2. `X-API-KEY`
-   You can learn more about it [here](/api/authentication/introduction).
-
-It's important to secure the `X-API-KEY` against public access. It is strongly recommended over the querystring option for passing your API Key in a production environment.
-:::
-
 Upon calling `createCreateProfileTypedData` you should receive a `CreateCreateProfileTypedDataResult` response which includes `typeDataID` to be used in the next step
 
 ```graphql
@@ -234,6 +228,13 @@ type CreateCreateProfileTypedDataResult {
 <!-- <ApolloCard queryName="createSubscribeTypedData" /> -->
 
 ### 2. Call `relay` using the `typeDataID` returned above get `relayActionID`
+
+:::caution 
+In order to call the `relay` mutation, you must include your `X-API-KEY` in the header.
+You can learn more about how to get one [here](/api/authentication/introduction).
+
+It's important to secure the `X-API-KEY` against public access. It is strongly recommended over the querystring option for passing your API Key in a production environment.
+:::
 
 You’ll have to call the `relay` API that will broadcast the transaction and mint the subscribe NFT, you will need to put as params the `typedDataID` you received from `createSubscribeTypedData` mutation call and the user's `signature`.
 
