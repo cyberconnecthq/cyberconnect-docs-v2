@@ -82,6 +82,14 @@ const config = {
             from: ['/how-to/create-ccProfile/gasless-mode', '/how-to/create-ccProfile/gas-mode'],
             to: '/api/profile/create-profile',
           },
+          {
+            from: '/guides/recommendation/introduction',
+            to: '/api/recommendation/introduction'
+          },
+          {
+            from: '/guides/recommendation/labels',
+            to: '/api/recommendation/labels'
+          },
         ]
       }
     ]

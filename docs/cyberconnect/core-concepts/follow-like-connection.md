@@ -1,17 +1,13 @@
 ---
-id: follow-connection
-title: Follow connection
-slug: /concepts/follow-connection
-sidebar_label: Follow (Connections 👥)
+id: follow-like-connection
+title: Follow/Like connection
+slug: /concepts/follow-like-connection
+sidebar_label: Follow/Like (Connections 👥)
 sidebar_position: 4
 description: Off-chain connections supported
 ---
 
-## Follow vs. Subscribe
-
-Follow is another form of connection supported by the protocol, but unlike a SubscribeNFT the follow feature does not require any on-chain transaction and is not represented by an NFT. Instead, follows are implemented through off-chain proofs that are synced to Arweave. Additionally, while subscriptions are represented through an address minting a ccProfileNFT's SubscribeNFT, follows are represented as address->ProfileNFT relationship. This is great for applications with light weight social graph needs, that do not want to incur gas costs.
-
-![follow-gif](/img/v2/follow-gif.gif)
+Follow and Like are additional forms of connection supported by the protocol, but unlike a SubscribeNFT, follow and like don't require any on-chain transaction and are not represented by NFTs. Instead, they are implemented through off-chain proofs that are synced to Arweave. Additionally, while subscriptions are represented through an address minting a ccProfile's SubscribeNFT, follows are represented as `address -> ProfileNFT` relationship and likes are represented as `address -> post` relationship. This is great for applications with light weight social graph needs, that do not want to incur gas costs.
 
 ## Idempotent Proof of Connection
 

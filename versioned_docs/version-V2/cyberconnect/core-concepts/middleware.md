@@ -3,10 +3,9 @@ id: middleware
 title: Middleware
 slug: /core-concepts/middleware
 sidebar_label: Middleware
-sidebar_position: 7
+sidebar_position: 8
 description: Major Concepts of CyberConnect
 ---
-## Composable Middleware
 
 Although the computational condition varies a lot on different dApps, many commonly seen patterns can be generalized into reusable and extensible modules. For example, dApp A wants to build a BAYC club by setting the condition that only BAYC holders can mint their app-specific ProfileNFT and dApp B wants to do the same thing for CloneX holders. The underlying pattern is the same and the only difference is the gated ERC-721 contract address.
 
@@ -16,15 +15,14 @@ It is important to point out though that while the middleware is powerful when u
 
 # Supported Middlewares
 
-To enable dynamic rules involved in profile creation, collecting contents and paid subscription, CyberConnect protocol provides various middlewares. There are three types of middlewares:
-1. `ProfileMiddleware`, 
-2. `CollectMiddleware`
-3. `SubscribeMiddleware`. 
+To enable dynamic rules involved in profile creation, collecting contents and paid subscription, CyberConnect protocol provides various middlewares. There are two types of middlewares:
+
+1. `CollectMiddleware`
+2. `SubscribeMiddleware`.
 
 They are smart contracts with logic executed before and after `profile creation`, `collect` and `subscribe` happens.
 
 <!-- Currently we support `PaidCollect` and `PaidSubscirbe` where users need to pay ERC20 token to collect a content or subscribe to a profile. We also support `PermissionedCollect` where the creator of the content specifies a whitelist. -->
-
 
 ## Subscribe Middleware
 

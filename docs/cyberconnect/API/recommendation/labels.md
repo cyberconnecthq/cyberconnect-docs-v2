@@ -1,7 +1,7 @@
 ---
 id: recommendation-labels
 title: Labels
-slug: /guides/recommendation/labels
+slug: /api/recommendation/labels
 sidebar_label: Labels
 sidebar_position: 2
 description: Recommendation labels
@@ -15,10 +15,17 @@ Looking up someone’s address on a block explorer can be quite confusing for pe
 
 A label is **a piece of metadata about an address**, a tag if you will, represented as a string. There are currently two kinds of labels:
 
-1. **Contract Labels<sup>1</sup>**
+1. **Contract Labels**
+
    - Map **1-to-1** with contract addresses
    - These are similar to contract names on bscscan
      ![contract](/img/v2/contract-labels-comparison.png)
+
+:::info
+Contract Labels Note
+We currently only expose project level details. The mapping between `contract -> projects` is not publicly available. If you'd like to get access to this mapping please reach out at nazih.kalo@cyberconnect.me or submit feedback using https://9txmc3wk3bc.typeform.com/to/Oapbu1SX and let us know what are your thoughts!
+:::
+
 2. **Project Labels**
    - Map **1-to-Many** with contract addresses
    - Are meant to be higher level object tying multiple contracts to one entity
@@ -129,12 +136,3 @@ import ApolloCard from "@site/src/components/ApolloCard";
     }
 }
 ```
-
-<details>
-    <summary>
-    [1] Contract Labels Note
-    </summary>
-    <div>
-    We currently only expose project level details. The mapping between contract->projects is not publicly available. If you'd like to get access to this mapping please reach out at nazih.kalo@cyberconnect.me or submit feedback using https://9txmc3wk3bc.typeform.com/to/Oapbu1SX and let us know what are your thoughts!
-    </div>
-</details>

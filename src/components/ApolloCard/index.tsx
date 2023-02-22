@@ -912,6 +912,96 @@ const apolloData = {
         "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
     },
   },
+  getLikeByAddress: {
+    query: `  query PrimaryProfileEssences(
+      $address: AddressEVM!
+    ) {
+      address(address: $address) {
+        likes {
+          totalCount
+          edges {
+            node {
+              id
+              author
+              handle
+              title
+              body
+              digest
+              arweaveTxHash
+              createdAt
+              updatedAt
+              likeCount
+              dislikeCount
+              likedStatus(me: $address) {
+              liked
+              disliked
+              proof {
+                content
+                digest
+                signature
+                signingKey
+                signingKeyAuth {
+                  address
+                  message
+                  signature
+                  }
+                arweaveTxHash
+              }
+            }
+            }
+          }
+        }
+         }
+      }`,
+    variables: {
+      address: "0x370CA01D7314e3EEa59d57E343323bB7e9De24C6",
+    },
+    headers: {
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getLikeStatusFromPost: {
+    query: `query GetPostByPostId($id: String!, $address: AddressEVM!) {
+      post(id: $id){
+        id
+        author
+        handle
+        title
+        body
+        digest
+        arweaveTxHash
+        createdAt
+        updatedAt
+        likeCount
+        dislikeCount
+        likedStatus(me: $address) {
+          liked
+          disliked
+          proof {
+            content
+            digest
+            signature
+            signingKey
+            signingKeyAuth {
+              address
+              message
+              signature
+            }
+            arweaveTxHash
+          }
+        }
+      }
+    }`,
+    variables: {
+      id: "18f25e0839762a1dc8cf4e74dc1099ba9accf9b2e805dd9898e3a8c545abe29a",
+      address: "0x370CA01D7314e3EEa59d57E343323bB7e9De24C6",
+    },
+    headers: {
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
 };
 
 export default function ApolloCard({

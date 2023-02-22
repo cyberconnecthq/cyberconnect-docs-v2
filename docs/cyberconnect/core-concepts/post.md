@@ -3,7 +3,7 @@ id: post
 title: Post
 slug: /core-concepts/post
 sidebar_label: Post（Content📝）
-sidebar_position: 5
+sidebar_position: 6
 description: Post
 ---
 

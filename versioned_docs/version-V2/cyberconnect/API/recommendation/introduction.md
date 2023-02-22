@@ -1,7 +1,7 @@
 ---
 id: recommendation-introduction
 title: Introduction
-slug: /guides/recommendation/introduction
+slug: /api/recommendation/introduction
 sidebar_label: Introduction
 sidebar_position: 1
 description: Recommendation introduction

@@ -251,5 +251,3 @@ Finally you poll the `relayActionStatus` API using the `relayActionId` returned 
 <!-- <ApolloCard queryName="relayActionStatus" /> -->
 
 You can now verify the transaction by looking up the `txHash` from the response on [bscscan](https://bscscan.com/). That’s it! You’re all done!
-
-Great job! You've created your first profile! In the next section we will go over the [Authentication](/how-to/build-content-app/authentication) process.

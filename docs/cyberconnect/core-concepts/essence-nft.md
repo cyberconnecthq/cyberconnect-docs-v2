@@ -3,7 +3,7 @@ id: content
 title: EssenceNFT
 slug: /core-concepts/essence-nft
 sidebar_label: EssenceNFT (Content 📝)
-sidebar_position: 6
+sidebar_position: 7
 description: Types of on-chain content supported
 ---
 
@@ -18,7 +18,6 @@ To build trust and authority, each content is tied to a profile, so users will n
 ## Post
 
 Each profile could create a new piece of content in the form of a post just like that on twitter or medium. However, by having those posts live on CyberConnect protocol, these posts become web3 native instrument for community engagement and financialization through users collecting those posts. Developers could create a content platform linked to funding public good where users could contribute some amount of token to each piece of article.
-
 
 ## Web3 Status Token (W3ST)
 

@@ -10,7 +10,7 @@ description: Get profile
 You can find a `ccProfile` by it's `handle`.
 
 :::info
-The explorer below is using the mainnet endpoint https://api.cyberconnect.dev/.
+The explorer below is using the mainnet endpoint https://api.cyberconnect.dev/playground.
 :::
 
 import {ApolloCardProduction} from "@site/src/components/ApolloCard";
@@ -20,7 +20,7 @@ import {ApolloCardProduction} from "@site/src/components/ApolloCard";
 Also, you can get the Link3 `profile` from the `externalMetadataInfo` field.
 
 :::info
-The explorer below is using the mainnet endpoint https://api.cyberconnect.dev/.
+The explorer below is using the mainnet endpoint https://api.cyberconnect.dev/playground.
 :::
 
 <ApolloCardProduction queryName="getLink3ProfileData" />
