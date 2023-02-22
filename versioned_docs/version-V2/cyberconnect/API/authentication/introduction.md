@@ -25,13 +25,9 @@ In order to interact with the CyberConnect API you're going to need a few things
 
 <img src="/img/v2/auth_and_gas_v_gasless.png" height="1700px" width="1700px"/>
 
-import DocCardList from '@theme/DocCardList';
-
 :::tip
 You can read more about relays & meta-transactions ([here](https://hackernoon.com/what-is-a-transaction-relayer-and-how-does-it-work-bd1q3ywa))
 :::
-
-<DocCardList/>
 
 Mutations require Authorization header:
 
