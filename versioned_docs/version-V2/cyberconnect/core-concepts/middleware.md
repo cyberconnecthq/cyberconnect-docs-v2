@@ -20,7 +20,7 @@ To enable dynamic rules involved in profile creation, collecting contents and pa
 1. `CollectMiddleware`
 2. `SubscribeMiddleware`.
 
-They are smart contracts with logic executed before and after `profile creation`, `collect` and `subscribe` happens.
+They are smart contracts with logic executed before and after `collect` and `subscribe` happens.
 
 <!-- Currently we support `PaidCollect` and `PaidSubscirbe` where users need to pay ERC20 token to collect a content or subscribe to a profile. We also support `PermissionedCollect` where the creator of the content specifies a whitelist. -->
 
