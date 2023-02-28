@@ -248,8 +248,9 @@ const apolloData = {
           totalCount
           edges {
             node {
-              handle
-              address
+              address {
+                address
+              }
             }
           }
           pageInfo {
