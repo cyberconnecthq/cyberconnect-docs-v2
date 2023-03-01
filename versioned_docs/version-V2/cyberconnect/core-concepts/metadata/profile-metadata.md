@@ -17,7 +17,6 @@ type Attribute = {
 };
 
 type ProfileMetadata = {
-  handle: string;
   display_name: string;
   bio: string;
   avatar: string;
