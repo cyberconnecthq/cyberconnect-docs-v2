@@ -3,7 +3,7 @@ id: publish-comment
 title: Publish comment
 slug: /api/content/publish-comment
 sidebar_label: Publish comment
-sidebar_position: 3
+sidebar_position: 1
 description: Publish comment
 ---
 

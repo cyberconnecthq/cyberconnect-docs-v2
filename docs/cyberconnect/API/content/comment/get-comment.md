@@ -3,7 +3,7 @@ id: get-comment
 title: Get Comment
 slug: /api/content/get-comment
 sidebar_label: Get comment
-sidebar_position: 1
+sidebar_position: 2
 description: Get comment
 ---
 

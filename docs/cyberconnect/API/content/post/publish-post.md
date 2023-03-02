@@ -3,7 +3,7 @@ id: publish-post
 title: Publish post
 slug: /api/content/publish-post
 sidebar_label: Publish post
-sidebar_position: 2
+sidebar_position: 1
 description: Publish post
 ---
 
