@@ -42,17 +42,15 @@ const cyberConnect = new CyberConnect({
 #### Follow
 
 ```ts
-cyberConnect.follow(address, handle);
+cyberConnect.follow(handle);
 ```
 
-- `address` - Current signed in wallet address.
-- `handle` - The target handle.
+- `handle` - The ccProfile handle to follow.
 
 #### Unfollow
 
 ```ts
-cyberConnect.unfollow(address, handle);
+cyberConnect.unfollow(handle);
 ```
 
-- `address` - Current signed in wallet address.
-- `handle` - The target handle.
+- `handle` - The ccProfile handle to unfollow.

@@ -90,6 +90,10 @@ const config = {
             from: '/guides/recommendation/labels',
             to: '/api/recommendation/labels'
           },
+          {
+            from: '/api/connection/like-post',
+            to: '/api/connection/like-content'
+          },
         ]
       }
     ]

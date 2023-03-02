@@ -3,7 +3,7 @@
   "version": "0.9.0",
   "private": true,
   "scripts": {
-    "dev": "yarn update-version V2 && yarn build && yarn serve",
+    "dev": "yarn update-version V2 && yarn build && yarn serve -p 3008",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",

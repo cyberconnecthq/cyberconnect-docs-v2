@@ -862,20 +862,94 @@ const apolloData = {
     },
   },
   getPostById: {
-    query: `query getPost($id: String!) {
-      post(id: $id){
-        id
-        author
-        title
-        body
-        createdAt
-        updatedAt
-        arweaveTxHash
+    query: `query getPostByPostId($id: String!) {
+      content(id: $id){
+        contentID
+        ...on Post {
+          title
+          body
+          authorHandle
+          authorAddress
+          digest
+          arweaveTxHash
+          createdAt
+          updatedAt
+        }
       }
-    }
-    `,
+   }    `,
     variables: {
-      id: "b39cc6650e8697ff304af06135a785f6687dbee3ffd25e7d55c5e45cf04c9b1d",
+      id: "ff2a44f75075a32f34f88c781375d9d532f341f635a80a83b32f0bdd6e01f36f",
+    },
+    headers: {
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getCommentById: {
+    query: `query getCommentById($id: String!) {
+      content(id: $id){
+        contentID
+        ...on Comment {
+          title
+          body
+          authorHandle
+          authorAddress
+          digest
+          arweaveTxHash
+          createdAt
+          updatedAt
+        }
+      }
+   }    `,
+    variables: {
+      id: "cb8ddb6f7c1fb3c95b0f6607ab222ef20ca33ac45aae6a6e95b6463b21b75164",
+    },
+    headers: {
+      Authorization:
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbl9pZCI6MSwiZG9tYWluIjoidGVzdC5jb20iLCJhZGRyZXNzIjoiMHgzQzg1ODE5NzExMkMwZGIwODJjZjRGNGU2M0M1ODdGQzI1OGJjODA1IiwiaXNzIjoiQ3liZXJDb25uZWN0IiwiZXhwIjoxNjY2NTQyNjYwLCJpYXQiOjE2NjM5NTA2NjB9.xDWQ0IpM6iuMTnjSm1JbXOFxplAa5IKitadnkPqxQqM",
+    },
+  },
+  getCommentByAddress: {
+    query: `query PrimaryProfileEssences(
+      $address: AddressEVM!
+    ) {
+      address(address: $address) {
+        wallet {
+         primaryProfile {
+           commentCount
+           comments {
+             edges {
+               node {
+                 contentID
+                 ... on Comment {
+                  title
+                  body
+                  target {
+                    ... on Comment {
+                      title
+                      body
+                    }
+                    ... on Essence {
+                      name
+                      symbol
+                    }
+                    ... on Post {
+                      title
+                      body
+                    }
+                   } 
+  
+                 }
+               }
+             }
+           }
+           } 
+        }
+             }
+      }
+      `,
+    variables: {
+      address: "0x370CA01D7314e3EEa59d57E343323bB7e9De24C6",
     },
     headers: {
       Authorization:
@@ -883,28 +957,26 @@ const apolloData = {
     },
   },
   getPostByAddress: {
-    query: ` query getPostByAddress(
+    query: `   query PrimaryProfileEssences(
       $address: AddressEVM!
     ) {
       address(address: $address) {
-      posts(first: 10) {
-        totalCount
-        edges {
-          node {
-            id
-            author
-            title
-            body
-            digest
-            arweaveTxHash
-            createdAt
-            updatedAt
-          }
+        wallet {
+         primaryProfile {
+           commentCount
+           posts {
+             edges {
+               node {
+                 ... on Post {
+                   title
+                 }
+               }
+             }
+           }
+           } 
         }
-      }
-      }
-    }
-      `,
+             }
+      }     `,
     variables: {
       address: "0x370CA01D7314e3EEa59d57E343323bB7e9De24C6",
     },
@@ -915,47 +987,52 @@ const apolloData = {
   },
   getLikeByAddress: {
     query: `  query PrimaryProfileEssences(
-      $address: AddressEVM!
+      $address: AddressEVM!,
+      $contentType: ContentType!
     ) {
       address(address: $address) {
-        likes {
+        dislikes(contentType: $contentType) {
           totalCount
           edges {
             node {
-              id
-              author
-              handle
-              title
-              body
-              digest
-              arweaveTxHash
-              createdAt
-              updatedAt
-              likeCount
-              dislikeCount
-              likedStatus(me: $address) {
-              liked
-              disliked
-              proof {
-                content
-                digest
-                signature
-                signingKey
-                signingKeyAuth {
-                  address
-                  message
-                  signature
-                  }
-                arweaveTxHash
+              ... on Essence {
+                name
+                symbol
+                tokenURI
               }
-            }
+              ... on Comment {
+                title
+                body
+              }
+              ... on Post {
+                title
+                body
+              }
             }
           }
         }
-         }
-      }`,
+        likes(contentType: $contentType) {
+          totalCount
+          edges {
+            node {
+              contentID
+              ... on Essence {
+                name
+              }
+              ... on Comment {
+                title
+              }
+              ... on Post {
+                title
+                body
+              }
+              }
+              }
+              }
+              }}`,
     variables: {
       address: "0x370CA01D7314e3EEa59d57E343323bB7e9De24C6",
+      contentType: "POST",
     },
     headers: {
       Authorization:
@@ -963,39 +1040,29 @@ const apolloData = {
     },
   },
   getLikeStatusFromPost: {
-    query: `query GetPostByPostId($id: String!, $address: AddressEVM!) {
-      post(id: $id){
-        id
-        author
-        handle
-        title
-        body
-        digest
-        arweaveTxHash
-        createdAt
-        updatedAt
-        likeCount
-        dislikeCount
-        likedStatus(me: $address) {
-          liked
-          disliked
-          proof {
-            content
-            digest
-            signature
-            signingKey
-            signingKeyAuth {
-              address
-              message
-              signature
-            }
-            arweaveTxHash
-          }
-        }
+    query: `query getPostByPostId($id: String!, $address: AddressEVM!) {
+      content(id: $id){
+        contentID
+       likedStatus(me: $address) {
+         liked
+         disliked
+         proof {
+           content
+           digest
+           signature
+           signingKey
+           signingKeyAuth {
+             address
+             message
+             signature
+           }
+           arweaveTxHash
+         }
+       }
       }
-    }`,
+   }`,
     variables: {
-      id: "18f25e0839762a1dc8cf4e74dc1099ba9accf9b2e805dd9898e3a8c545abe29a",
+      id: "667bc514d1e3088a8ee3c9fe6902dedfd5ec00660b1e51363fb4f330369ad9b1",
       address: "0x370CA01D7314e3EEa59d57E343323bB7e9De24C6",
     },
     headers: {

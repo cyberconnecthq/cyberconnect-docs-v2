@@ -1,10 +1,10 @@
 ---
-id: like-post
-title: Like post
-slug: /api/connection/like-post
-sidebar_label: Like post
+id: like-content
+title: Like content
+slug: /api/connection/like-content
+sidebar_label: Like content
 sidebar_position: 1
-description: Like post
+description: Like content
 ---
 
 ### Installation
@@ -35,7 +35,7 @@ const cyberConnect = new CyberConnect({
 - `provider` - The corresponding provider of the given chain.
 - `signingMessageEntity` - (optional) Use to describe the entity users sign their message with. Users will see it when authorizing in the wallet `I authorize ${signingMessageEntity} from this device using signing key:`. The default entity is `CyberConnect`.
 
-### Like post
+### Like content
 
 ```ts
 cyberConnect.like(id);
@@ -43,7 +43,7 @@ cyberConnect.like(id);
 
 **Parameters**
 
-- `id: string` - post id
+- `id: string` - The content id to like which can the id of a post, comment or an essence.
 
 **Return**
 
@@ -58,7 +58,7 @@ enum Status {
   SUCCESS,
   INVALID_PARAMS,
   RATE_LIMITED,
-  POST_NOT_FOUND,
+  TARGET_NOT_FOUND,
   ALREADY_DONE,
   INVALID_MESSAGE,
   INVALID_SIGNATURE,
@@ -74,7 +74,7 @@ cyberConnect.dislike(id);
 
 **Parameters**
 
-- `id: string` - post id
+- `id: string` - The content id to dislike which can the id of a post, comment or an essence.
 
 **Return**
 
@@ -82,6 +82,7 @@ cyberConnect.dislike(id);
 
 ```ts
 type DislikeResponse = {
+  tsInServer: number;
   status: Status;
 };
 
@@ -89,7 +90,7 @@ enum Status {
   SUCCESS,
   INVALID_PARAMS,
   RATE_LIMITED,
-  POST_NOT_FOUND,
+  TARGET_NOT_FOUND,
   ALREADY_DONE,
   INVALID_MESSAGE,
   INVALID_SIGNATURE,
@@ -105,7 +106,7 @@ cyberConnect.cancelReaction(id);
 
 **Parameters**
 
-- `id: string` - post id
+- `id: string` - The content id to cancel reaction on which can the id of a post, comment or an essence.
 
 **Return**
 
@@ -120,7 +121,7 @@ enum Status {
   SUCCESS,
   INVALID_PARAMS,
   RATE_LIMITED,
-  POST_NOT_FOUND,
+  TARGET_NOT_FOUND,
   ALREADY_DONE,
   INVALID_MESSAGE,
   INVALID_SIGNATURE,
@@ -130,4 +131,4 @@ enum Status {
 
 ### Verify the proof
 
-After liking or disliking a post successfully, you can use `arweaveTxHash` to verify the proof, go to https://arweave.net/ + `arweaveTxHash`.
+After liking or disliking content successfully, you can use `arweaveTxHash` to verify the proof, go to https://arweave.net/ + `arweaveTxHash`.

@@ -40,18 +40,19 @@ const cyberConnect = new CyberConnect({
 ### Creating post
 
 ```ts
-cyberConnect.createPost(post);
+cyberConnect.createPost(content);
 ```
 
 **Parameters**
 
-- `post: Post` - post content
+- `content: Content` - post content
 
 ```ts
-type Post = {
+interface Content {
   title: string;
   body: string;
-};
+  author: string; // The ccProfile handle of the author
+}
 ```
 
 **Return**
@@ -61,16 +62,19 @@ type Post = {
 ```ts
 type PublishResponse = {
   status: Status;
-  id: string;
+  contentID: string;
   arweaveTxHash: string;
+  tsInServer: number;
 };
 
 enum Status {
   SUCCESS,
-  INVALID_ADDRESS,
-  INVALID_ID,
+  INVALID_PARAMS,
   RATE_LIMITED,
-  NOT_FOUND,
+  HANDLE_NOT_FOUND,
+  CONTENT_NOT_FOUND,
+  TARGET_NOT_FOUND,
+  NOT_PROFILE_OWNER,
   ALREADY_EXISTED,
   INVALID_MESSAGE,
   INVALID_SIGNATURE,
@@ -82,21 +86,21 @@ enum Status {
 ### Updating post
 
 ```ts
-cyberConnect.updatePost(post, id);
+cyberConnect.updatePost(id, content);
 ```
 
 **Parameters**
 
-- `post: Post` - post content
+- `id: string` - published post id
+- `content: Content` - new post content
 
 ```ts
-type Post = {
+interface Content {
   title: string;
   body: string;
-};
+  author: string; // The ccProfile handle of the author
+}
 ```
-
-- `id: string` - target post id
 
 **Return**
 
@@ -105,16 +109,19 @@ type Post = {
 ```ts
 type PublishResponse = {
   status: Status;
-  id: string;
+  contentID: string;
   arweaveTxHash: string;
+  tsInServer: number;
 };
 
 enum Status {
   SUCCESS,
-  INVALID_ADDRESS,
-  INVALID_ID,
+  INVALID_PARAMS,
   RATE_LIMITED,
-  NOT_FOUND,
+  HANDLE_NOT_FOUND,
+  CONTENT_NOT_FOUND,
+  TARGET_NOT_FOUND,
+  NOT_PROFILE_OWNER,
   ALREADY_EXISTED,
   INVALID_MESSAGE,
   INVALID_SIGNATURE,
