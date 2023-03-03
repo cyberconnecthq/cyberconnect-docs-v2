@@ -7,6 +7,12 @@ sidebar_position: 1
 description: Create profile
 ---
 
+:::info
+
+Demo repo: https://github.com/cyberconnecthq/cc-profile-tutorial
+
+:::
+
 In this section you will learn how to create ccProfile in both gas and gasless modes. We sometimes refer to it as a _profile NFT_ and the reason behind it is that, once the profile is created, a NFT will automatically be minted and transferred to the user's wallet.
 
 :::tip
@@ -184,7 +190,6 @@ You can also view the NFT for the profile on [OpenSea](https://testnets.opensea.
 All typedData mutations require an `Authorization` header with the `Bearer` token. You can learn how to get a bearer token in the [User Login](api/authentication/user-login) section.
 :::
 
-
 First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createCreateProfileTypedData` API that takes care of this.
 
 If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
@@ -229,7 +234,7 @@ type CreateCreateProfileTypedDataResult {
 
 ### 2. Call `relay` using the `typeDataID` returned above get `relayActionID`
 
-:::caution 
+:::caution
 In order to call the `relay` mutation, you must include your `X-API-KEY` in the header.
 You can learn more about how to get one [here](/api/authentication/introduction).
 
