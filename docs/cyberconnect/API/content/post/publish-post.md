@@ -270,7 +270,7 @@ const message = `${acknowledgement}${publicKey}`;
 
 Let users sign this message with their wallets, you'll get a signing key signature, pass this signature along with the `message` and signer's address to `registerSigningKey`, if the response status is `SUCCESS`, then it indicates the whole signing key registration is completed, you can use this signing key to perform operations like follow, like, publish post and comment content.
 
----
+![register-signing-key](/img/v2/register-signing-key.png)
 
 ### Signing Operation
 
@@ -350,6 +350,8 @@ const params = {
 
 await publishPost(params, this.endpoint.cyberConnectApi);
 ```
+
+![publish-post](/img/v2/publish-post.png)
 
 ## Verifying the proof
 
