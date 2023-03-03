@@ -1,15 +1,15 @@
 ---
-id: post
-title: Post
-slug: /core-concepts/post
-sidebar_label: Post（Content📝）
+id: post-comment
+title: Post/Comment
+slug: /core-concepts/post-comment
+sidebar_label: Post/Comment（Content📝）
 sidebar_position: 6
 description: Post
 ---
 
-## Post vs. Essence
+# Post/Comment vs. Essence
 
-Post is another form of content supported by the protocol, but unlike an EssenceNFT the post feature does not require any on-chain transaction and is not represented by an NFT. Instead, post is implemented through off-chain proofs that are synced to Arweave. Developers can use Post API to manage the user’s social data such as comments, moments, etc. This is great for applications with lightweight social content needs, that do not want to incur gas costs.
+Post and comment are different forms of content supported by the protocol, but unlike an EssenceNFT the post and comment do not require any on-chain transaction and are not represented by NFTs. Instead, they are implemented through off-chain proofs that are synced to Arweave. Developers can use Post/Comment API to manage the user’s social data such as comments, moments, etc. This is great for applications with lightweight social content needs, that do not want to incur gas costs.
 
 ## Idempotent Proof of Content
 
@@ -37,8 +37,8 @@ type SigningKey = {
 
 type SigningKeyAuth = {
   address: string;
-  signingKeyMessage: string;
-  signingKeySignature: string;
+  message: string;
+  signature: string;
 };
 ```
 
