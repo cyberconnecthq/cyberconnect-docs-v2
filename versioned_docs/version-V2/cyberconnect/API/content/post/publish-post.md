@@ -142,7 +142,7 @@ You can also choose to call the publish post API directly which involves three p
 
 ### Signing Key Management
 
-The publish post API accepts two parameters `contentID` and `input`, we'll only focus on the `input` part for now. It has three properties `message`, `signature` and `signingKey` which requires a locally generated signing key pair to perform the sign operation.
+The publish post API accepts two parameters `contentID` and `input`, the `contentID` is for updating published post, the `input` has three properties `message`, `signature` and `signingKey` which requires a locally generated signing key pair to perform the sign operation.
 
 Generating Signing Key
 
@@ -355,4 +355,4 @@ await publishPost(params, this.endpoint.cyberConnectApi);
 
 ## Verifying the proof
 
-After creating or updating a post successfully, you can use `arweaveTxHash` to verify the proof, go to https://arweave.net/ + `arweaveTxHash`.
+After creating or updating a post successfully, you can use `arweaveTxHash` to verify the proof, go to `https://arweave.app/tx/${arweaveTxHash}`.

@@ -957,13 +957,12 @@ const apolloData = {
     },
   },
   getPostByAddress: {
-    query: `   query PrimaryProfileEssences(
+    query: `   query getPostByAddress(
       $address: AddressEVM!
     ) {
       address(address: $address) {
         wallet {
          primaryProfile {
-           commentCount
            posts {
              edges {
                node {

@@ -131,4 +131,4 @@ enum Status {
 
 ### Verify the proof
 
-After liking or disliking content successfully, you can use `arweaveTxHash` to verify the proof, go to https://arweave.net/ + `arweaveTxHash`.
+After liking or disliking content successfully, you can use `arweaveTxHash` to verify the proof, go to `https://arweave.app/tx/${arweaveTxHash}`.

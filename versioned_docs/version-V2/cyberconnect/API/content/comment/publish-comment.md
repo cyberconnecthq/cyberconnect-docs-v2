@@ -135,4 +135,4 @@ enum Status {
 
 ## Verifying the proof
 
-After creating or updating a comment successfully, you can use `arweaveTxHash` to verify the proof, go to https://arweave.net/ + `arweaveTxHash`.
+After creating or updating a comment successfully, you can use `arweaveTxHash` to verify the proof, go to `https://arweave.app/tx/${arweaveTxHash}`.
