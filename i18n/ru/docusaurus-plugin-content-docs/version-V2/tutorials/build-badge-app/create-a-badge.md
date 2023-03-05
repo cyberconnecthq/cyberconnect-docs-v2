@@ -98,7 +98,7 @@ interface Attribute {
     /* Название признака */
     trait_type: string;
     /* Значение признака */
-    value: number | string;
+    value: string;
 }
 
 export interface IEssenceMetadata {
