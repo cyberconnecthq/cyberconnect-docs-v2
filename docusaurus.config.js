@@ -42,7 +42,14 @@ const config = {
           includeCurrentVersion: isDev,
           showLastUpdateTime: true,
         },
-        blog: false,
+        blog: {
+          blogSidebarTitle: 'Recent changes',
+          blogTitle: 'Changelog',
+          blogDescription: 'CyberConnect Changelog',
+          postsPerPage: 'ALL',
+          routeBasePath: '/changelog',
+          showReadingTime: false
+        },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -160,10 +167,11 @@ const config = {
             "aria-label": "GitHub repository",
           },
           // Disabled translation
-          {
-            type: "localeDropdown",
-            position: "right",
-          },
+          { to: 'changelog', label: 'Changelog', position: 'right' },
+          // {
+          //   type: "localeDropdown",
+          //   position: "right",
+          // },
         ],
       },
       footer: {

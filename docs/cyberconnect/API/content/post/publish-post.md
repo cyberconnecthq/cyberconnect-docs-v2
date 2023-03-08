@@ -274,21 +274,27 @@ Let users sign this message with their wallets, you'll get a signing key signatu
 
 ### Signing Operation
 
-Once the signing key gets registered, you can use it to publish post without any external wallet operation needed. To publish a post with the signing key, you need to sign the right message body with it, and then pass the required parameters to `publishPost`.
+Once the signing key gets registered, you can use it to publish post without any external wallet operation needed. To publish a post with the signing key, you need to call `createPublishPostTypedMessage` to get the typed message, sign the message and then pass the signature and other required parameters to `publishPost`.
 
-Post Message Structure
+Get typed post message
 
 ```ts
-interface PostMessage {
-  op: "post"; // operation "post"
-  title: string; // title of the content
-  body: string; // body of the content
-  address: string; // author address
-  handle: string; // author profile handle
-  chainId: number; // profile chain id
-  ts: number; // timestamp in milliseconds
-}
+const input = {
+  address: this.address,
+  handle: this.getHandleWithoutSuffix(content.author),
+  title: content.title,
+  body: content.body,
+} as const;
+
+const res = await createPublishPostTypedMessage(
+  input,
+  this.endpoint.cyberConnectApi
+);
+
+const message = res.data.createPublishPostTypedMessage.message;
 ```
+
+![typed-post-message](/img/v2/typed-post-message.png)
 
 How to sign a message with the signing key
 
@@ -317,19 +323,7 @@ async function signWithSigningKey(input: string, address: string) {
 Use the signing key to sign the post message
 
 ```ts
-const messageBody: PostMessage = {
-  op: "post",
-  title: "This is a post title",
-  body: "This is post body",
-  address: "0x0000000...",
-  ts: Date.now(),
-  chainId: 97,
-  handle: "test",
-};
-
-const stringifiedMessage = JSON.stringify(messageBody);
-
-const signature = await signWithSigningKey(stringifiedMessage, this.address);
+const signature = await signWithSigningKey(message, this.address);
 ```
 
 Publish post
