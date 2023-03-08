@@ -18,9 +18,10 @@ description: Authentication - Get your API & Relay Address
 
 5. You should now see your API Key & Relayer Address.
 
-- You will use the API key for all requests (i.e. include `X-API-KEY: your_key` in the request header )
+- You will use the API key for relay request (i.e. include `X-API-KEY: your_key` in the request header )
 
-6. Select "Chain Config" to adjust the "Gas fee cap" for your relayer and find info for depositing funds into your relayer
-7. Nice! Now you're ready to start 🧑‍💻
+6. Click "Add fund" for your relayer and find info for depositing funds into your relayer
+7. Click "Gas Fee Cap" for your relayer to config gas fee cap in case of high gas fee
+8. Nice! Now you're ready to start 🧑‍💻
 
 ![](/img/v2/cyberconnect_api_key_fast.gif)

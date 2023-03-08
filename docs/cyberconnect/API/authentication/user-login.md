@@ -55,7 +55,7 @@ The following `mutations` require `Authorization` header:
 5. `createSetEssenceDataTypedData`
 6. `createSubscribeTypedData`
 7. `createSetSubscribeDataTypedData`
-8. `relay`
+8. `createSetMetadataTypedData`
 
 Use this personal access token in HTTP header `Authorization` . Don’t miss the `bearer` in front.
 
