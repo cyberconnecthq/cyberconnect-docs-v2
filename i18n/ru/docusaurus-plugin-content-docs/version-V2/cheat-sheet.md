@@ -35,7 +35,7 @@ https://api.stg.cyberconnect.dev/playground
 | Link3 Profile MW (PermissionedFeeCreationMw) | 0xd37bbf27e39b2f8c4386bebccda0850eeffd2a82 |
 | Link3 Descriptor (Impl)                      | 0x24f869169422f86ebf0c90b6785f9f3534ff08e5 |
 | Link3 Descriptor (Proxy)                     | 0x3b131d2d6694a60eb71dff607cc64e6296daa71e |
-| Subscribe MW (SubscribePaidMw)               | 0x9b5678862e143c970f4a63f57dd8a677f5942c40 |
+| Subscribe MW (SubscribePaidMw, gas mode and EOA subscriber only)               | 0x751fc06566d17271614578849eb6c28fb1142ccc |
 | Essence MW (CollectPaidMw)                   | 0x9e5e171fadcc01f204bdff12a87f1573e40b0cd2 |
 | Essence MW (CollectPermissionMw)             | 0xaf53c3101c4b57a3d48100832ab8d1732b58c64c |
 
@@ -68,7 +68,7 @@ https://api.stg.cyberconnect.dev/playground
 | Link3 Profile MW (PermissionedFeeCreationMw) | 0xd37bbf27e39b2f8c4386bebccda0850eeffd2a82 |
 | Link3 Descriptor (Impl)                      | 0x24f869169422f86ebf0c90b6785f9f3534ff08e5 |
 | Link3 Descriptor (Proxy)                     | 0x6aac6e75b5f136541e6bd0a86b2d596fc10465fc |
-| Subscribe MW (SubscribePaidMw)               | 0x9b5678862e143c970f4a63f57dd8a677f5942c40 |
+| Subscribe MW (SubscribePaidMw, gas mode and EOA subscriber only)               | 0x751fc06566d17271614578849eb6c28fb1142ccc |
 | Essence MW (CollectPaidMw)                   | 0x9e5e171fadcc01f204bdff12a87f1573e40b0cd2 |
 | CyberVault                                   | 0xdd2ec94890e2d92e131a89f73bfe124137e0c10e |
 
@@ -109,7 +109,7 @@ https://api.stg.cyberconnect.dev/playground
 | Link3 Descriptor (Impl)                      | 0x74788f90b8436afe91931c17a01023bce5d89c0f |
 | Link3 Descriptor (Proxy)                     | 0xa27b77f6b13bece78b63925edb3b35df495fdf8e |
 | Essence MW (SignaturePermissionEssenceMw)    | 0x733142f467904f9a2e8efa0119523d3cc7a99b0b |
-| Subscribe MW (SubscribePaidMw)               | 0xd5d66dc7180fa4f3ae05b66ee34793146db6e3e9 |
+| Subscribe MW (SubscribePaidMw, gas mode and EOA subscriber only)               | 0x751fc06566d17271614578849eb6c28fb1142ccc |
 | Essence MW (CollectPaidMw)                   | 0x415648c28adb31629418498264f55d54e4c324db |
 
 
@@ -129,6 +129,6 @@ https://api.stg.cyberconnect.dev/playground
 | Link3 Descriptor (Impl)                      | 0x74788f90b8436afe91931c17a01023bce5d89c0f |
 | Link3 Descriptor (Proxy)                     | 0x39459859e7b63f19e77ddcc38f65a519d88dba8a |
 | Essence MW (SignaturePermissionEssenceMw)    | 0x733142f467904f9a2e8efa0119523d3cc7a99b0b |
-| Subscribe MW (SubscribePaidMw)               | 0xd5d66dc7180fa4f3ae05b66ee34793146db6e3e9 |
+| Subscribe MW (SubscribePaidMw, gas mode and EOA subscriber only)               | 0x751fc06566d17271614578849eb6c28fb1142ccc |
 | Essence MW (CollectPaidMw)                   | 0x415648c28adb31629418498264f55d54e4c324db |
 | Essence MW (CollectPermissionMw)             | 0x77ebd0aa021b39086e84b9d3afeb738cbbfe16fd |

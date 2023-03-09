@@ -41,10 +41,10 @@ import TabItem from "@theme/TabItem";
 | CyberVault                                | [0xdd2ec94890e2d92e131a89f73bfe124137e0c10e](https://bscscan.com/address/0xdd2ec94890e2d92e131a89f73bfe124137e0c10e) |
 | CyberGrandNFT (Impl)                      | [0x0160876ad7302cfb5d2bcfbe664a436a69383a12](https://bscscan.com/address/0x0160876ad7302cfb5d2bcfbe664a436a69383a12) |
 | CyberGrandNFT (Proxy)                     | [0x110fe2bc9cf45d29e9764da4f6274abf13111efc](https://bscscan.com/address/0x110fe2bc9cf45d29e9764da4f6274abf13111efc) |
-| Subscribe MW (SubscribePaidMw)            | [0x9b5678862e143c970f4a63f57dd8a677f5942c40](https://bscscan.com/address/0x9b5678862e143c970f4a63f57dd8a677f5942c40) |
+| Subscribe MW (SubscribePaidMw, gas mode and EOA subscriber only)            | [0x751fc06566d17271614578849eb6c28fb1142ccc](https://bscscan.com/address/0x751fc06566d17271614578849eb6c28fb1142ccc) |
 | Subscribe MW (SubscribeOnlyOnceMw)        | [0xc6968831ad8bd12ebb72108f6e4c51432580870d](https://bscscan.com/address/0xc6968831ad8bd12ebb72108f6e4c51432580870d) |
 | Subscribe MW (SubscribeDisallowedMw)      | [0x3d1c0dcff5ab0a8ede767f9c094b9e12940f6428](https://bscscan.com/address/0x3d1c0dcff5ab0a8ede767f9c094b9e12940f6428) |
-| Essence MW (CollectPaidMw)                | [0xb09ae63a2fd28686a0f386d1ddfd4b53687bf298](https://bscscan.com/address/0xb09ae63a2fd28686a0f386d1ddfd4b53687bf298) |
+| Essence MW (CollectPaidMw, gas mode and EOA collector only)                | [0xf89d252629080fb7ded7781a3b99feb3642315a8](https://bscscan.com/address/0xf89d252629080fb7ded7781a3b99feb3642315a8) |
 | Essence MW (CollectDisallowedMw)          | [0xcc1d623be97c37b19c64adbd35390260460b92e7](https://bscscan.com/address/0xcc1d623be97c37b19c64adbd35390260460b92e7) |
 | Essence MW (CollectOnlySubscribedMw)      | [0x26a39e0ecab95b76fbbf593331e25caaa13f83c7](https://bscscan.com/address/0x26a39e0ecab95b76fbbf593331e25caaa13f83c7) |
 | Essence MW (CollectMerkleDropMw)          | [0x0642cfcba1e391e3affc2270fd2a20e468bceeaa](https://bscscan.com/address/0x0642cfcba1e391e3affc2270fd2a20e468bceeaa) |
@@ -82,10 +82,10 @@ import TabItem from "@theme/TabItem";
 | Action Lib                                | [0x781d0a455020024da046f823d9ea076b76a873f3](https://testnet.bscscan.com/address/0x781d0a455020024da046f823d9ea076b76a873f3) |
 | CyberGrandNFT (Impl)                      | [0x82da75dbe7a087a5df32f0f4cc22da269369e922](https://testnet.bscscan.com/address/0x82da75dbe7a087a5df32f0f4cc22da269369e922) |
 | CyberGrandNFT (Proxy)                     | [0x750bb03bfb84889a7d049969fb26ab53ea2e1541](https://testnet.bscscan.com/address/0x750bb03bfb84889a7d049969fb26ab53ea2e1541) |
-| Subscribe MW (SubscribePaidMw)            | [0xd5d66dc7180fa4f3ae05b66ee34793146db6e3e9](https://testnet.bscscan.com/address/0xd5d66dc7180fa4f3ae05b66ee34793146db6e3e9) |
+| Subscribe MW (SubscribePaidMw, gas mode and EOA subscriber only)            | [0x751fc06566d17271614578849eb6c28fb1142ccc](https://testnet.bscscan.com/address/0x751fc06566d17271614578849eb6c28fb1142ccc) |
 | Subscribe MW (SubscribeOnlyOnceMw)        | [0xc42e8fdca4d7a832aeae8355834ea71fd8439e1f](https://testnet.bscscan.com/address/0xc42e8fdca4d7a832aeae8355834ea71fd8439e1f) |
 | Subscribe MW (SubscribeDisallowedMw)      | [0x933160722811c6c42802bea059674aa2446cd731](https://testnet.bscscan.com/address/0x933160722811c6c42802bea059674aa2446cd731) |
-| Essence MW (CollectPaidMw)                | [0x7fd80d2c47ed1f204851f2809f54f5a31e4d55a3](https://testnet.bscscan.com/address/0x7fd80d2c47ed1f204851f2809f54f5a31e4d55a3) |
+| Essence MW (CollectPaidMw, gas mode and EOA collector only)                | [0x4e0d14e52418881511fd8156585d4b03eec1ff36](https://testnet.bscscan.com/address/0x4e0d14e52418881511fd8156585d4b03eec1ff36) |
 | Essence MW (CollectDisallowedMw)          | [0xea5ec5a6b2613eebe7df63a6ac394759514baa3f](https://testnet.bscscan.com/address/0xea5ec5a6b2613eebe7df63a6ac394759514baa3f) |
 | Essence MW (CollectOnlySubscribedMw)      | [0x13fc351b4daaddd5dd4768ca62f41a10fe548642](https://testnet.bscscan.com/address/0x13fc351b4daaddd5dd4768ca62f41a10fe548642) |
 | Essence MW (CollectMerkleDropMw)          | [0x1488e8f5aab7f609cfdc04997d5c73e4d7b6ad0d](https://testnet.bscscan.com/address/0x1488e8f5aab7f609cfdc04997d5c73e4d7b6ad0d) |
