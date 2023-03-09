@@ -169,6 +169,32 @@ const apolloData = {
     },
     headers: {},
   },
+  getProfileByAddress: {
+    query: `query getProfileByAddress($address: AddressEVM!) {
+      address(address: $address) {
+        wallet {
+          profiles {
+            edges {
+              node {
+                profileID
+                handle
+                avatar
+                isPrimary
+                metadataInfo {
+                  avatar
+                  displayName
+                }
+              }
+            }
+          }
+        }
+      }
+    }`,
+    variables: {
+      address: "0x7C04786F04c522ca664Bb8b6804E0d182eec505F",
+    },
+    headers: {},
+  },
   getAddressIdentity: {
     query: `query getAddressIdentity($address: AddressEVM!
  ){
