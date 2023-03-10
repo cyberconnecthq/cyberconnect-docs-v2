@@ -27,6 +27,7 @@ import CyberConnect, {
 } from '@cyberlab/cyberconnect-v2';
 
 const cyberConnect = new CyberConnect({
+  appId: 'cyberconnect',
   namespace: 'CyberConnect',
   env: Env.Production,
   provider: provider,
@@ -34,6 +35,7 @@ const cyberConnect = new CyberConnect({
 });
 ```
 
+- `appId` - Your application id, can be any string less than 128 characters.
 - `namespace` - Your applciation name.
 - `env` - (optional) Env decides the endpoints. Now we have `staging` and `production`. (The default value is `Env.Production`).
 - `provider` - The corresponding provider of the given chain.
