@@ -10,3 +10,7 @@ title: 2023-03-10 Changelog
   - [like](/api/connection/like-content#init-cyberconnect)
   - [post](/api/content/publish-post#init-cyberconnect)
   - [comment](/api/content/publish-comment#init-cyberconnect)
+
+## Fixed
+
+- Typo `singing` -> `signing` [link](/api/content/publish-post#signing-key-registration)

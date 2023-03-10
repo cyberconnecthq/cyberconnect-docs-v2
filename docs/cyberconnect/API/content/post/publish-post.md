@@ -258,7 +258,7 @@ async function getPublicKey(address: string) {
 
 Getting Signing Key Signature
 
-After exporting the public key, you need to use this public key to compose a sign message which consists of two parts: `acknowledgment` and `publicKey`, in the `acknowledgment`, you can change the singing message entity which is _CyberConnect_ by default.
+After exporting the public key, you need to use this public key to compose a sign message which consists of two parts: `acknowledgment` and `publicKey`, in the `acknowledgment`, you can change the signing message entity which is _CyberConnect_ by default.
 
 ```ts
 const publicKey = await getPublicKey(this.address);
