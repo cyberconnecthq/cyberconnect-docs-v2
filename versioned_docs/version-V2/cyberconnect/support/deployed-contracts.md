@@ -41,7 +41,7 @@ import TabItem from "@theme/TabItem";
 | CyberVault                                | [0xdd2ec94890e2d92e131a89f73bfe124137e0c10e](https://bscscan.com/address/0xdd2ec94890e2d92e131a89f73bfe124137e0c10e) |
 | CyberGrandNFT (Impl)                      | [0x0160876ad7302cfb5d2bcfbe664a436a69383a12](https://bscscan.com/address/0x0160876ad7302cfb5d2bcfbe664a436a69383a12) |
 | CyberGrandNFT (Proxy)                     | [0x110fe2bc9cf45d29e9764da4f6274abf13111efc](https://bscscan.com/address/0x110fe2bc9cf45d29e9764da4f6274abf13111efc) |
-| Subscribe MW (SubscribePaidMw, gas mode and EOA subscriber only)            | [0x751fc06566d17271614578849eb6c28fb1142ccc](https://bscscan.com/address/0x751fc06566d17271614578849eb6c28fb1142ccc) |
+| Subscribe MW (SubscribePaidMw, gas mode and EOA subscriber only)            | [0xec9a9a9752fc0b46a457e161de39ba54aad5324b](https://bscscan.com/address/0xec9a9a9752fc0b46a457e161de39ba54aad5324b) |
 | Subscribe MW (SubscribeOnlyOnceMw)        | [0xc6968831ad8bd12ebb72108f6e4c51432580870d](https://bscscan.com/address/0xc6968831ad8bd12ebb72108f6e4c51432580870d) |
 | Subscribe MW (SubscribeDisallowedMw)      | [0x3d1c0dcff5ab0a8ede767f9c094b9e12940f6428](https://bscscan.com/address/0x3d1c0dcff5ab0a8ede767f9c094b9e12940f6428) |
 | Essence MW (CollectPaidMw, gas mode and EOA collector only)                | [0xf89d252629080fb7ded7781a3b99feb3642315a8](https://bscscan.com/address/0xf89d252629080fb7ded7781a3b99feb3642315a8) |
