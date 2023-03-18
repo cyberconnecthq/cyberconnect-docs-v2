@@ -25,7 +25,7 @@ import CyberConnect, {
 const cyberConnect = new CyberConnect({
   appId: 'cyberconnect',
   namespace: 'CyberConnect',
-  env: Env.Production,
+  env: Env.PRODUCTION,
   provider: provider,
   signingMessageEntity: 'CyberConnect' || your entity,
 });
@@ -33,7 +33,7 @@ const cyberConnect = new CyberConnect({
 
 - `appId` - Your application id, can be any string less than 128 characters.
 - `namespace` - Your applciation name.
-- `env` - (optional) Env decides the endpoints. Now we have `staging` and `production`. (The default value is `Env.Production`).
+- `env` - (optional) Env decides the endpoints. Now we have `STAGING` and `PRODUCTION`. (The default value is `Env.PRODUCTION`).
 - `provider` - The corresponding provider of the given chain.
 - `signingMessageEntity` - (optional) Use to describe the entity users sign their message with. Users will see it when authorizing in the wallet `I authorize ${signingMessageEntity} from this device using signing key:`. The default entity is `CyberConnect`.
 

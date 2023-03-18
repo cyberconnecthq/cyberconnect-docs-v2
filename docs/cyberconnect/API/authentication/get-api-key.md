@@ -14,7 +14,7 @@ description: Authentication - Get your API & Relay Address
 3. Select "Create New Project"
 4. Name your project and choose an Environment
 
-- Select "Staging" for testing (ex. on testnet) and "Production" for your mainnet/final deployment
+- Select "STAGING" for testing (ex. on testnet) and "PRODUCTION" for your mainnet/final deployment
 
 5. You should now see your API Key & Relayer Address.
 
