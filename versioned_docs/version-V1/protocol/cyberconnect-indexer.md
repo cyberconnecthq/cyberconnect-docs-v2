@@ -31,4 +31,4 @@ The Querier serves three main purposes: providing identity data, providing relat
 
 ## Data Retrieval
 
-CyberConnect Indexer uses GraphQL as the query language for data retrieval. You can query address identity information and get recommendations through Indexer's GraphQL endpoint. Learn more about it in the [CyberConnect API](/cyberconnect-api/overview/) section.
+CyberConnect Indexer uses GraphQL as the query language for data retrieval. You can query address identity information and get recommendations through Indexer's GraphQL endpoint. Learn more about it in the [CyberConnect API](/V1/cyberconnect-api/overview/) section.

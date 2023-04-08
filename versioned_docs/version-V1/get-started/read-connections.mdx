@@ -18,14 +18,14 @@ In this section, we'll help you write a simple query to read a user's [connectio
 1. Initialize the GraphQL client:
 
 ```jsx title="/src/queries/GetConnections.tsx"
-const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
+const client = new GraphQLClient(CYBERCONNECT_ENDPOINT)
 ```
 
 2. Write a query to get the `address` and `domain` of the user’s `followings` and `followers`:
 
 ```jsx title="/src/queries/GetConnections.tsx"
 const GET_CONNECTIONS = gql`
-  query($address: String!, $first: Int) {
+  query ($address: String!, $first: Int) {
     identity(address: $address) {
       followings(first: $first) {
         list {
@@ -41,18 +41,18 @@ const GET_CONNECTIONS = gql`
       }
     }
   }
-`;
+`
 ```
 
-Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
+Make sure to check out the full list of fields available in the [CyberConnect API](/V1/cyberconnect-api/overview/).
 
 ## Sandbox
 
 You can write your own query in the [Playground](/cyberconnect-api/playground/) or experiment with our code in the sandbox below!
 
 <iframe
-  src="https://codesandbox.io/embed/read-connections-fk75zg?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetConnections.tsx"
-  title="read-connections"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  src='https://codesandbox.io/embed/read-connections-fk75zg?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetConnections.tsx'
+  title='read-connections'
+  allow='accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking'
+  sandbox='allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts'
 ></iframe>

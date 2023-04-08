@@ -39,8 +39,8 @@ While smart contracts provide programmability and enable more feature potentials
 
 CyberConnect provides Scalable Storage Modules (SSM) to write social data in decentralized storage (Arweave) with guarantees of data sovereignty (that data cannot be forged), integrity (that data cannot be modified in an unauthorized manner), and availability (that data cannot be censored). At a high level, the SSM supported four different types of actions.
 
-1. [Follow/Like](/concepts/follow-like-connection)
-2. [Post/Comment](/core-concepts/post)
+1. [Follow/Like](/core-concepts/follow-like-connection)
+2. [Post/Comment](/core-concepts/post-comment)
 
 ## Follow/Like 👥
 

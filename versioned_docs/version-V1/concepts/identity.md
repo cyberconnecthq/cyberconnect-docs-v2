@@ -21,7 +21,7 @@ By adopting a decentralized [social graph](/concepts/social-graph/), users aggre
     <li>Their notifications.</li>
 </ul>
 
-Developers can leverage those insights to build better social experiences by making a simple call to the [CyberConnect API](/cyberconnect-api/overview/).
+Developers can leverage those insights to build better social experiences by making a simple call to the [CyberConnect API](/V1/cyberconnect-api/overview/).
 
 ## How does it work?
 

@@ -20,32 +20,32 @@ In this section, we'll help you write a simple query to read a user's [identity]
 ### Initialize the GraphQL Client
 
 ```jsx title="/src/queries/GetIdentity.tsx"
-const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
+const client = new GraphQLClient(CYBERCONNECT_ENDPOINT)
 ```
 
 2. Write a query to get the `domain`, `followerCount`, and `followingCount` of the user with address:
 
 ```jsx title="/src/queries/GetIdentity.tsx"
 export const GET_IDENTITY = gql`
-  query($address: String!) {
+  query ($address: String!) {
     identity(address: $address) {
       domain
       followerCount
       followingCount
     }
   }
-`;
+`
 ```
 
-Make sure to check out the full list of fields available in the [CyberConnect API](/cyberconnect-api/overview/).
+Make sure to check out the full list of fields available in the [CyberConnect API](/V1/cyberconnect-api/overview/).
 
 ## Sandbox
 
 You can write your own query in the [Playground](/cyberconnect-api/playground/) or experiment with our code in the sandbox below!
 
 <iframe
-  src="https://codesandbox.io/embed/read-identity-2zjn9k?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetIdentity.tsx"
-  title="read-identity"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  src='https://codesandbox.io/embed/read-identity-2zjn9k?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetIdentity.tsx'
+  title='read-identity'
+  allow='accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking'
+  sandbox='allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts'
 ></iframe>

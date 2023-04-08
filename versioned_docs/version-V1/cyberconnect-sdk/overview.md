@@ -14,9 +14,9 @@ The CyberConnect SDK is a developer-friendly gateway to help write social connec
 Next up, we will cover in more detail how the SDK works under the hood and the libraries that complement it in order to build applications where users manage their social connections in a self-sovereign manner:
 
 - [Connect with JS SDK](/V1/cyberconnect-sdk/connect-with-js-sdk/)
-- [Connect with iOS SDK](/cyberconnect-sdk/connect-with-ios-sdk/)
-- [Connect with Follow Button](/cyberconnect-sdk/connect-with-follow-button/)
-- [Connect with Social Verifier](/cyberconnect-sdk/connect-with-social-verifier/)
+- [Connect with iOS SDK](/V1/cyberconnect-sdk/connect-with-ios-sdk/)
+- [Connect with Follow Button](/V1/cyberconnect-sdk/connect-with-follow-button/)
+- [Connect with Social Verifier](/V1/cyberconnect-sdk/connect-with-social-verifier/)
 
 ## How does it work?
 

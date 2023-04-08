@@ -1,7 +1,7 @@
 ---
 id: follow-like-connection
 title: Follow/Like connection
-slug: /concepts/follow-like-connection
+slug: /core-concepts/follow-like-connection
 sidebar_label: Follow/Like (Connections 👥)
 sidebar_position: 4
 description: Off-chain connections supported
@@ -21,25 +21,25 @@ There could only exist one state per operation, e.g. Alice could either only be 
 
 ```ts
 type Proof = {
-  content: string;
-  digest: string;
-  signature: string;
-  signingKey: string;
-  signingKeyAuth: SigningKeyAuth;
-  arweaveTxHash: string;
-};
+  content: string
+  digest: string
+  signature: string
+  signingKey: string
+  signingKeyAuth: SigningKeyAuth
+  arweaveTxHash: string
+}
 
 type SigningKey = {
-  publicKey: string;
-  format: "SubjectPublicKeyInfo";
-  algorithm: "ES256";
-};
+  publicKey: string
+  format: 'SubjectPublicKeyInfo'
+  algorithm: 'ES256'
+}
 
 type SigningKeyAuth = {
-  address: string;
-  signingKeyMessage: string;
-  signingKeySignature: string;
-};
+  address: string
+  signingKeyMessage: string
+  signingKeySignature: string
+}
 ```
 
 We only describe these data standard in the raw object format. However, the final message would be encoded with both a digest of the message and a signature signed by the owner.

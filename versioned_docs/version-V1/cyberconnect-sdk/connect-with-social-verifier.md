@@ -7,7 +7,7 @@ sidebar_position: 5
 description: CyberConnect offers an open-source social verifier and a public verified list in an effort to bring a democratic social network.
 ---
 
-CyberConnect offers an open-source social verifier and a public verified list in an effort to bring a democratic social network. 
+CyberConnect offers an open-source social verifier and a public verified list in an effort to bring a democratic social network.
 
 :::info
 
@@ -15,7 +15,7 @@ Currently, CyberConnect Social Verifier only supports `Twitter` and `Github` acc
 
 :::
 
-You can visit [Github](https://github.com/cyberconnecthq/social-verifier) for codebase use or review, [CyberConnect API](/cyberconnect-api/overview/) for Indexer Query or test out the CyberConnect Social Verifier in the sandbox from [Verify a Twitter Account](/get-started/verify-a-twitter-account/) section.
+You can visit [Github](https://github.com/cyberconnecthq/social-verifier) for codebase use or review, [CyberConnect API](/V1/cyberconnect-api/overview/) for Indexer Query or test out the CyberConnect Social Verifier in the sandbox from [Verify a Twitter Account](/get-started/verify-a-twitter-account/) section.
 
 ## Installation
 
@@ -26,8 +26,9 @@ npm install @cyberlab/social-verifier
 ```
 
 ## Use the Verifier
-- [Twitter Verifier](/cyberconnect-sdk/connect-with-social-verifier/#twitter-verifier)
-- [Github Verifier](/cyberconnect-sdk/connect-with-social-verifier/#github-verifier)
+
+- [Twitter Verifier](/V1/cyberconnect-sdk/connect-with-social-verifier/#twitter-verifier)
+- [Github Verifier](/V1/cyberconnect-sdk/connect-with-social-verifier/#github-verifier)
 
 ## Twitter Verifier
 
@@ -42,9 +43,9 @@ npm install @cyberlab/social-verifier
 Using `twitterAuthorize` to get signature message.
 
 ```jsx
-import { twitterAuthorize } from "@cyberlab/social-verifier";
+import { twitterAuthorize } from '@cyberlab/social-verifier'
 
-const sig = twitterAuthorize(provider, address, handle);
+const sig = twitterAuthorize(provider, address, handle)
 ```
 
 - `provider` - An ETH provider which should implement one of the following methods: send, sendAsync, request.
@@ -53,12 +54,12 @@ const sig = twitterAuthorize(provider, address, handle);
 
 ### Posting message
 
-You can customize your tweet text, but the text should include the signature message from the [Signing Data](/cyberconnect-sdk/connect-with-social-verifier/#signing-data-0) step.
+You can customize your tweet text, but the text should include the signature message from the [Signing Data](/V1/cyberconnect-sdk/connect-with-social-verifier/#signing-data-0) step.
 
 ```jsx
-const text = `Verifying my Web3 identity on @cyberconnecthq: %23LetsCyberConnect %0A ${sig}`;
+const text = `Verifying my Web3 identity on @cyberconnecthq: %23LetsCyberConnect %0A ${sig}`
 
-window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
+window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank')
 ```
 
 ### Verifying
@@ -66,13 +67,13 @@ window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
 After posting the tweet, you can call `twitterVerify` to link your address with your twitter account.
 
 ```jsx
-import { twitterVerify } from "@cyberlab/social-verifier";
+import { twitterVerify } from '@cyberlab/social-verifier'
 
 try {
-    await twitterVerify(address, handle);
-    console.log("Verify Success!");
+  await twitterVerify(address, handle)
+  console.log('Verify Success!')
 } catch (e) {
-    console.log("Error: ", e.message);
+  console.log('Error: ', e.message)
 }
 ```
 
@@ -92,9 +93,9 @@ try {
 Using `githubAuthorize` to get signature message.
 
 ```jsx
-import { githubAuthorize } from "@cyberlab/social-verifier";
+import { githubAuthorize } from '@cyberlab/social-verifier'
 
-const sig = githubAuthorize(provider, address, username);
+const sig = githubAuthorize(provider, address, username)
 ```
 
 - `provider` - An ETH provider which should implement one of the following methods: send, sendAsync, request.
@@ -103,20 +104,20 @@ const sig = githubAuthorize(provider, address, username);
 
 ### Posting message
 
-You need to create a gist in your Github. You can customize your gist text, but the text should include the signature message from the [Signing Data](/cyberconnect-sdk/connect-with-social-verifier/#signing-data-1) step.
+You need to create a gist in your Github. You can customize your gist text, but the text should include the signature message from the [Signing Data](/V1/cyberconnect-sdk/connect-with-social-verifier/#signing-data-1) step.
 
 ### Verifying
 
 After posting the gist, you can call `githubVerify` to link your address with your Github account.
 
 ```jsx
-import { githubVerify } from "@cyberlab/social-verifier";
+import { githubVerify } from '@cyberlab/social-verifier'
 
 try {
-    await githubVerify(address, gist_id);
-    console.log("Verify Success!");
+  await githubVerify(address, gist_id)
+  console.log('Verify Success!')
 } catch (e) {
-    console.log("Error: ", e.message);
+  console.log('Error: ', e.message)
 }
 ```
 
