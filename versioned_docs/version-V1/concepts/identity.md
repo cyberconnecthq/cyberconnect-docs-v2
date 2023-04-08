@@ -7,7 +7,7 @@ sidebar_position: 2
 description: By adopting a decentralized social graph, users aggregate their identities across different platforms and applications.
 ---
 
-By adopting a decentralized [social graph](/concepts/social-graph/), users aggregate their identities across different platforms and applications. This allows developers to retrieve more comprehensive data related to a user's address, such as:
+By adopting a decentralized [social graph](/v1/concepts/social-graph/), users aggregate their identities across different platforms and applications. This allows developers to retrieve more comprehensive data related to a user's address, such as:
 
 <ul>
     <li>Their ENS or Solana domain.</li>

@@ -7,11 +7,11 @@ sidebar_position: 2
 description: The CyberConnect SDK provides two primary functions, connect and disconnect, which in social graph are follow and unfollow.
 ---
 
-The CyberConnect SDK provides two primary functions, **connect** and **disconnect**, which in [social graphs](/concepts/social-graph/) are **follow** and **unfollow**.
+The CyberConnect SDK provides two primary functions, **connect** and **disconnect**, which in [social graphs](/v1/concepts/social-graph/) are **follow** and **unfollow**.
 
 The library encapsulates the complex authentication logic (authenticate to Ceramic Network) into easy-to-use functions.
 
-You can directly test out the CyberConnect SDK in the sandbox from [Create a Connection](/get-started/create-a-connection/) section or check out the source code on [Github](https://github.com/cyberconnecthq/js-cyberconnect).
+You can directly test out the CyberConnect SDK in the sandbox from [Create a Connection](/v1/get-started/create-a-connection/) section or check out the source code on [Github](https://github.com/cyberconnecthq/js-cyberconnect).
 
 ## Installation
 
@@ -102,7 +102,7 @@ cyberConnect.bidirectionalConnect(targetAddr, biConnectType)
 - `targetAddr` - The target wallet address to disconnect.
 - `biConnectionType` - The type of the bidirectional connection. See [BiConnection Type](#biconnection-type) for more details.
 
-Learn more about bidirectional Connection [here](/concepts/bidirectional-connection/)
+Learn more about bidirectional Connection [here](/v1/concepts/bidirectional-connection/)
 
 ### AckNotifications
 
@@ -112,7 +112,7 @@ cyberConnect.ackNotifications(notificationIds)
 
 - `notificationIds` - A list of notificationId .
 
-Learn more about notification [here](/concepts/notification/).
+Learn more about notification [here](/v1/concepts/notification/).
 
 ### AckAllNotifications
 
@@ -120,7 +120,7 @@ Learn more about notification [here](/concepts/notification/).
 cyberConnect.ackAllNotifications()
 ```
 
-Learn more about notification [here](/concepts/notification/).
+Learn more about notification [here](/v1/concepts/notification/).
 
 ### Connection Type
 

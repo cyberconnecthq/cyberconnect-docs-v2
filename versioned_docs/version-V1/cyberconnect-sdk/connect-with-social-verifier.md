@@ -15,7 +15,7 @@ Currently, CyberConnect Social Verifier only supports `Twitter` and `Github` acc
 
 :::
 
-You can visit [Github](https://github.com/cyberconnecthq/social-verifier) for codebase use or review, [CyberConnect API](/V1/cyberconnect-api/overview/) for Indexer Query or test out the CyberConnect Social Verifier in the sandbox from [Verify a Twitter Account](/get-started/verify-a-twitter-account/) section.
+You can visit [Github](https://github.com/cyberconnecthq/social-verifier) for codebase use or review, [CyberConnect API](/V1/cyberconnect-api/overview/) for Indexer Query or test out the CyberConnect Social Verifier in the sandbox from [Verify a Twitter Account](/v1/get-started/verify-a-twitter-account/) section.
 
 ## Installation
 

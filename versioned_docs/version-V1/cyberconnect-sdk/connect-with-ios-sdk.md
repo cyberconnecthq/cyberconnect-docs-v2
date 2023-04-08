@@ -7,7 +7,7 @@ sidebar_position: 3
 description: The CyberConnect SDK provides two primary functions, connect and disconnect, which in social graph are follow and unfollow.
 ---
 
-The CyberConnect SDK provides two primary functions, **connect** and **disconnect**, which in [social graphs](/concepts/social-graph/) are **follow** and **unfollow**.
+The CyberConnect SDK provides two primary functions, **connect** and **disconnect**, which in [social graphs](/v1/concepts/social-graph/) are **follow** and **unfollow**.
 
 The library encapsulates the complex authentication logic (authenticate to Ceramic Network) into easy-to-use functions. Find [here](https://github.com/cyberconnecthq/cyberconnect-swift-example) an example repo.
 
