@@ -14,7 +14,7 @@ cyberconnect-kotlin-lib is a lib support CyberConnect API, here is an example re
 Gradle
 
 ```jsx
-implementation 'com.github.cyberconnecthq:cyberconnect-kotlin-lib:v1.0.1'
+implementation 'com.github.cyberconnecthq:cyberconnect-kotlin-lib:V1.0.1'
 ```
 
 Or just add the files manully

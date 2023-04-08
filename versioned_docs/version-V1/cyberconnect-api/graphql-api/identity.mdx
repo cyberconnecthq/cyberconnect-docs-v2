@@ -9,7 +9,7 @@ description: Identity API is used for querying information about an address on t
 
 Identity API is used for querying information about an address on the blockchain network. You can retrieve an address's domain name, indexed following & followers list using the GraphQL query shown below.
 
-You can find the step by step instructions on how to set up GraphQL client in your application and write a simple **Get Identity query** in the [Read Identity](/v1/get-started/read-identity/) section.
+You can find the step by step instructions on how to set up GraphQL client in your application and write a simple **Get Identity query** in the [Read Identity](/V1/get-started/read-identity/) section.
 
 ## Structure
 
@@ -44,7 +44,7 @@ With correct input, you can retrieve a `UserIdentity` object with the following 
 
 ## Retrieve Single Field
 
-If you only need to query one address' ENS, you can run the query below in the [Playground](/cyberconnect-api/playground/):
+If you only need to query one address' ENS, you can run the query below in the [Playground](/V1/cyberconnect-api/playground/):
 
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
@@ -90,11 +90,11 @@ You can also use `joinTime`, `avatar`, or other fields to get different informat
 
 Follower, Following, and Friend are endpoints that are implemented with pagination. In order to get the whole dataset of an address, you need to make requests page by page with the correct namespace and pagination input parameters.
 
-For detail, please check [Namespace](/resources/terminology/namespace/) and [Pagination](/resources/terminology/pagination/) page.
+For detail, please check [Namespace](/resources/terminology/namespace/) and [Pagination](/V1/resources/terminology/pagination/) page.
 
 ### Followers Example
 
-You can use this snippet for address' follower list query directly in the [Playground](/cyberconnect-api/playground/):
+You can use this snippet for address' follower list query directly in the [Playground](/V1/cyberconnect-api/playground/):
 
 <Tabs
     defaultValue="javascript"
@@ -167,7 +167,7 @@ query FullIdentityQuery {
 
 ### Twitter Example
 
-You can use this snippet to query an address's Twitter metadata in the [Playground](/cyberconnect-api/playground/):
+You can use this snippet to query an address's Twitter metadata in the [Playground](/V1/cyberconnect-api/playground/):
 
 <Tabs
     defaultValue="javascript"
@@ -217,7 +217,7 @@ query TwitterQuery{
 
 ### Github Example
 
-You can use this snippet to query an address's GitHub metadata in the [Playground](/cyberconnect-api/playground/):
+You can use this snippet to query an address's GitHub metadata in the [Playground](/V1/cyberconnect-api/playground/):
 
 <Tabs
     defaultValue="javascript"
@@ -263,7 +263,7 @@ query GithubQuery{
 
 ### UnreadNotificationCount Example
 
-You can use this snippet to query an address’s unread notification count in the [Playground](/cyberconnect-api/playground/):
+You can use this snippet to query an address’s unread notification count in the [Playground](/V1/cyberconnect-api/playground/):
 
 <Tabs
     defaultValue="javascript"
@@ -299,7 +299,7 @@ query QueryForUnreadNotificationCount {
 
 ### Notifications Example
 
-You can use this snippet to query an address’s notification list in the [Playground](/cyberconnect-api/playground/):
+You can use this snippet to query an address’s notification list in the [Playground](/V1/cyberconnect-api/playground/):
 
 <Tabs
     defaultValue="javascript"
@@ -403,7 +403,7 @@ You can use this snippet to query an address’s notification list in the [Playg
 
 ### Full Example
 
-You can try Identity API in the [Playground](/cyberconnect-api/playground/) page. Open the page, make sure the URL is correct, copy and paste the following query into the input.
+You can try Identity API in the [Playground](/V1/cyberconnect-api/playground/) page. Open the page, make sure the URL is correct, copy and paste the following query into the input.
 
 We will take _cyberLab.eth_ as an example on the **Ethereum network**. To query the information of it, type:
 

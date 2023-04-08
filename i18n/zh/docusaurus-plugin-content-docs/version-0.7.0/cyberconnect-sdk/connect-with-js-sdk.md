@@ -40,15 +40,15 @@ After the user signs the first message, the library will generate a **derived s
 ### Init CyberConnect
 
 ```jsx
-import CyberConnect, { Env, Blockchain } from "@cyberlab/cyberconnect";
+import CyberConnect, { Env, Blockchain } from '@cyberlab/cyberconnect'
 
 const cyberConnect = new CyberConnect({
-  namespace: "CyberConnect",
+  namespace: 'CyberConnect',
   env: Env.Production,
   chain: Blockchain.ETH,
   provider: provider,
-  signingMessageEntity: "CyberConnect" || "YOUR_ENTITY_HERE",
-});
+  signingMessageEntity: 'CyberConnect' || 'YOUR_ENTITY_HERE',
+})
 ```
 
 - `namespace` - The namespace you want to use. We recommend you use your application name as namespace and hence, you can later filter out connections from your platform. If empty value of namespace is given, the connection will be put into the default, CyberConnect namespace. See details on [namespace](/resources/terminology/namespace/) page.
@@ -60,7 +60,7 @@ const cyberConnect = new CyberConnect({
 ### Connect
 
 ```jsx
-cyberConnect.connect(targetAddr, alias, connectionType);
+cyberConnect.connect(targetAddr, alias, connectionType)
 ```
 
 - `targetAddr` - The target wallet address to connect.
@@ -70,7 +70,7 @@ cyberConnect.connect(targetAddr, alias, connectionType);
 ### Disconnect
 
 ```jsx
-cyberConnect.disconnect(targetAddr);
+cyberConnect.disconnect(targetAddr)
 ```
 
 - `targetAddr` - The target wallet address to disconnect.
@@ -78,7 +78,7 @@ cyberConnect.disconnect(targetAddr);
 ### BatchConnect
 
 ```jsx
-cyberConnect.batchConnect(targetAddrs, connectionType);
+cyberConnect.batchConnect(targetAddrs, connectionType)
 ```
 
 - `targetAddrs` - A list of wallet addresses to connect.
@@ -87,7 +87,7 @@ cyberConnect.batchConnect(targetAddrs, connectionType);
 ### SetAlias
 
 ```jsx
-cyberConnect.setAlias(targetAddr, alias);
+cyberConnect.setAlias(targetAddr, alias)
 ```
 
 - `targetAddr` - The target wallet address to disconnect.
@@ -96,7 +96,7 @@ cyberConnect.setAlias(targetAddr, alias);
 ### BidirectionalConnect
 
 ```jsx
-cyberConnect.bidirectionalConnect(targetAddr, biConnectType);
+cyberConnect.bidirectionalConnect(targetAddr, biConnectType)
 ```
 
 - `targetAddr` - The target wallet address to disconnect.
@@ -107,29 +107,29 @@ Learn more about bidirectional Connection [here](/concepts/bidirectional-connect
 ### AckNotifications
 
 ```jsx
-cyberConnect.ackNotifications(notificationIds);
+cyberConnect.ackNotifications(notificationIds)
 ```
 
 - `notificationIds` - A list of notificationId .
 
-Learn more about notification [here](/concepts/notification/).
+Learn more about notification [here](/V1concepts/notification/).
 
 ### AckAllNotifications
 
 ```jsx
-cyberConnect.ackAllNotifications();
+cyberConnect.ackAllNotifications()
 ```
 
-Learn more about notification [here](/concepts/notification/).
+Learn more about notification [here](/V1concepts/notification/).
 
 ### Connection Type
 
 You can create different types of connections for different purposes (e.g. you can like a NFT by creating a `LIKE` connection from you to the NFT).
 
 ```jsx
-import { ConnectionType } from "@cyberlab/cyberconnect";
+import { ConnectionType } from '@cyberlab/cyberconnect'
 
-cyberConnect.connect(targetAddr, alias, ConnectionType.LIKE);
+cyberConnect.connect(targetAddr, alias, ConnectionType.LIKE)
 ```
 
 The types we support: `FOLLOW`, `LIKE`, `REPORT`, `WATCH` and `VOTE`.
@@ -145,9 +145,9 @@ Only one type connection can be created from one to another, which means you **c
 You can create different types of bi-connections for different purposes (e.g. you can send a request by using `INIT` type or accept a request by using `ACCEPT` type).
 
 ```jsx
-import { BiConnectionType } from "@cyberlab/cyberconnect";
+import { BiConnectionType } from '@cyberlab/cyberconnect'
 
-cyberConnect.bidirectionalConnect(targetAddr, BiConnectionType.INIT);
+cyberConnect.bidirectionalConnect(targetAddr, BiConnectionType.INIT)
 ```
 
 The types we support: `INIT`, `ACCEPT`, `REJECT`, `TERMINATE`, `BLOCK` and `UNBLOCK`.
@@ -157,8 +157,8 @@ The types we support: `INIT`, `ACCEPT`, `REJECT`, `TERMINATE`, `BLOCK` and `UNBL
 You can get Solana provider from `@solana/wallet-adapter-react`
 
 ```jsx
-import { useWallet } from "@solana/wallet-adapter-react";
-const solanaProvider = useWallet();
+import { useWallet } from '@solana/wallet-adapter-react'
+const solanaProvider = useWallet()
 ```
 
 :::info
@@ -168,13 +168,13 @@ You need to pass `chainRef` when you connect to Solana. Now we have three option
 :::
 
 ```jsx
-import CyberConnect, { Env, Blockchain, Solana } from "@cyberlab/cyberconnect";
+import CyberConnect, { Env, Blockchain, Solana } from '@cyberlab/cyberconnect'
 
 const cyberConnect = new CyberConnect({
-  namespace: "CyberConnect",
+  namespace: 'CyberConnect',
   env: Env.Production,
   chain: Blockchain.ETH,
   provider: solanaProvider,
   chainRef: Solana.SOLANA_MAINNET_CHAIN_REF,
-});
+})
 ```

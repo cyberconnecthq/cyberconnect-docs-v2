@@ -22,17 +22,17 @@ Please be sure to use [https://api.cybertino.io/connect/](https://api.cybertino.
 An easy way to explore the CyberConnect API is to use the GraphiQL interface served directly on the endpoint address either by accessing [https://api.cybertino.io/connect/graphiql](https://api.cybertino.io/connect/graphiql) to do so or playing around with the embedded version:
 
 <iframe
-    src="https://api.cybertino.io/connect/graphiql"
-    title="playground"
-    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  src='https://api.cybertino.io/connect/graphiql'
+  title='playground'
+  sandbox='allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts'
 ></iframe>
 
 ## Example
 
 Here is a short and simple query example that you can quickly test out in the playground:
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
 
 <Tabs
     defaultValue="javascript"
@@ -56,10 +56,10 @@ query IdentityQuery{
 ```json
 {
   "data": {
-        "identity": {
-            "domain": "cyberlab.eth"
-        }
+    "identity": {
+      "domain": "cyberlab.eth"
     }
+  }
 }
 ```
 

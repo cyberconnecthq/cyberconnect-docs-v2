@@ -7,11 +7,11 @@ sidebar_position: 4
 description: We've built a recommendation index into our protocol for general follow suggestions. The index jumpstarts by aggregating connections from open data sources, including Ethereum blockchain, Foundation.app, Rarible, etc.
 ---
 
-We've built a [recommendation](/v1/concepts/recommend/) index into our protocol for general follow suggestions. The index jumpstarts by aggregating [connections](/v1/concepts/connection/) from open data sources, including Ethereum blockchain, Foundation.app, Rarible, etc. It generates a personalized "recommended addresses to follow" list for every address.
+We've built a [recommendation](/V1/concepts/recommend/) index into our protocol for general follow suggestions. The index jumpstarts by aggregating [connections](/V1/concepts/connection/) from open data sources, including Ethereum blockchain, Foundation.app, Rarible, etc. It generates a personalized "recommended addresses to follow" list for every address.
 
 The Recommendation API is to suggest such possible connections for users. It will return a list of addresses that a, have the same followers with the searched address, or, b, have already followed or been followed by the searched address on other platforms.
 
-You can find the step by step instructions on how to set up GraphQL client in your application and write a simple **Get Recommendation query** in the [Read Recommendations](/v1/get-started/read-recommendations/) section.
+You can find the step by step instructions on how to set up GraphQL client in your application and write a simple **Get Recommendation query** in the [Read Recommendations](/V1/get-started/read-recommendations/) section.
 
 ## Definition
 
@@ -32,11 +32,11 @@ For input params:
 | `first`     | Int     | The number of entries this query should return       | Optional. Default is `20` and the maximum value is `50`. |
 | `after`     | String  | After which index this query should begin            | Optional. Default value is `-1`.                         |
 
-For `first` and `after` usage, please refer to [Pagination](/resources/terminology/pagination/) section.
+For `first` and `after` usage, please refer to [Pagination](/V1/resources/terminology/pagination/) section.
 
 For returning fields, "SUCCESS" means you have made a successful request and can then use the data. You may see "INDEXING" for recommendation results if you have put in an address that has never been queried before. In such a case, our recommendation system will run in the background to get the results prepared. You can come back to check later.
 
-`pageInfo` is used to do pagination. Also, you can refer to [Pagination](/resources/terminology/pagination/) section for more details.
+`pageInfo` is used to do pagination. Also, you can refer to [Pagination](/V1/resources/terminology/pagination/) section for more details.
 
 There are 5 fields for each object in `list`:
 
@@ -50,7 +50,7 @@ There are 5 fields for each object in `list`:
 
 ## Example
 
-This is an example of a query to fetch `recommendations` data that you can also test out in the [Playground](/cyberconnect-api/playground/):
+This is an example of a query to fetch `recommendations` data that you can also test out in the [Playground](/V1/cyberconnect-api/playground/):
 
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'

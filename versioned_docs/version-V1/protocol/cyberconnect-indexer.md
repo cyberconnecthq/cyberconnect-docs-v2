@@ -9,9 +9,9 @@ description: We introduce how to mutate (follow and unfollow) a connection statu
 
 ## CyberConnect Indexer at a High Level
 
-We introduce how to mutate (follow and unfollow) a [connection](/v1/concepts/connection/) status between addresses in [Connect with SDK](/V1/cyberconnect-sdk/connect-with-js-sdk/) and [Connect with Follow Button](/cyberconnect-sdk/connect-with-follow-button/) sections. In this section, we will guide you how to query connection data and get potential relationship [recommendations](/v1/concepts/recommend/) from CyberConnect Indexer.
+We introduce how to mutate (follow and unfollow) a [connection](/V1/concepts/connection/) status between addresses in [Connect with SDK](/V1/cyberconnect-sdk/connect-with-js-sdk/) and [Connect with Follow Button](/cyberconnect-sdk/connect-with-follow-button/) sections. In this section, we will guide you how to query connection data and get potential relationship [recommendations](/V1/concepts/recommend/) from CyberConnect Indexer.
 
-CyberConnect Indexer collects on-chain data from IPFS and blockchain networks, and off-chain data from various platforms. Then, it aggregates, transforms, and stores raw data into graph databases. After deployment, the Indexer can perform address [identity](/v1/concepts/identity/) curation and provide connection recommendations to Social Graph Module in user-end applications.
+CyberConnect Indexer collects on-chain data from IPFS and blockchain networks, and off-chain data from various platforms. Then, it aggregates, transforms, and stores raw data into graph databases. After deployment, the Indexer can perform address [identity](/V1/concepts/identity/) curation and provide connection recommendations to Social Graph Module in user-end applications.
 
 ![CyberConnect Indexer 1](/img/v0.2.0/protocol/indexer1.png)
 

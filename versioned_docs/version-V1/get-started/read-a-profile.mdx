@@ -18,31 +18,28 @@ We will write a simple function to fetch the profile:
 ```jsx title="/src/App.tsx"
 type DataEnsAvatar = {
   record: string,
-  type: "uri:https" | "uri:data" | "uri:ipfs" | "nft:erc721" | "nft:erc1155",
+  type: 'uri:https' | 'uri:data' | 'uri:ipfs' | 'nft:erc721' | 'nft:erc1155',
   nftMetadata: string | null,
   nftOwner: string | null,
   nftBalance: string | null,
   nftOwned: boolean | null,
   url: string | null,
-};
+}
 
 type Data = {
   address: string,
   name: string | null,
   primaryName: string | null,
   ensAvatar: DataEnsAvatar | null,
-};
+}
 
 const fetchProfile = async (id: string): Promise<Data> => {
-  const res = await fetch(
-    `https://cyberprofile-v2.vercel.app/api/profile/${id}`,
-    {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    }
-  );
-  return await res.json();
-};
+  const res = await fetch(`https://cyberprofile-v2.vercel.app/api/profile/${id}`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  })
+  return await res.json()
+}
 ```
 
 In our example we call the `fetchProfile` function and pass “pisofa.eth” as the id param. If successful, you'll retrieve the user's address, `name`, and `ensAvatar` including its `record`, `type`, `nftOwner`, and `url` among other information:
@@ -64,15 +61,15 @@ In our example we call the `fetchProfile` function and pass “pisofa.eth” as 
 }
 ```
 
-Make sure to check out the full list of fields available in [Profile API](/cyberconnect-api/rest-api/profile/).
+Make sure to check out the full list of fields available in [Profile API](/V1/cyberconnect-api/rest-api/profile/).
 
 ## Sandbox
 
 Feel free to test it out in [Next Swagger Doc Demo App](https://cyberprofile-v2.vercel.app/) or experiment with our code in the sandbox below!
 
 <iframe
-  src="https://codesandbox.io/embed/read-a-profile-i4l5lw?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetIdentity.tsx"
-  title="read-identity"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  src='https://codesandbox.io/embed/read-a-profile-i4l5lw?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/queries/GetIdentity.tsx'
+  title='read-identity'
+  allow='accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking'
+  sandbox='allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts'
 ></iframe>

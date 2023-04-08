@@ -11,4 +11,4 @@ In simple terms, the CyberConnect social graph is a decentralized and tamper-pro
 
 The protocol is designed with data integrity and authenticity in mind. Each user's social graph is safely stored in IPFS with a custom IPLD codec ensuring that every update is signed and verified.
 
-Learn more about it in our [Technical Framework](/v1/protocol/technical-framework/).
+Learn more about it in our [Technical Framework](/V1/protocol/technical-framework/).

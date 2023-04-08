@@ -7,7 +7,7 @@ sidebar_position: 5
 description: An interoperable social graph opens up the possibility for developers to better leverage data insights and more accurately recommend potential connections to their users.
 ---
 
-An interoperable [social graphs](/v1/concepts/social-graph/) opens up the possibility for developers to better leverage data insights and more accurately recommend potential [connections](/v1/concepts/connection/) to their users. The recommender layer of the CyberConnect Protocol enables several types of algorithms to retrieve lists of recommended users:
+An interoperable [social graphs](/V1/concepts/social-graph/) opens up the possibility for developers to better leverage data insights and more accurately recommend potential [connections](/V1/concepts/connection/) to their users. The recommender layer of the CyberConnect Protocol enables several types of algorithms to retrieve lists of recommended users:
 
 <ul>
     <li>Asset-based weighted recommendation.</li>

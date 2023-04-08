@@ -7,7 +7,7 @@ sidebar_position: 2
 description: Connections API is used to query fields of connections between a given address and another address or a list of other addresses (5000 max).
 ---
 
-Connections API is used to query fields of [connections](/v1/concepts/connection/) between a given address and another address or a list of other addresses (5000 max).
+Connections API is used to query fields of [connections](/V1/concepts/connection/) between a given address and another address or a list of other addresses (5000 max).
 
 You can find the step by step instructions on how to set up GraphQL client in your application and write a simple **Get Connection query** in the [Read Connections](/get-started/read-connections/) section.
 
@@ -50,11 +50,11 @@ If `isFollowing` is true, `fromAddr` has followed `toAddr`.
 
 ### Fetch Proof Example
 
-This is an example of a query to fetch `proof` data that you can also test out in the [Playground](/cyberconnect-api/playground/).
+This is an example of a query to fetch `proof` data that you can also test out in the [Playground](/V1/cyberconnect-api/playground/).
 With `arweaveTxHash` you can query it on [Arweave](https://viewblock.io/arweave) to proof the connection.
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
 
 <Tabs
     defaultValue="javascript"
@@ -168,7 +168,7 @@ fragment event on ConnectionEvent {
 
 ### Fetch followStatus Example
 
-This is an example of a query to fetch the `followStatus` that you can also test out in the [Playground](/cyberconnect-api/playground/):
+This is an example of a query to fetch the `followStatus` that you can also test out in the [Playground](/V1/cyberconnect-api/playground/):
 
 <Tabs
     defaultValue="javascript"
@@ -220,7 +220,7 @@ query FollowStatusQuery {
 
 ### Full Example
 
-This is a full example for the Connections query that you can also test out in the [Playground](/cyberconnect-api/playground/):
+This is a full example for the Connections query that you can also test out in the [Playground](/V1/cyberconnect-api/playground/):
 
 <Tabs
     defaultValue="javascript"

@@ -9,7 +9,7 @@ description: The purpose of the CyberConnect Protocol is to empower users to tak
 
 ## Introduction
 
-CyberConnect is a decentralized [social graph](/v1/concepts/social-graph/) protocol that helps dApps bootstrap network effects and build personalized social experiences. The decentralized protocol allows users to own their social connections while providing a composable social data layer for developers.
+CyberConnect is a decentralized [social graph](/V1/concepts/social-graph/) protocol that helps dApps bootstrap network effects and build personalized social experiences. The decentralized protocol allows users to own their social connections while providing a composable social data layer for developers.
 
 CyberConnect describes a data standard, storage infrastructure, identity, and permissions management mechanism as the foundation of a seamless and secure digital social experience in Web3. CyberConnect also proposes the topology of a social data network of indexed data and recommendations that can be universally accessed and permissionlessly contribute to. Incentive mechanisms are designed to grow the protocol into a thriving self-sustaining economy with expanding utility.
 

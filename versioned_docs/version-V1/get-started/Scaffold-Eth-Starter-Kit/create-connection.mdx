@@ -16,13 +16,13 @@ Before allowing users to follow another user, we first check whether such a conn
 - Go to **packages\react-app\src\queries\cyberconnect.js** and add the following code in **cyberconnect.js** to implement a Get Follow Status query in **cyberconnect.js**:
 
   ```jsx title="packages\react-app\src\queries\cyberconnect.js"
-  import { GraphQLClient, gql } from "graphql-request";
+  import { GraphQLClient, gql } from 'graphql-request'
 
   // CyberConnect Protocol endpoint
-  const CYBERCONNECT_ENDPOINT = "https://api.cybertino.io/connect/";
+  const CYBERCONNECT_ENDPOINT = 'https://api.cybertino.io/connect/'
 
   // Initialize the GraphQL Client
-  const client = new GraphQLClient(CYBERCONNECT_ENDPOINT);
+  const client = new GraphQLClient(CYBERCONNECT_ENDPOINT)
 
   // You can add/remove fields in query
   export const GET_IDENTITY = gql`
@@ -50,7 +50,7 @@ Before allowing users to follow another user, we first check whether such a conn
         }
       }
     }
-  `;
+  `
 
   export const GET_FOLLOWSTATUS = gql`
     query ($fromAddr: String!, $toAddrList: [String!]!) {
@@ -61,30 +61,30 @@ Before allowing users to follow another user, we first check whether such a conn
         }
       }
     }
-  `;
+  `
   // Get Address Profile Identity
   export async function getIdentity({ address }) {
-    if (!address) return;
+    if (!address) return
 
     const res = await client.request(GET_IDENTITY, {
       address: address,
       first: 5,
-    });
+    })
 
-    return res?.identity;
+    return res?.identity
   }
 
   // Get Address Follow Status
   export async function getFollowStatus({ fromAddr, toAddr }) {
-    if (!fromAddr) return;
-    if (!toAddr) return;
+    if (!fromAddr) return
+    if (!toAddr) return
 
     const res = await client.request(GET_FOLLOWSTATUS, {
       fromAddr: fromAddr,
       toAddrList: [toAddr],
-    });
+    })
 
-    return res?.connections[0]?.followStatus?.isFollowing;
+    return res?.connections[0]?.followStatus?.isFollowing
   }
   ```
 
@@ -95,65 +95,60 @@ To create a follow button component, go to directory **packages/react-app/src/co
 - Add the following code to **CyberConnectFollowBtn.jsx**:
 
   ```jsx title="packages/react-app/src/components/CyberConnectFollowBtn.jsx"
-  import CyberConnect, { Env, Blockchain } from "@cyberlab/cyberconnect";
+  import CyberConnect, { Env, Blockchain } from '@cyberlab/cyberconnect'
 
-  function CyberConnectFollowButton({
-    isFollowing,
-    targetAddress,
-    injectedProvider,
-    onSuccess,
-  }) {
+  function CyberConnectFollowButton({ isFollowing, targetAddress, injectedProvider, onSuccess }) {
     const cyberConnect = new CyberConnect({
-      namespace: "CyberConnect-Scaffold-Eth",
+      namespace: 'CyberConnect-Scaffold-Eth',
       env: Env.PRODUCTION,
       chain: Blockchain.ETH,
       provider: injectedProvider,
-    });
+    })
 
     const handleOnClick = async () => {
       if (!injectedProvider) {
-        alert("Please connect your wallet first!");
-        return;
+        alert('Please connect your wallet first!')
+        return
       }
 
       try {
         if (isFollowing) {
-          await cyberConnect.disconnect(targetAddress);
-          alert(`Success: you've unfollowed ${targetAddress}!`);
+          await cyberConnect.disconnect(targetAddress)
+          alert(`Success: you've unfollowed ${targetAddress}!`)
           if (onSuccess) {
-            onSuccess();
+            onSuccess()
           }
         } else {
-          await cyberConnect.connect(targetAddress);
-          alert(`Success: you're following ${targetAddress}!`);
+          await cyberConnect.connect(targetAddress)
+          alert(`Success: you're following ${targetAddress}!`)
           if (onSuccess) {
-            onSuccess();
+            onSuccess()
           }
         }
       } catch (err) {
-        console.error(err.message);
+        console.error(err.message)
       }
-    };
+    }
 
     return (
       <button
         onClick={handleOnClick}
         style={{
-          background: "black",
-          borderRadius: "20px",
-          border: "1px solid white",
-          color: "white",
-          cursor: "pointer",
-          fontSize: "14px",
-          padding: "6px 20px",
+          background: 'black',
+          borderRadius: '20px',
+          border: '1px solid white',
+          color: 'white',
+          cursor: 'pointer',
+          fontSize: '14px',
+          padding: '6px 20px',
         }}
       >
-        {isFollowing ? "Unfollow" : "Follow"}
+        {isFollowing ? 'Unfollow' : 'Follow'}
       </button>
-    );
+    )
   }
 
-  export default CyberConnectFollowButton;
+  export default CyberConnectFollowButton
   ```
 
 - Add the follow button to ExampleUI at **packages\react-app\src\views\ExampleUI.jsx**.
@@ -356,7 +351,7 @@ To create a follow button component, go to directory **packages/react-app/src/co
 In order to make sure that your user use their logged-in account to follow another address, add `injectedProvider={injectedProvider}` to **packages\react-app\src\App.jsx**:
 
 ```jsx title="packages\react-app\src\App.jsx"
-<Route path="/exampleui">
+<Route path='/exampleui'>
   <ExampleUI
     address={address}
     userSigner={userSigner}
@@ -375,11 +370,11 @@ In order to make sure that your user use their logged-in account to follow anoth
 
 If successful, ExampleUI should display the following:
 
-<div style={{ textAlign: "center" }}>
-  <img src="/img/v0.7.0/tutorial-scaffold-eth/finished.png" />
+<div style={{ textAlign: 'center' }}>
+  <img src='/img/v0.7.0/tutorial-scaffold-eth/finished.png' />
 </div>
 
-Play around with the connect functionality by inputting different addresses or ENS domains. Feel free to check out several popular users [here](https://app.cyberconnect.me/plaza). When you follow a new user, you’ll find your followings count and list to be updated as well.
+Play around with the connect functionality by inputting different addresses or ENS domains. Feel free to check out several popular users. When you follow a new user, you’ll find your followings count and list to be updated as well.
 ![finished demo](/img/v0.7.0/tutorial-scaffold-eth/finished-demo.gif)
 
 That’s it! You’ve done a simple integration of CyberConnect to Scaffold-ETH. Check out the finished Starter Project [here](https://github.com/cyberconnecthq/scaffold-eth-examples/tree/cyberconnect-starter). We look forward to seeing more DApps built on top of the CyberConnect Protocol!
