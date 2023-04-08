@@ -13,11 +13,11 @@ The CyberConnect SDK is a developer-friendly gateway to help write social connec
 
 Next up, we will cover in more detail how the SDK works under the hood and the libraries that complement it in order to build applications where users manage their social connections in a self-sovereign manner:
 
-- [Connect with JS SDK](/cyberconnect-sdk/connect-with-js-sdk/)
+- [Connect with JS SDK](/V1/cyberconnect-sdk/connect-with-js-sdk/)
 - [Connect with iOS SDK](/cyberconnect-sdk/connect-with-ios-sdk/)
 - [Connect with Follow Button](/cyberconnect-sdk/connect-with-follow-button/)
 - [Connect with Social Verifier](/cyberconnect-sdk/connect-with-social-verifier/)
 
 ## How does it work?
 
-The CyberConnect SDK encapsulates a complex authentication logic (authenticate to Ceramic Network) and it provides two primary easy-to-use functions, connect and disconnect, which in social graphs are follow and unfollow. 
+The CyberConnect SDK encapsulates a complex authentication logic (authenticate to Ceramic Network) and it provides two primary easy-to-use functions, connect and disconnect, which in social graphs are follow and unfollow.

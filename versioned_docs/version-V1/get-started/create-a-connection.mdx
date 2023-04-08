@@ -24,9 +24,9 @@ Before helping users connect with each other, you need to make sure that their c
 ```jsx title="/src/components/ConnectButton.tsx"
 // Check function if MetaMask is installed
 const isMetaMaskInstalled = () => {
-  const { ethereum } = window;
-  return Boolean(ethereum && ethereum.isMetaMask);
-};
+  const { ethereum } = window
+  return Boolean(ethereum && ethereum.isMetaMask)
+}
 ```
 
 2. In this tutorial, we'll help you implement a simple `button` that user can click on and connect their wallet. After clicking, the function `handleOnClick` in the component `connectButton` sends a request to MetaMask and, if successful, alerts the user's corresponding wallet address:
@@ -37,22 +37,22 @@ const handleOnClick = async () => {
     // Request to connect to MetaMask
     try {
       const accounts = await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-      alert(`Connected with: ${accounts[0]}`);
+        method: 'eth_requestAccounts',
+      })
+      alert(`Connected with: ${accounts[0]}`)
     } catch (error) {
-      console.error(error.message);
+      console.error(error.message)
     }
   } else {
-    alert("Please install MetaMask.");
+    alert('Please install MetaMask.')
   }
-};
+}
 ```
 
 3. Finish up our code by assigning the function `handleOnClick` to the handler `onClick` on the `button`:
 
 ```jsx title="/src/components/ConnectButton.tsx"
-<button className="connectButton" onClick={handleOnClick}>
+<button className='connectButton' onClick={handleOnClick}>
   Connect wallet
 </button>
 ```
@@ -68,18 +68,18 @@ After connecting with MetaMask, you'll be able to help users connect with each o
 1. To start, import `CyberConnect`, `Env`, and `Blockchain` into your application from the CyberConnect SDK:
 
 ```jsx title="/src/components/FollowButton.tsx"
-import CyberConnect, { Env, Blockchain } from "@cyberlab/cyberconnect";
+import CyberConnect, { Env, Blockchain } from '@cyberlab/cyberconnect'
 ```
 
 2. Before creating a connection, you'll need to instantiate a `CyberConnect` object and initialize variables `namespace`, `env`, `chain` and `provider`:
 
 ```jsx title="/src/components/FollowButton.tsx"
 const cyberConnect = new CyberConnect({
-  namespace: "CyberConnect",
+  namespace: 'CyberConnect',
   env: Env.PRODUCTION,
   chain: Blockchain.ETH,
   provider: window.ethereum,
-});
+})
 ```
 
 3. In this tutorial, we'll help you implement a simple button that user can click on and follow another user. After clicking, the function `handleOnClick` in the component `followButton` sends a request to MetaMask and, if successful, alerts the user's corresponding wallet address.
@@ -87,36 +87,36 @@ const cyberConnect = new CyberConnect({
 ```jsx title="/src/components/FollowButton.tsx"
 const handleOnClick = async () => {
   // Prompt to enter the address
-  const address = prompt("Enter the ens/address to follow:");
+  const address = prompt('Enter the ens/address to follow:')
 
   try {
-    await cyberConnect.connect(address);
-    alert(`Success: you're following ${address}!`);
+    await cyberConnect.connect(address)
+    alert(`Success: you're following ${address}!`)
   } catch (error) {
-    console.error(error.message);
+    console.error(error.message)
   }
-};
+}
 ```
 
 4. Finish up our code by assigning the function `handleOnClick` to the handler `onClick` on the `button`:
 
 ```jsx title="/src/components/FollowButton.tsx"
-<button className="followButton" onClick={handleOnClick}>
+<button className='followButton' onClick={handleOnClick}>
   Follow address
 </button>
 ```
 
-Your `followButton` component is completed! Now, your users can connect with each other on the Ethereum network. For more advanced features, learn more about the [CyberConnect JS SDK](/cyberconnect-sdk/connect-with-js-sdk/).
+Your `followButton` component is completed! Now, your users can connect with each other on the Ethereum network. For more advanced features, learn more about the [CyberConnect JS SDK](/V1/cyberconnect-sdk/connect-with-js-sdk/).
 
 ## Sandbox
 
 Check out the entire code from the tutorial and play around with it in the sandbox below!
 
 <iframe
-  src="https://codesandbox.io/embed/create-a-connection-fvecwy?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/App.tsx,/src/components/ConnectButton.tsx,/src/components/FollowButton.tsx"
-  title="create-a-connection"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  src='https://codesandbox.io/embed/create-a-connection-fvecwy?codemirror=1&fontsize=14&hidenavigation=0&theme=dark&runonclick=1&view=split&module=/src/App.tsx,/src/components/ConnectButton.tsx,/src/components/FollowButton.tsx'
+  title='create-a-connection'
+  allow='accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking'
+  sandbox='allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts'
 ></iframe>
 
 Congrats 🎉 You're ready to move on to the next step: implementing the CyberConnect Social Verifier.

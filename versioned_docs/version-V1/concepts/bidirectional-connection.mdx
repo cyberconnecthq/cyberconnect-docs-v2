@@ -16,16 +16,14 @@ There are four states for a bidirectional connection between two addresses: `EMP
     <strong>EMPTY</strong>: Initial state between two wallet addresses.
   </li>
   <li>
-    <strong>PENDING</strong>: Includes sent and received bidirectional
-    connection requests.
+    <strong>PENDING</strong>: Includes sent and received bidirectional connection requests.
   </li>
   <li>
-    <strong>CONNECTED</strong>: Two wallet addresses have established a
-    bidirectional connection after the request has been accepted.
+    <strong>CONNECTED</strong>: Two wallet addresses have established a bidirectional connection after the request has
+    been accepted.
   </li>
   <li>
-    <strong>BLACKLIST</strong>: Either of two wallet addresses blocks another or
-    two wallet addresses block each other.
+    <strong>BLACKLIST</strong>: Either of two wallet addresses blocks another or two wallet addresses block each other.
   </li>
 </ul>
 
@@ -36,24 +34,21 @@ The protocol defines different types of bidirectional connections for different 
     <strong>Init</strong>: Sends request to another wallet address.
   </li>
   <li>
-    <strong>Accept</strong>: Accepts the request from another wallet address and
-    establishes a bidirectional connection with it.
+    <strong>Accept</strong>: Accepts the request from another wallet address and establishes a bidirectional connection
+    with it.
   </li>
   <li>
     <strong>Reject</strong>: Rejects the request from another wallet address.
   </li>
   <li>
-    <strong>Terminate</strong>: Terminates the established bidirectional
-    connection with another wallet address。
+    <strong>Terminate</strong>: Terminates the established bidirectional connection with another wallet address。
   </li>
   <li>
-    <strong>Block</strong>: Blocks the request from another wallet address, also
-    will terminate the bidirectional connection if there is already one between
-    you and the address.
+    <strong>Block</strong>: Blocks the request from another wallet address, also will terminate the bidirectional
+    connection if there is already one between you and the address.
   </li>
   <li>
-    <strong>Unblock</strong>: Remove the wallet address from the blacklist, and
-    is able to receive the request from it.
+    <strong>Unblock</strong>: Remove the wallet address from the blacklist, and is able to receive the request from it.
   </li>
 </ul>
 
@@ -67,7 +62,7 @@ The bidirectional connection model has nothing to do with the “friends” in t
 
 :::
 
-Developers can incorporate various connection modules to diversify the user experience by using the [CyberConnect JS SDK](/cyberconnect-sdk/connect-with-js-sdk/) and [CyberConnect GraphQL API](/cyberconnect-api/graphql-api/bidirectional-connections/).
+Developers can incorporate various connection modules to diversify the user experience by using the [CyberConnect JS SDK](/V1/cyberconnect-sdk/connect-with-js-sdk/) and [CyberConnect GraphQL API](/cyberconnect-api/graphql-api/bidirectional-connections/).
 
 ## How does it work?
 

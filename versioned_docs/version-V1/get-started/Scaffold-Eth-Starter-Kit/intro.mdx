@@ -49,54 +49,54 @@ Run:
 yarn add @cyberlab/cyberconnect graphql graphql-request babel-core babel-preset-env gulp-babel
 ```
 
-To learn more about CyberConnect JS SDK, please read [Connect with JS SDK](https://docs.cyberconnect.me/cyberconnect-sdk/connect-with-js-sdk/). We are using GraphQL to query our data, you can check this [link](https://graphql.org/) to learn more. [`graphql-request`](https://www.npmjs.com/package/graphql-request) is the simplest and the most lightweight GraphQL client. [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) is a toolchain for converting ECMAScript 2015+ code into a backward-compatible version of JavaScript in the current and legend browsers and environments.
+To learn more about CyberConnect JS SDK, please read [Connect with JS SDK](https://docs.cyberconnect.me/V1/cyberconnect-sdk/connect-with-js-sdk/). We are using GraphQL to query our data, you can check this [link](https://graphql.org/) to learn more. [`graphql-request`](https://www.npmjs.com/package/graphql-request) is the simplest and the most lightweight GraphQL client. [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) is a toolchain for converting ECMAScript 2015+ code into a backward-compatible version of JavaScript in the current and legend browsers and environments.
 
 ## Modify Configuration
 
 - Open **packages\react-app\gulpfile.js** and modify the code as follows:
 
 ```jsx title="packages\react-app\gulpfile.js"
-const gulp = require("gulp");
-const gulpless = require("gulp-less");
-const postcss = require("gulp-postcss");
-const debug = require("gulp-debug");
-var csso = require("gulp-csso");
-const autoprefixer = require("autoprefixer");
-const NpmImportPlugin = require("less-plugin-npm-import");
-const babel = require("gulp-babel");
+const gulp = require('gulp')
+const gulpless = require('gulp-less')
+const postcss = require('gulp-postcss')
+const debug = require('gulp-debug')
+var csso = require('gulp-csso')
+const autoprefixer = require('autoprefixer')
+const NpmImportPlugin = require('less-plugin-npm-import')
+const babel = require('gulp-babel')
 
 gulp.task(
-  "less",
+  'less',
   gulp.parallel(
     function () {
-      const plugins = [autoprefixer()];
+      const plugins = [autoprefixer()]
 
       return gulp
-        .src("src/themes/*-theme.less")
-        .pipe(debug({ title: "Less files:" }))
+        .src('src/themes/*-theme.less')
+        .pipe(debug({ title: 'Less files:' }))
         .pipe(
           gulpless({
             javascriptEnabled: true,
-            plugins: [new NpmImportPlugin({ prefix: "~" })],
-          }),
+            plugins: [new NpmImportPlugin({ prefix: '~' })],
+          })
         )
         .pipe(postcss(plugins))
         .pipe(
           csso({
             debug: true,
-          }),
+          })
         )
-        .pipe(gulp.dest("./public"));
+        .pipe(gulp.dest('./public'))
     },
     () =>
       gulp
-        .src("src/app.js")
+        .src('src/app.js')
         .pipe(
           babel({
-            plugins: ["@babel/transform-runtime"],
-          }),
+            plugins: ['@babel/transform-runtime'],
+          })
         )
-        .pipe(gulp.dest("./public")),
-  ),
-);
+        .pipe(gulp.dest('./public'))
+  )
+)
 ```
