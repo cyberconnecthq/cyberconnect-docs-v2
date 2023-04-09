@@ -1,118 +1,96 @@
-import React from "react";
-import styles from "./styles.module.css";
-import { CgWebsite } from "react-icons/cg";
-import GithubSvg from "@site/static/img/v0.4.0/icons/project/github.svg";
-import NpmSvg from "@site/static/img/v0.4.0/icons/project/npm.svg";
+import React from 'react'
+import styles from './styles.module.css'
+import { CgWebsite } from 'react-icons/cg'
+import GithubSvg from '@site/static/img/v0.4.0/icons/project/github.svg'
+import NpmSvg from '@site/static/img/v0.4.0/icons/project/npm.svg'
 
 type UrlItem = {
-  icon: any;
-  url: string;
-};
+  icon: any
+  url: string
+}
 
 type ProjectItem = {
-  title: string;
-  urls: Array<UrlItem>;
-};
+  title: string
+  urls: Array<UrlItem>
+}
 
 const ProjectList: ProjectItem[] = [
   {
-    title: "CyberConnect JS SDK",
+    title: 'CyberConnect JS SDK',
     urls: [
       {
         icon: <GithubSvg />,
-        url: "https://github.com/cyberconnecthq/js-cyberconnect/",
+        url: 'https://github.com/cyberconnecthq/js-cyberconnect/',
       },
       {
         icon: <NpmSvg />,
-        url: "https://www.npmjs.com/package/@cyberlab/cyberconnect/",
+        url: 'https://www.npmjs.com/package/@cyberlab/cyberconnect/',
       },
     ],
   },
   {
-    title: "CyberConnect iOS SDK",
+    title: 'CyberConnect iOS SDK',
     urls: [
       {
         icon: <GithubSvg />,
-        url: "https://github.com/cyberconnecthq/cyberconnect-swift-lib",
+        url: 'https://github.com/cyberconnecthq/cyberconnect-swift-lib',
       },
     ],
   },
   {
-    title: "CyberConnect Social Verifier",
+    title: 'CyberConnect Social Verifier',
     urls: [
       {
         icon: <GithubSvg />,
-        url: "https://github.com/cyberconnecthq/social-verifier/",
+        url: 'https://github.com/cyberconnecthq/social-verifier/',
       },
       {
         icon: <NpmSvg />,
-        url: "https://www.npmjs.com/package/@cyberlab/social-verifier/",
+        url: 'https://www.npmjs.com/package/@cyberlab/social-verifier/',
       },
     ],
   },
   {
-    title: "CyberConnect JS SDK Starter Demo",
+    title: 'CyberConnect JS SDK Starter Demo',
     urls: [
       {
         icon: <GithubSvg />,
-        url: "https://github.com/cyberconnecthq/cyberconnect-starter/",
+        url: 'https://github.com/cyberconnecthq/cyberconnect-starter/',
       },
       {
         icon: <CgWebsite />,
-        url: "https://cyberconnect-starter.vercel.app",
+        url: 'https://cyberconnect-starter.vercel.app',
       },
     ],
   },
   {
-    title: "CyberConnect iOS SDK Starter Demo",
+    title: 'CyberConnect iOS SDK Starter Demo',
     urls: [
       {
         icon: <GithubSvg />,
-        url: "https://github.com/cyberconnecthq/cyberconnect-swift-example",
+        url: 'https://github.com/cyberconnecthq/cyberconnect-swift-example',
       },
     ],
   },
   {
-    title: "CyberProfile REST API Starter Demo",
+    title: 'CyberProfile REST API Starter Demo',
     urls: [
       {
         icon: <GithubSvg />,
-        url: "https://github.com/cyberconnecthq/cyberprofile",
+        url: 'https://github.com/cyberconnecthq/cyberprofile',
       },
       {
         icon: <CgWebsite />,
-        url: "https://cyberprofile-v2.vercel.app/",
+        url: 'https://cyberprofile-v2.vercel.app/',
       },
     ],
   },
-  {
-    title: "CyberGraph Demo",
-    urls: [
-      {
-        icon: <GithubSvg />,
-        url: "https://github.com/cyberconnecthq/CyberGraph/",
-      },
-      {
-        icon: <CgWebsite />,
-        url: "https://graph.cyberconnect.me/",
-      },
-    ],
-  },
-  {
-    title: "Scaffold-ETH CyberConnect Starter Kit",
-    urls: [
-      {
-        icon: <GithubSvg />,
-        url: "https://github.com/cyberconnecthq/scaffold-eth-cyberconnect-starter-kit",
-      },
-    ],
-  },
-];
+]
 
 function ProjectCard({ title, urls }: ProjectItem) {
   return (
     <div className={`card ${styles.projectCard}`}>
-      <div className="cardTitle">
+      <div className='cardTitle'>
         <div>
           <div></div>
           <h3>{title}</h3>
@@ -120,14 +98,14 @@ function ProjectCard({ title, urls }: ProjectItem) {
       </div>
       {urls.map((elem, idx) => (
         <div key={idx}>
-          <a href={elem.url} className={styles.projectCardUrl} target="_blank">
+          <a href={elem.url} className={styles.projectCardUrl} target='_blank'>
             <div className={styles.projectCardIcon}>{elem.icon}</div>
             <div>{elem.url}</div>
           </a>
         </div>
       ))}
     </div>
-  );
+  )
 }
 
 export default function ProjectCards(): JSX.Element {
@@ -137,5 +115,5 @@ export default function ProjectCards(): JSX.Element {
         <ProjectCard key={idx} {...props} />
       ))}
     </div>
-  );
+  )
 }

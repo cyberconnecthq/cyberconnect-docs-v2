@@ -12,7 +12,7 @@ description: Subscribe middleware
 Set middleware for subscribe is a powerful API that allows developers to customize their apps and create a unique experience for their users. The API interacts with the smart contract and sets the defined rules on how it should behave for a specific action, such as subscribing to a profile.
 
 :::caution
-All typedData mutations require an `Authorization` header with the `Bearer` token. You can learn how to get a bearer token in the [User Login](api/authentication/user-login) section.
+All typedData mutations require an `Authorization` header with the `Bearer` token. You can learn how to get a bearer token in the [User Login](/api/authentication/user-login) section.
 :::
 
 ## 1. Generate Typed Data
@@ -26,7 +26,6 @@ This API sets the parameters for subscribing such as `tokenURI` and `middleware`
 In this example we are setting the `subscribePaid` middleware which will require the user to pay a fee to subscribe to the profile.<br/>
 To view a full list of supported middlewares check out the [Middleware](/core-concepts/middleware) guide.
 
-
 <!-- import ApolloCard from "@site/src/components/ApolloCard"; -->
 
 <!-- <ApolloCard queryName="createSetSubscribeDataTypedData" /> -->
@@ -37,7 +36,7 @@ To view a full list of supported middlewares check out the [Middleware](/core-co
 
 ## 3. Call `relay` and get `relayActionID`
 
-:::caution 
+:::caution
 In order to call the `relay` mutation, you must include your `X-API-KEY` in the header.
 You can learn more about how to get one [here](/api/authentication/introduction).
 :::

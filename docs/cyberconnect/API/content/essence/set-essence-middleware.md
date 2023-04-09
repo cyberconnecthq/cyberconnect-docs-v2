@@ -14,9 +14,8 @@ Set middleware for essence is a powerful API that allows developers to customize
 ## 1. Generate Typed Data
 
 :::caution
-All typedData mutations require an `Authorization` header with the `Bearer` token. You can learn how to get a bearer token in the [User Login](api/authentication/user-login) section.
+All typedData mutations require an `Authorization` header with the `Bearer` token. You can learn how to get a bearer token in the [User Login](/api/authentication/user-login) section.
 :::
-
 
 First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createSetEssenceDataTypedData` API that takes care of this.
 
@@ -26,7 +25,6 @@ This API sets/updates the parameters for the essence such as `tokenURI` and `mid
 
 In this example we are setting the `collectPaid` middleware which will require the user to pay a fee to collect the essence.<br/>
 To view a full list of supported middlewares check out the [Middleware](/core-concepts/middleware) guide.
-
 
 <!-- import ApolloCard from "@site/src/components/ApolloCard"; -->
 
@@ -38,7 +36,7 @@ Second, once you received data in a readable format, you’ll need to get the us
 
 ## 3. Call `relay` and get `relayActionID`
 
-:::caution 
+:::caution
 In order to call the `relay` mutation, you must include your `X-API-KEY` in the header.
 You can learn more about how to get one [here](/api/authentication/introduction).
 :::

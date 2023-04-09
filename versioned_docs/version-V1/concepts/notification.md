@@ -25,4 +25,4 @@ After receiving notifications, users can:
 
 After Acknowledging, those notifications will change their status from `unRead` to `Read`.
 
-Developers can incorporate notification modules to diversify the user experience by using the [CyberConnect JS SDK](/V1/cyberconnect-sdk/connect-with-js-sdk/) and [CyberConnect API](/cyberconnect-api/graphql-api/identity/#retrieve-notifications).
+Developers can incorporate notification modules to diversify the user experience by using the [CyberConnect JS SDK](/V1/cyberconnect-sdk/connect-with-js-sdk/) and [CyberConnect API](/V1/cyberconnect-api/graphql-api/identity/#retrieve-notifications).

@@ -81,9 +81,7 @@ In this example you will be working with ccProfile NFT's ABI for the contract `0
       { "internalType": "bytes", "name": "postData", "type": "bytes" }
     ],
     "name": "createProfile",
-    "outputs": [
-      { "internalType": "uint256", "name": "tokenID", "type": "uint256" }
-    ],
+    "outputs": [{ "internalType": "uint256", "name": "tokenID", "type": "uint256" }],
     "stateMutability": "payable",
     "type": "function"
   }
@@ -187,7 +185,7 @@ You can also view the NFT for the profile on [OpenSea](https://testnets.opensea.
 ### 1. Generate Typed Data
 
 :::caution
-All typedData mutations require an `Authorization` header with the `Bearer` token. You can learn how to get a bearer token in the [User Login](api/authentication/user-login) section.
+All typedData mutations require an `Authorization` header with the `Bearer` token. You can learn how to get a bearer token in the [User Login](/api/authentication/user-login) section.
 :::
 
 First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createCreateProfileTypedData` API that takes care of this.

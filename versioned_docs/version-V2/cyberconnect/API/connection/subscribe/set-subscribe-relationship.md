@@ -12,16 +12,14 @@ Subscribing to a profile means is that the user will mint an SubscribeNFT deploy
 ## Workflow
 
 :::caution
-All typedData mutations require an `Authorization` header with the `Bearer` token. You can learn how to get a bearer token in the [User Login](api/authentication/user-login) section.
+All typedData mutations require an `Authorization` header with the `Bearer` token. You can learn how to get a bearer token in the [User Login](/api/authentication/user-login) section.
 :::
-
 
 ## 1. Generate Typed Data
 
 First, data should be presented to the user in a readable format when signing from the wallet. To do that you’ll need to call the `createSubscribeTypedData` API that takes care of this.
 
 If you’re unfamiliar with typed data, you can read more about it [here](https://eips.ethereum.org/EIPS/eip-712).
-
 
 <!-- import ApolloCard from "@site/src/components/ApolloCard"; -->
 
@@ -35,7 +33,7 @@ Once you received data in a readable format, you’ll need to get the user’s s
 
 ## 3. Call `relay` and get `relayActionID`
 
-:::caution 
+:::caution
 In order to call the `relay` mutation, you must include your `X-API-KEY` in the header.
 You can learn more about how to get one [here](/api/authentication/introduction).
 :::

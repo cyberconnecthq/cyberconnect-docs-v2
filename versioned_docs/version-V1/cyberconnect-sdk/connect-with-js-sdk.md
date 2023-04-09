@@ -51,7 +51,7 @@ const cyberConnect = new CyberConnect({
 })
 ```
 
-- `namespace` - The namespace you want to use. We recommend you use your application name as namespace and hence, you can later filter out connections from your platform. If empty value of namespace is given, the connection will be put into the default, CyberConnect namespace. See details on [namespace](/resources/terminology/namespace/) page.
+- `namespace` - The namespace you want to use. We recommend you use your application name as namespace and hence, you can later filter out connections from your platform. If empty value of namespace is given, the connection will be put into the default, CyberConnect namespace. See details on [namespace](/V1/resources/terminology/namespace/) page.
 - `env` - (optional) Env decides the endpoints. Now we have staging and production. (The default value is Env.Production).
 - `chain` - (optional) The blockchain you want to connect with. Now we support Ethereum and Solana. (The default is Blockchain.ETH).
 - `provider` - The corresponding provider of the given chain.
