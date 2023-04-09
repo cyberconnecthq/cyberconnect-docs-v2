@@ -1,7 +1,7 @@
 ---
 id: register-essence
 title: Зарегистрировать сущность (Register Essence)
-slug: /guides/mutation/register-essence
+slug: /api/content/essence/register-essence
 sidebar_label: Зарегистрировать сущность
 sidebar_position: 3
 description: Мутации - Зарегистрировать сущность
@@ -17,7 +17,7 @@ description: Мутации - Зарегистрировать сущность
 
 :::caution
 
-Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/user-login).
+Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/authentication/user-login).
 
 :::
 
@@ -31,7 +31,7 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 :::caution
 
-Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/user-login).
+Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/authentication/user-login).
 
 :::
 

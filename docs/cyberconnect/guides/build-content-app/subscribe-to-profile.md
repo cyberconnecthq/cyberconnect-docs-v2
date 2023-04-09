@@ -17,7 +17,7 @@ Subscribe to a profile is a two step process and requires two GraphQL mutations:
 1. `CreateSubscribeTypedData` is used to present data to the user in a readable format:
 
 ```tsx title="graphql/CreateSubscribeTypedData.ts"
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client'
 
 export const CREATE_SUBSCRIBE_TYPED_DATA = gql`
   mutation CreateSubscribeTypedData($input: CreateSubscribeTypedDataInput!) {
@@ -30,13 +30,13 @@ export const CREATE_SUBSCRIBE_TYPED_DATA = gql`
       }
     }
   }
-`;
+`
 ```
 
 2. `Relay` is responsible for broadcasting the transaction, minting and transferring the NFT:
 
 ```tsx title="graphql/Relay.ts"
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client'
 
 export const RELAY = gql`
   mutation Relay($input: RelayInput!) {
@@ -53,7 +53,7 @@ export const RELAY = gql`
       }
     }
   }
-`;
+`
 ```
 
 ## Subscribe to Profile
@@ -72,16 +72,16 @@ const typedDataResult = await createSubscribeTypedData({
       profileIDs: [profileID],
     },
   },
-});
-const typedData = typedDataResult.data?.createSubscribeTypedData?.typedData;
-const message = typedData.data;
-const typedDataID = typedData.id;
+})
+const typedData = typedDataResult.data?.createSubscribeTypedData?.typedData
+const message = typedData.data
+const typedDataID = typedData.id
 
 /* Get the signature for the message signed with the wallet */
-const fromAddress = await signer.getAddress();
-const params = [fromAddress, message];
-const method = "eth_signTypedData_v4";
-const signature = await signer.provider.send(method, params);
+const fromAddress = await signer.getAddress()
+const params = [fromAddress, message]
+const method = 'eth_signTypedData_v4'
+const signature = await signer.provider.send(method, params)
 
 /* Call the relay to broadcast the transaction */
 const relayResult = await relay({
@@ -91,15 +91,15 @@ const relayResult = await relay({
       signature: signature,
     },
   },
-});
-const txHash = relayResult.data?.relay?.relayTransaction?.txHash;
+})
+const txHash = relayResult.data?.relay?.relayTransaction?.txHash
 ```
 
 If the subscribe process was successful, you can verify the transaction hash on [goerli.etherscan.io](https://goerli.etherscan.io/).
 
 ![transaction hash](/img/v2/build-content-app-subscribe-to-profile-tx.png)
 
-You can also view the NFT when a user subscribes to a profile on [testnets.opensea.io](testnets.opensea.io). At this stage the NFT doesn't have a middleware set nor a NFT image, but you will learn how to do all that in the [Middleware for Subscribe](/how-to/build-content-app/middleware-for-post).
+You can also view the NFT when a user subscribes to a profile on [testnets.opensea.io](https://testnets.opensea.io). At this stage the NFT doesn't have a middleware set nor a NFT image, but you will learn how to do all that in the [Middleware for Subscribe](/how-to/build-content-app/middleware-for-post).
 
 ![nft subscribe](/img/v2/build-content-app-subscribe-to-profile-nft.png)
 

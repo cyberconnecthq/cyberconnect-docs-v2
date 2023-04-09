@@ -7,35 +7,35 @@ sidebar_position: 3
 description: Как создать контент приложение - Аутентификация
 ---
 
-Для аутентификации вы фактически будете реализовывать поток [Входа пользователя](/api/user-login) для получения `accessToken`, который позже будет использоваться для различных запросов и мутаций.
+Для аутентификации вы фактически будете реализовывать поток [Входа пользователя](/api/authentication/user-login) для получения `accessToken`, который позже будет использоваться для различных запросов и мутаций.
 
 ## Apollo Client
 
 Сначала, вам нужно настроить `ApolloClient`, потому что всякий раз, когда вы делаете запрос, вам нужно передать `accessToken` в HTTP заголовке `Authorization`.
 
 ```tsx title="apollo/index.tsx"
-import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
+import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
+import { setContext } from '@apollo/client/link/context'
 
 const httpLink = createHttpLink({
-  uri: "https://api.stg.cyberconnect.dev/",
-});
+  uri: 'https://api.stg.cyberconnect.dev/',
+})
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem("accessToken");
+  const token = localStorage.getItem('accessToken')
 
   return {
     headers: {
       ...headers,
-      Authorization: token ? `bearer ${token}` : "",
+      Authorization: token ? `bearer ${token}` : '',
     },
-  };
-});
+  }
+})
 
 export const apolloClient = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
-});
+})
 ```
 
 ## Мутации GraphQL
@@ -45,7 +45,7 @@ export const apolloClient = new ApolloClient({
 1. Первая мутация заключается в запросе сообщения, которое пользователь подпишет с помощью своего кошелька MetaMask:
 
 ```tsx title="graphql/LoginGetMessage.ts"
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client'
 
 export const LOGIN_GET_MESSAGE = gql`
   mutation LoginGetMessage($input: LoginGetMessageInput!) {
@@ -53,13 +53,13 @@ export const LOGIN_GET_MESSAGE = gql`
       message
     }
   }
-`;
+`
 ```
 
 2. Вторая мутация заключается в проверке подписанного сообщения:
 
 ```tsx title="graphql/LoginVerify.ts"
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client'
 
 export const LOGIN_VERIFY = gql`
   mutation LoginVerify($input: LoginVerifyInput!) {
@@ -67,7 +67,7 @@ export const LOGIN_VERIFY = gql`
       accessToken
     }
   }
-`;
+`
 ```
 
 ## Вход
@@ -84,11 +84,11 @@ const messageResult = await loginGetMessage({
       chainID: chainID,
     },
   },
-});
-const message = messageResult?.data?.loginGetMessage?.message;
+})
+const message = messageResult?.data?.loginGetMessage?.message
 
 /* Получите подпись для сообщения, подписанного кошельком */
-const signature = await signer.signMessage(message);
+const signature = await signer.signMessage(message)
 
 /* Проверьте подпись на сервере и получите токен доступа */
 const accessTokenResult = await loginVerify({
@@ -100,8 +100,8 @@ const accessTokenResult = await loginVerify({
       signature: signature,
     },
   },
-});
-const accessToken = accessTokenResult?.data?.loginVerify?.accessToken;
+})
+const accessToken = accessTokenResult?.data?.loginVerify?.accessToken
 ```
 
 Теперь, когда у вас есть токен доступа, вы сможете выполнять запросы и мутации, которые позволят вам добавить множество функций в ваше приложение.

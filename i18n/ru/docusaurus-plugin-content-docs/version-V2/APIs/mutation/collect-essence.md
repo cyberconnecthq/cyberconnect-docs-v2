@@ -1,7 +1,7 @@
 ---
 id: collect-essence
 title: Собрать сущность (Collect Essence)
-slug: /guides/mutation/collect-essence
+slug: /api/content/essence/collect-essence
 sidebar_label: Собрать сущность
 sidebar_position: 4
 description: Мутации - Собрать сущность
@@ -17,7 +17,7 @@ description: Мутации - Собрать сущность
 
 :::caution
 
-Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/user-login).
+Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/authentication/user-login).
 
 :::
 
@@ -33,7 +33,7 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 :::caution
 
-Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/user-login).
+Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/authentication/user-login).
 
 :::
 

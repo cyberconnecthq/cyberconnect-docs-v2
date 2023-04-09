@@ -17,7 +17,7 @@ description: Мутации - Подписаться
 
 :::caution
 
-Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/user-login).
+Этот API требует заголовок `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/authentication/user-login).
 
 :::
 
@@ -33,7 +33,7 @@ import ApolloCard from "@site/src/components/ApolloCard";
 
 :::caution
 
-Этот API требует заголовка `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/user-login).
+Этот API требует заголовка `Authorization` с `Bearer` токеном. Вы можете узнать об этом больше [здесь](/api/authentication/user-login).
 
 :::
 

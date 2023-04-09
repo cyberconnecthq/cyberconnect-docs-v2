@@ -27,17 +27,17 @@ connections(fromAddr: String!, toAddrList: [String!]!, network: Network) [Connec
 
 With correct inputs, you will get a list of `Connection` objects, consisting of the following fields:
 
-| Field           | Type         | Description                                                                                                                         |
-| --------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `fromAddr `     | String       | The source address that you want to query connections about                                                                         |
-| `toAddr`        | String       | An address that is given in `toAddrList`                                                                                            |
-| `followStatus ` | FollowStatus | The following and followed relationships between `fromAddr` and `toAddr`                                                            |
-| `namespace`     | String       | The namespace of this connection                                                                                                    |
-| `alias`         | String       | The alias set by the `fromAddress` for `toAddr`.                                                                                    |
-| `network`       | Network      | The network that is given as the querying parameter                                                                                 |
-| `createdAt`     | String       | The creation time of this connection                                                                                                |
-| `updatedAt`     | String       | The latest update time of this connection                                                                                           |
-| `proof`         | String       | The proof of this connection. Please see [Proof of Connection](/protocol/proof-of-connection/) for detail design and implementation |
+| Field           | Type         | Description                                                                                                                            |
+| --------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `fromAddr `     | String       | The source address that you want to query connections about                                                                            |
+| `toAddr`        | String       | An address that is given in `toAddrList`                                                                                               |
+| `followStatus ` | FollowStatus | The following and followed relationships between `fromAddr` and `toAddr`                                                               |
+| `namespace`     | String       | The namespace of this connection                                                                                                       |
+| `alias`         | String       | The alias set by the `fromAddress` for `toAddr`.                                                                                       |
+| `network`       | Network      | The network that is given as the querying parameter                                                                                    |
+| `createdAt`     | String       | The creation time of this connection                                                                                                   |
+| `updatedAt`     | String       | The latest update time of this connection                                                                                              |
+| `proof`         | String       | The proof of this connection. Please see [Proof of Connection](/V1/protocol/proof-of-connection/) for detail design and implementation |
 
 For `followStatus`, there will be two boolean variables: `isFollowed` and `isFollowing`.
 
@@ -51,8 +51,8 @@ If `isFollowing` is true, `fromAddr` has followed `toAddr`.
 
 This is an example of a query to fetch `proof` data that you can also test out in the [Playground](/cyberconnect-api/playground/):
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
 
 <Tabs
     defaultValue="javascript"

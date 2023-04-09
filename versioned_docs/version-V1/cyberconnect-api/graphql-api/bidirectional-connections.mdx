@@ -9,7 +9,7 @@ description: Bidirectional Connections API is used to query fields of bidirectio
 
 Bidirectional Connections API is used to query fields of [bidirectional connections](/V1/concepts/bidirectional-connection/) between a given address and another address or a list of other addresses (50 max).
 
-You can find the step by step instructions on how to set up GraphQL client in your application and write a simple **Get Bidirectional Connection query** in the [Read Connections](/get-started/read-connections/) section.
+You can find the step by step instructions on how to set up GraphQL client in your application and write a simple **Get Bidirectional Connection query** in the [Read Connections](/V1/get-started/read-connections/) section.
 
 ## Structure
 
@@ -27,19 +27,19 @@ biConnections(fromAddr String!, toAddrList [String!]!, network Network) [Bidirec
 
 With correct inputs, you will get a list of `BidirectionalConnection` objects, consisting of the following fields:
 
-| Field               | Type            | Description                                                                                                                                                     |
-| ------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `fromAddr `         | String          | The source address that you want to query bidirectional connections about                                                                                       |
-| `toAddr`            | String          | An address that is given in `toAddrList`                                                                                                                        |
-| `state `            | BiConnState     | The bidirectional connection state between `fromAddr` and `toAddr`.                                                                                             |
-| `direction`         | Direction       | The direction of bidirectional connection state.                                                                                                                |
-| `namespace`         | String          | The namespace of this connection                                                                                                                                |
-| `network`           | Network         | The network that is given as the querying parameter                                                                                                             |
-| `createdAt`         | String          | The creation time of this connection                                                                                                                            |
-| `updatedAt`         | String          | The latest update time of this connection                                                                                                                       |
-| `latestHash`        | String          | The proof hash of this connection. Please see [Proof of Connection](/protocol/proof-of-connection/) for detail design and implementation                        |
-| `latestEvent`       | ConnectionEvent | The latest event of this connection including the proof. Please see [Proof of Connection](/protocol/proof-of-connection/) for detail design and implementation. |
-| `latestAnchorEvent` | ConnectionEvent | The latest event of this connection which can be found on [Arweave](https://viewblock.io/arweave)                                                               |
+| Field               | Type            | Description                                                                                                                                                        |
+| ------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `fromAddr `         | String          | The source address that you want to query bidirectional connections about                                                                                          |
+| `toAddr`            | String          | An address that is given in `toAddrList`                                                                                                                           |
+| `state `            | BiConnState     | The bidirectional connection state between `fromAddr` and `toAddr`.                                                                                                |
+| `direction`         | Direction       | The direction of bidirectional connection state.                                                                                                                   |
+| `namespace`         | String          | The namespace of this connection                                                                                                                                   |
+| `network`           | Network         | The network that is given as the querying parameter                                                                                                                |
+| `createdAt`         | String          | The creation time of this connection                                                                                                                               |
+| `updatedAt`         | String          | The latest update time of this connection                                                                                                                          |
+| `latestHash`        | String          | The proof hash of this connection. Please see [Proof of Connection](/V1/protocol/proof-of-connection/) for detail design and implementation                        |
+| `latestEvent`       | ConnectionEvent | The latest event of this connection including the proof. Please see [Proof of Connection](/V1/protocol/proof-of-connection/) for detail design and implementation. |
+| `latestAnchorEvent` | ConnectionEvent | The latest event of this connection which can be found on [Arweave](https://viewblock.io/arweave)                                                                  |
 
 For `followStatus`, there will be two boolean variables: `isFollowed` and `isFollowing`.
 For `state`, there will be four enum values: `EMPTY`、`PENDING`、`CONNECTD` and `BLACKLIST`. Our protocol defines a state machine to show relationship among these states and different bidirectional connection:

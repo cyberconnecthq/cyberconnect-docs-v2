@@ -7,7 +7,7 @@ sidebar_position: 3
 description: Verify essence metadata
 ---
 
-Verifing that the an [Essence's Metadata](/core-concepts/metadata) Schema is valid is extremely useful during the process of [Registering an Essence](/guides/mutation/register-essence).
+Verifing that the an [Essence's Metadata](/core-concepts/metadata/essence-metadata) Schema is valid is extremely useful during the process of [Registering an Essence](/api/content/essence/register-essence).
 
 A valid schema will ensure proper parsing and indexing of the Essence NFT.
 

@@ -27,7 +27,7 @@ For input params:
 | `first`      | Int            | Input the number of entries this query should return.                                                                           | Optional. Default is `20` and the maximum value is `50`.  |
 | `after`      | String         | Input after which index this query should begin.                                                                                | Optional. Default value is `-1`.                          |
 
-For the usage of `namespaces`, please refer to [Namespace](/resources/terminology/namespace) section for more instructions. For the usage of `first` and `after`, please refer to [Pagination](/resources/terminology/pagination) section. For the concept of connection types, please read [Connection](/concepts/connection) section.
+For the usage of `namespaces`, please refer to [Namespace](/V1/resources/terminology/namespace) section for more instructions. For the usage of `first` and `after`, please refer to [Pagination](/V1/resources/terminology/pagination) section. For the concept of connection types, please read [Connection](/V1/concepts/connection) section.
 
 With correct inputs, you can retrieve a `UserIdentityPage` objects with the following fields:
 
@@ -36,14 +36,14 @@ With correct inputs, you can retrieve a `UserIdentityPage` objects with the foll
 | `pageInfo` | PageInfo       | Output page information, including startCursor, endCursor, whether this page hasNextPage, and whether this page hasPreviousPage. |
 | `list`     | [UserIdentity] | Output a ranked list of user identities.                                                                                         |
 
-For the fields of a `UserIdentity` object, please refer to [Identity](/cyberconnect-api/graphql-api/identity) section.
+For the fields of a `UserIdentity` object, please refer to [Identity](/V1/cyberconnect-api/graphql-api/identity) section.
 
 ## Example
 
-In the following example, we demonstrate how to query information about the top five Ethereum addresses with the most followers under the CyberConnect namespace. You can play around with Rankings API in the [Playground](/cyberconnect-api/playground) section.
+In the following example, we demonstrate how to query information about the top five Ethereum addresses with the most followers under the CyberConnect namespace. You can play around with Rankings API in the [Playground](/V1/cyberconnect-api/playground) section.
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
 
 <Tabs
     defaultValue="javascript"
