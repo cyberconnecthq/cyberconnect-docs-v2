@@ -1,7 +1,7 @@
 ---
 id: get-subscribing-relationship
 title: Get subscribe relationship
-slug: apis/connection/subscribe/get-subscribe-relationship
+slug: /api/connection/subscribe/get-subscribe-relationship
 sidebar_label: Get subscribe relationship
 sidebar_position: 2
 description: Get subscribe relationship
