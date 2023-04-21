@@ -13,11 +13,11 @@ Demo repo: https://github.com/cyberconnecthq/cc-profile-tutorial
 
 :::
 
-In this section you will learn how to create ccProfile in both gas and gasless modes. We sometimes refer to it as a _profile NFT_ and the reason behind it is that, once the profile is created, a NFT will automatically be minted and transferred to the user's wallet.
+In this section you will learn how to create CyberProfile in both gas and gasless modes. We sometimes refer to it as a _profile NFT_ and the reason behind it is that, once the profile is created, a NFT will automatically be minted and transferred to the user's wallet.
 
 :::tip
 
-The app you're building in this example is using the **ccProfile** smart contract for the **BSC Testnet Network**.
+The app you're building in this example is using the **CyberProfile** smart contract for the **BSC Testnet Network**.
 
 :::
 
@@ -39,7 +39,7 @@ An ABI (Application Binary Interface) is a way to interact with a smart contract
 
 The ABI is simply a JSON file that needs to be imported into your project, and, the best part is that you only need to add the functions that you actually use in your app.
 
-In this example you will be working with ccProfile NFT's ABI for the contract `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271`.
+In this example you will be working with CyberProfile NFT's ABI for the contract `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271`.
 
 ```json title="abi/ProfileNFT.json"
 [
@@ -81,7 +81,9 @@ In this example you will be working with ccProfile NFT's ABI for the contract `0
       { "internalType": "bytes", "name": "postData", "type": "bytes" }
     ],
     "name": "createProfile",
-    "outputs": [{ "internalType": "uint256", "name": "tokenID", "type": "uint256" }],
+    "outputs": [
+      { "internalType": "uint256", "name": "tokenID", "type": "uint256" }
+    ],
     "stateMutability": "payable",
     "type": "function"
   }
@@ -122,7 +124,7 @@ To keep things simple, you won't set any middleware in this example. More on thi
 
 ### Interact with the contract
 
-As mentioned previously, you will be working with the ccProfile NFT respectively the `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271` contract.
+As mentioned previously, you will be working with the CyberProfile NFT respectively the `0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271` contract.
 
 Everything will take place on the client side:
 
@@ -195,18 +197,18 @@ If you’re unfamiliar with typed data, you can read more about it [here](https:
 ```graphql
 # SCHEMA
 """
-The `CreateCreateProfileTypedDataInput` input type specifies the params required to create a ccProfile.
+The `CreateCreateProfileTypedDataInput` input type specifies the params required to create a CyberProfile.
 """
 input CreateCreateProfileTypedDataInput {
-  "`to` the owner address of the ccProfile."
+  "`to` the owner address of the CyberProfile."
   to: AddressEVM!
-  "`handle` the handle of the ccProfile."
+  "`handle` the handle of the CyberProfile."
   handle: String!
-  "`avatar` the avatar of the ccProfile, should be a valid image link."
+  "`avatar` the avatar of the CyberProfile, should be a valid image link."
   avatar: URL!
-  "`metadata` the metadata of the ccProfile, should be a valid IPFS CID which points to a valid json file."
+  "`metadata` the metadata of the CyberProfile, should be a valid IPFS CID which points to a valid json file."
   metadata: String!
-  "`operator` the operator address of the ccProfile. In addition to the profile owner, operator address could also help to manage the profile. The field could be void address if no operator is needed."
+  "`operator` the operator address of the CyberProfile. In addition to the profile owner, operator address could also help to manage the profile. The field could be void address if no operator is needed."
   operator: AddressEVM!
 }
 # SAMPLE CALL

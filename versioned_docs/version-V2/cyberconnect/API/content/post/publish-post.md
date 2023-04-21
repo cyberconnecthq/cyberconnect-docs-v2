@@ -53,7 +53,7 @@ cyberConnect.createPost(content);
 interface Content {
   title: string;
   body: string;
-  author: string; // The ccProfile handle of the author
+  author: string; // The CyberProfile handle of the author
 }
 ```
 
@@ -100,7 +100,7 @@ cyberConnect.updatePost(id, content);
 interface Content {
   title: string;
   body: string;
-  author: string; // The ccProfile handle of the author
+  author: string; // The CyberProfile handle of the author
 }
 ```
 

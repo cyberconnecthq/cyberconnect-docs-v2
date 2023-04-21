@@ -102,6 +102,10 @@ const config = {
             from: '/protocol/technical-framework',
             to: '/',
           },
+          {
+            from: '/core-concepts/cc-profile',
+            to: '/core-concepts/cyber-profile',
+          }
         ],
       },
     ],

@@ -23,9 +23,9 @@ Built on <strong id="BNB-CHAIN" class="boxBorderBNB"> BNB Chain</strong>, CyberC
 <img src="/img/v2/ccProfile_prerequisite.png"/>
 </div>
 <div>
-<h2>Mint your ccProfile now 👇</h2>
+<h2>Mint your CyberProfile now 👇</h2>
 <a href="https://cc.me/mint">
-<img src="/img/v2/card.svg" alt="mint ccprofile" align="center" />
+<img src="/img/v2/card.svg" alt="mint CyberProfile" align="center" />
 </a>
 </div>
 </div>

@@ -21,7 +21,7 @@ Each profile could create a new piece of content in the form of a post just like
 
 ## Web3 Status Token (W3ST)
 
-Web3 Status Token (W3ST) is a CyberConnect-designed Soulbound Token (SBT) to power social status building on the internet. W3ST is a Web3-native way of representing status, affiliations, memberships, and endorsements while serving as a user’s verifiable digital reputation, corroborated by other ccProfiles.
+Web3 Status Token (W3ST) is a CyberConnect-designed Soulbound Token (SBT) to power social status building on the internet. W3ST is a Web3-native way of representing status, affiliations, memberships, and endorsements while serving as a user’s verifiable digital reputation, corroborated by other CyberProfiles.
 
 Web3 Status Token or W3ST (pronounced as “west”) is the web3 native way of recognizing, owning and utilizing one’s status. Each status is given by a profile to a user as long as the user satisfy the rules for gaining that status. The common status include “community member”, “investors” and “event participant”. Check out this blog for details about W3ST.
 

@@ -47,7 +47,7 @@ const cyberConnect = new CyberConnect({
 cyberConnect.follow(handle);
 ```
 
-- `handle` - The ccProfile handle to follow.
+- `handle` - The CyberProfile handle to follow.
 
 #### Unfollow
 
@@ -55,4 +55,4 @@ cyberConnect.follow(handle);
 cyberConnect.unfollow(handle);
 ```
 
-- `handle` - The ccProfile handle to unfollow.
+- `handle` - The CyberProfile handle to unfollow.

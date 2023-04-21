@@ -7,7 +7,7 @@ sidebar_position: 4
 description: Off-chain connections supported
 ---
 
-Follow and Like are additional forms of connection supported by the protocol, but unlike a SubscribeNFT, follow and like don't require any on-chain transaction and are not represented by NFTs. Instead, they are implemented through off-chain proofs that are synced to Arweave. Additionally, while subscriptions are represented through an address minting a ccProfile's SubscribeNFT, follows are represented as `address -> ProfileNFT` relationship and likes are represented as `address -> post` relationship. This is great for applications with light weight social graph needs, that do not want to incur gas costs.
+Follow and Like are additional forms of connection supported by the protocol, but unlike a SubscribeNFT, follow and like don't require any on-chain transaction and are not represented by NFTs. Instead, they are implemented through off-chain proofs that are synced to Arweave. Additionally, while subscriptions are represented through an address minting a CyberProfile's SubscribeNFT, follows are represented as `address -> ProfileNFT` relationship and likes are represented as `address -> post` relationship. This is great for applications with light weight social graph needs, that do not want to incur gas costs.
 
 ## Idempotent Proof of Connection
 
@@ -21,25 +21,25 @@ There could only exist one state per operation, e.g. Alice could either only be 
 
 ```ts
 type Proof = {
-  content: string
-  digest: string
-  signature: string
-  signingKey: string
-  signingKeyAuth: SigningKeyAuth
-  arweaveTxHash: string
-}
+  content: string;
+  digest: string;
+  signature: string;
+  signingKey: string;
+  signingKeyAuth: SigningKeyAuth;
+  arweaveTxHash: string;
+};
 
 type SigningKey = {
-  publicKey: string
-  format: 'SubjectPublicKeyInfo'
-  algorithm: 'ES256'
-}
+  publicKey: string;
+  format: "SubjectPublicKeyInfo";
+  algorithm: "ES256";
+};
 
 type SigningKeyAuth = {
-  address: string
-  signingKeyMessage: string
-  signingKeySignature: string
-}
+  address: string;
+  signingKeyMessage: string;
+  signingKeySignature: string;
+};
 ```
 
 We only describe these data standard in the raw object format. However, the final message would be encoded with both a digest of the message and a signature signed by the owner.

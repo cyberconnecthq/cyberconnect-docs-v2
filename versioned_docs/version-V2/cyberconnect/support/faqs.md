@@ -9,17 +9,17 @@ description: FAQs
 
 # Smart Contract Related
 
-## What is the difference between ccProfile ProfileNFT?
+## What is the difference between CyberProfile ProfileNFT?
 
-The ccProfile is CyberConnect's general deployment of the ProfileNFT in its own namespace. It is currently the only namespace supported, but the CyberContracts enable adding additional namespaces in the future.
+The CyberProfile is CyberConnect's general deployment of the ProfileNFT in its own namespace. It is currently the only namespace supported, but the CyberContracts enable adding additional namespaces in the future.
 
-## How can I mint a ccProfile NFT?
+## How can I mint a CyberProfile NFT?
 
 Go to https://cc.me/mint or interact with our smart contract directly.
 
-## Is minting a ccProfile NFT free?
+## Is minting a CyberProfile NFT free?
 
-The cost of minting ccProfiles is based on the handle length:
+The cost of minting CyberProfiles is based on the handle length:
 
 | Handle Length | BNB     |
 | ------------- | ------- |

@@ -13,23 +13,23 @@ The CyberConnect protocol consists of a set generative smart contracts deployed 
 
 On CyberConnect, these generated smart contracts enable dApps to create their context-specific on-chain social network or users to issue their customizable NFTs to monetize their social data. At a high level, the protocol represents social data using three main contracts (all implementations of the ERC721 standard):
 
-1. [ccProfile](/core-concepts/cc-profile) 👤
+1. [CyberProfile](/core-concepts/cyber-profile) 👤
 2. [SubscribeNFT](/core-concepts/subscribe-nft) 👥
 3. [EssenceNFT](/core-concepts/essence-nft) 📝
 
-## ccProfile 👤
+## CyberProfile 👤
 
-ccProfile represents each user’s profile as an NFT. It serves as a prerequisite for users who want to issue their customized EssenceNFTs or SubscribeNFTs. In addition, the deployed ccProfile contract is used as the gateway for users to perform actions such as collecting essence, creating a profile, and subscribing to a profile in a specific dApp context. Developers can integrate the ccProfile into their dApp/protocol to benefit from the existing network of identities being built through Link3 and other CyberConnect integrated protocols.
+CyberProfile represents each user’s profile as an NFT. It serves as a prerequisite for users who want to issue their customized EssenceNFTs or SubscribeNFTs. In addition, the deployed CyberProfile contract is used as the gateway for users to perform actions such as collecting essence, creating a profile, and subscribing to a profile in a specific dApp context. Developers can integrate the CyberProfile into their dApp/protocol to benefit from the existing network of identities being built through Link3 and other CyberConnect integrated protocols.
 
-Similar to an ENS domain, developers are able to use CyberConnect to map all on-chain credentials/assets to the ccProfile. Whether it’s an NFT, an SBT, a Twitter handle, or a DID, we map all of them to one holistic identity: the ccProfile.
+Similar to an ENS domain, developers are able to use CyberConnect to map all on-chain credentials/assets to the CyberProfile. Whether it’s an NFT, an SBT, a Twitter handle, or a DID, we map all of them to one holistic identity: the CyberProfile.
 
 ## SubscribeNFT 👥
 
-SubscribeNFT represents the uni-directional relationship between an address and a ccProfile. Each ccProfile holder can only issue one unique SubscribeNFT. Each SubscribeNFT can be configured with rules like pay-to-follow (paid subscribers), hold-to-follow (token-gated community), etc. The SubcribeNFT is highly-customizable and can be used to represent arbitrary social connections; including following, subscribing to a creator, friend relationship, belonging to an organization, and participations in activities and communities.
+SubscribeNFT represents the uni-directional relationship between an address and a CyberProfile. Each CyberProfile holder can only issue one unique SubscribeNFT. Each SubscribeNFT can be configured with rules like pay-to-follow (paid subscribers), hold-to-follow (token-gated community), etc. The SubcribeNFT is highly-customizable and can be used to represent arbitrary social connections; including following, subscribing to a creator, friend relationship, belonging to an organization, and participations in activities and communities.
 
 ## EssenceNFT 📝
 
-EssenceNFT is a generic NFT that individual ccProfile holders can issue to represent any piece of content (ex. social media posts, videos, blog publications). Each EssenceNFT can be configured with rules like pay-to-mint (crowdfunding), hold-to-mint (community participants), etc. It can be also configured as a tradable NFT or a non-transferable soul bound token (SBT) to represent a given role such as investor, patron, team member, community participant, etc.
+EssenceNFT is a generic NFT that individual CyberProfile holders can issue to represent any piece of content (ex. social media posts, videos, blog publications). Each EssenceNFT can be configured with rules like pay-to-mint (crowdfunding), hold-to-mint (community participants), etc. It can be also configured as a tradable NFT or a non-transferable soul bound token (SBT) to represent a given role such as investor, patron, team member, community participant, etc.
 
 ![gp_sm](/img/v2/Smart_Contract_Protocol_overview.png)
 
@@ -44,10 +44,10 @@ CyberConnect provides Scalable Storage Modules (SSM) to write social data in dec
 
 ## Follow/Like 👥
 
-Follow is similar to SubscribeNFT to some extent because both of them are used to represent an address to ccProfile relationship. Since Follow is implemented through SSM, it’s good for applications with lightweight social graph needs that do not want to incur gas costs. Like is used to express the relationship between an address and a post.
+Follow is similar to SubscribeNFT to some extent because both of them are used to represent an address to CyberProfile relationship. Since Follow is implemented through SSM, it’s good for applications with lightweight social graph needs that do not want to incur gas costs. Like is used to express the relationship between an address and a post.
 
 ## Post/Comment 📝
 
-Post is used to present users’ lightweight content publication. Since they are stored in SSM, they could not be monetized directly. The SSM also supports Comment which is associated with a certain post. Publishing both Post and Comment need the wallet holds ccProfile.
+Post is used to present users’ lightweight content publication. Since they are stored in SSM, they could not be monetized directly. The SSM also supports Comment which is associated with a certain post. Publishing both Post and Comment need the wallet holds CyberProfile.
 
 ![scalable_storage_modules](/img/v2/scalable-storage-modules.png)
