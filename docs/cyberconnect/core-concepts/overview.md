@@ -9,7 +9,7 @@ description: Concepts - Overview
 
 # CyberConnect Smart Contract
 
-The CyberConnect protocol consists of a set generative smart contracts deployed on BNB chain. Generative smart contracts means the protocol will generate a set of new smart contracts associated with dApps or users when they interact with the protocol. This pattern is similar to the Uniswap protocol where a set of liquidity pair smart contracts will be generated when people create a new liquidity pool.
+The CyberConnect protocol consists of a set generative smart contracts deployed on EVM compatible chains (currently ETH & BNB). Generative smart contracts means the protocol will generate a set of new smart contracts associated with dApps or users when they interact with the protocol. This pattern is similar to the Uniswap protocol where a set of liquidity pair smart contracts will be generated when people create a new liquidity pool.
 
 On CyberConnect, these generated smart contracts enable dApps to create their context-specific on-chain social network or users to issue their customizable NFTs to monetize their social data. At a high level, the protocol represents social data using three main contracts (all implementations of the ERC721 standard):
 
