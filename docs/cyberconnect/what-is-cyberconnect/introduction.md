@@ -20,7 +20,7 @@ Built on <strong id="EVM-CHAIN" class="boxBorderEVM"> EVM chains</strong>, Cyber
 
 <div class="side-by-side-images" >
 <div>
-<img src="/img/v2/ccProfile_prerequisite.png"/>
+<img src="/img/v2/ccProfile_prerequisite_overview.png"/>
 </div>
 <div>
 <h2>Mint your CyberProfile now 👇</h2>
