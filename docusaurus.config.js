@@ -134,18 +134,18 @@ const config = {
           src: 'img/logo-custom.svg',
         },
         items: [
-          {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'cyberconnectSidebar',
-            label: 'CyberConnect',
-          },
-          {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'link3Sidebar',
-            label: 'Link3',
-          },
+          // {
+          //   type: 'docSidebar',
+          //   position: 'left',
+          //   sidebarId: 'cyberconnectSidebar',
+          //   label: 'CyberConnect',
+          // },
+          // {
+          //   type: 'docSidebar',
+          //   position: 'left',
+          //   sidebarId: 'link3Sidebar',
+          //   label: 'Link3',
+          // },
           {
             href: 'https://testnet.cyberconnect.me/',
             label: 'Testnet',
