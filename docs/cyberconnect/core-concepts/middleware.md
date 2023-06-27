@@ -1,5 +1,5 @@
 ---
-id: middleware
+id: YOKO HARIANTO SIMARMATA 
 title: Middleware
 slug: /core-concepts/middleware
 sidebar_label: Middleware
@@ -37,3 +37,4 @@ They are smart contracts with logic executed before and after `collect` and `sub
 - `CollectPaidMw` - Users pay a certain fee in ERC20 token to collect the essence.
 - `CollectPermissionMw` - Users can collect the essence only if they have a valid signature from the signer.
 - `CollectMerkleDropMw` - Users can only collect an essence using the correct merkle proof.
+ON ON
