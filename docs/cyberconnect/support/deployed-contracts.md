@@ -34,7 +34,7 @@ import TabItem from "@theme/TabItem";
 | Profile Factory                           | [0x730d6e17589f606dff2e6e36c7abd8a8c2b40f91](https://bscscan.com/address/0x730d6e17589f606dff2e6e36c7abd8a8c2b40f91) |
 | Essence Factory                           | [0xf7a31740969dce331615d189d355e5edf2b80b70](https://bscscan.com/address/0xf7a31740969dce331615d189d355e5edf2b80b70) |
 | Subscribe Factory                         | [0xeac6012efe2f7451e8b28139e8d23bb3b540fecb](https://bscscan.com/address/0xeac6012efe2f7451e8b28139e8d23bb3b540fecb) |
-| CyberProfile                                | [0x2723522702093601e6360cae665518c4f63e9da6](https://bscscan.com/address/0x2723522702093601e6360cae665518c4f63e9da6) |
+| CC Profile                                | [0x2723522702093601e6360cae665518c4f63e9da6](https://bscscan.com/address/0x2723522702093601e6360cae665518c4f63e9da6) |
 | CyberConnect Treasury                     | [0x90137f1234c137c4284dd317303f2717c871f70a](https://bscscan.com/address/0x90137f1234c137c4284dd317303f2717c871f70a) |
 | CC Descriptor (Impl)                      | [0x478e0b7635d8be657847b58198c652b4a091708b](https://bscscan.com/address/0x478e0b7635d8be657847b58198c652b4a091708b) |
 | CC Descriptor (Proxy)                     | [0xb981a245717da217934123026b531834aa80896d](https://bscscan.com/address/0xb981a245717da217934123026b531834aa80896d) |
@@ -49,8 +49,8 @@ import TabItem from "@theme/TabItem";
 | Essence MW (CollectOnlySubscribedMw)      | [0x26a39e0ecab95b76fbbf593331e25caaa13f83c7](https://bscscan.com/address/0x26a39e0ecab95b76fbbf593331e25caaa13f83c7) |
 | Essence MW (CollectMerkleDropMw)          | [0x0642cfcba1e391e3affc2270fd2a20e468bceeaa](https://bscscan.com/address/0x0642cfcba1e391e3affc2270fd2a20e468bceeaa) |
 | Essence MW (CollectPermissionMw)          | [0x01fafdbfbb1a56d4a58bb1f7472fb866922ff6c4](https://bscscan.com/address/0x01fafdbfbb1a56d4a58bb1f7472fb866922ff6c4) |
-| CyberProfile MW (StableFeeCreationMw)       | [0xad246cc868a43c9dbe39ca814860b88714e20822](https://bscscan.com/address/0xad246cc868a43c9dbe39ca814860b88714e20822) |
-| CyberProfile MW (PermissionedFeeCreationMw) | [0xd37bbf27e39b2f8c4386bebccda0850eeffd2a82](https://bscscan.com/address/0xd37bbf27e39b2f8c4386bebccda0850eeffd2a82) |
+| CC Profile MW (StableFeeCreationMw)       | [0xad246cc868a43c9dbe39ca814860b88714e20822](https://bscscan.com/address/0xad246cc868a43c9dbe39ca814860b88714e20822) |
+| CC Profile MW (PermissionedFeeCreationMw) | [0xd37bbf27e39b2f8c4386bebccda0850eeffd2a82](https://bscscan.com/address/0xd37bbf27e39b2f8c4386bebccda0850eeffd2a82) |
 
 ```mdx-code-block
 </TabItem>
@@ -72,8 +72,8 @@ import TabItem from "@theme/TabItem";
 | Profile Factory                           | [0x27361075ea6e85564a4b00f5828235fc4c8c2e32](https://testnet.bscscan.com/address/0x27361075ea6e85564a4b00f5828235fc4c8c2e32) |
 | Essence Factory                           | [0x216ba81b5fd81253fde6888039c6001d6f891efb](https://testnet.bscscan.com/address/0x216ba81b5fd81253fde6888039c6001d6f891efb) |
 | Subscribe Factory                         | [0x958d142ef3a7b2ee34cdf1f81c135fb91a454a5c](https://testnet.bscscan.com/address/0x958d142ef3a7b2ee34cdf1f81c135fb91a454a5c) |
-| CyberProfile (Impl)                         | [0xeD2788C005C8715cFC7C2A29fF81B40b479Cc6fb](https://testnet.bscscan.com/address/0xeD2788C005C8715cFC7C2A29fF81B40b479Cc6fb) |
-| CyberProfile (Proxy)                        | [0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271](https://testnet.bscscan.com/address/0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271) |
+| CC Profile (Impl)                         | [0xeD2788C005C8715cFC7C2A29fF81B40b479Cc6fb](https://testnet.bscscan.com/address/0xeD2788C005C8715cFC7C2A29fF81B40b479Cc6fb) |
+| CC Profile (Proxy)                        | [0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271](https://testnet.bscscan.com/address/0x57e12b7a5f38a7f9c23ebd0400e6e53f2a45f271) |
 | CyberConnect Treasury                     | [0x3963744012dadf90a9034ea1068f53108b1a3834](https://testnet.bscscan.com/address/0x3963744012dadf90a9034ea1068f53108b1a3834) |
 | CC Descriptor (Impl)                      | [0x74788f90b8436afe91931c17a01023bce5d89c0f](https://testnet.bscscan.com/address/0x74788f90b8436afe91931c17a01023bce5d89c0f) |
 | CC Descriptor (Proxy)                     | [0x39459859e7b63f19e77ddcc38f65a519d88dba8a](https://testnet.bscscan.com/address/0x39459859e7b63f19e77ddcc38f65a519d88dba8a) |
@@ -91,8 +91,8 @@ import TabItem from "@theme/TabItem";
 | Essence MW (CollectMerkleDropMw)          | [0x1488e8f5aab7f609cfdc04997d5c73e4d7b6ad0d](https://testnet.bscscan.com/address/0x1488e8f5aab7f609cfdc04997d5c73e4d7b6ad0d) |
 | Essence MW (SignaturePermissionEssenceMw) | [0x733142f467904f9a2e8efa0119523d3cc7a99b0b](https://testnet.bscscan.com/address/0x733142f467904f9a2e8efa0119523d3cc7a99b0b) |
 | Essence MW (CollectPermissionMw)          | [0xbbbab0257edba5823ddb5aa62c08f07bd0d302d9](https://testnet.bscscan.com/address/0xbbbab0257edba5823ddb5aa62c08f07bd0d302d9) |
-| CyberProfile MW (StableFeeCreationMw)       | [0x4db6b3f3236adb0fb85a3957e740f07481c1dc99](https://testnet.bscscan.com/address/0x4db6b3f3236adb0fb85a3957e740f07481c1dc99) |
-| CyberProfile MW (PermissionedFeeCreationMw) | [0xd1587f68e9d9f9ee93c9aa6fc60c7da414e90818](https://testnet.bscscan.com/address/0xd1587f68e9d9f9ee93c9aa6fc60c7da414e90818) |
+| CC Profile MW (StableFeeCreationMw)       | [0x4db6b3f3236adb0fb85a3957e740f07481c1dc99](https://testnet.bscscan.com/address/0x4db6b3f3236adb0fb85a3957e740f07481c1dc99) |
+| CC Profile MW (PermissionedFeeCreationMw) | [0xd1587f68e9d9f9ee93c9aa6fc60c7da414e90818](https://testnet.bscscan.com/address/0xd1587f68e9d9f9ee93c9aa6fc60c7da414e90818) |
 
 ```mdx-code-block
 </TabItem>
