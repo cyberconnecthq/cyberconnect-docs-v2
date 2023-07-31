@@ -10,14 +10,15 @@ description: Welcome to CyberConnect Developer Center. This is a perfect space f
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css'
 
-<Tooltip anchorId="social-graph" content="Social graphs describe relationships on the Internet, making them a representation of the social system online" />
+<Tooltip anchorId="social-graph" content="Social networks describe relationships on the internet, making them a representation of the social system online" />
 
-CyberConnect is a decentralized <strong id="social-graph" class="boxBorder"> social graph </strong> protocol. CyberConnect harnesses blockchain technology to empower users with ownership of their identity, content, and social data. In doing so, we enable both users and developers to experience a range of exciting new social networking primitives that are interoperable, censorship-resistant, and decentralized.
+CyberConnect is a web3 <strong id="social-graph" class="boxBorder"> social network </strong> that enables developers to create social applications empowering users to own their digital identity, content, connections, and interactions.
+
+It creates long-lasting on-chain connections through the power of its network. Developers can build innovative social applications where users own their identities and data, while creators can grow their audiences in a fairer, more direct, and decentralized environment.
 
 ## CyberConnect V3
 
 <Tooltip anchorId="EVM-CHAIN" html="EVM network/chain here refers to any blockchain that can <br/>run the ethereum virutal machine and execute <br/>Ethereum smart contracts. CyberConnect is <br/>currently deployed on ETH & BNB." />
-
 
 CyberConnect V3 is a set of powerful upgrades to the CyberConnect social network protocol to usher web3 social into a new, multi-chain future. It will power the next stage of hyper scalability for web3 social dApps and give users a social networking experience that feels familiar to web2. 
 
