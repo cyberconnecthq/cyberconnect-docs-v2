@@ -349,7 +349,7 @@ li > a.menu__link {
   flex-direction: row;
   justify-content: space-between; */
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: 2.5fr 1fr;
   column-gap: 5px;
   
 }
