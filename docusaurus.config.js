@@ -78,37 +78,37 @@ const config = {
         diffMethod: false, // The method to be used for identifying changes in the schema for triggering the documentation generation. Set it to false to prevent from automatic updates.
       },
     ],
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            from: ['/how-to/create-ccProfile/gasless-mode', '/how-to/create-ccProfile/gas-mode'],
-            to: '/api/profile/create-profile',
-          },
-          {
-            from: '/guides/recommendation/introduction',
-            to: '/api/recommendation/introduction',
-          },
-          {
-            from: '/guides/recommendation/labels',
-            to: '/api/recommendation/labels',
-          },
-          {
-            from: '/api/connection/like-post',
-            to: '/api/connection/like-content',
-          },
-          {
-            from: '/protocol/technical-framework',
-            to: '/',
-          },
-          {
-            from: '/core-concepts/cc-profile',
-            to: '/core-concepts/cyber-profile',
-          }
-        ],
-      },
-    ],
+    // [
+    //   '@docusaurus/plugin-client-redirects',
+    //   {
+    //     redirects: [
+    //       {
+    //         from: ['/how-to/create-ccProfile/gasless-mode', '/how-to/create-ccProfile/gas-mode'],
+    //         to: '/api/profile/create-profile',
+    //       },
+    //       {
+    //         from: '/guides/recommendation/introduction',
+    //         to: '/api/recommendation/introduction',
+    //       },
+    //       {
+    //         from: '/guides/recommendation/labels',
+    //         to: '/api/recommendation/labels',
+    //       },
+    //       {
+    //         from: '/api/connection/like-post',
+    //         to: '/api/connection/like-content',
+    //       },
+    //       {
+    //         from: '/protocol/technical-framework',
+    //         to: '/',
+    //       },
+    //       {
+    //         from: '/core-concepts/cc-profile',
+    //         to: '/core-concepts/cyber-profile',
+    //       }
+    //     ],
+    //   },
+    // ],
   ],
   i18n: {
     defaultLocale: 'en',

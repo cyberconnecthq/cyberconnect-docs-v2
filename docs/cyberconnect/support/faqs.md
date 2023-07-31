@@ -3,31 +3,16 @@ id: faqs
 title: FAQs
 slug: /support/faqs
 sidebar_label: FAQs
-sidebar_position: 3
+sidebar_position: 2
 description: FAQs
 ---
 
-# Smart Contract Related
+### **Roadmap**
 
-## What is the difference between CyberProfile ProfileNFT?
+CyberConnect V3 will be available for use in the coming days, beginning with Link3.
 
-The CyberProfile is CyberConnect's general deployment of the ProfileNFT in its own namespace. It is currently the only namespace supported, but the CyberContracts enable adding additional namespaces in the future.
+In the coming weeks, we will officially roll out the upgraded CyberConnect social network to multiple L1 and L2 blockchain networks through an exclusive launch campaign with Link3 called, **CyberVoyage.** We invite web3 teams across ecosystems to join us. More details will be shared soon.
 
-## How can I mint a CyberProfile NFT?
+**Collect this post and unlock limited-edition early supporter benefits to commemorate this monumental upgrade to CyberConnect and usher web3 social to its new, multi-chain future.** More details about the benefits will be announced next week, along with more information on CyberVoyage.
 
-Go to https://cc.me/mint or interact with our smart contract directly.
-
-## Is minting a CyberProfile NFT free?
-
-The cost of minting CyberProfiles is based on the handle length:
-
-| Handle Length | BNB     |
-| ------------- | ------- |
-| 1             | 33.3333 |
-| 2             | 6.6667  |
-| 3             | 3.3333  |
-| 4             | 1.6667  |
-| 5             | 0.3333  |
-| 6             | 0.1667  |
-| 7-11          | 0.0333  |
-| 12+           | 0       |
+Additional developer toolkits with an updated indexer and API server will be made available in August.

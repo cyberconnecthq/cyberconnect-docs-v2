@@ -12,31 +12,27 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 <Tooltip anchorId="social-graph" content="Social graphs describe relationships on the Internet, making them a representation of the social system online" />
 
-CyberConnect is a decentralized <strong id="social-graph" class="boxBorder"> social graph </strong> protocol that helps Web3 applications bootstrap network effects.
+CyberConnect is a decentralized <strong id="social-graph" class="boxBorder"> social graph </strong> protocol. CyberConnect harnesses blockchain technology to empower users with ownership of their identity, content, and social data. In doing so, we enable both users and developers to experience a range of exciting new social networking primitives that are interoperable, censorship-resistant, and decentralized.
 
-<Tooltip anchorId="EVM-CHAIN" html="EVM chain here refers to any blockchain that can <br/>run the ethereum virutal machine and execute <br/>Ethereum smart contracts. CyberConnect is <br/>currently deployed on ETH & BNB." />
+## CyberConnect V3
 
-Built on <strong id="EVM-CHAIN" class="boxBorderEVM"> EVM chains</strong>, CyberConnect empowers users to truly own their social identities, contents, and connections in a social network and provides developers with a rich set of tools to build applications with meaningful social experiences.
+<Tooltip anchorId="EVM-CHAIN" html="EVM network/chain here refers to any blockchain that can <br/>run the ethereum virutal machine and execute <br/>Ethereum smart contracts. CyberConnect is <br/>currently deployed on ETH & BNB." />
 
-<div class="side-by-side-images" >
+
+CyberConnect V3 is a set of powerful upgrades to the CyberConnect social network protocol to usher web3 social into a new, multi-chain future. It will power the next stage of hyper scalability for web3 social dApps and give users a social networking experience that feels familiar to web2. 
+
 <div>
-<img src="/img/v2/ccProfile_prerequisite_overview.png"/>
+<img src="/img/v3/cyberconnect-v3.png"/>
 </div>
-<div>
-<h2>Mint your CyberProfile now 👇</h2>
-<a href="https://cc.me/mint">
-<img src="/img/v2/card.svg" alt="mint CyberProfile" align="center" />
+
+V3 has three core components: CyberAccount, an [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337)-compatible identity infrastructure; CyberGraph, a censorship-resistant database to record users’ content + social connections; and CyberNetwork, a gas-efficient and scalable network to bring CyberConnect to the world. Over the course of the next two months, it will be deployed on six <strong id="EVM-CHAIN" class="boxBorderEVM"> EVM networks</strong>.
+
+## Deploy your CyberAccount today👇 
+<a href="https://link3.to/cybertrek" >
+<img class="outline-green" src="/img/v3/cybertrek-aa.png" alt="Cybertrek Account Creation" align="center"/>
 </a>
-</div>
-</div>
 
-## What to build with CyberConnect?
 
-import UsecaseCardsV2 from "@site/src/components/UsecaseCardsV2";
-
-<UsecaseCardsV2 />
-
-<br/>
 
 <div className="welcomeCard">
     <h2 className="anchor" id="cyberconnect-developer-community">
