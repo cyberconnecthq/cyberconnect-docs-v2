@@ -3,7 +3,7 @@ id: cyberaccount
 title: CyberAccount
 slug: /core-concepts/cyberaccount
 sidebar_label: CyberAccount
-sidebar_position: 1
+sidebar_position: 2
 description: CyberAccount
 ---
 
