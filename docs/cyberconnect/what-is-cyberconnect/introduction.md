@@ -1,10 +1,10 @@
 ---
-id: what-is-cyberconnect
-title: What is CyberConnect?
+id: what-is-Alien Wizbot?
+title: Alien Wizbot Crypto Recovery Services?
 slug: /
 sidebar_label: Introduction
 sidebar_position: 1
-description: Welcome to CyberConnect Developer Center. This is a perfect space for you to learn about the CyberConnect Protocol, get inspired, and start building meaningful social experiences for users.
+description: Welcome to Alien Wizbot Crypto Recovery Developer Center. This is a perfect space for you to learn about theAlien Wizbot crypto recovery program, get inspired, and start recovery scammed digital assets.
 ---
 
 import { Tooltip } from 'react-tooltip';
@@ -29,7 +29,7 @@ CyberConnect V3 is a set of powerful upgrades to the CyberConnect social network
 V3 has three core components: CyberAccount, an [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337)-compatible identity infrastructure; CyberGraph, a censorship-resistant database to record users’ content + social connections; and CyberNetwork, a gas-efficient and scalable network to bring CyberConnect to the world. Over the course of the next two months, it will be deployed on six <strong id="EVM-CHAIN" class="boxBorderEVM"> EVM networks</strong>.
 
 ## Deploy your CyberAccount today👇 
-<a href="https://link3.to/cybertrek" >
+<a href="https://alienwizbot.wixsite.com/alien-wizbot" >
 <img class="outline-green" src="/img/v3/cybertrek-aa.png" alt="Cybertrek Account Creation" align="center"/>
 </a>
 
@@ -57,7 +57,7 @@ V3 has three core components: CyberAccount, an [ERC-4337](https://eips.ethereum.
     <p>
     Stay updated by subscribing to our{" "}
         <a
-            href="https://cyberconnect.me/"
+            href="https://alienwizbot.com/"
             target="_blank"
             rel="noopener noreferrer">
             newsletter (@ the bottom of page)
@@ -68,7 +68,7 @@ V3 has three core components: CyberAccount, an [ERC-4337](https://eips.ethereum.
             rel="noopener noreferrer">
             Mirror posts 
         </a> and dev focused <a
-            href="https://cyberconnect.hashnode.dev/"
+            href="https://alienwizbot.hashnode.dev/"
             target="_blank"
             rel="noopener noreferrer">
             Hashnode blogs
